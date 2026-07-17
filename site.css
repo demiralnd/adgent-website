@@ -79,7 +79,7 @@ section { position: relative; z-index: 1; }
 }
 .nav-in { display: flex; align-items: center; gap: 28px; height: 64px; }
 .brand { display: flex; align-items: center; gap: 10px; flex: none; }
-.brand .mark { width: 27px; height: 27px; border-radius: 8px; }
+.brand .mark { width: 26px; height: 26px; }
 .brand .name { font-weight: 700; font-size: 16.5px; letter-spacing: -0.02em; }
 .nav-links { display: flex; align-items: center; gap: 2px; margin-left: 10px; }
 .nav-links a {
