@@ -32,6 +32,7 @@
 
   /* ---------- Accent (coral) ---------- */
   --accent: #ff5a2c;
+  --user-bubble: #1c1a17;
   --accent-press: #ec491d;
   --accent-soft: rgba(255, 90, 44, 0.11);
   --accent-on: #ffffff;
