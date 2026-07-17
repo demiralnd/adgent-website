@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Security — Adgent</title>
+<meta name="description" content="How Adgent, operated by Futuready Labs, protects the advertising and analytics data you connect — encryption, access controls, token handling, and incident response."/>
+<link rel="stylesheet" href="tokens.css"/>
+<link rel="stylesheet" href="site.css"/>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="index.html">
+      <img class="mark" src="assets/icon-only.svg" alt=""/>
+      <span class="name">Adgent</span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Product</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="about.html">About</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+    <div class="nav-right">
+      <a class="btn btn-primary btn-sm" href="index.html#lead">Request demo</a>
+    </div>
+  </div>
+</header>
+
+<section class="band">
+  <div class="wrap">
+    <div class="legal">
+      <header class="phead" style="padding-top:8px">
+        <span class="eyebrow"><span class="tick"></span>Legal</span>
+        <h1>Security</h1>
+        <p class="legal-updated">Last updated 28 June 2026</p>
+        <p class="legal-intro">Adgent connects to your advertising and analytics accounts, so protecting that access is core to the product, not an afterthought. This page explains the measures <b>Futuready Labs</b> takes to keep your data and your connected accounts safe. For how we collect and use data, see our <a href="privacy.html">Privacy Policy</a>; for what data we access and why, see <a href="data-use.html">Data Use</a>.</p>
+      </header>
+
+      <nav class="legal-toc" aria-label="Contents">
+        <h4>Contents</h4>
+        <ol>
+          <li><a href="#approach">Our approach</a></li>
+          <li><a href="#encryption">Encryption</a></li>
+          <li><a href="#tokens">Access tokens &amp; secrets</a></li>
+          <li><a href="#access">Access controls</a></li>
+          <li><a href="#default">Read-only by default</a></li>
+          <li><a href="#infra">Infrastructure</a></li>
+          <li><a href="#monitoring">Monitoring &amp; logging</a></li>
+          <li><a href="#incident">Incident response</a></li>
+          <li><a href="#vendors">Service providers</a></li>
+          <li><a href="#retention">Retention &amp; deletion</a></li>
+          <li><a href="#disclosure">Report a vulnerability</a></li>
+          <li><a href="#compliance">Compliance</a></li>
+          <li><a href="#contact">Contact us</a></li>
+        </ol>
+      </nav>
+
+      <div class="legal-body">
+
+        <section id="approach">
+          <h2><span class="secnum">01</span>Our approach</h2>
+          <p>We design Adgent around a few simple principles: collect only the access we need, protect it in transit and at rest, keep humans out of your data by default, and make every change to your accounts something you approve. Security is a continuous practice — the measures below describe our current safeguards, which we review and improve over time.</p>
+        </section>
+
+        <section id="encryption">
+          <h2><span class="secnum">02</span>Encryption</h2>
+          <ul>
+            <li><b>In transit</b> — all traffic to and from Adgent, and all calls to platform APIs, are encrypted using TLS (HTTPS).</li>
+            <li><b>At rest</b> — data we store, including connection tokens and cached reporting data, is encrypted at rest.</li>
+          </ul>
+        </section>
+
+        <section id="tokens">
+          <h2><span class="secnum">03</span>Access tokens &amp; secrets</h2>
+          <p>When you connect a platform, we store the authorization tokens that let Adgent act on your behalf. We never ask for or store your platform passwords.</p>
+          <ul>
+            <li>Tokens are encrypted at rest and treated as secrets — never exposed to other customers and never shared except with the service providers that operate the platform on our behalf.</li>
+            <li>We request the minimum scopes needed for the features you use.</li>
+            <li>You can revoke Adgent's access at any time from your Adgent settings or from the platform's own permission settings, which immediately stops further access.</li>
+            <li>Application secrets and API credentials are kept confidential and rotated when appropriate.</li>
+          </ul>
+        </section>
+
+        <section id="access">
+          <h2><span class="secnum">04</span>Access controls</h2>
+          <p>Access to systems and data is governed by least-privilege principles. Internal access is limited to personnel who need it to operate the service, is authenticated, and is logged. We do not allow humans to read your connected data except in narrow circumstances: with your affirmative consent (for example, support you request), where necessary for security or to investigate abuse, where required by law, or where the data has been aggregated or de-identified for internal operations.</p>
+        </section>
+
+        <section id="default">
+          <h2><span class="secnum">05</span>Read-only by default</h2>
+          <p>Adgent operates in read-only mode unless you grant execution access. Even with execution access, <b>no change is applied to your accounts until you explicitly approve it</b>. This approval gate is a security control as much as a product choice — it keeps automated changes from ever reaching your spend without your say-so.</p>
+        </section>
+
+        <section id="infra">
+          <h2><span class="secnum">06</span>Infrastructure</h2>
+          <p>Adgent runs on reputable cloud infrastructure providers that maintain industry-standard physical and network security and recognized certifications. Environments are isolated, and customer data is logically separated so that one customer cannot access another's data.</p>
+        </section>
+
+        <section id="monitoring">
+          <h2><span class="secnum">07</span>Monitoring &amp; logging</h2>
+          <p>We log access to systems and key actions to support security, debugging, and abuse detection, and we monitor for anomalous activity. Logs are protected and retained for a limited period consistent with security and legal needs.</p>
+        </section>
+
+        <section id="incident">
+          <h2><span class="secnum">08</span>Incident response</h2>
+          <p>If we become aware of a security incident that compromises user data, we begin remediation immediately, investigate the cause, and notify affected users and the relevant platforms and authorities as required by applicable law and platform policies. We also report incidents to platforms where their terms require it.</p>
+        </section>
+
+        <section id="vendors">
+          <h2><span class="secnum">09</span>Service providers</h2>
+          <p>We use a small set of trusted service providers (sub-processors) to host, operate, secure, and support Adgent, including cloud infrastructure and the AI model provider that processes data to generate your results. We require them to protect data, to use it only to provide their service to us, and to delete it when it is no longer needed. We do not sell your data, and we do not transfer it for advertising.</p>
+        </section>
+
+        <section id="retention">
+          <h2><span class="secnum">10</span>Retention &amp; deletion</h2>
+          <p>We keep data only as long as needed to provide the service and for legitimate legal and security purposes. Connected data is deleted or de-identified when you disconnect a platform or delete your account, subject to limited retention required by law. You can request deletion at any time — see <a href="privacy.html#rights">Your rights &amp; data deletion</a>.</p>
+        </section>
+
+        <section id="disclosure">
+          <h2><span class="secnum">11</span>Report a vulnerability</h2>
+          <div class="legal-callout">
+            <p>Found a security issue? We want to hear from you. Email <a href="mailto:osman@futureadylabs.com?subject=Security%20report">osman@futureadylabs.com</a> with the details and we will acknowledge your report and work to address it promptly. Please give us a reasonable chance to fix an issue before disclosing it publicly.</p>
+          </div>
+        </section>
+
+        <section id="compliance">
+          <h2><span class="secnum">12</span>Compliance</h2>
+          <p>We build Adgent to align with applicable data-protection laws, including the GDPR and CCPA, and with the developer and data-protection requirements of the platforms we integrate with, including Meta, Google, and TikTok. As we grow, we continue to mature our security program and pursue recognized certifications and assessments.</p>
+        </section>
+
+        <div class="legal-contact" id="contact">
+          <h3>Contact us</h3>
+          <p>Security questions or reports? Email <a href="mailto:osman@futureadylabs.com?subject=Security">osman@futureadylabs.com</a>.<br/>Adgent is operated by Futuready Labs.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="index.html">
+          <img class="mark" src="assets/icon-only.svg" alt=""/>
+          <span class="name">Adgent</span>
+        </a>
+        <p>The analyst you can talk to. Reads Meta, Google &amp; TikTok, tells you what matters, applies the fix when you say go.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Product</h4>
+        <a href="index.html">Overview</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="index.html#report">Real report</a>
+        <a href="index.html#lead">Request demo</a>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="#">Careers</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="foot-col">
+        <h4>Legal</h4>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="security.html">Security</a>
+        <a href="data-use.html">Data use</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Adgent. All rights reserved.</span>
+      <div class="foot-social">
+        <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 2h3l-7 8 8 12h-6l-5-7-5 7H2l8-10L2 2h6l4 6Z"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6Z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>

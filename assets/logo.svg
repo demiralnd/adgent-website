@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 32" width="160" height="32">
+  <rect width="32" height="32" rx="6" fill="#0B0B0F"></rect>
+  <path d="M9 22 L13 11 L19 11 L23 22 L20 22 L19 19 L13 19 L12 22 Z M14 16.5 L18 16.5 L16 12.5 Z" fill="#6EA0FF"></path>
+  <text x="42" y="22" font-family="Geist, system-ui, sans-serif" font-weight="600" font-size="18" letter-spacing="-0.02em" fill="#FFFFFF" fill-opacity="0.92">Adgent</text>
+</svg>

@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Adgent — About</title>
+<link rel="stylesheet" href="tokens.css"/>
+<link rel="stylesheet" href="site.css"/>
+<style>
+  .manifesto { max-width: 720px; }
+  .manifesto p { font-size: 18px; line-height: 1.65; color: var(--text-secondary); margin: 0 0 22px; text-wrap: pretty; }
+  .manifesto p b { color: var(--text-primary); font-weight: 500; }
+  .manifesto p.lead-line { font-family: var(--font-editorial); font-style: italic; font-weight: 400; font-size: clamp(22px, 3vw, 28px); line-height: 1.45; color: var(--text-primary); letter-spacing: -0.01em; }
+  .principles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 48px; }
+  .principle { background: var(--bg-elevated); border: 1px solid var(--border-default); border-radius: var(--radius-xl); padding: 26px; }
+  .principle .pn { font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: 0.12em; color: var(--accent); }
+  .principle h3 { font-size: 17px; font-weight: 600; letter-spacing: -0.02em; margin: 14px 0 0; }
+  .principle p { font-size: 13.5px; line-height: 1.6; color: var(--text-secondary); margin: 10px 0 0; text-wrap: pretty; }
+  .who { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 40px; }
+  .who-card { background: var(--bg-elevated); border: 1px solid var(--border-default); border-radius: var(--radius-xl); padding: 22px; }
+  .who-card .ic { width: 38px; height: 38px; border-radius: var(--radius-md); background: var(--bg-content); border: 1px solid var(--border-default); display: grid; place-items: center; color: var(--accent); }
+  .who-card .ic svg { width: 19px; height: 19px; stroke-width: 2; }
+  .who-card h3 { font-size: 15px; font-weight: 600; margin: 16px 0 0; letter-spacing: -0.015em; }
+  .who-card p { font-size: 13px; line-height: 1.55; color: var(--text-secondary); margin: 8px 0 0; }
+  @media (max-width: 920px){ .principles, .who { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 640px){ .principles, .who { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="index.html"><img class="mark" src="assets/icon-only.svg" alt=""/><span class="name">Adgent</span></a>
+    <nav class="nav-links">
+      <a href="index.html">Product</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="about.html" class="active">About</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+    <div class="nav-right">
+      <a class="btn btn-primary btn-sm" href="index.html#lead">Request demo</a>
+    </div>
+  </div>
+</header>
+
+<section class="phead">
+  <div class="wrap">
+    <span class="eyebrow"><span class="tick"></span>About</span>
+    <h1>We're building the <em>analyst</em>, not the dashboard.</h1>
+    <p>Performance marketers drown in data and starve for judgment. Adgent exists to flip that — to do the thinking, and hand back a verdict you can act on before your coffee's cold.</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap manifesto">
+    <p class="lead-line">The market has enough tools that show you numbers. It has almost nothing that tells you what they mean.</p>
+    <p>Every performance team runs the same ritual. Open Ads Manager. Scan the campaigns. Try to remember what was normal last week. Hunt for the one thing that's quietly bleeding money. <b>It's skilled work, done by hand, every single morning.</b></p>
+    <p>We think that work should be done for you — not with another chart, but with a conclusion. Adgent reads your Meta, Google and TikTok accounts as one, overnight — pulling in GA4, Shopify and Search Console for context — and writes the brief a senior analyst would leave on your desk: <b>what changed, why it matters, and what to do about it.</b> Ranked by impact. Evidence attached.</p>
+    <p>Then it goes one step further than a report can: when you're ready, you apply the fix — or build the next campaign — from the same chat. Read-only by default, always on your approval. <b>Adgent decides; you confirm.</b></p>
+    <p>That's the whole product philosophy. Lead with the verdict. Show the evidence underneath. Act in place when asked. Say nothing you didn't need to hear — and never quote a number we can't stand behind.</p>
+  </div>
+</section>
+
+<section class="band band-sub">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow"><span class="tick"></span>How we build</span>
+      <h2 class="sec-title">Three principles, held quietly.</h2>
+    </div>
+    <div class="principles" data-stagger>
+      <div class="principle">
+        <div class="pn">01 · CONSIDERED</div>
+        <h3>Every number earns its place</h3>
+        <p>If it doesn't change a decision, it doesn't make the brief. Each figure carries a unit and a reason for being there.</p>
+      </div>
+      <div class="principle">
+        <div class="pn">02 · CONFIDENT</div>
+        <h3>The conclusion comes first</h3>
+        <p>We did the analysis, so we lead with it. The evidence sits underneath for when you want to check our work.</p>
+      </div>
+      <div class="principle">
+        <div class="pn">03 · QUIET</div>
+        <h3>Calm beats loud</h3>
+        <p>No alarms, no badges screaming for attention. Severity means severity. The interface gets out of your way.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow"><span class="tick"></span>Who it's for</span>
+      <h2 class="sec-title">Built for the people running the spend.</h2>
+    </div>
+    <div class="who" data-stagger>
+      <div class="who-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M16 7h6v6"/><path d="m22 7-8.5 8.5-5-5L2 17"/></svg></div>
+        <h3>Agencies</h3>
+        <p>Triage many client accounts from one ranked brief instead of opening a dozen tabs.</p>
+      </div>
+      <div class="who-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg></div>
+        <h3>Ecommerce brands</h3>
+        <p>Catch placement drift and fatigue before they eat into margin on your own spend.</p>
+      </div>
+      <div class="who-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 21a8 8 0 0 0-16 0"/><circle cx="10" cy="8" r="5"/><path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3"/></svg></div>
+        <h3>Growth teams</h3>
+        <p>Give the whole team one source of truth on what changed and what to do next.</p>
+      </div>
+      <div class="who-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></div>
+        <h3>Independents</h3>
+        <p>The senior analyst you can't afford to hire, watching your accounts every night.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band band-sub">
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat"><div class="stat-v">2026</div><div class="stat-l">Founded to make judgment, not dashboards, the default.</div></div>
+      <div class="stat"><div class="stat-v">3</div><div class="stat-l">Ad channels read as one brain — Meta, Google and TikTok.</div></div>
+      <div class="stat"><div class="stat-v">6</div><div class="stat-l">Sources read together — ads, GA4, Shopify and Search Console.</div></div>
+      <div class="stat"><div class="stat-v">Remote</div><div class="stat-l">A small team of marketers and engineers.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="cta">
+      <div class="cta-grid">
+        <div>
+          <span class="eyebrow"><span class="tick"></span>Request a demo</span>
+          <h2>Put an analyst on your <em>account</em>.</h2>
+          <p>Connect your accounts and Adgent gets to work across every channel. We listen closely to the teams we onboard.</p>
+          <ul class="cta-points">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>Connects Meta, Google &amp; TikTok</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>Direct line to the team</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>Shape the roadmap</li>
+          </ul>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:center">
+          <a class="btn btn-primary btn-lg" href="index.html#lead">Request demo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="index.html"><img class="mark" src="assets/icon-only.svg" alt=""/><span class="name">Adgent</span></a>
+        <p>The analyst you can talk to. Reads Meta, Google &amp; TikTok, tells you what matters, applies the fix when you say go.</p>
+      </div>
+      <div class="foot-col"><h4>Product</h4><a href="index.html">Overview</a><a href="pricing.html">Pricing</a><a href="index.html#report">Real report</a><a href="index.html#lead">Request demo</a></div>
+      <div class="foot-col"><h4>Company</h4><a href="about.html">About</a><a href="blog.html">Blog</a><a href="#">Careers</a><a href="#">Contact</a></div>
+      <div class="foot-col"><h4>Legal</h4><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="security.html">Security</a><a href="data-use.html">Data use</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Adgent. All rights reserved.</span>
+      <div class="foot-social">
+        <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 2h3l-7 8 8 12h-6l-5-7-5 7H2l8-10L2 2h6l4 6Z"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6Z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>
