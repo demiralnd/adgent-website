@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://adgent.app/index.html</loc><priority>1.0</priority></url>
+  <url><loc>https://adgent.app/pricing.html</loc><priority>0.8</priority></url>
+  <url><loc>https://adgent.app/about.html</loc><priority>0.6</priority></url>
+  <url><loc>https://adgent.app/blog.html</loc><priority>0.8</priority></url>
+  <url><loc>https://adgent.app/privacy.html</loc><priority>0.3</priority></url>
+  <url><loc>https://adgent.app/terms.html</loc><priority>0.3</priority></url>
+  <url><loc>https://adgent.app/security.html</loc><priority>0.4</priority></url>
+  <url><loc>https://adgent.app/data-use.html</loc><priority>0.4</priority></url>
+  <url><loc>https://adgent.app/attribution-window-day-one-data.html</loc><lastmod>2026-04-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://adgent.app/scale-a-winner-without-breaking-it.html</loc><lastmod>2026-04-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://adgent.app/cpm-is-the-early-creative-fatigue-signal.html</loc><lastmod>2026-04-02</lastmod><priority>0.7</priority></url>
+  <url><loc>https://adgent.app/why-adgent-leads-with-the-verdict.html</loc><lastmod>2026-03-26</lastmod><priority>0.7</priority></url>
+  <url><loc>https://adgent.app/placement-drift-the-leak-in-the-average.html</loc><lastmod>2026-03-19</lastmod><priority>0.7</priority></url>
+  <url><loc>https://adgent.app/cbo-vs-abo-2026.html</loc><lastmod>2026-03-12</lastmod><priority>0.7</priority></url>
+  <url><loc>https://adgent.app/anatomy-of-a-morning-brief.html</loc><lastmod>2026-03-05</lastmod><priority>0.7</priority></url>
+  <url><loc>https://adgent.app/cross-platform-comparability-meta-google.html</loc><lastmod>2026-02-26</lastmod><priority>0.7</priority></url>
+</urlset>

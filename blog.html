@@ -3,7 +3,18 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Adgent — Blog</title>
+<title>Blog — Field notes on Meta Ads, attribution, and scaling | Adgent</title>
+<meta name="description" content="Field notes on Meta and Google Ads, attribution windows, creative fatigue, and budget scaling — from the team building Adgent, the AI analyst for performance marketers."/>
+<link rel="canonical" href="https://adgent.app/blog.html"/>
+<meta name="robots" content="index, follow, max-image-preview:large"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Adgent"/>
+<meta property="og:title" content="Adgent Blog — field notes on Meta Ads and attribution"/>
+<meta property="og:description" content="Field notes on Meta and Google Ads, attribution windows, creative fatigue, and budget scaling — from the team building Adgent, the AI analyst for performance marketers."/>
+<meta property="og:url" content="https://adgent.app/blog.html"/>
+<meta property="og:image" content="https://adgent.app/assets/logo.svg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Blog", "name": "Adgent Blog", "description": "Field notes on Meta and Google Ads, attribution windows, creative fatigue, and budget scaling — from the team building Adgent, the AI analyst for performance marketers.", "url": "https://adgent.app/blog.html", "publisher": {"@type": "Organization", "name": "Adgent", "url": "https://adgent.app"}, "blogPost": [{"@type": "BlogPosting", "headline": "The 7-day window is lying to you before noon", "url": "https://adgent.app/attribution-window-day-one-data.html", "datePublished": "2026-04-14", "description": "Meta's 7-day click attribution window keeps rewriting yesterday's ROAS for a week. Here's why day-one data reads pessimistic by construction, and how to decide without waiting forever."}, {"@type": "BlogPosting", "headline": "How to scale a winner without breaking it", "url": "https://adgent.app/scale-a-winner-without-breaking-it.html", "datePublished": "2026-04-09", "description": "The 20% rule, learning-phase resets, and why the speed of a budget increase matters more than its size. A practical guide to scaling Meta campaigns without resetting what's working."}, {"@type": "BlogPosting", "headline": "Frequency is a lagging indicator. Watch CPM.", "url": "https://adgent.app/cpm-is-the-early-creative-fatigue-signal.html", "datePublished": "2026-04-02", "description": "By the time frequency says your audience is tired, your cost already moved. Why the CPM curve calls creative fatigue days earlier — and how to read it before it costs you."}, {"@type": "BlogPosting", "headline": "Why Adgent leads with the verdict", "url": "https://adgent.app/why-adgent-leads-with-the-verdict.html", "datePublished": "2026-03-26", "description": "The design principle behind every Adgent brief: conclusion first, evidence underneath, nothing you didn't need. Why a dashboard hands you data and never hands you a decision."}, {"@type": "BlogPosting", "headline": "Placement drift: the leak you can't see in the average", "url": "https://adgent.app/placement-drift-the-leak-in-the-average.html", "datePublished": "2026-03-19", "description": "A blended ROAS of 3.8× can hide a placement burning budget at 1.1×. How Advantage+ placements drift, why averages conceal it, and how to find the leak inside a healthy-looking number."}, {"@type": "BlogPosting", "headline": "CBO vs ABO in 2026: when each still wins", "url": "https://adgent.app/cbo-vs-abo-2026.html", "datePublished": "2026-03-12", "description": "Campaign budget optimization isn't always the answer. A practical decision tree for choosing between CBO and ABO based on volume, audience symmetry, and what you're trying to learn."}, {"@type": "BlogPosting", "headline": "What a good morning brief actually contains", "url": "https://adgent.app/anatomy-of-a-morning-brief.html", "datePublished": "2026-03-05", "description": "An anatomy of the Adgent daily brief — the narrative line, the health read, and the impact-ranked items underneath. What earns a place in a brief, and what gets left out."}, {"@type": "BlogPosting", "headline": "Meta says 4.2×, Google says 3.1×. Both are right.", "url": "https://adgent.app/cross-platform-comparability-meta-google.html", "datePublished": "2026-02-26", "description": "Why Meta and Google ROAS can't be compared directly — different attribution models, windows, and conversion definitions — and how to build a comparability boundary before you move budget between them."}]}</script>
 <link rel="stylesheet" href="tokens.css"/>
 <link rel="stylesheet" href="site.css"/>
 <style>
@@ -64,19 +75,16 @@
 
 <section style="padding: 16px 0 0">
   <div class="wrap">
-    <a class="blog-feature" href="blog-post.html">
+    <a class="blog-feature" href="attribution-window-day-one-data.html">
       <div>
-        <div class="post-meta"><span class="post-tag">Attribution</span><span>·</span><span>8 min read</span><span>·</span><span>Apr 2026</span></div>
+        <div class="post-meta"><span class="post-tag">Attribution</span><span>·</span><span>8 min read</span><span>·</span><span>April 2026</span></div>
         <h2>The 7-day window is lying to you before noon</h2>
         <p>Meta's attribution window quietly rewrites yesterday's numbers for a week. Here's how to read a metric that isn't done yet — and why pausing a campaign on day-one data is the most expensive reflex in performance marketing.</p>
         <span class="read-more">Read the article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </div>
       <div class="feature-visual">
         <div class="co-kicker">Immature metric · still attributing</div>
-        <div class="co-kpis" style="grid-template-columns:1fr 1fr;margin-top:14px">
-          <div class="kpi"><div class="kpi-l">ROAS · day 1</div><div class="kpi-v" style="color:var(--text-tertiary)">1.9×</div><div class="kpi-d down">▼ revising</div></div>
-          <div class="kpi"><div class="kpi-l">ROAS · day 7</div><div class="kpi-v">3.4×</div><div class="kpi-d up">▲ matured</div></div>
-        </div>
+        <div class="co-kpis" style="grid-template-columns:1fr 1fr;margin-top:14px"><div class="kpi"><div class="kpi-l">ROAS · day 1</div><div class="kpi-v" style="color:var(--text-tertiary)">1.9×</div><div class="kpi-d down">▼ revising</div></div><div class="kpi"><div class="kpi-l">ROAS · day 7</div><div class="kpi-v">3.4×</div><div class="kpi-d up">▲ matured</div></div></div>
         <p class="co-narr" style="margin-top:14px">The same campaign, read seven days apart. Pause on the left and you'd have killed the right.</p>
       </div>
     </a>
@@ -87,40 +95,46 @@
   <div class="wrap">
     <div class="sec-head"><span class="eyebrow"><span class="tick"></span>Latest</span></div>
     <div class="grid-posts" data-stagger>
-      <a class="pcard" href="blog-post.html">
+      <a class="pcard" href="scale-a-winner-without-breaking-it.html">
         <div class="post-meta"><span class="post-tag">Scaling</span><span>·</span><span>6 min</span></div>
         <h3>How to scale a winner without breaking it</h3>
         <p>The 20% rule, learning-phase resets, and why the budget you add matters less than how fast you add it.</p>
         <span class="read-more">Read <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </a>
-      <a class="pcard" href="blog-post.html">
+      <a class="pcard" href="cpm-is-the-early-creative-fatigue-signal.html">
         <div class="post-meta"><span class="post-tag">Creative fatigue</span><span>·</span><span>5 min</span></div>
         <h3>Frequency is a lagging indicator. Watch CPM.</h3>
         <p>By the time frequency tells you an audience is tired, the cost already moved. The earlier signal is hiding in your CPM curve.</p>
         <span class="read-more">Read <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </a>
-      <a class="pcard" href="blog-post.html">
+      <a class="pcard" href="why-adgent-leads-with-the-verdict.html">
         <div class="post-meta"><span class="post-tag">Product</span><span>·</span><span>4 min</span></div>
         <h3>Why Adgent leads with the verdict</h3>
         <p>A look at the design principle behind every brief: conclusion first, evidence underneath, nothing you didn't need.</p>
         <span class="read-more">Read <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </a>
-      <a class="pcard" href="blog-post.html">
+      <a class="pcard" href="placement-drift-the-leak-in-the-average.html">
         <div class="post-meta"><span class="post-tag">Attribution</span><span>·</span><span>7 min</span></div>
-        <h3>Placement drift: the leak you can't see in the average</h3>
+        <h3>Placement drift: the leak hiding in your average</h3>
         <p>A blended ROAS of 3.8× can hide a placement bleeding budget at 1.1×. How to find the leak inside a healthy-looking number.</p>
         <span class="read-more">Read <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </a>
-      <a class="pcard" href="blog-post.html">
+      <a class="pcard" href="cbo-vs-abo-2026.html">
         <div class="post-meta"><span class="post-tag">Scaling</span><span>·</span><span>6 min</span></div>
         <h3>CBO vs ABO in 2026: when each still wins</h3>
         <p>Campaign budget optimization isn't always the answer. A practical decision tree for which structure to reach for.</p>
         <span class="read-more">Read <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </a>
-      <a class="pcard" href="blog-post.html">
+      <a class="pcard" href="anatomy-of-a-morning-brief.html">
         <div class="post-meta"><span class="post-tag">Product</span><span>·</span><span>3 min</span></div>
         <h3>What a good morning brief actually contains</h3>
         <p>An anatomy of the daily brief — the narrative line, the health score, and the impact-ranked items underneath.</p>
+        <span class="read-more">Read <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+      </a>
+      <a class="pcard" href="cross-platform-comparability-meta-google.html">
+        <div class="post-meta"><span class="post-tag">Attribution</span><span>·</span><span>7 min</span></div>
+        <h3>Meta says 4.2×, Google says 3.1×. Both are right.</h3>
+        <p>Two platforms report ROAS. Neither is wrong, and they still can't be compared. What to fix before you move budget between them.</p>
         <span class="read-more">Read <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </a>
     </div>
