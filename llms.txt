@@ -1,0 +1,43 @@
+# Adgent
+
+> The AI analyst for performance marketers. Adgent connects to your ad platforms,
+> reasons about your account, and delivers one brief each morning — the verdict first,
+> the evidence underneath. It proposes actions and executes them on your approval.
+
+Adgent is operated by Futuready Labs. It reads Meta and Google Ads through the
+platforms' own APIs, enriches with GA4 and Merchant Center, and reconciles platform
+claims against ground-truth revenue. It is read-only by default; every write action to
+a live ad account is approval-gated.
+
+What separates Adgent from a dashboard: a dashboard renders your data and hands the
+analysis back to you. Adgent commits to a conclusion, ranks by impact, says how
+confident it is and why, and leaves out anything that didn't change the answer.
+
+## Product
+
+- [Overview](https://adgent.app/): What Adgent is, how the daily brief works, and the Aware → Ask → Apply loop.
+- [Pricing](https://adgent.app/pricing): Four plans; every plan covers every channel.
+- [About](https://adgent.app/about): The team and the thesis behind the product.
+
+## Blog — field notes on Meta and Google Ads
+
+- [The 7-day window is lying to you before noon](https://adgent.app/attribution-window-day-one-data): Why Meta's attribution window makes day-one ROAS read pessimistic by construction, which metrics mature slowly (ROAS, CPA) and which are final within hours (CTR, CPM), and how to decide without waiting forever.
+- [How to scale a winner without breaking it](https://adgent.app/scale-a-winner-without-breaking-it): The 20% rule and learning-phase resets — why the size of each budget step matters more than the destination, and when to scale horizontally instead of vertically.
+- [Frequency is a lagging indicator. Watch CPM.](https://adgent.app/cpm-is-the-early-creative-fatigue-signal): Why the CPM–CTR relationship calls creative fatigue days before frequency does, and how to tell fatigue from auction pressure and audience mismatch.
+- [Placement drift: the leak hiding in your average](https://adgent.app/placement-drift-the-leak-in-the-average): How Advantage+ placements drift budget toward surfaces that generate the signal but not the outcome, and why a weighted average conceals it.
+- [CBO vs ABO in 2026: when each still wins](https://adgent.app/cbo-vs-abo-2026): A decision tree — CBO for scaling known winners at volume, ABO when you're buying an answer and each option needs a fair sample.
+- [Meta says 4.2×, Google says 3.1×. Both are right.](https://adgent.app/cross-platform-comparability-meta-google): Why platform ROAS figures aren't comparable (different windows, models, and conversion definitions), the double-counting problem, and how to build a comparability boundary against ground-truth revenue.
+- [Why Adgent leads with the verdict](https://adgent.app/why-adgent-leads-with-the-verdict): The design principle behind every brief — conclusion first, evidence underneath, nothing you didn't need.
+
+## Legal and data handling
+
+- [Privacy](https://adgent.app/privacy): What data is collected, why, how long it's kept.
+- [Data use](https://adgent.app/data-use): Plain-language summary of what Adgent reads from each connected platform, and what it never does with it.
+- [Security](https://adgent.app/security): Encryption, access controls, token handling, incident response.
+- [Terms](https://adgent.app/terms): Terms of service.
+
+## Notes
+
+- Contact: osman@futureadylabs.com
+- Figures used in blog posts are illustrative examples, not customer data or benchmarks.
+- Adgent is approval-gated on every write action. It is not an autonomous spender.
