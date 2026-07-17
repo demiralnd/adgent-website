@@ -3,39 +3,41 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Adgent — Pricing</title>
+<title>Pricing — Adgent</title>
+<meta name="description" content="Adgent covers Meta, Google and TikTok on every plan, and reads GA4, Shopify and Search Console for context. Talk to sales for pricing."/>
+<link rel="canonical" href="https://adgent.app/pricing"/>
+<meta name="robots" content="index, follow, max-image-preview:large"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Adgent"/>
+<meta property="og:title" content="Pricing — Adgent"/>
+<meta property="og:description" content="Adgent covers Meta, Google and TikTok on every plan. Talk to sales for pricing."/>
+<meta property="og:url" content="https://adgent.app/pricing"/>
+<meta property="og:image" content="https://adgent.app/assets/logo.svg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="canonical" href="https://adgent.app/pricing"/>
+<meta name="robots" content="index, follow, max-image-preview:large"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Adgent"/>
+<meta property="og:title" content="Pricing — Adgent"/>
+<meta property="og:description" content="Adgent covers Meta, Google and TikTok on every plan, and reads GA4, Shopify and Search Console for context. Talk to sales for pricing."/>
+<meta property="og:url" content="https://adgent.app/pricing"/>
+<meta property="og:image" content="https://adgent.app/assets/logo.svg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "name": "Pricing", "url": "https://adgent.app/pricing", "description": "Pricing depends on connected ad accounts, seats, and whether execution is included.", "significantLink": "https://adgent.app/#lead"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://adgent.app"}, {"@type": "ListItem", "position": 2, "name": "Pricing", "item": "https://adgent.app/pricing"}]}, {"@type": "Organization", "name": "Adgent", "url": "https://adgent.app", "logo": {"@type": "ImageObject", "url": "https://adgent.app/assets/logo.svg"}, "parentOrganization": {"@type": "Organization", "name": "Futuready Labs"}, "email": "osman@futureadylabs.com"}]}</script>
 <link rel="stylesheet" href="tokens.css"/>
 <link rel="stylesheet" href="site.css"/>
 <style>
-  .tiers { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 44px; }
-  .tier { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--r-xl); padding: 26px; display: flex; flex-direction: column; }
-  .tier.featured { border-color: var(--accent); }
-  .tier-flag { font-family: var(--font-mono); font-size: 9px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); height: 14px; }
-  .tier-name { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; margin: 5px 0 0; }
-  .tier-tag { font-family: var(--font-mono); font-size: 10px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-3); margin: 6px 0 0; }
-  .tier-desc { font-size: 12.5px; color: var(--text-2); margin: 10px 0 0; line-height: 1.5; min-height: 52px; }
-  .tier-price { margin: 18px 0 0; display: flex; align-items: baseline; gap: 5px; }
-  .tier-price .amt { font-family: var(--font-editorial); font-weight: 500; font-size: 38px; line-height: 1; letter-spacing: -0.025em; }
-  .tier-price .per { font-size: 12px; color: var(--text-3); }
-  .tier-anchor { font-size: 11.5px; color: var(--ok); margin: 10px 0 0; line-height: 1.4; font-weight: 500; }
-  .tier .btn { width: 100%; margin: 20px 0 0; }
+  .caps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 28px; }
+  .cap { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--r-xl); padding: 26px; display: flex; flex-direction: column; }
+  .cap-name { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; }
+  .cap-desc { font-size: 12.5px; color: var(--text-2); margin: 8px 0 0; line-height: 1.5; }
   .tier-feats { list-style: none; margin: 22px 0 0; padding: 20px 0 0; border-top: 1px solid var(--border); display: flex; flex-direction: column; gap: 12px; }
   .tier-feats li { display: flex; gap: 10px; font-size: 13px; line-height: 1.5; color: var(--text-2); }
   .tier-feats li svg { width: 15px; height: 15px; flex: none; margin-top: 2px; color: var(--ok); stroke-width: 2; }
   .tier-feats li b { color: var(--text); font-weight: 600; }
-  .billing-note { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 24px; font-size: 13px; color: var(--text-2); }
+  .billing-note { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 28px; }
   .billing-note .pill { display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 11px; border-radius: var(--r-pill); background: var(--accent-soft); color: var(--accent); font-size: 12px; font-weight: 600; }
-  .ptable { width: 100%; border-collapse: collapse; margin-top: 28px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--r-xl); overflow: hidden; }
-  .ptable th, .ptable td { text-align: left; padding: 14px 18px; border-bottom: 1px solid var(--border); font-size: 13px; }
-  .ptable thead th { font-family: var(--font-mono); font-size: 10px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); background: var(--bg-sub); }
-  .ptable td.c, .ptable th.c { text-align: center; }
-  .ptable tbody tr:last-child td { border-bottom: none; }
-  .ptable td:first-child { color: var(--text); font-weight: 500; }
-  .ptable .yes { color: var(--ok); }
-  .ptable .no { color: var(--text-4); }
-  .ptable svg { width: 16px; height: 16px; display: inline-block; stroke-width: 2; }
-  @media (max-width: 920px){ .tiers { grid-template-columns: 1fr 1fr; } .ptable { display: block; overflow-x: auto; } }
-  @media (max-width: 560px){ .tiers { grid-template-columns: 1fr; } }
+  @media (max-width: 920px){ .caps { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -58,112 +60,53 @@
 <section class="phead">
   <div class="wrap">
     <span class="eyebrow"><span class="tick"></span>Pricing</span>
-    <h1>Pricing that <em>pays</em> for itself.</h1>
-    <p>Every plan covers Meta, Google and TikTok — and reads GA4, Shopify and Search Console for context. Most teams find more recoverable spend in their first audit than a month of Adgent costs.</p>
-    <div class="billing-note"><span class="pill">2 months free on annual</span> Monthly plans cancel anytime.</div>
-  </div>
-</section>
-
-<section style="padding: 12px 0 40px">
-  <div class="wrap">
-    <div class="tiers" data-stagger>
-      <div class="tier">
-        <div class="tier-flag"></div>
-        <div class="tier-name">Brief</div>
-        <div class="tier-tag">Aware &amp; ask</div>
-        <div class="tier-desc">Intelligence and answers across every channel — without execution.</div>
-        <div class="tier-price"><span class="amt">$99</span><span class="per">/ month</span></div>
-        <div class="tier-anchor">Typically pays back on your first audit.</div>
-        <a class="btn btn-ghost" href="/#lead">Request demo</a>
-        <ul class="tier-feats">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg><b>Meta, Google &amp; TikTok</b> in one view</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>Daily brief &amp; health score</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>Anomaly detection</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>Ask-anything chat</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>Trust Gate flagging</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>1 ad account · 1 seat</li>
-        </ul>
-      </div>
-
-      <div class="tier featured">
-        <div class="tier-flag">Most popular</div>
-        <div class="tier-name">Operate</div>
-        <div class="tier-tag">Aware · ask · apply</div>
-        <div class="tier-desc">Add execution — apply fixes and generate reports from chat.</div>
-        <div class="tier-price"><span class="amt">$299</span><span class="per">/ month</span></div>
-        <div class="tier-anchor">Found ~31,400 TL on one account in a single audit.</div>
-        <a class="btn btn-primary" href="/#lead">Request demo</a>
-        <ul class="tier-feats">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>Everything in <b>Brief</b></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg><b>One-tap fixes</b> from chat</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>Custom reports on demand</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>Placement &amp; demographic audits</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>Up to 3 accounts · 3 seats</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>Slack &amp; email delivery</li>
-        </ul>
-      </div>
-
-      <div class="tier">
-        <div class="tier-flag"></div>
-        <div class="tier-name">Orchestrate</div>
-        <div class="tier-tag">+ Campaign builds</div>
-        <div class="tier-desc">Build cross-channel campaigns from chat, at team scale.</div>
-        <div class="tier-price"><span class="amt">$699</span><span class="per">/ month</span></div>
-        <div class="tier-anchor">Built for multi-account operators.</div>
-        <a class="btn btn-ghost" href="/#lead">Request demo</a>
-        <ul class="tier-feats">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>Everything in <b>Operate</b></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg><b>Cross-channel campaign builds</b></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>Client-ready report exports</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>Up to 10 accounts · 8 seats</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>Priority support</li>
-        </ul>
-      </div>
-
-      <div class="tier">
-        <div class="tier-flag"></div>
-        <div class="tier-name">Scale</div>
-        <div class="tier-tag">For agencies</div>
-        <div class="tier-desc">Unlimited accounts and seats with hands-on onboarding.</div>
-        <div class="tier-price"><span class="amt">Custom</span></div>
-        <div class="tier-anchor">Volume pricing for agencies.</div>
-        <a class="btn btn-ghost" href="/#lead">Talk to us</a>
-        <ul class="tier-feats">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>Everything in <b>Orchestrate</b></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg><b>Unlimited</b> accounts &amp; seats</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>Roles &amp; permissions</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>Dedicated onboarding</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>SLA &amp; priority support</li>
-        </ul>
-      </div>
-    </div>
+    <h1>Built around <em>your</em> accounts.</h1>
+    <p>Every plan covers Meta, Google and TikTok — and reads GA4, Shopify and Search Console for context. Tell us what you're running and we'll put together the right fit.</p>
+    <div class="billing-note"><a class="btn btn-primary" href="/#lead">Talk to sales</a></div>
   </div>
 </section>
 
 <section class="band">
   <div class="wrap">
     <div class="sec-head">
-      <span class="eyebrow"><span class="tick"></span>Compare</span>
-      <h2 class="sec-title">What's in each plan.</h2>
+      <span class="eyebrow"><span class="tick"></span>What you get</span>
+      <h2 class="sec-title">Every plan covers every channel.</h2>
     </div>
-    <table class="ptable">
-      <thead>
-        <tr><th>Feature</th><th class="c">Brief</th><th class="c">Operate</th><th class="c">Orchestrate</th><th class="c">Scale</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Ad channels</td><td class="c">Meta, Google &amp; TikTok</td><td class="c">Meta, Google &amp; TikTok</td><td class="c">Meta, Google &amp; TikTok</td><td class="c">Meta, Google &amp; TikTok</td></tr>
-        <tr><td>Ad accounts</td><td class="c">1</td><td class="c">3</td><td class="c">10</td><td class="c">Unlimited</td></tr>
-        <tr><td>Daily brief &amp; health score</td><td class="c yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg></td><td class="c yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg></td><td class="c yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg></td><td class="c yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg></td></tr>
-        <tr><td>Ask-anything chat</td><td class="c yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg></td><td class="c yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg></td><td class="c yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg></td><td class="c yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg></td></tr>
-        <tr><td>Trust Gate flagging</td><td class="c yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg></td><td class="c yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg></td><td class="c yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg></td><td class="c yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg></td></tr>
-        <tr><td>One-tap fixes &amp; apply from chat</td><td class="c no">—</td><td class="c yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg></td><td class="c yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg></td><td class="c yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg></td></tr>
-        <tr><td>Custom reports from chat</td><td class="c no">—</td><td class="c yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg></td><td class="c yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg></td><td class="c yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg></td></tr>
-        <tr><td>Cross-channel campaign builds</td><td class="c no">—</td><td class="c no">—</td><td class="c yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg></td><td class="c yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg></td></tr>
-        <tr><td>Client-ready exports</td><td class="c no">—</td><td class="c no">—</td><td class="c yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg></td><td class="c yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg></td></tr>
-        <tr><td>Seats</td><td class="c">1</td><td class="c">3</td><td class="c">8</td><td class="c">Unlimited</td></tr>
-        <tr><td>Support</td><td class="c">Email</td><td class="c">Email &amp; Slack</td><td class="c">Priority</td><td class="c">Priority + onboarding</td></tr>
-      </tbody>
-    </table>
+    <div class="caps" data-stagger>
+      <div class="cap">
+        <div class="cap-name">Aware</div>
+        <div class="cap-desc">Intelligence and answers across every channel.</div>
+        <ul class="tier-feats">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg><b>Meta, Google &amp; TikTok</b> in one view</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>Daily brief &amp; health score</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>Anomaly detection</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg><b>Trust Gate</b> flagging</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>GA4, Shopify &amp; Search Console context</li>
+        </ul>
+      </div>
+      <div class="cap">
+        <div class="cap-name">Ask</div>
+        <div class="cap-desc">Answers about your account, by message.</div>
+        <ul class="tier-feats">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg><b>Ask-anything chat</b></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>Placement &amp; demographic audits</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>Custom reports on demand</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>Client-ready exports</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>Slack &amp; email delivery</li>
+        </ul>
+      </div>
+      <div class="cap">
+        <div class="cap-name">Apply</div>
+        <div class="cap-desc">Execution — always on your approval.</div>
+        <ul class="tier-feats">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg><b>One-tap fixes</b> from chat</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>Cross-channel campaign builds</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>Read-only by default</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>Roles &amp; permissions</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>Multi-account &amp; agency structure</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -171,14 +114,14 @@
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow"><span class="tick"></span>Questions</span>
-      <h2 class="sec-title">Pricing, plainly.</h2>
+      <h2 class="sec-title">Plainly.</h2>
     </div>
     <div class="faq lane" style="margin-left:0">
       <details open><summary>Do all plans really include every channel? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq-a">Yes. Meta, Google and TikTok are included on every tier — there's no "channel add-on". The difference between plans is execution and scale, not which channels you can see.</div></details>
-      <details><summary>How does it pay for itself? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq-a">In our audits, a single account's first pass typically surfaces more recoverable spend than a month of Adgent costs. One real audit found roughly 31,400 TL/month on one account — about 3× the Operate subscription, before counting saved analyst hours.</div></details>
-      <details><summary>Can I cancel anytime? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq-a">Yes. Monthly plans cancel anytime, no lock-in. Annual plans get two months free in exchange for the commitment.</div></details>
-      <details><summary>What counts as an ad account? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq-a">One connected Meta, Google or TikTok ad account equals one. A brand running multiple channels uses one slot per account; agencies on Scale connect as many as they manage.</div></details>
+      <details><summary>How is it priced? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq-a">Pricing depends on how many ad accounts you connect, how many seats you need, and whether you want execution as well as intelligence. Tell us what you're running and we'll walk you through the options.</div></details>
+      <details><summary>What counts as an ad account? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq-a">One connected Meta, Google or TikTok ad account equals one. A brand running multiple channels uses one slot per account; agencies connect as many as they manage.</div></details>
       <details><summary>What data does it read beyond ads? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq-a">Alongside Meta, Google and TikTok, Adgent reads GA4, Shopify and Search Console — so reports reflect real revenue and on-site behavior, not just platform-reported numbers.</div></details>
+      <details><summary>Does Adgent change my campaigns on its own? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq-a">No. Access is read-only by default. When a fix or a campaign is ready, Adgent prepares it and waits — you apply it from chat. The control is always yours; nothing is automatic.</div></details>
     </div>
   </div>
 </section>

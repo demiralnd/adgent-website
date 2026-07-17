@@ -16,7 +16,7 @@ confident it is and why, and leaves out anything that didn't change the answer.
 ## Product
 
 - [Overview](https://adgent.app/): What Adgent is, how the daily brief works, and the Aware → Ask → Apply loop.
-- [Pricing](https://adgent.app/pricing): Four plans; every plan covers every channel.
+- [Pricing](https://adgent.app/pricing): Every plan covers Meta, Google and TikTok. Pricing depends on connected accounts, seats, and whether execution is included — contact sales.
 - [About](https://adgent.app/about): The team and the thesis behind the product.
 
 ## Blog — field notes on Meta and Google Ads
@@ -39,5 +39,6 @@ confident it is and why, and leaves out anything that didn't change the answer.
 ## Notes
 
 - Contact: osman@futureadylabs.com
-- Figures used in blog posts are illustrative examples, not customer data or benchmarks.
+- Blog posts explain concepts and mechanics; they contain no customer data or performance benchmarks.
+- Pricing is not published. Contact sales for a quote.
 - Adgent is approval-gated on every write action. It is not an autonomous spender.
