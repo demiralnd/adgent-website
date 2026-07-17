@@ -299,7 +299,8 @@
       <p class="sec-sub">A dashboard, a monitoring agent, a restructure plan, a new campaign — you describe it in plain language and Adgent assembles it from your live account data. Then you approve.</p>
     </div>
 
-    <div class="builds" data-stagger>
+    <div class="builds-slider">
+    <div class="builds" data-builds-track>
 
       <!-- 1. DASHBOARD -->
       <div class="build">
@@ -381,6 +382,14 @@
         <div class="build-cap"><span class="name">New campaign</span><span class="tag">Drafted · launches on approval</span></div>
       </div>
 
+    </div>
+    <div class="builds-nav">
+      <div class="builds-arrows">
+        <button class="builds-arrow" data-builds-prev aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M15 18l-6-6 6-6"/></svg></button>
+        <button class="builds-arrow" data-builds-next aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 18l6-6-6-6"/></svg></button>
+      </div>
+      <div class="builds-dots" data-builds-dots></div>
+    </div>
     </div>
   </div>
 </section>

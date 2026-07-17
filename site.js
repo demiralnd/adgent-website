@@ -90,4 +90,61 @@
       if (card) card.classList.add('sent');
     });
   });
+
+  /* ---- builds slider: scroll-snap track + dots + arrows ---- */
+  (function () {
+    var track = d.querySelector('[data-builds-track]');
+    if (!track) return;
+    var dotsWrap = d.querySelector('[data-builds-dots]');
+    var prev = d.querySelector('[data-builds-prev]');
+    var next = d.querySelector('[data-builds-next]');
+    var cards = Array.prototype.slice.call(track.children);
+    if (!cards.length) return;
+
+    // how many cards fit per view (1 on mobile, 2 on desktop) → page count
+    function perView() { return track.clientWidth < cards[0].offsetWidth * 1.5 ? 1 : 2; }
+    function pageCount() { return Math.max(1, Math.ceil(cards.length / perView())); }
+
+    // build dots
+    var dots = [];
+    function buildDots() {
+      if (!dotsWrap) return;
+      dotsWrap.innerHTML = '';
+      dots = [];
+      for (var i = 0; i < pageCount(); i++) {
+        var b = d.createElement('button');
+        b.className = 'builds-dot' + (i === 0 ? ' on' : '');
+        b.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+        (function (idx) { b.addEventListener('click', function () { goTo(idx); }); })(i);
+        dotsWrap.appendChild(b);
+        dots.push(b);
+      }
+    }
+    function pageWidth() { return track.clientWidth + 18; } // view + gap
+    function current() { return Math.round(track.scrollLeft / pageWidth()); }
+    function goTo(i) {
+      i = Math.max(0, Math.min(pageCount() - 1, i));
+      track.scrollTo({ left: i * pageWidth(), behavior: reduce ? 'auto' : 'smooth' });
+    }
+    function sync() {
+      var cur = current();
+      dots.forEach(function (dt, i) { dt.classList.toggle('on', i === cur); });
+      if (prev) prev.disabled = cur <= 0;
+      if (next) next.disabled = cur >= pageCount() - 1;
+    }
+
+    if (prev) prev.addEventListener('click', function () { goTo(current() - 1); });
+    if (next) next.addEventListener('click', function () { goTo(current() + 1); });
+    var ticking = false;
+    track.addEventListener('scroll', function () {
+      if (ticking) return; ticking = true;
+      requestAnimationFrame(function () { sync(); ticking = false; });
+    });
+    var rt;
+    window.addEventListener('resize', function () {
+      clearTimeout(rt); rt = setTimeout(function () { buildDots(); sync(); }, 150);
+    });
+    buildDots();
+    sync();
+  })();
 })();

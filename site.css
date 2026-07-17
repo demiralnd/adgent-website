@@ -167,7 +167,32 @@ section { position: relative; z-index: 1; }
 .co-narr b { color: var(--text); font-weight: 600; }
 
 /* ============ BUILT FROM CHAT — product screenshots ============ */
-.builds { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 44px; }
+/* slider shell */
+.builds-slider { margin-top: 44px; position: relative; }
+.builds {
+  display: grid; grid-auto-flow: column; grid-auto-columns: calc(50% - 9px);
+  gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory;
+  scroll-behavior: smooth; scroll-padding: 0;
+  padding-bottom: 4px; margin: 0 -4px; padding-left: 4px; padding-right: 4px;
+  scrollbar-width: none; -ms-overflow-style: none;
+}
+.builds::-webkit-scrollbar { display: none; }
+.builds > .build { scroll-snap-align: start; }
+/* nav row: dots + arrows */
+.builds-nav { display: flex; align-items: center; justify-content: center; gap: 18px; margin-top: 24px; }
+.builds-dots { display: flex; align-items: center; gap: 8px; }
+.builds-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--border-2); border: none; padding: 0; cursor: pointer; transition: background 200ms var(--ease), width 200ms var(--ease); }
+.builds-dot.on { background: var(--accent); width: 22px; border-radius: 4px; }
+.builds-arrows { display: flex; gap: 8px; }
+.builds-arrow {
+  width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--bg-card); border: 1px solid var(--border-2); color: var(--text-2);
+  cursor: pointer; transition: color 160ms, border-color 160ms, background 160ms, opacity 160ms;
+}
+.builds-arrow svg { width: 17px; height: 17px; stroke-width: 2; }
+.builds-arrow:hover { color: var(--text); border-color: var(--text-3); background: var(--bg-hover); }
+.builds-arrow:disabled { opacity: 0.35; cursor: default; }
+@media (max-width: 640px) { .builds { grid-auto-columns: 88%; } .builds-arrows { display: none; } }
 .build {
   background: var(--bg-card); border: 1px solid var(--border);
   border-radius: var(--r-xl); box-shadow: var(--shadow-card);
@@ -245,13 +270,14 @@ section { position: relative; z-index: 1; }
 .msb { display: inline-flex; align-items: center; height: 19px; padding: 0 8px; border-radius: var(--r-pill); font-size: 10px; font-weight: 600; }
 .msb.ok { color: var(--ok); background: var(--ok-soft); }
 .msb.warn { color: var(--warn); background: rgba(207,138,38,0.13); }
-@media (max-width: 860px) { .builds { grid-template-columns: 1fr; } }
 
 /* ============ GOLDEN RULES / MEMORY (the moat) ============ */
-.moat { background: #17150f; color: #f4f2ee; position: relative; overflow: hidden; }
+.moat { background: #26120a; color: #f4f2ee; position: relative; overflow: hidden; }
 .moat::before {
   content: ""; position: absolute; inset: 0; pointer-events: none;
-  background: radial-gradient(90% 70% at 80% 0%, rgba(255,90,44,0.16), transparent 55%);
+  background:
+    radial-gradient(85% 75% at 82% -5%, rgba(255,90,44,0.30), transparent 58%),
+    radial-gradient(70% 90% at 10% 110%, rgba(255,120,60,0.10), transparent 55%);
 }
 .moat .wrap { position: relative; }
 .moat-grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: 60px; align-items: center; }
