@@ -172,7 +172,24 @@ section { position: relative; z-index: 1; }
   background: var(--bg-card); border: 1px solid var(--border);
   border-radius: var(--r-xl); box-shadow: var(--shadow-card);
   overflow: hidden; display: flex; flex-direction: column;
+  position: relative; isolation: isolate;
+  transition: transform 260ms var(--ease), box-shadow 260ms var(--ease), border-color 260ms var(--ease);
 }
+/* accent hairline that "draws" across the top on hover — the generate moment */
+.build::after {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  transform: scaleX(0); transform-origin: left; opacity: 0;
+  transition: transform 420ms var(--ease), opacity 200ms;
+}
+.build:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-pop, 0 30px 60px -24px rgba(28,25,20,0.28), 0 4px 12px -6px rgba(28,25,20,0.14));
+  border-color: var(--border-2);
+}
+.build:hover::after { transform: scaleX(1); opacity: 1; }
+.build:hover .build-canvas { border-color: rgba(255,90,44,0.28); }
+.build-canvas { transition: border-color 260ms var(--ease); }
 .build-head { padding: 18px 20px 0; }
 .build-prompt {
   display: inline-flex; align-items: center; gap: 8px; max-width: 100%;
@@ -229,6 +246,45 @@ section { position: relative; z-index: 1; }
 .msb.ok { color: var(--ok); background: var(--ok-soft); }
 .msb.warn { color: var(--warn); background: rgba(207,138,38,0.13); }
 @media (max-width: 860px) { .builds { grid-template-columns: 1fr; } }
+
+/* ============ GOLDEN RULES / MEMORY (the moat) ============ */
+.moat { background: #17150f; color: #f4f2ee; position: relative; overflow: hidden; }
+.moat::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(90% 70% at 80% 0%, rgba(255,90,44,0.16), transparent 55%);
+}
+.moat .wrap { position: relative; }
+.moat-grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: 60px; align-items: center; }
+.moat-eyebrow { display: inline-flex; align-items: center; gap: 9px; font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); }
+.moat-eyebrow .tick { width: 16px; height: 1px; background: var(--accent); }
+.moat h2 { font-size: clamp(30px, 4vw, 46px); font-weight: 800; letter-spacing: -0.035em; line-height: 1.04; margin: 20px 0 0; text-wrap: balance; }
+.moat h2 em { font-family: var(--font-editorial); font-style: italic; font-weight: 500; color: var(--accent); }
+.moat-sub { font-size: 16px; line-height: 1.62; color: rgba(244,242,238,0.62); margin: 20px 0 0; max-width: 46ch; text-wrap: pretty; }
+.moat-points { list-style: none; margin: 26px 0 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+.moat-points li { display: flex; gap: 12px; font-size: 14px; line-height: 1.5; color: rgba(244,242,238,0.82); }
+.moat-points li svg { width: 18px; height: 18px; flex: none; margin-top: 1px; color: var(--accent); stroke-width: 2; }
+.moat-points li b { color: #f4f2ee; font-weight: 600; }
+
+/* the memory card — accumulated golden rules */
+.memcard { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.10); border-radius: var(--r-xl); padding: 8px; box-shadow: 0 30px 70px -30px rgba(0,0,0,0.6); }
+.memcard-head { display: flex; align-items: center; gap: 10px; padding: 14px 16px 12px; }
+.memcard-ic { width: 30px; height: 30px; border-radius: 9px; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; flex: none; }
+.memcard-ic svg { width: 16px; height: 16px; stroke-width: 2; }
+.memcard-h { font-size: 13.5px; font-weight: 700; letter-spacing: -0.01em; }
+.memcard-sub { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(244,242,238,0.4); margin-top: 2px; }
+.memcard-cnt { margin-left: auto; font-family: var(--font-mono); font-size: 11px; color: var(--accent); background: var(--accent-soft); border-radius: var(--r-pill); padding: 3px 10px; }
+.rules { display: flex; flex-direction: column; gap: 7px; padding: 4px; }
+.rule { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--r-md); padding: 13px 14px; transition: border-color 160ms, background 160ms; }
+.rule:hover { border-color: rgba(255,90,44,0.4); background: rgba(255,90,44,0.05); }
+.rule-top { display: flex; align-items: center; gap: 8px; }
+.rule-brand { font-size: 11px; font-weight: 700; color: var(--accent); letter-spacing: 0.02em; }
+.rule-src { margin-left: auto; font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(244,242,238,0.42); display: inline-flex; align-items: center; gap: 5px; }
+.rule-src svg { width: 11px; height: 11px; stroke-width: 2; }
+.rule-t { font-size: 13px; line-height: 1.45; color: rgba(244,242,238,0.9); margin-top: 7px; }
+.rule-t b { color: #fff; font-weight: 600; }
+.memcard-foot { display: flex; align-items: center; gap: 8px; padding: 12px 14px; font-size: 11.5px; color: rgba(244,242,238,0.5); }
+.memcard-foot .pulse { width: 7px; height: 7px; border-radius: 50%; background: var(--ok); flex: none; box-shadow: 0 0 0 3px rgba(52,205,131,0.18); }
+@media (max-width: 860px) { .moat-grid { grid-template-columns: 1fr; gap: 40px; } }
 
 /* health hero row */
 .co-health { display: flex; align-items: center; gap: 16px; margin-top: 18px; padding: 16px; background: var(--bg-sub); border: 1px solid var(--border); border-radius: var(--r-lg); }
@@ -512,7 +568,6 @@ section { position: relative; z-index: 1; }
 @media (max-width: 920px) {
   .hero-grid, .integ, .cta-grid { grid-template-columns: 1fr; gap: 40px; }
   .split, .steps, .feat-grid, .stats, .foot-grid { grid-template-columns: 1fr 1fr; }
-  .hero-cutout { order: -1; }
   .feat-wide { grid-column: span 2; }
 }
 @media (max-width: 640px) {
