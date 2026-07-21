@@ -29,6 +29,16 @@ confident it is and why, and leaves out anything that didn't change the answer.
 - [Meta says 4.2×, Google says 3.1×. Both are right.](https://adgent.app/cross-platform-comparability-meta-google): Why platform ROAS figures aren't comparable (different windows, models, and conversion definitions), the double-counting problem, and how to build a comparability boundary against ground-truth revenue.
 - [Why Adgent leads with the verdict](https://adgent.app/why-adgent-leads-with-the-verdict): The design principle behind every brief — conclusion first, evidence underneath, nothing you didn't need.
 - [AI media buyer vs Performance Max vs dashboard](https://adgent.app/ai-media-buyer-vs-performance-max-vs-dashboard): The three get compared constantly but are three layers of the same job — a dashboard reports, Performance Max optimizes the auction, an AI media buyer reasons for you. Which you need, and why serious advertisers run all three.
+- [Why is my Meta ROAS dropping? A diagnostic walkthrough](https://adgent.app/why-is-my-meta-roas-dropping): A ranked diagnosis of a falling Meta ROAS — tracking first, then scaling, saturation, creative fatigue.
+- [How much of your ad budget is wasted (and how to find it)](https://adgent.app/how-much-ad-spend-is-wasted): The average Google Ads account wastes 20–40% of its budget. A ranked playbook to find and recover it.
+- [How to audit a Performance Max campaign (the black box)](https://adgent.app/how-to-audit-performance-max): The checks that pierce the Performance Max black box — brand spend, tracking, placements — ranked by impact.
+- [CBO vs ABO vs Advantage+: which budget model in 2026?](https://adgent.app/cbo-vs-abo-vs-advantage-plus): A three-way comparison of Meta budget models and a decision guide for which to use when.
+- [Can AI run your ad account? What it can and cannot do](https://adgent.app/can-ai-run-your-ad-account): The honest take on AI ad management — what it automates well, and why the last click should stay human.
+- [The Meta Ads account audit: a 20-point checklist](https://adgent.app/meta-ads-account-audit-checklist): A Meta Ads audit checklist with red flags and thresholds, ranked by recoverable spend.
+- [Is Performance Max cannibalizing your branded search?](https://adgent.app/performance-max-brand-cannibalization): How Performance Max takes credit for branded demand you would win for free — how to spot and stop it.
+- [Why did my CPA suddenly jump? What to check first](https://adgent.app/why-did-my-cpa-jump): The ranked checklist for a sudden CPA spike — tracking, learning reset, auction pressure, creative fatigue.
+- [An AI media buyer for agencies: managing many accounts](https://adgent.app/ai-media-buyer-for-agencies): How an AI media buyer puts senior-level judgment on every client account at once, safely on client money.
+- [Meta vs Google Ads: which platform for your first $10k?](https://adgent.app/meta-vs-google-ads-which-first): Demand capture vs demand generation — which platform to start with, and why the ROAS figures do not compare.
 
 ## Legal and data handling
 

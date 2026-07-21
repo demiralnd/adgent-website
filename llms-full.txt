@@ -2,7 +2,7 @@
 
 > The AI analyst for performance marketers. Adgent is an AI media buyer that reads Meta, Google and TikTok accounts as one, reasons about account structure, delivers a verdict-first daily brief on the Aware -> Ask -> Apply loop, and executes fixes on the advertiser's approval. Read-only by default; never an autonomous spender.
 
-This file contains the full readable text of every page on adgent.app, for AI answer engines. Turkish versions live under /tr/.
+Full readable text of every page on adgent.app, for AI answer engines. Turkish versions live under /tr/.
 
 
 ========================================================================
@@ -10,6 +10,13 @@ URL: https://adgent.app/
 ========================================================================
 Adgent 
 
+ EN TR 
+ Request demo 
+
+ Product 
+ Pricing 
+ About 
+ Blog 
  EN TR 
  Request demo 
 
@@ -373,6 +380,13 @@ Adgent
  EN TR 
  Request demo 
 
+ Product 
+ Pricing 
+ About 
+ Blog 
+ EN TR 
+ Request demo 
+
  Pricing 
  
 # Built around your accounts.
@@ -476,6 +490,13 @@ Adgent
  EN TR 
  Request demo 
 
+ Product 
+ Pricing 
+ About 
+ Blog 
+ EN TR 
+ Request demo 
+
  About 
  
 # We're building the analyst , not the dashboard.
@@ -557,15 +578,22 @@ Adgent
  EN TR 
  Request demo 
 
+ Product 
+ Pricing 
+ About 
+ Blog 
+ EN TR 
+ Request demo 
+
  Product · 7 min read · July 2026 
  
 # What is an AI media buyer?
 
  The term is new, the job isn't. An AI media buyer reads your ad accounts like a senior strategist, tells you what to do and why, and makes the change on your approval — not a dashboard with a chatbot bolted on. 
 
- A 
+ N 
  
- The Adgent team 
+ Nurettin Demiral 
  Notes from building the analyst 
 
  Short answer 
@@ -705,15 +733,22 @@ Adgent
  EN TR 
  Request demo 
 
+ Product 
+ Pricing 
+ About 
+ Blog 
+ EN TR 
+ Request demo 
+
  Product · 8 min read · July 2026 
  
 # AI media buyer vs Performance Max vs dashboard: which do you need?
 
  They get compared as if they're the same purchase — but they're not even the same category. One reports what happened, one optimizes the auction for you, one reasons about your account for you. Here's how to tell which one you actually need. 
 
- A 
+ N 
  
- The Adgent team 
+ Nurettin Demiral 
  Notes from building the analyst 
 
  Short answer 
@@ -823,15 +858,22 @@ Adgent
  EN TR 
  Request demo 
 
+ Product 
+ Pricing 
+ About 
+ Blog 
+ EN TR 
+ Request demo 
+
  Playbook · 9 min read · July 2026 
  
 # How to audit a Google Ads account, properly
 
  Most account audits are a 40-point checklist that produces a 40-point to-do list. This one is shorter and ordered differently: the checks that move money first, ranked by recoverable spend — not by how thorough the report looks. 
 
- A 
+ N 
  
- The Adgent team 
+ Nurettin Demiral 
  Notes from building the analyst 
 
  Short answer 
@@ -1005,10 +1047,1419 @@ Q: Can you automate a Google Ads audit?
  Request demo
 
 ========================================================================
+URL: https://adgent.app/why-is-my-meta-roas-dropping
+========================================================================
+Adgent 
+
+ EN TR 
+ Request demo 
+
+ Product 
+ Pricing 
+ About 
+ Blog 
+ EN TR 
+ Request demo 
+
+ Attribution · 8 min read · July 2026 
+ 
+# Why is my Meta ROAS dropping?
+
+ A falling ROAS sends most buyers straight to the budget slider. That's usually the wrong first move. Here's the diagnostic a senior buyer actually runs — in order — and why the answer is almost always further up the list than you think. 
+
+ N 
+ 
+ Nurettin Demiral 
+ Notes from building the analyst 
+
+ Short answer 
+ Most ROAS drops are signal problems, not campaign problems — so check tracking first. If Ads Manager and your backend revenue disagree by more than 10–15%, the number is wrong, not the campaign. Only once the data is trustworthy do you work down the list: scaling too fast, audience saturation, creative fatigue, and the attribution window still settling. 
+
+ Your Meta ROAS is down and the temptation is immediate: cut the budget, pause the loser, do something . Resist it. The buyers who keep accounts healthy don't react to a falling number — they diagnose it, in a fixed order, because the order encodes what's most likely to be true. And the most likely thing is that the number itself is lying to you. 
+
+ So here's the checklist, ranked exactly the way a senior buyer runs it. Work top to bottom and stop at the first thing that explains the drop. Most of the time you'll stop at step one. 
+
+## 1. Tracking and signal — is the drop even real?
+
+ This is first for a reason: it's the most common cause and the one that wastes the most money when you miss it. A "ROAS drop" is a ratio — revenue over spend — and if the revenue side is under-counting, the ratio falls even though nothing about your campaign changed. A conversion event breaks, a pixel fires late, an iOS update clips signal, a checkout change drops a parameter, and suddenly Ads Manager shows less revenue than actually happened. 
+
+ The test is simple. Put Ads Manager revenue next to your backend — Shopify, GA4, your store's own numbers — for the same window. 
+
+ A 10–15% gap between backend revenue and Ads Manager almost always means a tracking issue, not a campaign issue. 
+
+ If the two agree, good — the drop is real and you move on to step two. If they've drifted apart, stop here. No amount of budget tuning fixes a broken signal, and every "optimization" you make on bad numbers digs the hole deeper. Fix the tracking, let a clean day of data land, then re-read the account. More often than not the ROAS was never actually down — the measurement was. 
+
+## 2. Scaling too fast — did you re-enter the learning phase?
+
+ If backend confirms the drop is real, the next suspect is your own hand on the budget. Meta's delivery system re-optimizes when you make a large budget change, and a single jump over roughly 20% pushes the ad set back into the learning phase. During learning, delivery is unstable, CPA swings, and ROAS wobbles — not because the campaign is broken, but because the algorithm is re-finding its footing. 
+
+ The trap is that this looks exactly like a performance problem, so buyers respond by yanking the budget back down — which triggers another learning reset and makes the instability worse. The fix is patience and smaller steps. If you need to scale, do it in increments and give each step time to settle. We wrote the full method here: how to scale a winner without breaking it . 
+
+## 3. Audience saturation — are you reaching colder users?
+
+ Nothing changed in your setup, but the ROAS keeps easing down over a week or two. Look at frequency. As a campaign spends against a finite audience, it exhausts the warm, high-intent people first and then reaches further — into colder users who cost the same to serve but convert less. Frequency climbs, effective ROAS falls, and it feels like decay because it is: you're paying more to talk to people who want it less. 
+
+ The signal here is a frequency line trending up while your best-performing segments show diminishing return. There's no magic threshold — a frequency that's healthy for a warm retargeting pool is far too high for a cold prospecting one — so read the trend against the audience, not against a fixed number. The fix is usually fresh audience or fresh creative, which leads directly to the next check. 
+
+## 4. Creative fatigue — is the ad wearing out?
+
+ Audiences tire of ads. The same creative that crushed for three weeks stops earning attention, response falls, and ROAS follows. What makes fatigue tricky is timing: by the time CPA visibly moves, you've already spent days at a declining return. The early-warning signals live upstream. 
+
+ Watch CPM and hook-rate . When an ad fatigues, CPM tends to rise and hook-rate — the share of people who stop on your first frame — starts to slip, and both move days before CPA does. That lead time is the whole point: it lets you refresh creative before the ROAS drop lands in your P&L rather than after. We break the mechanism down here: why CPM is the early creative-fatigue signal . 
+
+## 5. Attribution window — are the numbers still settling?
+
+ Last on the list, but check it before you panic over any recent dip: Meta keeps revising conversions inside the attribution window. A sale that happens today can be credited to an ad someone saw two days ago, and that credit lands late — so your most recent days are always under-counted at first and fill in over the following week. 
+
+ The practical rule: don't trust the last day or two of ROAS. A dip that looks alarming this morning frequently corrects itself once the window closes. Judge on a stable multi-day trend, not on numbers that haven't finished counting. We go deeper on why day-one data is a trap here: the attribution window and day-one data . 
+
+## One more thing: a blended ROAS can hide a placement leak
+
+ Even when your account-level ROAS looks merely "soft," the average can be papering over a real problem underneath. A single placement — often Audience Network — can be quietly bleeding spend at a terrible return while your strong placements hold the blended number up. The account looks fine; one line item is on fire. Always break the number down before you trust it. More on that failure mode: placement drift, the leak in your average . 
+
+## Run it as a table
+
+ Here's the whole diagnostic in one view — the cause, the tell that points to it, and the fix, in the order you check them: 
+
+ Check The tell What it means First move 
+
+ Tracking / signal Backend vs. Ads Manager gap >10–15% Number is wrong, not the campaign Fix the pixel, don't touch budget 
+ Scaling too fast Recent budget jump >20% Back in the learning phase Hold steady, scale in steps 
+ Audience saturation Frequency climbing, return easing Reaching colder users Fresh audience or creative 
+ Creative fatigue CPM up, hook-rate down Ad wearing out Refresh before CPA moves 
+ Attribution window Only the last 1–2 days are down Numbers still settling Wait for the window to close 
+
+ The order is the method: each row is more likely — and cheaper to fix — than the one below it. Stop at the first that explains the drop. 
+
+## The real skill is asking why, not what
+
+ Notice what this checklist is not: it's not a set of thresholds that fire an alert. Every step asks why a number moved before deciding what to do — because the same falling ROAS can mean a broken pixel, an over-eager budget jump, a tired ad, or nothing at all. The what is easy. The why is the job. 
+
+ That's exactly the "why did X happen?" question you'd put to an AI media buyer — read the whole account across placements, cross-check against real revenue, rank the causes by likelihood, and hand you the answer with the evidence underneath. It's the diagnostic above, run every morning, before you've had your coffee. If you want to see what it says about a real Meta account, request a demo — fifteen minutes, connected read-only. 
+
+## Frequently asked
+
+Q: Why did my Meta ROAS suddenly drop? 
+ Most sudden ROAS drops are signal problems, not campaign problems. Before you touch a budget, check tracking: a 10–15% gap between your backend revenue and Ads Manager almost always means a tracking issue, not a real performance drop. Only once the numbers are trustworthy should you look at scaling, saturation, creative and attribution. 
+
+Q: Does scaling budget lower ROAS? 
+ It can, if you scale too fast. A single budget jump over about 20% re-enters the learning phase, so delivery gets unstable and ROAS wobbles for a few days before it settles. The fix is to raise budget in smaller steps and give each step time, not to yank it back the moment the number dips. 
+
+Q: How do I know if it's tracking or the campaign? 
+ Compare Ads Manager revenue against your backend — Shopify, GA4 or your store. If the two disagree by more than roughly 10–15%, it's a tracking or attribution issue and the campaign is probably fine. If backend revenue confirms the drop, then it's real, and you move on to scaling, saturation and creative. 
+
+Q: How long should I wait before reacting? 
+ Give the numbers time to settle. Meta's attribution window keeps revising recent conversions for up to a week, so a one- or two-day dip is often just data that hasn't finished counting. Wait for a stable multi-day trend on trustworthy numbers before you make a change you can't easily undo. 
+
+Q: Can creative fatigue cause a ROAS drop? 
+ Yes. As an audience sees the same ad repeatedly, response falls and ROAS follows. The early tell is CPM and hook-rate — they move days before CPA does — so rising CPM plus a falling hook-rate is your warning to refresh creative before the ROAS drop shows up in the P&L. 
+
+Q: What frequency is too high? 
+ There's no universal number, but when frequency climbs and your reach starts spilling into colder users, you're paying more to talk to people who convert less — and ROAS drops. Watch the trend, not a fixed threshold: a frequency that's fine for a warm retargeting pool is too high for a cold prospecting one. 
+
+Q: Should I lower budget when ROAS drops? 
+ Usually not as your first move. Cutting budget re-enters the learning phase just like scaling up does, so you can make an unstable number worse. Diagnose first: confirm the drop is real, find the cause, then decide. If the cause is over-fast scaling, holding budget steady beats yanking it back. 
+
+ Keep reading 
+ 
+ Attribution CPM is the early creative-fatigue signal 
+ Attribution Scale a winner without breaking it 
+
+ All articles 
+ Request demo
+
+========================================================================
+URL: https://adgent.app/how-much-ad-spend-is-wasted
+========================================================================
+Adgent 
+
+ EN TR 
+ Request demo 
+
+ Product 
+ Pricing 
+ About 
+ Blog 
+ EN TR 
+ Request demo 
+
+ Playbook · 8 min read · July 2026 
+ 
+# How much of your ad budget is wasted (and how to find it)
+
+ The average Google Ads account wastes 20-40% of its budget — and it holds across hundreds of audited accounts. The good news: most of that waste has a name and an address, and you can find it in an afternoon. 
+
+ N 
+ 
+ Nurettin Demiral 
+ Notes from building the analyst 
+
+ Short answer 
+ The average Google Ads account wastes 20-40% of its budget — a range that holds across hundreds of audited accounts. Most of it is findable in an afternoon: junk search terms, a location-targeting default, placement leakage, careless device bids, missing audience exclusions, and branded-search double-pay. Each leak has a rough recovery number you can attach to it. 
+
+ Ask a room of media buyers how much of the average account is wasted and you'll get a shrug and a range. Audit enough accounts and the range stops being a guess. The number that keeps coming back is 20-40% — a fifth to two-fifths of the budget spent on clicks that were never going to convert, placements nobody chose, and audiences you're paying twice to reach. 
+
+ That's not a doom stat. It's an opportunity that most accounts leave on the table because finding it is tedious, not hard. The waste isn't hiding in some sophisticated attribution model — it's sitting in reports you already have access to. Here's the playbook, ranked by how much each leak typically gives back when you close it. 
+
+ Waste isn't a mystery. It's a set of reports nobody has time to read. 
+
+## 1. Wasted search terms — the largest instantly-recoverable pool
+
+ Start here because it's usually the biggest single pool and the fastest to fix. Broad and phrase match keywords pull in queries you never intended to bid on — the search terms report is where you see what people actually typed to trigger your ad, and it's routinely full of junk: wrong intent, "free" and "jobs" and "DIY" modifiers, competitor names, and searches for products you don't sell. 
+
+ Every click on one of those is spend you can stop today with a negative keyword. Pull the search terms report over the last 30-60 days, sort by cost, and read down until the queries stop looking like buyers. On a neglected account this is where the afternoon pays for itself. 
+
+ Typically recovers: 10-20% of spend. More on a broad-match-heavy account that's never been groomed, less on one that's already tightly matched. 
+
+## 2. Location targeting default — "interested in" vs "in"
+
+ This one is a single radio button and it quietly bleeds local and regional accounts. Google's default location setting is Presence or interest — it shows your ads to people who are physically in your target area or who have merely shown interest in it. For a plumber in Manchester, that means paying for clicks from someone in another country googling "Manchester" for a trip. 
+
+ Switch it to Presence: People in or regularly in your targeted locations and you cut the tourists and the researchers. The default exists because it maximizes reach — which is Google's interest, not yours. 
+
+ Typically recovers: 15-25% for local and regional accounts. Negligible for genuinely national or global advertisers, which is exactly why it's easy to miss on the accounts it hurts most. 
+
+## 3. Placement leakage — the leak in the average
+
+ Display, video, and Performance Max spread your budget across placements you never hand-picked — apps, made-for-ads sites, and low-quality partner inventory that eats impressions and returns nothing. A healthy blended number can hide a placement quietly burning cash underneath it, which is the exact dynamic we've written about in placement drift: the leak in your average . 
+
+ Pull the placements report (or the Performance Max insights and partner report), sort by cost, and look for spend with clicks but no conversions. Exclude the worst offenders and add a mobile-app exclusion list if you're not deliberately advertising in apps. On accounts running Display or PMax at scale, this is often the second-biggest pool after search terms. 
+
+ Typically recovers: 5-15% of spend on accounts with meaningful Display or Performance Max exposure. 
+
+## 4. Device bid adjustments — paying a premium for the worse device
+
+ Segment any mature campaign by device and the conversion rates rarely match. Mobile often converts worse than desktop for considered purchases; the reverse is true for impulse and local. If your bids treat every device the same, you're overpaying on the one that converts worse and underbidding the one that converts better. 
+
+ Look at cost-per-conversion by device over a meaningful window and apply bid adjustments to match reality — down on the laggard, up on the leader. It's a smaller pool than the first three, but it's pure margin because you're not cutting volume, just re-pricing it. 
+
+ Typically recovers: 3-8% of spend. 
+
+## 5. Audience saturation — paying full CPA to retarget converters
+
+ If you have no audience exclusions, you're paying full price to show ads to people who already bought. Retargeting that keeps chasing existing customers, prospecting that re-serves recent converters, and broad campaigns with no exclusion list all spend real money reaching people who are done. You pay the full CPA to acquire someone you already acquired. 
+
+ Add exclusions: existing-customer lists off your GA4 or Shopify audiences, recent purchasers out of prospecting, and converters out of top-of-funnel. It's not that retargeting is wrong — it's that unbounded retargeting saturates and the incremental return collapses while the spend doesn't. 
+
+ Typically recovers: 5-10% of spend , concentrated in accounts leaning hard on retargeting. 
+
+## 6. Branded-search double-pay
+
+ The most argued-about leak on the list. When someone searches your brand name, they were likely going to find you organically — so a branded-search click can be spend for a visit you'd have gotten free. Not always: if competitors bid on your name, or your organic listing is buried, branded search earns its keep. But a lot of accounts run it on autopilot and never test whether the paid clicks are incremental. 
+
+ The test is simple: pause branded search for a controlled window and watch whether total branded traffic and conversions actually drop, or just shift to organic. If they shift, you were double-paying. 
+
+ Typically recovers: 2-10% of spend — highly account-dependent, which is why it's a test, not a rule. 
+
+## Attach a number to every leak
+
+ Here's the framing that turns a checklist into a decision: every leak above has a recovery number, and the only question worth asking is which one gives back the most, first. A generic "you have wasted spend" is noise. "Your search terms report is leaking 14% and your location setting is on the wrong default" is something you can act on before lunch. 
+
+ That's the whole idea behind recoverable spend — not a vague health score, but a ranked list of leaks with a dollar figure and a fix attached to each. It's how you decide what to touch, and it's the framing our product is built around: don't tell someone their account is unhealthy, tell them exactly where the money is and what closing the gap is worth. 
+
+ Leak Where it hides How to spot it Typically recovers 
+
+ Wasted search terms Search terms report Junk queries, no intent 10-20% 
+ Location default Location settings "Interest" not "presence" 15-25% (local) 
+ Placement leakage Placements / PMax Spend, no conversions 5-15% 
+ Device bids Device segment Flat bids, uneven CVR 3-8% 
+ Audience saturation No exclusions Retargeting converters 5-10% 
+ Branded double-pay Branded campaigns Non-incremental clicks 2-10% 
+
+ These overlap — you won't recover every percentage additively — but stacked on a neglected account they explain the 20-40% almost exactly. 
+
+## The catch: doing this once isn't enough
+
+ You can work this list in an afternoon and claw back a chunk of budget. The problem is that waste regenerates. New junk search terms accumulate every week. Performance Max drifts toward cheap inventory the moment you stop feeding it exclusions. A new campaign launches on the default location setting because that's what the default is for. The afternoon audit is a snapshot; the leak is a stream. 
+
+ This is where continuous beats periodic. An AI media buyer reads these reports the way you would — search terms, placements, location, device, audiences — but it does it every day, ranks each leak by what it's costing right now, and prepares the fix for your approval instead of waiting for a quarterly review. It doesn't remove your judgment; it removes the hours of digging that stop you doing this as often as you should. 
+
+ If you'd rather run the manual version first, we wrote the step-by-step in how to audit a Google Ads account . And if you want to see what a continuous read would say about a real account — ranked, with numbers attached — request a demo . Fifteen minutes, connected read-only. 
+
+## Frequently asked
+
+Q: How much ad spend is typically wasted? 
+ Across hundreds of audited accounts, the average Google Ads account wastes 20-40% of its budget. The range depends on account maturity, how much runs on defaults, and whether anyone reviews search terms and placements. Local and lead-gen accounts skew toward the high end because location and audience defaults quietly eat a bigger share. 
+
+Q: How do I find wasted ad spend? 
+ Work the leaks in order of recovery: pull the search terms report for junk queries, check whether location targeting is set to "interested in" rather than "in", review placement and Display/Performance Max partner reports, sanity-check device bid adjustments, add exclusions for existing converters, and separate branded search so you're not double-paying. Most of it is findable in an afternoon. 
+
+Q: What's the biggest source of wasted spend? 
+ Wasted search terms are usually the largest instantly-recoverable pool — broad and phrase match pull in queries with no buying intent, and every click on them is spend you can stop today with a negative keyword. Location and placement defaults are close behind, and they compound because nobody looks at them. 
+
+Q: Can AI reduce wasted ad spend? 
+ Yes — the repetitive part of finding waste is exactly what an AI media buyer is good at. It reads search terms, placements, location and device reports continuously, ranks each leak by how much it's costing you, and prepares the fix for your approval. It doesn't remove the human judgment; it removes the hours of digging. 
+
+Q: How often should I check for waste? 
+ Search terms and placements deserve a weekly pass on active accounts — that's where new junk queries and bad placements accumulate fastest. Location, device and audience settings are more set-and-forget: audit them at launch and re-check quarterly. If a tool is watching continuously, the cadence becomes "whenever something crosses a threshold" instead of a calendar chore. 
+
+Q: Does Performance Max waste budget? 
+ It can. Performance Max spreads spend across Search, Display, YouTube and partner placements with limited visibility, so budget drifts toward cheap, low-intent inventory unless you feed it exclusions and audience signals. It's not waste by design, but the black-box nature means leaks are harder to see — which is exactly why the placement and audience checks matter more, not less. 
+
+Q: How do I know if a campaign is wasting money? 
+ Look for spend with no conversions attached: search terms that cost money and convert nothing, placements or locations with clicks but zero sales, and audiences you're paying full CPA to reach when they've already converted. If a slice of the account has spend but the conversion column is empty, that's the campaign telling you where the leak is. 
+
+ Keep reading 
+ 
+ Playbook How to audit a Google Ads account 
+ Attribution Placement drift: the leak in your average 
+
+ All articles 
+ Request demo
+
+========================================================================
+URL: https://adgent.app/how-to-audit-performance-max
+========================================================================
+Adgent 
+
+ EN TR 
+ Request demo 
+
+ Product 
+ Pricing 
+ About 
+ Blog 
+ EN TR 
+ Request demo 
+
+ Playbook · 9 min read · July 2026 
+ 
+# How to audit a Performance Max campaign (the black box)
+
+ Performance Max either becomes your best campaign or your biggest waste source — and Google won't tell you which. Here are the checks that pierce the black box, ranked by how much money they recover, in the order you should actually run them. 
+
+ N 
+ 
+ Nurettin Demiral 
+ Notes from building the analyst 
+
+ Short answer 
+ Performance Max becomes your best campaign or your biggest waste source — and the difference is setup plus a few checks. Audit in this order: brand-spend detection first, then conversion-tracking quality, then the channel and placement breakdown, then asset-group signals, landing-page experience, and finally Search overlap. Fix the leaks Google hides, and PMax earns its budget. 
+
+ Performance Max is the campaign type Google most wants you to run and least wants you to see inside. You hand it budget, assets and a goal; it decides where the money goes across Search, Display, YouTube, Gmail, Discover and Maps — and reports back a single ROAS number that, more often than you'd like, is flattering nonsense. The good news: the black box has seams. You can pry it open. This is the audit, ranked by how much money each check tends to recover. 
+
+ PMax doesn't fail loudly. It fails by quietly spending your budget in the one place you'd never have chosen — and taking credit for the sales you'd have made anyway. 
+
+## 1. Brand-spend detection — the check that pays for the audit
+
+ Start here, always. The single most common way Performance Max looks like a hero is that it's serving on your own brand terms — people already searching "[your company]" — and booking those near-certain conversions as its own work. Your reported ROAS goes to the moon; your incremental ROAS barely moves. 
+
+ The tell is a search term or asset group with a ROAS wildly out of line with everything else — 15x when the account average is 3x. That's almost never a demand-gen miracle. It's branded traffic PMax is intercepting on the way to a click you already owned. Pull the search-terms and asset-group breakdown, find the outlier, and check whether the winning queries contain your brand name. 
+
+ If they do, the fix is a brand-exclusion list (account-level negative keyword list applied to PMax) so the campaign competes for demand you don't already have. This is worth its own deep dive — see Performance Max brand cannibalization — but for the audit, the rule is simple: any asset group with abnormal ROAS is guilty until the search terms prove otherwise. 
+
+## 2. Conversion-tracking quality — garbage in, garbage out
+
+ Performance Max leans on your conversion data more heavily than any other campaign type. It has no manual levers — no keywords, no placements you pick, no bids you set. All it has is the goal you give it and the conversion signal it optimizes toward. If that signal is wrong, every single decision downstream is wrong, and no amount of asset tweaking will save it. 
+
+ So before you touch anything else, verify the tracking is clean: 
+
+- One primary conversion, counted once. Double-firing tags and duplicate conversion actions teach PMax that a purchase is worth two, and it overspends accordingly.
+ 
+- Values that reflect real revenue. If you pass a static value instead of dynamic cart value, PMax optimizes for volume of cheap orders, not margin. Reconcile against GA4 and Shopify.
+ 
+- No soft goals as primary. "Add to cart" or "page view" as a primary conversion turns PMax into a traffic firehose chasing the easy signal, not the sale.
+ 
+- Consent-mode and modeling sanity. If a big share of conversions are modeled rather than observed, the ground under every decision is softer than the ROAS number admits.
+
+ Garbage in, garbage out isn't a cliché here — it's the whole mechanism. PMax is a signal-following machine, so the signal is the product. 
+
+## 3. Channel & network breakdown — where it's actually spending
+
+ Now the fun part: finding out where the money physically went. Google buries this, but the channel-level split — Search vs Display vs Video vs Shopping — is retrievable through a script or the Google Ads API, and the placement report shows the actual apps and sites. 
+
+ What you're looking for is the classic PMax leak: budget draining into cheap Display impressions and auto-playing Video that generate impressive reach and almost no revenue, while the Search and Shopping slices quietly do the real work. If 60% of spend is Display and 5% of conversions are, you've found a large recoverable chunk. 
+
+ Two exclusions do most of the cleanup: 
+
+- Junk placements. Pull the placement report, find the mobile games and made-for-advertising sites eating budget, and add them to an account-level placement exclusion list.
+ 
+- Mobile-app inventory. A mobile-app category exclusion kills a huge share of the accidental-tap traffic that flatters your click numbers and converts at nothing.
+
+## 4. Asset-group strength & audience signals — don't cold-start on your money
+
+ Every asset group is a mini-campaign, and PMax launches each one into a cold start while it learns. The thing that shortens the cold start is audience signals — your customer lists, high-intent segments, and custom audiences telling Google where to begin looking. Leave them empty and you're paying full price for the machine to guess from scratch. 
+
+ In the audit, check that every asset group has: a genuine audience signal (not blank, not "all users"), the full complement of assets so Google isn't starved for creative to test, and enough conversion volume to have actually exited learning. A thin asset group with no signal is a cold-start you're funding indefinitely. 
+
+## 5. Landing-page experience per asset group
+
+ PMax uses your final URLs — and, unless you turn it off, final URL expansion sends traffic to whatever page on your site Google thinks fits the query. That means an asset group themed around one product can be dumping paid clicks onto a stale blog post or an out-of-stock page. 
+
+ Audit the landing experience per asset group: are the URLs the ones you intended, is final URL expansion doing something sensible or something feral, and does each page match the promise of the asset group's creative. A great asset group pointed at a slow, off-message page is spend you're actively wasting at the last step. 
+
+## 6. Search vs PMax overlap & cannibalization
+
+ Finally, zoom out to how PMax coexists with your standard Search campaigns. Google's serving priority means PMax can win queries your Search campaigns would have won anyway — including brand — and the two can quietly bid against your own account. The result is the same conversions attributed twice and a blended picture that hides which campaign actually earned them. 
+
+ Check the overlap: are PMax and Search competing for the same high-intent queries, is PMax siphoning credit from a well-built Search campaign, and would tighter brand exclusions plus clearer campaign roles stop the two from cannibalizing each other. This closes the loop back to check one — brand spend and Search overlap are the same leak seen from two angles. 
+
+## Manual audit vs. continuous monitoring
+
+ Here's the uncomfortable truth about everything above: a manual PMax audit is a snapshot, and PMax is a moving target. The brand-spend creep, the tracking break, the placement drift — they don't wait for your monthly review. A once-a-month audit catches the leak weeks after it started spending. Side by side: 
+
+ What the audit needs Manual monthly audit Continuous monitoring 
+
+ Catches a tracking break next review same day 
+ Spots brand-spend creep early — ✓ 
+ Pulls channel & placement split by hand ✓ 
+ Flags a new cold-start asset group — ✓ 
+ Ranks findings by recoverable spend — ✓ 
+ Runs while you sleep — ✓ 
+
+ The manual audit tells you what was true last month. Continuous monitoring tells you what's leaking right now — and how much. 
+
+## Where an AI media buyer comes in
+
+ Every check in this playbook is exactly the kind of thing that rewards running continuously and hates running monthly. That's the case for handing it to an AI media buyer : it pulls the channel and placement breakdown, catches the brand term with abnormal ROAS, notices the tracking break the day it happens, and — the part that matters — ranks every finding by recoverable spend, so you fix the biggest leak first instead of the most visible one. 
+
+ PMax isn't the only black box worth this treatment; the same discipline applies to the whole account, which is why it pairs with a broader Google Ads account audit . The AI surfaces the leak with the evidence and the number; you approve the fix. If you want to see what it would say about your Performance Max campaigns, request a demo — fifteen minutes, connected read-only. 
+
+## Frequently asked
+
+Q: Why is Performance Max spending but not converting? 
+ Usually one of three things: conversion tracking is broken or double-counting, so PMax is optimizing toward garbage signals; the campaign is pouring budget into cheap Display and Video placements that impress but don't convert; or the asset groups are so thin that Google is still in cold-start, buying junk inventory while it learns. Audit tracking first, then the channel breakdown. 
+
+Q: How do I see where Performance Max spends? 
+ Google hides most of it by default, but you can pull a channel-level split with a script or the Google Ads API to see the Search, Display and Video breakdown, and the placement report (in Content or via the API) to see the actual apps and sites. Insights and the Explanations panel help, but the machine-readable route is the only way to see the real distribution. 
+
+Q: Can you exclude placements in Performance Max? 
+ Partially. You can apply account-level placement exclusions, exclude mobile-app inventory via a mobile-app category exclusion, and add brand-safety and content exclusions. You can't hand-pick placements the way you can in a Display campaign, but the account-level exclusion list and mobile-app exclusion together kill most of the wasted junk inventory. 
+
+Q: Is Performance Max cannibalizing my search? 
+ Often, yes. PMax can serve on search queries — including your brand terms — and Google's own priority rules mean it can outrank or overlap your standard Search campaigns. The tell is a PMax term or asset group with wildly higher ROAS than the rest: that's usually branded search PMax is taking credit for, not new demand it created. 
+
+Q: How often should I audit Performance Max? 
+ A full manual audit is worth doing monthly, and always after a big budget change, a new asset group, or a tracking change. But the checks that matter — brand-spend creep, tracking breaks, placement drift — move daily, so the honest answer is that PMax wants continuous monitoring, not a monthly snapshot. A once-a-month audit catches the leak weeks after it started. 
+
+Q: What's the most important Performance Max setting? 
+ Clean conversion tracking, followed closely by a brand-exclusion list. PMax leans entirely on your conversion data to decide where to spend, so if tracking is wrong every downstream decision is wrong. After that, excluding your brand terms stops PMax from taking credit for demand you already own and inflating its reported ROAS. 
+
+Q: Can AI audit Performance Max? 
+ Yes — and PMax is exactly the kind of black box AI is good at. An AI media buyer can pull the channel and placement breakdown, detect a brand term with abnormal ROAS, catch a tracking break the day it happens, and rank each finding by recoverable spend — continuously, not once a month. It surfaces the leak; you approve the fix. 
+
+ Keep reading 
+ 
+ Playbook How to audit a Google Ads account 
+ Product What is an AI media buyer? 
+
+ All articles 
+ Request demo
+
+========================================================================
+URL: https://adgent.app/cbo-vs-abo-vs-advantage-plus
+========================================================================
+Adgent 
+
+ EN TR 
+ Request demo 
+
+ Product 
+ Pricing 
+ About 
+ Blog 
+ EN TR 
+ Request demo 
+
+ Scaling · 8 min read · July 2026 
+ 
+# CBO vs ABO vs Advantage+: which budget model in 2026?
+
+ For years the argument was CBO vs ABO. Then Advantage+ made it a three-way question — because now you can hand Meta the budget, the split, and the whole structure. Here's how to pick, honestly, by what you're actually trying to buy. 
+
+ N 
+ 
+ Nurettin Demiral 
+ Notes from building the analyst 
+
+ Short answer 
+ Pick by what you're buying . Use ABO when you need a fair test of each audience or creative — every option gets its own budget. Use CBO to scale known winners at volume, letting Meta push spend to whatever's performing. Use Advantage+ when you want Meta to run the entire structure and you trust your signal enough to hand it over. 
+
+ The old fight was simple: do you set budgets at the ad-set level (ABO) or let Meta split one budget across ad sets for you (CBO)? Reasonable people argued both sides for years. Then Advantage+ turned up and quietly rewrote the question — because it doesn't just split your budget, it takes over the audiences, placements and structure too. So "CBO or ABO?" is now "how much of the campaign do I want to run myself?" 
+
+ That reframing is the whole point. These three aren't three flavours of the same thing you rank best-to-worst. They're three different amounts of control, and the right one depends entirely on what you're trying to accomplish that week — testing, scaling, or handing the wheel to Meta. Let's go through each honestly, then a decision guide you can actually use. 
+
+## The one question that picks for you
+
+ Before the definitions, the shortcut: what are you buying with this campaign? Not "which is best" — best at what? 
+
+- Buying a clean read on which audience or creative wins? That's ABO .
+ 
+- Buying volume from things you've already proven work? That's CBO .
+ 
+- Buying Meta's judgment across the whole structure because your signal is strong? That's Advantage+ .
+
+ Almost every "which should I use" question dissolves once you answer that. Now the detail. 
+
+## The three side by side
+
+ Here's the honest comparison across the dimensions that actually change your decision — who holds the controls, what each is best for, how it learns, when it wins, and where it bites you. 
+
+ ABO (ad-set budget) CBO (campaign budget) Advantage+ (Meta runs it) 
+
+ Control level You set every ad-set budget by hand You set structure, Meta splits budget Meta owns budget, audience & placement 
+ Best for Fair, comparable testing Scaling proven winners Hands-off scale on strong signal 
+ Learning behavior Each set learns on its own fixed budget Meta reallocates toward the day's winners Meta learns across the whole account 
+ When it wins You need to know which option earns You have winners and want volume Clean conversion signal, broad catalog 
+ Risk Manual, slow, easy to over-fragment Meta can starve a set you wanted to test You lose control; chases the wrong signal 
+
+ Read the table as a spectrum of control, not a leaderboard: left is you driving, right is Meta driving. The highlighted column isn't "best" — it's the one that gives up the most control, which is exactly right for some accounts and exactly wrong for others. 
+
+## ABO — when you need a fair test
+
+ ABO (ad-set budget optimization) gives every ad set its own fixed budget that you set by hand. That single fact is its whole reason to exist: because you control the money per set, every audience and every creative gets a guaranteed shot at delivery . Nothing gets starved by Meta's early guesses before it's had a chance to prove itself. 
+
+ That's what makes ABO the honest testing tool. If you're comparing five audiences, you want each one to spend real money before you judge it — not have Meta pour 80% into the audience that happened to convert first on thin data. ABO forces the fair fight. You read clean, comparable results per set, then you decide what graduates. 
+
+ The cost is that ABO is manual and slow to scale. You're the one moving budgets around, and it's easy to over-fragment — split into so many small ad sets that none of them exits the learning phase. ABO is a scalpel for finding truth, not a machine for pushing volume. Use it to learn, not to scale. 
+
+ One more thing people forget: ABO's "fairness" only holds if you gave each set enough budget to actually exit learning. Five ad sets on $10 a day each is not a fair test — it's five under-powered tests that all read as noise. If you're going to test in ABO, fund each set to at least clear its optimization event a handful of times per day, or you're just paying to learn nothing slowly. 
+
+## CBO — when you want to scale a winner
+
+ CBO (campaign budget optimization) flips the control: you define the ad sets, but Meta owns one campaign-level budget and pushes it toward whichever sets are performing that day. You're no longer hand-tuning each set — Meta does the reallocation, in real time, based on live delivery. 
+
+ That's exactly what you want once you already know what works. When you've got proven audiences and proven creative, CBO scales the pool at volume without you babysitting every set. The winners get fed, the laggards get throttled, and you don't have to log in at 8am to move the money yourself. It's the natural next step after ABO has done its job. 
+
+ The risk is the same mechanism running against you: CBO will happily starve a set you actually wanted data on. If you drop an unproven audience into a CBO campaign next to a known winner, Meta feeds the winner and the newcomer never gets a fair read. That's why CBO is a poor testing tool and a great scaling one. Don't test in CBO — scale a winner in it, carefully , without breaking the thing that was working. 
+
+ The other CBO trap is scaling too fast. When you raise a CBO budget, you re-open the learning phase for the whole campaign, and Meta re-shuffles delivery against the new number. Jump it 3x overnight and you can knock a stable winner off its footing for days. The move is to step budgets up gradually and let each increase settle — the reallocation engine that makes CBO powerful is the same one that punishes sudden shocks. 
+
+## Advantage+ — when you trust your signal
+
+ Advantage+ is the newest and the most misunderstood, because people file it next to CBO when it's really a bigger move. CBO hands Meta the budget split . Advantage+ hands Meta the whole structure — budget, audiences, placements, often the creative combinations too. You bring the creative and the conversion goal; Meta runs the campaign. 
+
+ And here's the honest part the CBO-vs-ABO crowd sometimes won't say: Advantage+ is genuinely good for some accounts. If you're an e-commerce brand with a broad catalog and a strong, consistent conversion signal, Advantage+ frequently beats a manually-structured campaign — because Meta's model has more real purchase data to learn from than your hand-built audiences do. For those accounts, fighting Advantage+ with manual structure is leaving money on the table. 
+
+ The catch is in that word signal . Advantage+ is only as good as the data it optimizes toward. If your conversion event is noisy, mis-configured, or measuring the wrong thing, Advantage+ will confidently chase it — and you've handed the whole campaign to a model optimizing the wrong target. It also gives you the least visibility into why it's doing what it's doing. Trust it when you trust your signal. Be careful when you don't. 
+
+ CBO hands Meta the budget. Advantage+ hands Meta the whole campaign — the question is whether your signal has earned that. 
+
+## The decision guide
+
+ Stop asking "which is best" and run the if/then. Match the situation you're actually in: 
+
+- If you're testing new audiences or creative → ABO. You need each one to get a fair, comparable shot.
+ 
+- If you've proven what works and want volume → CBO. Let Meta push budget to the winners.
+ 
+- If you're e-commerce with a strong, clean conversion signal → try Advantage+. It may well beat your manual build.
+ 
+- If your signal is thin, noisy, or you're not sure it's tracked right → stay on ABO/CBO where you keep control.
+ 
+- If your budget is small → ABO first, to force spend onto the one thing you need to learn, then consolidate.
+ 
+- If you want the full picture → run ABO to test and CBO/Advantage+ to scale. They're stages, not rivals.
+
+ That last point is the one most people miss: the best accounts don't pick one. They run a pipeline — ABO as the testing lane, CBO or Advantage+ as the scaling lane — and graduate what proves out. For the deeper, two-way version of this argument with more of the mechanics, read CBO vs ABO in 2026 . 
+
+## Why the budget model is only half the job
+
+ Here's the thing all three share, and the reason picking the model is where most people stop when it should be where they start. Whichever you choose, the model is a machine that acts on your conversion signal — and it can only be as smart as that signal is honest. CBO reallocating to a "winner" that's really an attribution-window mirage , or Advantage+ optimizing to a broken purchase event, will fail confidently and fast. 
+
+ So the real skill isn't memorizing which budget model to click. It's watching what each one is actually optimizing toward, catching when the signal it's chasing is bad, and knowing when to move a proven audience from the testing lane to the scaling lane. That's judgment work — reading the account across the whole structure, every day, and knowing which number can be trusted. 
+
+ That's exactly the job we built an AI media buyer to do: read your Meta account like a senior strategist, tell you when a CBO winner is real or a mirage, and flag when Advantage+ is chasing a signal it shouldn't. If you want to see what it says about your actual account, request a demo — fifteen minutes, connected read-only. 
+
+## Frequently asked
+
+Q: Is Advantage+ better than manual campaigns? 
+ Sometimes — it's genuinely good for accounts with strong, consistent conversion signal and a broad catalog, especially e-commerce. It's worse when you need to control which audience or creative gets tested, or when your signal is thin. It isn't universally better or worse; it trades your control for Meta's scale, and whether that's a good deal depends on how much you trust your data. 
+
+Q: CBO or ABO for scaling? 
+ CBO to scale a known winner. Once you've proven which ad sets earn, CBO pushes budget toward the ones performing that day and scales the pool at volume without you babysitting every set. ABO is for the test that finds the winner in the first place — it's a worse scaling tool because it can't reallocate on its own. 
+
+Q: When should I use ABO? 
+ When you need a fair test. ABO gives every ad set its own fixed budget, so each audience or creative gets a guaranteed shot at delivery instead of being starved by Meta's early guesses. Use it to compare audiences, validate new creative, or test anything where you need a clean, comparable read on each option. 
+
+Q: Does Advantage+ replace CBO? 
+ For some accounts, effectively yes — Advantage+ is CBO taken further, with Meta running the audiences and placements too, not just the budget split. But it doesn't replace CBO where you still want to define the ad-set structure yourself. CBO keeps you in control of what's being optimized; Advantage+ hands that over. If you trust your signal, Advantage+ can absorb the CBO job. 
+
+Q: Which is best for a small budget? 
+ On a small budget, ABO usually wins early because you can force spend onto the one or two things you actually want to learn from, instead of letting CBO or Advantage+ spread thin and never exit the learning phase. Once one ad set proves out, consolidate into CBO or Advantage+ so the budget isn't fragmented. 
+
+Q: Can I mix CBO and ABO? 
+ Yes, and most good accounts do. Run ABO campaigns as your testing lane to find winners on fixed budgets, then graduate the proven audiences and creative into CBO or Advantage+ to scale. They're stages in a pipeline, not rivals — testing in one, scaling in the other. 
+
+Q: Is Advantage+ good for lead gen? 
+ It can be, but it's less of a slam dunk than for e-commerce. Lead-gen signal is often noisier — a form fill isn't a purchase, and lead quality varies — so Advantage+ optimizing to raw lead volume can flood you with cheap, low-intent leads. If you feed it a clean qualified-lead or revenue signal, it works better. Without that, ABO or CBO gives you more control over quality. 
+
+ Keep reading 
+ 
+ Scaling CBO vs ABO in 2026 
+ Scaling Scale a winner without breaking it 
+
+ All articles 
+ Request demo
+
+========================================================================
+URL: https://adgent.app/can-ai-run-your-ad-account
+========================================================================
+Adgent 
+
+ EN TR 
+ Request demo 
+
+ Product 
+ Pricing 
+ About 
+ Blog 
+ EN TR 
+ Request demo 
+
+ Product · 7 min read · July 2026 
+ 
+# Can AI run your ad account?
+
+ The honest answer to the "AI replaces your team" pitch. AI can do the reasoning and the busywork — but it should not hold the last click on live spend. The judgment automates; the accountability stays human. 
+
+ N 
+ 
+ Nurettin Demiral 
+ Notes from building the analyst 
+
+ Short answer 
+ Mostly, yes — but not fully alone. AI can do the reasoning and the busywork: nightly reads, diagnosis, drafting fixes and whole campaigns. What it should not do is hold the last click on live spend. Advertising runs on numbers that lie — attribution windows, broken conversions — and the human is the one who catches them. The judgment automates. The accountability stays human. 
+
+ Every second ad-tech pitch this year makes the same promise: hand the AI your accounts and go home. "Fully autonomous." "Replaces your team." It's a great demo and a bad idea — not because the AI is weak, but because it's aimed at the wrong job. So let's be honest about the split: what can AI genuinely run in an ad account, and what still needs a human with a hand on the switch? 
+
+## What AI genuinely does well
+
+ Start with the part that isn't hype. The reasoning-heavy, repetitive core of managing Meta and Google is exactly what modern AI is good at — and it's good enough now that pretending otherwise is its own kind of dishonesty. 
+
+- It reads the whole account. Every campaign, ad set, placement and creative across Meta, Google and TikTok — as one book, overnight, without getting bored on the 40th ad set. A human buyer skims; AI actually reads all of it.
+ 
+- It diagnoses why . Not "ROAS dropped" — but that the drop traces to one placement, or a creative that fatigued, or CPM inflation on the Audience Network. The cause, ranked by impact, not just the symptom on a chart.
+ 
+- It drafts the fix — and the campaign. A budget shift, a CBO-to-ABO restructure, a whole new Advantage+ build with copy and targeting. It writes the change so you're editing, not starting from a blank page.
+ 
+- It monitors 24/7. No weekends, no "I'll check Monday." The anomaly that would've cost you three days of wasted spend gets flagged the night it starts.
+
+ Add it up and that's most of the hours a media buyer used to spend. If someone tells you AI can't do the reading, the diagnosis or the drafting, they haven't used a good one. This is the real, unglamorous 80% — and AI runs it well. 
+
+ The busywork was never the hard part. The hard part was knowing which number to trust. 
+
+## What still needs a human
+
+ Here's where the "fully autonomous" pitch quietly breaks. The remaining slice of the job is small in hours but enormous in consequence, and it's precisely the part AI should not own. 
+
+### The final call on live spend
+
+ Drafting a change and committing it to a live account are two different acts with two different risk profiles. The draft is reversible thinking; the commit moves real money. Keeping a human on that last click isn't distrust of the AI — it's an accountability boundary. Someone has to own the decision, and "the model did it" is not an answer you want to give a client whose CPA doubled overnight. 
+
+### Judgment on untrustworthy numbers
+
+ This is the deep reason, and it's worth sitting with. Ad platforms hand you numbers that are often not true yet, or not true in the way they look: 
+
+- Attribution windows. Yesterday's ROAS will keep revising upward for a week as conversions land. Act on day-one data and you'll cut a winner. A human learns to wait; a system optimizing for a fixed reward does not.
+ 
+- Mis-configured conversions. A broken pixel or a double-counted event can make ROAS literally unmeasurable — or twice reality. The number looks confident. It's fiction.
+ 
+- Credit that isn't performance. A "great" placement can be view-through credit in disguise, taking the bow for conversions it didn't cause.
+
+ A good AI can flag all of these — and the good ones do. But the final judgment on whether a number is real enough to bet spend on is where a human still wins, because catching a lie requires suspicion the metric itself can't provide. For more on one of these traps, see why day-one data lies . 
+
+## Why fully autonomous is the wrong promise
+
+ The autonomy pitch borrows its confidence from games. AI conquered chess and Go because those are closed systems: fixed rules, a clean reward, and every input is true. Advertising is none of that. 
+
+ Advertising is an open game played on a leaky scoreboard. The reward function — ROAS, CPA — is measured by instruments that break, lag and mislead. So when a system acts autonomously on those numbers, it doesn't remove risk. It removes the one thing standing between a bad number and your budget: the human who would have caught it. Autonomy doesn't make the numbers more trustworthy — it just deletes the check. 
+
+ That's the whole case against "set it and forget it" on a live ad account. It's not that AI is too dumb to act. It's that acting confidently on numbers you can't yet trust is a failure mode, not a feature — and a person is your last defense against it. 
+
+## The right design: read-only + approval-gated
+
+ So the answer isn't less AI. It's AI pointed at the right boundary. Give it the reasoning, the diagnosis, the drafting, the 24/7 watch — and gate the one act that moves money behind a human click. That's the thesis we build Adgent on, and we call the loop Aware, Ask, Apply . 
+
+### Aware — it reads and ranks
+
+ Overnight it reads every account as one, builds baselines, and writes a brief ranked by impact. You wake up to the verdict, not a wall of charts. 
+
+### Ask — it explains, honestly
+
+ You ask "why did Meta ROAS drop?" and get a strategist's answer with evidence — including the awkward truth when a number is still inside its attribution window and shouldn't be trusted yet. Honesty about what it can't measure is the feature, not a bug. 
+
+### Apply — it acts, on your approval
+
+ When a fix is ready, it's a prepared, reversible action you approve with one message. Nothing writes to a live account on its own. Read-only by default, approval-gated always — the Trust Gate between the draft and the spend. 
+
+ Here's the split, laid out plainly — where AI runs the show, and where the human stays on the click: 
+
+ Task in running an ad account AI does it Human still owns it 
+
+ Nightly read of the whole account ✓ n/a 
+ Diagnosing why a metric moved ✓ n/a 
+ Drafting fixes and new campaigns ✓ n/a 
+ 24/7 anomaly monitoring ✓ n/a 
+ Flagging untrustworthy numbers ✓ confirms 
+ Final call on ambiguous data — ✓ 
+ The last click on live spend — ✓ 
+
+ Read left to right and the pitch inverts: AI runs almost all of it — and the human keeps the two rows that carry the accountability. That's not less automation. It's automation aimed correctly. 
+
+ Can AI run your ad account? It can run the work. The judgment automates beautifully. But the accountability — the last click, the call on a number you can't trust — is the part worth keeping human, and any tool honest about that is the one you can actually put on a client account. If you want to see what it would say about a real account, request a demo — fifteen minutes, connected read-only. It'll read, diagnose and draft. You'll keep the click. 
+
+## Frequently asked
+
+Q: Can AI fully run a Google Ads account? 
+ AI can do almost all of the work — nightly reads, diagnosis, drafting campaigns and fixes — but it shouldn't run it fully autonomously. The last click on live spend belongs to a human, because Google Ads numbers can be untrustworthy in ways only judgment catches: attribution windows, mis-configured conversions, view-through credit. The judgment automates; the accountability stays human. 
+
+Q: Should I let AI change my campaigns automatically? 
+ No — not on live spend. The safer design is read-only by default with approval-gated execution: the AI does the analysis and prepares the change, but nothing writes to a live account until you approve it. You get the speed of automation and keep the accountability. 
+
+Q: Does AI replace a media buyer? 
+ No. It automates the reasoning and the busywork — nightly account reads, diagnosis, drafting — so the buyer spends time on strategy, creative direction and the final call. The best setups keep a human in the loop, not out of it. 
+
+Q: Is it safe to give AI access to my ad account? 
+ It is when access is read-only by default and every write is approval-gated, audited and reversible. The access model matters more than raw capability: a tool that can act autonomously on your spend is a risk; one that reads, drafts and waits for your click is not. 
+
+Q: What can AI not do in ad management? 
+ AI shouldn't hold the last click on live spend, and it can't be trusted to judge whether the numbers underneath a decision are real — an attribution window that will revise for a week, a mis-configured conversion, view-through credit dressed as performance. It can flag those, but the final call on ambiguous or untrustworthy data stays human. 
+
+Q: Can AI manage Meta and Google together? 
+ Yes — reading Meta and Google (and TikTok) as one account is where AI is strongest. It reasons across all of them at once, cross-checks platform numbers against real revenue in GA4 or Shopify, and surfaces one ranked brief instead of three separate tabs. 
+
+Q: What's read-only mode? 
+ Read-only mode means the AI can read your accounts and prepare changes, but cannot write anything to a live account on its own. Every change is a drafted, approval-gated action that only executes once you say go. It's the default access model for anything touching real spend. 
+
+ Keep reading 
+ 
+ Product What is an AI media buyer? 
+ Product AI media buyer vs. Performance Max vs. dashboard 
+
+ All articles 
+ Request demo
+
+========================================================================
+URL: https://adgent.app/meta-ads-account-audit-checklist
+========================================================================
+Adgent 
+
+ EN TR 
+ Request demo 
+
+ Product 
+ Pricing 
+ About 
+ Blog 
+ EN TR 
+ Request demo 
+
+ Playbook · 9 min read · July 2026 
+ 
+# The Meta Ads account audit: a 20-point checklist
+
+ Most Meta audits are a screenshot tour of the dashboard. This one is ordered differently: the checks that recover spend first, ranked by impact — and the signal check that has to come before all of them, because a broken pixel makes every other number a guess. 
+
+ N 
+ 
+ Nurettin Demiral 
+ Notes from building the analyst 
+
+ Short answer 
+ To audit a Meta Ads account , work in order of recoverable spend — and verify the signal first. Confirm pixel and Conversions API health before you judge a single campaign, because a broken signal corrupts everything downstream. Then check attribution, CBO leakage, Audience Network placement drift, frequency and creative fatigue. Attach a dollar figure to each finding and fix the biggest leak first. 
+
+ A Meta Ads audit is supposed to answer one question: where is this account leaking money, and what's the cheapest thing to fix first? Yet most audits bury that answer under a screenshot tour of Ads Manager. So here's the version that leads with impact — the checks that actually recover spend, in the order a senior buyer runs them. It's the Meta twin of how to audit a Google Ads account ; same discipline, different platform. 
+
+## Start with the signal you can't trust
+
+ Before you judge a single ad set, judge the measurement. On Meta more than anywhere, the number you're optimizing toward is only as good as the pixel and Conversions API feeding it. A mis-configured event, a browser pixel firing without a CAPI match, a purchase event that double-counts — any of these makes ROAS and CPA read like fiction, and no amount of budget tuning fixes a broken signal. 
+
+ An audit that trusts a broken pixel just optimizes the account deeper into the wrong thing. 
+
+ So the first check isn't performance — it's whether performance is even measurable. Open Events Manager, confirm events fire once per action, check event match quality, and make sure the browser pixel and CAPI events deduplicate on a shared event ID. This is the same discipline behind leading with the verdict : say what you can stand behind, flag what you can't, and never manufacture confidence. 
+
+## The 20-point Meta audit, ranked by recoverable spend
+
+ Ten families of check, ordered so the money moves first and the hygiene comes last. Each is a place spend hides on Meta specifically: 
+
+- Pixel & Conversions API health. Events firing once, with the right value, on the right action? Confirm browser and CAPI events deduplicate, and check event match quality against Meta's Conversions API setup . A broken signal corrupts every optimization downstream.
+ 
+- Attribution setting. Is the account on 7-day click, or the default 7-day click / 1-day view? Ad sets judged on different windows aren't comparable, and view-through credit inflates the wrong winners.
+ 
+- CBO budget leakage. Under Campaign Budget Optimization, Meta pools the budget and often starves a proven ad set to feed a cheaper-but-worse one. Check where the money actually landed versus where the conversions did.
+ 
+- Audience Network placement drift. Spend quietly drifts to Audience Network and Reels at a fraction of feed performance — the Meta twin of the placement drift that hides inside a blended average .
+ 
+- Frequency & creative fatigue. Rising frequency with climbing CPM is the account telling you the creative is spent — CPM is the early creative-fatigue signal , well before ROAS drops.
+ 
+- Audience overlap. Ad sets bidding against each other in the same auction drive up your own CPMs. Run the overlap tool on your prospecting sets.
+ 
+- Retargeting exclusions. Are purchasers and recent converters excluded from prospecting and retargeting? Missing exclusions mean you're paying full CPA to re-buy customers you already own.
+ 
+- Catalog & feed health. For commerce accounts, a stale or partially rejected catalog silently caps Advantage+ Shopping reach. Check feed freshness, rejection rate and required fields.
+ 
+- Learning-phase status. Ad sets stuck in learning — or endlessly re-entering it after edits — never stabilize. Count how many are learning-limited and why.
+ 
+- Ad-account structure. Too many overlapping ad sets fragment the signal below the conversion volume Meta needs to learn. Consolidation is often free performance.
+
+## Rank, don't just list
+
+ The difference between a useful audit and a report nobody acts on is ordering. Every finding should carry an estimate of recoverable spend so the account owner knows what to do Monday morning — not a flat list where a €10,000/month leak sits next to a cosmetic naming warning. 
+
+- Attach a number to each finding. "Audience Network drift: ~€6,000/mo" beats "review placements."
+ 
+- Sequence the fixes. Editing an ad set can reset the learning phase; order changes so you don't undo one fix with the next.
+ 
+- Make every figure verifiable. Each number should link back to where to confirm it in Ads Manager. Trust is the whole point.
+
+## Red flags: what a broken account looks like
+
+ Some findings you have to calculate. Others you can spot in thirty seconds — the tells that an account has been left on autopilot. If you see any of these, you've found recoverable spend before you've done a single sum. 
+
+- Frequency above 5 on a prospecting audience. A cold audience seeing the same ad five-plus times in a week is fatigued and getting more expensive to reach. Rising frequency with climbing CPM is the clearest early fatigue tell there is — act before ROAS confirms it.
+ 
+- No retargeting exclusions. If purchasers and recent converters aren't excluded from prospecting, you're paying full CPA to re-serve ads to people who already bought. On accounts with a healthy return rate, that's often 5–15% of spend re-buying customers you already own.
+ 
+- A backend-vs-Ads-Manager revenue gap wider than 10–15%. When Ads Manager claims €40,000 in sales and Shopify or GA4 sees €30,000, someone is optimizing on a number that isn't real. A gap past roughly 10–15% means your pixel and CAPI setup is the first thing to fix, not your bids.
+ 
+- Audience Network eating a big share of a placement-optimised budget. When automatic placements let Audience Network absorb a large slice of spend at a fraction of feed performance, the blended ROAS looks fine while the leak sits hidden inside the average.
+ 
+- Ad sets still in the learning phase after five days. Learning-limited ad sets never stabilize — usually because the conversion volume is too low or edits keep restarting the clock. If half the account is perpetually learning, the structure is fragmenting the signal.
+ 
+- One giant CBO campaign with every audience inside it. Pooling prospecting, retargeting and lookalikes under one budget lets Meta chase the cheapest conversions — usually warm retargeting — and take credit for demand you'd have captured anyway.
+ 
+- Default attribution, and nobody knows which window. An account reported on 7-day click / 1-day view while the team quotes numbers as if they were click-only is comparing ad sets that were never on the same footing.
+
+## Manual audit vs. continuous audit
+
+ The format of the audit decides what it can actually catch. A human running this checklist once a quarter and software reading the account through the API every morning are looking for the same leaks — but they see very different amounts of them. 
+
+ Manual audit 
+ Automated / continuous audit 
+
+ Time to run 
+ A few hours to a full day per account 
+ Minutes — and it re-runs on its own 
+
+ Frequency 
+ Quarterly, if you're disciplined 
+ Every morning 
+
+ Coverage 
+ What the auditor has time to sample 
+ Every ad set, placement and creative 
+
+ Catches drift 
+ No — it's a snapshot that ages fast 
+ Yes — flags what changed since yesterday 
+
+ Best at 
+ Judgement calls, strategy, creative direction 
+ High-drift leaks: placements, frequency, CBO pacing 
+
+ Cost 
+ $500–$3,000 for a one-off agency audit 
+ Software fee, then near-zero per re-run 
+
+ Neither wins outright. A manual audit brings judgement a script can't; a continuous one catches the leaks that reopen the week after a manual audit ships. The strongest setup is a standing analyst for the high-drift checks and a human for the strategy calls — which is exactly what an AI media buyer is built to be. 
+
+## How often should you audit?
+
+ Audit cadence should match how fast each check goes stale. Some things barely move; others rot within a week. A single quarterly review treats them all the same, which is why so many Meta audits feel out of date the moment they land. 
+
+- Full audit — quarterly. The complete 20-point pass: signal integrity, attribution, structure, catalog. These are slow-moving and worth a deep, unhurried look four times a year.
+ 
+- Light review — monthly. A focused pass on budget pacing, frequency and the ad sets that shifted most. Thirty minutes to catch anything the quarter would let drift too far.
+ 
+- Continuous — for the high-drift checks. Placement drift, frequency, audience overlap and CBO leakage move week to week. These want monitoring, not scheduling — the moment they slip, spend leaks, and a quarterly cadence means you find out 89 days late.
+
+## Common mistakes that break a Meta audit
+
+ Even a disciplined auditor can run the whole checklist and still reach the wrong conclusion — usually by trusting a number they shouldn't, or judging one on the wrong timeframe. 
+
+- Judging performance inside the attribution window. Recent numbers are still settling — a campaign read on day-one data looks pessimistic and gets paused before it's had a chance to report.
+ 
+- Trusting Ads Manager revenue as ground truth. Platform-reported ROAS isn't the backend. Reconcile to Shopify or GA4 before you shift a single budget.
+ 
+- Reading blended ROAS and stopping there. A healthy average can hide a placement or audience that's bleeding — the leak lives in the split, not the sum.
+ 
+- Editing ad sets mid-audit. Every meaningful edit can reset the learning phase, so a flurry of "fixes" can leave the account worse than you found it. Sequence, don't spray.
+
+## The real fix is a standing audit
+
+ The catch with a one-off Meta audit is that accounts drift. Frequency climbs daily, placements re-leak, creative fatigues, CBO re-pools the budget overnight. A PDF from last quarter describes an account that no longer exists. The real fix isn't a better template — it's a standing analyst that re-audits continuously and flags what changed. 
+
+ That's what Adgent does for Meta, Google and TikTok as one account: it runs these checks every morning, ranks findings by recoverable spend, and prepares the fix for your approval — read-only until you say go. If you want to see it against a real account, request a demo — fifteen minutes, connected read-only. 
+
+## Frequently asked
+
+Q: How do I audit a Meta/Facebook ads account? 
+ Work in order of recoverable spend, not report length. First verify the signal — pixel and Conversions API health, deduplication and event match quality — because a broken signal corrupts every number downstream. Then check your attribution setting, CBO budget leakage, Audience Network placement drift, frequency and creative fatigue, audience overlap, retargeting exclusions, catalog health, learning-phase status and account structure. Attach a dollar estimate to each finding and fix the highest-value leak first. 
+
+Q: How often should I audit Meta ads? 
+ Match cadence to how fast each check goes stale. Run a full 20-point audit quarterly, a light monthly review on pacing, frequency and the ad sets that shifted most, and monitor the high-drift checks — placement drift, frequency, audience overlap and CBO leakage — continuously, because those reopen within a week of any manual pass. 
+
+Q: What are the red flags in a Meta ads account? 
+ Frequency above 5 on a prospecting audience, no retargeting exclusions (usually costing 5–15% of spend re-buying existing customers), a backend-vs-Ads-Manager revenue gap wider than 10–15%, Audience Network eating a large share of a placement-optimised budget, and ad sets stuck in the learning phase after five days. Any one of these is recoverable spend you can find before you do a single calculation. 
+
+Q: How do I check if my pixel is working? 
+ Open Events Manager and confirm events fire once per action with a healthy event match quality score, that browser pixel and Conversions API events deduplicate on a shared event ID, and that your key conversion carries the right value. Use the Meta Pixel Helper on live pages and compare Ads Manager conversions against GA4 or Shopify — a gap wider than 10–15% means the signal, not your bids, is the first thing to fix. 
+
+Q: What attribution setting should I use? 
+ For most direct-response accounts, 7-day click is the honest default — it captures the buying window without over-crediting view-through. The trap is judging performance on the default setting without knowing which window it uses, or comparing ad sets on different windows. Pick one attribution setting, apply it consistently, and remember recent numbers are still settling inside the window and read pessimistic. 
+
+Q: Can AI audit Meta ads? 
+ Yes, and it fits the high-drift checks better than a quarterly human pass. An AI media buyer reads the account through the API every morning, runs the same 20 checks, ranks findings by recoverable spend and flags what changed since yesterday — then prepares the fix for your approval. It complements a human, who still owns the strategy and judgement calls. 
+
+Q: How long does a Meta audit take? 
+ A thorough manual audit of a single account takes a few hours to a full day, depending on how many campaigns and creatives it holds. A continuous, API-driven audit runs the same checks in minutes and re-runs on its own every morning — so the finding lands the day the leak opens, not 89 days later. 
+
+ Keep reading 
+ 
+ Playbook How to audit a Google Ads account, properly 
+ Creative CPM is the early creative-fatigue signal 
+
+ All articles 
+ Request demo
+
+========================================================================
+URL: https://adgent.app/performance-max-brand-cannibalization
+========================================================================
+Adgent 
+
+ EN TR 
+ Request demo 
+
+ Product 
+ Pricing 
+ About 
+ Blog 
+ EN TR 
+ Request demo 
+
+ Playbook · 6 min read · July 2026 
+ 
+# Is Performance Max cannibalizing your branded search?
+
+ Performance Max loves a cheap conversion — and nothing is cheaper than someone typing your brand name. Left unchecked, it quietly absorbs demand you already own, takes the credit, and reports a ROAS you can't actually bank. Here's how to catch it and shut it down. 
+
+ N 
+ 
+ Nurettin Demiral 
+ Notes from building the analyst 
+
+ Short answer 
+ Yes — often. Performance Max frequently serves on your own branded queries, taking credit for demand you'd have captured for free or near-free. That inflates its apparent ROAS while adding little incremental value. Spot it with impression-share and search-term reports, stop it with brand exclusions and negatives, then measure what PMax actually contributes on top. 
+
+ You look at the account and Performance Max is the hero — a ROAS two or three times everything else, scaling like it can't miss. It feels great until you ask the uncomfortable question: how much of that would have happened anyway? For a lot of accounts, the answer is "most of it," because PMax has quietly parked itself on top of your branded search, converting people who were already coming to buy. 
+
+ This isn't a bug. It's the auction working exactly as designed — and it's the single most common way a Google Ads account tells you a comforting lie. Let's break down how it happens, how to spot it, and what to actually do about it. 
+
+ And it matters more the better PMax looks. The accounts most exposed to this are the ones where PMax is the star performer, because a big, shiny ROAS is exactly what a big pool of branded demand produces. If your PMax numbers seem too good to argue with, that's the account most worth auditing — not the least. 
+
+## How the cannibalization happens
+
+ Performance Max is a goal-seeking machine. You give it a target — usually ROAS or CPA — and it hunts across every Google surface (Search, Shopping, YouTube, Display, Discover, Gmail, Maps) for the conversions that hit that target most efficiently. And the most efficient conversion in your entire account, every single time, is the person who searched your brand name. 
+
+ Someone typing " [your brand] running shoes " has already decided. They know you, they want you, and they were going to land on your site whether or not an ad greeted them. PMax doesn't know that context — it just sees a query with a sky-high conversion rate and a rock-bottom cost, and it does what it was built to do: it bids, it wins, and it books the sale as its own. 
+
+ PMax isn't creating that demand. It's standing in the doorway and taking credit for everyone who walks through. 
+
+ The result is a slow, invisible transfer. Traffic that would have arrived through organic listings or a cheap branded search campaign gets rerouted through PMax — at a higher cost per click and with the conversion credit reassigned. Your blended numbers might look fine. Underneath, you're paying a premium to buy customers you already had. 
+
+ There's a second-order effect worth naming, too. Because PMax optimizes toward your ROAS target and branded conversions make that target trivially easy to hit, the algorithm learns that the cheap path is the winning path. It leans harder into brand, spends less time working the genuinely hard prospecting that grows the business, and reports back a number that says everything is wonderful. You end up rewarding the campaign for doing the one thing you didn't need it to do. 
+
+## How to spot it
+
+ Cannibalization hides inside a good-looking average, so you have to go looking for it deliberately. Three signals give it away. 
+
+### 1. One asset group or channel with a wildly higher ROAS than the rest
+
+ Pull performance by asset group and by channel. If one slice is posting a ROAS that's three, five, ten times the rest of the campaign, that's not brilliance — that's almost always brand demand hiding inside it. Real prospecting performance is lumpy but earthbound. A single outlier that's an order of magnitude better than everything around it is the tell. 
+
+### 2. A jump in branded impression share
+
+ Check your branded search impression share over time. If it climbed right as you launched or scaled Performance Max, PMax is now competing in an auction you used to own outright. You're bidding against yourself — buying clicks that used to be cheap, or free, at auction prices. 
+
+### 3. Your own brand name in the reports
+
+ Performance Max search-term visibility is thin by design, but it's not zero. Dig into the search terms and search categories reports, plus the "insights" surfaced for the campaign. If your brand name and obvious variants keep showing up as top converting terms, you have your answer in black and white. 
+
+ None of these is conclusive alone. Together, they're a pattern. This is exactly the kind of thing worth checking as part of a broader Performance Max audit — cannibalization rarely travels alone, and the same review usually surfaces two or three other leaks. 
+
+## How to fix it
+
+ You have a ladder of options, from light-touch to structural. Pick the rung that matches how much control you need. 
+
+- Account-level negative keywords. Add your brand terms as account-wide negatives. Performance Max respects them, so this is the fastest way to fence PMax off your own name without touching the campaign structure.
+ 
+- Campaign brand exclusions and brand lists. Google's brand exclusion feature lets you attach a brand list to the Performance Max campaign so it stops serving on your brand (and, if you want, competitor brands). It's the purpose-built lever for exactly this problem.
+ 
+- Split brand into its own campaign. The cleanest fix: run a dedicated branded search campaign, exclude brand everywhere in PMax, and let each campaign do one job. Now you can see — and control — exactly what you pay for branded versus non-branded demand.
+
+ For most accounts, the right answer is a combination: brand exclusions on the PMax campaign plus a dedicated branded search campaign to catch that demand cheaply and on purpose. You're not trying to stop capturing branded traffic — you're trying to stop overpaying for it and mislabelling where it came from. 
+
+ One caution before you flip everything at once: make the change deliberately and give it room to settle. Performance Max re-learns after a structural change, so expect a week or two of noisy numbers while spend redistributes. Change one lever at a time where you can, and note the date — you'll want a clean before-and-after when you measure, and a pile of simultaneous edits makes it impossible to tell which one moved the result. 
+
+## How to measure incrementality afterward
+
+ Here's the part most people skip, and it's the whole point. Once you exclude brand, Performance Max's reported ROAS will drop . That's not the fix failing — that's the fix working. You've stripped out the cheap branded conversions that were flattering the number. What you're left with is closer to PMax's true incremental contribution. 
+
+ So watch the right things after you make the change: 
+
+- Total sales, not campaign ROAS. If revenue holds while PMax's ROAS falls, the demand simply shifted to a cheaper channel — you saved money and lost nothing.
+ 
+- Blended CAC across the account. The number that matters is what it costs you to acquire a customer overall — not what any single campaign claims in isolation.
+ 
+- Branded vs. non-branded split. Now that they live in separate campaigns, you can finally read them separately — and make decisions on the non-branded number that actually reflects new demand.
+
+ The honest framing: a campaign's reported ROAS is not the same as its incremental value. Branded conversions are the cheapest in the account, so any campaign allowed to absorb them will look like a star. Take them away and measure again — that's the only way to know what PMax is really worth on top of the demand you already own. 
+
+## Reported ROAS vs. incremental value
+
+ It's worth seeing the two side by side, because this gap is the entire trap: 
+
+ What you're looking at Reported PMax ROAS (with brand) Incremental value (brand excluded) 
+
+ Counts branded conversions you'd win anyway ✓ — 
+ Reflects new demand PMax actually created — ✓ 
+ Looks impressive in the campaign view ✓ honest 
+ Survives a "would this have happened anyway?" test — ✓ 
+ Safe to base budget decisions on — ✓ 
+
+ The left column is what the platform hands you. The right column is what you can actually bank — and the only one worth scaling on. 
+
+ This is the same discipline behind a proper Google Ads account audit : never trust a headline number until you've asked what it would have done without the spend. Branded cannibalization is just the most expensive place that question goes unasked. 
+
+## Why an analyst catches this and a dashboard doesn't
+
+ A reporting dashboard will show you PMax's glorious ROAS and stop there — the number is technically correct, so nothing flags. Catching cannibalization takes a step of reasoning a dashboard never makes: cross-referencing impression share, spotting the outlier asset group, and asking whether the conversions are incremental at all. That's judgment work, and it's exactly what an AI media buyer is built to do — read the whole account, distrust the flattering number, and tell you where the credit is really coming from. 
+
+ If you want that read on your own account — where PMax is padding its numbers with brand, and what it's actually worth without it — request a demo . Fifteen minutes, connected read-only, and you'll see the real number. 
+
+## Frequently asked
+
+Q: Does Performance Max cannibalize branded search? 
+ Often, yes. By default Performance Max can serve on your own branded queries — demand you'd have captured for free or near-free through organic and brand search. It takes the conversion credit, inflating its reported ROAS while adding little to no incremental sales. 
+
+Q: How do I stop PMax bidding on my brand? 
+ Add your brand terms as account-level negative keywords, apply campaign brand exclusions inside the Performance Max campaign, and use Google's brand list feature to keep the campaign off your own name. For full control, pull brand into its own dedicated branded search campaign and exclude it everywhere in PMax. 
+
+Q: Can you add negative keywords to Performance Max? 
+ Yes. You can apply account-level negative keywords that Performance Max respects, and use campaign-level brand exclusions and brand lists. This is the main lever for keeping PMax off your branded queries without turning the campaign off. 
+
+Q: How do I know if PMax is taking branded traffic? 
+ Look for one asset group or channel with a ROAS wildly higher than the rest, a spike in branded impression share, and search-term or category reports full of your own brand name. If PMax scaled up right as your organic and brand-search clicks dipped, it's likely absorbing branded demand. 
+
+Q: Does excluding brand hurt Performance Max? 
+ Its reported ROAS will drop, because you're removing cheap branded conversions from its credit. But total sales usually hold, because that demand shifts to a cheaper branded search campaign or converts organically. You lose inflated numbers, not real revenue — which is exactly the point. 
+
+Q: Is PMax ROAS inflated by brand? 
+ Frequently. Branded conversions are the cheapest in the account, so when Performance Max absorbs them its blended ROAS looks far better than its true incremental performance. Exclude brand and measure again to see what PMax is actually contributing on top of demand you already own. 
+
+ Keep reading 
+ 
+ Playbook How to audit a Performance Max campaign 
+ Playbook How to audit a Google Ads account 
+
+ All articles 
+ Request demo
+
+========================================================================
+URL: https://adgent.app/why-did-my-cpa-jump
+========================================================================
+Adgent 
+
+ EN TR 
+ Request demo 
+
+ Product 
+ Pricing 
+ About 
+ Blog 
+ EN TR 
+ Request demo 
+
+ Attribution · 7 min read · July 2026 
+ 
+# Why did my CPA suddenly jump? What to check first
+
+ CPA doubled overnight and nothing you changed explains it. Before you panic-pause anything, run the checklist — a spike is almost always one of four things, and half the time it isn't a media problem at all. 
+
+ N 
+ 
+ Nurettin Demiral 
+ Notes from building the analyst 
+
+ Short answer 
+ A sudden CPA jump is usually one of four things — check them in this order: a tracking break that's dropping conversions, a learning reset from a recent change, auction or CPM pressure raising the cost of every impression, or creative fatigue killing your click-through rate. The first two are false alarms you fix in minutes. Diagnose before you pause. 
+
+ Here's the thing about a CPA spike: your first instinct — pause the campaign, cut the budget, blame the creative — is wrong about half the time. Cost per acquisition is a compound metric. It moves when spend goes up, when conversions go down, or when the measurement of either one breaks. So "CPA jumped" isn't a diagnosis. It's a symptom with four common causes, and they demand opposite responses. 
+
+ This is the cost-side twin of why your Meta ROAS is dropping — same diagnostic discipline, pointed at the acquisition-cost number instead of the revenue one. Work the list in order. The cheap checks come first for a reason: if it's a tracking break or a learning reset, you'll know in five minutes and save yourself from breaking a campaign that was fine. 
+
+ Half of all CPA spikes aren't a media problem. They're a measurement problem wearing a media problem's costume. 
+
+## 1. A tracking break — rule this out first
+
+ The single most common cause of an overnight CPA jump isn't that acquisition got more expensive — it's that your conversions stopped being counted. If the platform loses half your conversions, CPA looks like it doubled while spend and real sales haven't moved an inch. It's the false alarm that wastes the most time, which is exactly why it goes first. 
+
+ Tracking breaks quietly, and the usual suspects are boring: a pixel that got removed in a site deploy, a Conversions API event that stopped firing, a broken checkout URL, a consent-banner change that suppressed tags, or a GA4 event that got renamed. None of them announce themselves. CPA just spikes, and the dashboard looks like a media failure. 
+
+### How to confirm it
+
+ Cross-check platform-reported conversions against a source the platform doesn't control — GA4, Shopify, or your backend orders . If the platform's conversion count dropped but your store's real sales held steady, it's a measurement break, not a media problem. Also look at the shape: a genuine media issue degrades over days, while a tracking break usually shows a clean cliff on one exact date — the day of the deploy. If CPA fell off a cliff overnight rather than drifting up, suspect tracking first. 
+
+- Compare sources. Platform conversions vs. GA4 vs. Shopify for the same window. A gap that opened on one date is your smoking gun.
+ 
+- Check the deploy log. Did the spike start the day someone shipped to the site? Correlate the cliff date with your release history.
+ 
+- Fire a test conversion. Run a real checkout and watch whether the event lands in the platform and in your analytics.
+
+## 2. A learning reset — did you change something?
+
+ If tracking checks out, the next question is: what did you touch? A significant edit can knock a campaign back into the learning phase , where the algorithm re-optimizes from a weaker signal and CPA runs high and unstable for a few days. This isn't the campaign failing — it's the campaign relearning. And the worst thing you can do is react to it, because reacting resets it again. 
+
+ The edits that trigger a reset are bigger than people expect. A budget change over roughly 20%, a new audience or a swapped objective, a creative overhaul, moving from ABO to CBO , or switching into Advantage+ — any of these can restart learning. Even a well-intentioned optimization made yesterday can be the reason CPA looks broken today. 
+
+### How to confirm it
+
+ Line up the spike date against your change history. If CPA jumped within a day or two of an edit — and the campaign shows the learning-phase indicator or a spike in cost volatility — this is almost certainly it. The confirmation is temporal: cause precedes effect by a day, and the instability is jagged rather than a smooth climb. If it lines up, the fix is counterintuitive: wait . Give it 3 to 7 days to exit learning before you judge the CPA. Pausing or re-editing now just restarts the clock. 
+
+## 3. Auction / CPM pressure — did the cost of impressions rise?
+
+ CPA sits downstream of CPM. If the cost of a thousand impressions climbs and your conversion rate holds, CPA climbs right along with it — no funnel change required. When more advertisers pile into the same auction (Q4, a big sale event, a competitor's launch, a seasonal surge), CPM rises for everyone, and your acquisition cost inherits the increase. This one isn't your fault and often isn't fixable — but you need to know it's the cause so you don't go hunting for a broken funnel that's working fine. 
+
+ CPM is also the earliest place fatigue shows up, which is why it's worth watching as a leading indicator in its own right — more on that in CPM is the early creative-fatigue signal . 
+
+### How to confirm it
+
+ Overlay CPM against CPA for the same window. If they moved together — CPM up, CPA up, conversion rate roughly flat — the auction changed, not your account . Check whether the rise is seasonal (a known sale period, a holiday run-up) or structural (a new competitor sustaining higher bids). Seasonal CPM pressure fades on its own; structural pressure is a budget-and-bid conversation, not a creative one. 
+
+ Cause How to confirm Typical duration First move 
+
+ Tracking break Platform conversions < GA4/Shopify; clean cliff on one date Until fixed Fix the pixel, don't touch the campaign 
+ Learning reset Spike follows a recent edit; jagged, unstable cost 3–7 days Wait — don't re-edit or pause 
+ Auction / CPM pressure CPM moved in step with CPA; conv. rate flat Weeks (seasonal) Re-check bids & budget, not creative 
+ Creative fatigue CTR down, frequency up, CPM creeping over days Until refreshed Ship new creative 
+
+ Same symptom, four different first moves. Getting the cause wrong isn't neutral — pausing a learning reset or re-editing a fatigued set both make the number worse . 
+
+## 4. Creative fatigue — the slow one that looks sudden
+
+ If tracking is clean, nothing changed, and CPM isn't the story, you're left with fatigue. Your audience has seen the ad too many times. Click-through rate slides, frequency climbs, the platform pays more to place a tiring ad, and CPA drifts up. Fatigue is gradual by nature — but it often looks sudden because it crosses a threshold overnight, or because you only noticed once the number got ugly. 
+
+ This is the one cause on the list that won't recover on its own. A tracking break gets fixed, a learning reset settles, seasonal CPM fades — but a fatigued creative stays fatigued until you replace it. Waiting makes it worse. 
+
+### How to confirm it
+
+ Look at the leading indicators, not just CPA. CTR trending down, frequency trending up, CPM creeping over a week or two — that's the fatigue signature. Because CPM turns before CPA does, CPM is the early-warning line worth watching; by the time CPA spikes, fatigue has usually been building for days. If the decline is a slow slide rather than a cliff, and it correlates with rising frequency, refresh the creative. 
+
+## A note on the attribution window
+
+ One more trap before you act on any of this: make sure the CPA you're reacting to is real. Recent conversions are still landing. If you're looking at yesterday's number, a chunk of the conversions that will eventually be credited haven't been attributed yet — so CPA looks inflated simply because the window hasn't closed. This is the same day-one distortion covered in why day-one data lies : a fresh CPA is a floor, not a fact. Give it the full window before you call it a spike. 
+
+## The whole point is asking "why"
+
+ Notice what every step above has in common: none of them are the number itself. They're all reasons the number moved. A dashboard shows you CPA went up. It can't tell you whether that's a broken pixel, a learning phase, the Q4 auction, or a tired video — and those four demand completely different responses. The work is in the diagnosis, and the diagnosis is exactly the reasoning a media buyer does by hand every morning. 
+
+ That "ask why" is precisely the job an AI media buyer is built to do — read the account overnight, rank the spike against tracking, learning state, CPM and creative, and hand you the cause with the evidence, not just the alert. If you want to see what it would say about a real CPA spike in your account, request a demo — fifteen minutes, connected read-only. 
+
+## Frequently asked
+
+Q: Why did my CPA suddenly increase? 
+ A sudden CPA increase is almost always one of four things: a tracking break that's dropping conversions, a learning reset from a recent edit, auction or CPM pressure raising the cost of every impression, or creative fatigue quietly killing your click-through rate. Check them in that order — a broken pixel or reset is a false alarm you can fix in minutes, while fatigue and CPM take real work. 
+
+Q: Is a CPA spike a tracking problem? 
+ Often, yes — and that's why it's the first thing to rule out. If conversions aren't being counted, CPA looks like it doubled overnight when spend and real sales are unchanged. Cross-check platform-reported conversions against GA4 or Shopify: if the platform dropped but your store didn't, it's a measurement break, not a media problem. 
+
+Q: Does editing a campaign reset CPA? 
+ It can. A significant edit — a budget change over about 20%, a new audience, a swapped objective — can push a campaign back into the learning phase, where CPA runs high and unstable for a few days while the algorithm re-optimizes. If your spike lines up with a recent change, this is the most likely cause, and the fix is usually to wait rather than react. 
+
+Q: How long does a CPA spike last? 
+ It depends on the cause. A learning reset typically settles within 3 to 7 days once the campaign exits the learning phase. A tracking break lasts until you fix the pixel or conversion event. Auction and CPM pressure follows seasonality and can persist for weeks. Creative fatigue only ends when you refresh the creative — it won't recover on its own. 
+
+Q: Can rising CPM cause a CPA jump? 
+ Yes. CPA is downstream of CPM — if the cost of a thousand impressions rises and your conversion rate holds, CPA rises with it. Seasonal auction pressure (Q4, big sale events, more advertisers bidding) can lift CPM sharply. Check whether CPM moved in step with CPA; if it did, the auction changed, not your funnel. 
+
+Q: Should I pause a campaign when CPA spikes? 
+ Usually not as your first move. Pausing a campaign in the learning phase resets it and makes the problem worse. Diagnose first: if it's a tracking break, pausing hides the fix; if it's a learning reset, pausing restarts the clock. Pause only once you've confirmed the cause is genuine fatigue or unrecoverable auction pressure and the spend truly isn't converting. 
+
+ Keep reading 
+ 
+ Attribution Why is my Meta ROAS dropping? 
+ Attribution CPM is the early creative-fatigue signal 
+
+ All articles 
+ Request demo
+
+========================================================================
+URL: https://adgent.app/ai-media-buyer-for-agencies
+========================================================================
+Adgent 
+
+ EN TR 
+ Request demo 
+
+ Product 
+ Pricing 
+ About 
+ Blog 
+ EN TR 
+ Request demo 
+
+ Product · 7 min read · July 2026 
+ 
+# An AI media buyer for agencies: managing many accounts
+
+ You can't staff a senior buyer on every client account — the math never works. An AI media buyer lets you put the same senior-level judgment on all of them at once, so a junior team ships senior output across the whole book. 
+
+ N 
+ 
+ Nurettin Demiral 
+ Notes from building the analyst 
+
+ Short answer 
+ An AI media buyer lets an agency put senior-level judgment on every client account at once — the same nightly read, verdict-first brief and approval-gated fixes across the whole book. Junior teams operate at senior output, seniors spend their time on strategy, and reporting becomes a byproduct instead of a weekly scramble. Read-only by default keeps it safe on money you don't own. 
+
+ Agencies live and die on a staffing ratio. Every client wants a senior buyer's attention; the P&L only supports one senior for every handful of accounts. So the senior gets spread thin, the juniors carry accounts they're not quite ready for, and the accounts that are quietly leaking never make it to the top of anyone's morning. This is the problem an AI media buyer was built for — not to replace the buyer, but to clone the judgment across the whole roster. 
+
+## The agency problem: you can't staff a senior per account
+
+ The best agency work happens when a senior buyer opens an account, reads it in context, and knows within a minute what actually matters today. That read is the product. The trouble is it doesn't scale — a senior can hold maybe six or eight accounts in their head at that depth, and the moment you win the ninth client, something gives. 
+
+ So agencies do the thing every agency does: push accounts down to juniors and hope the training holds. It mostly does, until a Tuesday when three accounts move at once and the one person who'd have caught the placement leak is heads-down on a pitch. The cost isn't a blown quarter — it's the slow erosion of the accounts nobody had time to look at closely. 
+
+ And it's not just a coverage problem, it's a consistency problem. Two juniors looking at the same symptom will reach two different conclusions, because judgment lives in people, not in the agency. When your senior is out, the standard walks out with them. Clients notice the wobble even when they can't name it — the report that used to lead with a clear call now leads with a caveat, and renewal conversations get harder. 
+
+ You don't need a senior on every account. You need every account read like a senior would read it. 
+
+ That reframing is the whole point. The scarce thing was never the click or the report — it was the judgment : knowing which number matters today, why it moved, and whether the obvious fix is the right one. If you can automate that read and apply it consistently across every client, the staffing ratio stops being a ceiling. 
+
+## One tool, every account
+
+ An AI media buyer built for agencies reads your entire book overnight — Meta, Google and TikTok, across every client — and treats each account as its own world. Same engine, same standard, but each client gets its own baselines, its own brief, and its own approval queue. No cross-contamination: one client's spike never colours another client's read. 
+
+ In the morning you don't open twelve dashboards. You get twelve briefs, each one verdict-first — what changed on that account, why, and what to do about it — ranked so the accounts that need you float to the top and the ones that are fine stay quiet. The junior running six accounts wakes up already knowing which two need work before coffee. 
+
+- Each account, its own brief. Baselines and anomalies are computed per client, so a verdict on one account is never diluted by the average of the book.
+ 
+- Cross-channel by default. Meta, Google and TikTok read together per client, plus GA4 and Shopify for revenue truth — the reconciliation your team does by hand, done overnight.
+ 
+- One queue, whole book. Every prepared fix across every client lands in one approval queue, so triage happens once instead of tab by tab.
+
+## Junior teams, senior output
+
+ Here's what actually changes on the floor. A junior buyer's weakness isn't effort — it's pattern library. They haven't seen a thousand accounts, so they don't yet recognise the placement drift hiding inside a healthy blended ROAS, or the day-one number that's still inside the attribution window and shouldn't be trusted. A senior recognises those in a glance. 
+
+ An AI media buyer carries that pattern library into every account. When it flags what a Google Ads audit would surface — a Performance Max campaign eating brand search, a CBO budget starving the one ad set that works, a CPA that looks fine until you split by placement — the junior isn't guessing. They're reviewing a senior-quality read and making the call. That's how a team of juniors ships senior output: the judgment is supplied, the human still owns the decision. 
+
+ And it compounds. Juniors who spend six months reviewing verdict-first briefs learn the patterns faster than juniors who spend six months pulling numbers into spreadsheets. Every brief is a worked example — cause, evidence, recommended fix — so the training that used to depend on a senior having a spare hour now happens on every account, every night. The tool doesn't just cover for the gap — it closes it. 
+
+ It also standardises what "good" looks like. Because the same engine reads every account to the same standard, a client on a junior's book gets the same quality of read as a client on the senior's book. The agency's judgment stops being a property of whoever happens to be assigned and becomes a property of the agency itself — which is exactly what you want when you're trying to grow headcount without diluting the work. 
+
+## Win the pitch, keep the client
+
+ Agencies win two ways: landing the account and not losing it. An AI media buyer helps with both, and the mechanism is the same — you walk in with a real read instead of a promise. 
+
+### Win the pitch with a live read
+
+ Connect a prospect's account read-only and you can walk into the pitch with an actual account audit — the placement leak, the wasted brand spend, the attribution the incumbent has been misreading — instead of a generic capabilities deck. Nothing lands a new client like showing them a problem on their own account that their current agency missed. 
+
+### Keep the client with reports that lead with the verdict
+
+ Reporting is where agencies quietly bleed hours and, eventually, clients. Because the AI already reads each account nightly and reconciles platform numbers to real revenue, the client-ready report writes itself: what changed, why, and what you did about it — the verdict first, the charts underneath for anyone who wants them. The client stops feeling like they're paying for a dashboard export and starts feeling like they have a senior on the account. Which, effectively, they do. 
+
+## Read-only on client money: safe on accounts you don't own
+
+ This is the part that matters most for agencies, and it's where most "autonomous" tools fall down. You're operating on money you don't own. A tool that can act on client spend by itself isn't a productivity gain — it's a liability waiting for a bad number to act on. Attribution windows revise for a week; a mis-configured conversion event can make ROAS literally unmeasurable. Autonomy on that is how you lose a client, not scale one. 
+
+ The right design is read-only by default with approval-gated execution . The AI does the analysis, ranks by impact, states its confidence, prepares the exact change — and waits. Every write is gated on a human click, audited, and reversible. You get the speed of automation across the whole book and keep the accountability the client is paying you for. 
+
+ For an agency that access model does double duty. It protects the client's spend, and it protects your relationship with the client — because when a fix is applied, there's a record of who approved it and why, not a black-box tool that "just changed something." If a client ever asks what happened on their account last Thursday, the answer is a clean audit trail, not a shrug. That's the difference between a tool you can put in front of a client and one you have to explain away. 
+
+ Here's how that safety model stacks up against the alternatives an agency is usually choosing between: 
+
+ What you need across a client book Manual per-account Platform AI (Advantage+, PMax) Autonomous AI tool Approval-gated AI media buyer 
+
+ Senior-level read on every account — — partial ✓ 
+ Scales past your senior-to-account ratio — ✓ ✓ ✓ 
+ Reads Meta, Google & TikTok per client partial — partial ✓ 
+ Client-ready reports as a byproduct — — partial ✓ 
+ Human holds the last click on client spend ✓ — — ✓ 
+ Safe on accounts you don't own ✓ n/a — ✓ 
+
+ The right-hand column is the only one that gives you scale and keeps you accountable to the client — judgment across the whole book, with the human still holding the last click. 
+
+## What it adds up to for an agency
+
+ Put it together and the agency math changes. You stop pricing on how many senior hours you can spare per account and start pricing on the outcome you can guarantee across all of them. Juniors run bigger books at a higher standard. Seniors move from pulling numbers to setting strategy and reviewing the calls that matter. Reporting stops being a Friday fire drill. And every account — including the quiet ones that used to leak unnoticed — gets read like a senior would read it, every single night. 
+
+ That's the bar we build Adgent to: one senior analyst's judgment on every client account across Meta, Google and TikTok, honest about what it can and can't measure, executing only on your team's word. If you want to see what it would say about a live client account, request a demo — fifteen minutes, connected read-only. 
+
+## Frequently asked
+
+Q: What's the best AI tool for a media buying agency? 
+ The best AI tool for an agency reads every client account across Meta, Google and TikTok as its own book, gives each one a verdict-first nightly brief, and stays read-only by default so every change is approval-gated. For an agency, the differentiator isn't cleverness on one account — it's the same senior-level judgment applied consistently across your whole client roster. 
+
+Q: Can AI manage multiple client accounts? 
+ Yes. A good AI media buyer treats each client as its own account with its own baselines, its own brief and its own approval queue — no cross-contamination between clients. One tool reads your entire book overnight and surfaces the accounts that need attention, so a small team can cover more clients without dropping the ones that are fine. 
+
+Q: Is it safe to use AI on client ad accounts? 
+ It's safe when the tool is read-only by default and every write is approval-gated, audited and reversible. On accounts you don't own, the access model matters more than raw capability: a tool that can act autonomously on client spend is a liability, while one that prepares each change and waits for your click keeps you accountable to the client. 
+
+Q: How does an AI media buyer help agencies scale? 
+ It automates the reasoning layer — nightly account reads, anomaly detection, report generation — so a junior team operates at senior output. Instead of hiring a senior buyer per account, you put one consistent analyst on every account at once, and your seniors spend their time on strategy and the final call rather than pulling numbers. 
+
+Q: Can AI generate client reports? 
+ Yes. Because the AI already reads each account nightly and cross-checks platform numbers against real revenue, it can produce a client-ready report that leads with the verdict — what changed, why, and what you did about it — instead of a wall of charts the client has to decode. That turns reporting from a weekly scramble into a byproduct. 
+
+Q: Does it work across Meta and Google? 
+ Yes — the useful ones read Meta, Google and TikTok as a single account per client, and pull in context sources like GA4 and Shopify so each client's report reflects real revenue rather than platform-reported numbers alone. Cross-channel reasoning is exactly where agencies lose time doing it by hand. 
+
+ Keep reading 
+ 
+ Product What is an AI media buyer? 
+ Playbook How to audit a Google Ads account 
+
+ All articles 
+ Request demo
+
+========================================================================
+URL: https://adgent.app/meta-vs-google-ads-which-first
+========================================================================
+Adgent 
+
+ EN TR 
+ Request demo 
+
+ Product 
+ Pricing 
+ About 
+ Blog 
+ EN TR 
+ Request demo 
+
+ Attribution · 8 min read · July 2026 
+ 
+# Meta vs Google Ads: which platform for your first $10k?
+
+ It's not the fight you think. Google Ads captures demand that already exists; Meta creates demand that doesn't. Which you start with comes down to one question — do people already search for what you sell? 
+
+ N 
+ 
+ Nurettin Demiral 
+ Notes from building the analyst 
+
+ Short answer 
+ It's demand-capture vs demand-generation . Google Ads captures intent people already have — they're searching for what you sell. Meta creates intent by interrupting people who weren't looking. Most brands eventually need both, but start with Google if there's real search volume for your product, and Meta if you're introducing something nobody knows to search for. 
+
+ "Meta or Google?" is the first budget question every new advertiser asks, and it's usually framed as a duel — as if one platform is simply better and the other is the runner-up. That framing is wrong, and it quietly wastes a lot of first-$10k budgets. Meta and Google aren't two teams playing the same game. They play different games entirely, and the one you should start with depends on your product, not on which platform has the better reputation this quarter. 
+
+## The one distinction that decides everything
+
+ Here's the split that matters more than any CPM chart: demand-capture versus demand-generation . 
+
+ Google Ads is demand-capture. When someone types "best running shoes for flat feet," they've already decided they want running shoes — you're just competing to be the answer. The intent is baked in before your ad ever loads. Your job is to show up and not fumble it. 
+
+ Meta is demand-generation. Nobody opens Instagram to buy your product. You interrupt them mid-scroll and manufacture the want on the spot. There's no pre-existing intent to capture, so your creative has to do the work of creating it. 
+
+ Google catches the hand already reaching for the shelf. Meta puts the product in front of a hand that wasn't reaching for anything. 
+
+ Everything else — cost, creative load, how hard the platform is to measure — flows from that one difference. So before you compare a single number, ask the only question that matters: do people already search for what I sell? If yes, there's captured demand waiting on Google. If no, you'll have to generate it on Meta. 
+
+## Google Ads vs Meta Ads, side by side
+
+ Here's the honest comparison across the five dimensions that actually change your outcome. Neither column is the "winner" — each is better at a different job. 
+
+ What matters Google Ads (demand-capture) Meta Ads (demand-generation) 
+
+ Intent type Existing — people already searching Created — interrupts the scroll 
+ Best for Products people search for by name or need Visual, impulse, or new-to-market products 
+ Typical CAC pattern Lower early on warm search intent; CPCs climb in competitive categories Higher until creative clicks, then scales further and cheaper 
+ Creative demand Low — a plain text ad on the right keyword converts High — weak creative gets punished fast 
+ Measurement difficulty Moderate — last-click flatters search unfairly Hard — view-through and 7-day windows over-credit Meta 
+
+ Read the table as two jobs , not two rivals — the right first dollar depends on which job your product needs done. 
+
+## Google Ads: capturing the demand that's already there
+
+ Google's advantage is that it doesn't have to convince anyone the problem exists. Someone searching "emergency plumber near me" or "CRM for small agencies" has already self-identified as a buyer. You're one click from a warm lead. That's why Google is usually the shorter path to a first sale, and why a first-time advertiser can get a plain search campaign profitable faster than a first Meta creative. 
+
+ The honest downsides: on high-intent commercial keywords in competitive categories, cost per click can be brutal — you're bidding against everyone else who wants that same warm buyer. And Google's automated products can drift. Performance Max in particular will happily spend your budget across placements you can't see, crediting itself for conversions that would have happened anyway. Google's last-click default also over-credits search: it takes the final touch and ignores that Meta may have created the awareness that led to the search in the first place. 
+
+ Start on Google when: people search for your category by name; your product solves an urgent or well-defined problem; or you're a local or considered-purchase business where intent is explicit. 
+
+## Meta Ads: manufacturing demand that wasn't there
+
+ Meta's superpower is reach into people who've never heard of you. If your product is visual, impulse-friendly, or genuinely new — the kind of thing nobody would think to search for — Meta is where you build the want from scratch. Done well, it scales further than Google because the addressable audience isn't capped by search volume. There are only so many people searching for your keyword each month; there's no such ceiling on the scroll. 
+
+ The honest downsides: Meta lives and dies on creative. A weak ad burns budget fast, and the platform punishes fatigue — what worked last month stops working, and you're back to producing more. Advantage+ automates a lot, but it's optimizing toward Meta's auction, not your margin. And Meta's measurement is the hardest to trust: view-through attribution and generous 7-day windows mean the platform routinely claims credit for sales it merely witnessed. A reported ROAS of 4.2x on Meta is not the same 4.2x you'd get anywhere else. 
+
+ Start on Meta when: nobody searches for what you sell yet; your product is visual or impulse-driven; or you're building a brand and need awareness before intent can exist. 
+
+## The trap: those two ROAS numbers don't compare
+
+ Here's where most "Meta vs Google" decisions go wrong. You run both for a month, pull the dashboards, and see Meta reporting 4.2x while Google reports 3.1x. Obvious call, right? Cut Google, double down on Meta. 
+
+ Except the two numbers were never measured the same way. Meta counts a 7-day-click, 1-day-view window and claims view-through conversions; Google counts last-click on its own window. They frequently double-count the same sale — Meta created the awareness, the person searched, Google closed it, and both platforms bill you for the win. Stacking those raw figures against each other is comparing two different rulers and trusting the one with the friendlier markings. 
+
+ Before you reallocate a dollar based on platform-reported ROAS, read why Meta and Google ROAS aren't directly comparable — it's the single most expensive mistake in this whole decision. The only fix is reconciling both back to real revenue in GA4 or your store, so you know which platform actually earned the conversion instead of which one shouted loudest about it. 
+
+## So which do you start with?
+
+ Skip the platform loyalty and run the product through this: 
+
+- Do people search for it? If there's real search volume for your category, start with Google — you're capturing demand that already exists, which is cheaper and faster to convert.
+ 
+- Is it visual or impulse? If the product sells on sight and nobody's searching for it, start with Meta — the feed is built to sell things people didn't set out to buy.
+ 
+- Are you a beginner? Google search is more forgiving — the intent does half the work, and a plain ad on the right keyword can convert without a studio's worth of creative.
+ 
+- Genuinely can't tell? Default to Google for the first $10k. Warm intent is the easier thing to learn on, and the lessons transfer.
+
+ Then, once the first channel is stable and profitable, add the second — because the real endgame is both . Meta generates the awareness that becomes tomorrow's branded searches; Google captures the intent Meta warmed up. They compound. But compounding is a phase-two problem. On your first $10k, pick the one your product needs and prove it works before you split your attention. 
+
+## The measurement problem underneath all of this
+
+ Whichever you start with, the hard part isn't launching — it's knowing what actually worked. Both platforms grade their own homework, and both grade generously. This is exactly the mess an AI analyst is built to untangle: reading both accounts as one book, reconciling reported numbers against real revenue, and telling you which platform earned the sale rather than which one claimed it. That's what an AI media buyer does that a dashboard can't. 
+
+ If you want to see what an honest read of your Meta and Google accounts looks like — the numbers reconciled, the double-counting stripped out — request a demo . Fifteen minutes, connected read-only, and you'll finally see the two platforms on the same ruler. 
+
+## Frequently asked
+
+Q: Should I start with Meta or Google Ads? 
+ Start with Google Ads if people already search for what you sell — you're capturing demand that exists, so the intent is warm and the path to a first sale is short. Start with Meta if you're introducing something people don't know to look for, or if your product is visual and impulse-friendly. When you're unsure, Google is usually the safer first dollar because search intent is easier to convert and cheaper to learn from. 
+
+Q: Is Google Ads better than Meta? 
+ Neither is better in the abstract — they do different jobs. Google Ads captures existing demand from people already searching; Meta creates demand by interrupting people who weren't looking. Google tends to convert warmer traffic at a lower cost per acquisition early on; Meta scales further once you've nailed creative. The right answer depends on whether search volume exists for what you sell. 
+
+Q: Can you compare Meta and Google ROAS? 
+ Not directly. A 4.2x on Meta and a 3.1x on Google are measured by two different attribution systems on two different windows, often double-counting the same sale. Comparing the raw numbers is misleading — you need to reconcile both against real revenue in GA4 or your store before you decide which platform actually earned the conversion. 
+
+Q: Which is cheaper, Meta or Google? 
+ It depends what you mean by cheap. Meta usually has a lower CPM — you pay less per thousand impressions — but Google often has a lower cost per acquisition on high-intent search terms because the traffic is warmer. Cheap CPMs don't help if nobody buys; cheap conversions are what matter. On non-brand search, Google's CPCs can be expensive in competitive categories. 
+
+Q: Do I need both Meta and Google Ads? 
+ Eventually, most brands do — demand-capture and demand-generation compound each other. Meta creates awareness that later shows up as branded searches you catch on Google; Google catches the intent Meta warmed up. But you don't need both on day one. Start with one, prove it works, then add the second channel once the first is stable and you can afford to learn on a new one. 
+
+Q: Which is better for ecommerce? 
+ For ecommerce with a visual, impulse-friendly product, Meta is often the stronger engine — the feed is built to sell things people didn't set out to buy, and Advantage+ shopping campaigns scale well. But Google Shopping and search catch buyers with active purchase intent and usually convert at a lower cost. Most scaled ecommerce brands run both; if forced to pick one first, let the product decide — visual and impulse leans Meta, considered and searched-for leans Google. 
+
+Q: Which is easier for beginners? 
+ Google search is usually easier to start with because the intent does half the work — someone typing "buy running shoes" is already close to a sale, so a plain ad on the right keyword can convert. Meta demands more from your creative, since you're interrupting people, and it punishes weak creative quickly. Google's measurement is also more forgiving for a beginner, though neither platform's reported numbers should be trusted without a real-revenue cross-check. 
+
+ Keep reading 
+ 
+ Attribution Why Meta and Google ROAS don't compare 
+ Product What is an AI media buyer? 
+
+ All articles 
+ Request demo
+
+========================================================================
 URL: https://adgent.app/attribution-window-day-one-data
 ========================================================================
 Adgent 
 
+ EN TR 
+ Request demo 
+
+ Product 
+ Pricing 
+ About 
+ Blog 
  EN TR 
  Request demo 
 
@@ -1018,9 +2469,9 @@ Adgent
 
  Meta's attribution window quietly rewrites yesterday's numbers for a week. Pausing a campaign on day-one data is the most expensive reflex in performance marketing — here's how to read a metric that isn't done yet. 
 
- A 
+ N 
  
- The Adgent team 
+ Nurettin Demiral 
  Notes from building the analyst 
 
  Open Ads Manager at 9am and a campaign you launched yesterday shows a ROAS of 1.9×. The instinct is immediate and wrong: pause it, reallocate, move on. The problem is that 1.9× isn't a result. It's a snapshot of a number still being written. 
@@ -1070,15 +2521,22 @@ Adgent
  EN TR 
  Request demo 
 
+ Product 
+ Pricing 
+ About 
+ Blog 
+ EN TR 
+ Request demo 
+
  Scaling · 6 min read · April 2026 
  
 # How to scale a winner without breaking it
 
  You found a campaign that works. Now the hard part: adding budget without handing it back to the learning phase. The rule isn't about how much you add — it's about how fast. 
 
- A 
+ N 
  
- The Adgent team 
+ Nurettin Demiral 
  Notes from building the analyst 
 
  Every performance marketer knows the feeling. A campaign hits 4× and you want more of it — so you triple the budget overnight. By Thursday it's at 1.8× and you're trying to work out what broke. Nothing broke. You reset it. 
@@ -1132,15 +2590,22 @@ Adgent
  EN TR 
  Request demo 
 
+ Product 
+ Pricing 
+ About 
+ Blog 
+ EN TR 
+ Request demo 
+
  Creative fatigue · 5 min read · April 2026 
  
 # Frequency is a lagging indicator. Watch CPM.
 
  Frequency tells you an audience has seen your ad too often. CPM tells you the auction already noticed. One of those is news; the other is a receipt. 
 
- A 
+ N 
  
- The Adgent team 
+ Nurettin Demiral 
  Notes from building the analyst 
 
  The standard fatigue check is frequency. Watch it climb past 2, past 3, and somewhere in there you refresh the creative. It's a reasonable habit built on a flawed instrument: frequency is an average, and it's slow. 
@@ -1190,15 +2655,22 @@ Adgent
  EN TR 
  Request demo 
 
+ Product 
+ Pricing 
+ About 
+ Blog 
+ EN TR 
+ Request demo 
+
  Product · 4 min read · March 2026 
  
 # Why Adgent leads with the verdict
 
  A dashboard is a filing cabinet that renders. It shows you everything and concludes nothing. Every Adgent brief inverts that: the verdict first, the evidence underneath, and nothing you didn't need. 
 
- A 
+ N 
  
- The Adgent team 
+ Nurettin Demiral 
  Notes from building the analyst 
 
  Most reporting tools solve a problem nobody has. Performance marketers are not short of data — they're drowning in it. The scarce thing was never the metric. It's the sentence that tells you what the metric means. 
@@ -1254,15 +2726,22 @@ Adgent
  EN TR 
  Request demo 
 
+ Product 
+ Pricing 
+ About 
+ Blog 
+ EN TR 
+ Request demo 
+
  Attribution · 7 min read · March 2026 
  
 # Placement drift: the leak hiding in your average
 
  Your account is at 3.8× and everything looks fine. Inside that number, one placement is returning 1.1× on a fifth of your budget — and the average is doing an excellent job of hiding it. 
 
- A 
+ N 
  
- The Adgent team 
+ Nurettin Demiral 
  Notes from building the analyst 
 
  The most dangerous number in your account is the one that looks fine. A blended ROAS of 3.8× doesn't prompt an investigation — it prompts a nod and a move on to the next tab. An average is a summary, and summaries are where problems go to hide. 
@@ -1316,15 +2795,22 @@ Adgent
  EN TR 
  Request demo 
 
+ Product 
+ Pricing 
+ About 
+ Blog 
+ EN TR 
+ Request demo 
+
  Scaling · 6 min read · March 2026 
  
 # CBO vs ABO in 2026: when each still wins
 
  CBO won the argument years ago and mostly deserved to. But "mostly" is doing real work in that sentence — and the cases where ABO still wins are the cases where you're trying to learn something. 
 
- A 
+ N 
  
- The Adgent team 
+ Nurettin Demiral 
  Notes from building the analyst 
 
  Ask ten media buyers whether to use campaign budget optimization and nine will say yes without asking what you're doing. They're right often enough that the tenth answer never gets heard — which is a shame, because the tenth answer is where the interesting accounts live. 
@@ -1382,15 +2868,22 @@ Adgent
  EN TR 
  Request demo 
 
+ Product 
+ Pricing 
+ About 
+ Blog 
+ EN TR 
+ Request demo 
+
  Attribution · 7 min read · February 2026 
  
 # Meta says 4.2×, Google says 3.1×. Both are right.
 
  Two platforms, two ROAS figures, one budget decision. The numbers aren't measuring the same thing — and moving money between them as if they were is the most common expensive mistake in multi-channel accounts. 
 
- A 
+ N 
  
- The Adgent team 
+ Nurettin Demiral 
  Notes from building the analyst 
 
  You're running both. Meta reports 4.2×, Google reports 3.1×, and the conclusion writes itself: move budget to Meta. It's the most natural decision in the account, and you have almost no evidence for it. 
@@ -1447,6 +2940,13 @@ URL: https://adgent.app/security
 ========================================================================
 Adgent 
 
+ EN TR 
+ Request demo 
+
+ Product 
+ Pricing 
+ About 
+ Blog 
  EN TR 
  Request demo 
 
@@ -1524,6 +3024,13 @@ URL: https://adgent.app/data-use
 ========================================================================
 Adgent 
 
+ EN TR 
+ Request demo 
+
+ Product 
+ Pricing 
+ About 
+ Blog 
  EN TR 
  Request demo 
 
@@ -1606,12 +3113,19 @@ Adgent
  EN TR 
  Request demo 
 
+ Product 
+ Pricing 
+ About 
+ Blog 
+ EN TR 
+ Request demo 
+
  Legal 
  
 # Privacy Policy
 
  Effective 28 June 2026 · Last updated 28 June 2026 
- This Privacy Policy explains how Adgent , a service ("Adgent", "we", "us", or "our"), collects, uses, stores, shares, and protects information when you use our website and our marketing-intelligence service. A core part of Adgent is connecting, with your authorization, to your advertising and analytics platforms — including Meta , Google , TikTok , Google Analytics 4 , Shopify , and Google Search Console — to read reporting data and, only on your explicit approval, carry out changes you ask us to make. 
+ This Privacy Policy explains how Adgent , a service operated by ("Adgent", "we", "us", or "our"), collects, uses, stores, shares, and protects information when you use our website and our marketing-intelligence service. A core part of Adgent is connecting, with your authorization, to your advertising and analytics platforms — including Meta , Google , TikTok , Google Analytics 4 , Shopify , and Google Search Console — to read reporting data and, only on your explicit approval, carry out changes you ask us to make. 
 
 ## 01 Who we are and scope
 
@@ -1764,12 +3278,19 @@ Adgent
  EN TR 
  Request demo 
 
+ Product 
+ Pricing 
+ About 
+ Blog 
+ EN TR 
+ Request demo 
+
  Legal 
  
 # Terms of Service
 
  Effective 28 June 2026 · Last updated 28 June 2026 
- These Terms of Service ("Terms") govern your access to and use of Adgent , a marketing-intelligence service ("Adgent", "we", "us", or "our"). By accessing or using Adgent — including by connecting any advertising or analytics platform — you agree to these Terms. If you are using Adgent on behalf of a company, you agree on its behalf and confirm you have authority to do so. If you do not agree, do not use Adgent. 
+ These Terms of Service ("Terms") govern your access to and use of Adgent , a marketing-intelligence service operated by ("Adgent", "we", "us", or "our"). By accessing or using Adgent — including by connecting any advertising or analytics platform — you agree to these Terms. If you are using Adgent on behalf of a company, you agree on its behalf and confirm you have authority to do so. If you do not agree, do not use Adgent. 
 
 ## 01 The service
 

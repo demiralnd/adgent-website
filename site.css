@@ -91,7 +91,34 @@ section { position: relative; z-index: 1; }
 .nav-right { margin-left: auto; display: flex; align-items: center; gap: 8px; }
 .nav-login { font-size: 14px; font-weight: 500; color: var(--text-2); padding: 7px 12px; border-radius: var(--r-sm); transition: color 120ms; }
 .nav-login:hover { color: var(--text); }
-.nav-burger { display: none; }
+.nav-burger {
+  display: none; align-items: center; justify-content: center;
+  width: 40px; height: 40px; margin-left: auto; flex: none;
+  background: transparent; border: 1px solid var(--border-2); border-radius: var(--r-sm);
+  color: var(--text); cursor: pointer; padding: 0;
+}
+.nav-burger svg { width: 20px; height: 20px; stroke-width: 2; fill: none; stroke: currentColor; }
+.nav-burger .ic-close { display: none; }
+.nav.menu-open .nav-burger .ic-open { display: none; }
+.nav.menu-open .nav-burger .ic-close { display: block; }
+
+/* mobile menu drawer */
+.mobile-menu {
+  display: none; position: fixed; left: 0; right: 0; top: 64px; z-index: 49;
+  background: var(--bg-app); border-bottom: 1px solid var(--border);
+  box-shadow: 0 20px 40px -20px rgba(28,25,20,0.25);
+  padding: 12px 20px 22px; flex-direction: column; gap: 2px;
+}
+.nav.menu-open + .mobile-menu { display: flex; }
+.mobile-menu a {
+  font-size: 16px; font-weight: 600; color: var(--text); padding: 13px 12px;
+  border-radius: var(--r-sm); border-bottom: 1px solid var(--border);
+}
+.mobile-menu a:last-of-type { border-bottom: none; }
+.mobile-menu a:hover, .mobile-menu a:active { background: var(--bg-hover); }
+.mobile-menu .mm-lang { display: flex; gap: 0; margin-top: 12px; align-self: flex-start; }
+.mobile-menu .mm-cta { margin-top: 14px; }
+body.menu-open { overflow: hidden; }
 
 /* ---------- buttons ---------- */
 .btn {
@@ -665,6 +692,8 @@ section { position: relative; z-index: 1; }
 @media (max-width: 640px) {
   .wrap { padding: 0 20px; }
   .nav-links, .nav-login { display: none; }
+  /* on mobile the top bar shows only logo + burger; switcher & CTA live in the drawer */
+  .nav-right > .lang-switch, .nav-right > .btn { display: none; }
   .nav-burger { display: inline-flex; }
   .hero { padding: 56px 0 48px; }
   .band { padding: 56px 0; }

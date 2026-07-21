@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1NCS2ZFMLR"></script>
+<script>
+ window.dataLayer = window.dataLayer || [];
+ function gtag(){dataLayer.push(arguments);}
+ gtag('js', new Date());
+ gtag('config', 'G-1NCS2ZFMLR');
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MWR4PVRF');</script>
+<!-- End Google Tag Manager -->
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>How to audit a Performance Max campaign (the black box) — Adgent</title>
+<meta name="description" content="Performance Max hides where your money goes. Here are the checks that pierce the black box — ranked by impact — starting with brand-spend detection and tracking quality."/>
+<link rel="canonical" href="https://adgent.app/how-to-audit-performance-max"/>
+<link rel="alternate" hreflang="en" href="https://adgent.app/how-to-audit-performance-max"/>
+<link rel="alternate" hreflang="x-default" href="https://adgent.app/how-to-audit-performance-max"/>
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1"/>
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="Adgent"/>
+<meta property="og:title" content="How to audit a Performance Max campaign (the black box)"/>
+<meta property="og:description" content="Performance Max hides where your money goes. Here are the checks that pierce the black box — ranked by impact — starting with brand-spend detection and tracking quality."/>
+<meta property="og:url" content="https://adgent.app/how-to-audit-performance-max"/>
+<meta property="og:image" content="https://adgent.app/assets/og/how-to-audit-performance-max.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="A dark Performance Max box with a question mark, labelled open the box."/>
+<meta property="article:published_time" content="2026-07-22"/>
+<meta property="article:section" content="Playbook"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="How to audit a Performance Max campaign (the black box)"/>
+<meta name="twitter:description" content="Performance Max hides where your money goes. Here are the checks that pierce the black box — ranked by impact — starting with brand-spend detection and tracking quality."/>
+<meta name="twitter:image" content="https://adgent.app/assets/og/how-to-audit-performance-max.png"/>
+<link rel="icon" type="image/svg+xml" href="/assets/logo-app.svg"/>
+<link rel="apple-touch-icon" href="/assets/logo-app.svg"/>
+<link rel="stylesheet" href="/tokens.css"/>
+<link rel="stylesheet" href="/site.css"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "headline": "How to audit a Performance Max campaign (the black box)", "image": ["https://adgent.app/assets/og/how-to-audit-performance-max.png"], "description": "Performance Max hides where your money goes. Here are the checks that pierce the black box — ranked by impact — starting with brand-spend detection and tracking quality.", "datePublished": "2026-07-22", "dateModified": "2026-07-22", "author": {"@type": "Person", "name": "Nurettin Demiral", "url": "https://www.linkedin.com/in/nurettin-demiral/", "sameAs": ["https://www.linkedin.com/in/nurettin-demiral/"]}, "publisher": {"@type": "Organization", "name": "Adgent", "url": "https://adgent.app", "logo": {"@type": "ImageObject", "url": "https://adgent.app/assets/logo.svg"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://adgent.app/how-to-audit-performance-max"}, "isPartOf": {"@type": "Blog", "name": "Adgent Blog", "@id": "https://adgent.app/blog"}, "articleSection": "Playbook", "keywords": "performance max audit, pmax audit, performance max not converting, audit performance max campaign", "wordCount": 1872, "inLanguage": "en", "about": {"@type": "Thing", "name": "Performance Max audit"}, "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".answer-box", ".standfirst"]}, "url": "https://adgent.app/how-to-audit-performance-max"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why is Performance Max spending but not converting?", "acceptedAnswer": {"@type": "Answer", "text": "Usually one of three things: conversion tracking is broken or double-counting, so PMax is optimizing toward garbage signals; the campaign is pouring budget into cheap Display and Video placements that impress but don't convert; or the asset groups are so thin that Google is still in cold-start, buying junk inventory while it learns. Audit tracking first, then the channel breakdown."}}, {"@type": "Question", "name": "How do I see where Performance Max spends?", "acceptedAnswer": {"@type": "Answer", "text": "Google hides most of it by default, but you can pull a channel-level split with a script or the Google Ads API to see the Search, Display and Video breakdown, and the placement report (in Content or via the API) to see the actual apps and sites. Insights and the Explanations panel help, but the machine-readable route is the only way to see the real distribution."}}, {"@type": "Question", "name": "Can you exclude placements in Performance Max?", "acceptedAnswer": {"@type": "Answer", "text": "Partially. You can apply account-level placement exclusions, exclude mobile-app inventory via a mobile-app category exclusion, and add brand-safety and content exclusions. You can't hand-pick placements the way you can in a Display campaign, but the account-level exclusion list and mobile-app exclusion together kill most of the wasted junk inventory."}}, {"@type": "Question", "name": "Is Performance Max cannibalizing my search?", "acceptedAnswer": {"@type": "Answer", "text": "Often, yes. PMax can serve on search queries — including your brand terms — and Google's own priority rules mean it can outrank or overlap your standard Search campaigns. The tell is a PMax term or asset group with wildly higher ROAS than the rest: that's usually branded search PMax is taking credit for, not new demand it created."}}, {"@type": "Question", "name": "How often should I audit Performance Max?", "acceptedAnswer": {"@type": "Answer", "text": "A full manual audit is worth doing monthly, and always after a big budget change, a new asset group, or a tracking change. But the checks that matter — brand-spend creep, tracking breaks, placement drift — move daily, so the honest answer is that PMax wants continuous monitoring, not a monthly snapshot. A once-a-month audit catches the leak weeks after it started."}}, {"@type": "Question", "name": "What's the most important Performance Max setting?", "acceptedAnswer": {"@type": "Answer", "text": "Clean conversion tracking, followed closely by a brand-exclusion list. PMax leans entirely on your conversion data to decide where to spend, so if tracking is wrong every downstream decision is wrong. After that, excluding your brand terms stops PMax from taking credit for demand you already own and inflating its reported ROAS."}}, {"@type": "Question", "name": "Can AI audit Performance Max?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — and PMax is exactly the kind of black box AI is good at. An AI media buyer can pull the channel and placement breakdown, detect a brand term with abnormal ROAS, catch a tracking break the day it happens, and rank each finding by recoverable spend — continuously, not once a month. It surfaces the leak; you approve the fix."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://adgent.app"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://adgent.app/blog"}, {"@type": "ListItem", "position": 3, "name": "How to audit a Performance Max campaign (the black box)", "item": "https://adgent.app/how-to-audit-performance-max"}]}]}</script>
+<style>
+ .article { max-width: 720px; margin: 0 auto; }
+ .article .post-meta { display: flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-tertiary); }
+ .article .post-tag { color: var(--accent); }
+ .article h1 { font-weight: 600; font-size: clamp(30px, 4.4vw, 46px); line-height: 1.06; letter-spacing: -0.035em; margin: 18px 0 0; text-wrap: balance; }
+ .article .standfirst { font-size: 19px; line-height: 1.6; color: var(--text-secondary); margin: 22px 0 0; text-wrap: pretty; }
+ .byline { display: flex; align-items: center; gap: 12px; margin: 26px 0 0; }
+ .byline .av { width: 38px; height: 38px; border-radius: 50%; background: var(--accent); color: #fff; display: grid; place-items: center; font-weight: 700; font-size: 16px; }
+ .byline .who { font-size: 14px; font-weight: 600; }
+ .byline .role { font-size: 12.5px; color: var(--text-tertiary); }
+ .post-hero-cover { margin: 30px 0 0; border: 1px solid var(--border-default); border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 1200 / 630; }
+ .post-hero-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+ .answer-box { margin: 30px 0 0; background: var(--bg-sub); border: 1px solid var(--border-default); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-md) var(--radius-md) 0; padding: 20px 24px; }
+ .answer-box .lbl { font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
+ .answer-box p { font-size: 17px; line-height: 1.6; color: var(--text); margin: 10px 0 0; text-wrap: pretty; }
+ .prose { margin: 36px 0 0; }
+ .prose p { font-size: 17px; line-height: 1.72; color: var(--text); margin: 20px 0 0; text-wrap: pretty; }
+ .prose h2 { font-size: 25px; font-weight: 600; letter-spacing: -0.02em; margin: 40px 0 0; }
+ .prose h3 { font-size: 19px; font-weight: 600; letter-spacing: -0.01em; margin: 30px 0 0; }
+ .prose b { font-weight: 600; }
+ .prose a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(255,90,44,0.35); }
+ .prose a:hover { border-bottom-color: var(--accent); }
+ .prose ul { list-style: none; margin: 18px 0 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+ .prose ul li { position: relative; padding-left: 30px; font-size: 16px; line-height: 1.6; color: var(--text); }
+ .prose ul li svg { position: absolute; left: 0; top: 3px; width: 18px; height: 18px; color: var(--accent); stroke-width: 2; }
+ .prose blockquote { margin: 30px 0 0; padding: 18px 24px; border-left: 3px solid var(--accent); background: var(--bg-sub); border-radius: 0 var(--radius-md) var(--radius-md) 0; }
+ .prose blockquote p { margin: 0; font-family: var(--font-editorial); font-style: italic; font-size: 20px; line-height: 1.5; color: var(--text); }
+ .cmp-wrap { overflow-x: auto; margin: 24px 0 0; border: 1px solid var(--border-default); border-radius: var(--radius-lg); -webkit-overflow-scrolling: touch; }
+ .cmp { border-collapse: separate; border-spacing: 0; width: 100%; min-width: 640px; font-size: 13.5px; background: var(--bg-elevated); }
+ .cmp th.cmp td { padding: 12px 14px; text-align: center; border-bottom: 1px solid var(--border-default); }
+ .cmp thead th { font-family: var(--font-mono); font-size: 10.5px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-tertiary); background: var(--bg-content); vertical-align: bottom; line-height: 1.3; }
+ .cmp thead th span { font-weight: 500; opacity: 0.75; text-transform: none; letter-spacing: 0; }
+ .cmp thead th.us { background: var(--accent); color: var(--accent-on); }
+ .cmp tbody td:first-child { text-align: left; font-weight: 500; color: var(--text); }
+ .cmp td.yes { color: var(--severity-ok, #16935a); font-weight: 700; font-size: 15px; }
+ .cmp td.no { color: var(--text-disabled); }
+ .cmp td.part.cmp td.na { font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary); }
+ .cmp td.us { background: var(--accent-subtle); }
+ .cmp tbody tr:last-child td { border-bottom: none; }
+ .cmp-note { font-size: 14px; color: var(--text-secondary); margin: 14px 0 0; font-style: italic; }
+ .cmp-note em { font-family: var(--font-editorial); color: var(--accent); font-style: italic; }
+ .faq { max-width: 720px; margin: 44px auto 0; }
+ .faq h2 { font-size: 25px; font-weight: 600; letter-spacing: -0.02em; }
+ .faq details { border-top: 1px solid var(--border-default); padding: 18px 0; }
+ .faq details:last-child { border-bottom: 1px solid var(--border-default); }
+ .faq summary { list-style: none; cursor: pointer; font-size: 17px; font-weight: 600; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+ .faq summary::-webkit-details-marker { display: none; }
+ .faq summary .chev { width: 18px; height: 18px; flex: none; stroke-width: 2; color: var(--text-tertiary); transition: transform 160ms; }
+ .faq details[open] summary .chev { transform: rotate(180deg); }
+ .faq .faq-a { font-size: 15.5px; line-height: 1.65; color: var(--text-secondary); margin: 12px 0 0; }
+ .related { max-width: 720px; margin: 48px auto 0; }
+ .related .eyebrow { font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); display: inline-flex; align-items: center; gap: 9px; }
+ .related .eyebrow .tick { width: 16px; height: 1px; background: var(--accent); }
+ .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 18px 0 0; }
+ .rel-card { background: var(--bg-elevated); border: 1px solid var(--border-default); border-radius: var(--radius-lg); padding: 18px 20px; transition: border-color 140ms; }
+ .rel-card:hover { border-color: var(--border-strong); }
+ .rel-card .rc-tag { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
+ .rel-card .rc-h { font-size: 15px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.25; margin: 8px 0 0; text-wrap: balance; }
+ .post-foot { max-width: 720px; margin: 48px auto 0; padding-top: 28px; border-top: 1px solid var(--border-default); display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+ .back-link { display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 600; color: var(--text-secondary); }
+ .back-link svg { width: 15px; height: 15px; stroke-width: 2; }
+ .back-link:hover { color: var(--text-primary); }
+ @media (max-width: 560px){ .related-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MWR4PVRF"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<header class="nav">
+ <div class="wrap nav-in">
+ <a class="brand" href="/"><img class="mark" src="/assets/icon-only.svg" alt=""/><span class="name">Adgent</span></a>
+ <nav class="nav-links">
+ <a href="/">Product</a>
+ <a href="/pricing">Pricing</a>
+ <a href="/about">About</a>
+ <a href="/blog" class="active">Blog</a>
+ </nav>
+ <div class="nav-right">
+ <button class="nav-burger" aria-label="Menu" aria-expanded="false"><svg class="ic-open" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg><svg class="ic-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      <div class="lang-switch"><a href="/how-to-audit-performance-max" class="on">EN</a><span class="sep"></span><a href="/tr/" hreflang="tr">TR</a></div>
+ <a class="btn btn-primary btn-sm" href="/#lead">Request demo</a>
+ </div>
+ </div>
+</header>
+<div class="mobile-menu">
+  <a href="/">Product</a>
+ <a href="/pricing">Pricing</a>
+ <a href="/about">About</a>
+ <a href="/blog">Blog</a>
+  <div class="mm-lang"><div class="lang-switch"><a href="/how-to-audit-performance-max" class="on">EN</a><span class="sep"></span><a href="/tr/" hreflang="tr">TR</a></div></div>
+  <a class="btn btn-primary btn-sm mm-cta" href="/#lead">Request demo</a>
+</div>
+
+<article class="band">
+ <div class="wrap">
+ <div class="article">
+ <div class="post-meta"><span class="post-tag">Playbook</span><span>·</span><span>9 min read</span><span>·</span><span>July 2026</span></div>
+ <h1>How to audit a Performance Max campaign (the black box)</h1>
+ <p class="standfirst">Performance Max either becomes your best campaign or your biggest waste source — and Google won't tell you which. Here are the checks that pierce the black box, ranked by how much money they recover, in the order you should actually run them.</p>
+
+ <div class="byline">
+ <div class="av">N</div>
+ <div>
+ <div class="who">Nurettin Demiral</div>
+          <div class="role">Notes from building the analyst</div>
+ </div>
+ </div>
+
+ <figure class="post-hero-cover"><img src="/assets/blog/how-to-audit-performance-max.svg" width="1200" height="630" alt="A dark Performance Max box with a question mark, labelled open the box." loading="eager"/></figure>
+
+ <div class="answer-box">
+ <span class="lbl">Short answer</span>
+ <p><b>Performance Max</b> becomes your best campaign or your biggest waste source — and the difference is setup plus a few checks. Audit in this order: brand-spend detection first, then conversion-tracking quality, then the channel and placement breakdown, then asset-group signals, landing-page experience, and finally Search overlap. Fix the leaks Google hides, and PMax earns its budget.</p>
+ </div>
+
+ <div class="prose">
+ <p>Performance Max is the campaign type Google most wants you to run and least wants you to see inside. You hand it budget, assets and a goal; it decides where the money goes across Search, Display, YouTube, Gmail, Discover and Maps — and reports back a single ROAS number that, more often than you'd like, is flattering nonsense. The good news: the black box has seams. You can pry it open. This is the audit, ranked by how much money each check tends to recover.</p>
+
+ <blockquote>
+ <p>PMax doesn't fail loudly. It fails by quietly spending your budget in the one place you'd never have chosen — and taking credit for the sales you'd have made anyway.</p>
+ </blockquote>
+
+ <h2>1. Brand-spend detection — the check that pays for the audit</h2>
+
+ <p>Start here, always. The single most common way Performance Max looks like a hero is that it's serving on your own brand terms — people already searching "[your company]" — and booking those near-certain conversions as its own work. Your reported ROAS goes to the moon; your incremental ROAS barely moves.</p>
+
+ <p>The tell is a search term or asset group with a ROAS wildly out of line with everything else — 15x when the account average is 3x. That's almost never a demand-gen miracle. It's branded traffic PMax is intercepting on the way to a click you already owned. Pull the search-terms and asset-group breakdown, find the outlier, and check whether the winning queries contain your brand name.</p>
+
+ <p>If they do, the fix is a brand-exclusion list (account-level negative keyword list applied to PMax) so the campaign competes for demand you don't already have. This is worth its own deep dive — see <a href="/performance-max-brand-cannibalization">Performance Max brand cannibalization</a> — but for the audit, the rule is simple: any asset group with abnormal ROAS is guilty until the search terms prove otherwise.</p>
+
+ <h2>2. Conversion-tracking quality — garbage in, garbage out</h2>
+
+ <p>Performance Max leans on your conversion data more heavily than any other campaign type. It has no manual levers — no keywords, no placements you pick, no bids you set. All it has is the goal you give it and the conversion signal it optimizes toward. If that signal is wrong, every single decision downstream is wrong, and no amount of asset tweaking will save it.</p>
+
+ <p>So before you touch anything else, verify the tracking is clean:</p>
+
+ <ul>
+ <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg><b>One primary conversion, counted once.</b> Double-firing tags and duplicate conversion actions teach PMax that a purchase is worth two, and it overspends accordingly.</li>
+ <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg><b>Values that reflect real revenue.</b> If you pass a static value instead of dynamic cart value, PMax optimizes for volume of cheap orders, not margin. Reconcile against GA4 and Shopify.</li>
+ <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg><b>No soft goals as primary.</b> "Add to cart" or "page view" as a primary conversion turns PMax into a traffic firehose chasing the easy signal, not the sale.</li>
+ <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg><b>Consent-mode and modeling sanity.</b> If a big share of conversions are modeled rather than observed, the ground under every decision is softer than the ROAS number admits.</li>
+ </ul>
+
+ <p>Garbage in, garbage out isn't a cliché here — it's the whole mechanism. PMax is a signal-following machine, so the signal is the product.</p>
+
+ <h2>3. Channel &amp; network breakdown — where it's actually spending</h2>
+
+ <p>Now the fun part: finding out where the money physically went. Google buries this, but the channel-level split — Search vs Display vs Video vs Shopping — is retrievable through a script or the Google Ads API, and the placement report shows the actual apps and sites.</p>
+
+ <p>What you're looking for is the classic PMax leak: budget draining into cheap Display impressions and auto-playing Video that generate impressive reach and almost no revenue, while the Search and Shopping slices quietly do the real work. If 60% of spend is Display and 5% of conversions are, you've found a large recoverable chunk.</p>
+
+ <p>Two exclusions do most of the cleanup:</p>
+
+ <ul>
+ <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg><b>Junk placements.</b> Pull the placement report, find the mobile games and made-for-advertising sites eating budget, and add them to an account-level placement exclusion list.</li>
+ <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg><b>Mobile-app inventory.</b> A mobile-app category exclusion kills a huge share of the accidental-tap traffic that flatters your click numbers and converts at nothing.</li>
+ </ul>
+
+ <h2>4. Asset-group strength &amp; audience signals — don't cold-start on your money</h2>
+
+ <p>Every asset group is a mini-campaign, and PMax launches each one into a cold start while it learns. The thing that shortens the cold start is <b>audience signals</b> — your customer lists, high-intent segments, and custom audiences telling Google where to begin looking. Leave them empty and you're paying full price for the machine to guess from scratch.</p>
+
+ <p>In the audit, check that every asset group has: a genuine audience signal (not blank, not "all users"), the full complement of assets so Google isn't starved for creative to test, and enough conversion volume to have actually exited learning. A thin asset group with no signal is a cold-start you're funding indefinitely.</p>
+
+ <h2>5. Landing-page experience per asset group</h2>
+
+ <p>PMax uses your final URLs — and, unless you turn it off, final URL expansion sends traffic to whatever page on your site Google thinks fits the query. That means an asset group themed around one product can be dumping paid clicks onto a stale blog post or an out-of-stock page.</p>
+
+ <p>Audit the landing experience per asset group: are the URLs the ones you intended, is final URL expansion doing something sensible or something feral, and does each page match the promise of the asset group's creative. A great asset group pointed at a slow, off-message page is spend you're actively wasting at the last step.</p>
+
+ <h2>6. Search vs PMax overlap &amp; cannibalization</h2>
+
+ <p>Finally, zoom out to how PMax coexists with your standard Search campaigns. Google's serving priority means PMax can win queries your Search campaigns would have won anyway — including brand — and the two can quietly bid against your own account. The result is the same conversions attributed twice and a blended picture that hides which campaign actually earned them.</p>
+
+ <p>Check the overlap: are PMax and Search competing for the same high-intent queries, is PMax siphoning credit from a well-built Search campaign, and would tighter brand exclusions plus clearer campaign roles stop the two from cannibalizing each other. This closes the loop back to check one — brand spend and Search overlap are the same leak seen from two angles.</p>
+
+ <h2>Manual audit vs. continuous monitoring</h2>
+
+ <p>Here's the uncomfortable truth about everything above: a manual PMax audit is a snapshot, and PMax is a moving target. The brand-spend creep, the tracking break, the placement drift — they don't wait for your monthly review. A once-a-month audit catches the leak weeks after it started spending. Side by side:</p>
+
+ <div class="cmp-wrap">
+ <table class="cmp">
+ <thead>
+ <tr><th>What the audit needs</th><th>Manual monthly audit</th><th class="us">Continuous monitoring</th></tr>
+ </thead>
+ <tbody>
+ <tr><td>Catches a tracking break</td><td class="no">next review</td><td class="yes">same day</td></tr>
+ <tr><td>Spots brand-spend creep early</td><td class="no">—</td><td class="yes">✓</td></tr>
+ <tr><td>Pulls channel &amp; placement split</td><td class="part">by hand</td><td class="yes">✓</td></tr>
+ <tr><td>Flags a new cold-start asset group</td><td class="no">—</td><td class="yes">✓</td></tr>
+ <tr><td>Ranks findings by recoverable spend</td><td class="no">—</td><td class="yes">✓</td></tr>
+ <tr><td>Runs while you sleep</td><td class="no">—</td><td class="yes">✓</td></tr>
+ </tbody>
+ </table>
+ </div>
+ <p class="cmp-note">The manual audit tells you what was true last month. Continuous monitoring tells you what's <em>leaking right now</em> — and how much.</p>
+
+ <h2>Where an AI media buyer comes in</h2>
+
+ <p>Every check in this playbook is exactly the kind of thing that rewards running continuously and hates running monthly. That's the case for handing it to an <a href="/what-is-an-ai-media-buyer">AI media buyer</a>: it pulls the channel and placement breakdown, catches the brand term with abnormal ROAS, notices the tracking break the day it happens, and — the part that matters — ranks every finding by recoverable spend, so you fix the biggest leak first instead of the most visible one.</p>
+
+ <p>PMax isn't the only black box worth this treatment; the same discipline applies to the whole account, which is why it pairs with a broader <a href="/how-to-audit-a-google-ads-account">Google Ads account audit</a>. The AI surfaces the leak with the evidence and the number; you approve the fix. If you want to see what it would say about your Performance Max campaigns, <a href="/#lead">request a demo</a> — fifteen minutes, connected read-only.</p>
+ </div>
+ </div>
+
+ <div class="faq">
+ <h2>Frequently asked</h2>
+ <details open>
+ <summary>Why is Performance Max spending but not converting? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary>
+ <div class="faq-a">Usually one of three things: conversion tracking is broken or double-counting, so PMax is optimizing toward garbage signals; the campaign is pouring budget into cheap Display and Video placements that impress but don't convert; or the asset groups are so thin that Google is still in cold-start, buying junk inventory while it learns. Audit tracking first, then the channel breakdown.</div>
+ </details>
+ <details>
+ <summary>How do I see where Performance Max spends? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary>
+ <div class="faq-a">Google hides most of it by default, but you can pull a channel-level split with a script or the Google Ads API to see the Search, Display and Video breakdown, and the placement report (in Content or via the API) to see the actual apps and sites. Insights and the Explanations panel help, but the machine-readable route is the only way to see the real distribution.</div>
+ </details>
+ <details>
+ <summary>Can you exclude placements in Performance Max? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary>
+ <div class="faq-a">Partially. You can apply account-level placement exclusions, exclude mobile-app inventory via a mobile-app category exclusion, and add brand-safety and content exclusions. You can't hand-pick placements the way you can in a Display campaign, but the account-level exclusion list and mobile-app exclusion together kill most of the wasted junk inventory.</div>
+ </details>
+ <details>
+ <summary>Is Performance Max cannibalizing my search? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary>
+ <div class="faq-a">Often, yes. PMax can serve on search queries — including your brand terms — and Google's own priority rules mean it can outrank or overlap your standard Search campaigns. The tell is a PMax term or asset group with wildly higher ROAS than the rest: that's usually branded search PMax is taking credit for, not new demand it created.</div>
+ </details>
+ <details>
+ <summary>How often should I audit Performance Max? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary>
+ <div class="faq-a">A full manual audit is worth doing monthly, and always after a big budget change, a new asset group, or a tracking change. But the checks that matter — brand-spend creep, tracking breaks, placement drift — move daily, so the honest answer is that PMax wants continuous monitoring, not a monthly snapshot. A once-a-month audit catches the leak weeks after it started.</div>
+ </details>
+ <details>
+ <summary>What's the most important Performance Max setting? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary>
+ <div class="faq-a">Clean conversion tracking, followed closely by a brand-exclusion list. PMax leans entirely on your conversion data to decide where to spend, so if tracking is wrong every downstream decision is wrong. After that, excluding your brand terms stops PMax from taking credit for demand you already own and inflating its reported ROAS.</div>
+ </details>
+ <details>
+ <summary>Can AI audit Performance Max? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary>
+ <div class="faq-a">Yes — and PMax is exactly the kind of black box AI is good at. An AI media buyer can pull the channel and placement breakdown, detect a brand term with abnormal ROAS, catch a tracking break the day it happens, and rank each finding by recoverable spend — continuously, not once a month. It surfaces the leak; you approve the fix.</div>
+ </details>
+ </div>
+
+ <div class="related">
+ <span class="eyebrow"><span class="tick"></span>Keep reading</span>
+ <div class="related-grid">
+ <a class="rel-card" href="/how-to-audit-a-google-ads-account"><span class="rc-tag">Playbook</span><div class="rc-h">How to audit a Google Ads account</div></a>
+ <a class="rel-card" href="/what-is-an-ai-media-buyer"><span class="rc-tag">Product</span><div class="rc-h">What is an AI media buyer?</div></a>
+ </div>
+ </div>
+
+ <div class="post-foot">
+ <a class="back-link" href="/blog"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>All articles</a>
+ <a class="btn btn-primary btn-sm" href="/#lead">Request demo</a>
+ </div>
+ </div>
+</article>
+
+<footer class="footer">
+ <div class="wrap">
+ <div class="foot-grid">
+ <div class="foot-brand">
+ <a class="brand" href="/"><img class="mark" src="/assets/icon-only.svg" alt=""/><span class="name">Adgent</span></a>
+ <p>The AI analyst for performance marketers. One brief each morning — the thinking already done.</p>
+ </div>
+ <div class="foot-col"><h4>Product</h4><a href="/">Overview</a><a href="/pricing">Pricing</a><a href="/#how">How it works</a><a href="/#lead">Request demo</a></div>
+ <div class="foot-col"><h4>Company</h4><a href="/about">About</a><a href="/blog">Blog</a><a href="/#lead">Contact</a></div>
+ <div class="foot-col"><h4>Legal</h4><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/security">Security</a><a href="/data-use">Data use</a></div>
+ </div>
+ <div class="foot-bottom">
+ <span>© 2026 Adgent. All rights reserved.</span>
+ <div class="foot-social">
+ <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 2h3l-7 8 8 12h-6l-5-7-5 7H2l8-10L2 2h6l4 6Z"/></svg></a>
+ <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6Z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+ </div>
+ </div>
+ </div>
+</footer>
+
+<script src="/site.js"></script>
+</body>
+</html>

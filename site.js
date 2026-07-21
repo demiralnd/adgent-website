@@ -81,6 +81,26 @@
     window.addEventListener('scroll', onScroll, { passive: true });
   }
 
+  /* ---- mobile menu toggle ---- */
+  var burger = d.querySelector('.nav-burger');
+  if (burger && nav) {
+    var closeMenu = function () {
+      nav.classList.remove('menu-open');
+      d.body.classList.remove('menu-open');
+      burger.setAttribute('aria-expanded', 'false');
+    };
+    burger.addEventListener('click', function () {
+      var open = nav.classList.toggle('menu-open');
+      d.body.classList.toggle('menu-open', open);
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    /* close when a menu link is tapped, or on resize back to desktop */
+    var mm = d.querySelector('.mobile-menu');
+    if (mm) mm.addEventListener('click', function (e) { if (e.target.closest('a')) closeMenu(); });
+    window.addEventListener('resize', function () { if (window.innerWidth > 640) closeMenu(); });
+    d.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
+  }
+
   /* ---- lead / subscribe form (Web3Forms) ----
      Progressive enhancement: posts via fetch and shows an inline thank-you.
      If JS is off or fetch fails, the plain <form> POST still reaches Web3Forms.

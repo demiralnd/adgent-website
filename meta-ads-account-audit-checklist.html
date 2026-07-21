@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1NCS2ZFMLR"></script>
+<script>
+ window.dataLayer = window.dataLayer || [];
+ function gtag(){dataLayer.push(arguments);}
+ gtag('js', new Date());
+ gtag('config', 'G-1NCS2ZFMLR');
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MWR4PVRF');</script>
+<!-- End Google Tag Manager -->
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>The Meta Ads account audit: a 20-point checklist — Adgent</title>
+<meta name="description" content="Audit a Meta Ads account in order of recoverable spend: verify the pixel and CAPI signal first, then attribution, CBO leakage, placement drift and creative fatigue."/>
+<link rel="canonical" href="https://adgent.app/meta-ads-account-audit-checklist"/>
+<link rel="alternate" hreflang="en" href="https://adgent.app/meta-ads-account-audit-checklist"/>
+<link rel="alternate" hreflang="x-default" href="https://adgent.app/meta-ads-account-audit-checklist"/>
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1"/>
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="Adgent"/>
+<meta property="og:title" content="The Meta Ads account audit: a 20-point checklist"/>
+<meta property="og:description" content="Audit a Meta Ads account in order of recoverable spend: verify the pixel and CAPI signal first, then attribution, CBO leakage, placement drift and creative fatigue."/>
+<meta property="og:url" content="https://adgent.app/meta-ads-account-audit-checklist"/>
+<meta property="og:image" content="https://adgent.app/assets/og/meta-ads-account-audit-checklist.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="A Meta audit checklist card with green checks and red flags."/>
+<meta property="article:published_time" content="2026-07-22"/>
+<meta property="article:section" content="Playbook"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="The Meta Ads account audit: a 20-point checklist"/>
+<meta name="twitter:description" content="Audit a Meta Ads account in order of recoverable spend: verify the pixel and CAPI signal first, then attribution, CBO leakage, placement drift and creative fatigue."/>
+<meta name="twitter:image" content="https://adgent.app/assets/og/meta-ads-account-audit-checklist.png"/>
+<link rel="icon" type="image/svg+xml" href="/assets/logo-app.svg"/>
+<link rel="apple-touch-icon" href="/assets/logo-app.svg"/>
+<link rel="stylesheet" href="/tokens.css"/>
+<link rel="stylesheet" href="/site.css"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "headline": "The Meta Ads account audit: a 20-point checklist", "image": ["https://adgent.app/assets/og/meta-ads-account-audit-checklist.png"], "description": "Audit a Meta Ads account in order of recoverable spend: verify the pixel and CAPI signal first, then attribution, CBO leakage, placement drift and creative fatigue.", "datePublished": "2026-07-22", "dateModified": "2026-07-22", "author": {"@type": "Person", "name": "Nurettin Demiral", "url": "https://www.linkedin.com/in/nurettin-demiral/", "sameAs": ["https://www.linkedin.com/in/nurettin-demiral/"]}, "publisher": {"@type": "Organization", "name": "Adgent", "url": "https://adgent.app", "logo": {"@type": "ImageObject", "url": "https://adgent.app/assets/logo.svg"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://adgent.app/meta-ads-account-audit-checklist"}, "isPartOf": {"@type": "Blog", "name": "Adgent Blog", "@id": "https://adgent.app/blog"}, "articleSection": "Playbook", "keywords": "meta ads audit, facebook ads audit checklist, meta ads account audit, how to audit facebook ads", "inLanguage": "en", "about": {"@type": "Thing", "name": "Meta Ads account audit"}, "wordCount": 2197, "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".answer-box", ".standfirst"]}, "url": "https://adgent.app/meta-ads-account-audit-checklist"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I audit a Meta/Facebook ads account?", "acceptedAnswer": {"@type": "Answer", "text": "Work in order of recoverable spend, not report length. First verify the signal — pixel and Conversions API health, deduplication and event match quality — because a broken signal corrupts every number downstream. Then check your attribution setting, CBO budget leakage, Audience Network placement drift, frequency and creative fatigue, audience overlap, retargeting exclusions, catalog health, learning-phase status and account structure. Attach a dollar estimate to each finding and fix the highest-value leak first."}}, {"@type": "Question", "name": "How often should I audit Meta ads?", "acceptedAnswer": {"@type": "Answer", "text": "Match cadence to how fast each check goes stale. Run a full 20-point audit quarterly, a light monthly review on pacing, frequency and the ad sets that shifted most, and monitor the high-drift checks — placement drift, frequency, audience overlap and CBO leakage — continuously, because those reopen within a week of any manual pass."}}, {"@type": "Question", "name": "What are the red flags in a Meta ads account?", "acceptedAnswer": {"@type": "Answer", "text": "Frequency above 5 on a prospecting audience, no retargeting exclusions (usually costing 5–15% of spend re-buying existing customers), a backend-vs-Ads-Manager revenue gap wider than 10–15%, Audience Network eating a large share of a placement-optimised budget, and ad sets stuck in the learning phase after five days. Any one of these is recoverable spend you can find before you do a single calculation."}}, {"@type": "Question", "name": "How do I check if my pixel is working?", "acceptedAnswer": {"@type": "Answer", "text": "Open Events Manager and confirm events fire once per action with a healthy event match quality score, that browser pixel and Conversions API events deduplicate on a shared event ID, and that your key conversion carries the right value. Use the Meta Pixel Helper on live pages and compare Ads Manager conversions against GA4 or Shopify — a gap wider than 10–15% means the signal, not your bids, is the first thing to fix."}}, {"@type": "Question", "name": "What attribution setting should I use?", "acceptedAnswer": {"@type": "Answer", "text": "For most direct-response accounts, 7-day click is the honest default — it captures the buying window without over-crediting view-through. The trap is judging performance on the default setting without knowing which window it uses, or comparing ad sets on different windows. Pick one attribution setting, apply it consistently, and remember recent numbers are still settling inside the window and read pessimistic."}}, {"@type": "Question", "name": "Can AI audit Meta ads?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, and it fits the high-drift checks better than a quarterly human pass. An AI media buyer reads the account through the API every morning, runs the same 20 checks, ranks findings by recoverable spend and flags what changed since yesterday — then prepares the fix for your approval. It complements a human, who still owns the strategy and judgement calls."}}, {"@type": "Question", "name": "How long does a Meta audit take?", "acceptedAnswer": {"@type": "Answer", "text": "A thorough manual audit of a single account takes a few hours to a full day, depending on how many campaigns and creatives it holds. A continuous, API-driven audit runs the same checks in minutes and re-runs on its own every morning — so the finding lands the day the leak opens, not 89 days later."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://adgent.app"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://adgent.app/blog"}, {"@type": "ListItem", "position": 3, "name": "The Meta Ads account audit: a 20-point checklist", "item": "https://adgent.app/meta-ads-account-audit-checklist"}]}]}</script>
+<style>
+ .article { max-width: 720px; margin: 0 auto; }
+ .article .post-meta { display: flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-tertiary); }
+ .article .post-tag { color: var(--accent); }
+ .article h1 { font-weight: 600; font-size: clamp(30px, 4.4vw, 46px); line-height: 1.06; letter-spacing: -0.035em; margin: 18px 0 0; text-wrap: balance; }
+ .article .standfirst { font-size: 19px; line-height: 1.6; color: var(--text-secondary); margin: 22px 0 0; text-wrap: pretty; }
+ .byline { display: flex; align-items: center; gap: 12px; margin: 26px 0 0; }
+ .byline .av { width: 38px; height: 38px; border-radius: 50%; background: var(--accent); color: #fff; display: grid; place-items: center; font-weight: 700; font-size: 16px; }
+ .byline .who { font-size: 14px; font-weight: 600; }
+ .byline .role { font-size: 12.5px; color: var(--text-tertiary); }
+ .post-hero-cover { margin: 30px 0 0; border: 1px solid var(--border-default); border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 1200 / 630; }
+ .post-hero-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+ .answer-box { margin: 30px 0 0; background: var(--bg-sub); border: 1px solid var(--border-default); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-md) var(--radius-md) 0; padding: 20px 24px; }
+ .answer-box .lbl { font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
+ .answer-box p { font-size: 17px; line-height: 1.6; color: var(--text); margin: 10px 0 0; text-wrap: pretty; }
+ .prose { margin: 36px 0 0; }
+ .prose p { font-size: 17px; line-height: 1.72; color: var(--text); margin: 20px 0 0; text-wrap: pretty; }
+ .prose h2 { font-size: 25px; font-weight: 600; letter-spacing: -0.02em; margin: 40px 0 0; }
+ .prose h3 { font-size: 19px; font-weight: 600; letter-spacing: -0.01em; margin: 30px 0 0; }
+ .prose b { font-weight: 600; }
+ .prose a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(255,90,44,0.35); }
+ .prose a:hover { border-bottom-color: var(--accent); }
+ .prose ol { margin: 18px 0 0; padding: 0 0 0 4px; list-style: none; counter-reset: chk; display: flex; flex-direction: column; gap: 16px; }
+ .prose ol li { position: relative; padding-left: 44px; font-size: 16px; line-height: 1.6; color: var(--text); counter-increment: chk; }
+ .prose ol li::before { content: counter(chk); position: absolute; left: 0; top: 0; width: 28px; height: 28px; border-radius: 8px; background: var(--accent-subtle); color: var(--accent); font-family: var(--font-mono); font-size: 13px; font-weight: 600; display: grid; place-items: center; }
+ .prose ol li b { display: block; margin-bottom: 2px; }
+ .prose ul { list-style: none; margin: 18px 0 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+ .prose ul li { position: relative; padding-left: 30px; font-size: 16px; line-height: 1.6; color: var(--text); }
+ .prose ul li svg { position: absolute; left: 0; top: 3px; width: 18px; height: 18px; color: var(--accent); stroke-width: 2; }
+ .prose blockquote { margin: 30px 0 0; padding: 18px 24px; border-left: 3px solid var(--accent); background: var(--bg-sub); border-radius: 0 var(--radius-md) var(--radius-md) 0; }
+ .prose blockquote p { margin: 0; font-family: var(--font-editorial); font-style: italic; font-size: 20px; line-height: 1.5; color: var(--text); }
+ .flag-list { list-style: none; margin: 20px 0 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+ .flag-list li { position: relative; padding: 14px 16px 14px 46px; font-size: 15.5px; line-height: 1.58; color: var(--text); background: var(--bg-sub); border: 1px solid var(--border-default); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-md) var(--radius-md) 0; }
+ .flag-list li::before { content: "!"; position: absolute; left: 14px; top: 14px; width: 22px; height: 22px; border-radius: 6px; background: var(--accent-subtle); color: var(--accent); font-family: var(--font-mono); font-size: 14px; font-weight: 700; display: grid; place-items: center; }
+ .flag-list li b { font-weight: 600; }
+ .cmp-wrap { margin: 22px 0 0; overflow-x: auto; border: 1px solid var(--border-default); border-radius: var(--radius-md); }
+ table.cmp { width: 100%; border-collapse: collapse; font-size: 14.5px; line-height: 1.5; min-width: 560px; }
+ table.cmp th, table.cmp td { text-align: left; padding: 12px 16px; border-bottom: 1px solid var(--border-default); vertical-align: top; color: var(--text); }
+ table.cmp thead th { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-tertiary); background: var(--bg-elevated); font-weight: 600; }
+ table.cmp tbody th { font-weight: 600; color: var(--text); white-space: nowrap; }
+ table.cmp tbody tr:last-child th, table.cmp tbody tr:last-child td { border-bottom: none; }
+ table.cmp .col-hi { color: var(--accent); font-weight: 600; }
+ .faq { max-width: 720px; margin: 44px auto 0; }
+ .faq h2 { font-size: 25px; font-weight: 600; letter-spacing: -0.02em; }
+ .faq details { border-top: 1px solid var(--border-default); padding: 18px 0; }
+ .faq details:last-child { border-bottom: 1px solid var(--border-default); }
+ .faq summary { list-style: none; cursor: pointer; font-size: 17px; font-weight: 600; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+ .faq summary::-webkit-details-marker { display: none; }
+ .faq summary .chev { width: 18px; height: 18px; flex: none; stroke-width: 2; color: var(--text-tertiary); transition: transform 160ms; }
+ .faq details[open] summary .chev { transform: rotate(180deg); }
+ .faq .faq-a { font-size: 15.5px; line-height: 1.65; color: var(--text-secondary); margin: 12px 0 0; }
+ .related { max-width: 720px; margin: 48px auto 0; }
+ .related .eyebrow { font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); display: inline-flex; align-items: center; gap: 9px; }
+ .related .eyebrow .tick { width: 16px; height: 1px; background: var(--accent); }
+ .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 18px 0 0; }
+ .rel-card { background: var(--bg-elevated); border: 1px solid var(--border-default); border-radius: var(--radius-lg); padding: 18px 20px; transition: border-color 140ms; }
+ .rel-card:hover { border-color: var(--border-strong); }
+ .rel-card .rc-tag { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
+ .rel-card .rc-h { font-size: 15px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.25; margin: 8px 0 0; text-wrap: balance; }
+ .post-foot { max-width: 720px; margin: 48px auto 0; padding-top: 28px; border-top: 1px solid var(--border-default); display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+ .back-link { display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 600; color: var(--text-secondary); }
+ .back-link svg { width: 15px; height: 15px; stroke-width: 2; }
+ .back-link:hover { color: var(--text-primary); }
+ @media (max-width: 560px){ .related-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MWR4PVRF"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<header class="nav">
+ <div class="wrap nav-in">
+ <a class="brand" href="/"><img class="mark" src="/assets/icon-only.svg" alt=""/><span class="name">Adgent</span></a>
+ <nav class="nav-links">
+ <a href="/">Product</a>
+ <a href="/pricing">Pricing</a>
+ <a href="/about">About</a>
+ <a href="/blog" class="active">Blog</a>
+ </nav>
+ <div class="nav-right">
+ <button class="nav-burger" aria-label="Menu" aria-expanded="false"><svg class="ic-open" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg><svg class="ic-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      <div class="lang-switch"><a href="/meta-ads-account-audit-checklist" class="on">EN</a><span class="sep"></span><a href="/tr/" hreflang="tr">TR</a></div>
+ <a class="btn btn-primary btn-sm" href="/#lead">Request demo</a>
+ </div>
+ </div>
+</header>
+<div class="mobile-menu">
+  <a href="/">Product</a>
+ <a href="/pricing">Pricing</a>
+ <a href="/about">About</a>
+ <a href="/blog">Blog</a>
+  <div class="mm-lang"><div class="lang-switch"><a href="/meta-ads-account-audit-checklist" class="on">EN</a><span class="sep"></span><a href="/tr/" hreflang="tr">TR</a></div></div>
+  <a class="btn btn-primary btn-sm mm-cta" href="/#lead">Request demo</a>
+</div>
+
+<article class="band">
+ <div class="wrap">
+ <div class="article">
+ <div class="post-meta"><span class="post-tag">Playbook</span><span>·</span><span>9 min read</span><span>·</span><span>July 2026</span></div>
+ <h1>The Meta Ads account audit: a 20-point checklist</h1>
+ <p class="standfirst">Most Meta audits are a screenshot tour of the dashboard. This one is ordered differently: the checks that recover spend first, ranked by impact — and the signal check that has to come before all of them, because a broken pixel makes every other number a guess.</p>
+
+ <div class="byline">
+ <div class="av">N</div>
+ <div>
+ <div class="who">Nurettin Demiral</div>
+          <div class="role">Notes from building the analyst</div>
+ </div>
+ </div>
+
+ <figure class="post-hero-cover"><img src="/assets/blog/meta-ads-account-audit-checklist.svg" width="1200" height="630" alt="A Meta audit checklist card with green checks and red flags." loading="eager"/></figure>
+
+ <div class="answer-box">
+ <span class="lbl">Short answer</span>
+ <p>To audit a <strong>Meta Ads account</strong>, work in order of recoverable spend — and verify the signal first. Confirm <strong>pixel and Conversions API health</strong> before you judge a single campaign, because a broken signal corrupts everything downstream. Then check attribution, CBO leakage, Audience Network placement drift, frequency and creative fatigue. Attach a dollar figure to each finding and fix the biggest leak first.</p>
+ </div>
+
+ <div class="prose">
+ <p>A Meta Ads audit is supposed to answer one question: <b>where is this account leaking money, and what's the cheapest thing to fix first?</b> Yet most audits bury that answer under a screenshot tour of Ads Manager. So here's the version that leads with impact — the checks that actually recover spend, in the order a senior buyer runs them. It's the Meta twin of <a href="/how-to-audit-a-google-ads-account">how to audit a Google Ads account</a>; same discipline, different platform.</p>
+
+ <h2>Start with the signal you can't trust</h2>
+
+ <p>Before you judge a single ad set, judge the measurement. On Meta more than anywhere, the number you're optimizing toward is only as good as the pixel and Conversions API feeding it. A mis-configured event, a browser pixel firing without a CAPI match, a purchase event that double-counts — any of these makes ROAS and CPA read like fiction, and no amount of budget tuning fixes a broken signal.</p>
+
+ <blockquote>
+ <p>An audit that trusts a broken pixel just optimizes the account deeper into the wrong thing.</p>
+ </blockquote>
+
+ <p>So the first check isn't performance — it's whether performance is even measurable. Open Events Manager, confirm events fire once per action, check event match quality, and make sure the browser pixel and CAPI events deduplicate on a shared event ID. This is the same discipline behind <a href="/why-adgent-leads-with-the-verdict">leading with the verdict</a>: say what you can stand behind, flag what you can't, and never manufacture confidence.</p>
+
+ <h2>The 20-point Meta audit, ranked by recoverable spend</h2>
+
+ <p>Ten families of check, ordered so the money moves first and the hygiene comes last. Each is a place spend hides on Meta specifically:</p>
+
+ <ol>
+ <li><b>Pixel &amp; Conversions API health.</b> Events firing once, with the right value, on the right action? Confirm browser and CAPI events deduplicate, and check event match quality against <a href="https://www.facebook.com/business/help/898185560232180" target="_blank" rel="noopener nofollow">Meta's Conversions API setup</a>. A broken signal corrupts every optimization downstream.</li>
+ <li><b>Attribution setting.</b> Is the account on 7-day click, or the default 7-day click / 1-day view? Ad sets judged on different windows aren't comparable, and view-through credit inflates the wrong winners.</li>
+ <li><b>CBO budget leakage.</b> Under Campaign Budget Optimization, Meta pools the budget and often starves a proven ad set to feed a cheaper-but-worse one. Check where the money actually landed versus where the conversions did.</li>
+ <li><b>Audience Network placement drift.</b> Spend quietly drifts to Audience Network and Reels at a fraction of feed performance — the Meta twin of <a href="/placement-drift-the-leak-in-the-average">the placement drift that hides inside a blended average</a>.</li>
+ <li><b>Frequency &amp; creative fatigue.</b> Rising frequency with climbing CPM is the account telling you the creative is spent — <a href="/cpm-is-the-early-creative-fatigue-signal">CPM is the early creative-fatigue signal</a>, well before ROAS drops.</li>
+ <li><b>Audience overlap.</b> Ad sets bidding against each other in the same auction drive up your own CPMs. Run the overlap tool on your prospecting sets.</li>
+ <li><b>Retargeting exclusions.</b> Are purchasers and recent converters excluded from prospecting and retargeting? Missing exclusions mean you're paying full CPA to re-buy customers you already own.</li>
+ <li><b>Catalog &amp; feed health.</b> For commerce accounts, a stale or partially rejected catalog silently caps Advantage+ Shopping reach. Check feed freshness, rejection rate and required fields.</li>
+ <li><b>Learning-phase status.</b> Ad sets stuck in learning — or endlessly re-entering it after edits — never stabilize. Count how many are learning-limited and why.</li>
+ <li><b>Ad-account structure.</b> Too many overlapping ad sets fragment the signal below the conversion volume Meta needs to learn. Consolidation is often free performance.</li>
+ </ol>
+
+ <h2>Rank, don't just list</h2>
+
+ <p>The difference between a useful audit and a report nobody acts on is ordering. Every finding should carry an estimate of recoverable spend so the account owner knows what to do Monday morning — not a flat list where a €10,000/month leak sits next to a cosmetic naming warning.</p>
+
+ <ul>
+ <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg><b>Attach a number to each finding.</b> "Audience Network drift: ~€6,000/mo" beats "review placements."</li>
+ <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg><b>Sequence the fixes.</b> Editing an ad set can reset the learning phase; order changes so you don't undo one fix with the next.</li>
+ <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg><b>Make every figure verifiable.</b> Each number should link back to where to confirm it in Ads Manager. Trust is the whole point.</li>
+ </ul>
+
+ <h2>Red flags: what a broken account looks like</h2>
+
+ <p>Some findings you have to calculate. Others you can spot in thirty seconds — the tells that an account has been left on autopilot. If you see any of these, you've found recoverable spend before you've done a single sum.</p>
+
+ <ul class="flag-list">
+ <li><b>Frequency above 5 on a prospecting audience.</b> A cold audience seeing the same ad five-plus times in a week is fatigued and getting more expensive to reach. Rising frequency with climbing CPM is the clearest early fatigue tell there is — act before ROAS confirms it.</li>
+ <li><b>No retargeting exclusions.</b> If purchasers and recent converters aren't excluded from prospecting, you're paying full CPA to re-serve ads to people who already bought. On accounts with a healthy return rate, that's often 5–15% of spend re-buying customers you already own.</li>
+ <li><b>A backend-vs-Ads-Manager revenue gap wider than 10–15%.</b> When Ads Manager claims €40,000 in sales and Shopify or GA4 sees €30,000, someone is optimizing on a number that isn't real. A gap past roughly 10–15% means your pixel and CAPI setup is the first thing to fix, not your bids.</li>
+ <li><b>Audience Network eating a big share of a placement-optimised budget.</b> When automatic placements let Audience Network absorb a large slice of spend at a fraction of feed performance, the blended ROAS looks fine while the leak sits hidden inside the average.</li>
+ <li><b>Ad sets still in the learning phase after five days.</b> Learning-limited ad sets never stabilize — usually because the conversion volume is too low or edits keep restarting the clock. If half the account is perpetually learning, the structure is fragmenting the signal.</li>
+ <li><b>One giant CBO campaign with every audience inside it.</b> Pooling prospecting, retargeting and lookalikes under one budget lets Meta chase the cheapest conversions — usually warm retargeting — and take credit for demand you'd have captured anyway.</li>
+ <li><b>Default attribution, and nobody knows which window.</b> An account reported on 7-day click / 1-day view while the team quotes numbers as if they were click-only is comparing ad sets that were never on the same footing.</li>
+ </ul>
+
+ <h2>Manual audit vs. continuous audit</h2>
+
+ <p>The format of the audit decides what it can actually catch. A human running this checklist once a quarter and software reading the account through the API every morning are looking for the same leaks — but they see very different amounts of them.</p>
+
+ <div class="cmp-wrap">
+ <table class="cmp">
+ <thead>
+ <tr>
+ <th scope="col"></th>
+ <th scope="col">Manual audit</th>
+ <th scope="col">Automated / continuous audit</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <th scope="row">Time to run</th>
+ <td>A few hours to a full day per account</td>
+ <td class="col-hi">Minutes — and it re-runs on its own</td>
+ </tr>
+ <tr>
+ <th scope="row">Frequency</th>
+ <td>Quarterly, if you're disciplined</td>
+ <td class="col-hi">Every morning</td>
+ </tr>
+ <tr>
+ <th scope="row">Coverage</th>
+ <td>What the auditor has time to sample</td>
+ <td class="col-hi">Every ad set, placement and creative</td>
+ </tr>
+ <tr>
+ <th scope="row">Catches drift</th>
+ <td>No — it's a snapshot that ages fast</td>
+ <td class="col-hi">Yes — flags what changed since yesterday</td>
+ </tr>
+ <tr>
+ <th scope="row">Best at</th>
+ <td>Judgement calls, strategy, creative direction</td>
+ <td>High-drift leaks: placements, frequency, CBO pacing</td>
+ </tr>
+ <tr>
+ <th scope="row">Cost</th>
+ <td>$500–$3,000 for a one-off agency audit</td>
+ <td class="col-hi">Software fee, then near-zero per re-run</td>
+ </tr>
+ </tbody>
+ </table>
+ </div>
+
+ <p>Neither wins outright. A manual audit brings judgement a script can't; a continuous one catches the leaks that reopen the week after a manual audit ships. The strongest setup is a standing analyst for the high-drift checks and a human for the strategy calls — which is exactly what <a href="/what-is-an-ai-media-buyer">an AI media buyer</a> is built to be.</p>
+
+ <h2>How often should you audit?</h2>
+
+ <p>Audit cadence should match how fast each check goes stale. Some things barely move; others rot within a week. A single quarterly review treats them all the same, which is why so many Meta audits feel out of date the moment they land.</p>
+
+ <ul>
+ <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg><b>Full audit — quarterly.</b> The complete 20-point pass: signal integrity, attribution, structure, catalog. These are slow-moving and worth a deep, unhurried look four times a year.</li>
+ <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg><b>Light review — monthly.</b> A focused pass on budget pacing, frequency and the ad sets that shifted most. Thirty minutes to catch anything the quarter would let drift too far.</li>
+ <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg><b>Continuous — for the high-drift checks.</b> Placement drift, frequency, audience overlap and CBO leakage move week to week. These want monitoring, not scheduling — the moment they slip, spend leaks, and a quarterly cadence means you find out 89 days late.</li>
+ </ul>
+
+ <h2>Common mistakes that break a Meta audit</h2>
+
+ <p>Even a disciplined auditor can run the whole checklist and still reach the wrong conclusion — usually by trusting a number they shouldn't, or judging one on the wrong timeframe.</p>
+
+ <ul>
+ <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg><b>Judging performance inside the attribution window.</b> Recent numbers are still settling — a campaign read on <a href="/attribution-window-day-one-data">day-one data</a> looks pessimistic and gets paused before it's had a chance to report.</li>
+ <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg><b>Trusting Ads Manager revenue as ground truth.</b> Platform-reported ROAS isn't the backend. Reconcile to Shopify or GA4 before you shift a single budget.</li>
+ <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg><b>Reading blended ROAS and stopping there.</b> A healthy average can hide a placement or audience that's bleeding — the leak lives in the split, not the sum.</li>
+ <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg><b>Editing ad sets mid-audit.</b> Every meaningful edit can reset the learning phase, so a flurry of "fixes" can leave the account worse than you found it. Sequence, don't spray.</li>
+ </ul>
+
+ <h2>The real fix is a standing audit</h2>
+
+ <p>The catch with a one-off Meta audit is that accounts drift. Frequency climbs daily, placements re-leak, creative fatigues, CBO re-pools the budget overnight. A PDF from last quarter describes an account that no longer exists. The real fix isn't a better template — it's a standing analyst that re-audits continuously and flags what changed.</p>
+
+ <p>That's what Adgent does for Meta, Google and TikTok as one account: it runs these checks every morning, ranks findings by recoverable spend, and prepares the fix for your approval — read-only until you say go. If you want to see it against a real account, <a href="/#lead">request a demo</a> — fifteen minutes, connected read-only.</p>
+ </div>
+ </div>
+
+ <div class="faq">
+ <h2>Frequently asked</h2>
+ <details open>
+ <summary>How do I audit a Meta/Facebook ads account? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary>
+ <div class="faq-a">Work in order of recoverable spend, not report length. First verify the signal — pixel and Conversions API health, deduplication and event match quality — because a broken signal corrupts every number downstream. Then check your attribution setting, CBO budget leakage, Audience Network placement drift, frequency and creative fatigue, audience overlap, retargeting exclusions, catalog health, learning-phase status and account structure. Attach a dollar estimate to each finding and fix the highest-value leak first.</div>
+ </details>
+ <details>
+ <summary>How often should I audit Meta ads? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary>
+ <div class="faq-a">Match cadence to how fast each check goes stale. Run a full 20-point audit quarterly, a light monthly review on pacing, frequency and the ad sets that shifted most, and monitor the high-drift checks — placement drift, frequency, audience overlap and CBO leakage — continuously, because those reopen within a week of any manual pass.</div>
+ </details>
+ <details>
+ <summary>What are the red flags in a Meta ads account? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary>
+ <div class="faq-a">Frequency above 5 on a prospecting audience, no retargeting exclusions (usually costing 5–15% of spend re-buying existing customers), a backend-vs-Ads-Manager revenue gap wider than 10–15%, Audience Network eating a large share of a placement-optimised budget, and ad sets stuck in the learning phase after five days. Any one of these is recoverable spend you can find before you do a single calculation.</div>
+ </details>
+ <details>
+ <summary>How do I check if my pixel is working? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary>
+ <div class="faq-a">Open Events Manager and confirm events fire once per action with a healthy event match quality score, that browser pixel and Conversions API events deduplicate on a shared event ID, and that your key conversion carries the right value. Use the Meta Pixel Helper on live pages and compare Ads Manager conversions against GA4 or Shopify — a gap wider than 10–15% means the signal, not your bids, is the first thing to fix.</div>
+ </details>
+ <details>
+ <summary>What attribution setting should I use? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary>
+ <div class="faq-a">For most direct-response accounts, 7-day click is the honest default — it captures the buying window without over-crediting view-through. The trap is judging performance on the default setting without knowing which window it uses, or comparing ad sets on different windows. Pick one attribution setting, apply it consistently, and remember recent numbers are still settling inside the window and read pessimistic.</div>
+ </details>
+ <details>
+ <summary>Can AI audit Meta ads? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary>
+ <div class="faq-a">Yes, and it fits the high-drift checks better than a quarterly human pass. An AI media buyer reads the account through the API every morning, runs the same 20 checks, ranks findings by recoverable spend and flags what changed since yesterday — then prepares the fix for your approval. It complements a human, who still owns the strategy and judgement calls.</div>
+ </details>
+ <details>
+ <summary>How long does a Meta audit take? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary>
+ <div class="faq-a">A thorough manual audit of a single account takes a few hours to a full day, depending on how many campaigns and creatives it holds. A continuous, API-driven audit runs the same checks in minutes and re-runs on its own every morning — so the finding lands the day the leak opens, not 89 days later.</div>
+ </details>
+ </div>
+
+ <div class="related">
+ <span class="eyebrow"><span class="tick"></span>Keep reading</span>
+ <div class="related-grid">
+ <a class="rel-card" href="/how-to-audit-a-google-ads-account"><span class="rc-tag">Playbook</span><div class="rc-h">How to audit a Google Ads account, properly</div></a>
+ <a class="rel-card" href="/cpm-is-the-early-creative-fatigue-signal"><span class="rc-tag">Creative</span><div class="rc-h">CPM is the early creative-fatigue signal</div></a>
+ </div>
+ </div>
+
+ <div class="post-foot">
+ <a class="back-link" href="/blog"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>All articles</a>
+ <a class="btn btn-primary btn-sm" href="/#lead">Request demo</a>
+ </div>
+ </div>
+</article>
+
+<footer class="footer">
+ <div class="wrap">
+ <div class="foot-grid">
+ <div class="foot-brand">
+ <a class="brand" href="/"><img class="mark" src="/assets/icon-only.svg" alt=""/><span class="name">Adgent</span></a>
+ <p>The AI analyst for performance marketers. One brief each morning — the thinking already done.</p>
+ </div>
+ <div class="foot-col"><h4>Product</h4><a href="/">Overview</a><a href="/pricing">Pricing</a><a href="/#how">How it works</a><a href="/#lead">Request demo</a></div>
+ <div class="foot-col"><h4>Company</h4><a href="/about">About</a><a href="/blog">Blog</a><a href="/#lead">Contact</a></div>
+ <div class="foot-col"><h4>Legal</h4><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/security">Security</a><a href="/data-use">Data use</a></div>
+ </div>
+ <div class="foot-bottom">
+ <span>© 2026 Adgent. All rights reserved.</span>
+ <div class="foot-social">
+ <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 2h3l-7 8 8 12h-6l-5-7-5 7H2l8-10L2 2h6l4 6Z"/></svg></a>
+ <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6Z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+ </div>
+ </div>
+ </div>
+</footer>
+
+<script src="/site.js"></script>
+</body>
+</html>

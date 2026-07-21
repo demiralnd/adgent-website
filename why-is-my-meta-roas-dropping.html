@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1NCS2ZFMLR"></script>
+<script>
+ window.dataLayer = window.dataLayer || [];
+ function gtag{dataLayer.push(arguments);}
+ gtag('js', new Date);
+ gtag('config', 'G-1NCS2ZFMLR');
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date.getTime,event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MWR4PVRF');</script>
+<!-- End Google Tag Manager -->
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Why is my Meta ROAS dropping? A diagnostic walkthrough — Adgent</title>
+<meta name="description" content="Meta ROAS dropping? Most drops are signal problems, not campaign problems. Check tracking, scaling, saturation, creative fatigue and attribution — in that order."/>
+<link rel="canonical" href="https://adgent.app/why-is-my-meta-roas-dropping"/>
+<link rel="alternate" hreflang="en" href="https://adgent.app/why-is-my-meta-roas-dropping"/>
+<link rel="alternate" hreflang="x-default" href="https://adgent.app/why-is-my-meta-roas-dropping"/>
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1"/>
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="Adgent"/>
+<meta property="og:title" content="Why is my Meta ROAS dropping? A diagnostic walkthrough"/>
+<meta property="og:description" content="Meta ROAS dropping? Most drops are signal problems, not campaign problems. Check tracking, scaling, saturation, creative fatigue and attribution — in that order."/>
+<meta property="og:url" content="https://adgent.app/why-is-my-meta-roas-dropping"/>
+<meta property="og:image" content="https://adgent.app/assets/og/why-is-my-meta-roas-dropping.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="A falling ROAS curve on a grid, ending in a red drop marker labelled ROAS down."/>
+<meta property="article:published_time" content="2026-07-22"/>
+<meta property="article:section" content="Attribution"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Why is my Meta ROAS dropping? A diagnostic walkthrough"/>
+<meta name="twitter:description" content="Meta ROAS dropping? Most drops are signal problems, not campaign problems. Check tracking, scaling, saturation, creative fatigue and attribution — in that order."/>
+<meta name="twitter:image" content="https://adgent.app/assets/og/why-is-my-meta-roas-dropping.png"/>
+<link rel="icon" type="image/svg+xml" href="/assets/logo-app.svg"/>
+<link rel="apple-touch-icon" href="/assets/logo-app.svg"/>
+<link rel="stylesheet" href="/tokens.css"/>
+<link rel="stylesheet" href="/site.css"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "headline": "Why is my Meta ROAS dropping? A diagnostic walkthrough", "image": ["https://adgent.app/assets/og/why-is-my-meta-roas-dropping.png"], "description": "Meta ROAS dropping? Most drops are signal problems, not campaign problems. Check tracking, scaling, saturation, creative fatigue and attribution — in that order.", "datePublished": "2026-07-22", "dateModified": "2026-07-22", "author": {"@type": "Person", "name": "Nurettin Demiral", "url": "https://www.linkedin.com/in/nurettin-demiral/", "sameAs": ["https://www.linkedin.com/in/nurettin-demiral/"]}, "publisher": {"@type": "Organization", "name": "Adgent", "url": "https://adgent.app", "logo": {"@type": "ImageObject", "url": "https://adgent.app/assets/logo.svg"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://adgent.app/why-is-my-meta-roas-dropping"}, "isPartOf": {"@type": "Blog", "name": "Adgent Blog", "@id": "https://adgent.app/blog"}, "articleSection": "Attribution", "keywords": "why is my meta roas dropping, meta ads roas drop, roas dropping when scaling, meta roas diagnosis", "wordCount": 1734, "inLanguage": "en", "about": {"@type": "Thing", "name": "Meta ROAS diagnosis"}, "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".answer-box", ".standfirst"]}, "url": "https://adgent.app/why-is-my-meta-roas-dropping"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why did my Meta ROAS suddenly drop?", "acceptedAnswer": {"@type": "Answer", "text": "Most sudden ROAS drops are signal problems, not campaign problems. Before you touch a budget, check tracking: a 10–15% gap between your backend revenue and Ads Manager almost always means a tracking issue, not a real performance drop. Only once the numbers are trustworthy should you look at scaling, saturation, creative and attribution."}}, {"@type": "Question", "name": "Does scaling budget lower ROAS?", "acceptedAnswer": {"@type": "Answer", "text": "It can, if you scale too fast. A single budget jump over about 20% re-enters the learning phase, so delivery gets unstable and ROAS wobbles for a few days before it settles. The fix is to raise budget in smaller steps and give each step time, not to yank it back the moment the number dips."}}, {"@type": "Question", "name": "How do I know if it's tracking or the campaign?", "acceptedAnswer": {"@type": "Answer", "text": "Compare Ads Manager revenue against your backend — Shopify, GA4 or your store. If the two disagree by more than roughly 10–15%, it's a tracking or attribution issue and the campaign is probably fine. If backend revenue confirms the drop, then it's real, and you move on to scaling, saturation and creative."}}, {"@type": "Question", "name": "How long should I wait before reacting?", "acceptedAnswer": {"@type": "Answer", "text": "Give the numbers time to settle. Meta's attribution window keeps revising recent conversions for up to a week, so a one- or two-day dip is often just data that hasn't finished counting. Wait for a stable multi-day trend on trustworthy numbers before you make a change you can't easily undo."}}, {"@type": "Question", "name": "Can creative fatigue cause a ROAS drop?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. As an audience sees the same ad repeatedly, response falls and ROAS follows. The early tell is CPM and hook-rate — they move days before CPA does — so rising CPM plus a falling hook-rate is your warning to refresh creative before the ROAS drop shows up in the P&L."}}, {"@type": "Question", "name": "What frequency is too high?", "acceptedAnswer": {"@type": "Answer", "text": "There's no universal number, but when frequency climbs and your reach starts spilling into colder users, you're paying more to talk to people who convert less — and ROAS drops. Watch the trend, not a fixed threshold: a frequency that's fine for a warm retargeting pool is too high for a cold prospecting one."}}, {"@type": "Question", "name": "Should I lower budget when ROAS drops?", "acceptedAnswer": {"@type": "Answer", "text": "Usually not as your first move. Cutting budget re-enters the learning phase just like scaling up does, so you can make an unstable number worse. Diagnose first: confirm the drop is real, find the cause, then decide. If the cause is over-fast scaling, holding budget steady beats yanking it back."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://adgent.app"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://adgent.app/blog"}, {"@type": "ListItem", "position": 3, "name": "Why is my Meta ROAS dropping?", "item": "https://adgent.app/why-is-my-meta-roas-dropping"}]}]}</script>
+<style>
+ .article { max-width: 720px; margin: 0 auto; }
+ .article .post-meta { display: flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-tertiary); }
+ .article .post-tag { color: var(--accent); }
+ .article h1 { font-weight: 600; font-size: clamp(30px, 4.4vw, 46px); line-height: 1.06; letter-spacing: -0.035em; margin: 18px 0 0; text-wrap: balance; }
+ .article .standfirst { font-size: 19px; line-height: 1.6; color: var(--text-secondary); margin: 22px 0 0; text-wrap: pretty; }
+ .byline { display: flex; align-items: center; gap: 12px; margin: 26px 0 0; }
+ .byline .av { width: 38px; height: 38px; border-radius: 50%; background: var(--accent); color: #fff; display: grid; place-items: center; font-weight: 700; font-size: 16px; }
+ .byline .who { font-size: 14px; font-weight: 600; }
+ .byline .role { font-size: 12.5px; color: var(--text-tertiary); }
+ .post-hero-cover { margin: 30px 0 0; border: 1px solid var(--border-default); border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 1200 / 630; }
+ .post-hero-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+ .answer-box { margin: 30px 0 0; background: var(--bg-sub); border: 1px solid var(--border-default); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-md) var(--radius-md) 0; padding: 20px 24px; }
+ .answer-box .lbl { font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
+ .answer-box p { font-size: 17px; line-height: 1.6; color: var(--text); margin: 10px 0 0; text-wrap: pretty; }
+ .prose { margin: 36px 0 0; }
+ .prose p { font-size: 17px; line-height: 1.72; color: var(--text); margin: 20px 0 0; text-wrap: pretty; }
+ .prose h2 { font-size: 25px; font-weight: 600; letter-spacing: -0.02em; margin: 40px 0 0; }
+ .prose h3 { font-size: 19px; font-weight: 600; letter-spacing: -0.01em; margin: 30px 0 0; }
+ .prose b { font-weight: 600; }
+ .prose a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(255,90,44,0.35); }
+ .prose a:hover { border-bottom-color: var(--accent); }
+ .prose ul { list-style: none; margin: 18px 0 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+ .prose ul li { position: relative; padding-left: 30px; font-size: 16px; line-height: 1.6; color: var(--text); }
+ .prose ul li svg { position: absolute; left: 0; top: 3px; width: 18px; height: 18px; color: var(--accent); stroke-width: 2; }
+ .prose blockquote { margin: 30px 0 0; padding: 18px 24px; border-left: 3px solid var(--accent); background: var(--bg-sub); border-radius: 0 var(--radius-md) var(--radius-md) 0; }
+ .prose blockquote p { margin: 0; font-family: var(--font-editorial); font-style: italic; font-size: 20px; line-height: 1.5; color: var(--text); }
+ .cmp-wrap { overflow-x: auto; margin: 24px 0 0; border: 1px solid var(--border-default); border-radius: var(--radius-lg); -webkit-overflow-scrolling: touch; }
+ .cmp { border-collapse: separate; border-spacing: 0; width: 100%; min-width: 640px; font-size: 13.5px; background: var(--bg-elevated); }
+ .cmp th.cmp td { padding: 12px 14px; text-align: center; border-bottom: 1px solid var(--border-default); }
+ .cmp thead th { font-family: var(--font-mono); font-size: 10.5px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-tertiary); background: var(--bg-content); vertical-align: bottom; line-height: 1.3; }
+ .cmp thead th span { font-weight: 500; opacity: 0.75; text-transform: none; letter-spacing: 0; }
+ .cmp thead th.us { background: var(--accent); color: var(--accent-on); }
+ .cmp tbody td:first-child { text-align: left; font-weight: 500; color: var(--text); }
+ .cmp td.yes { color: var(--severity-ok, #16935a); font-weight: 700; font-size: 15px; }
+ .cmp td.no { color: var(--text-disabled); }
+ .cmp td.part.cmp td.na { font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary); }
+ .cmp td.us { background: var(--accent-subtle); }
+ .cmp tbody tr:last-child td { border-bottom: none; }
+ .cmp-note { font-size: 14px; color: var(--text-secondary); margin: 14px 0 0; font-style: italic; }
+ .cmp-note em { font-family: var(--font-editorial); color: var(--accent); font-style: italic; }
+ .faq { max-width: 720px; margin: 44px auto 0; }
+ .faq h2 { font-size: 25px; font-weight: 600; letter-spacing: -0.02em; }
+ .faq details { border-top: 1px solid var(--border-default); padding: 18px 0; }
+ .faq details:last-child { border-bottom: 1px solid var(--border-default); }
+ .faq summary { list-style: none; cursor: pointer; font-size: 17px; font-weight: 600; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+ .faq summary::-webkit-details-marker { display: none; }
+ .faq summary .chev { width: 18px; height: 18px; flex: none; stroke-width: 2; color: var(--text-tertiary); transition: transform 160ms; }
+ .faq details[open] summary .chev { transform: rotate(180deg); }
+ .faq .faq-a { font-size: 15.5px; line-height: 1.65; color: var(--text-secondary); margin: 12px 0 0; }
+ .related { max-width: 720px; margin: 48px auto 0; }
+ .related .eyebrow { font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); display: inline-flex; align-items: center; gap: 9px; }
+ .related .eyebrow .tick { width: 16px; height: 1px; background: var(--accent); }
+ .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 18px 0 0; }
+ .rel-card { background: var(--bg-elevated); border: 1px solid var(--border-default); border-radius: var(--radius-lg); padding: 18px 20px; transition: border-color 140ms; }
+ .rel-card:hover { border-color: var(--border-strong); }
+ .rel-card .rc-tag { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
+ .rel-card .rc-h { font-size: 15px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.25; margin: 8px 0 0; text-wrap: balance; }
+ .post-foot { max-width: 720px; margin: 48px auto 0; padding-top: 28px; border-top: 1px solid var(--border-default); display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+ .back-link { display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 600; color: var(--text-secondary); }
+ .back-link svg { width: 15px; height: 15px; stroke-width: 2; }
+ .back-link:hover { color: var(--text-primary); }
+ @media (max-width: 560px){ .related-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MWR4PVRF"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<header class="nav">
+ <div class="wrap nav-in">
+ <a class="brand" href="/"><img class="mark" src="/assets/icon-only.svg" alt=""/><span class="name">Adgent</span></a>
+ <nav class="nav-links">
+ <a href="/">Product</a>
+ <a href="/pricing">Pricing</a>
+ <a href="/about">About</a>
+ <a href="/blog" class="active">Blog</a>
+ </nav>
+ <div class="nav-right">
+ <button class="nav-burger" aria-label="Menu" aria-expanded="false"><svg class="ic-open" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg><svg class="ic-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      <div class="lang-switch"><a href="/why-is-my-meta-roas-dropping" class="on">EN</a><span class="sep"></span><a href="/tr/" hreflang="tr">TR</a></div>
+ <a class="btn btn-primary btn-sm" href="/#lead">Request demo</a>
+ </div>
+ </div>
+</header>
+<div class="mobile-menu">
+  <a href="/">Product</a>
+ <a href="/pricing">Pricing</a>
+ <a href="/about">About</a>
+ <a href="/blog">Blog</a>
+  <div class="mm-lang"><div class="lang-switch"><a href="/why-is-my-meta-roas-dropping" class="on">EN</a><span class="sep"></span><a href="/tr/" hreflang="tr">TR</a></div></div>
+  <a class="btn btn-primary btn-sm mm-cta" href="/#lead">Request demo</a>
+</div>
+
+<article class="band">
+ <div class="wrap">
+ <div class="article">
+ <div class="post-meta"><span class="post-tag">Attribution</span><span>·</span><span>8 min read</span><span>·</span><span>July 2026</span></div>
+ <h1>Why is my Meta ROAS dropping?</h1>
+ <p class="standfirst">A falling ROAS sends most buyers straight to the budget slider. That's usually the wrong first move. Here's the diagnostic a senior buyer actually runs — in order — and why the answer is almost always further up the list than you think.</p>
+
+ <div class="byline">
+ <div class="av">N</div>
+ <div>
+ <div class="who">Nurettin Demiral</div>
+          <div class="role">Notes from building the analyst</div>
+ </div>
+ </div>
+
+ <figure class="post-hero-cover"><img src="/assets/blog/why-is-my-meta-roas-dropping.svg" width="1200" height="630" alt="A falling ROAS curve on a grid, ending in a red drop marker labelled ROAS down." loading="eager"/></figure>
+
+ <div class="answer-box">
+ <span class="lbl">Short answer</span>
+ <p>Most <strong>ROAS drops are signal problems, not campaign problems</strong> — so check tracking first. If Ads Manager and your backend revenue disagree by more than 10–15%, the number is wrong, not the campaign. Only once the data is trustworthy do you work down the list: scaling too fast, audience saturation, creative fatigue, and the attribution window still settling.</p>
+ </div>
+
+ <div class="prose">
+ <p>Your Meta ROAS is down and the temptation is immediate: cut the budget, pause the loser, do <em>something</em>. Resist it. The buyers who keep accounts healthy don't react to a falling number — they diagnose it, in a fixed order, because the order encodes what's most likely to be true. And the most likely thing is that the number itself is lying to you.</p>
+
+ <p>So here's the checklist, ranked exactly the way a senior buyer runs it. Work top to bottom and stop at the first thing that explains the drop. Most of the time you'll stop at step one.</p>
+
+ <h2>1. Tracking and signal — is the drop even real?</h2>
+
+ <p>This is first for a reason: it's the most common cause and the one that wastes the most money when you miss it. A "ROAS drop" is a ratio — revenue over spend — and if the revenue side is under-counting, the ratio falls even though nothing about your campaign changed. A conversion event breaks, a pixel fires late, an iOS update clips signal, a checkout change drops a parameter, and suddenly Ads Manager shows less revenue than actually happened.</p>
+
+ <p>The test is simple. Put Ads Manager revenue next to your backend — Shopify, GA4, your store's own numbers — for the same window.</p>
+
+ <blockquote>
+ <p>A 10–15% gap between backend revenue and Ads Manager almost always means a tracking issue, not a campaign issue.</p>
+ </blockquote>
+
+ <p>If the two agree, good — the drop is real and you move on to step two. If they've drifted apart, stop here. No amount of budget tuning fixes a broken signal, and every "optimization" you make on bad numbers digs the hole deeper. Fix the tracking, let a clean day of data land, then re-read the account. More often than not the ROAS was never actually down — the measurement was.</p>
+
+ <h2>2. Scaling too fast — did you re-enter the learning phase?</h2>
+
+ <p>If backend confirms the drop is real, the next suspect is your own hand on the budget. Meta's delivery system re-optimizes when you make a large budget change, and a single jump over roughly <b>20%</b> pushes the ad set back into the learning phase. During learning, delivery is unstable, CPA swings, and ROAS wobbles — not because the campaign is broken, but because the algorithm is re-finding its footing.</p>
+
+ <p>The trap is that this looks exactly like a performance problem, so buyers respond by yanking the budget back down — which triggers <em>another</em> learning reset and makes the instability worse. The fix is patience and smaller steps. If you need to scale, do it in increments and give each step time to settle. We wrote the full method here: <a href="/scale-a-winner-without-breaking-it">how to scale a winner without breaking it</a>.</p>
+
+ <h2>3. Audience saturation — are you reaching colder users?</h2>
+
+ <p>Nothing changed in your setup, but the ROAS keeps easing down over a week or two. Look at frequency. As a campaign spends against a finite audience, it exhausts the warm, high-intent people first and then reaches further — into colder users who cost the same to serve but convert less. Frequency climbs, effective ROAS falls, and it feels like decay because it is: you're paying more to talk to people who want it less.</p>
+
+ <p>The signal here is a frequency line trending up while your best-performing segments show diminishing return. There's no magic threshold — a frequency that's healthy for a warm retargeting pool is far too high for a cold prospecting one — so read the trend against the audience, not against a fixed number. The fix is usually fresh audience or fresh creative, which leads directly to the next check.</p>
+
+ <h2>4. Creative fatigue — is the ad wearing out?</h2>
+
+ <p>Audiences tire of ads. The same creative that crushed for three weeks stops earning attention, response falls, and ROAS follows. What makes fatigue tricky is timing: by the time CPA visibly moves, you've already spent days at a declining return. The early-warning signals live upstream.</p>
+
+ <p>Watch <b>CPM</b> and <b>hook-rate</b>. When an ad fatigues, CPM tends to rise and hook-rate — the share of people who stop on your first frame — starts to slip, and both move <em>days</em> before CPA does. That lead time is the whole point: it lets you refresh creative before the ROAS drop lands in your P&amp;L rather than after. We break the mechanism down here: <a href="/cpm-is-the-early-creative-fatigue-signal">why CPM is the early creative-fatigue signal</a>.</p>
+
+ <h2>5. Attribution window — are the numbers still settling?</h2>
+
+ <p>Last on the list, but check it before you panic over any recent dip: Meta keeps revising conversions inside the attribution window. A sale that happens today can be credited to an ad someone saw two days ago, and that credit lands late — so your most recent days are always under-counted at first and fill in over the following week.</p>
+
+ <p>The practical rule: don't trust the last day or two of ROAS. A dip that looks alarming this morning frequently corrects itself once the window closes. Judge on a stable multi-day trend, not on numbers that haven't finished counting. We go deeper on why day-one data is a trap here: <a href="/attribution-window-day-one-data">the attribution window and day-one data</a>.</p>
+
+ <h2>One more thing: a blended ROAS can hide a placement leak</h2>
+
+ <p>Even when your account-level ROAS looks merely "soft," the average can be papering over a real problem underneath. A single placement — often Audience Network — can be quietly bleeding spend at a terrible return while your strong placements hold the blended number up. The account looks fine; one line item is on fire. Always break the number down before you trust it. More on that failure mode: <a href="/placement-drift-the-leak-in-the-average">placement drift, the leak in your average</a>.</p>
+
+ <h2>Run it as a table</h2>
+
+ <p>Here's the whole diagnostic in one view — the cause, the tell that points to it, and the fix, in the order you check them:</p>
+
+ <div class="cmp-wrap">
+ <table class="cmp">
+ <thead>
+ <tr><th>Check</th><th>The tell</th><th>What it means</th><th class="us">First move</th></tr>
+ </thead>
+ <tbody>
+ <tr><td>Tracking / signal</td><td>Backend vs. Ads Manager gap &gt;10–15%</td><td>Number is wrong, not the campaign</td><td class="us">Fix the pixel, don't touch budget</td></tr>
+ <tr><td>Scaling too fast</td><td>Recent budget jump &gt;20%</td><td>Back in the learning phase</td><td class="us">Hold steady, scale in steps</td></tr>
+ <tr><td>Audience saturation</td><td>Frequency climbing, return easing</td><td>Reaching colder users</td><td class="us">Fresh audience or creative</td></tr>
+ <tr><td>Creative fatigue</td><td>CPM up, hook-rate down</td><td>Ad wearing out</td><td class="us">Refresh before CPA moves</td></tr>
+ <tr><td>Attribution window</td><td>Only the last 1–2 days are down</td><td>Numbers still settling</td><td class="us">Wait for the window to close</td></tr>
+ </tbody>
+ </table>
+ </div>
+ <p class="cmp-note">The order is the method: each row is more likely — and cheaper to fix — than the one below it. <em>Stop at the first that explains the drop.</em></p>
+
+ <h2>The real skill is asking why, not what</h2>
+
+ <p>Notice what this checklist is not: it's not a set of thresholds that fire an alert. Every step asks <em>why</em> a number moved before deciding what to do — because the same falling ROAS can mean a broken pixel, an over-eager budget jump, a tired ad, or nothing at all. The what is easy. The why is the job.</p>
+
+ <p>That's exactly the "why did X happen?" question you'd put to an <a href="/what-is-an-ai-media-buyer">AI media buyer</a> — read the whole account across placements, cross-check against real revenue, rank the causes by likelihood, and hand you the answer with the evidence underneath. It's the diagnostic above, run every morning, before you've had your coffee. If you want to see what it says about a real Meta account, <a href="/#lead">request a demo</a> — fifteen minutes, connected read-only.</p>
+ </div>
+ </div>
+
+ <div class="faq">
+ <h2>Frequently asked</h2>
+ <details open>
+ <summary>Why did my Meta ROAS suddenly drop? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary>
+ <div class="faq-a">Most sudden ROAS drops are signal problems, not campaign problems. Before you touch a budget, check tracking: a 10–15% gap between your backend revenue and Ads Manager almost always means a tracking issue, not a real performance drop. Only once the numbers are trustworthy should you look at scaling, saturation, creative and attribution.</div>
+ </details>
+ <details>
+ <summary>Does scaling budget lower ROAS? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary>
+ <div class="faq-a">It can, if you scale too fast. A single budget jump over about 20% re-enters the learning phase, so delivery gets unstable and ROAS wobbles for a few days before it settles. The fix is to raise budget in smaller steps and give each step time, not to yank it back the moment the number dips.</div>
+ </details>
+ <details>
+ <summary>How do I know if it's tracking or the campaign? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary>
+ <div class="faq-a">Compare Ads Manager revenue against your backend — Shopify, GA4 or your store. If the two disagree by more than roughly 10–15%, it's a tracking or attribution issue and the campaign is probably fine. If backend revenue confirms the drop, then it's real, and you move on to scaling, saturation and creative.</div>
+ </details>
+ <details>
+ <summary>How long should I wait before reacting? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary>
+ <div class="faq-a">Give the numbers time to settle. Meta's attribution window keeps revising recent conversions for up to a week, so a one- or two-day dip is often just data that hasn't finished counting. Wait for a stable multi-day trend on trustworthy numbers before you make a change you can't easily undo.</div>
+ </details>
+ <details>
+ <summary>Can creative fatigue cause a ROAS drop? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary>
+ <div class="faq-a">Yes. As an audience sees the same ad repeatedly, response falls and ROAS follows. The early tell is CPM and hook-rate — they move days before CPA does — so rising CPM plus a falling hook-rate is your warning to refresh creative before the ROAS drop shows up in the P&amp;L.</div>
+ </details>
+ <details>
+ <summary>What frequency is too high? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary>
+ <div class="faq-a">There's no universal number, but when frequency climbs and your reach starts spilling into colder users, you're paying more to talk to people who convert less — and ROAS drops. Watch the trend, not a fixed threshold: a frequency that's fine for a warm retargeting pool is too high for a cold prospecting one.</div>
+ </details>
+ <details>
+ <summary>Should I lower budget when ROAS drops? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary>
+ <div class="faq-a">Usually not as your first move. Cutting budget re-enters the learning phase just like scaling up does, so you can make an unstable number worse. Diagnose first: confirm the drop is real, find the cause, then decide. If the cause is over-fast scaling, holding budget steady beats yanking it back.</div>
+ </details>
+ </div>
+
+ <div class="related">
+ <span class="eyebrow"><span class="tick"></span>Keep reading</span>
+ <div class="related-grid">
+ <a class="rel-card" href="/cpm-is-the-early-creative-fatigue-signal"><span class="rc-tag">Attribution</span><div class="rc-h">CPM is the early creative-fatigue signal</div></a>
+ <a class="rel-card" href="/scale-a-winner-without-breaking-it"><span class="rc-tag">Attribution</span><div class="rc-h">Scale a winner without breaking it</div></a>
+ </div>
+ </div>
+
+ <div class="post-foot">
+ <a class="back-link" href="/blog"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>All articles</a>
+ <a class="btn btn-primary btn-sm" href="/#lead">Request demo</a>
+ </div>
+ </div>
+</article>
+
+<footer class="footer">
+ <div class="wrap">
+ <div class="foot-grid">
+ <div class="foot-brand">
+ <a class="brand" href="/"><img class="mark" src="/assets/icon-only.svg" alt=""/><span class="name">Adgent</span></a>
+ <p>The AI analyst for performance marketers. One brief each morning — the thinking already done.</p>
+ </div>
+ <div class="foot-col"><h4>Product</h4><a href="/">Overview</a><a href="/pricing">Pricing</a><a href="/#how">How it works</a><a href="/#lead">Request demo</a></div>
+ <div class="foot-col"><h4>Company</h4><a href="/about">About</a><a href="/blog">Blog</a><a href="/#lead">Contact</a></div>
+ <div class="foot-col"><h4>Legal</h4><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/security">Security</a><a href="/data-use">Data use</a></div>
+ </div>
+ <div class="foot-bottom">
+ <span>© 2026 Adgent. All rights reserved.</span>
+ <div class="foot-social">
+ <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 2h3l-7 8 8 12h-6l-5-7-5 7H2l8-10L2 2h6l4 6Z"/></svg></a>
+ <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6Z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+ </div>
+ </div>
+ </div>
+</footer>
+
+<script src="/site.js"></script>
+</body>
+</html>
