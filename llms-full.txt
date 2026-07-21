@@ -1,0 +1,1738 @@
+# Adgent — full content (llms-full.txt)
+
+> The AI analyst for performance marketers. Adgent is an AI media buyer that reads Meta, Google and TikTok accounts as one, reasons about account structure, delivers a verdict-first daily brief on the Aware -> Ask -> Apply loop, and executes fixes on the advertiser's approval. Read-only by default; never an autonomous spender. Operated by Futuready Labs.
+
+This file contains the full readable text of every page on adgent.app, for AI answer engines. Turkish versions live under /tr/.
+
+
+========================================================================
+URL: https://adgent.app/
+========================================================================
+Adgent 
+
+ EN TR 
+ Request demo 
+
+ Aware Ask Apply 
+ 
+# The senior analyst you can talk to .
+
+ Adgent watches your Meta, Google and TikTok accounts as one brain, tells you what's working and what's bleeding — and applies the fix from the same chat, when you say go. 
+ A senior media buyer's judgment, 24/7, at a fraction of the salary. 
+ Read-only by default · you approve every change 
+
+ ROAS 3.82× ▲ 
+ Meta · Google · TikTok synced 
+ CPA $22.10 ▼ 
+ 
+ Adgent · live on your account 
+ 
+ Why did Meta ROAS drop yesterday? 
+
+ Spend held flat, but CBO_CORE_US pushed 38% of budget to Audience Network at 1.1× while feed sits at 4.2× . That's the drop. You told me last month to protect feed ROAS above 3× — so the exclusion I've prepped keeps it there. 
+ 
+ Apply exclusion 
+ Nothing changes until you approve 
+
+ Build a live placement dashboard 
+ Set an agent to watch this daily 
+ Analyze this campaign's creatives 
+
+ Ask anything — or say “launch a new campaign across channels” 
+
+ Just ask — in plain language 
+
+ Why did Meta ROAS drop yesterday? 
+ Audit my placements 
+ Which ad set has the best CPA? 
+ Build me a weekly report 
+ Build a dashboard for this client 
+ Is my retargeting working? 
+ Where am I wasting spend? 
+ Compare Meta, Google & TikTok 
+ Launch a new campaign across channels 
+
+ Scale my best campaign 20% 
+ What changed since last week? 
+ Find audience overlap 
+ Why is CPM rising? 
+ Draft a prospecting campaign 
+ Which creatives are fatiguing? 
+ Break down my top creative's DNA 
+ Where do viewers drop off in this video? 
+ Pause what's underperforming 
+
+ Intelligence + memory 
+ 
+## It remembers your brand's golden rules .
+
+ Every analyst you've ever hired had to be told your rules twice. Adgent learns them once — from what you say in chat and the calls you make — and never forgets. Its judgment compounds on your account. 
+
+- Learned, not configured. Golden rules form from your prompts and your approve/reject decisions — no setup screen. 
+ 
+- Carried across every session. The context accumulates. Tomorrow's brief already knows what you told it last month. 
+ 
+- Yours, and cross-platform. Your rules and account memory follow the brand across Meta, Google and TikTok — not locked to one platform. 
+
+ Adgent · learning In the background · nothing to manage 
+
+ You, in chat “Don't scale anything past €500/day without flagging me — we've been burned by fast ramps.” 
+ Adgent will remember this on every campaign 
+
+ You, on a suggestion Rejected “merge prospecting + retargeting” — again . 
+ Noted — it won't suggest merging these again 
+
+ You, in chat “Judge everything against Shopify revenue , not platform ROAS.” 
+ Reports now reconcile to your store first 
+
+ You never set this up. Adgent learns from how you talk to it — and doesn't forget. 
+
+ The 3A loop 
+ 
+## Aware. Ask. Apply. One loop.
+
+ Three layers of an analyst's job, in one product — awareness to know, conversation to dig, execution to act. Control stays with you the whole way. 
+
+ 01 · Aware 
+ 
+### Intelligence
+
+ Adgent watches every account overnight and writes the verdict before you're awake. 
+
+- A daily brief ranked by impact
+ 
+- A single health score per account
+ 
+- Anomaly detection across Meta, Google & TikTok
+
+ 02 · Ask 
+ 
+### Conversation
+
+ Ask anything, at any level — and get an analyst's answer, not a chart to interpret. 
+
+- Question any ad, campaign or account 
+ 
+- Placement & demographic audits on demand
+ 
+- Generate a custom report from one message
+
+ 03 · Apply 
+ 
+### Execution
+
+ When you're ready, act from the same chat. Read-only by default; you approve every move. 
+
+- One-tap fixes applied from chat
+ 
+- Build cross-channel campaigns by message
+ 
+- Every change waits for your approval 
+
+ Real output 
+ 
+## Not a promise. An actual report .
+
+ A real account audit Adgent ran for a hotel chain (anonymized). One pass surfaced roughly 31,400 TL/month in recoverable spend — and flagged a number most tools would have reported blindly. 
+
+ Account audit · a hotel chain · Meta · Google · TikTok 
+ 4 findings, ranked by recoverable spend 
+ 
+ ~31,400 TL / month potential 
+
+ Optimizing toward a value-less event Trust Gate 
+ The account optimizes for a Purchase event that carries no value. ROAS here is unmeasurable — most tools report a number anyway. Adgent flags it instead of inventing confidence. 
+
+ Zero retargeting in 90 days Opportunity 
+ No RTG campaign is live. Site visitors and add-to-carts are never re-engaged — the cheapest demand in the account is going unworked. 
+ ▲ est. +12,800 TL / mo 
+
+ Two prospecting ad sets overlap 41% High 
+ LAL_2% and INT_TRAVEL bid against each other on the same users, inflating CPM on both. 
+ ▲ est. +9,200 TL / mo 
+
+ Placement leak to Audience Network High 
+ 38% of spend lands on Audience Network at a fraction of feed performance. 
+ ▲ est. +9,400 TL / mo 
+
+ Every figure links back to where to verify it in Ads Manager. Adgent decides — you confirm.
+
+ Built from a sentence 
+ 
+## Ask for it in chat. Adgent builds it.
+
+ A dashboard, a monitoring agent, a restructure plan, a new campaign — you describe it in plain language and Adgent assembles it from your live account data. Then you approve. 
+
+ Build me a reservations dashboard, last 28 days 
+ Assembled from Meta · Google · TikTok + Shopify 
+
+ Reservations 4.8K ▲ 12.4% 
+ ROAS 3.82× ▲ 8.1% 
+ CPA ₺22.10 ▼ 6.0% 
+
+ Dashboard Live · auto-refreshing 
+
+ Watch my placements and flag leaks daily 
+ Agent live — scanning every morning 
+
+ Critical 
+ CBO_CORE_US Leaking to Audience Network — exclude 
+ ₺1,743 est./mo 
+
+ Watch 
+ RETARGET_7D Frequency climbing — creative fatigue 
+ ₺620 est./mo 
+
+ Monitoring agent Runs daily · you approve 
+
+ Plan a restructure to fix the iOS leak 
+ 4 steps · sequenced to protect learning 
+
+ 1 Exclude Audience Network on CBO_CORE_US now 
+ 2 Shift freed budget to Feed, +20% now 
+ 3 Hold — let the ad set re-stabilize 48h 
+ 4 Refresh retargeting creative day 3 
+
+ Restructure plan Nothing runs until you say go 
+
+ Build a prospecting campaign for the spring launch 
+ Drafted across Meta & Google — ready to review 
+
+ Spring · Prospecting · Meta 3 ad sets · ₺8,000/mo Ready 
+ Spring · Search · Google 12 keywords · ₺5,000/mo Ready 
+ Spring · Retargeting awaiting audience size Review 
+
+ New campaign Drafted · launches on approval 
+
+ Why chat 
+ 
+## A dashboard can't answer “ why ”.
+
+ Everyone else hands you a board to decode. Adgent hands you a conversation: ask the question, get the answer, then apply it from the same place. Even your reports are one message away. 
+
+- “Why is CPA up this week?” — answered with evidence
+ 
+- “Where do viewers drop off in this ad?” — scene by scene
+ 
+- “Build me a dashboard for this client” — laid out for you
+ 
+- “Build me a weekly report” — generated, ready to send
+
+ Adgent · custom report 
+ 
+ Build me a weekly report for the client. 
+ 
+ Done — Meta, Google & TikTok, last 7 days. Spend 48,210 TL , blended ROAS 3.8× cross-checked against Shopify revenue, two flags worth a look. Want it as a PDF or right here? 
+ 
+ Export PDF 
+ Generated from live data 
+
+ Trust Gate · attribution maturity 
+ We won't quote a number we can't stand behind. 
+
+ ROAS unmeasurable on this campaign 
+ Optimizing toward a value-less event. We say so — we don't print a confident multiple. 
+
+ Inside the 7-day window — still attributing 
+ This number is a draft and may revise up. Flagged, never trusted blindly. 
+
+ Trust Gate 
+ 
+## The only tool that tells you when the number is lying .
+
+ Most platforms report ROAS even when it can't be measured. Adgent doesn't. If a campaign optimizes toward a value-less event, or a metric is still inside the attribution window, we flag it — and refuse to manufacture false confidence. Honest beats impressive. 
+
+ Creative intelligence 
+ 
+## It reads every creative like a strategist — not a tagger.
+
+ Adgent pulls your live ads automatically — no upload step — and reads each one the way a senior buyer would. It names the creative's DNA, walks the story scene by scene, and shows you exactly where viewers drop off. Then it tells you which creatives are fatiguing and what to do — as an action you approve. Analysis, never generation. 
+
+### Creative DNA
+
+ Every ad, decoded: hook, format, persona, angle, offer, visuals and audio — so you can see why a creative works, not just that it did. 
+
+### Scene-by-scene storyboard
+
+ Video ads broken down shot by shot — what happens in each moment, so a weak opening or a slow middle is obvious at a glance. 
+
+### Where viewers leave
+
+ A creative funnel that tracks the hold-curve across your ads — the exact scene where attention drops, so you fix the leak instead of guessing. 
+
+### Fatigue, verdict-first
+
+ It flags the creatives wearing out — before the numbers slide — and hands you a dollar-valued refresh you can apply from chat. 
+
+ Getting started 
+ 
+## Connect your channels once. Then just talk.
+
+ STEP 01 
+
+### Connect your accounts
+
+ Authorize Meta, Google and TikTok — plus GA4, Shopify and Search Console for context. Read-only by default; nothing moves without your word. 
+
+ STEP 02 
+
+### Adgent learns your accounts
+
+ It builds baselines and audits every channel overnight — pacing, fatigue, placement drift, attribution maturity. 
+
+ STEP 03 
+
+### Aware, ask, apply
+
+ Read the morning brief, ask whatever you need, and apply fixes or build campaigns from chat — on your approval. 
+
+ Why Adgent 
+ 
+## Analyze or act — everything else makes you choose.
+
+ Reporting tools go deep but never touch the account. Platform AIs and rule engines act — but with no judgment, and never on your side. Adgent is the only one that does all five at once, and remembers your brand while it does. 
+
+ Capability 
+ Reporting tools 
+ Platform AIs 
+ Automation rules 
+ Adgent 
+
+ Executes across platforms — ✓ ✓ ✓ 
+ Reasons about account structure — — — ✓ 
+ Deep config & measurement diagnostics ✓ — — ✓ 
+ Chat-native verdicts + live reports — — — ✓ 
+ Remembers your brand's rules — — — ✓ 
+
+ One column checked all the way down. That column is the whole point. 
+
+ The math 
+ 
+## It pays for itself in the first audit.
+
+ The question isn't whether Adgent is worth it. It's how much you're leaving on the table without it. 
+
+ Questions 
+ 
+## Good questions, answered plainly.
+
+Q: Does Adgent change my campaigns on its own? 
+ No. Access is read-only by default. When a fix or a campaign is ready, Adgent prepares it and waits — you apply it from chat with one message. The control is always yours; nothing is automatic. 
+
+Q: Which ad platforms does it cover? 
+ Meta, Google and TikTok Ads, read and reasoned about as one account — and it pulls in GA4, Shopify and Search Console so reports reflect real revenue, not just platform-reported numbers. 
+
+Q: What can I actually do from chat? 
+ Ask about any ad, campaign, or account; run placement and demographic audits; generate custom reports; apply prepared fixes; and build cross-channel campaigns — all by message, all on your approval. 
+
+Q: What is the Trust Gate? 
+ It's how Adgent stays honest about numbers. If a campaign optimizes toward a value-less event, or a metric is still inside Meta's 7-day attribution window, we flag it rather than report a confident figure. We'd rather tell you a number can't be trusted than pretend it can. 
+
+Q: Will it really pay for itself? 
+ In our audits, a single account's first pass typically surfaces meaningful recoverable spend — before counting the analyst hours saved. Talk to sales and we'll show you what Adgent finds in your account. 
+
+Q: Who is Adgent for? 
+ Agencies managing many accounts, ecommerce brands running their own spend, in-house growth teams, and independent performance marketers — anyone who'd rather talk to an analyst than decode a dashboard. 
+
+ Request a demo 
+ 
+## Put an analyst on your account this week .
+
+ Tell us about your accounts and we'll get you set up across every channel. 
+
+- Connects Meta, Google & TikTok
+ 
+- Reads GA4, Shopify & Search Console for context
+ 
+- Read-only until you say otherwise
+
+### Request a demo
+
+ Tell us about your accounts and we'll show you the morning brief Adgent would write for them — and where it would save you money. 
+
+ Name 
+
+ Work email 
+
+ Company / agency 
+
+ Which accounts do you run? 
+
+ Request a demo 
+ We usually reply within a couple of working days. 
+
+### Thanks — we've got it.
+
+ We'll be in touch within a couple of working days to set up your accounts.
+
+========================================================================
+URL: https://adgent.app/pricing
+========================================================================
+Adgent 
+
+ EN TR 
+ Request demo 
+
+ Pricing 
+ 
+# Built around your accounts.
+
+ Every plan covers Meta, Google and TikTok — and reads GA4, Shopify and Search Console for context. Tell us what you're running and we'll put together the right fit. 
+ Talk to sales 
+
+ What you get 
+ 
+## Every plan covers every channel.
+
+ Aware 
+ Intelligence and answers across every channel. 
+
+- Meta, Google & TikTok in one view
+ 
+- Daily brief & health score
+ 
+- Anomaly detection
+ 
+- Trust Gate flagging
+ 
+- GA4, Shopify & Search Console context
+
+ Ask 
+ Answers about your account, by message. 
+
+- Ask-anything chat 
+ 
+- Placement & demographic audits
+ 
+- Custom reports on demand
+ 
+- Client-ready exports
+ 
+- Slack & email delivery
+
+ Apply 
+ Execution — always on your approval. 
+
+- One-tap fixes from chat
+ 
+- Cross-channel campaign builds
+ 
+- Read-only by default
+ 
+- Roles & permissions
+ 
+- Multi-account & agency structure
+
+ Questions 
+ 
+## Plainly.
+
+Q: Do all plans really include every channel? Yes. Meta, Google and TikTok are included on every tier — there's no "channel add-on". The difference between plans is execution and scale, not which channels you can see. 
+ 
+Q: How is it priced? Pricing depends on how many ad accounts you connect, how many seats you need, and whether you want execution as well as intelligence. Tell us what you're running and we'll walk you through the options. 
+ 
+Q: What counts as an ad account? One connected Meta, Google or TikTok ad account equals one. A brand running multiple channels uses one slot per account; agencies connect as many as they manage. 
+ 
+Q: What data does it read beyond ads? Alongside Meta, Google and TikTok, Adgent reads GA4, Shopify and Search Console — so reports reflect real revenue and on-site behavior, not just platform-reported numbers. 
+ 
+Q: Does Adgent change my campaigns on its own? No. Access is read-only by default. When a fix or a campaign is ready, Adgent prepares it and waits — you apply it from chat. The control is always yours; nothing is automatic. 
+
+ Request a demo 
+ 
+## Put an analyst on your accounts today .
+
+ Connect your accounts and Adgent gets to work across every channel. Tell us about your accounts and we'll get you set up. 
+
+- Meta, Google & TikTok included
+ 
+- Reads GA4, Shopify & Search Console
+ 
+- Cancel anytime
+
+### Request a demo
+
+ Tell us about your accounts and we'll show you the morning brief Adgent would write for them — and where it would save you money. 
+
+ Name 
+
+ Work email 
+
+ Company / agency 
+
+ Which accounts do you run? 
+
+ Request a demo 
+ We usually reply within a couple of working days. 
+
+### Thanks — we've got it.
+
+ We'll be in touch within a couple of working days to set up your accounts.
+
+========================================================================
+URL: https://adgent.app/about
+========================================================================
+Adgent 
+
+ EN TR 
+ Request demo 
+
+ About 
+ 
+# We're building the analyst , not the dashboard.
+
+ Performance marketers drown in data and starve for judgment. Adgent exists to flip that — to do the thinking, and hand back a verdict you can act on before your coffee's cold. 
+
+ The market has enough tools that show you numbers. It has almost nothing that tells you what they mean. 
+ Every performance team runs the same ritual. Open Ads Manager. Scan the campaigns. Try to remember what was normal last week. Hunt for the one thing that's quietly bleeding money. It's skilled work, done by hand, every single morning. 
+ We think that work should be done for you — not with another chart, but with a conclusion. Adgent reads your Meta, Google and TikTok accounts as one, overnight — pulling in GA4, Shopify and Search Console for context — and writes the brief a senior analyst would leave on your desk: what changed, why it matters, and what to do about it. Ranked by impact. Evidence attached. 
+ Then it goes one step further than a report can: when you're ready, you apply the fix — or build the next campaign — from the same chat. Read-only by default, always on your approval. Adgent decides; you confirm. 
+ That's the whole product philosophy. Lead with the verdict. Show the evidence underneath. Act in place when asked. Say nothing you didn't need to hear — and never quote a number we can't stand behind. 
+
+ How we build 
+ 
+## Three principles, held quietly.
+
+ 01 · CONSIDERED 
+ 
+### Every number earns its place
+
+ If it doesn't change a decision, it doesn't make the brief. Each figure carries a unit and a reason for being there. 
+
+ 02 · CONFIDENT 
+ 
+### The conclusion comes first
+
+ We did the analysis, so we lead with it. The evidence sits underneath for when you want to check our work. 
+
+ 03 · QUIET 
+ 
+### Calm beats loud
+
+ No alarms, no badges screaming for attention. Severity means severity. The interface gets out of your way. 
+
+ Who it's for 
+ 
+## Built for the people running the spend.
+
+### Agencies
+
+ Triage many client accounts from one ranked brief instead of opening a dozen tabs. 
+
+### Ecommerce brands
+
+ Catch placement drift and fatigue before they eat into margin on your own spend. 
+
+### Growth teams
+
+ Give the whole team one source of truth on what changed and what to do next. 
+
+### Independents
+
+ The senior analyst you can't afford to hire, watching your accounts every night. 
+
+ 2026 Founded to make judgment, not dashboards, the default. 
+ 3 Ad channels read as one brain — Meta, Google and TikTok. 
+ 6 Sources read together — ads, GA4, Shopify and Search Console. 
+ Remote A small team of marketers and engineers. 
+
+ Request a demo 
+ 
+## Put an analyst on your account .
+
+ Connect your accounts and Adgent gets to work across every channel. We listen closely to the teams we onboard. 
+
+- Connects Meta, Google & TikTok
+ 
+- Direct line to the team
+ 
+- Shape the roadmap
+
+ Request demo
+
+========================================================================
+URL: https://adgent.app/what-is-an-ai-media-buyer
+========================================================================
+Adgent 
+
+ EN TR 
+ Request demo 
+
+ Product · 7 min read · July 2026 
+ 
+# What is an AI media buyer?
+
+ The term is new, the job isn't. An AI media buyer reads your ad accounts like a senior strategist, tells you what to do and why, and makes the change on your approval — not a dashboard with a chatbot bolted on. 
+
+ A 
+ 
+ The Adgent team 
+ Notes from building the analyst 
+
+ Short answer 
+ An AI media buyer is software that reads your ad accounts like a senior strategist — reasoning about account structure, pacing, creative fatigue and attribution — then tells you what to do and why, and executes the change on your approval. Unlike a dashboard, it commits to a conclusion; unlike platform automation, it works for the advertiser, not the auction. The best ones stay read-only by default and are never autonomous spenders. 
+
+ Search "AI media buyer" and you'll find two kinds of answer: hype that promises to "replace your team," and tools that are really just dashboards with a chat box. Neither describes the job. So here's a plain-language definition, and an honest map of what the category actually contains. 
+
+## The short definition
+
+ An AI media buyer is software that does the reasoning part of a media buyer's job. It reads your ad accounts across platforms, reasons about how they're built — budget structure, placements, audiences, creative, attribution — and commits to a conclusion about what to change and why. Then it prepares the change and executes it when you approve. 
+
+ The word that matters is reasoning . A media buyer's value was never pulling the numbers; it was knowing which number matters today, why it moved, and what to do about it. That judgment is the thing an AI media buyer automates — the click at the end is the easy part. 
+
+ A dashboard hands you data. An AI media buyer hands you a decision. 
+
+## What it is not
+
+ The category gets muddy because three very different things get called "AI for ads." They're worth separating: 
+
+- Not a reporting dashboard. A dashboard renders your data beautifully and leaves the analysis to you. The decision is still yours to make, alone, at 8am.
+ 
+- Not platform automation. Meta Advantage+ and Google Performance Max are the platforms' own AI — and they optimize toward the platform's auction, not your margin. An AI media buyer sits on your side of the table.
+ 
+- Not a rules engine. "If CPA > X, pause" is automation without judgment. It fires on a threshold; it can't tell you why CPA moved or whether pausing is the right call.
+
+## AI media buyer vs. dashboard vs. platform AI vs. rules
+
+ The fastest way to place the category is side by side. Here's how an AI media buyer differs from the three things it gets confused with, across the capabilities that actually matter: 
+
+ Capability Reporting dashboard Platform AI (Advantage+, PMax) Rules engine AI media buyer 
+
+ Reasons about why a metric moved — — — ✓ 
+ Reads across Meta, Google & TikTok as one partial — — ✓ 
+ Works for the advertiser, not the auction ✓ — ✓ ✓ 
+ Cross-checks against real revenue partial — — ✓ 
+ Executes the fix — ✓ ✓ ✓ 
+ Waits for your approval before writing n/a — — ✓ 
+ Explains its confidence and flags bad data — — — ✓ 
+
+ The column on the right is the whole reason the category exists: judgment and execution, on the advertiser's side, with the human still holding the last click. 
+
+## How the category got here: manual → rules → platform AI → AI media buyer
+
+ The job didn't appear overnight. It's the fourth step in a twenty-year arc, and each step automated a different layer while leaving the hardest one — judgment — to a human: 
+
+- Manual buying. A person set every bid, budget and audience by hand. Total control, zero scale.
+ 
+- Rules & scripts. "If CPA > X, pause." Scale arrived, but the rules were blind to context — they fired on a threshold, never on a reason.
+ 
+- Platform AI. Advantage+ and Performance Max automated bidding and placement — but optimized toward the platform's auction, and hid the account structure from the buyer.
+ 
+- AI media buyer. The first layer that automates the reasoning — reads the whole account, commits to a conclusion, explains it, and executes on approval. It works for you, not the auction.
+
+## What a real one does, day to day
+
+ Strip away the marketing and the job breaks into one loop with three moves — Aware, Ask, Apply . A capable AI media buyer runs all three: 
+
+### Aware — it watches, and writes the verdict first
+
+ Overnight it reads every account across Meta, Google and TikTok as one book, builds baselines, and detects what changed. In the morning you get a brief ranked by impact, not a wall of charts. This is the same principle behind why we lead with the verdict : conclusion first, evidence underneath. 
+
+### Ask — it answers, in plain language
+
+ You ask "why did Meta ROAS drop yesterday?" and get a strategist's answer with evidence, not a chart to decode. That includes the awkward truths a dashboard glosses over — like a blended ROAS hiding a placement leak , or a number that's still inside the attribution window and shouldn't be trusted yet. 
+
+### Apply — it acts, on your approval
+
+ When a fix is ready, it's a prepared action you approve with one message. Nothing writes to a live account on its own. Read-only by default is the whole point: the judgment is automated, the control stays with you. 
+
+## Why the honest version matters
+
+ The reason to be careful about the definition is trust. An AI media buyer touches real client money, so the version worth using is the one that knows the limits of its own numbers — it flags a metric it can't stand behind instead of printing a confident figure. "Impressive but wrong" is worse than useless when there's spend on the line. 
+
+## Should an AI media buyer be fully autonomous?
+
+ Most of the category markets on autonomy — "set it and forget it," "replaces your team," "cuts management time 80%." It's the wrong promise, and it's worth saying plainly why. 
+
+ Advertising isn't a closed game with a fixed reward. Attribution windows revise numbers for a week; a conversion event can be mis-configured so ROAS is literally unmeasurable; a promising placement can be view-through credit in disguise. A system that acts autonomously on those numbers doesn't remove risk — it removes the human who would have caught the bad number. The judgment should be automated. The last click should not. 
+
+ So the better design is read-only by default with approval-gated execution : the AI does the analysis, ranks by impact, states its confidence, prepares the change — and waits. You get the speed of automation and keep the accountability. That's the difference between an AI media buyer you can put on a client account and one you can only demo. 
+
+## How to choose an AI media buyer
+
+ If you're evaluating tools in this category, five questions separate the real ones from the dashboards-with-a-chatbot: 
+
+- Does it reason, or just report? Ask it "why did this move?" — a real one gives a cause, not a chart.
+ 
+- Is it read-only by default? Anything that writes to a live account without your approval is a liability on client money.
+ 
+- Does it cross-check against real revenue? Platform-reported ROAS alone isn't ground truth — it should reconcile to GA4, Shopify or your store.
+ 
+- Does it flag what it can't measure? The honest ones say "this number can't be trusted yet" instead of inventing confidence.
+ 
+- Does it work across channels as one account? Meta, Google and TikTok read together, not three separate tools bolted side by side.
+
+ That's the bar we build Adgent to: a senior analyst's judgment across Meta, Google and TikTok, honest about what it can and can't measure, executing only on your word. If you want to see what it would say about a real account, request a demo — fifteen minutes, connected read-only. 
+
+## Frequently asked
+
+Q: What is an AI media buyer, in one sentence? 
+ Software that reads your ad accounts like a senior strategist, tells you what to do and why, and executes the change on your approval — reasoning about account structure, not just rendering metrics. 
+
+Q: How is it different from a dashboard? 
+ A dashboard renders your data and hands the analysis back to you. An AI media buyer does the analysis: it ranks issues by impact, says how confident it is and why, and proposes the specific fix — then applies it when you approve. 
+
+Q: Is it the same as Meta Advantage+ or Performance Max? 
+ No. Those are the platform's own automation, optimizing toward the platform's auction. An AI media buyer sits on the advertiser's side, reasons across Meta, Google and TikTok together, and cross-checks platform numbers against real revenue. 
+
+Q: Does it change campaigns automatically? 
+ It shouldn't. A well-built AI media buyer is read-only by default: it prepares each change as an approval-gated action and only writes to a live account once you say go. 
+
+Q: Does an AI media buyer replace a media buyer? 
+ No — it changes what the buyer spends time on. It automates the reasoning and the busywork (nightly account reads, anomaly detection, report generation) so the human focuses on strategy, creative direction, and the final call on every change. The best setups keep a human in the loop, not out of it. 
+
+Q: How is an AI media buyer different from programmatic advertising? 
+ Programmatic automates the buying of impressions in real time within an ad exchange. An AI media buyer sits a layer above: it reasons about your whole account across platforms, decides what should change and why, and executes on your approval. Programmatic is a buying mechanism; an AI media buyer is a decision-maker. 
+
+Q: What channels does an AI media buyer cover? 
+ The useful ones read Meta, Google and TikTok as a single account, and pull in context sources like GA4, Shopify and Search Console so reports reflect real revenue rather than platform-reported numbers alone. 
+
+Q: Is an AI media buyer safe to use on client accounts? 
+ It is when it's read-only by default and every write is approval-gated, audited and reversible. Access model matters more than raw capability: a tool that can act autonomously on client spend is a risk; one that prepares changes and waits for your click is not. 
+
+ Keep reading 
+ 
+ Product Why Adgent leads with the verdict 
+ Attribution Placement drift: the leak in your average 
+
+ All articles 
+ Request demo
+
+========================================================================
+URL: https://adgent.app/how-to-audit-a-google-ads-account
+========================================================================
+Adgent 
+
+ EN TR 
+ Request demo 
+
+ Playbook · 9 min read · July 2026 
+ 
+# How to audit a Google Ads account, properly
+
+ Most account audits are a 40-point checklist that produces a 40-point to-do list. This one is shorter and ordered differently: the checks that move money first, ranked by recoverable spend — not by how thorough the report looks. 
+
+ A 
+ 
+ The Adgent team 
+ Notes from building the analyst 
+
+ Short answer 
+ To audit a Google Ads account, work in order of recoverable spend: first verify conversion tracking (a broken signal corrupts everything downstream), then check wasted search terms , placement leakage , bid-strategy fit and budget pacing . Attach a dollar estimate to each finding and fix the highest-value leak first — a useful audit ranks by impact, not by how many boxes it ticks. 
+
+ A Google Ads account audit is supposed to answer one question: where is this account leaking money, and what's the cheapest thing to fix first? Yet most audits bury that answer under a hundred green ticks. So here's the version that leads with impact — the checks that actually recover spend, in the order a senior buyer runs them. 
+
+## Start with the number you can't trust
+
+ Before you judge a single campaign, judge the measurement. An account optimizing toward a mis-configured or value-less conversion will make every downstream number lie — and no amount of bid tuning fixes a broken signal. So the first check isn't performance, it's whether performance is even measurable. 
+
+ An audit that trusts a broken number just optimizes the account deeper into the wrong thing. 
+
+ This is the same discipline behind leading with the verdict : say what you can stand behind, flag what you can't, and never manufacture confidence. 
+
+## The 12-point audit, ranked by recoverable spend
+
+- Conversion tracking integrity. Are conversions firing once, with the right value, on the right action? Duplicate or value-less conversions corrupt every optimization downstream. Verify against Google's conversion tracking setup .
+ 
+- Wasted search terms. Pull the search terms report and find spend on queries that will never convert. This is usually the single largest pool of instantly recoverable budget.
+ 
+- Placement leakage. On Display, Video and Performance Max, spend drifts to low-quality placements at a fraction of core performance — the Google-side twin of the placement drift that hides inside a blended average .
+ 
+- Bid strategy fit. Is the strategy matched to the data volume? Target CPA/ROAS need enough conversions to learn; below that threshold they thrash.
+ 
+- Budget pacing. Which campaigns are capped while winners starve? Reallocation is free performance.
+ 
+- Search vs Performance Max overlap. PMax can cannibalize your branded and high-intent search. Check where they compete for the same query.
+ 
+- Negative keyword hygiene. Missing negatives let broad match bleed into irrelevant queries — this compounds with check 2.
+ 
+- Audience and geo signal. Are you feeding the algorithm useful audience signals, or letting it guess?
+ 
+- Ad strength and asset coverage. Thin responsive assets cap reach and quality — but chase this after the money checks, not before.
+ 
+- Landing page and tracking parity. Do the pages match the promise, and does analytics agree with Ads on conversions?
+ 
+- Attribution maturity. Recent numbers are still settling. A campaign judged inside its window reads pessimistic — the Google cousin of Meta's 7-day window problem .
+ 
+- Cross-platform comparability. If you also run Meta, remember the two can't be compared directly before you shift budget between them.
+
+## Rank, don't just list
+
+ The difference between a useful audit and a report nobody acts on is ordering. Every finding should carry an estimate of recoverable spend so the account owner knows what to do Monday morning — not a flat list where a $12,000/month leak sits next to a cosmetic asset warning. 
+
+- Attach a number to each finding. "Wasted search terms: ~$9,000/mo" beats "improve keyword targeting."
+ 
+- Sequence the fixes. Some changes reset learning; order them so you don't undo one fix with the next.
+ 
+- Make every figure verifiable. Each number should link back to where to confirm it in the account. Trust is the whole point.
+
+## Why this doesn't stay done
+
+ The catch with a one-off audit is that accounts drift. Search terms shift weekly, placements re-leak, pacing changes with seasonality. A PDF from last quarter describes an account that no longer exists. The real fix isn't a better audit template — it's a standing analyst that re-audits continuously and flags what changed. 
+
+ That's what Adgent does for Google, Meta and TikTok as one account: it runs these checks every morning, ranks findings by recoverable spend, and prepares the fix for your approval. If you want to see it against a real account, request a demo — fifteen minutes, connected read-only. 
+
+## Red flags: what a broken account looks like
+
+ Some findings you have to calculate. Others you can spot in thirty seconds — the tells that an account has been left on autopilot. If you see any of these, you've found recoverable spend before you've done a single sum. 
+
+- Conversion action set to "Every" instead of "One." A lead form counting every submission inflates your conversion count and teaches Smart Bidding to chase repeat form-fillers. For lead gen, this single toggle can overstate conversions by 20–40%.
+ 
+- No audience exclusions on retargeting or PMax. You're paying full CPA to re-serve ads to people who already converted. On accounts with a healthy return rate, that's often 5–15% of spend re-buying customers you already own.
+ 
+- Performance Max with zero audience signals. An empty signal means the algorithm cold-starts on your money. PMax will find the cheapest conversions it can — usually your existing branded traffic — and take credit for demand you'd have captured for free.
+ 
+- A search terms report nobody has opened in 90 days. Broad match without weekly negative-keyword pruning bleeds into junk queries continuously. If the last negative was added six months ago, assume 10–30% of search spend is landing on queries that will never convert.
+ 
+- Target CPA/ROAS running on under 15 conversions in 30 days. Below roughly 30 conversions a month per campaign, Smart Bidding doesn't have enough signal to learn — it thrashes, and CPA swings wildly week to week.
+ 
+- One "catch-all" ad group with 50+ keywords. Structure this loose means no query gets a relevant ad or landing page. Quality Score suffers, CPCs climb, and you can't diagnose anything because everything is averaged together.
+ 
+- Auto-applied recommendations turned on. Google's auto-apply will quietly expand match types and raise budgets on its own schedule. An account where Google is making the changes isn't an account you're auditing — it's one you're discovering.
+ 
+- Display and Search fused in one campaign. "Search with Display Select" pools two totally different funnels under one budget and one CPA target. The Display half almost always drags, hidden inside the blended number — the same trap as placement drift inside an average .
+ 
+- Ads-reported conversions that don't match analytics. When Google Ads claims 400 conversions and GA4 sees 250, someone is optimizing on a number that isn't real. A gap wider than about 15–20% means your measurement is the first thing to fix, not your bids.
+
+## Manual audit vs. continuous audit
+
+ The format of the audit decides what it can actually catch. A human running a checklist once a quarter and software reading the account through the API every morning are looking for the same leaks — but they see very different amounts of them. 
+
+ Manual audit 
+ Automated / continuous audit 
+
+ Time to run 
+ A few hours to a full day per account 
+ Minutes — and it re-runs on its own 
+
+ Frequency 
+ Quarterly, if you're disciplined 
+ Every day 
+
+ Coverage 
+ What the auditor has time to sample 
+ Every campaign, term and placement 
+
+ Catches drift 
+ No — it's a snapshot that ages fast 
+ Yes — flags what changed since yesterday 
+
+ Best at 
+ Judgement calls, strategy, context 
+ High-drift leaks: search terms, placements, pacing 
+
+ Cost 
+ $500–$3,000 for a one-off agency audit 
+ Software fee, then near-zero per re-run 
+
+ Neither wins outright. A manual audit brings judgement a script can't; a continuous one catches the leaks that reopen the week after a manual audit ships. The strongest setup is a standing analyst for the high-drift checks and a human for the strategy calls — which is exactly what an AI media buyer is built to be. 
+
+## How often should you audit?
+
+ Audit cadence should match how fast each check goes stale. Some things barely move; others rot within a week. A single quarterly review treats them all the same, which is why so many audits feel out of date the moment they land. 
+
+- Full audit — quarterly. The complete 12-point pass: structure, bid strategy, attribution, account hygiene. These are slow-moving and worth a deep, unhurried look four times a year.
+ 
+- Light review — monthly. A focused pass on budget pacing, ad strength and the accounts that shifted most. Thirty minutes to catch anything the quarter would let drift too far.
+ 
+- Continuous — for the high-drift checks. Wasted search terms, placement leakage and budget pacing move week to week. These want monitoring, not scheduling — the moment they slip, spend leaks, and a quarterly cadence means you find out 89 days late.
+
+ The blunt version: audit the slow things on a calendar and watch the fast things continuously. Anything you only check quarterly, you're effectively not checking. 
+
+## Common Google Ads audit mistakes
+
+ A bad audit isn't just an incomplete one — it's one that draws confident conclusions from bad inputs. These are the mistakes that turn a review into a list of wrong decisions. 
+
+- Auditing before you've checked conversion tracking. Every performance judgement rests on the conversion signal. If you rank campaigns before verifying it fires once, with the right value, you're ranking noise. Measurement is step one for a reason.
+ 
+- Treating small-sample placements as decisions. A placement with 40 impressions and one conversion isn't a winner, and one with 200 clicks and no sale isn't dead — it's just noise. Cutting or scaling on samples this thin creates the very volatility you were trying to fix.
+ 
+- Ignoring the attribution window. Recent conversions are still landing. Judge a campaign from inside its window and it always reads pessimistic — the Google cousin of Meta's day-one data problem . Let the window close before you call a verdict.
+ 
+- Comparing across platforms as if they measure the same thing. Google and Meta count conversions differently, so a raw ROAS comparison is apples to oranges. Reconcile the models before you move budget between them.
+ 
+- Producing a to-do list instead of a ranking. A flat 40-point list where a $12,000/mo leak sits beside a cosmetic asset warning gets skimmed, not acted on. Rank by recoverable spend, or the audit changes nothing.
+
+## Frequently asked
+
+Q: What is a Google Ads account audit? 
+ A structured review of how an account is built and spending — conversion tracking, search terms, placements, bid strategy, budget pacing and measurement — to find wasted spend and missed opportunity. A good audit ranks findings by recoverable spend, not by how many boxes it ticks. 
+
+Q: How often should you audit a Google Ads account? 
+ A full audit quarterly, a lighter review monthly. But the highest-value checks drift week to week, so the ideal is continuous monitoring rather than a one-off review. 
+
+Q: How long does a Google Ads audit take? 
+ A manual audit of a mid-sized account takes a senior buyer a few hours to a day. Software that reads the account through the API can surface the same findings in minutes and keep them current. 
+
+Q: Can an AI audit a Google Ads account? 
+ Yes. An AI ad account audit reads the account through the platform API, checks the same signals a senior buyer would, and ranks findings by recoverable spend — while flagging any number it can't yet stand behind. It should stay read-only and propose fixes for approval rather than changing the account on its own. 
+
+Q: How long does a PPC audit take? 
+ For a mid-sized Google Ads account, a thorough manual PPC audit runs a few hours to a full day — longer if the account is large or the tracking is messy. Agencies often quote a one-to-two-week turnaround because the report has to be written up. Software that reads the account through the API surfaces the same findings in minutes and, unlike a document, keeps them current. 
+
+Q: What tools do you need to audit Google Ads? 
+ The account itself gets you most of the way: the search terms report, the placements and asset reports, the change history, and the conversions and attribution settings. Pair it with GA4 to reconcile conversions, and Google Tag Assistant or the Chrome Tag Assistant to confirm tags fire correctly. Beyond that, a spreadsheet to rank findings by recoverable spend — or a continuous tool that does the reading and ranking for you. 
+
+Q: How much can an audit recover? 
+ It depends entirely on how neglected the account is, but on accounts that haven't been pruned in a while, 10–30% of spend is commonly sitting in wasted search terms, leaked placements and duplicate retargeting. The bigger, quieter win is measurement: fixing a mis-configured conversion often reshapes every downstream decision, which is worth more than any single line-item cut. 
+
+Q: Can you automate a Google Ads audit? 
+ The high-drift checks — wasted search terms, placement leakage, budget pacing — automate well, because they're rule-based and change constantly, so continuous monitoring beats a scheduled review. Judgement calls like strategy and structure still benefit from a human. The best setup automates the leaks that reopen weekly and keeps a person on the calls that need context. 
+
+ Keep reading 
+ 
+ Product What is an AI media buyer? 
+ Attribution Placement drift: the leak in your average 
+
+ All articles 
+ Request demo
+
+========================================================================
+URL: https://adgent.app/attribution-window-day-one-data
+========================================================================
+Adgent 
+
+ EN TR 
+ Request demo 
+
+ Attribution · 8 min read · April 2026 
+ 
+# The 7-day window is lying to you before noon
+
+ Meta's attribution window quietly rewrites yesterday's numbers for a week. Pausing a campaign on day-one data is the most expensive reflex in performance marketing — here's how to read a metric that isn't done yet. 
+
+ A 
+ 
+ The Adgent team 
+ Notes from building the analyst 
+
+ Open Ads Manager at 9am and a campaign you launched yesterday shows a ROAS of 1.9×. The instinct is immediate and wrong: pause it, reallocate, move on. The problem is that 1.9× isn't a result. It's a snapshot of a number still being written. 
+
+ Meta attributes conversions on a 7-day click, 1-day view basis by default. A purchase that happens today can be credited to an ad someone clicked six days ago. Which means the ROAS you read on day one is missing most of the conversions it will eventually earn. The figure doesn't just change — it almost always revises up . 
+
+## Why the morning read is the worst read
+
+ Early in a metric's life, the denominator (spend) is complete but the numerator (attributed revenue) is not. You're dividing a finished number by an unfinished one. The result reads pessimistic by construction, and it reads most pessimistic first thing in the morning, before the day's conversions have landed. 
+
+ A number inside the attribution window isn't a verdict. It's a question that hasn't finished being answered. 
+
+## How to read a number that isn't done
+
+ You don't need to stop looking at fresh data. You need to stop trusting it like mature data. Three habits make the difference: 
+
+- Mark the window. Treat anything inside 7 days as provisional. Flag it visually so no one reacts to it as final.
+ 
+- Compare like-aged data. Judge a day-1 read against other day-1 reads, not against a 30-day average that has fully matured.
+ 
+- Wait for the floor, not the ceiling. Make kill decisions when a metric has stopped revising — usually day 3 to 4 — not on the first reading.
+
+## The exception that costs real money
+
+ Waiting isn't free. A genuinely broken campaign — wrong audience, broken landing page, creative that misses — burns budget every hour you give it the benefit of the doubt. The discipline isn't "never act early." It's knowing which signals mature and which don't. 
+
+ Click-through rate, CPM, and cost per click are effectively final within hours. They don't wait on attribution. If CTR is a third of your account average on day one, that's a real signal and you can act on it. Revenue-side metrics — ROAS, CPA, conversion rate — are the ones still being written. Kill on the fast signals; wait on the slow ones. 
+
+ This is exactly the kind of judgment Adgent encodes by default. Every number it reports carries its attribution maturity, and anything still inside the window is flagged rather than trusted. The brief never tells you to pause a campaign on a number that's going to revise up by noon. 
+
+ The discipline is simple to state and hard to hold under pressure: a number inside the window is a draft. Read it as one. 
+
+ Keep reading 
+ 
+ Playbook How to audit a Google Ads account 
+ Product What is an AI media buyer? 
+ Attribution Placement drift: the leak in your average 
+
+ All articles 
+ Request demo
+
+========================================================================
+URL: https://adgent.app/scale-a-winner-without-breaking-it
+========================================================================
+Adgent 
+
+ EN TR 
+ Request demo 
+
+ Scaling · 6 min read · April 2026 
+ 
+# How to scale a winner without breaking it
+
+ You found a campaign that works. Now the hard part: adding budget without handing it back to the learning phase. The rule isn't about how much you add — it's about how fast. 
+
+ A 
+ 
+ The Adgent team 
+ Notes from building the analyst 
+
+ Every performance marketer knows the feeling. A campaign hits 4× and you want more of it — so you triple the budget overnight. By Thursday it's at 1.8× and you're trying to work out what broke. Nothing broke. You reset it. 
+
+## What a budget change actually does
+
+ Meta's delivery system treats a significant budget change as a material change to the ad set. Cross the threshold and the ad set re-enters the learning phase, where it needs roughly 50 conversions in 7 days to stabilize again. Everything it learned about who converts gets re-litigated — and while it re-learns, your cost per result climbs. 
+
+ You didn't buy more of a working campaign. You bought a new campaign wearing its name. 
+
+ This is the trap in scaling: the thing you're scaling stops being the thing that worked the moment you scale it hard enough. 
+
+## The 20% rule, and what it's really about
+
+ The widely-used heuristic is to raise a budget by no more than about 20% every 48–72 hours. It works, but the reason matters more than the number. You're not avoiding a big budget. You're avoiding a big delta. An ad set at €100/day can reach €500/day in about three weeks of 20% steps without ever tripping a reset. Jump there in one move and you've thrown away three weeks of learning to save three weeks of waiting. 
+
+## When to go sideways instead of up
+
+ Vertical scaling — more budget into the same ad set — eventually hits a ceiling that has nothing to do with learning phases. You saturate the audience. Frequency climbs, CPM follows, and each extra euro buys a worse impression than the last. 
+
+ At that point the move is horizontal: duplicate into a new audience, a new placement mix, or a new geo, and let the winning creative do its work against fresh eyeballs. The signals that tell you the ceiling is close: 
+
+- CPM rising while CTR holds. You're paying more for the same interest — the auction, not the creative, is the constraint.
+ 
+- Frequency past ~2.5 in a 7-day window. On a cold prospecting audience, that's saturation, not reach.
+ 
+- Incremental spend at falling marginal ROAS. The blended number still looks fine while the last €1,000 returns nothing. Read the margin, not the average.
+
+## The part nobody automates well
+
+ The rules above are easy to write down and hard to hold across thirty ad sets on a Tuesday. Scaling decisions are judgment calls that need three things at once: how long since the last change, where the ad set is in its learning phase, and whether the ROAS you're scaling on has actually matured. 
+
+ That's the reasoning Adgent runs every morning. It knows when each ad set last changed, which ones are clear of the learning phase, and which winners have headroom left — and it proposes the step, waits for your approval, then executes. The judgment is the product; the click is the easy part. 
+
+ Scaling well is mostly patience with a system that punishes impatience. Add slowly, and you keep what you built. 
+
+ Keep reading 
+ 
+ Playbook How to audit a Google Ads account 
+ Product What is an AI media buyer? 
+ Scaling CBO vs ABO in 2026 
+
+ All articles 
+ Request demo
+
+========================================================================
+URL: https://adgent.app/cpm-is-the-early-creative-fatigue-signal
+========================================================================
+Adgent 
+
+ EN TR 
+ Request demo 
+
+ Creative fatigue · 5 min read · April 2026 
+ 
+# Frequency is a lagging indicator. Watch CPM.
+
+ Frequency tells you an audience has seen your ad too often. CPM tells you the auction already noticed. One of those is news; the other is a receipt. 
+
+ A 
+ 
+ The Adgent team 
+ Notes from building the analyst 
+
+ The standard fatigue check is frequency. Watch it climb past 2, past 3, and somewhere in there you refresh the creative. It's a reasonable habit built on a flawed instrument: frequency is an average, and it's slow. 
+
+## Why frequency arrives late
+
+ Frequency is impressions divided by reach over a window. To move meaningfully, it needs volume to accumulate — which means by the time a 7-day frequency ticks from 2.1 to 2.8, the fatigue that caused it started days ago. You're reading a summary of last week's problem. 
+
+ Worse, it averages over the whole audience. A frequency of 2.4 can mean everyone saw the ad twice, or it can mean your core 20% saw it nine times and the rest saw it once. Those are different problems and the metric can't tell them apart. 
+
+ Frequency is the audience telling you it's tired. CPM is the auction telling you it already priced that in. 
+
+## What the CPM curve knows first
+
+ Meta's auction is continuously repricing your ad against how people respond to it. As engagement decays, your effective quality signal drops and you pay more for the same placement. That repricing shows up in CPM within hours — long before enough impressions pile up to move a frequency average. 
+
+ The diagnostic pattern to look for is CPM rising while CTR falls. Read them together: 
+
+- CPM up, CTR down — creative fatigue. The audience has stopped responding and the auction is charging you for it. Refresh.
+ 
+- CPM up, CTR flat — auction pressure, not fatigue. A competitor moved in, or it's Black Friday. Your creative is fine; your market got expensive.
+ 
+- CPM flat, CTR down — audience mismatch, usually after a targeting or placement change. The creative isn't tired, it's in the wrong room.
+
+## The read that's hard to do by hand
+
+ Notice that none of the three patterns above can be read from a single metric. Each one is a relationship between two curves, judged against what's normal for that account — and "normal" is different for a €5k/month DTC brand and a €500k/month retailer. 
+
+ That's why fatigue is one of the first things Adgent looks for each morning. It tracks the CPM–CTR relationship per ad set against your account's own baseline, and when the pattern turns, it says so — in words, with the reason attached, before the frequency column has noticed anything is wrong. 
+
+ Frequency isn't useless. It's just confirmation. By the time it agrees with you, you've already paid for the lesson. 
+
+ Keep reading 
+ 
+ Product What is an AI media buyer? 
+ Playbook How to audit a Google Ads account 
+ Scaling How to scale a winner without breaking it 
+
+ All articles 
+ Request demo
+
+========================================================================
+URL: https://adgent.app/why-adgent-leads-with-the-verdict
+========================================================================
+Adgent 
+
+ EN TR 
+ Request demo 
+
+ Product · 4 min read · March 2026 
+ 
+# Why Adgent leads with the verdict
+
+ A dashboard is a filing cabinet that renders. It shows you everything and concludes nothing. Every Adgent brief inverts that: the verdict first, the evidence underneath, and nothing you didn't need. 
+
+ A 
+ 
+ The Adgent team 
+ Notes from building the analyst 
+
+ Most reporting tools solve a problem nobody has. Performance marketers are not short of data — they're drowning in it. The scarce thing was never the metric. It's the sentence that tells you what the metric means. 
+
+## The filing cabinet that renders
+
+ A dashboard is a neutral surface. It presents forty numbers with equal weight and equal confidence, and quietly hands the entire analytical burden back to you. Which of these moved? Which of those movements matter? Which is noise, which is a trend, which is an attribution artifact that will correct itself by Thursday? 
+
+ The tool doesn't know. It was never built to know. It renders your data faithfully and leaves you exactly where you started — except now you've spent twenty minutes looking at it. 
+
+ A dashboard hands you data. It never hands you a decision. The gap between those two things is a person's whole morning. 
+
+## What a senior analyst does differently
+
+ Give the same account to a good analyst and you don't get forty numbers back. You get a paragraph: "Prospecting is fine, don't touch it. The retargeting set is bleeding — CPM's up 40% and the creative's nine days old. I'd swap it today. Everything else can wait." 
+
+ That paragraph is doing three things a dashboard cannot: it ranks by impact , it discards what doesn't matter , and it commits to a view . It's a shorter output that took more thinking, not less. 
+
+## The principle, stated plainly
+
+ So every Adgent brief is built to the same shape: 
+
+- The verdict first. One line, in plain language, that answers "what should I do about my account today?" before any chart appears.
+ 
+- The evidence underneath. The numbers that support the verdict, in the order that matters — not the order the API returned them.
+ 
+- Nothing you didn't need. If a metric didn't change the conclusion, it doesn't earn a place in the brief. It's still there if you ask. It just isn't in your way.
+
+ The hardest part of that list is the third one. Leaving things out requires being right about what matters, and every tool that has ever hedged by showing you everything did it to avoid that responsibility. 
+
+## Why this is a product decision, not a styling one
+
+ Leading with the verdict forces the system to actually have one. You can't rank by impact without a model of what impact means for this account. You can't discard the irrelevant without knowing what's relevant to this brand. You can't commit to a view without carrying the reasoning that produced it — and being willing to show it when asked. 
+
+ That's the whole bet: the format isn't a presentation layer over a dashboard. It's the shape of the thinking, made visible. A tool that leads with the verdict has to earn the verdict first. 
+
+ You already know what your numbers are. The question worth answering is what they mean — and that's the only question we're interested in. 
+
+ Keep reading 
+ 
+ Product What is an AI media buyer? 
+ Playbook How to audit a Google Ads account 
+ Attribution Placement drift: the leak in your average 
+
+ All articles 
+ Request demo
+
+========================================================================
+URL: https://adgent.app/placement-drift-the-leak-in-the-average
+========================================================================
+Adgent 
+
+ EN TR 
+ Request demo 
+
+ Attribution · 7 min read · March 2026 
+ 
+# Placement drift: the leak hiding in your average
+
+ Your account is at 3.8× and everything looks fine. Inside that number, one placement is returning 1.1× on a fifth of your budget — and the average is doing an excellent job of hiding it. 
+
+ A 
+ 
+ The Adgent team 
+ Notes from building the analyst 
+
+ The most dangerous number in your account is the one that looks fine. A blended ROAS of 3.8× doesn't prompt an investigation — it prompts a nod and a move on to the next tab. An average is a summary, and summaries are where problems go to hide. 
+
+## How placements drift
+
+ Advantage+ placements let Meta's delivery system move your budget across Feed, Stories, Reels, Audience Network, and the rest, chasing whatever the optimization signal says is cheapest. Usually that's what you want — it's the whole point of letting the system optimize. 
+
+ The catch is what "cheapest" is measuring. If the system is optimizing toward a signal that fires more easily in one surface than another, it will happily pour budget into placements that generate the signal but not the outcome. Cheap impressions, cheap clicks, and revenue that never shows up. The drift is gradual, it's automatic, and nothing in the interface announces it. 
+
+ The average didn't lie to you. It just answered a different question than the one you were asking. 
+
+## Why the arithmetic hides it
+
+ This is Simpson's paradox wearing a media-buying costume. A weighted average lets strong performers carry weak ones, and the more strong performers you have, the more weakness they can carry before the top-line number moves at all. 
+
+ Run the numbers: 81% of spend at 4.4× blended with 19% at 1.1× gives you 3.8×. Perfectly healthy-looking. Cut the leak and redeploy that budget into the placements that were carrying it, and you're at 4.4× — a 16% improvement that was invisible in the metric you were watching. 
+
+## Finding the leak
+
+ The mechanical part is easy: break down by placement, sort by ROAS, look at the bottom. The judgment part is knowing what you're allowed to conclude from what you see. 
+
+- Check the volume before the verdict. A placement at 1.1× on €80 of spend is noise. At €4,000 it's a decision. Small slices produce wild ratios for the same reason small samples do.
+ 
+- Check attribution before you cut. Upper-funnel placements often earn view-through credit that a last-click read never shows. A weak Reels number can be a strong Reels contribution that's being attributed to the Feed ad that closed it.
+ 
+- Check the trend, not the snapshot. Drift is a direction. A placement that's been sliding for three weeks is a different animal from one that had a bad Tuesday.
+
+## The reason this stays hidden
+
+ Nobody breaks down every campaign by placement every morning. It's twelve clicks per campaign, it's boring, and it's usually nothing — which is exactly why it's usually missed. The check that only matters one week in eight is the check that never gets done. 
+
+ So Adgent does that decomposition on every read. It looks inside the averages for slices that diverge from the account's own baseline, filters out the ones too small to mean anything, and surfaces only the ones where the money is real. Most mornings it finds nothing and says nothing. The mornings it finds something, it leads with it. 
+
+ Averages are answers to questions about groups. Your budget isn't spent by a group. It's spent slice by slice — and that's where you have to look. 
+
+ Keep reading 
+ 
+ Playbook How to audit a Google Ads account 
+ Product What is an AI media buyer? 
+ Attribution Meta says 4.2×, Google says 3.1× 
+
+ All articles 
+ Request demo
+
+========================================================================
+URL: https://adgent.app/cbo-vs-abo-2026
+========================================================================
+Adgent 
+
+ EN TR 
+ Request demo 
+
+ Scaling · 6 min read · March 2026 
+ 
+# CBO vs ABO in 2026: when each still wins
+
+ CBO won the argument years ago and mostly deserved to. But "mostly" is doing real work in that sentence — and the cases where ABO still wins are the cases where you're trying to learn something. 
+
+ A 
+ 
+ The Adgent team 
+ Notes from building the analyst 
+
+ Ask ten media buyers whether to use campaign budget optimization and nine will say yes without asking what you're doing. They're right often enough that the tenth answer never gets heard — which is a shame, because the tenth answer is where the interesting accounts live. 
+
+## What CBO is actually good at
+
+ CBO — now Advantage campaign budget — pools your budget at the campaign level and lets Meta allocate it across ad sets in real time. When it works, it works for a real reason: the algorithm sees auction dynamics at a resolution and frequency no human can match. It's rebalancing continuously while you're asleep. 
+
+ It needs two conditions to do that well: enough conversion volume for the signal to be trustworthy, and comparable ad sets so the comparison it's making is a fair one. Give it both and it will beat your manual allocation reliably. 
+
+ CBO optimizes for the campaign's total result. If what you need is an answer about one ad set, it will efficiently deny you that answer. 
+
+## Where CBO quietly fails you
+
+ The failure isn't that CBO underperforms. It's that it does its job so well it destroys your ability to learn anything. 
+
+ Put five audiences in a CBO and Meta will find the cheapest one in about six hours and starve the other four. You'll see one ad set with 90% of the spend and four with statistical dust. Now answer: were those four audiences bad, or did they just never get a fair trial? You can't know. The system optimized away the experiment you were trying to run. 
+
+ The same dynamic bites when your ad sets aren't comparable. A €200 cold prospecting set and a €20 retargeting set in the same CBO isn't an allocation decision — it's a rigged comparison. Retargeting will always look cheaper, CBO will always feed it, and you'll wake up to an account that's stopped acquiring anyone new. 
+
+## The decision tree
+
+ Skip the ideology. Ask what you're doing: 
+
+- Scaling a known winner, healthy volume, similar audiences? CBO. Let the machine do what it's better at than you.
+ 
+- Testing audiences, creative angles, or offers? ABO. Buy each one a guaranteed sample. You're paying for an answer, not for efficiency.
+ 
+- Ad sets with genuinely different jobs — prospecting next to retargeting? ABO, or separate campaigns. Never make the algorithm choose between two things you need both of.
+ 
+- Under ~50 conversions per week campaign-wide? ABO. There isn't enough signal for CBO to allocate on, so it's guessing with your money.
+
+## The structure most good accounts land on
+
+ In practice the answer is usually both, separated by purpose. ABO campaigns for testing, where you're buying information and want each option to get a fair shot. CBO campaigns for scaling, where you've stopped asking questions and want efficiency. Winners graduate from the first into the second. 
+
+ Which means the real skill isn't picking a structure — it's noticing when an ad set has finished being an experiment and become a known quantity. That's a judgment call about statistical maturity, and it's the one Adgent makes each morning: which tests have concluded, which are still running, and which have been starved of the data they needed to conclude at all. 
+
+ CBO isn't better than ABO. It's better at a different job. Knowing which job you're doing is the whole answer. 
+
+ Keep reading 
+ 
+ Playbook How to audit a Google Ads account 
+ Product What is an AI media buyer? 
+ Scaling How to scale a winner without breaking it 
+
+ All articles 
+ Request demo
+
+========================================================================
+URL: https://adgent.app/cross-platform-comparability-meta-google
+========================================================================
+Adgent 
+
+ EN TR 
+ Request demo 
+
+ Attribution · 7 min read · February 2026 
+ 
+# Meta says 4.2×, Google says 3.1×. Both are right.
+
+ Two platforms, two ROAS figures, one budget decision. The numbers aren't measuring the same thing — and moving money between them as if they were is the most common expensive mistake in multi-channel accounts. 
+
+ A 
+ 
+ The Adgent team 
+ Notes from building the analyst 
+
+ You're running both. Meta reports 4.2×, Google reports 3.1×, and the conclusion writes itself: move budget to Meta. It's the most natural decision in the account, and you have almost no evidence for it. 
+
+## Three ways the numbers disagree
+
+ Meta and Google aren't reporting the same metric under the same name. They're reporting three different disagreements at once. 
+
+- Different windows. Meta defaults to 7-day click, 1-day view. Google Ads runs its own conversion windows, commonly 30-day click. A longer window catches more conversions — mechanically, not because the channel worked harder.
+ 
+- Different models. Google's data-driven attribution spreads credit across the path. Meta credits the platform's own touchpoints on a last-touch basis. One is sharing credit; the other is claiming it.
+ 
+- Different definitions. A "purchase" fired by Meta's pixel and a "conversion" counted by a Google tag can be counting different events, deduplicated differently, at different points in the funnel.
+
+ Both platforms are honest. Neither is comparable. The dishonesty is in the subtraction you do between them. 
+
+## The double-counting problem
+
+ Here's the tell that something's broken. Add up platform-reported revenue across your channels and compare it to what your Shopify or GA4 says you actually made. In most multi-channel accounts, the platforms claim more revenue than the business earned. 
+
+ That's not fraud, it's arithmetic. A customer who saw a Meta ad on Monday and clicked a Google search ad on Wednesday is one purchase — and both platforms will report it, because from where each one sits, it's true. Sum them and you've counted the same money twice. 
+
+## Building a comparability boundary
+
+ You can't make the platforms agree; they're structurally incapable of it, and each has an interest in claiming the conversion. What you can do is decide, deliberately, what you're willing to compare. That's a comparability boundary, and it's built the same way every time: 
+
+- Anchor on ground truth. Your store or your GA4 knows what you actually sold. That's the denominator every platform claim gets checked against — not the other way round.
+ 
+- Normalize the windows. Pull both platforms on the same lookback before you compare. It won't be perfect, but it removes the most mechanical distortion.
+ 
+- Compare direction, not level. Meta at 4.2× and Google at 3.1× tells you little. Meta trending up 15% while Google is flat, at matched windows against real revenue, tells you where the next euro goes.
+ 
+- Watch the blended number. Total spend against ground-truth revenue is the only figure that can't be double-counted. If your channels look great and blended is flat, the channels are eating each other.
+
+## Why the platforms will never fix this
+
+ It's worth being clear about the structural reason. Google's agent optimizes Google. Meta's optimizes Meta. Neither will ever tell you to move budget to the other — not out of malice, but because they are disqualified from the question by construction. Each one is measuring its own contribution with its own ruler and reporting it in good faith. 
+
+ The cross-platform allocation call — the one that decides where your marginal euro actually goes — is the one nobody with a seat at the table is positioned to make. That's the seat Adgent takes: it reads both platforms through their own APIs, reconciles the claims against your ground-truth revenue, and holds the comparability boundary so the comparison you make is one that survives scrutiny. 
+
+ Two platforms reporting different numbers isn't a bug to be resolved. It's the permanent condition of running more than one channel — and the work is building a view that's honest about it. 
+
+ Keep reading 
+ 
+ Playbook How to audit a Google Ads account 
+ Product What is an AI media buyer? 
+ Attribution The 7-day window is lying before noon 
+
+ All articles 
+ Request demo
+
+========================================================================
+URL: https://adgent.app/security
+========================================================================
+Adgent 
+
+ EN TR 
+ Request demo 
+
+ Legal 
+ 
+# Security
+
+ Last updated 28 June 2026 
+ Adgent connects to your advertising and analytics accounts, so protecting that access is core to the product, not an afterthought. This page explains the measures Futuready Labs takes to keep your data and your connected accounts safe. For how we collect and use data, see our Privacy Policy ; for what data we access and why, see Data Use . 
+
+## 01 Our approach
+
+ We design Adgent around a few simple principles: collect only the access we need, protect it in transit and at rest, keep humans out of your data by default, and make every change to your accounts something you approve. Security is a continuous practice — the measures below describe our current safeguards, which we review and improve over time. 
+
+## 02 Encryption
+
+- In transit — all traffic to and from Adgent, and all calls to platform APIs, are encrypted using TLS (HTTPS).
+ 
+- At rest — data we store, including connection tokens and cached reporting data, is encrypted at rest.
+
+## 03 Access tokens & secrets
+
+ When you connect a platform, we store the authorization tokens that let Adgent act on your behalf. We never ask for or store your platform passwords. 
+
+- Tokens are encrypted at rest and treated as secrets — never exposed to other customers and never shared except with the service providers that operate the platform on our behalf.
+ 
+- We request the minimum scopes needed for the features you use.
+ 
+- You can revoke Adgent's access at any time from your Adgent settings or from the platform's own permission settings, which immediately stops further access.
+ 
+- Application secrets and API credentials are kept confidential and rotated when appropriate.
+
+## 04 Access controls
+
+ Access to systems and data is governed by least-privilege principles. Internal access is limited to personnel who need it to operate the service, is authenticated, and is logged. We do not allow humans to read your connected data except in narrow circumstances: with your affirmative consent (for example, support you request), where necessary for security or to investigate abuse, where required by law, or where the data has been aggregated or de-identified for internal operations. 
+
+## 05 Read-only by default
+
+ Adgent operates in read-only mode unless you grant execution access. Even with execution access, no change is applied to your accounts until you explicitly approve it . This approval gate is a security control as much as a product choice — it keeps automated changes from ever reaching your spend without your say-so. 
+
+## 06 Infrastructure
+
+ Adgent runs on reputable cloud infrastructure providers that maintain industry-standard physical and network security and recognized certifications. Environments are isolated, and customer data is logically separated so that one customer cannot access another's data. 
+
+## 07 Monitoring & logging
+
+ We log access to systems and key actions to support security, debugging, and abuse detection, and we monitor for anomalous activity. Logs are protected and retained for a limited period consistent with security and legal needs. 
+
+## 08 Incident response
+
+ If we become aware of a security incident that compromises user data, we begin remediation immediately, investigate the cause, and notify affected users and the relevant platforms and authorities as required by applicable law and platform policies. We also report incidents to platforms where their terms require it. 
+
+## 09 Service providers
+
+ We use a small set of trusted service providers (sub-processors) to host, operate, secure, and support Adgent, including cloud infrastructure and the AI model provider that processes data to generate your results. We require them to protect data, to use it only to provide their service to us, and to delete it when it is no longer needed. We do not sell your data, and we do not transfer it for advertising. 
+
+## 10 Retention & deletion
+
+ We keep data only as long as needed to provide the service and for legitimate legal and security purposes. Connected data is deleted or de-identified when you disconnect a platform or delete your account, subject to limited retention required by law. You can request deletion at any time — see Your rights & data deletion . 
+
+## 11 Report a vulnerability
+
+ Found a security issue? We want to hear from you. Email osman@adgent.app with the details and we will acknowledge your report and work to address it promptly. Please give us a reasonable chance to fix an issue before disclosing it publicly. 
+
+## 12 Compliance
+
+ We build Adgent to align with applicable data-protection laws, including the GDPR and CCPA, and with the developer and data-protection requirements of the platforms we integrate with, including Meta, Google, and TikTok. As we grow, we continue to mature our security program and pursue recognized certifications and assessments. 
+
+### Contact us
+
+ Security questions or reports? Email osman@adgent.app . Adgent is operated by Futuready Labs.
+
+========================================================================
+URL: https://adgent.app/data-use
+========================================================================
+Adgent 
+
+ EN TR 
+ Request demo 
+
+ Legal 
+ 
+# Data Use
+
+ Last updated 28 June 2026 
+ This is the plain-language version of how Adgent handles the data in your connected accounts. It is a companion to our full Privacy Policy — where the two cover the same ground, the Privacy Policy governs. The short version: we read what you connect to do the analysis you asked for, we keep you in control of every change, and we never sell your data, use it for ads, or train AI models on it. 
+
+## 01 What we connect to
+
+ With your authorization, Adgent reads data from the platforms you connect. We request only the access the features you use require. Depending on what you connect, that includes: 
+
+- Meta, Google Ads & TikTok (advertising) — account, campaign, ad set, and ad structure; budgets, bids, and settings; and performance metrics such as spend, impressions, clicks, conversions, ROAS, CPA, CPM, placements, and audiences. Where you grant execution access, we can apply changes you approve.
+ 
+- Google Analytics 4 — aggregated traffic, engagement, and conversion reporting, to give your ad data on-site context.
+ 
+- Shopify — store reporting such as revenue and order metrics, to connect ad spend to real business results.
+ 
+- Google Search Console — search performance reporting such as queries, clicks, and impressions.
+
+## 02 Why we access it
+
+ Every connection exists to power a feature you can see. We use the data to build your daily brief and health score, detect anomalies, answer the questions you ask, generate the reports and audits you request, and prepare recommended changes. We do not request access to data we do not need, and we do not request access for features that do not yet exist. 
+
+## 03 How we use it
+
+ Your connected data is used solely to provide the service back to you. It is processed — including by the AI that powers Adgent's analysis — to generate your briefs, answers, and reports, and, on your approval, to carry out changes you ask for. We do not use one customer's data to benefit another. 
+
+## 04 What we never do
+
+- We never sell your data or transfer it to data brokers or resellers.
+ 
+- We never use your data for advertising , including retargeting or interest-based ads.
+ 
+- We never use your data to train generalized or non-personalized AI/ML models .
+ 
+- We never let humans read your data except with your consent, for security, to investigate abuse, where required by law, or in aggregated/de-identified form for internal operations.
+ 
+- We never use your data to determine credit-worthiness or for lending.
+
+## 05 Google Limited Use
+
+ Adgent's use and transfer of information received from Google APIs to any other app will adhere to the Google API Services User Data Policy , including the Limited Use requirements. 
+
+## 06 Your control
+
+- Read-only by default — Adgent only reads unless you grant execution access.
+ 
+- You approve every change — nothing is applied to your accounts until you say go.
+ 
+- Disconnect anytime — revoke access from Adgent or from the platform's settings, which stops further access immediately.
+ 
+- Delete anytime — request deletion of your data, or delete your account, at any time. See Your rights & data deletion .
+
+## 07 Per-platform notes
+
+### Google
+
+ Our use of information from Google APIs (Google Ads, Google Analytics 4, and Search Console) adheres to the Google API Services User Data Policy, including the Limited Use requirements. We do not use Google user data for ads, do not sell it, and do not use it to train generalized AI/ML models. 
+ 
+### Meta
+
+ Data accessed via Meta's APIs is processed only as described here and in our Privacy Policy, and in line with applicable Meta terms and developer policies. You can request deletion or revoke access at any time. 
+ 
+### TikTok
+
+ We use TikTok's developer tools to read advertising and reporting data and, where authorized, to carry out changes you approve. Your use of TikTok remains governed by the TikTok Developer Terms and the applicable TikTok Privacy Policy . 
+
+### Contact us
+
+ Questions about how we use your data? Email osman@adgent.app . Adgent is operated by Futuready Labs. Read the full Privacy Policy .
+
+========================================================================
+URL: https://adgent.app/privacy
+========================================================================
+Adgent 
+
+ EN TR 
+ Request demo 
+
+ Legal 
+ 
+# Privacy Policy
+
+ Effective 28 June 2026 · Last updated 28 June 2026 
+ This Privacy Policy explains how Adgent , a service operated by Futuready Labs ("Adgent", "we", "us", or "our"), collects, uses, stores, shares, and protects information when you use our website and our marketing-intelligence service. A core part of Adgent is connecting, with your authorization, to your advertising and analytics platforms — including Meta , Google , TikTok , Google Analytics 4 , Shopify , and Google Search Console — to read reporting data and, only on your explicit approval, carry out changes you ask us to make. 
+
+## 01 Who we are and scope
+
+ Adgent is an AI marketing-intelligence service for performance marketers. It reads the advertising and analytics accounts you connect, tells you what is working and what is not, answers your questions, and — when you approve it — applies changes back to those accounts. 
+ This policy covers the Adgent website and the Adgent application. It applies to two broad groups of information: (1) information about you as a user or prospective user of Adgent, and (2) the data we access from the platforms you connect on your behalf. It does not govern the platforms themselves — your use of Meta, Google, TikTok, Shopify, and related services remains subject to their own terms and privacy policies. 
+
+## 02 Information we collect
+
+### Information you give us
+
+- Account & contact details — your name, work email, company, role, and similar details you provide when you request a demo, sign up, or contact us.
+ 
+- Communications — messages you send us, including support requests and the questions you ask the Adgent assistant.
+ 
+- Billing details — where you hold a paid plan, billing contact information and payment status (card processing is handled by our payment provider; we do not store full card numbers).
+
+### Information we collect automatically
+
+- Usage & device data — log data such as IP address, browser type, pages viewed, and actions taken, used to operate, secure, and improve the service.
+ 
+- Cookies & similar technologies — used for sign-in, security, preferences, and basic analytics. You can control non-essential cookies through your browser settings.
+
+### Connection credentials
+
+ When you connect a platform, we receive and store authorization tokens (for example, OAuth access and refresh tokens) that let Adgent access that account on your behalf. We never ask for, collect, or store your platform passwords. 
+
+## 03 Connected platform data
+
+ With your authorization, Adgent accesses data from the platforms you connect. The data we read depends on which platforms you connect and the permissions you grant, and may include: 
+
+- Advertising platforms (Meta, Google, TikTok) — account, campaign, ad set, and ad structure; budgets, bids, and settings; performance and delivery metrics (such as spend, impressions, clicks, conversions, ROAS, CPA, CPM, placements, and audiences). Where you grant execution access, we can apply changes you approve, such as adjusting budgets, pausing or editing campaigns, or building new campaigns.
+ 
+- Analytics & commerce sources (Google Analytics 4, Shopify, Google Search Console) — aggregated reporting data such as sessions, traffic and conversion metrics, store revenue and order metrics, and search performance, used to give your advertising data business context.
+ 
+ We request only the access needed to provide the features you use. We do not request access to data we do not need, and we do not "future-proof" by requesting access to data for features that do not yet exist. 
+ 
+ Read-only by default. Adgent operates in read-only mode unless you grant execution access, and even then no change is made to your accounts until you explicitly approve it. You remain in control of every change. 
+
+## 04 How we use information
+
+ We use information solely to provide, secure, and improve the user-facing features of Adgent. Specifically, we use it to: 
+
+- Analyze your connected accounts and produce briefs, health scores, anomaly alerts, and reports;
+ 
+- Answer your questions about your accounts and generate the reports and audits you request;
+ 
+- Prepare recommended changes and, on your explicit approval, apply them to your connected accounts;
+ 
+- Provide support, communicate with you about the service, and manage billing;
+ 
+- Maintain the security, integrity, and reliability of the service, and detect and prevent fraud or abuse;
+ 
+- Comply with legal obligations.
+ 
+ Our use of data accessed through platform APIs is limited to the practices described in this policy. If we ever want to use that data in a new way, we will update this policy and obtain your consent before doing so. 
+
+## 05 Limited use & AI commitments
+
+ We hold ourselves to strict limits on what we do with the data we access on your behalf. We do not : 
+
+- Sell or transfer your data to third parties such as advertising platforms, data brokers, or information resellers;
+ 
+- Use your data for serving advertising, including retargeting, personalized, or interest-based advertising;
+ 
+- Use your data to determine credit-worthiness or for lending purposes;
+ 
+- Allow humans to read your data, except with your affirmative consent (for example, for support you request), where necessary for security or to investigate abuse, to comply with law, or where the data has been aggregated/de-identified and is used for internal operations;
+ 
+- Use your Connected Platform Data to train generalized or non-personalized artificial-intelligence or machine-learning models.
+ 
+ Adgent uses AI to analyze and reason over your data in order to deliver the service back to you . Data is processed transiently to generate your briefs, answers, and reports; it is not used to train foundation models or models for the benefit of any other customer. 
+ 
+ Adgent's use and transfer of information received from Google APIs to any other app will adhere to the Google API Services User Data Policy , including the Limited Use requirements. 
+
+## 06 Legal bases
+
+ Where the GDPR or similar laws apply, we process personal data on the following bases: performance of a contract (to provide the service you sign up for); legitimate interests (to secure, maintain, and improve the service, where not overridden by your rights); consent (for example, when you authorize a platform connection or opt in to non-essential cookies); and legal obligation (to comply with applicable law). You may withdraw consent at any time. 
+
+## 07 How we share information
+
+ We do not sell your data. We share it only as needed to run the service: 
+
+- Service providers (sub-processors) — trusted vendors that help us host, operate, secure, and support Adgent, including cloud infrastructure providers and the AI model provider that processes data to generate your results. They may only process data on our instructions and to provide their service to us, and are contractually required to protect it and delete it when no longer needed.
+ 
+- The platforms you connect — when you approve a change, we send the corresponding instruction to that platform's API to carry it out.
+ 
+- Legal & safety — where required by law, regulation, legal process, or governmental request, or to protect the rights, property, or safety of Adgent, our users, or the public.
+ 
+- Business transfers — in connection with a merger, acquisition, financing, or sale of assets, subject to the protections of this policy and with notice to affected users.
+
+## 08 Data retention
+
+ We keep information only as long as needed to provide the service and for legitimate legal, security, and operational purposes. Connected Platform Data is retained while your connection is active and your account is open, and is deleted (or de-identified) when it is no longer necessary to provide the service, when you disconnect a platform, or when you delete your account — subject to limited retention required by law. You can request deletion at any time as described below. 
+
+## 09 Your rights & data deletion
+
+ Depending on where you live, you may have rights to access, correct, delete, restrict, or object to the processing of your personal data, to data portability, and to withdraw consent. We give every user an easily accessible way to exercise these rights: 
+
+- Disconnect at any time — you can revoke Adgent's access to any connected platform at any time from your Adgent settings or from that platform's app/permission settings. Revoking access stops further data access immediately.
+ 
+- Request correction or deletion — email osman@adgent.app and we will action your request without undue delay.
+ 
+- Delete your account — deleting your account deletes the associated user and Connected Platform Data, except where we are required to retain limited records by law.
+ 
+ We will not charge you to exercise these rights, and we will not discriminate against you for doing so. If you are in the EEA or UK and have an unresolved concern, you may contact your local data protection authority. 
+
+## 10 Security
+
+ We take reasonable and appropriate measures to protect data against unauthorized access, use, alteration, loss, or disclosure. These include encryption of data in transit and at rest, access controls and least-privilege practices, protection of access tokens and application secrets, and monitoring. We provide a clearly marked way to report security concerns, and we begin remediation and notify affected parties as required by law if an incident occurs. No method of transmission or storage is completely secure, but we work to protect your data and continually improve our safeguards. 
+
+## 11 International transfers
+
+ We may process and store information in countries other than your own, including where our service providers operate. Where personal data is transferred across borders, we rely on appropriate safeguards (such as standard contractual clauses) as required by applicable law. 
+
+## 12 Children
+
+ Adgent is a business tool intended for use by adults aged 18 and over. It is not directed to children, and we do not knowingly collect personal information from children. If you believe a child has provided us with personal information, contact us and we will delete it. 
+
+## 13 Platform-specific disclosures
+
+### Google
+
+ Adgent's use of information received from Google APIs (including Google Ads, Google Analytics 4, and Google Search Console) adheres to the Google API Services User Data Policy , including the Limited Use requirements. We do not use Google user data for advertising, do not sell it, and do not use it to train generalized AI/ML models. 
+ 
+### Meta
+
+ Data accessed through Meta's APIs is processed in accordance with this policy and with applicable Meta terms and developer policies. You can ask us to delete data accessed via Meta at any time using the contact details below, and you may revoke Adgent's access from your Meta account settings. 
+ 
+### TikTok
+
+ When you connect TikTok, Adgent uses TikTok's developer tools to read advertising and reporting data and, where authorized, to carry out the changes you approve. Your use of TikTok remains governed by the TikTok Developer Terms and the applicable TikTok Privacy Policy . You can disconnect TikTok at any time to stop further access. 
+ 
+### Shopify
+
+ Where you connect Shopify, Adgent reads store reporting data (such as revenue and order metrics) to give your advertising performance commercial context. We do not access more than is needed for that purpose. 
+
+## 14 Changes to this policy
+
+ We may update this policy from time to time. When we do, we will revise the "Last updated" date above and, for material changes, provide additional notice. If a change affects how we use data accessed through platform APIs, we will obtain your consent before applying the change to that data. Your continued use of Adgent after an update means you accept the revised policy. 
+
+### Contact us
+
+ Questions about this policy or your data? Email osman@adgent.app . Adgent is operated by Futuready Labs.
+
+========================================================================
+URL: https://adgent.app/terms
+========================================================================
+Adgent 
+
+ EN TR 
+ Request demo 
+
+ Legal 
+ 
+# Terms of Service
+
+ Effective 28 June 2026 · Last updated 28 June 2026 
+ These Terms of Service ("Terms") govern your access to and use of Adgent , a marketing-intelligence service operated by Futuready Labs ("Adgent", "we", "us", or "our"). By accessing or using Adgent — including by connecting any advertising or analytics platform — you agree to these Terms. If you are using Adgent on behalf of a company, you agree on its behalf and confirm you have authority to do so. If you do not agree, do not use Adgent. 
+
+## 01 The service
+
+ Adgent is an AI marketing-intelligence service that, with your authorization, reads the advertising and analytics accounts you connect — including Meta, Google, TikTok, Google Analytics 4, Shopify, and Google Search Console — analyzes them, answers your questions, and, where you grant execution access, applies changes that you approve. Features available to you depend on your plan and the connections and permissions you grant. 
+
+## 02 Eligibility
+
+ You must be at least 18 years old and able to form a binding contract to use Adgent. You represent that you own, or are authorized to manage, the advertising and analytics accounts you connect, and that your use of Adgent with those accounts does not violate any agreement between you and the relevant platform or any third party. 
+
+## 03 Accounts
+
+ You are responsible for the information you provide, for the activity under your account, and for keeping your credentials secure. Notify us promptly of any unauthorized use. You must provide accurate information and keep it up to date. 
+
+## 04 Connecting your platforms
+
+ When you connect a platform, you authorize Adgent to access that account on your behalf through the platform's API in line with the permissions you grant and our Privacy Policy . You represent that you have all rights and permissions necessary to grant this access and to allow Adgent to process the resulting data. You may disconnect any platform at any time, which stops further access. 
+
+## 05 Approvals & execution
+
+ Adgent operates in read-only mode by default . Where you grant execution access, Adgent may prepare recommended changes, but no change is made to your accounts until you explicitly approve it . You are responsible for reviewing and approving changes and for the outcomes of changes you approve. Adgent is a decision-support tool; final decisions and accountability for your advertising spend remain yours. 
+
+## 06 Acceptable use
+
+ You agree not to, and not to permit anyone to: 
+
+- Use Adgent in violation of any law, regulation, or the terms or policies of any connected platform (including those of Meta, Google, and TikTok);
+ 
+- Access or connect accounts you are not authorized to manage;
+ 
+- Reverse engineer, decompile, scrape, or attempt to derive the source code of the service, except where this restriction is prohibited by law;
+ 
+- Interfere with, disrupt, or place undue load on the service or its infrastructure, or attempt to bypass security or access controls;
+ 
+- Resell, sublicense, or provide the service to third parties except as expressly permitted;
+ 
+- Use the service to build a competing product, or to transmit malware or unlawful, infringing, or harmful content.
+
+## 07 Your data & privacy
+
+ Our collection and use of information is described in our Privacy Policy , which is incorporated into these Terms. You retain ownership of your data and the data in your connected accounts. You grant us a limited license to access, process, and store that data solely to provide and improve the service for you, consistent with the Privacy Policy. 
+
+## 08 Plans & billing
+
+ Some features require a paid plan. Where you purchase a plan, you agree to the fees, billing cycle, and terms presented at checkout. Unless stated otherwise, paid plans are billed in advance, monthly plans may be cancelled at any time and take effect at the end of the current billing period, and fees are non-refundable except where required by law. We may change pricing on prospective notice. 
+
+## 09 Intellectual property
+
+ Adgent, including the service, software, models, and all related content and trademarks (other than your data and third-party marks), is owned by Futuready Labs and its licensors and is protected by intellectual-property laws. We grant you a limited, non-exclusive, non-transferable, revocable right to use the service in accordance with these Terms. We welcome feedback and may use it without restriction or obligation to you. 
+
+## 10 Third-party platforms
+
+ Adgent integrates with third-party platforms including Meta, Google, TikTok, Shopify, and Google Search Console. We are not affiliated with, endorsed by, or sponsored by these companies, and their names and logos are the property of their respective owners. Your use of each platform is governed by that platform's own terms and policies, and we are not responsible for the platforms, their availability, or changes they make to their APIs that may affect the service. 
+
+## 11 AI output & no guarantees
+
+ Adgent uses AI to analyze data and generate briefs, answers, recommendations, and reports. This output is provided for informational and decision-support purposes, may contain errors or omissions, and should be reviewed before you act on it. We do not guarantee any particular result, including any improvement in advertising performance, return on ad spend, or savings. You are solely responsible for decisions you make and changes you approve. 
+
+## 12 Disclaimers
+
+ To the fullest extent permitted by law, the service is provided "as is" and "as available" without warranties of any kind, whether express, implied, or statutory, including warranties of merchantability, fitness for a particular purpose, title, non-infringement, and any warranties arising from course of dealing or usage. We do not warrant that the service will be uninterrupted, error-free, or secure. 
+
+## 13 Limitation of liability
+
+ To the fullest extent permitted by law, Futuready Labs and its officers, employees, and suppliers will not be liable for any indirect, incidental, special, consequential, or punitive damages, or for any loss of profits, revenue, data, goodwill, or advertising spend, arising out of or relating to your use of the service. Our total liability for any claim relating to the service will not exceed the greater of the amounts you paid us for the service in the twelve months before the claim or one hundred U.S. dollars (USD 100). Some jurisdictions do not allow certain limitations, so some of these may not apply to you. 
+
+## 14 Indemnification
+
+ You agree to indemnify and hold harmless Futuready Labs from claims, damages, liabilities, and expenses (including reasonable legal fees) arising out of your use of the service, your data or connected accounts, your violation of these Terms, or your violation of any law or the rights of a third party, including any connected platform's terms. 
+
+## 15 Termination
+
+ You may stop using Adgent and disconnect your platforms at any time. We may suspend or terminate your access if you violate these Terms, if required for security or legal reasons, or if a connected platform requires it. On termination, your right to use the service ends; we will handle your data as described in the Privacy Policy . Sections that by their nature should survive (including intellectual property, disclaimers, limitation of liability, and indemnification) will survive termination. 
+
+## 16 Changes to these terms
+
+ We may update these Terms from time to time. We will revise the "Last updated" date above and, for material changes, provide additional notice. Your continued use of Adgent after an update means you accept the revised Terms. 
+
+## 17 Governing law
+
+ These Terms are governed by the laws of [ governing jurisdiction ] , without regard to conflict-of-laws rules, and the courts of [ jurisdiction / venue ] will have exclusive jurisdiction over disputes, except where applicable law gives you the right to bring a claim in your local courts. Nothing in these Terms limits any mandatory consumer-protection rights you may have. 
+
+### Contact us
+
+ Questions about these Terms? Email osman@adgent.app . Adgent is operated by Futuready Labs.

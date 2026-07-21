@@ -34,4 +34,9 @@ Allow: /
 User-agent: Meta-ExternalAgent
 Allow: /
 
+# LLM-friendly plain-text content for AI answer engines (GEO)
+# llms.txt = index; llms-full.txt = full content of every page.
+LLM-Content: https://adgent.app/llms.txt
+LLM-Full-Content: https://adgent.app/llms-full.txt
+
 Sitemap: https://adgent.app/sitemap.xml
