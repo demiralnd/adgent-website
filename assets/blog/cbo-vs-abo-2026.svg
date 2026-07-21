@@ -1,59 +1,43 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" preserveAspectRatio="xMidYMid slice"><defs>
-    <pattern id="grid" width="34" height="34" patternUnits="userSpaceOnUse">
-      <path d="M34 0 H0 V34" fill="none" stroke="rgba(28,25,20,0.045)" stroke-width="1"/>
+    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M36 0 H0 V36" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
     </pattern>
-    <radialGradient id="glow" cx="16%" cy="8%" r="70%">
-      <stop offset="0%" stop-color="#ff5a2c" stop-opacity="0.13"/>
-      <stop offset="100%" stop-color="#ff5a2c" stop-opacity="0"/>
+    <radialGradient id="vign" cx="50%" cy="18%" r="90%">
+      <stop offset="0%" stop-color="#ff6a3d" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#ec491d" stop-opacity="1"/>
     </radialGradient>
-    <radialGradient id="glow2" cx="92%" cy="94%" r="55%">
-      <stop offset="0%" stop-color="#ff5a2c" stop-opacity="0.07"/>
-      <stop offset="100%" stop-color="#ff5a2c" stop-opacity="0"/>
-    </radialGradient>
-    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#ff5a2c" stop-opacity="0.95"/>
-      <stop offset="100%" stop-color="#ff5a2c" stop-opacity="0.4"/>
-    </linearGradient>
-    <linearGradient id="barGrad" x1="0" y1="1" x2="0" y2="0">
-      <stop offset="0%" stop-color="#16935a" stop-opacity="0.75"/>
-      <stop offset="100%" stop-color="#16935a" stop-opacity="1"/>
-    </linearGradient>
   </defs>
-  <rect width="1200" height="630" fill="#f3f2ef"/>
+  <rect width="1200" height="630" fill="url(#vign)"/>
   <rect width="1200" height="630" fill="url(#grid)"/>
-  <rect width="1200" height="630" fill="url(#glow)"/>
-  <rect width="1200" height="630" fill="url(#glow2)"/>
-  <rect x="0" y="0" width="12" height="630" fill="url(#fade)"/>
-  <!-- faint corner ticks for structure -->
-  <path d="M60 60 h22 M60 60 v22" stroke="rgba(28,25,20,0.16)" stroke-width="2" fill="none" opacity="0.5"/>
-  <path d="M1140 570 h-22 M1140 570 v-22" stroke="rgba(28,25,20,0.16)" stroke-width="2" fill="none" opacity="0.5"/>
-  <g>
-    <text x="72" y="96" font-family="'Geist Mono',monospace" font-size="21" font-weight="600" letter-spacing="3.6" fill="#ff5a2c">SCALING</text>
-    <rect x="72" y="112" width="58" height="3" rx="1.5" fill="#ff5a2c"/>
-    <text x="392" y="96" font-family="'Geist Mono',monospace" font-size="15" letter-spacing="1.5" fill="#9a958a">6 min read</text>
-  </g><text x="72" y="196" font-family="'Plus Jakarta Sans',sans-serif" font-size="60" font-weight="700" font-style="normal" letter-spacing="-2" fill="#1c1a17">CBO vs ABO</text>
-<text x="72" y="262" font-family="'Plus Jakarta Sans',sans-serif" font-size="60" font-weight="700" font-style="normal" letter-spacing="-2" fill="#1c1a17">in </text><text x="165.60000000000002" y="262" font-family="'Fraunces',serif" font-size="60" font-weight="500" font-style="italic" letter-spacing="-1.4" fill="#ff5a2c">2026</text><text x="290.40000000000003" y="262" font-family="'Plus Jakarta Sans',sans-serif" font-size="60" font-weight="700" font-style="normal" letter-spacing="-2" fill="#1c1a17">.</text><g transform="translate(690,140)">
-    <g transform="translate(18,0)"><rect width="116" height="34" rx="9" fill="rgba(255,90,44,0.12)"/><text x="15" y="23" font-family="'Geist Mono',monospace" font-size="16" font-weight="600" fill="#ff5a2c">spend?</text></g>
-    <path d="M76 34 L76 96 M76 96 L-2 158 M76 96 L154 158" fill="none" stroke="rgba(28,25,20,0.16)" stroke-width="3" stroke-linecap="round"/>
+  <!-- corner structure ticks -->
+  <path d="M60 60 h24 M60 60 v24" stroke="rgba(255,255,255,0.22)" stroke-width="2" fill="none"/>
+  <path d="M1140 570 h-24 M1140 570 v-24" stroke="rgba(255,255,255,0.22)" stroke-width="2" fill="none"/>
+  <text x="72" y="98" font-family="'Geist Mono',monospace" font-size="21" font-weight="600" letter-spacing="3.6" fill="#ffffff">SCALING</text>
+  <rect x="72" y="114" width="58" height="3" rx="1.5" fill="#ffffff"/>
+  <text x="402" y="98" font-family="'Geist Mono',monospace" font-size="15" letter-spacing="1.5" fill="rgba(255,255,255,0.62)">6 min read</text><text x="72" y="204" font-family="'Plus Jakarta Sans',sans-serif" font-size="62" font-weight="700" letter-spacing="-2" fill="#ffffff"><tspan>CBO vs ABO</tspan></text>
+<text x="72" y="274" font-family="'Plus Jakarta Sans',sans-serif" font-size="62" font-weight="700" letter-spacing="-2" fill="#ffffff"><tspan>in </tspan><tspan font-family="'Fraunces',serif" font-style="italic" font-weight="500" fill="#ffffff">2026</tspan><tspan>.</tspan></text><g transform="translate(690,142)">
+    <g transform="translate(18,0)"><rect width="116" height="34" rx="9" fill="rgba(255,255,255,0.22)"/><text x="15" y="22" font-family="'Geist Mono',monospace" font-size="16" font-weight="600" fill="#ffffff">spend?</text></g>
+    <path d="M76 34 L76 96 M76 96 L-2 158 M76 96 L154 158" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="3" stroke-linecap="round"/>
     <g transform="translate(-104,158)">
-      <rect x="0" y="0" width="204" height="128" rx="15" fill="#ffffff" stroke="#ff5a2c" stroke-opacity="0.35" stroke-width="2"/>
+      <rect x="0" y="0" width="204" height="128" rx="15" fill="rgba(255,255,255,0.96)"/>
       <text x="24" y="48" font-family="'Plus Jakarta Sans',sans-serif" font-size="32" font-weight="700" letter-spacing="-1" fill="#ff5a2c">CBO</text>
       <text x="24" y="80" font-family="'Geist Mono',monospace" font-size="14" fill="#6c685f">let Meta</text>
       <text x="24" y="102" font-family="'Geist Mono',monospace" font-size="14" fill="#6c685f">allocate</text>
     </g>
     <g transform="translate(156,158)">
-      <rect x="0" y="0" width="204" height="128" rx="15" fill="#ffffff" stroke="rgba(28,25,20,0.16)"/>
-      <text x="24" y="48" font-family="'Plus Jakarta Sans',sans-serif" font-size="32" font-weight="700" letter-spacing="-1" fill="#1c1a17">ABO</text>
-      <text x="24" y="80" font-family="'Geist Mono',monospace" font-size="14" fill="#6c685f">you hold</text>
-      <text x="24" y="102" font-family="'Geist Mono',monospace" font-size="14" fill="#6c685f">the line</text>
+      <rect x="0" y="0" width="204" height="128" rx="15" fill="rgba(255,255,255,0.14)" stroke="rgba(255,255,255,0.22)"/>
+      <text x="24" y="48" font-family="'Plus Jakarta Sans',sans-serif" font-size="32" font-weight="700" letter-spacing="-1" fill="#ffffff">ABO</text>
+      <text x="24" y="80" font-family="'Geist Mono',monospace" font-size="14" fill="rgba(255,255,255,0.86)">you hold</text>
+      <text x="24" y="102" font-family="'Geist Mono',monospace" font-size="14" fill="rgba(255,255,255,0.86)">the line</text>
     </g>
   </g>
-  <g transform="translate(1024,552)">
-    <rect width="36" height="36" rx="10" fill="#ff5a2c"/>
-    <g transform="translate(18,18.5) scale(0.165) translate(-85,-82)">
-      <path d="M14 140 L85 6 L156 140 L128 140 L85 58 L42 140 Z" fill="#fff"/>
-      <path d="M50 140 L85 72 L120 140 L96 140 L85 118 L74 140 Z" fill="#fff"/>
-      <path d="M18 153 L152 153" stroke="#fff" stroke-width="9" stroke-linecap="round" opacity="0.62"/>
+  <!-- brand lockup: white tile so the mark still reads on coral -->
+  <g transform="translate(1020,550)">
+    <rect width="38" height="38" rx="10" fill="#ffffff"/>
+    <g transform="translate(19,19.5) scale(0.175) translate(-85,-82)">
+      <path d="M14 140 L85 6 L156 140 L128 140 L85 58 L42 140 Z" fill="#ff5a2c"/>
+      <path d="M50 140 L85 72 L120 140 L96 140 L85 118 L74 140 Z" fill="#ff5a2c"/>
+      <path d="M18 153 L152 153" stroke="#ff5a2c" stroke-width="9" stroke-linecap="round" opacity="0.62"/>
     </g>
-    <text x="48" y="24" font-family="'Plus Jakarta Sans',sans-serif" font-size="21" font-weight="800" letter-spacing="-0.6" fill="#1c1a17">Adgent</text>
+    <text x="50" y="25" font-family="'Plus Jakarta Sans',sans-serif" font-size="22" font-weight="800" letter-spacing="-0.6" fill="#ffffff">Adgent</text>
   </g></svg>
