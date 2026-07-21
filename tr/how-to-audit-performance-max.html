@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1NCS2ZFMLR"></script>
+<script>
+ window.dataLayer = window.dataLayer || [];
+ function gtag(){dataLayer.push(arguments);}
+ gtag('js', new Date());
+ gtag('config', 'G-1NCS2ZFMLR');
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MWR4PVRF');</script>
+<!-- End Google Tag Manager -->
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Performance Max kampanyası nasıl denetlenir (kara kutu) — Adgent</title>
+<meta name="description" content="Performance Max paranın nereye gittiğini gizler. Kara kutuyu delen kontroller burada — etkiye göre sıralı — brand-spend tespiti ve tracking kalitesiyle başlıyor."/>
+<link rel="canonical" href="https://adgent.app/tr/how-to-audit-performance-max"/>
+<link rel="alternate" hreflang="en" href="https://adgent.app/how-to-audit-performance-max"/>
+<link rel="alternate" hreflang="x-default" href="https://adgent.app/how-to-audit-performance-max"/>
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1"/>
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="Adgent"/>
+<meta property="og:title" content="Performance Max kampanyası nasıl denetlenir (kara kutu)"/>
+<meta property="og:description" content="Performance Max paranın nereye gittiğini gizler. Kara kutuyu delen kontroller burada — etkiye göre sıralı — brand-spend tespiti ve tracking kalitesiyle başlıyor."/>
+<meta property="og:url" content="https://adgent.app/tr/how-to-audit-performance-max"/>
+<meta property="og:image" content="https://adgent.app/assets/og/how-to-audit-performance-max.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="Üzerinde soru işareti olan karanlık bir Performance Max kutusu, üstünde kutuyu aç yazıyor."/>
+<meta property="article:published_time" content="2026-07-22"/>
+<meta property="article:section" content="Playbook"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Performance Max kampanyası nasıl denetlenir (kara kutu)"/>
+<meta name="twitter:description" content="Performance Max paranın nereye gittiğini gizler. Kara kutuyu delen kontroller burada — etkiye göre sıralı — brand-spend tespiti ve tracking kalitesiyle başlıyor."/>
+<meta name="twitter:image" content="https://adgent.app/assets/og/how-to-audit-performance-max.png"/>
+<link rel="icon" type="image/svg+xml" href="/assets/logo-app.svg"/>
+<link rel="apple-touch-icon" href="/assets/logo-app.svg"/>
+<link rel="stylesheet" href="/tokens.css"/>
+<link rel="stylesheet" href="/site.css"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "headline": "Performance Max kampanyası nasıl denetlenir (kara kutu)", "image": ["https://adgent.app/assets/og/how-to-audit-performance-max.png"], "description": "Performance Max paranın nereye gittiğini gizler. Kara kutuyu delen kontroller burada — etkiye göre sıralı — brand-spend tespiti ve tracking kalitesiyle başlıyor.", "datePublished": "2026-07-22", "dateModified": "2026-07-22", "author": {"@type": "Person", "name": "Nurettin Demiral", "url": "https://www.linkedin.com/in/nurettin-demiral/", "sameAs": ["https://www.linkedin.com/in/nurettin-demiral/"]}, "publisher": {"@type": "Organization", "name": "Adgent", "url": "https://adgent.app/tr/", "logo": {"@type": "ImageObject", "url": "https://adgent.app/assets/logo.svg"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://adgent.app/tr/how-to-audit-performance-max"}, "isPartOf": {"@type": "Blog", "name": "Adgent Blog", "@id": "https://adgent.app/tr/blog"}, "articleSection": "Playbook", "keywords": "performance max audit, pmax audit, performance max not converting, audit performance max campaign", "wordCount": 1662, "inLanguage": "tr", "about": {"@type": "Thing", "name": "Performance Max audit"}, "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".answer-box", ".standfirst"]}, "url": "https://adgent.app/tr/how-to-audit-performance-max"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Performance Max neden harcama yapıyor ama conversion getirmiyor?", "acceptedAnswer": {"@type": "Answer", "text": "Genelde üç şeyden biri: conversion tracking bozuk ya da çift sayıyor, dolayısıyla PMax çöp sinyallere doğru optimize ediyor; kampanya bütçeyi göz dolduran ama conversion getirmeyen ucuz Display ve Video placement'larına döküyor; ya da asset group'lar o kadar zayıf ki Google hâlâ cold-start'ta, öğrenirken çöp envanter satın alıyor. Önce tracking'i denetle, sonra kanal dağılımını."}}, {"@type": "Question", "name": "Performance Max'ın nereye harcadığını nasıl görürüm?", "acceptedAnswer": {"@type": "Answer", "text": "Google çoğunu varsayılan olarak gizler ama bir script veya Google Ads API ile kanal düzeyinde bir kırılım çekip Search, Display ve Video dağılımını görebilir, placement raporuyla (Content içinden ya da API üzerinden) gerçek uygulama ve siteleri görebilirsin. Insights ve Explanations paneli işe yarar ama gerçek dağılımı görmenin tek yolu makine tarafından okunabilir rota."}}, {"@type": "Question", "name": "Performance Max'ta placement'ları hariç tutabilir misin?", "acceptedAnswer": {"@type": "Answer", "text": "Kısmen. Hesap düzeyinde placement hariç tutmaları uygulayabilir, mobil uygulama kategorisi hariç tutmasıyla mobile-app envanterini dışlayabilir, brand-safety ve içerik hariç tutmaları ekleyebilirsin. Bir Display kampanyasındaki gibi placement'ları tek tek seçemezsin ama hesap düzeyindeki hariç tutma listesi ve mobile-app hariç tutması birlikte boşa giden çöp envanterin çoğunu keser."}}, {"@type": "Question", "name": "Performance Max search'ümü yamyamlaştırıyor mu?", "acceptedAnswer": {"@type": "Answer", "text": "Genellikle evet. PMax arama sorgularında — brand terimlerin dahil — yayınlanabilir ve Google'ın kendi öncelik kuralları PMax'ın standart Search kampanyalarının önüne geçmesine veya onlarla çakışmasına yol açar. İşaret, geri kalanın çok üstünde ROAS'a sahip bir PMax terimi ya da asset group'tur: bu genelde PMax'ın yarattığı yeni talep değil, sahiplendiği brand search'tür."}}, {"@type": "Question", "name": "Performance Max'ı ne sıklıkla denetlemeliyim?", "acceptedAnswer": {"@type": "Answer", "text": "Tam bir manuel denetimi aylık yapmaya değer, ayrıca büyük bir bütçe değişikliğinden, yeni bir asset group'tan veya bir tracking değişikliğinden sonra da mutlaka. Ama asıl önemli kontroller — brand-spend kayması, tracking kopmaları, placement sürüklenmesi — günlük hareket eder, o yüzden dürüst cevap şu: PMax aylık bir anlık görüntü değil, sürekli izleme ister. Ayda bir yapılan denetim sızıntıyı başladıktan haftalar sonra yakalar."}}, {"@type": "Question", "name": "En önemli Performance Max ayarı nedir?", "acceptedAnswer": {"@type": "Answer", "text": "Temiz conversion tracking, hemen ardından bir brand hariç tutma listesi. PMax nereye harcayacağına karar vermek için tamamen conversion verine dayanır, dolayısıyla tracking yanlışsa aşağıdaki her karar yanlış olur. Ondan sonra brand terimlerini hariç tutmak, PMax'ın zaten sahip olduğun talebi sahiplenip raporladığı ROAS'ı şişirmesini engeller."}}, {"@type": "Question", "name": "AI Performance Max'ı denetleyebilir mi?", "acceptedAnswer": {"@type": "Answer", "text": "Evet — ve PMax tam da AI'ın iyi olduğu türde bir kara kutu. Bir AI media buyer kanal ve placement kırılımını çekebilir, anormal ROAS'a sahip bir brand terimini tespit edebilir, bir tracking kopmasını olduğu gün yakalayabilir ve her bulguyu geri kazanılabilir harcamaya göre sıralayabilir — ayda bir değil, sürekli. O sızıntıyı yüzeye çıkarır; sen düzeltmeyi onaylarsın."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://adgent.app/tr/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://adgent.app/tr/blog"}, {"@type": "ListItem", "position": 3, "name": "How to audit a Performance Max campaign (the black box)", "item": "https://adgent.app/tr/how-to-audit-performance-max"}]}]}</script>
+<style>
+ .article { max-width: 720px; margin: 0 auto; }
+ .article .post-meta { display: flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-tertiary); }
+ .article .post-tag { color: var(--accent); }
+ .article h1 { font-weight: 600; font-size: clamp(30px, 4.4vw, 46px); line-height: 1.06; letter-spacing: -0.035em; margin: 18px 0 0; text-wrap: balance; }
+ .article .standfirst { font-size: 19px; line-height: 1.6; color: var(--text-secondary); margin: 22px 0 0; text-wrap: pretty; }
+ .byline { display: flex; align-items: center; gap: 12px; margin: 26px 0 0; }
+ .byline .av { width: 38px; height: 38px; border-radius: 50%; background: var(--accent); color: #fff; display: grid; place-items: center; font-weight: 700; font-size: 16px; }
+ .byline .who { font-size: 14px; font-weight: 600; }
+ .byline .role { font-size: 12.5px; color: var(--text-tertiary); }
+ .post-hero-cover { margin: 30px 0 0; border: 1px solid var(--border-default); border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 1200 / 630; }
+ .post-hero-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+ .answer-box { margin: 30px 0 0; background: var(--bg-sub); border: 1px solid var(--border-default); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-md) var(--radius-md) 0; padding: 20px 24px; }
+ .answer-box .lbl { font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
+ .answer-box p { font-size: 17px; line-height: 1.6; color: var(--text); margin: 10px 0 0; text-wrap: pretty; }
+ .prose { margin: 36px 0 0; }
+ .prose p { font-size: 17px; line-height: 1.72; color: var(--text); margin: 20px 0 0; text-wrap: pretty; }
+ .prose h2 { font-size: 25px; font-weight: 600; letter-spacing: -0.02em; margin: 40px 0 0; }
+ .prose h3 { font-size: 19px; font-weight: 600; letter-spacing: -0.01em; margin: 30px 0 0; }
+ .prose b { font-weight: 600; }
+ .prose a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(255,90,44,0.35); }
+ .prose a:hover { border-bottom-color: var(--accent); }
+ .prose ul { list-style: none; margin: 18px 0 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+ .prose ul li { position: relative; padding-left: 30px; font-size: 16px; line-height: 1.6; color: var(--text); }
+ .prose ul li svg { position: absolute; left: 0; top: 3px; width: 18px; height: 18px; color: var(--accent); stroke-width: 2; }
+ .prose blockquote { margin: 30px 0 0; padding: 18px 24px; border-left: 3px solid var(--accent); background: var(--bg-sub); border-radius: 0 var(--radius-md) var(--radius-md) 0; }
+ .prose blockquote p { margin: 0; font-family: var(--font-editorial); font-style: italic; font-size: 20px; line-height: 1.5; color: var(--text); }
+ .cmp-wrap { overflow-x: auto; margin: 24px 0 0; border: 1px solid var(--border-default); border-radius: var(--radius-lg); -webkit-overflow-scrolling: touch; }
+ .cmp { border-collapse: separate; border-spacing: 0; width: 100%; min-width: 640px; font-size: 13.5px; background: var(--bg-elevated); }
+ .cmp th.cmp td { padding: 12px 14px; text-align: center; border-bottom: 1px solid var(--border-default); }
+ .cmp thead th { font-family: var(--font-mono); font-size: 10.5px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-tertiary); background: var(--bg-content); vertical-align: bottom; line-height: 1.3; }
+ .cmp thead th span { font-weight: 500; opacity: 0.75; text-transform: none; letter-spacing: 0; }
+ .cmp thead th.us { background: var(--accent); color: var(--accent-on); }
+ .cmp tbody td:first-child { text-align: left; font-weight: 500; color: var(--text); }
+ .cmp td.yes { color: var(--severity-ok, #16935a); font-weight: 700; font-size: 15px; }
+ .cmp td.no { color: var(--text-disabled); }
+ .cmp td.part.cmp td.na { font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary); }
+ .cmp td.us { background: var(--accent-subtle); }
+ .cmp tbody tr:last-child td { border-bottom: none; }
+ .cmp-note { font-size: 14px; color: var(--text-secondary); margin: 14px 0 0; font-style: italic; }
+ .cmp-note em { font-family: var(--font-editorial); color: var(--accent); font-style: italic; }
+ .faq { max-width: 720px; margin: 44px auto 0; }
+ .faq h2 { font-size: 25px; font-weight: 600; letter-spacing: -0.02em; }
+ .faq details { border-top: 1px solid var(--border-default); padding: 18px 0; }
+ .faq details:last-child { border-bottom: 1px solid var(--border-default); }
+ .faq summary { list-style: none; cursor: pointer; font-size: 17px; font-weight: 600; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+ .faq summary::-webkit-details-marker { display: none; }
+ .faq summary .chev { width: 18px; height: 18px; flex: none; stroke-width: 2; color: var(--text-tertiary); transition: transform 160ms; }
+ .faq details[open] summary .chev { transform: rotate(180deg); }
+ .faq .faq-a { font-size: 15.5px; line-height: 1.65; color: var(--text-secondary); margin: 12px 0 0; }
+ .related { max-width: 720px; margin: 48px auto 0; }
+ .related .eyebrow { font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); display: inline-flex; align-items: center; gap: 9px; }
+ .related .eyebrow .tick { width: 16px; height: 1px; background: var(--accent); }
+ .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 18px 0 0; }
+ .rel-card { background: var(--bg-elevated); border: 1px solid var(--border-default); border-radius: var(--radius-lg); padding: 18px 20px; transition: border-color 140ms; }
+ .rel-card:hover { border-color: var(--border-strong); }
+ .rel-card .rc-tag { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
+ .rel-card .rc-h { font-size: 15px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.25; margin: 8px 0 0; text-wrap: balance; }
+ .post-foot { max-width: 720px; margin: 48px auto 0; padding-top: 28px; border-top: 1px solid var(--border-default); display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+ .back-link { display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 600; color: var(--text-secondary); }
+ .back-link svg { width: 15px; height: 15px; stroke-width: 2; }
+ .back-link:hover { color: var(--text-primary); }
+ @media (max-width: 560px){ .related-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MWR4PVRF"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<header class="nav">
+ <div class="wrap nav-in">
+ <a class="brand" href="/tr/"><img class="mark" src="/assets/icon-only.svg" alt=""/><span class="name">Adgent</span></a>
+ <nav class="nav-links">
+ <a href="/tr/">Ürün</a>
+ <a href="/tr/pricing">Fiyatlandırma</a>
+ <a href="/tr/about">Hakkımızda</a>
+ <a href="/tr/blog" class="active">Blog</a>
+ </nav>
+ <div class="nav-right">
+ <button class="nav-burger" aria-label="Menu" aria-expanded="false"><svg class="ic-open" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg><svg class="ic-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      <div class="lang-switch"><a href="/how-to-audit-performance-max" hreflang="en">EN</a><span class="sep"></span><a href="/tr/how-to-audit-performance-max" class="on">TR</a></div>
+ <a class="btn btn-primary btn-sm" href="/tr/#lead">Demo iste</a>
+ </div>
+ </div>
+</header>
+<div class="mobile-menu">
+  <a href="/tr/">Product</a>
+ <a href="/tr/pricing">Pricing</a>
+ <a href="/tr/about">About</a>
+ <a href="/tr/blog">Blog</a>
+  <div class="mm-lang"><div class="lang-switch"><a href="/how-to-audit-performance-max" hreflang="en">EN</a><span class="sep"></span><a href="/tr/how-to-audit-performance-max" class="on">TR</a></div></div>
+  <a class="btn btn-primary btn-sm mm-cta" href="/tr/#lead">Demo iste</a>
+</div>
+
+<article class="band">
+ <div class="wrap">
+ <div class="article">
+ <div class="post-meta"><span class="post-tag">Playbook</span><span>·</span><span>9 dk okuma</span><span>·</span><span>Temmuz 2026</span></div>
+ <h1>Performance Max kampanyası nasıl denetlenir (kara kutu)</h1>
+ <p class="standfirst">Performance Max ya en iyi kampanyan olur ya da en büyük israf kaynağın — ve Google sana hangisi olduğunu söylemez. Kara kutuyu delen kontroller burada; ne kadar para geri kazandırdıklarına göre sıralı ve gerçekten uygulaman gereken sırayla.</p>
+
+ <div class="byline">
+ <div class="av">N</div>
+ <div>
+ <div class="who">Nurettin Demiral</div>
+          <div class="role">Analisti inşa ederken tuttuğumuz notlar</div>
+ </div>
+ </div>
+
+ <figure class="post-hero-cover"><img src="/assets/blog/how-to-audit-performance-max.svg" width="1200" height="630" alt="A dark Performance Max box with a question mark, labelled open the box." loading="eager"/></figure>
+
+ <div class="answer-box">
+ <span class="lbl">Kısa cevap</span>
+ <p><b>Performance Max</b> ya en iyi kampanyan ya da en büyük israf kaynağın olur — aradaki fark kurulum artı birkaç kontrol. Şu sırayla denetle: önce brand-spend tespiti, sonra conversion-tracking kalitesi, sonra kanal ve placement kırılımı, sonra asset-group sinyalleri, landing-page deneyimi ve en son Search çakışması. Google'ın gizlediği sızıntıları kapat, PMax bütçesini hak etsin.</p>
+ </div>
+
+ <div class="prose">
+ <p>Performance Max, Google'ın çalıştırmanı en çok istediği ama içine bakmanı en az istediği kampanya türü. Ona bütçe, asset ve bir hedef veriyorsun; parayı Search, Display, YouTube, Gmail, Discover ve Maps arasında nereye harcayacağına kendisi karar veriyor — ve geriye tek bir ROAS sayısı raporluyor; bu sayı da istediğinden çok daha sık, göz boyayan bir saçmalık oluyor. İyi haber: kara kutunun dikişleri var. Onu açabilirsin. İşte denetim, her kontrolün genelde ne kadar para geri kazandırdığına göre sıralı.</p>
+
+ <blockquote>
+ <p>PMax gürültülü şekilde başarısız olmaz. Bütçeni asla seçmeyeceğin tek yerde sessizce harcayarak ve zaten yapacağın satışları kendi hanesine yazarak başarısız olur.</p>
+ </blockquote>
+
+ <h2>1. Brand-spend tespiti — denetimin masrafını çıkaran kontrol</h2>
+
+ <p>Her zaman buradan başla. Performance Max'ın kahraman gibi görünmesinin açık ara en yaygın yolu, kendi brand terimlerinde yayınlanması — zaten "[şirketin]" araması yapan insanlar — ve neredeyse kesin olan o conversion'ları kendi işiymiş gibi kaydetmesi. Raporlanan ROAS'ın tavan yapar; incremental ROAS'ın ise kıpırdamaz bile.</p>
+
+ <p>İşaret şu: her şeyin çok dışında bir ROAS'a sahip bir arama terimi ya da asset group — hesap ortalaması 3x iken 15x. Bu neredeyse hiçbir zaman bir demand-gen mucizesi değildir. Zaten sahip olduğun bir tıklamaya giden yolda PMax'ın araya girdiği brand trafiğidir. Arama terimleri ve asset-group kırılımını çek, aykırı olanı bul ve kazanan sorguların brand adını içerip içermediğine bak.</p>
+
+ <p>İçeriyorsa, çözüm bir brand hariç tutma listesi (PMax'a uygulanan hesap düzeyinde negatif anahtar kelime listesi); böylece kampanya zaten sahip olmadığın talep için yarışır. Bu kendi başına derin bir incelemeyi hak ediyor — bkz. <a href="/tr/performance-max-brand-cannibalization">Performance Max brand yamyamlaştırması</a> — ama denetim için kural basit: anormal ROAS'a sahip her asset group, arama terimleri aksini kanıtlayana kadar suçludur.</p>
+
+ <h2>2. Conversion-tracking kalitesi — çöp girer, çöp çıkar</h2>
+
+ <p>Performance Max, conversion verine diğer tüm kampanya türlerinden daha fazla yaslanır. Elle çekilecek hiçbir kolu yok — anahtar kelime yok, senin seçtiğin placement yok, senin belirlediğin bid yok. Sahip olduğu tek şey, ona verdiğin hedef ve optimize ettiği conversion sinyali. O sinyal yanlışsa, aşağıdaki her tek karar yanlış olur ve hiçbir asset ayarlaması bunu kurtarmaz.</p>
+
+ <p>Yani başka bir şeye dokunmadan önce, tracking'in temiz olduğunu doğrula:</p>
+
+ <ul>
+ <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg><b>Tek bir primary conversion, bir kez sayılan.</b> Çift ateşlenen etiketler ve mükerrer conversion action'ları PMax'a bir satın almanın iki değerinde olduğunu öğretir ve o da buna göre fazla harcar.</li>
+ <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg><b>Gerçek geliri yansıtan değerler.</b> Dinamik sepet değeri yerine statik bir değer geçersen, PMax marja değil ucuz siparişlerin hacmine optimize eder. GA4 ve Shopify ile karşılaştırıp mutabakat sağla.</li>
+ <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg><b>Primary olarak yumuşak hedef yok.</b> Primary conversion olarak "sepete ekle" ya da "sayfa görüntüleme", PMax'ı satışı değil kolay sinyali kovalayan bir trafik hortumuna çevirir.</li>
+ <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg><b>Consent-mode ve modelleme mantık kontrolü.</b> Conversion'ların büyük bir kısmı gözlemlenmiş değil de modellenmişse, her kararın altındaki zemin ROAS sayısının itiraf ettiğinden daha yumuşaktır.</li>
+ </ul>
+
+ <p>Çöp girer, çöp çıkar burada bir klişe değil — mekanizmanın ta kendisi. PMax sinyal takip eden bir makine, yani ürün olan şey sinyal.</p>
+
+ <h2>3. Kanal &amp; ağ kırılımı — aslında nereye harcadığı</h2>
+
+ <p>Şimdi eğlenceli kısım: paranın fiziksel olarak nereye gittiğini bulmak. Google bunu gömer ama kanal düzeyindeki dağılım — Search vs Display vs Video vs Shopping — bir script veya Google Ads API ile çekilebilir ve placement raporu gerçek uygulama ve siteleri gösterir.</p>
+
+ <p>Aradığın şey klasik PMax sızıntısı: bütçenin, göz dolduran erişim yaratan ama neredeyse hiç gelir getirmeyen ucuz Display gösterimlerine ve otomatik oynayan Video'ya akması; Search ve Shopping dilimleri ise sessizce asıl işi yaparken. Harcamanın %60'ı Display ve conversion'ların %5'iyse, geri kazanılabilir büyük bir dilim bulmuşsun demektir.</p>
+
+ <p>İki hariç tutma temizliğin çoğunu yapar:</p>
+
+ <ul>
+ <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg><b>Çöp placement'lar.</b> Placement raporunu çek, bütçeyi yiyen mobil oyunları ve reklam için üretilmiş (made-for-advertising) siteleri bul ve hesap düzeyinde bir placement hariç tutma listesine ekle.</li>
+ <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg><b>Mobile-app envanteri.</b> Bir mobile-app kategori hariç tutması, tıklama sayılarını süsleyen ama hiçbir şeye conversion getirmeyen yanlışlıkla-dokunma trafiğinin çok büyük bir kısmını keser.</li>
+ </ul>
+
+ <h2>4. Asset-group gücü &amp; audience sinyalleri — paranın üzerinde cold-start yapma</h2>
+
+ <p>Her asset group bir mini kampanyadır ve PMax öğrenirken her birini bir cold-start'a sokar. Cold-start'ı kısaltan şey <b>audience sinyalleri</b> — müşteri listelerin, yüksek-niyetli segmentlerin ve Google'a nereye bakmaya başlayacağını söyleyen custom audience'ların. Onları boş bırakırsan, makinenin sıfırdan tahmin yürütmesi için tam ücret ödüyorsun demektir.</p>
+
+ <p>Denetimde, her asset group'un şunlara sahip olduğunu kontrol et: gerçek bir audience sinyali (boş değil, "tüm kullanıcılar" değil), Google'ın test edecek creative açısından aç kalmaması için asset'lerin tam takımı ve öğrenmeden gerçekten çıkmış olacak kadar conversion hacmi. Sinyali olmayan zayıf bir asset group, süresiz olarak finanse ettiğin bir cold-start'tır.</p>
+
+ <h2>5. Asset group başına landing-page deneyimi</h2>
+
+ <p>PMax senin final URL'lerini kullanır — ve kapatmadığın sürece, final URL expansion trafiği sitendeki, Google'ın sorguya uyduğunu düşündüğü hangi sayfaysa ona gönderir. Yani tek bir ürün etrafında kurulmuş bir asset group, ücretli tıklamaları bayat bir blog yazısına ya da stokta olmayan bir sayfaya döküyor olabilir.</p>
+
+ <p>Landing deneyimini asset group başına denetle: URL'ler senin niyet ettiklerin mi, final URL expansion mantıklı bir şey mi yapıyor yoksa yabani bir şey mi ve her sayfa asset group'un creative'inin verdiği sözle örtüşüyor mu. Yavaş, mesaj dışı bir sayfaya yönlendirilmiş harika bir asset group, son adımda aktif olarak boşa harcadığın paradır.</p>
+
+ <h2>6. Search vs PMax çakışması &amp; yamyamlaştırma</h2>
+
+ <p>Son olarak, PMax'ın standart Search kampanyalarınla nasıl bir arada var olduğuna geniş açıdan bak. Google'ın yayın önceliği, PMax'ın zaten Search kampanyalarının kazanacağı sorguları — brand dahil — kazanabileceği ve ikisinin sessizce kendi hesabına karşı bid verebileceği anlamına gelir. Sonuç, aynı conversion'ların iki kez atfedilmesi ve hangi kampanyanın onları gerçekten kazandığını gizleyen harmanlanmış bir tablo.</p>
+
+ <p>Çakışmayı kontrol et: PMax ve Search aynı yüksek-niyetli sorgular için mi yarışıyor, PMax iyi kurulmuş bir Search kampanyasından krediyi mi çekiyor ve daha sıkı brand hariç tutmaları artı daha net kampanya rolleri ikisinin birbirini yamyamlaştırmasını durdurur mu. Bu, döngüyü birinci kontrole geri kapatır — brand harcaması ve Search çakışması, iki açıdan görülen aynı sızıntıdır.</p>
+
+ <h2>Manuel denetim vs. sürekli izleme</h2>
+
+ <p>Yukarıdaki her şeyle ilgili rahatsız edici gerçek şu: manuel bir PMax denetimi bir anlık görüntüdür ve PMax hareket eden bir hedeftir. Brand-spend kayması, tracking kopması, placement sürüklenmesi — bunlar senin aylık incelemeni beklemez. Ayda bir yapılan denetim, sızıntıyı harcamaya başladıktan haftalar sonra yakalar. Yan yana:</p>
+
+ <div class="cmp-wrap">
+ <table class="cmp">
+ <thead>
+ <tr><th>Denetimin ihtiyacı</th><th>Manuel aylık denetim</th><th class="us">Sürekli izleme</th></tr>
+ </thead>
+ <tbody>
+ <tr><td>Bir tracking kopmasını yakalar</td><td class="no">sonraki incelemede</td><td class="yes">aynı gün</td></tr>
+ <tr><td>Brand-spend kaymasını erken fark eder</td><td class="no">—</td><td class="yes">✓</td></tr>
+ <tr><td>Kanal &amp; placement dağılımını çeker</td><td class="part">elle</td><td class="yes">✓</td></tr>
+ <tr><td>Yeni bir cold-start asset group'u işaretler</td><td class="no">—</td><td class="yes">✓</td></tr>
+ <tr><td>Bulguları geri kazanılabilir harcamaya göre sıralar</td><td class="no">—</td><td class="yes">✓</td></tr>
+ <tr><td>Sen uyurken çalışır</td><td class="no">—</td><td class="yes">✓</td></tr>
+ </tbody>
+ </table>
+ </div>
+ <p class="cmp-note">Manuel denetim sana geçen ay neyin doğru olduğunu söyler. Sürekli izleme sana <em>şu anda neyin sızdığını</em> — ve ne kadar sızdığını söyler.</p>
+
+ <h2>Bir AI media buyer nerede devreye giriyor</h2>
+
+ <p>Bu playbook'taki her kontrol, tam da sürekli çalıştırıldığında ödül veren ve aylık çalıştırılmaktan nefret eden türde bir şey. İşte bunu bir <a href="/tr/what-is-an-ai-media-buyer">AI media buyer</a>'a devretmenin gerekçesi: kanal ve placement kırılımını çeker, anormal ROAS'a sahip brand terimini yakalar, tracking kopmasını olduğu gün fark eder ve — asıl önemli kısım — her bulguyu geri kazanılabilir harcamaya göre sıralar, böylece en görünür sızıntıyı değil en büyük sızıntıyı önce düzeltirsin.</p>
+
+ <p>Bu muameleyi hak eden tek kara kutu PMax değil; aynı disiplin tüm hesap için geçerli, bu yüzden daha geniş bir <a href="/tr/how-to-audit-a-google-ads-account">Google Ads hesap denetimi</a> ile birlikte gider. AI sızıntıyı kanıt ve sayıyla yüzeye çıkarır; sen düzeltmeyi onaylarsın. Performance Max kampanyaların hakkında ne diyeceğini görmek istersen, <a href="/tr/#lead">bir demo iste</a> — on beş dakika, salt-okunur bağlı.</p>
+ </div>
+ </div>
+
+ <div class="faq">
+ <h2>Sık sorulanlar</h2>
+ <details open>
+ <summary>Performance Max neden harcama yapıyor ama conversion getirmiyor? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary>
+ <div class="faq-a">Genelde üç şeyden biri: conversion tracking bozuk ya da çift sayıyor, dolayısıyla PMax çöp sinyallere doğru optimize ediyor; kampanya bütçeyi göz dolduran ama conversion getirmeyen ucuz Display ve Video placement'larına döküyor; ya da asset group'lar o kadar zayıf ki Google hâlâ cold-start'ta, öğrenirken çöp envanter satın alıyor. Önce tracking'i denetle, sonra kanal dağılımını.</div>
+ </details>
+ <details>
+ <summary>Performance Max'ın nereye harcadığını nasıl görürüm? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary>
+ <div class="faq-a">Google çoğunu varsayılan olarak gizler ama bir script veya Google Ads API ile kanal düzeyinde bir kırılım çekip Search, Display ve Video dağılımını görebilir, placement raporuyla (Content içinden ya da API üzerinden) gerçek uygulama ve siteleri görebilirsin. Insights ve Explanations paneli işe yarar ama gerçek dağılımı görmenin tek yolu makine tarafından okunabilir rota.</div>
+ </details>
+ <details>
+ <summary>Performance Max'ta placement'ları hariç tutabilir misin? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary>
+ <div class="faq-a">Kısmen. Hesap düzeyinde placement hariç tutmaları uygulayabilir, mobil uygulama kategorisi hariç tutmasıyla mobile-app envanterini dışlayabilir, brand-safety ve içerik hariç tutmaları ekleyebilirsin. Bir Display kampanyasındaki gibi placement'ları tek tek seçemezsin ama hesap düzeyindeki hariç tutma listesi ve mobile-app hariç tutması birlikte boşa giden çöp envanterin çoğunu keser.</div>
+ </details>
+ <details>
+ <summary>Performance Max search'ümü yamyamlaştırıyor mu? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary>
+ <div class="faq-a">Genellikle evet. PMax arama sorgularında — brand terimlerin dahil — yayınlanabilir ve Google'ın kendi öncelik kuralları PMax'ın standart Search kampanyalarının önüne geçmesine veya onlarla çakışmasına yol açar. İşaret, geri kalanın çok üstünde ROAS'a sahip bir PMax terimi ya da asset group'tur: bu genelde PMax'ın yarattığı yeni talep değil, sahiplendiği brand search'tür.</div>
+ </details>
+ <details>
+ <summary>Performance Max'ı ne sıklıkla denetlemeliyim? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary>
+ <div class="faq-a">Tam bir manuel denetimi aylık yapmaya değer, ayrıca büyük bir bütçe değişikliğinden, yeni bir asset group'tan veya bir tracking değişikliğinden sonra da mutlaka. Ama asıl önemli kontroller — brand-spend kayması, tracking kopmaları, placement sürüklenmesi — günlük hareket eder, o yüzden dürüst cevap şu: PMax aylık bir anlık görüntü değil, sürekli izleme ister. Ayda bir yapılan denetim sızıntıyı başladıktan haftalar sonra yakalar.</div>
+ </details>
+ <details>
+ <summary>En önemli Performance Max ayarı nedir? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary>
+ <div class="faq-a">Temiz conversion tracking, hemen ardından bir brand hariç tutma listesi. PMax nereye harcayacağına karar vermek için tamamen conversion verine dayanır, dolayısıyla tracking yanlışsa aşağıdaki her karar yanlış olur. Ondan sonra brand terimlerini hariç tutmak, PMax'ın zaten sahip olduğun talebi sahiplenip raporladığı ROAS'ı şişirmesini engeller.</div>
+ </details>
+ <details>
+ <summary>AI Performance Max'ı denetleyebilir mi? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary>
+ <div class="faq-a">Evet — ve PMax tam da AI'ın iyi olduğu türde bir kara kutu. Bir AI media buyer kanal ve placement kırılımını çekebilir, anormal ROAS'a sahip bir brand terimini tespit edebilir, bir tracking kopmasını olduğu gün yakalayabilir ve her bulguyu geri kazanılabilir harcamaya göre sıralayabilir — ayda bir değil, sürekli. O sızıntıyı yüzeye çıkarır; sen düzeltmeyi onaylarsın.</div>
+ </details>
+ </div>
+
+ <div class="related">
+ <span class="eyebrow"><span class="tick"></span>Okumaya devam et</span>
+ <div class="related-grid">
+ <a class="rel-card" href="/tr/how-to-audit-a-google-ads-account"><span class="rc-tag">Rehber</span><div class="rc-h">Bir Google Ads hesabı nasıl denetlenir</div></a>
+ <a class="rel-card" href="/tr/what-is-an-ai-media-buyer"><span class="rc-tag">Ürün</span><div class="rc-h">AI media buyer nedir?</div></a>
+ </div>
+ </div>
+
+ <div class="post-foot">
+ <a class="back-link" href="/tr/blog"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>Tüm yazılar</a>
+ <a class="btn btn-primary btn-sm" href="/tr/#lead">Demo iste</a>
+ </div>
+ </div>
+</article>
+
+<footer class="footer">
+ <div class="wrap">
+ <div class="foot-grid">
+ <div class="foot-brand">
+ <a class="brand" href="/tr/"><img class="mark" src="/assets/icon-only.svg" alt=""/><span class="name">Adgent</span></a>
+ <p>The AI analyst for performance marketers. One brief each morning — the thinking already done.</p>
+ </div>
+ <div class="foot-col"><h4>Product</h4><a href="/tr/">Overview</a><a href="/tr/pricing">Pricing</a><a href="/tr/#how">How it works</a><a href="/tr/#lead">Demo iste</a></div>
+ <div class="foot-col"><h4>Şirket</h4><a href="/tr/about">Hakkımızda</a><a href="/tr/blog">Blog</a><a href="/tr/#lead">İletişim</a></div>
+ <div class="foot-col"><h4>Yasal</h4><a href="/tr/privacy">Gizlilik</a><a href="/tr/terms">Şartlar</a><a href="/tr/security">Güvenlik</a><a href="/tr/data-use">Veri kullanımı</a></div>
+ </div>
+ <div class="foot-bottom">
+ <span>© 2026 Adgent. Tüm hakları saklıdır.</span>
+ <div class="foot-social">
+ <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 2h3l-7 8 8 12h-6l-5-7-5 7H2l8-10L2 2h6l4 6Z"/></svg></a>
+ <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6Z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+ </div>
+ </div>
+ </div>
+</footer>
+
+<script src="/site.js"></script>
+</body>
+</html>
