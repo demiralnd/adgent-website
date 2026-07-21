@@ -1,39 +1,59 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" preserveAspectRatio="xMidYMid slice">
-  <rect width="1200" height="630" fill="#f3f2ef"/>
-  <!-- soft coral glow top-left -->
-  <defs>
-    <radialGradient id="glow" cx="18%" cy="12%" r="60%">
-      <stop offset="0%" stop-color="#ff5a2c" stop-opacity="0.10"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" preserveAspectRatio="xMidYMid slice"><defs>
+    <pattern id="grid" width="34" height="34" patternUnits="userSpaceOnUse">
+      <path d="M34 0 H0 V34" fill="none" stroke="rgba(28,25,20,0.045)" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="glow" cx="16%" cy="8%" r="70%">
+      <stop offset="0%" stop-color="#ff5a2c" stop-opacity="0.13"/>
+      <stop offset="100%" stop-color="#ff5a2c" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="92%" cy="94%" r="55%">
+      <stop offset="0%" stop-color="#ff5a2c" stop-opacity="0.07"/>
       <stop offset="100%" stop-color="#ff5a2c" stop-opacity="0"/>
     </radialGradient>
     <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#ff5a2c" stop-opacity="0.9"/>
-      <stop offset="100%" stop-color="#ff5a2c" stop-opacity="0.35"/>
+      <stop offset="0%" stop-color="#ff5a2c" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#ff5a2c" stop-opacity="0.4"/>
+    </linearGradient>
+    <linearGradient id="barGrad" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#16935a" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#16935a" stop-opacity="1"/>
     </linearGradient>
   </defs>
+  <rect width="1200" height="630" fill="#f3f2ef"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
   <rect width="1200" height="630" fill="url(#glow)"/>
-  <!-- accent rail left -->
-  <rect x="0" y="0" width="10" height="630" fill="#ff5a2c"/>
-  <text x="70" y="92" font-family="'Geist Mono',monospace" font-size="20" font-weight="500" letter-spacing="3.4" fill="#ff5a2c">ATTRIBUTION</text>
-  <rect x="70" y="108" width="52" height="3" rx="1.5" fill="#ff5a2c"/><text x="70" y="176" font-family="'Plus Jakarta Sans',sans-serif" font-size="50" font-weight="700" letter-spacing="-1.6" fill="#1c1a17">The 7-day window is</text>
-<text x="70" y="234" font-family="'Plus Jakarta Sans',sans-serif" font-size="50" font-weight="700" letter-spacing="-1.6" fill="#1c1a17">lying before noon.</text><g transform="translate(690,300)">
-    <!-- 7 bars rising as attribution matures -->
-    <rect x="0" y="139" width="40" height="51" rx="7" fill="#b9b4a8" opacity="0.5"/><rect x="58" y="121" width="40" height="69" rx="7" fill="#b9b4a8" opacity="0.5"/><rect x="116" y="107" width="40" height="83" rx="7" fill="#cf8a26" opacity="0.92"/><rect x="174" y="97" width="40" height="93" rx="7" fill="#cf8a26" opacity="0.92"/><rect x="232" y="82" width="40" height="108" rx="7" fill="#cf8a26" opacity="0.92"/><rect x="290" y="61" width="40" height="129" rx="7" fill="#16935a" opacity="0.92"/><rect x="348" y="40" width="40" height="150" rx="7" fill="#16935a" opacity="0.92"/>
-    <line x1="-6" y1="192" x2="416" y2="192" stroke="rgba(28,25,20,0.16)" stroke-width="2"/>
-    <text x="0" y="228" font-family="'Geist Mono',monospace" font-size="15" fill="#9a958a">day 1</text>
-    <text x="372" y="228" font-family="'Geist Mono',monospace" font-size="15" fill="#9a958a">day 7</text>
-    <g transform="translate(4,-2)">
-      <rect x="-4" y="-38" width="150" height="34" rx="8" fill="rgba(216,71,47,0.12)"/>
-      <text x="12" y="-15" font-family="'Geist Mono',monospace" font-size="16" font-weight="600" fill="#d8472f">draft · revising</text>
-    </g>
+  <rect width="1200" height="630" fill="url(#glow2)"/>
+  <rect x="0" y="0" width="12" height="630" fill="url(#fade)"/>
+  <!-- faint corner ticks for structure -->
+  <path d="M60 60 h22 M60 60 v22" stroke="rgba(28,25,20,0.16)" stroke-width="2" fill="none" opacity="0.5"/>
+  <path d="M1140 570 h-22 M1140 570 v-22" stroke="rgba(28,25,20,0.16)" stroke-width="2" fill="none" opacity="0.5"/>
+  <g>
+    <text x="72" y="96" font-family="'Geist Mono',monospace" font-size="21" font-weight="600" letter-spacing="3.6" fill="#ff5a2c">ATTRIBUTION</text>
+    <rect x="72" y="112" width="58" height="3" rx="1.5" fill="#ff5a2c"/>
+    <text x="392" y="96" font-family="'Geist Mono',monospace" font-size="15" letter-spacing="1.5" fill="#9a958a">8 min read</text>
+  </g><text x="72" y="196" font-family="'Plus Jakarta Sans',sans-serif" font-size="58" font-weight="700" font-style="normal" letter-spacing="-2" fill="#1c1a17">The 7-day window is</text>
+<text x="72" y="260" font-family="'Fraunces',serif" font-size="58" font-weight="500" font-style="italic" letter-spacing="-1.4" fill="#ff5a2c">lying</text><text x="222.8" y="260" font-family="'Plus Jakarta Sans',sans-serif" font-size="58" font-weight="700" font-style="normal" letter-spacing="-2" fill="#1c1a17"> before noon.</text><g transform="translate(676,286)">
+    <line x1="-8" y1="0" x2="-8" y2="196" stroke="rgba(28,25,20,0.16)" stroke-width="2"/>
+    <line x1="-8" y1="196" x2="432" y2="196" stroke="rgba(28,25,20,0.16)" stroke-width="2"/>
+    <rect x="0" y="142" width="42" height="54" rx="7" fill="#b9b4a8" opacity="0.55"/>
+      <text x="21" y="132" text-anchor="middle" font-family="'Geist Mono',monospace" font-size="12" fill="#b9b4a8">2.2×</text><rect x="60" y="122" width="42" height="74" rx="7" fill="#b9b4a8" opacity="0.55"/>
+      <text x="81" y="112" text-anchor="middle" font-family="'Geist Mono',monospace" font-size="12" fill="#b9b4a8">2.5×</text><rect x="120" y="104" width="42" height="92" rx="7" fill="#cf8a26" opacity="1"/>
+      <text x="141" y="94" text-anchor="middle" font-family="'Geist Mono',monospace" font-size="12" fill="#cf8a26">2.8×</text><rect x="180" y="90" width="42" height="106" rx="7" fill="#cf8a26" opacity="1"/>
+      <text x="201" y="80" text-anchor="middle" font-family="'Geist Mono',monospace" font-size="12" fill="#cf8a26">3.0×</text><rect x="240" y="73" width="42" height="123" rx="7" fill="#cf8a26" opacity="1"/>
+      <text x="261" y="63" text-anchor="middle" font-family="'Geist Mono',monospace" font-size="12" fill="#cf8a26">3.3×</text><rect x="300" y="50" width="42" height="146" rx="7" fill="url(#barGrad)" opacity="1"/>
+      <text x="321" y="40" text-anchor="middle" font-family="'Geist Mono',monospace" font-size="12" fill="#16935a">3.7×</text><rect x="360" y="28" width="42" height="168" rx="7" fill="url(#barGrad)" opacity="1"/>
+      <text x="381" y="18" text-anchor="middle" font-family="'Geist Mono',monospace" font-size="12" fill="#16935a">4.0×</text>
+    <text x="12" y="222" font-family="'Geist Mono',monospace" font-size="14" fill="#9a958a">day 1</text>
+    <text x="392" y="222" font-family="'Geist Mono',monospace" font-size="14" fill="#9a958a">day 7</text>
+    <g transform="translate(250,-52)"><rect width="164" height="34" rx="9" fill="rgba(216,71,47,0.12)"/><text x="15" y="23" font-family="'Geist Mono',monospace" font-size="15" font-weight="600" fill="#d8472f">draft · revising</text></g>
+    <path d="M332 -18 q10 14 -6 26" fill="none" stroke="#d8472f" stroke-width="2" opacity="0.5"/>
   </g>
-  <!-- brand lockup bottom-right -->
-  <g transform="translate(1040,548)">
-    <rect width="34" height="34" rx="9" fill="#ff5a2c"/>
-    <g transform="translate(17,17.5) scale(0.155) translate(-85,-82)">
+  <g transform="translate(1024,552)">
+    <rect width="36" height="36" rx="10" fill="#ff5a2c"/>
+    <g transform="translate(18,18.5) scale(0.165) translate(-85,-82)">
       <path d="M14 140 L85 6 L156 140 L128 140 L85 58 L42 140 Z" fill="#fff"/>
       <path d="M50 140 L85 72 L120 140 L96 140 L85 118 L74 140 Z" fill="#fff"/>
       <path d="M18 153 L152 153" stroke="#fff" stroke-width="9" stroke-linecap="round" opacity="0.62"/>
     </g>
-    <text x="46" y="23" font-family="'Plus Jakarta Sans',sans-serif" font-size="20" font-weight="800" letter-spacing="-0.5" fill="#1c1a17">Adgent</text>
+    <text x="48" y="24" font-family="'Plus Jakarta Sans',sans-serif" font-size="21" font-weight="800" letter-spacing="-0.6" fill="#1c1a17">Adgent</text>
   </g></svg>
