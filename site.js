@@ -81,13 +81,38 @@
     window.addEventListener('scroll', onScroll, { passive: true });
   }
 
-  /* ---- lead / subscribe form ---- */
+  /* ---- lead / subscribe form (Web3Forms) ----
+     Progressive enhancement: posts via fetch and shows an inline thank-you.
+     If JS is off or fetch fails, the plain <form> POST still reaches Web3Forms.
+     Optional Cloudflare Turnstile: drop <div class="cf-turnstile" data-sitekey="…"></div>
+     inside the form and include Turnstile's script; Web3Forms validates the token. */
   ['leadForm', 'subForm'].forEach(function (id) {
     var form = d.getElementById(id);
-    if (form) form.addEventListener('submit', function (e) {
+    if (!form) return;
+    form.addEventListener('submit', function (e) {
+      // Guard: if the access key wasn't set yet, let the native POST surface the setup error.
+      var key = form.querySelector('[name="access_key"]');
+      if (!key || key.value.indexOf('WEB3FORMS_ACCESS_KEY') === 0) return;
       e.preventDefault();
+      var btn = form.querySelector('button[type="submit"]');
+      var note = d.getElementById('leadNote');
       var card = d.getElementById('leadCard');
-      if (card) card.classList.add('sent');
+      if (btn) { btn.disabled = true; btn.dataset.label = btn.textContent; btn.textContent = 'Sending…'; }
+      fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
+        .then(function (r) { return r.json().then(function (j) { return { ok: r.ok && j.success, j: j }; }); })
+        .then(function (res) {
+          if (res.ok) {
+            if (card) card.classList.add('sent');
+            form.reset();
+            if (note) note.textContent = 'Thanks — we\'ll be in touch within a couple of working days.';
+          } else {
+            throw new Error((res.j && res.j.message) || 'error');
+          }
+        })
+        .catch(function () {
+          if (note) note.textContent = 'Something went wrong. Please email osman@adgent.app directly.';
+          if (btn) { btn.disabled = false; btn.textContent = btn.dataset.label || 'Request a demo'; }
+        });
     });
   });
 

@@ -463,6 +463,39 @@
   </div>
 </section>
 
+<!-- CREATIVE INTELLIGENCE -->
+<section class="band band-sub" id="creative">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <span class="eyebrow"><span class="tick"></span>Creative intelligence</span>
+      <h2 class="sec-title">It reads every creative like a <em>strategist</em> — not a tagger.</h2>
+      <p class="sec-sub">Adgent pulls your live ads automatically — no upload step — and reads each one the way a senior buyer would. It names the creative's DNA, walks the story scene by scene, and shows you exactly where viewers drop off. Then it tells you which creatives are fatiguing and what to do — as an action you approve. Analysis, never generation.</p>
+    </div>
+    <div class="creative-grid" data-stagger>
+      <div class="creative-card">
+        <div class="creative-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2v20"/><path d="M2 12h20"/><circle cx="12" cy="12" r="4"/></svg></div>
+        <h3>Creative DNA</h3>
+        <p>Every ad, decoded: hook, format, persona, angle, offer, visuals and audio — so you can see <em>why</em> a creative works, not just that it did.</p>
+      </div>
+      <div class="creative-card">
+        <div class="creative-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/></svg></div>
+        <h3>Scene-by-scene storyboard</h3>
+        <p>Video ads broken down shot by shot — what happens in each moment, so a weak opening or a slow middle is obvious at a glance.</p>
+      </div>
+      <div class="creative-card">
+        <div class="creative-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg></div>
+        <h3>Where viewers leave</h3>
+        <p>A creative funnel that tracks the hold-curve across your ads — the exact scene where attention drops, so you fix the leak instead of guessing.</p>
+      </div>
+      <div class="creative-card">
+        <div class="creative-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2"/><path d="M12 2a10 10 0 0 0 0 20"/><path d="M12 8v4l3 2"/></svg></div>
+        <h3>Fatigue, verdict-first</h3>
+        <p>It flags the creatives wearing out — before the numbers slide — and hands you a dollar-valued refresh you can apply from chat.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- HOW IT WORKS (3 steps) -->
 <section class="band" id="how">
   <div class="wrap">
@@ -557,9 +590,35 @@
         </div>
         <div class="lead lead-demo" id="leadCard">
           <h3>Request a demo</h3>
-          <p class="lead-demo-sub">Send a note about your accounts and we'll show you the morning brief Adgent would write for them — and where it would save you money.</p>
-          <a class="btn btn-primary btn-lg" href="mailto:osman@futureadylabs.com?subject=Adgent%20demo%20request">Email us to request a demo</a>
-          <p class="lead-fine">We usually reply within a couple of working days.</p>
+          <p class="lead-demo-sub">Tell us about your accounts and we'll show you the morning brief Adgent would write for them — and where it would save you money.</p>
+          <!-- Web3Forms (free). Create an access key at https://web3forms.com using osman@adgent.app,
+               then paste it below in place of WEB3FORMS_ACCESS_KEY. Submissions email that address.
+               Optional spam protection: add Cloudflare Turnstile — see the commented block in site.js. -->
+          <form class="lead-form" id="leadForm" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="WEB3FORMS_ACCESS_KEY">
+            <input type="hidden" name="subject" value="New Adgent demo request">
+            <input type="hidden" name="from_name" value="Adgent website">
+            <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <label class="lf-field"><span>Name</span>
+              <input type="text" name="name" placeholder="Your name" required autocomplete="name">
+            </label>
+            <label class="lf-field"><span>Work email</span>
+              <input type="email" name="email" placeholder="you@company.com" required autocomplete="email">
+            </label>
+            <label class="lf-field"><span>Company / agency</span>
+              <input type="text" name="company" placeholder="Where you work" autocomplete="organization">
+            </label>
+            <label class="lf-field"><span>Which accounts do you run?</span>
+              <textarea name="message" rows="3" placeholder="Meta / Google / TikTok — and roughly how many"></textarea>
+            </label>
+            <button type="submit" class="btn btn-primary btn-lg">Request a demo</button>
+            <p class="lead-fine" id="leadNote">We usually reply within a couple of working days.</p>
+          </form>
+          <div class="lead-done">
+            <div class="lead-done-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg></div>
+            <h3>Thanks — we've got it.</h3>
+            <p>We'll be in touch within a couple of working days to set up your accounts.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -588,8 +647,7 @@
         <h4>Company</h4>
         <a href="/about">About</a>
         <a href="/blog">Blog</a>
-        <a href="#">Careers</a>
-        <a href="#">Contact</a>
+        <a href="/#lead">Contact</a>
       </div>
       <div class="foot-col">
         <h4>Legal</h4>
@@ -602,8 +660,7 @@
     <div class="foot-bottom">
       <span>© 2026 Adgent. All rights reserved.</span>
       <div class="foot-social">
-        <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 2h3l-7 8 8 12h-6l-5-7-5 7H2l8-10L2 2h6l4 6Z"/></svg></a>
-        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6Z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+        <a href="https://www.instagram.com/adgentapp/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37Z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
       </div>
     </div>
   </div>
