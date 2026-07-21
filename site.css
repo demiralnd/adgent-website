@@ -559,9 +559,9 @@ section { position: relative; z-index: 1; }
 .fixbtn svg { width: 13px; height: 13px; stroke-width: 2.5; }
 .fixnote { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.02em; color: var(--text-3); }
 .fixnote svg { width: 12px; height: 12px; stroke-width: 2; }
-.chat-next { display: flex; align-items: center; flex-wrap: wrap; gap: 7px; margin-top: 12px; }
-.next-chip { display: inline-flex; align-items: center; gap: 6px; height: 28px; padding: 0 11px; border-radius: var(--r-pill); background: var(--bg-sub); border: 1px solid var(--border); color: var(--text-2); font-family: var(--font-ui); font-size: 12px; font-weight: 500; cursor: pointer; white-space: nowrap; transition: color 140ms, background 140ms, border-color 140ms; }
-.next-chip svg { width: 13px; height: 13px; color: var(--accent); stroke-width: 2; flex: none; }
+.chat-next { display: flex; flex-direction: column; align-items: stretch; gap: 7px; margin-top: 12px; }
+.next-chip { display: inline-flex; align-items: center; gap: 8px; width: 100%; height: 34px; padding: 0 13px; border-radius: var(--r-sm); background: var(--bg-sub); border: 1px solid var(--border); color: var(--text-2); font-family: var(--font-ui); font-size: 12.5px; font-weight: 500; cursor: pointer; text-align: left; transition: color 140ms, background 140ms, border-color 140ms; }
+.next-chip svg { width: 14px; height: 14px; color: var(--accent); stroke-width: 2; flex: none; }
 .next-chip:hover { color: var(--text); background: var(--bg-card); border-color: var(--accent); }
 .chat-input { display: flex; align-items: center; gap: 9px; margin-top: 14px; height: 42px; padding: 0 6px 0 15px; background: var(--bg-card); border: 1px solid var(--border-2); border-radius: var(--r-pill); }
 .chat-input span { font-size: 12.5px; color: var(--text-4); flex: 1; }
