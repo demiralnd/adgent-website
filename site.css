@@ -409,6 +409,22 @@ section { position: relative; z-index: 1; }
 .creative-card p { font-size: 13.5px; line-height: 1.6; color: var(--text-2); margin: 8px 0 0; text-wrap: pretty; }
 .creative-card p em { font-family: var(--font-editorial); font-style: italic; font-weight: 500; color: var(--accent); }
 
+/* ---------- why-adgent matrix ---------- */
+.matrix-wrap { margin-top: 44px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.matrix { border-collapse: separate; border-spacing: 0; width: 100%; min-width: 660px; font-size: 14px; }
+.matrix th, .matrix td { padding: 15px 16px; text-align: center; border-bottom: 1px solid var(--border); }
+.matrix thead th { font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-3); background: var(--bg-sub); border-bottom: 1px solid var(--border-2); }
+.matrix thead th:first-child { border-top-left-radius: var(--r-md); }
+.matrix thead th.mx-cap { text-align: left; }
+.matrix thead th.mx-us { background: var(--accent); color: var(--accent-on); border-top-right-radius: var(--r-md); letter-spacing: 0.04em; }
+.matrix tbody th { text-align: left; font-weight: 600; font-size: 14px; color: var(--text); }
+.matrix td.yes { color: var(--ok); font-weight: 700; font-size: 16px; }
+.matrix td.no { color: var(--text-4); }
+.matrix td.us { background: var(--accent-soft); color: var(--accent); }
+.matrix tbody tr:last-child th, .matrix tbody tr:last-child td { border-bottom: none; }
+.matrix tbody tr:last-child td.us { border-bottom-right-radius: var(--r-md); }
+.matrix-note { margin-top: 16px; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.02em; color: var(--text-3); text-align: center; }
+
 /* ---------- features ---------- */
 .feat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 48px; }
 .feat { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--r-xl); box-shadow: var(--shadow-card); padding: 24px; }
