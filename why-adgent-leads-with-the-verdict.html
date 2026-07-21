@@ -68,6 +68,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .back-link:hover { color: var(--text-primary); }
   .post-hero-cover { max-width: 720px; margin: 30px auto 0; border: 1px solid var(--border-default); border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 1200 / 630; }
   .post-hero-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .related { max-width: 720px; margin: 48px auto 0; }
+  .related .eyebrow { font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); display: inline-flex; align-items: center; gap: 9px; }
+  .related .eyebrow .tick { width: 16px; height: 1px; background: var(--accent); }
+  .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 18px 0 0; }
+  .rel-card { background: var(--bg-elevated); border: 1px solid var(--border-default); border-radius: var(--radius-lg); padding: 18px 20px; transition: border-color 140ms; }
+  .rel-card:hover { border-color: var(--border-strong); }
+  .rel-card .rc-tag { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
+  .rel-card .rc-h { font-size: 15px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.25; margin: 8px 0 0; text-wrap: balance; }
+  @media (max-width: 640px){ .related-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -148,7 +157,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p>You already know what your numbers are. The question worth answering is what they mean — and that's the only question we're interested in.</p>
       </div>
 
-      <div class="post-foot">
+      <div class="related">
+      <span class="eyebrow"><span class="tick"></span>Keep reading</span>
+      <div class="related-grid">
+        <a class="rel-card" href="/what-is-an-ai-media-buyer"><span class="rc-tag">Product</span><div class="rc-h">What is an AI media buyer?</div></a>
+        <a class="rel-card" href="/how-to-audit-a-google-ads-account"><span class="rc-tag">Playbook</span><div class="rc-h">How to audit a Google Ads account</div></a>
+        <a class="rel-card" href="/placement-drift-the-leak-in-the-average"><span class="rc-tag">Attribution</span><div class="rc-h">Placement drift: the leak in your average</div></a>
+      </div>
+    </div>
+
+    <div class="post-foot">
         <a class="back-link" href="/blog"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>All articles</a>
         <a class="btn btn-primary btn-sm" href="/#lead">Request demo</a>
       </div>
