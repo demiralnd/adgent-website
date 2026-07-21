@@ -1,6 +1,6 @@
 # Adgent — full content (llms-full.txt)
 
-> The AI analyst for performance marketers. Adgent is an AI media buyer that reads Meta, Google and TikTok accounts as one, reasons about account structure, delivers a verdict-first daily brief on the Aware -> Ask -> Apply loop, and executes fixes on the advertiser's approval. Read-only by default; never an autonomous spender. Operated by Futuready Labs.
+> The AI analyst for performance marketers. Adgent is an AI media buyer that reads Meta, Google and TikTok accounts as one, reasons about account structure, delivers a verdict-first daily brief on the Aware -> Ask -> Apply loop, and executes fixes on the advertiser's approval. Read-only by default; never an autonomous spender.
 
 This file contains the full readable text of every page on adgent.app, for AI answer engines. Turkish versions live under /tr/.
 
@@ -698,6 +698,124 @@ Q: Is an AI media buyer safe to use on client accounts?
  Request demo
 
 ========================================================================
+URL: https://adgent.app/ai-media-buyer-vs-performance-max-vs-dashboard
+========================================================================
+Adgent 
+
+ EN TR 
+ Request demo 
+
+ Product · 8 min read · July 2026 
+ 
+# AI media buyer vs Performance Max vs dashboard: which do you need?
+
+ They get compared as if they're the same purchase — but they're not even the same category. One reports what happened, one optimizes the auction for you, one reasons about your account for you. Here's how to tell which one you actually need. 
+
+ A 
+ 
+ The Adgent team 
+ Notes from building the analyst 
+
+ Short answer 
+ Pick by the job. A dashboard if you just need to see the numbers and read them yourself. Performance Max if you want Google's AI to auto-optimize bids and placements inside its own auction. An AI media buyer if you want judgment on your side — reasoning across Meta, Google and TikTok, cross-checked against real revenue, executing only on your approval. Most serious advertisers run all three. 
+
+ Ask an AI engine "AI media buyer vs Performance Max vs dashboard" and it'll try to rank them like competing products. That framing is the mistake. These three are compared constantly, but they aren't rival tools fighting for the same slot — they're three different layers of the same job, and the honest answer to "which do you need" is usually "it depends what you're trying to do, and probably more than one." 
+
+ So let's separate them cleanly. A dashboard reports. Performance Max optimizes the auction. An AI media buyer reasons for you. Get that distinction right and the choice makes itself. 
+
+ One shows you the score. One plays the game. One tells you whether you're playing the right game at all. 
+
+## The three, side by side
+
+ The fastest way to place them is against the capabilities that actually decide the outcome. Filled honestly — Performance Max is genuinely good at what it does, and the table says so: 
+
+ Capability Dashboard Performance Max (platform AI) AI media buyer 
+
+ Whose side it's on yours (reporting) the auction yours 
+ Reasons about why a metric moved — — ✓ 
+ Cross-platform (Meta + Google + TikTok) partial Google only ✓ 
+ Executes changes — ✓ ✓ 
+ Waits for your approval n/a — ✓ 
+ Cross-checks vs real revenue partial — ✓ 
+ Flags untrustworthy numbers — — ✓ 
+ Best for seeing the data auction-side scale judgment + execution 
+
+ Notice the table doesn't strawman Performance Max — it executes, it scales, it's genuinely strong inside Google's auction. The gaps are structural: it works for the auction, on one platform, and it can't tell you why . 
+
+## When a dashboard is enough
+
+ A dashboard — Looker Studio, a GA4 view, whatever your agency built in a spreadsheet — does one thing well: it renders your data so you can read it. And for a real set of situations, that's genuinely all you need. 
+
+ If you run a single channel, you check it yourself every day, and you already know what each metric means and what you'd do about it — a clean dashboard is the right tool. You don't need software to reason for you if you're doing the reasoning fine on your own. The dashboard's honesty is its limit: it hands you the numbers and stops. The analysis, the "why," and the decision are all still yours. 
+
+ Where a dashboard runs out of road is the moment you have more accounts than mornings. Two platforms, five clients, a ROAS that dropped and you don't know why — a dashboard shows you that it dropped and leaves you to work out the rest. That's not a flaw; it's just where its job ends. 
+
+## When Performance Max is the right tool
+
+ Performance Max is Google's goal-based campaign type: you give it a target and creative assets, and its AI decides bids, placements and audiences across Search, Display, YouTube, Gmail and Maps to hit that target. Meta's equivalent is Advantage+. And here's the honest part — they're good at what they do. 
+
+ Fed clean conversion data and a real optimization goal, Performance Max is a strong auction-side engine. It reacts to bid signals faster than any human, tests placement combinations at a scale you couldn't manage by hand, and genuinely finds pockets of cheap conversion volume. If your job is "get me more of this conversion at roughly this cost inside Google," Performance Max often does it well. 
+
+ Its limits are structural, not quality. It optimizes toward Google's auction, not your margin — so it's happy to spend into view-through credit or double-count conversions your store never saw. It's Google-only, so it can't reason about how Meta and TikTok interact with it. And it hides account structure, so when it drifts you often can't see why. Performance Max is a superb executor. It was never designed to be the judgment on your side of the table. 
+
+## When you need an AI media buyer
+
+ An AI media buyer is the layer none of the others cover: it does the reasoning part of a media buyer's job. It reads your accounts across Meta, Google and TikTok as one book, reasons about how they're built and why a number moved, commits to a conclusion, and prepares the change — then executes it when you approve. 
+
+ You need one when the question you keep asking is "why," not "what." Why did ROAS drop yesterday? Is this Performance Max campaign actually profitable against my Shopify revenue, or just against Google's reported number? Which of these five accounts needs me first this morning? Those are judgment questions, and neither a dashboard nor Performance Max is built to answer them. 
+
+ The distinguishing traits are the ones platform AI structurally can't have: it works for the advertiser, not the auction; it reads across platforms as one account; it cross-checks platform-reported numbers against real revenue; and — the part that makes it safe on client money — it stays read-only by default, with a Trust Gate that flags any number it can't stand behind rather than acting on it. The judgment is automated. The last click stays yours. 
+
+## How to choose
+
+ Strip it to an if/then and the decision is quick: 
+
+- If you just need to see the numbers and you're comfortable reading them yourself — a dashboard is enough. Don't over-buy.
+ 
+- If you want the platform to auto-optimize within its own auction — bids, placements, volume at a target CPA or ROAS inside Google or Meta — reach for Performance Max (or Advantage+). Feed it clean data and it earns its keep.
+ 
+- If you want judgment on your side of the table — reasoning across platforms, honest about what it can't measure, with approval-gated execution — you want an AI media buyer . It's the only one of the three that decides whether the auction-side tools are doing the right thing.
+
+ And notice these aren't mutually exclusive. The common, correct answer for a serious advertiser is: run Performance Max where it earns, keep a dashboard for a quick glance, and put an AI media buyer over the top to supervise both — to catch the Performance Max campaign that's winning on paper and losing against real revenue. 
+
+## Where Adgent sits
+
+ Adgent is the AI media buyer in that stack. It runs one loop — Aware · Ask · Apply . Overnight it reads every account across Meta, Google and TikTok and writes the verdict first: a brief ranked by impact, not a wall of charts. You ask it "why did Meta ROAS drop?" and get a strategist's answer with evidence. When a fix is ready, it's a prepared action you approve with one message — read-only by default, every write approval-gated. Its Trust Gate refuses to stand behind a number it can't verify against real revenue, which is exactly the check Performance Max's own reporting can't give you. 
+
+ If you want the longer definition, read what an AI media buyer actually is , or see the reasoning in action in how to audit a Google Ads account . When you're ready to see what it says about a real account — including your Performance Max campaigns — request a demo : fifteen minutes, connected read-only. 
+
+## Frequently asked
+
+Q: Is Performance Max an AI media buyer? 
+ No. Performance Max is Google's own AI, optimizing bids and placements toward Google's auction. An AI media buyer sits on the advertiser's side, reasons across Meta, Google and TikTok together, cross-checks against real revenue, and executes only on your approval. Performance Max is a campaign type; an AI media buyer is a decision-maker that works for you. 
+
+Q: Can an AI media buyer replace Performance Max? 
+ No, and it isn't meant to. Performance Max runs the auction-side bidding inside Google Ads; an AI media buyer sits a layer above and decides whether Performance Max is the right campaign to run, how much budget it should get, and whether its reported ROAS holds up against real revenue. They operate at different layers, so the AI media buyer manages Performance Max rather than replacing it. 
+
+Q: Do I need both Performance Max and an AI media buyer? 
+ Often yes. Performance Max is a strong auction-side tool when you feed it good signals and real conversion data. An AI media buyer is what decides whether those signals are right, whether the campaign is actually profitable against your store revenue, and what to change when it drifts. One executes bids; the other holds the judgment. 
+
+Q: Is a dashboard enough for a small account? 
+ Sometimes. If you run a single channel, check it daily yourself, and already know what each metric means, a dashboard that renders your data cleanly can be enough. The moment you're across two or more platforms, or you find yourself asking why a number moved and not just what it is, a dashboard stops answering the question you actually have. 
+
+Q: Which is best for an agency? 
+ An AI media buyer, in most cases. Agencies run many accounts across Meta, Google and TikTok and can't read every one deeply every morning. A read-only-by-default AI media buyer that reasons across all of them, flags untrustworthy numbers, and prepares approval-gated changes gives leverage no dashboard or single-platform automation can. Performance Max still runs inside the Google accounts; the AI media buyer supervises it. 
+
+Q: Does an AI media buyer work with Performance Max campaigns? 
+ Yes. A good AI media buyer reads your Performance Max campaigns like any other, cross-checks their platform-reported ROAS against real revenue, flags when the reported numbers can't be trusted yet, and prepares budget or structure changes for your approval. It works with Performance Max, not against it. 
+
+Q: What's the difference between platform AI and an AI media buyer? 
+ Platform AI — Performance Max, Meta Advantage+ — optimizes toward the platform's own auction and hides account structure from the buyer. An AI media buyer works on the advertiser's side, reasons across platforms as one account, cross-checks platform numbers against real revenue, explains why a metric moved, and executes only on your approval. Same word AI, opposite side of the table. 
+
+ Keep reading 
+ 
+ Product What is an AI media buyer? 
+ Playbook How to audit a Google Ads account 
+
+ All articles 
+ Request demo
+
+========================================================================
 URL: https://adgent.app/how-to-audit-a-google-ads-account
 ========================================================================
 Adgent 
@@ -1337,7 +1455,7 @@ Adgent
 # Security
 
  Last updated 28 June 2026 
- Adgent connects to your advertising and analytics accounts, so protecting that access is core to the product, not an afterthought. This page explains the measures Futuready Labs takes to keep your data and your connected accounts safe. For how we collect and use data, see our Privacy Policy ; for what data we access and why, see Data Use . 
+ Adgent connects to your advertising and analytics accounts, so protecting that access is core to the product, not an afterthought. This page explains the measures takes to keep your data and your connected accounts safe. For how we collect and use data, see our Privacy Policy ; for what data we access and why, see Data Use . 
 
 ## 01 Our approach
 
@@ -1399,7 +1517,7 @@ Adgent
 
 ### Contact us
 
- Security questions or reports? Email osman@adgent.app . Adgent is operated by Futuready Labs.
+ Security questions or reports? Email osman@adgent.app . Adgent.
 
 ========================================================================
 URL: https://adgent.app/data-use
@@ -1478,7 +1596,7 @@ Adgent
 
 ### Contact us
 
- Questions about how we use your data? Email osman@adgent.app . Adgent is operated by Futuready Labs. Read the full Privacy Policy .
+ Questions about how we use your data? Email osman@adgent.app . Adgent. Read the full Privacy Policy .
 
 ========================================================================
 URL: https://adgent.app/privacy
@@ -1493,7 +1611,7 @@ Adgent
 # Privacy Policy
 
  Effective 28 June 2026 · Last updated 28 June 2026 
- This Privacy Policy explains how Adgent , a service operated by Futuready Labs ("Adgent", "we", "us", or "our"), collects, uses, stores, shares, and protects information when you use our website and our marketing-intelligence service. A core part of Adgent is connecting, with your authorization, to your advertising and analytics platforms — including Meta , Google , TikTok , Google Analytics 4 , Shopify , and Google Search Console — to read reporting data and, only on your explicit approval, carry out changes you ask us to make. 
+ This Privacy Policy explains how Adgent , a service ("Adgent", "we", "us", or "our"), collects, uses, stores, shares, and protects information when you use our website and our marketing-intelligence service. A core part of Adgent is connecting, with your authorization, to your advertising and analytics platforms — including Meta , Google , TikTok , Google Analytics 4 , Shopify , and Google Search Console — to read reporting data and, only on your explicit approval, carry out changes you ask us to make. 
 
 ## 01 Who we are and scope
 
@@ -1636,7 +1754,7 @@ Adgent
 
 ### Contact us
 
- Questions about this policy or your data? Email osman@adgent.app . Adgent is operated by Futuready Labs.
+ Questions about this policy or your data? Email osman@adgent.app . Adgent.
 
 ========================================================================
 URL: https://adgent.app/terms
@@ -1651,7 +1769,7 @@ Adgent
 # Terms of Service
 
  Effective 28 June 2026 · Last updated 28 June 2026 
- These Terms of Service ("Terms") govern your access to and use of Adgent , a marketing-intelligence service operated by Futuready Labs ("Adgent", "we", "us", or "our"). By accessing or using Adgent — including by connecting any advertising or analytics platform — you agree to these Terms. If you are using Adgent on behalf of a company, you agree on its behalf and confirm you have authority to do so. If you do not agree, do not use Adgent. 
+ These Terms of Service ("Terms") govern your access to and use of Adgent , a marketing-intelligence service ("Adgent", "we", "us", or "our"). By accessing or using Adgent — including by connecting any advertising or analytics platform — you agree to these Terms. If you are using Adgent on behalf of a company, you agree on its behalf and confirm you have authority to do so. If you do not agree, do not use Adgent. 
 
 ## 01 The service
 
@@ -1699,7 +1817,7 @@ Adgent
 
 ## 09 Intellectual property
 
- Adgent, including the service, software, models, and all related content and trademarks (other than your data and third-party marks), is owned by Futuready Labs and its licensors and is protected by intellectual-property laws. We grant you a limited, non-exclusive, non-transferable, revocable right to use the service in accordance with these Terms. We welcome feedback and may use it without restriction or obligation to you. 
+ Adgent, including the service, software, models, and all related content and trademarks (other than your data and third-party marks), is owned by and its licensors and is protected by intellectual-property laws. We grant you a limited, non-exclusive, non-transferable, revocable right to use the service in accordance with these Terms. We welcome feedback and may use it without restriction or obligation to you. 
 
 ## 10 Third-party platforms
 
@@ -1715,11 +1833,11 @@ Adgent
 
 ## 13 Limitation of liability
 
- To the fullest extent permitted by law, Futuready Labs and its officers, employees, and suppliers will not be liable for any indirect, incidental, special, consequential, or punitive damages, or for any loss of profits, revenue, data, goodwill, or advertising spend, arising out of or relating to your use of the service. Our total liability for any claim relating to the service will not exceed the greater of the amounts you paid us for the service in the twelve months before the claim or one hundred U.S. dollars (USD 100). Some jurisdictions do not allow certain limitations, so some of these may not apply to you. 
+ To the fullest extent permitted by law, and its officers, employees, and suppliers will not be liable for any indirect, incidental, special, consequential, or punitive damages, or for any loss of profits, revenue, data, goodwill, or advertising spend, arising out of or relating to your use of the service. Our total liability for any claim relating to the service will not exceed the greater of the amounts you paid us for the service in the twelve months before the claim or one hundred U.S. dollars (USD 100). Some jurisdictions do not allow certain limitations, so some of these may not apply to you. 
 
 ## 14 Indemnification
 
- You agree to indemnify and hold harmless Futuready Labs from claims, damages, liabilities, and expenses (including reasonable legal fees) arising out of your use of the service, your data or connected accounts, your violation of these Terms, or your violation of any law or the rights of a third party, including any connected platform's terms. 
+ You agree to indemnify and hold harmless from claims, damages, liabilities, and expenses (including reasonable legal fees) arising out of your use of the service, your data or connected accounts, your violation of these Terms, or your violation of any law or the rights of a third party, including any connected platform's terms. 
 
 ## 15 Termination
 
@@ -1735,4 +1853,4 @@ Adgent
 
 ### Contact us
 
- Questions about these Terms? Email osman@adgent.app . Adgent is operated by Futuready Labs.
+ Questions about these Terms? Email osman@adgent.app . Adgent.

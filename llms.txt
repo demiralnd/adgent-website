@@ -4,7 +4,7 @@
 > reasons about your account, and delivers one brief each morning — the verdict first,
 > the evidence underneath. It proposes actions and executes them on your approval.
 
-Adgent is operated by Futuready Labs. It reads Meta and Google Ads through the
+Adgent. It reads Meta and Google Ads through the
 platforms' own APIs, enriches with GA4 and Merchant Center, and reconciles platform
 claims against ground-truth revenue. It is read-only by default; every write action to
 a live ad account is approval-gated.
@@ -28,6 +28,7 @@ confident it is and why, and leaves out anything that didn't change the answer.
 - [CBO vs ABO in 2026: when each still wins](https://adgent.app/cbo-vs-abo-2026): A decision tree — CBO for scaling known winners at volume, ABO when you're buying an answer and each option needs a fair sample.
 - [Meta says 4.2×, Google says 3.1×. Both are right.](https://adgent.app/cross-platform-comparability-meta-google): Why platform ROAS figures aren't comparable (different windows, models, and conversion definitions), the double-counting problem, and how to build a comparability boundary against ground-truth revenue.
 - [Why Adgent leads with the verdict](https://adgent.app/why-adgent-leads-with-the-verdict): The design principle behind every brief — conclusion first, evidence underneath, nothing you didn't need.
+- [AI media buyer vs Performance Max vs dashboard](https://adgent.app/ai-media-buyer-vs-performance-max-vs-dashboard): The three get compared constantly but are three layers of the same job — a dashboard reports, Performance Max optimizes the auction, an AI media buyer reasons for you. Which you need, and why serious advertisers run all three.
 
 ## Legal and data handling
 
