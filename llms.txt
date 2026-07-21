@@ -38,7 +38,7 @@ confident it is and why, and leaves out anything that didn't change the answer.
 
 ## Notes
 
-- Contact: osman@futureadylabs.com
+- Contact: osman@adgent.app
 - Blog posts explain concepts and mechanics; they contain no customer data or performance benchmarks.
 - Pricing is not published. Contact sales for a quote.
 - Adgent is approval-gated on every write action. It is not an autonomous spender.
