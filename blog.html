@@ -28,11 +28,16 @@
   .blog-feature p { font-size: 15px; line-height: 1.6; color: var(--text-secondary); margin: 14px 0 0; }
   .read-more { display: inline-flex; align-items: center; gap: 7px; font-size: 13.5px; font-weight: 600; color: var(--accent); margin-top: 22px; }
   .read-more svg { width: 15px; height: 15px; stroke-width: 2; }
-  .feature-visual { background: var(--bg-content); border: 1px solid var(--border-default); border-radius: var(--radius-lg); padding: 22px; }
+  .feature-visual { border: 1px solid var(--border-default); border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 1200 / 630; }
+  .feature-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .grid-posts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 20px; }
-  .pcard { background: var(--bg-elevated); border: 1px solid var(--border-default); border-radius: var(--radius-xl); padding: 26px; display: flex; flex-direction: column; transition: border-color 140ms; }
+  .pcard { background: var(--bg-elevated); border: 1px solid var(--border-default); border-radius: var(--radius-xl); overflow: hidden; display: flex; flex-direction: column; transition: border-color 140ms, transform 140ms; }
   .pcard:hover { border-color: var(--border-strong); }
-  .pcard h3 { font-size: 18px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; margin: 14px 0 0; text-wrap: balance; }
+  .pcard-cover { aspect-ratio: 1200 / 630; border-bottom: 1px solid var(--border-default); overflow: hidden; background: var(--bg-content); }
+  .pcard-cover img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 300ms var(--ease, ease); }
+  .pcard:hover .pcard-cover img { transform: scale(1.03); }
+  .pcard-body { padding: 22px 24px 24px; display: flex; flex-direction: column; flex: 1; }
+  .pcard h3 { font-size: 18px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; margin: 12px 0 0; text-wrap: balance; }
   .pcard p { font-size: 13.5px; line-height: 1.6; color: var(--text-secondary); margin: 12px 0 0; flex: 1; text-wrap: pretty; }
   .pcard .read-more { margin-top: 18px; }
   .topics { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
@@ -85,8 +90,7 @@
         <span class="read-more">Read the article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </div>
       <div class="feature-visual">
-        <div class="co-kicker">Attribution</div>
-        <p class="co-narr" style="margin-top:14px">Meta's attribution window quietly rewrites yesterday's numbers for a week. Pausing a campaign on day-one data is the most expensive reflex in performance marketing — here's how to read a metric that isn't done yet.</p>
+        <img src="assets/blog/attribution-window-day-one-data.svg" width="1200" height="630" alt="Bar chart of a ROAS figure rising across seven days as Meta's attribution window matures, labelled 'draft · revising'." loading="eager"/>
       </div>
     </a>
   </div>
@@ -97,40 +101,58 @@
     <div class="sec-head"><span class="eyebrow"><span class="tick"></span>Latest</span></div>
     <div class="grid-posts" data-stagger>
       <a class="pcard" href="/scale-a-winner-without-breaking-it">
-        <div class="post-meta"><span class="post-tag">Scaling</span><span>·</span><span>6 min</span></div>
-        <h3>How to scale a winner without breaking it</h3>
-        <p>The 20% rule, learning-phase resets, and why the budget you add matters less than how fast you add it.</p>
-        <span class="read-more">Read <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        <div class="pcard-cover"><img src="assets/blog/scale-a-winner-without-breaking-it.svg" width="1200" height="630" alt="Stacked +20% budget steps climbing along a dashed ramp with a 'learning intact' badge." loading="lazy"/></div>
+        <div class="pcard-body">
+          <div class="post-meta"><span class="post-tag">Scaling</span><span>·</span><span>6 min</span></div>
+          <h3>How to scale a winner without breaking it</h3>
+          <p>The 20% rule, learning-phase resets, and why the budget you add matters less than how fast you add it.</p>
+          <span class="read-more">Read <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </div>
       </a>
       <a class="pcard" href="/cpm-is-the-early-creative-fatigue-signal">
-        <div class="post-meta"><span class="post-tag">Creative fatigue</span><span>·</span><span>5 min</span></div>
-        <h3>Frequency is a lagging indicator. Watch CPM.</h3>
-        <p>By the time frequency tells you an audience is tired, the cost already moved. The earlier signal is hiding in your CPM curve.</p>
-        <span class="read-more">Read <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        <div class="pcard-cover"><img src="assets/blog/cpm-is-the-early-creative-fatigue-signal.svg" width="1200" height="630" alt="A coral CPM curve rising early against a muted, dashed frequency curve that rises late." loading="lazy"/></div>
+        <div class="pcard-body">
+          <div class="post-meta"><span class="post-tag">Creative fatigue</span><span>·</span><span>5 min</span></div>
+          <h3>Frequency is a lagging indicator. Watch CPM.</h3>
+          <p>By the time frequency tells you an audience is tired, the cost already moved. The earlier signal is hiding in your CPM curve.</p>
+          <span class="read-more">Read <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </div>
       </a>
       <a class="pcard" href="/why-adgent-leads-with-the-verdict">
-        <div class="post-meta"><span class="post-tag">Product</span><span>·</span><span>4 min</span></div>
-        <h3>Why Adgent leads with the verdict</h3>
-        <p>A look at the design principle behind every brief: conclusion first, evidence underneath, nothing you didn't need.</p>
-        <span class="read-more">Read <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        <div class="pcard-cover"><img src="assets/blog/why-adgent-leads-with-the-verdict.svg" width="1200" height="630" alt="A verdict card reading 'Exclude Audience Net — the answer first' above muted lines labelled 'evidence · underneath'." loading="lazy"/></div>
+        <div class="pcard-body">
+          <div class="post-meta"><span class="post-tag">Product</span><span>·</span><span>4 min</span></div>
+          <h3>Why Adgent leads with the verdict</h3>
+          <p>A look at the design principle behind every brief: conclusion first, evidence underneath, nothing you didn't need.</p>
+          <span class="read-more">Read <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </div>
       </a>
       <a class="pcard" href="/placement-drift-the-leak-in-the-average">
-        <div class="post-meta"><span class="post-tag">Attribution</span><span>·</span><span>7 min</span></div>
-        <h3>Placement drift: the leak hiding in your average</h3>
-        <p>A blended ROAS of 3.8× can hide a placement bleeding budget at 1.1×. How to find the leak inside a healthy-looking number.</p>
-        <span class="read-more">Read <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        <div class="pcard-cover"><img src="assets/blog/placement-drift-the-leak-in-the-average.svg" width="1200" height="630" alt="A blended 3.8× ROAS split into a green Feed 4.2× bar and a red Audience Network 1.1× bar marked 'the leak'." loading="lazy"/></div>
+        <div class="pcard-body">
+          <div class="post-meta"><span class="post-tag">Attribution</span><span>·</span><span>7 min</span></div>
+          <h3>Placement drift: the leak hiding in your average</h3>
+          <p>A blended ROAS of 3.8× can hide a placement bleeding budget at 1.1×. How to find the leak inside a healthy-looking number.</p>
+          <span class="read-more">Read <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </div>
       </a>
       <a class="pcard" href="/cbo-vs-abo-2026">
-        <div class="post-meta"><span class="post-tag">Scaling</span><span>·</span><span>6 min</span></div>
-        <h3>CBO vs ABO in 2026: when each still wins</h3>
-        <p>Campaign budget optimization isn't always the answer. A practical decision tree for which structure to reach for.</p>
-        <span class="read-more">Read <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        <div class="pcard-cover"><img src="assets/blog/cbo-vs-abo-2026.svg" width="1200" height="630" alt="A decision fork from a 'spend?' node splitting into a CBO card and an ABO card." loading="lazy"/></div>
+        <div class="pcard-body">
+          <div class="post-meta"><span class="post-tag">Scaling</span><span>·</span><span>6 min</span></div>
+          <h3>CBO vs ABO in 2026: when each still wins</h3>
+          <p>Campaign budget optimization isn't always the answer. A practical decision tree for which structure to reach for.</p>
+          <span class="read-more">Read <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </div>
       </a>
       <a class="pcard" href="/cross-platform-comparability-meta-google">
-        <div class="post-meta"><span class="post-tag">Attribution</span><span>·</span><span>7 min</span></div>
-        <h3>Meta says 4.2×, Google says 3.1×. Both are right.</h3>
-        <p>Two platforms report ROAS. Neither is wrong, and they still can't be compared. What to fix before you move budget between them.</p>
-        <span class="read-more">Read <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        <div class="pcard-cover"><img src="assets/blog/cross-platform-comparability-meta-google.svg" width="1200" height="630" alt="Meta 4.2× and Google 3.1× cards joined by a not-equals sign, with a note 'different windows · not comparable'." loading="lazy"/></div>
+        <div class="pcard-body">
+          <div class="post-meta"><span class="post-tag">Attribution</span><span>·</span><span>7 min</span></div>
+          <h3>Meta says 4.2×, Google says 3.1×. Both are right.</h3>
+          <p>Two platforms report ROAS. Neither is wrong, and they still can't be compared. What to fix before you move budget between them.</p>
+          <span class="read-more">Read <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </div>
       </a>
     </div>
   </div>

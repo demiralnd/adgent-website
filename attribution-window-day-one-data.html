@@ -12,17 +12,21 @@
 <meta property="og:title" content="The 7-day window is lying to you before noon"/>
 <meta property="og:description" content="Meta's 7-day click window keeps rewriting yesterday's ROAS. Why day-one data reads pessimistic by construction — and how to decide anyway."/>
 <meta property="og:url" content="https://adgent.app/attribution-window-day-one-data"/>
-<meta property="og:image" content="https://adgent.app/assets/logo.svg"/>
+<meta property="og:image" content="https://adgent.app/assets/og/attribution-window-day-one-data.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="Bar chart of a ROAS figure rising across seven days as Meta's attribution window matures, labelled 'draft · revising'."/>
 <meta property="article:published_time" content="2026-04-14"/>
 <meta property="article:section" content="Attribution"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="The 7-day window is lying to you before noon"/>
 <meta name="twitter:description" content="Meta's 7-day click window keeps rewriting yesterday's ROAS. Why day-one data reads pessimistic by construction — and how to decide anyway."/>
+<meta name="twitter:image" content="https://adgent.app/assets/og/attribution-window-day-one-data.png"/>
 <link rel="icon" type="image/svg+xml" href="/assets/logo-app.svg"/>
 <link rel="apple-touch-icon" href="/assets/logo-app.svg"/>
 <link rel="stylesheet" href="tokens.css"/>
 <link rel="stylesheet" href="site.css"/>
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "headline": "The 7-day window is lying to you before noon", "description": "Meta's 7-day click window keeps rewriting yesterday's ROAS. Why day-one data reads pessimistic by construction — and how to decide anyway.", "datePublished": "2026-04-14", "dateModified": "2026-04-14", "author": {"@type": "Organization", "name": "Adgent", "url": "https://adgent.app"}, "publisher": {"@type": "Organization", "name": "Adgent", "url": "https://adgent.app", "logo": {"@type": "ImageObject", "url": "https://adgent.app/assets/logo.svg"}, "parentOrganization": {"@type": "Organization", "name": "Futuready Labs"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://adgent.app/attribution-window-day-one-data"}, "isPartOf": {"@type": "Blog", "name": "Adgent Blog", "@id": "https://adgent.app/blog"}, "articleSection": "Attribution", "keywords": "meta ads attribution window, 7-day click attribution, day one ROAS, attribution lag, when to pause a campaign", "wordCount": 460, "inLanguage": "en", "about": {"@type": "Thing", "name": "Performance marketing analytics"}, "url": "https://adgent.app/attribution-window-day-one-data"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://adgent.app"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://adgent.app/blog"}, {"@type": "ListItem", "position": 3, "name": "The 7-day window is lying to you before noon", "item": "https://adgent.app/attribution-window-day-one-data"}]}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "headline": "The 7-day window is lying to you before noon", "image": ["https://adgent.app/assets/og/attribution-window-day-one-data.png"], "description": "Meta's 7-day click window keeps rewriting yesterday's ROAS. Why day-one data reads pessimistic by construction — and how to decide anyway.", "datePublished": "2026-04-14", "dateModified": "2026-04-14", "author": {"@type": "Organization", "name": "Adgent", "url": "https://adgent.app"}, "publisher": {"@type": "Organization", "name": "Adgent", "url": "https://adgent.app", "logo": {"@type": "ImageObject", "url": "https://adgent.app/assets/logo.svg"}, "parentOrganization": {"@type": "Organization", "name": "Futuready Labs"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://adgent.app/attribution-window-day-one-data"}, "isPartOf": {"@type": "Blog", "name": "Adgent Blog", "@id": "https://adgent.app/blog"}, "articleSection": "Attribution", "keywords": "meta ads attribution window, 7-day click attribution, day one ROAS, attribution lag, when to pause a campaign", "wordCount": 460, "inLanguage": "en", "about": {"@type": "Thing", "name": "Performance marketing analytics"}, "url": "https://adgent.app/attribution-window-day-one-data"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://adgent.app"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://adgent.app/blog"}, {"@type": "ListItem", "position": 3, "name": "The 7-day window is lying to you before noon", "item": "https://adgent.app/attribution-window-day-one-data"}]}]}</script>
 <style>
   .article { max-width: 720px; margin: 0 auto; }
   .article .post-meta { display: flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-tertiary); }
@@ -47,6 +51,8 @@
   .back-link { display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 600; color: var(--text-secondary); }
   .back-link svg { width: 15px; height: 15px; stroke-width: 2; }
   .back-link:hover { color: var(--text-primary); }
+  .post-hero-cover { max-width: 720px; margin: 30px auto 0; border: 1px solid var(--border-default); border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 1200 / 630; }
+  .post-hero-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
 </style>
 </head>
 <body>
@@ -80,6 +86,8 @@
           <div class="role">Notes from building the analyst</div>
         </div>
       </div>
+
+      <figure class="post-hero-cover"><img src="assets/blog/attribution-window-day-one-data.svg" width="1200" height="630" alt="Bar chart of a ROAS figure rising across seven days as Meta's attribution window matures, labelled 'draft · revising'." loading="eager"/></figure>
 
       <div class="prose">
         <p>Open Ads Manager at 9am and a campaign you launched yesterday shows a ROAS of 1.9×. The instinct is immediate and wrong: pause it, reallocate, move on. The problem is that 1.9× isn't a result. <b>It's a snapshot of a number still being written.</b></p>

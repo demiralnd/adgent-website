@@ -12,17 +12,21 @@
 <meta property="og:title" content="Placement drift: the leak hiding in your average"/>
 <meta property="og:description" content="A blended ROAS of 3.8x can hide a placement returning 1.1x. How Advantage+ placements drift, and how to find the leak inside a healthy number."/>
 <meta property="og:url" content="https://adgent.app/placement-drift-the-leak-in-the-average"/>
-<meta property="og:image" content="https://adgent.app/assets/logo.svg"/>
+<meta property="og:image" content="https://adgent.app/assets/og/placement-drift-the-leak-in-the-average.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="A blended 3.8x ROAS split into a green Feed 4.2x bar and a red Audience Network 1.1x bar marked 'the leak'."/>
 <meta property="article:published_time" content="2026-03-19"/>
 <meta property="article:section" content="Attribution"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Placement drift: the leak hiding in your average"/>
 <meta name="twitter:description" content="A blended ROAS of 3.8x can hide a placement returning 1.1x. How Advantage+ placements drift, and how to find the leak inside a healthy number."/>
+<meta name="twitter:image" content="https://adgent.app/assets/og/placement-drift-the-leak-in-the-average.png"/>
 <link rel="icon" type="image/svg+xml" href="/assets/logo-app.svg"/>
 <link rel="apple-touch-icon" href="/assets/logo-app.svg"/>
 <link rel="stylesheet" href="tokens.css"/>
 <link rel="stylesheet" href="site.css"/>
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "headline": "Placement drift: the leak hiding in your average", "description": "A blended ROAS of 3.8x can hide a placement returning 1.1x. How Advantage+ placements drift, and how to find the leak inside a healthy number.", "datePublished": "2026-03-19", "dateModified": "2026-03-19", "author": {"@type": "Organization", "name": "Adgent", "url": "https://adgent.app"}, "publisher": {"@type": "Organization", "name": "Adgent", "url": "https://adgent.app", "logo": {"@type": "ImageObject", "url": "https://adgent.app/assets/logo.svg"}, "parentOrganization": {"@type": "Organization", "name": "Futuready Labs"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://adgent.app/placement-drift-the-leak-in-the-average"}, "isPartOf": {"@type": "Blog", "name": "Adgent Blog", "@id": "https://adgent.app/blog"}, "articleSection": "Attribution", "keywords": "placement drift, advantage plus placements, blended ROAS, audience network performance, meta ads placement breakdown", "wordCount": 529, "inLanguage": "en", "about": {"@type": "Thing", "name": "Performance marketing analytics"}, "url": "https://adgent.app/placement-drift-the-leak-in-the-average"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://adgent.app"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://adgent.app/blog"}, {"@type": "ListItem", "position": 3, "name": "Placement drift: the leak hiding in your average", "item": "https://adgent.app/placement-drift-the-leak-in-the-average"}]}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "headline": "Placement drift: the leak hiding in your average", "image": ["https://adgent.app/assets/og/placement-drift-the-leak-in-the-average.png"], "description": "A blended ROAS of 3.8x can hide a placement returning 1.1x. How Advantage+ placements drift, and how to find the leak inside a healthy number.", "datePublished": "2026-03-19", "dateModified": "2026-03-19", "author": {"@type": "Organization", "name": "Adgent", "url": "https://adgent.app"}, "publisher": {"@type": "Organization", "name": "Adgent", "url": "https://adgent.app", "logo": {"@type": "ImageObject", "url": "https://adgent.app/assets/logo.svg"}, "parentOrganization": {"@type": "Organization", "name": "Futuready Labs"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://adgent.app/placement-drift-the-leak-in-the-average"}, "isPartOf": {"@type": "Blog", "name": "Adgent Blog", "@id": "https://adgent.app/blog"}, "articleSection": "Attribution", "keywords": "placement drift, advantage plus placements, blended ROAS, audience network performance, meta ads placement breakdown", "wordCount": 529, "inLanguage": "en", "about": {"@type": "Thing", "name": "Performance marketing analytics"}, "url": "https://adgent.app/placement-drift-the-leak-in-the-average"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://adgent.app"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://adgent.app/blog"}, {"@type": "ListItem", "position": 3, "name": "Placement drift: the leak hiding in your average", "item": "https://adgent.app/placement-drift-the-leak-in-the-average"}]}]}</script>
 <style>
   .article { max-width: 720px; margin: 0 auto; }
   .article .post-meta { display: flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-tertiary); }
@@ -47,6 +51,8 @@
   .back-link { display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 600; color: var(--text-secondary); }
   .back-link svg { width: 15px; height: 15px; stroke-width: 2; }
   .back-link:hover { color: var(--text-primary); }
+  .post-hero-cover { max-width: 720px; margin: 30px auto 0; border: 1px solid var(--border-default); border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 1200 / 630; }
+  .post-hero-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
 </style>
 </head>
 <body>
@@ -80,6 +86,8 @@
           <div class="role">Notes from building the analyst</div>
         </div>
       </div>
+
+      <figure class="post-hero-cover"><img src="assets/blog/placement-drift-the-leak-in-the-average.svg" width="1200" height="630" alt="A blended 3.8x ROAS split into a green Feed 4.2x bar and a red Audience Network 1.1x bar marked 'the leak'." loading="eager"/></figure>
 
       <div class="prose">
         <p>The most dangerous number in your account is the one that looks fine. A blended ROAS of 3.8× doesn't prompt an investigation — it prompts a nod and a move on to the next tab. <b>An average is a summary, and summaries are where problems go to hide.</b></p>

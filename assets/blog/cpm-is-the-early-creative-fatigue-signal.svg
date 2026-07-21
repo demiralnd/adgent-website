@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" preserveAspectRatio="xMidYMid slice">
+  <rect width="1200" height="630" fill="#f3f2ef"/>
+  <!-- soft coral glow top-left -->
+  <defs>
+    <radialGradient id="glow" cx="18%" cy="12%" r="60%">
+      <stop offset="0%" stop-color="#ff5a2c" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#ff5a2c" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ff5a2c" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#ff5a2c" stop-opacity="0.35"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <!-- accent rail left -->
+  <rect x="0" y="0" width="10" height="630" fill="#ff5a2c"/>
+  <text x="70" y="92" font-family="'Geist Mono',monospace" font-size="20" font-weight="500" letter-spacing="3.4" fill="#ff5a2c">CREATIVE FATIGUE</text>
+  <rect x="70" y="108" width="52" height="3" rx="1.5" fill="#ff5a2c"/><text x="70" y="176" font-family="'Plus Jakarta Sans',sans-serif" font-size="50" font-weight="700" letter-spacing="-1.6" fill="#1c1a17">Frequency lags.</text>
+<text x="70" y="234" font-family="'Plus Jakarta Sans',sans-serif" font-size="50" font-weight="700" letter-spacing="-1.6" fill="#1c1a17">Watch the CPM.</text><g transform="translate(680,120)">
+    <line x1="0" y1="60" x2="440" y2="60" stroke="rgba(28,25,20,0.10)" stroke-width="1.5"/>
+    <line x1="0" y1="150" x2="440" y2="150" stroke="rgba(28,25,20,0.10)" stroke-width="1.5"/>
+    <line x1="0" y1="240" x2="440" y2="240" stroke="rgba(28,25,20,0.10)" stroke-width="1.5"/>
+    <!-- CPM: early climb (accent) -->
+    <path d="M0 232 C90 224 150 150 230 120 S360 44 440 30" fill="none" stroke="#ff5a2c" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="230" cy="120" r="9" fill="#ff5a2c"/>
+    <!-- frequency: late climb (muted, dashed) -->
+    <path d="M0 250 C140 250 250 244 320 220 S410 150 440 92" fill="none" stroke="#9a958a" stroke-width="4" stroke-dasharray="3 8" stroke-linecap="round"/>
+    <g transform="translate(238,84)">
+      <rect x="0" y="0" width="132" height="32" rx="8" fill="rgba(255,90,44,0.12)"/>
+      <text x="12" y="22" font-family="'Geist Mono',monospace" font-size="15" font-weight="600" fill="#ff5a2c">CPM · early</text>
+    </g>
+    <text x="300" y="272" font-family="'Geist Mono',monospace" font-size="14" fill="#9a958a">frequency · late</text>
+  </g>
+  <!-- brand lockup bottom-right -->
+  <g transform="translate(1040,548)">
+    <rect width="34" height="34" rx="9" fill="#ff5a2c"/>
+    <g transform="translate(17,17.5) scale(0.155) translate(-85,-82)">
+      <path d="M14 140 L85 6 L156 140 L128 140 L85 58 L42 140 Z" fill="#fff"/>
+      <path d="M50 140 L85 72 L120 140 L96 140 L85 118 L74 140 Z" fill="#fff"/>
+      <path d="M18 153 L152 153" stroke="#fff" stroke-width="9" stroke-linecap="round" opacity="0.62"/>
+    </g>
+    <text x="46" y="23" font-family="'Plus Jakarta Sans',sans-serif" font-size="20" font-weight="800" letter-spacing="-0.5" fill="#1c1a17">Adgent</text>
+  </g></svg>

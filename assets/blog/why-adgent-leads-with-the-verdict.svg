@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" preserveAspectRatio="xMidYMid slice">
+  <rect width="1200" height="630" fill="#f3f2ef"/>
+  <!-- soft coral glow top-left -->
+  <defs>
+    <radialGradient id="glow" cx="18%" cy="12%" r="60%">
+      <stop offset="0%" stop-color="#ff5a2c" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#ff5a2c" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ff5a2c" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#ff5a2c" stop-opacity="0.35"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <!-- accent rail left -->
+  <rect x="0" y="0" width="10" height="630" fill="#ff5a2c"/>
+  <text x="70" y="92" font-family="'Geist Mono',monospace" font-size="20" font-weight="500" letter-spacing="3.4" fill="#ff5a2c">PRODUCT</text>
+  <rect x="70" y="108" width="52" height="3" rx="1.5" fill="#ff5a2c"/><text x="70" y="176" font-family="'Plus Jakarta Sans',sans-serif" font-size="50" font-weight="700" letter-spacing="-1.6" fill="#1c1a17">Lead with the</text>
+<text x="70" y="234" font-family="'Plus Jakarta Sans',sans-serif" font-size="50" font-weight="700" letter-spacing="-1.6" fill="#1c1a17">verdict.</text><g transform="translate(700,140)">
+    <rect x="0" y="0" width="410" height="118" rx="16" fill="#ffffff" stroke="#ff5a2c" stroke-opacity="0.35" stroke-width="2"/>
+    <circle cx="42" cy="59" r="22" fill="rgba(255,90,44,0.12)"/>
+    <path d="M32 59 l7 7 l14 -15" fill="none" stroke="#ff5a2c" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="80" y="52" font-family="'Plus Jakarta Sans',sans-serif" font-size="23" font-weight="700" fill="#1c1a17">Exclude Audience Net</text>
+    <text x="80" y="82" font-family="'Geist Mono',monospace" font-size="15" fill="#6c685f">the answer — first</text>
+    <rect x="24" y="150" width="360" height="14" rx="7" fill="#efeeea"/>
+      <circle cx="10" cy="157" r="4" fill="#b9b4a8"/><rect x="24" y="190" width="290" height="14" rx="7" fill="#efeeea"/>
+      <circle cx="10" cy="197" r="4" fill="#b9b4a8"/><rect x="24" y="230" width="220" height="14" rx="7" fill="#efeeea"/>
+      <circle cx="10" cy="237" r="4" fill="#b9b4a8"/>
+    <text x="24" y="290" font-family="'Geist Mono',monospace" font-size="14" fill="#9a958a">evidence · underneath</text>
+  </g>
+  <!-- brand lockup bottom-right -->
+  <g transform="translate(1040,548)">
+    <rect width="34" height="34" rx="9" fill="#ff5a2c"/>
+    <g transform="translate(17,17.5) scale(0.155) translate(-85,-82)">
+      <path d="M14 140 L85 6 L156 140 L128 140 L85 58 L42 140 Z" fill="#fff"/>
+      <path d="M50 140 L85 72 L120 140 L96 140 L85 118 L74 140 Z" fill="#fff"/>
+      <path d="M18 153 L152 153" stroke="#fff" stroke-width="9" stroke-linecap="round" opacity="0.62"/>
+    </g>
+    <text x="46" y="23" font-family="'Plus Jakarta Sans',sans-serif" font-size="20" font-weight="800" letter-spacing="-0.5" fill="#1c1a17">Adgent</text>
+  </g></svg>
