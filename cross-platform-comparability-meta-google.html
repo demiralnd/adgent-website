@@ -44,7 +44,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="apple-touch-icon" href="/assets/logo-app.svg"/>
 <link rel="stylesheet" href="/tokens.css"/>
 <link rel="stylesheet" href="/site.css"/>
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "headline": "Meta says 4.2×, Google says 3.1×. Both are right.", "image": ["https://adgent.app/assets/og/cross-platform-comparability-meta-google.png"], "description": "Why Meta and Google ROAS can't be compared directly — different windows, models, and definitions — and how to build a comparability boundary.", "datePublished": "2026-02-26", "dateModified": "2026-02-26", "author": {"@type": "Person", "name": "Nurettin Demiral", "url": "https://www.linkedin.com/in/nurettin-demiral/", "sameAs": ["https://www.linkedin.com/in/nurettin-demiral/"]}, "publisher": {"@type": "Organization", "name": "Adgent", "url": "https://adgent.app", "logo": {"@type": "ImageObject", "url": "https://adgent.app/assets/logo.svg"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://adgent.app/cross-platform-comparability-meta-google"}, "isPartOf": {"@type": "Blog", "name": "Adgent Blog", "@id": "https://adgent.app/blog"}, "articleSection": "Attribution", "keywords": "meta vs google ROAS, cross platform attribution, comparing ad platforms, attribution model differences, budget allocation across channels", "wordCount": 588, "inLanguage": "en", "about": {"@type": "Thing", "name": "Performance marketing analytics"}, "url": "https://adgent.app/cross-platform-comparability-meta-google"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://adgent.app"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://adgent.app/blog"}, {"@type": "ListItem", "position": 3, "name": "Meta says 4.2×, Google says 3.1×. Both are right.", "item": "https://adgent.app/cross-platform-comparability-meta-google"}]}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "headline": "Meta says 4.2×, Google says 3.1×. Both are right.", "image": ["https://adgent.app/assets/og/cross-platform-comparability-meta-google.png"], "description": "Why Meta and Google ROAS can't be compared directly — different windows, models, and definitions — and how to build a comparability boundary.", "datePublished": "2026-02-26", "dateModified": "2026-02-26", "author": {"@type": "Person", "name": "Nurettin Demiral", "url": "https://www.linkedin.com/in/nurettin-demiral/", "sameAs": ["https://www.linkedin.com/in/nurettin-demiral/"]}, "publisher": {"@type": "Organization", "name": "Adgent", "url": "https://adgent.app", "logo": {"@type": "ImageObject", "url": "https://adgent.app/assets/logo.svg"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://adgent.app/cross-platform-comparability-meta-google"}, "isPartOf": {"@type": "Blog", "name": "Adgent Blog", "@id": "https://adgent.app/blog"}, "articleSection": "Attribution", "keywords": "meta vs google ROAS, cross platform attribution, comparing ad platforms, attribution model differences, budget allocation across channels", "wordCount": 1510, "inLanguage": "en", "about": {"@type": "Thing", "name": "Performance marketing analytics"}, "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".answer-box", ".standfirst"]}, "url": "https://adgent.app/cross-platform-comparability-meta-google"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I compare Meta and Google ROAS directly?", "acceptedAnswer": {"@type": "Answer", "text": "Not directly. The two numbers use different attribution windows, credit models and conversion definitions, so they aren't the same unit. Normalize the windows, anchor both to your GA4 or store revenue, and compare direction over level."}}, {"@type": "Question", "name": "Why are Meta and Google ROAS different?", "acceptedAnswer": {"@type": "Answer", "text": "Three disagreements at once: different windows (Meta's 7-day click vs Google's 30-day), different credit models (Meta last-touch, Google data-driven), and different definitions of what counts as a conversion. Each platform is honest inside its own ruler."}}, {"@type": "Question", "name": "How do attribution windows differ between platforms?", "acceptedAnswer": {"@type": "Answer", "text": "Meta defaults to 7-day click, 1-day view. Google Ads commonly runs a 30-day click window. A longer window mechanically catches more conversions — the same buyers credited later — which inflates reported ROAS without the channel working any harder."}}, {"@type": "Question", "name": "What is the double-counting problem?", "acceptedAnswer": {"@type": "Answer", "text": "A buyer who sees a Meta ad Monday and clicks a Google ad Wednesday is one purchase — but both platforms report it, since from each seat it's true. Sum platform-reported revenue and you count the same money twice, claiming more than the business earned."}}, {"@type": "Question", "name": "How do I build a comparability boundary?", "acceptedAnswer": {"@type": "Answer", "text": "Anchor on ground truth — your store or GA4 revenue is the denominator every platform claim checks against. Normalize both platforms to the same window, compare direction rather than level, and watch the blended number that can't be double-counted."}}, {"@type": "Question", "name": "Which platform reports higher ROAS?", "acceptedAnswer": {"@type": "Answer", "text": "Usually whichever runs the longer window or leans on view-through credit — often Meta on default settings, but it varies by account. That's exactly why a higher reported number proves nothing until you match windows and check both against real revenue."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://adgent.app"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://adgent.app/blog"}, {"@type": "ListItem", "position": 3, "name": "Meta says 4.2×, Google says 3.1×. Both are right.", "item": "https://adgent.app/cross-platform-comparability-meta-google"}]}]}</script>
 <style>
  .article { max-width: 720px; margin: 0 auto; }
  .article .post-meta { display: flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-tertiary); }
@@ -55,9 +55,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
  .byline .av { width: 38px; height: 38px; border-radius: 50%; background: var(--bg-elevated); border: 1px solid var(--border-default); display: grid; place-items: center; font-family: var(--font-editorial); font-style: italic; color: var(--accent); font-size: 16px; }
  .byline .who { font-size: 13px; font-weight: 600; }
  .byline .role { font-size: 12px; color: var(--text-tertiary); margin-top: 2px; }
+ .answer-box { margin: 30px auto 0; max-width: 720px; background: var(--bg-sub); border: 1px solid var(--border-default); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-md) var(--radius-md) 0; padding: 20px 24px; }
+ .answer-box .lbl { font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
+ .answer-box p { font-size: 17px; line-height: 1.6; color: var(--text-primary); margin: 10px 0 0; text-wrap: pretty; }
  .prose { margin-top: 36px; }
  .prose p { font-size: 16.5px; line-height: 1.72; color: var(--text-secondary); margin: 0 0 22px; text-wrap: pretty; }
  .prose p b { color: var(--text-primary); font-weight: 500; }
+ .prose a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(255,90,44,0.35); }
+ .prose a:hover { border-bottom-color: var(--accent); }
  .prose h2 { font-size: 24px; font-weight: 600; letter-spacing: -0.025em; color: var(--text-primary); margin: 40px 0 16px; }
  .prose blockquote { margin: 32px 0; padding: 0 0 0 22px; border-left: 2px solid var(--accent); }
  .prose blockquote p { font-family: var(--font-editorial); font-style: italic; font-size: 21px; line-height: 1.5; color: var(--text-primary); margin: 0; letter-spacing: -0.01em; }
@@ -71,6 +76,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
  .back-link:hover { color: var(--text-primary); }
  .post-hero-cover { max-width: 720px; margin: 30px auto 0; border: 1px solid var(--border-default); border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 1200 / 630; }
  .post-hero-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+ .faq { max-width: 720px; margin: 44px auto 0; }
+ .faq h2 { font-size: 24px; font-weight: 600; letter-spacing: -0.025em; color: var(--text-primary); }
+ .faq details { border-top: 1px solid var(--border-default); padding: 18px 0; }
+ .faq details:last-child { border-bottom: 1px solid var(--border-default); }
+ .faq summary { list-style: none; cursor: pointer; font-size: 17px; font-weight: 600; color: var(--text-primary); display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+ .faq summary::-webkit-details-marker { display: none; }
+ .faq summary .chev { width: 18px; height: 18px; flex: none; stroke-width: 2; color: var(--text-tertiary); transition: transform 160ms; }
+ .faq details[open] summary .chev { transform: rotate(180deg); }
+ .faq .faq-a { font-size: 15.5px; line-height: 1.65; color: var(--text-secondary); margin: 12px 0 0; }
  .related { max-width: 720px; margin: 48px auto 0; }
  .related .eyebrow { font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); display: inline-flex; align-items: center; gap: 9px; }
  .related .eyebrow .tick { width: 16px; height: 1px; background: var(--accent); }
@@ -130,6 +144,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
  <figure class="post-hero-cover"><img src="/assets/blog/cross-platform-comparability-meta-google.svg" width="1200" height="630" alt="Meta 4.2x and Google 3.1x cards joined by a not-equals sign, with a note 'different windows · not comparable'." loading="eager"/></figure>
 
+ <div class="answer-box">
+ <span class="lbl">Short answer</span>
+ <p>No — not directly. Meta and Google measure ROAS with different attribution windows, credit models and conversion definitions, so 4.2× and 3.1× aren't the same unit. To compare them, normalize the windows, anchor both to your GA4 or store revenue, and read direction over level.</p>
+ </div>
+
  <div class="prose">
  <p>You're running both. Meta reports 4.2×, Google reports 3.1×, and the conclusion writes itself: move budget to Meta. It's the most natural decision in the account, and <b>you have almost no evidence for it.</b></p>
 
@@ -171,6 +190,52 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  <p>The cross-platform allocation call — the one that decides where your marginal euro actually goes — is the one nobody with a seat at the table is positioned to make. That's the seat Adgent takes: it reads both platforms through their own APIs, reconciles the claims against your ground-truth revenue, and holds the comparability boundary so the comparison you make is one that survives scrutiny.</p>
 
  <p>Two platforms reporting different numbers isn't a bug to be resolved. <b>It's the permanent condition of running more than one channel</b> — and the work is building a view that's honest about it.</p>
+
+ <h2>Windows aren't a detail — they're most of the gap</h2>
+
+ <p>If you only fix one thing, fix the window. It's the single largest mechanical source of the disagreement, and it has nothing to do with which channel is actually working. Meta's default 7-day click / 1-day view means a purchase only counts if it lands within a week of a click, or a day of a view. Google Ads commonly runs a 30-day click window on the same account. Give any channel four times as long to catch a conversion and it will catch more of them — the same buyers, credited later, on a longer clock.</p>
+
+ <p>This is why <b>normalizing the lookback before you compare</b> does more work than any other single move. Pull both platforms on a matched window — 7-day click on each, say — and a chunk of the 4.2× vs 3.1× gap simply evaporates, because you've stopped comparing a sprint to a marathon. It won't make the numbers identical; the models and definitions still differ. But it removes the distortion you can actually remove, and what's left is a more honest starting point. We go deeper on this in <a href="/attribution-window-day-one-data">why the 7-day window is lying before noon</a> — the same clock problem, one channel at a time.</p>
+
+ <h2>The view-through trap: not all credit is earned</h2>
+
+ <p>There's a subtler distortion hiding inside the window difference, and it flatters whichever platform leans on view-through credit. A view-through conversion counts a purchase because someone <em>saw</em> an ad — no click, no deliberate action. On Meta, that's the 1-day view leg of the default window; on placements like Audience Network it can quietly inflate reported ROAS with impressions that scrolled past unnoticed. When you compare a channel earning mostly click credit against one padded with view credit, you're not comparing performance — you're comparing how generously each platform counts a glance as an outcome.</p>
+
+ <p>The practical guard is to look at how the credit was earned, not just how much of it there is. A channel showing high ROAS on mostly view-through conversions is making a weaker claim than a channel showing the same number on clicks, even at a matched window. This is the kind of distinction a raw platform export hides and a real analyst surfaces — the same instinct behind an <a href="/what-is-an-ai-media-buyer">AI media buyer</a> that reads the account like a strategist rather than rendering the dashboard's headline figure and calling it truth.</p>
+
+ <h2>What this means for how you allocate</h2>
+
+ <p>Put it together and the allocation rule changes shape. You stop asking "which platform has the higher ROAS?" — an unanswerable question across incompatible units — and start asking "at a matched window, checked against real revenue, which channel is trending up and which is flat?" Level is noise between platforms; direction survives the comparability boundary because it's measured inside each channel's own consistent ruler over time.</p>
+
+ <p>Then you let the blended number keep everyone honest. Total spend against ground-truth revenue is the one figure that can't be double-counted, because there's only one denominator — what the business actually earned. When your channels each look strong but blended ROAS is flat, that's the signature of channels claiming the same conversions and eating each other. The comparability boundary isn't a report you build once; it's a discipline you hold every time a platform hands you a confident number and invites you to move budget on it.</p>
+ </div>
+
+ <div class="faq">
+ <h2>Frequently asked</h2>
+ <details open>
+ <summary>Can I compare Meta and Google ROAS directly? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary>
+ <div class="faq-a">Not directly. The two numbers use different attribution windows, credit models and conversion definitions, so they aren't the same unit. Normalize the windows, anchor both to your GA4 or store revenue, and compare direction over level.</div>
+ </details>
+ <details>
+ <summary>Why are Meta and Google ROAS different? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary>
+ <div class="faq-a">Three disagreements at once: different windows (Meta's 7-day click vs Google's 30-day), different credit models (Meta last-touch, Google data-driven), and different definitions of what counts as a conversion. Each platform is honest inside its own ruler.</div>
+ </details>
+ <details>
+ <summary>How do attribution windows differ between platforms? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary>
+ <div class="faq-a">Meta defaults to 7-day click, 1-day view. Google Ads commonly runs a 30-day click window. A longer window mechanically catches more conversions — the same buyers credited later — which inflates reported ROAS without the channel working any harder.</div>
+ </details>
+ <details>
+ <summary>What is the double-counting problem? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary>
+ <div class="faq-a">A buyer who sees a Meta ad Monday and clicks a Google ad Wednesday is one purchase — but both platforms report it, since from each seat it's true. Sum platform-reported revenue and you count the same money twice, claiming more than the business earned.</div>
+ </details>
+ <details>
+ <summary>How do I build a comparability boundary? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary>
+ <div class="faq-a">Anchor on ground truth — your store or GA4 revenue is the denominator every platform claim checks against. Normalize both platforms to the same window, compare direction rather than level, and watch the blended number that can't be double-counted.</div>
+ </details>
+ <details>
+ <summary>Which platform reports higher ROAS? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary>
+ <div class="faq-a">Usually whichever runs the longer window or leans on view-through credit — often Meta on default settings, but it varies by account. That's exactly why a higher reported number proves nothing until you match windows and check both against real revenue.</div>
+ </details>
  </div>
 
  <div class="related">

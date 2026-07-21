@@ -2474,6 +2474,9 @@ Adgent
  Nurettin Demiral 
  Notes from building the analyst 
 
+ Short answer 
+ Meta ROAS looks worse in the morning because attribution isn't finished. Spend is already counted, but most of the conversions it earned haven't been credited yet — Meta's 7-day click window keeps attaching them for days. So you're dividing a complete cost by an incomplete revenue. The number reads pessimistic by construction, and almost always revises up. 
+
  Open Ads Manager at 9am and a campaign you launched yesterday shows a ROAS of 1.9×. The instinct is immediate and wrong: pause it, reallocate, move on. The problem is that 1.9× isn't a result. It's a snapshot of a number still being written. 
 
  Meta attributes conversions on a 7-day click, 1-day view basis by default. A purchase that happens today can be credited to an ad someone clicked six days ago. Which means the ROAS you read on day one is missing most of the conversions it will eventually earn. The figure doesn't just change — it almost always revises up . 
@@ -2502,7 +2505,55 @@ Adgent
 
  This is exactly the kind of judgment Adgent encodes by default. Every number it reports carries its attribution maturity, and anything still inside the window is flagged rather than trusted. The brief never tells you to pause a campaign on a number that's going to revise up by noon. 
 
+## What the 7-day window actually does to your numbers
+
+ The default setting on most Meta accounts is 7-day click, 1-day view . In plain terms: if someone clicks your ad and buys any time in the next week, that sale gets credited back to the ad — and back to the day the spend landed. That's why yesterday's ROAS keeps changing today, and the day after, and the day after that. You're not watching a stable number wobble; you're watching an incomplete number fill in. 
+
+ The shape of that fill-in is predictable. Roughly half of a cohort's eventual conversions tend to land in the first 24 hours, then the curve tapers — day two adds less, day three less again, until by day four or five the number has mostly stopped moving. Overlay that on the morning read and the effect compounds: at 9am you're not even seeing a full day-one figure, you're seeing the overnight slice of it. The denominator — spend — is already whole. The numerator is a few hours old. No wonder ROAS looks thin. 
+
+ This is also why day-one comparisons across campaigns are treacherous. A campaign whose buyers convert fast will look like a hero at breakfast; one whose buyers deliberate for three days will look like a dog — and by Friday they can swap places entirely. The window doesn't just delay the number, it reorders your rankings while it settles. 
+
+## Which metrics mature slowly — and which are already final
+
+ The trap isn't fresh data; it's treating every metric on the dashboard as if it matured at the same speed. It doesn't. Split your KPIs into two buckets and the morning stops lying to you. 
+
+- Effectively final within hours. CPM, CPC, click-through rate, hook rate, frequency, impressions. These are delivery metrics — they don't wait on a purchase to be attributed, so what you see in the morning is close to what you'll see at the end of the window.
+ 
+- Still being written. ROAS, CPA, conversion rate, cost per purchase — anything with attributed revenue or conversions in it. These live inside the window and revise for days, almost always upward.
+
+ The rule that falls out of this is clean: kill on the fast signals, wait on the slow ones. If day-one CTR is a third of your account average, that's a real, mature signal — the creative isn't landing and you can act now. If day-one ROAS is a third of your account average, that's mostly the window talking, and pausing means you'll never see the conversions that were about to land. Whether you run CBO or ABO, Advantage+ or Performance Max, the maturity split is the same — the platform structure changes how budget flows, not how fast attribution settles. 
+
+## How to decide before the window closes
+
+ Waiting a full seven days for certainty isn't a real option — a genuinely broken campaign burns budget every hour you give it the benefit of the doubt. The discipline is deciding on the right evidence early, not deciding blind. Three moves make that possible. 
+
+ First, act on the mature metrics immediately. Broken landing page, mistargeted audience, a creative with a dead hook rate — these show up in delivery data that's already final on day one. You don't need attribution to catch them, and you shouldn't wait for it. 
+
+ Second, compare like-aged data. Never judge a day-one read against a 30-day average that has fully matured. Line it up against other day-one reads — same campaign last week, or a sibling campaign at the same age. Same-age comparison strips the window out of the picture and shows you the real difference. 
+
+ Third, wait for the floor, not the ceiling. Make your kill-or-scale call when a revenue metric has stopped revising — usually day three to four — rather than on the first reading. By then the curve has flattened enough that the number is close to true, and you've still acted well before the window formally closes. This is the same discipline that keeps a blended average from hiding a placement leak : the aggregate looks calm while the truth sits one layer down. If you want the mechanics of pulling those layers apart by hand, the Google Ads audit playbook walks the same read across search. 
+
  The discipline is simple to state and hard to hold under pressure: a number inside the window is a draft. Read it as one. 
+
+## Frequently asked
+
+Q: Why does my Meta ROAS look low in the morning? 
+ Because spend is fully counted but the conversions it earned aren't credited yet. Meta's 7-day click window keeps attaching purchases for days, so at 9am you're dividing a complete cost by an incomplete revenue. The figure reads pessimistic by construction and almost always revises up. 
+
+Q: How long does Meta attribution take to settle? 
+ The default window is 7-day click, 1-day view, but most of the movement is over sooner. Roughly half of conversions land in the first 24 hours, then the curve tapers — by day three to four a revenue metric has usually stopped revising. 
+
+Q: Which metrics mature slowly and which are final? 
+ Delivery metrics — CPM, CPC, CTR, hook rate, frequency — are effectively final within hours. Revenue-side metrics — ROAS, CPA, conversion rate — live inside the attribution window and revise for days. Kill on the fast signals, wait on the slow ones. 
+
+Q: Should I pause a campaign on day-one data? 
+ Only on mature signals. A dead hook rate, mistargeted audience or broken landing page shows up in day-one delivery data and you should act. But pausing on day-one ROAS means killing conversions that were still about to land. 
+
+Q: What is the 7-day attribution window? 
+ It's Meta's default rule for crediting sales to ads: if someone clicks and buys within seven days, the purchase is credited back to the ad and the day the spend landed. That's why yesterday's ROAS keeps filling in for a week. 
+
+Q: How do I decide before the window closes? 
+ Act immediately on mature delivery metrics, compare only like-aged data instead of a matured average, and make revenue-based kill decisions once a metric stops revising — usually day three to four. That's early enough to protect budget, late enough to be true. 
 
  Keep reading 
  
@@ -2539,6 +2590,9 @@ Adgent
  Nurettin Demiral 
  Notes from building the analyst 
 
+ Short answer 
+ To scale a Meta campaign without a learning reset, raise the budget by no more than ~20% every 48–72 hours instead of one big jump. Meta re-enters the learning phase when a budget change is large enough to count as a material edit — so it's the size of the delta, not the final number, that triggers the reset. Scale in small steps and the ad set keeps everything it learned. 
+
  Every performance marketer knows the feeling. A campaign hits 4× and you want more of it — so you triple the budget overnight. By Thursday it's at 1.8× and you're trying to work out what broke. Nothing broke. You reset it. 
 
 ## What a budget change actually does
@@ -2565,6 +2619,24 @@ Adgent
  
 - Incremental spend at falling marginal ROAS. The blended number still looks fine while the last €1,000 returns nothing. Read the margin, not the average.
 
+## Why ROAS crashes the moment you scale hard
+
+ A hard scale rarely fails for one reason — it fails for three at once, and they compound. The first is the reset itself: the ad set is re-learning, so delivery is deliberately exploratory and inefficient while it hunts for 50 conversions. The second is auction pressure. To spend three times the budget, Meta widens delivery into more expensive inventory and higher-competition slots — CPM climbs before your creative gets a fair test. The third is measurement lag: the ROAS you scaled on may still have been inside its attribution window, so the "4×" you were chasing was never fully real to begin with. 
+
+ Stack those together and the crash looks mysterious. It isn't. You changed the campaign, made it more expensive to run, and did it on a number that hadn't matured. The fix isn't a better bid strategy — it's slowing down enough that only one variable moves at a time. If you're not sure the ROAS was solid before you scaled, that's usually an attribution-window problem , not a scaling problem. 
+
+## CBO, Advantage+, and where budget lives when you scale
+
+ Where you push the budget matters as much as how fast. Under ABO , you're editing an ad set directly, so a large increase maps cleanly onto a single learning phase — the 20% rule applies exactly as written. Under CBO (and Advantage+ campaign budgets), you're raising a shared pool that Meta redistributes across ad sets on its own logic. A big campaign-level jump can quietly re-open learning on several ad sets at once, or starve the ad sets that were actually carrying performance. 
+
+ The safer pattern at the campaign level is the same principle, applied to the pool: step the campaign budget up gradually and watch how Meta reallocates before you add more. If you're deciding between the two structures while you scale, the trade-offs are worth reading in full — we covered them in CBO vs ABO in 2026 . And regardless of structure, don't stack a budget change on top of a creative swap or an audience edit on the same day — every simultaneous change is one more variable you can't isolate when the number moves. 
+
+## A practical scaling cadence
+
+ Here's the loop that holds up across an account, not just one lucky ad set. Confirm the winner is real first: enough conversions to be out of the learning phase, and a ROAS that has cleared its attribution window rather than a day-one spike. Then raise the budget ~20%, and leave it alone for a full 48–72 hours so the ad set can restabilize before the next step. Repeat only while the marginal ROAS on the last increase still holds. 
+
+ When vertical steps start returning less each time — CPM up, frequency past ~2.5, marginal ROAS sliding — stop climbing and go sideways: duplicate the winning creative into a fresh audience, placement mix, or geo. Horizontal scaling resets the saturation clock without resetting the learning you paid for. The discipline is boring on purpose: one change, then wait, then read the result — the opposite of the overnight triple that started this post. 
+
 ## The part nobody automates well
 
  The rules above are easy to write down and hard to hold across thirty ad sets on a Tuesday. Scaling decisions are judgment calls that need three things at once: how long since the last change, where the ad set is in its learning phase, and whether the ROAS you're scaling on has actually matured. 
@@ -2572,6 +2644,26 @@ Adgent
  That's the reasoning Adgent runs every morning. It knows when each ad set last changed, which ones are clear of the learning phase, and which winners have headroom left — and it proposes the step, waits for your approval, then executes. The judgment is the product; the click is the easy part. 
 
  Scaling well is mostly patience with a system that punishes impatience. Add slowly, and you keep what you built. 
+
+## Frequently asked
+
+Q: How fast can I scale a Meta campaign? 
+ Raise the budget by no more than about 20% every 48–72 hours. That pace lets an ad set restabilize between steps, so an €100/day winner can reach €500/day in roughly three weeks without ever tripping a learning reset. 
+
+Q: What is the 20% rule? 
+ A scaling heuristic: increase an ad set's budget by no more than ~20% every 48–72 hours. It works because you're limiting the size of each delta, not the final budget — small steps stay under the threshold that re-opens Meta's learning phase. 
+
+Q: Does increasing budget reset the learning phase? 
+ Only if the change is large enough to count as a material edit. A modest ~20% step usually doesn't; a big overnight jump does, sending the ad set back into learning where it needs roughly 50 conversions in 7 days to stabilize again. 
+
+Q: When should I scale horizontally instead of vertically? 
+ When vertical steps stop paying off — CPM rising while CTR holds, frequency past ~2.5, marginal ROAS falling. That's audience saturation, not a learning issue. Duplicate the winning creative into a fresh audience, placement, or geo instead of adding more budget. 
+
+Q: How much budget increase is safe? 
+ About 20% per step is the widely-used safe ceiling for a single ad set. The exact figure matters less than the principle: keep each delta small enough that Meta treats it as a tweak, not a material change, and wait 48–72 hours between steps. 
+
+Q: Why does my ROAS crash when I scale? 
+ Usually three things at once: a learning reset from too big a jump, rising CPM as Meta buys pricier inventory to spend more, and a ROAS that hadn't matured past its attribution window. Scale slowly so only one variable moves at a time. 
 
  Keep reading 
  
@@ -2608,6 +2700,9 @@ Adgent
  Nurettin Demiral 
  Notes from building the analyst 
 
+ Short answer 
+ The earliest sign of creative fatigue is a rising CPM paired with a falling CTR — the auction repricing your ad within hours because engagement is decaying. It shows up days before a frequency average moves, because frequency is a slow, backward-looking summary and CPM is a live signal. 
+
  The standard fatigue check is frequency. Watch it climb past 2, past 3, and somewhere in there you refresh the creative. It's a reasonable habit built on a flawed instrument: frequency is an average, and it's slow. 
 
 ## Why frequency arrives late
@@ -2637,6 +2732,52 @@ Adgent
  That's why fatigue is one of the first things Adgent looks for each morning. It tracks the CPM–CTR relationship per ad set against your account's own baseline, and when the pattern turns, it says so — in words, with the reason attached, before the frequency column has noticed anything is wrong. 
 
  Frequency isn't useless. It's just confirmation. By the time it agrees with you, you've already paid for the lesson. 
+
+## What frequency number actually signals fatigue
+
+ People want a threshold, so here's the honest version: there isn't one that holds across accounts. A prospecting audience of two million cold users can run at a frequency of 4 or 5 for weeks without fatigue, because the impressions are spread thin across a huge pool. A retargeting audience of eight thousand warm users can be cooked at a frequency of 2 — they've all seen the ad twice in three days, and the auction knows it before the average does. 
+
+ That's the trap in the "refresh at frequency 3" rule of thumb. The same number means burnout on one ad set and plenty of runway on another. What matters isn't the absolute frequency, it's the rate of change against that ad set's own baseline — and whether CPM is climbing while response falls. A frequency of 3.5 that's been stable for two weeks with flat CPM is fine. A frequency of 2.2 that jumped from 1.6 in four days while CPM ticked up is the one to worry about. 
+
+ There's no universal fatigue frequency. There's only your ad set's normal, and the moment CPM starts pulling away from it. 
+
+## Fatigue vs. auction pressure: don't refresh the wrong thing
+
+ The most expensive mistake here isn't missing fatigue — it's misreading a cost spike as fatigue when it's really the auction getting crowded. If you swap out a perfectly good creative because CPM jumped over Black Friday, you've thrown away a proven asset and reset the learning phase for nothing. The tell is CTR. Fatigue means the audience stopped responding, so CTR falls with CPM. Auction pressure means the market got expensive while your audience still likes the ad, so CTR holds steady even as CPM climbs. 
+
+ This is the same class of problem behind a CPA that jumps overnight — the number moved, but the number alone doesn't tell you which lever to pull. Read CPM in isolation and every cost spike looks like fatigue. Read it against CTR, seasonality, and what competitors are doing in your placements, and the three causes separate cleanly. Only one of them is fixed by new creative. 
+
+## How often you should actually refresh
+
+ Refresh on the signal, not the calendar. A fixed cadence — "new creative every two weeks" — either churns out winners before they've peaked or lets losers rot past the point of profit, because ad sets don't fatigue on a schedule. The right cadence is whatever your CPM–CTR relationship tells you, and that varies with audience size, budget, and how distinctive the creative is. A high-budget ad set pounding a small retargeting pool needs new frames far more often than a lean prospecting campaign against a broad Advantage+ audience. 
+
+ What you can standardize is the pipeline , not the timer: always have the next variation ready so that when the signal turns, you swap without going dark. Keep a small stable of proven angles in rotation so no single execution carries the whole ad set. And when you do scale a winner, watch the fatigue curve steepen — bigger budgets burn a fixed audience faster, which is exactly the failure mode covered in scaling a winner without breaking it . 
+
+## Why this is hard to do by eye, every morning
+
+ Everything above is readable in principle. The problem is doing it across dozens of ad sets, every day, before the spend compounds. You'd have to hold each ad set's CPM and CTR against its own trailing baseline, separate a fatigue slope from an auction spike from a targeting miss, and do it fast enough to act while the creative still has salvageable reach. By hand that's an hour of squinting at exports — and it's the hour most teams skip until the CPA report forces it. 
+
+ That's why fatigue detection is one of the first reads Adgent does each morning. It tracks the CPM–CTR relationship per ad set against your account's own normal, tells fatigue apart from auction pressure and targeting drift, and writes the verdict in words with the reason attached — before the frequency column has noticed anything is wrong. You approve the refresh; it just makes sure you see the signal on day one instead of in next week's receipt. 
+
+## Frequently asked
+
+Q: What is the earliest signal of creative fatigue? 
+ A rising CPM alongside a falling CTR. The auction reprices your ad within hours as engagement decays, so cost climbs while response drops — days before enough impressions accumulate to move a frequency average. 
+
+Q: Why watch CPM instead of frequency? 
+ Frequency is impressions over reach — a slow average that needs volume to accumulate, so it reports last week's problem. CPM reflects the auction repricing your ad in near real time, which makes it the leading indicator, not the receipt. 
+
+Q: How do I tell fatigue from auction pressure? 
+ Read CTR alongside CPM. Fatigue is CPM up with CTR down — the audience stopped responding. Auction pressure is CPM up with CTR flat — a competitor or seasonality made the market expensive while your creative still works. 
+
+Q: What frequency means creative fatigue? 
+ There's no universal number. A broad prospecting audience runs fine at 4–5; a small retargeting pool can be cooked at 2. What signals fatigue is the change against that ad set's own baseline, read together with CPM. 
+
+Q: How often should I refresh creative? 
+ On the signal, not the calendar. Fixed cadences churn winners early or let losers rot. Refresh when the CPM–CTR relationship turns for that ad set — which comes sooner for high-budget campaigns against small audiences. 
+
+Q: Does rising CPM always mean fatigue? 
+ No. CPM up with CTR flat is auction pressure, not fatigue — your creative is fine, your market got expensive. CPM flat with CTR down is usually a targeting or placement mismatch. Only CPM up with CTR down means refresh. 
 
  Keep reading 
  
@@ -2672,6 +2813,9 @@ Adgent
  
  Nurettin Demiral 
  Notes from building the analyst 
+
+ Short answer 
+ An analytics tool should lead with a conclusion because the marketer isn't short of data — they're short of the sentence that says what the data means. A verdict ranks issues by impact, discards noise, and commits to a view, turning a filing cabinet into a decision. The evidence still sits underneath. 
 
  Most reporting tools solve a problem nobody has. Performance marketers are not short of data — they're drowning in it. The scarce thing was never the metric. It's the sentence that tells you what the metric means. 
 
@@ -2709,6 +2853,50 @@ Adgent
 
  You already know what your numbers are. The question worth answering is what they mean — and that's the only question we're interested in. 
 
+## Verdict-first is not the same as hiding the data
+
+ The most common objection to leading with a conclusion is that it feels like it takes something away. If the tool decides what matters, doesn't that strip you of the raw numbers you're used to scanning? It's a fair worry, and the answer is no — because verdict-first is an ordering, not a subtraction. Every figure that produced the conclusion is still there, one layer down, in the order that supports the argument rather than the order the API happened to return it. 
+
+ What changes is the default. A dashboard defaults to everything, all at once, equal weight — and asks you to do the ranking. A verdict-first brief defaults to the one thing that matters, stated plainly — and lets you open the drawer when you want the rest. If Meta ROAS is flat and healthy, you don't need to see forty rows of Meta breakdowns to confirm it; the verdict says "Meta's fine, leave it," and the evidence is a click away if you doubt it. The data isn't gone. It's just no longer standing between you and the decision. 
+
+ That distinction matters because trust in an analyst — human or machine — is built on being able to check the work. A verdict you can't audit is just an opinion. So the discipline isn't "show less"; it's "lead with the conclusion, and make the evidence for it reachable in one move." That's the same read-only, evidence-first posture we describe in what an AI media buyer actually is : judgment on top, the numbers that justify it underneath, nothing hidden. 
+
+## How this differs from a dashboard, concretely
+
+ It's easy to say "we're not a dashboard" and mean nothing by it. So here's the concrete difference, in the terms a media buyer lives in. A dashboard shows you that CPM rose 40% on a retargeting set. It will happily show you that number next to thirty-nine others, all rendered with the same font and the same confidence. What it will never do is tell you that a 40% CPM rise on a nine-day-old creative is fatigue, not auction pressure — and that the fix is a creative swap, today, not a bid change. 
+
+ A dashboard also can't tell you when not to act. A number sitting inside its attribution window looks like a signal but isn't one yet; a blended ROAS can hide a placement leak that only shows up when you split Advantage+ placements from manual ones. A dashboard renders all of these faithfully and flags none of them. The verdict-first shape forces the opposite behavior: because the tool has to commit to "do this" or "don't touch it," it has to reason about whether the number is even trustworthy before it speaks. The conclusion carries a confidence, and the confidence is part of the output. 
+
+ That's the real line between the two. A dashboard is a surface you interrogate. A verdict-first brief is a colleague who has already interrogated it for you — and who tells you, out loud, when the data isn't good enough to conclude anything at all. 
+
+## What makes a good ad-account brief
+
+ If the verdict is the product, then the quality of the brief is everything. A good ad-account brief has a recognizable shape, and it's worth naming what separates one from a prettier dashboard. First, it ranks by impact : the thing that will move the account most is the thing you read first, whether that's a bleeding retargeting set on Meta or a Performance Max campaign quietly absorbing budget on Google. Second, it states its confidence : "this is fatigue, high confidence" reads differently from "CPA moved, but we're still inside the attribution window — wait a day," and a good brief never collapses those two into the same flat number. 
+
+ Third, a good brief proposes a specific next action , not a vague direction. "Retargeting CPM is up" is a symptom. "Swap the retargeting creative today — it's nine days old and fatiguing" is a brief. The difference is whether you can act on it without doing the analysis yourself. Fourth, and hardest, it leaves things out . Whether the account runs CBO or ABO, Advantage+ or manual placements, most of what a dashboard would show you didn't change the conclusion — so it doesn't earn a place in the brief. It's still there if you ask. It just isn't in your way. 
+
+ Put those four together and you have the standard every Adgent brief is measured against: ranked, confident, specific, and ruthless about what to omit. It's the same discipline a senior buyer applies when they glance at an account and say one sentence instead of forty. The format doesn't make the thinking look smarter — it forces the thinking to actually happen. If you want to see what that brief would say about a real account, request a demo . 
+
+## Frequently asked
+
+Q: Why lead with the verdict instead of data? 
+ Because marketers aren't short of data — they're short of the sentence that says what it means. A verdict ranks by impact, discards noise, and commits to a view. Leading with it forces the tool to actually do the analysis instead of handing it back to you. 
+
+Q: What does verdict-first mean? 
+ Verdict-first means the conclusion comes before any chart: one plain-language line answering "what should I do about my account today?", with the supporting evidence underneath and everything that didn't change the answer left out of your way. 
+
+Q: How is this different from a dashboard? 
+ A dashboard renders forty numbers at equal weight and hands the analysis back to you. A verdict-first brief ranks by impact, states its confidence, and tells you the specific action — and flags when a number isn't trustworthy enough to act on yet. 
+
+Q: Why show evidence underneath? 
+ Because a verdict you can't audit is just an opinion. Trust in any analyst is built on being able to check the work, so every figure that produced the conclusion sits one layer down, in the order that supports the argument. 
+
+Q: Does verdict-first hide the data? 
+ No. Verdict-first is an ordering, not a subtraction. Every number is still there, one click away, in the order that supports the conclusion. What changes is the default: the decision comes first, the full drawer opens when you want it. 
+
+Q: What makes a good ad-account brief? 
+ Four things: it ranks by impact, states its confidence, proposes a specific next action rather than a symptom, and leaves out anything that didn't change the conclusion. Ranked, confident, specific, and ruthless about what to omit. 
+
  Keep reading 
  
  Product What is an AI media buyer? 
@@ -2744,6 +2932,9 @@ Adgent
  Nurettin Demiral 
  Notes from building the analyst 
 
+ Short answer 
+ A blended ROAS is a weighted average, so strong placements carry weak ones — a Feed at 4.4× on most of your budget hides an Audience Network at 1.1× on the rest, and the top-line 3.8× never moves. The waste is real; the arithmetic just averages it out of sight until you break the number down by placement. 
+
  The most dangerous number in your account is the one that looks fine. A blended ROAS of 3.8× doesn't prompt an investigation — it prompts a nod and a move on to the next tab. An average is a summary, and summaries are where problems go to hide. 
 
 ## How placements drift
@@ -2777,6 +2968,46 @@ Adgent
  So Adgent does that decomposition on every read. It looks inside the averages for slices that diverge from the account's own baseline, filters out the ones too small to mean anything, and surfaces only the ones where the money is real. Most mornings it finds nothing and says nothing. The mornings it finds something, it leads with it. 
 
  Averages are answers to questions about groups. Your budget isn't spent by a group. It's spent slice by slice — and that's where you have to look. 
+
+## What drift actually looks like week to week
+
+ The reason placement drift is so easy to miss is that it doesn't arrive as an event. There's no alert, no red number, no day where the account breaks. It's a slow reallocation. Week one, Audience Network is 12% of spend at 2.9×. Week three it's 17% at 2.1×. Week five it's 21% at 1.4×. Every individual week looks like noise, and the blended number barely twitches because the placements carrying it are getting a little stronger at the same time. The trend only becomes obvious once you line up the weeks — and nobody lines up the weeks for a metric that looks fine. 
+
+ This is the same failure mode that shows up across the whole discipline: the summary number moves last. By the time your blended ROAS finally dips enough to prompt a question, the leak has been growing for a month and you've already spent the money. Meta's delivery system isn't malfunctioning when this happens — it's doing exactly what you told it to do. Advantage+ placements optimize toward the conversion signal, and if that signal is cheaper to trigger on the Audience Network than on Feed, the system will keep shifting budget there. Cheaper to trigger and cheaper to convert are not the same thing, and the gap between them is where your money goes. 
+
+## The attribution trap underneath the leak
+
+ Before you cut a low-ROAS placement, you have to be sure the number is telling the truth — and placement-level ROAS is one of the easiest numbers to misread. A last-click attribution model assigns the whole conversion to the placement that closed it, which is almost always Feed or Search. Upper-funnel surfaces like Reels and the Audience Network do the priming work and get none of the credit. So a placement reading 1.1× on a last-click basis might be contributing far more than that once you account for the view-through impressions that warmed the user up three days before they converted somewhere else. 
+
+ That's the difference between a placement that's genuinely leaking and one that's simply mis-credited by your attribution setup. Cutting the first recovers budget. Cutting the second quietly kills your top-of-funnel and your Feed ROAS drops a week later for reasons that look unrelated. This is exactly the kind of cross-platform, cross-placement bookkeeping problem we dig into in Meta says 4.2×, Google says 3.1× — the number you trust depends entirely on the window and the model that produced it, and two placements are rarely measured on the same one. 
+
+## How to run the check without doing it every morning
+
+ The honest problem is that the placement breakdown is a chore that pays off maybe one week in eight. Twelve clicks per campaign, sorted by ROAS, cross-referenced against volume and trend and attribution window — done properly it's twenty minutes of tedium that usually turns up nothing. So it doesn't get done, and the one week it would have mattered slides past. The check that only matters occasionally is precisely the check a busy human skips, which is what makes drift such a reliable place for spend to hide. 
+
+ The fix isn't discipline — it's decomposition on every read. Adgent breaks every campaign down by placement automatically, compares each slice against the account's own baseline rather than a generic benchmark, filters out the slices too small to be anything but noise, and only surfaces the ones where the money is real and the trend is directional. Most mornings that produces nothing, and it says nothing. The mornings a placement has genuinely drifted, it leads with the leak, shows the volume behind it, and flags whether the attribution window is old enough to trust. That's the whole point of an AI media buyer that reasons instead of reports: the boring check that guards against slow leaks gets run every single day, whether or not there's anything to find. 
+
+ None of this means Advantage+ is a mistake or that you should hand-pick every placement. Letting the system optimize is usually right. The move is to keep watching the decomposition underneath the average — to treat the blended number as a headline, never as the story — so that when a placement starts drifting, you catch it in week two instead of paying for it through week six. 
+
+## Frequently asked
+
+Q: How can a good blended ROAS hide a leak? 
+ A blended ROAS is a weighted average, so placements that perform well carry the ones that don't. When most of your budget sits at 4.4×, a small slice at 1.1× barely moves the top-line 3.8× — the loss is real but averaged out of sight. 
+
+Q: What is placement drift? 
+ Placement drift is the gradual, automatic reallocation of budget by Meta's Advantage+ delivery toward whatever surface is cheapest to trigger the conversion signal on — even when that surface converts poorly. It happens slowly, without any alert, and nothing in the interface announces it. 
+
+Q: How do Advantage+ placements drift? 
+ Advantage+ moves budget across Feed, Stories, Reels and Audience Network chasing the cheapest optimization signal. If that signal fires more easily on one surface than another, the system pours spend there — generating cheap impressions and clicks, but not always the revenue that follows. 
+
+Q: How do I find a placement leak? 
+ Break each campaign down by placement, sort by ROAS, and look at the bottom. Then check three things before you act: the spend volume behind the ratio, the attribution window feeding it, and the trend — a placement sliding for weeks, not one bad day. 
+
+Q: Why does averaging conceal wasted spend? 
+ This is Simpson's paradox in a media-buying costume. A weighted average lets strong performers absorb weak ones, and the more strong performers you have, the more weakness they can carry before the top-line number moves at all. The waste never shows up in the summary. 
+
+Q: How do I fix placement leakage? 
+ Confirm the leak is real — enough volume, a trusted attribution window, a directional trend — then cut it and redeploy that budget into the placements already carrying the account. In the 81%-at-4.4× example, that lifts blended ROAS from 3.8× to 4.4×. 
 
  Keep reading 
  
@@ -2812,6 +3043,9 @@ Adgent
  
  Nurettin Demiral 
  Notes from building the analyst 
+
+ Short answer 
+ Use CBO when you're scaling a known winner with healthy volume and comparable ad sets — let Meta allocate. Use ABO when you're testing audiences, creatives or offers, running under ~50 conversions a week, or mixing ad sets with different jobs, because it guarantees each one a fair sample. CBO buys efficiency; ABO buys answers. 
 
  Ask ten media buyers whether to use campaign budget optimization and nine will say yes without asking what you're doing. They're right often enough that the tenth answer never gets heard — which is a shame, because the tenth answer is where the interesting accounts live. 
 
@@ -2851,6 +3085,44 @@ Adgent
 
  CBO isn't better than ABO. It's better at a different job. Knowing which job you're doing is the whole answer. 
 
+## Does CBO actually scale better? The volume question
+
+ The strongest case for CBO is scale, and it's a real case — but only above a threshold most people don't check before they flip the switch. CBO's edge comes from having enough conversion signal to reallocate on. Below roughly 50 conversions per week campaign-wide , the algorithm is making high-stakes decisions on a handful of events, and the variance in that little data will send your budget chasing noise. It'll pile spend onto whichever ad set got lucky on Tuesday, then yank it away on Thursday, and you'll mistake that thrash for optimization. 
+
+ Above the threshold, CBO scales genuinely better than manual allocation because it's rebalancing at a frequency and resolution you can't. But "scales better" is conditional on the ad sets being comparable — same funnel stage, same optimization event, roughly similar economics. Hand CBO a healthy volume of look-alike ad sets and it will outrun your spreadsheet every time. Hand it volume plus a €200 prospecting set sitting next to a €20 retargeting set and it will scale you straight into a wall, pouring budget into cheap retargeting until you've stopped acquiring anyone new. Volume is necessary for CBO to win. It's never sufficient on its own. 
+
+## Migrating from ABO to CBO without resetting learning
+
+ You can move a campaign from ABO to CBO, and the right moment to do it is specific: when an ad set has stopped being an experiment and become a known quantity. A winner that's cleared its testing phase — stable CPA, enough conversions to trust, a creative that isn't fatiguing yet — is ready to graduate into a CBO built for efficiency. The mistake is switching before the answer is in, which throws away the fair trial ABO was buying you. 
+
+ Two practical cautions on the switch itself. First, changing budget structure is an edit Meta treats as significant, and it can briefly re-enter a learning phase — so migrate when you can absorb a few unstable days, not the week before a launch. Second, don't dump three freshly-tested winners of very different scale into one CBO and expect a fair split; the same comparability rule that governed the test governs the scale campaign. Group like with like. If you're carrying a proven winner across the line, the mechanics of doing it without spooking the algorithm are their own discipline — see how to scale a winner without breaking it . 
+
+## The same decision on Google, and why attribution decides it
+
+ The CBO-versus-ABO instinct isn't Meta-only. On Google the equivalent tension is Performance Max — which pools budget and hides the structure the way CBO does — against tightly-scoped campaigns you can actually read. Performance Max is CBO's logic taken further: maximum delegation, minimum visibility. It's the right tool once you trust the signal and wrong the moment you're trying to learn where results are actually coming from, because it will happily credit itself for demand you already owned. 
+
+ Underneath both platforms sits the same unglamorous decider: attribution. CBO and Performance Max are only as smart as the conversion signal you feed them, and if that signal is inflated — view-through credit dressed up as incremental, a number still moving inside its attribution window, a blended ROAS hiding a placement leak — then automated allocation doesn't fix the problem, it scales it. The budget flows toward whatever looks cheapest on paper, which is often whatever is best at claiming credit rather than creating it. Before you trust any budget-pooling structure to allocate for you, the question isn't "CBO or ABO" — it's "do I believe these numbers enough to hand over the wheel?" That check, run every morning across Meta and Google as one account, is the job Adgent does before it ever recommends a structure. 
+
+## Frequently asked
+
+Q: When should I use CBO vs ABO? 
+ Use CBO to scale a proven winner with healthy volume and comparable ad sets — let Meta allocate. Use ABO when you're testing audiences, creatives or offers, running low volume, or mixing ad sets with different jobs. CBO buys efficiency; ABO buys answers. 
+
+Q: Is CBO better than ABO? 
+ Neither is better outright — they're better at different jobs. CBO beats manual allocation when you have volume and comparable ad sets. ABO wins when you're learning something, because it guarantees each option a fair sample instead of starving it. Match the tool to the task. 
+
+Q: When does ABO win? 
+ ABO wins whenever you need a clean answer: testing audiences, creative angles or offers; running under roughly 50 conversions a week; or placing ad sets with different jobs — prospecting next to retargeting — where CBO would rig the comparison and starve one side. 
+
+Q: Does CBO scale better? 
+ Above roughly 50 conversions a week with comparable ad sets, yes — CBO rebalances at a frequency you can't match. Below that threshold, or with mismatched ad sets, it chases noise and scales you into a wall. Volume is necessary but never sufficient. 
+
+Q: How do I choose between CBO and ABO? 
+ Skip the ideology and ask what you're doing. Scaling a known winner with volume and similar audiences? CBO. Testing, running low volume, or mixing ad sets with different jobs? ABO. You're either buying efficiency or buying an answer — pick the structure that serves that goal. 
+
+Q: Can I switch from ABO to CBO? 
+ Yes — once an ad set has stopped being an experiment and become a known quantity: stable CPA, enough conversions to trust. Migrate when you can absorb a few unstable days, since changing budget structure can re-enter learning, and group only comparable winners together. 
+
  Keep reading 
  
  Playbook How to audit a Google Ads account 
@@ -2885,6 +3157,9 @@ Adgent
  
  Nurettin Demiral 
  Notes from building the analyst 
+
+ Short answer 
+ No — not directly. Meta and Google measure ROAS with different attribution windows, credit models and conversion definitions, so 4.2× and 3.1× aren't the same unit. To compare them, normalize the windows, anchor both to your GA4 or store revenue, and read direction over level. 
 
  You're running both. Meta reports 4.2×, Google reports 3.1×, and the conclusion writes itself: move budget to Meta. It's the most natural decision in the account, and you have almost no evidence for it. 
 
@@ -2925,6 +3200,44 @@ Adgent
  The cross-platform allocation call — the one that decides where your marginal euro actually goes — is the one nobody with a seat at the table is positioned to make. That's the seat Adgent takes: it reads both platforms through their own APIs, reconciles the claims against your ground-truth revenue, and holds the comparability boundary so the comparison you make is one that survives scrutiny. 
 
  Two platforms reporting different numbers isn't a bug to be resolved. It's the permanent condition of running more than one channel — and the work is building a view that's honest about it. 
+
+## Windows aren't a detail — they're most of the gap
+
+ If you only fix one thing, fix the window. It's the single largest mechanical source of the disagreement, and it has nothing to do with which channel is actually working. Meta's default 7-day click / 1-day view means a purchase only counts if it lands within a week of a click, or a day of a view. Google Ads commonly runs a 30-day click window on the same account. Give any channel four times as long to catch a conversion and it will catch more of them — the same buyers, credited later, on a longer clock. 
+
+ This is why normalizing the lookback before you compare does more work than any other single move. Pull both platforms on a matched window — 7-day click on each, say — and a chunk of the 4.2× vs 3.1× gap simply evaporates, because you've stopped comparing a sprint to a marathon. It won't make the numbers identical; the models and definitions still differ. But it removes the distortion you can actually remove, and what's left is a more honest starting point. We go deeper on this in why the 7-day window is lying before noon — the same clock problem, one channel at a time. 
+
+## The view-through trap: not all credit is earned
+
+ There's a subtler distortion hiding inside the window difference, and it flatters whichever platform leans on view-through credit. A view-through conversion counts a purchase because someone saw an ad — no click, no deliberate action. On Meta, that's the 1-day view leg of the default window; on placements like Audience Network it can quietly inflate reported ROAS with impressions that scrolled past unnoticed. When you compare a channel earning mostly click credit against one padded with view credit, you're not comparing performance — you're comparing how generously each platform counts a glance as an outcome. 
+
+ The practical guard is to look at how the credit was earned, not just how much of it there is. A channel showing high ROAS on mostly view-through conversions is making a weaker claim than a channel showing the same number on clicks, even at a matched window. This is the kind of distinction a raw platform export hides and a real analyst surfaces — the same instinct behind an AI media buyer that reads the account like a strategist rather than rendering the dashboard's headline figure and calling it truth. 
+
+## What this means for how you allocate
+
+ Put it together and the allocation rule changes shape. You stop asking "which platform has the higher ROAS?" — an unanswerable question across incompatible units — and start asking "at a matched window, checked against real revenue, which channel is trending up and which is flat?" Level is noise between platforms; direction survives the comparability boundary because it's measured inside each channel's own consistent ruler over time. 
+
+ Then you let the blended number keep everyone honest. Total spend against ground-truth revenue is the one figure that can't be double-counted, because there's only one denominator — what the business actually earned. When your channels each look strong but blended ROAS is flat, that's the signature of channels claiming the same conversions and eating each other. The comparability boundary isn't a report you build once; it's a discipline you hold every time a platform hands you a confident number and invites you to move budget on it. 
+
+## Frequently asked
+
+Q: Can I compare Meta and Google ROAS directly? 
+ Not directly. The two numbers use different attribution windows, credit models and conversion definitions, so they aren't the same unit. Normalize the windows, anchor both to your GA4 or store revenue, and compare direction over level. 
+
+Q: Why are Meta and Google ROAS different? 
+ Three disagreements at once: different windows (Meta's 7-day click vs Google's 30-day), different credit models (Meta last-touch, Google data-driven), and different definitions of what counts as a conversion. Each platform is honest inside its own ruler. 
+
+Q: How do attribution windows differ between platforms? 
+ Meta defaults to 7-day click, 1-day view. Google Ads commonly runs a 30-day click window. A longer window mechanically catches more conversions — the same buyers credited later — which inflates reported ROAS without the channel working any harder. 
+
+Q: What is the double-counting problem? 
+ A buyer who sees a Meta ad Monday and clicks a Google ad Wednesday is one purchase — but both platforms report it, since from each seat it's true. Sum platform-reported revenue and you count the same money twice, claiming more than the business earned. 
+
+Q: How do I build a comparability boundary? 
+ Anchor on ground truth — your store or GA4 revenue is the denominator every platform claim checks against. Normalize both platforms to the same window, compare direction rather than level, and watch the blended number that can't be double-counted. 
+
+Q: Which platform reports higher ROAS? 
+ Usually whichever runs the longer window or leans on view-through credit — often Meta on default settings, but it varies by account. That's exactly why a higher reported number proves nothing until you match windows and check both against real revenue. 
 
  Keep reading 
  
