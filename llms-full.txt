@@ -1047,6 +1047,286 @@ Q: Can you automate a Google Ads audit?
  Request demo
 
 ========================================================================
+URL: https://adgent.app/performance-max-not-spending-budget
+========================================================================
+Adgent 
+
+ EN TR 
+ Request demo 
+
+ Product 
+ Pricing 
+ About 
+ Blog 
+ EN TR 
+ Request demo 
+
+ Playbook · 8 min read · July 2026 
+ 
+# Why Performance Max isn’t spending your full budget
+
+ You set the budget, the campaign is live, and it's spending a fraction of the cap. Before you touch the budget slider — it's probably not the budget. Here's how to diagnose the real constraint, ranked by how often it's the culprit. 
+
+ N 
+ 
+ Nurettin Demiral 
+ Notes from building the analyst 
+
+ Short answer 
+ Most of the time it isn't a budget problem. In 2026 data, ~60% of "not spending" cases trace to a bid target or Quality Score constraint choking delivery, and only ~18% are genuinely budget-limited . Check in order: bid targets too aggressive, learning phase, asset approvals, thin signals, shared-budget cannibalization, then broken conversion tracking. Loosen the target before you raise the budget. 
+
+ "Performance Max isn't spending my budget" is one of the most common panics in a Google Ads account — and one of the most misdiagnosed. The instinct is to raise the budget, or to assume the campaign is broken. Both are usually wrong. A PMax campaign that under-delivers is almost always telling you something specific about its bid targets, its learning state, or its inputs — and the fix depends entirely on which one. 
+
+ So treat this as a diagnostic, not a checklist to blast through. Work the causes in order of likelihood, confirm each one before you act, and change one thing at a time. Here's the ranked list. 
+
+ A campaign that won't spend is rarely short of budget. It's short of auctions it's allowed to win. 
+
+## First: is it actually a budget problem?
+
+ Before anything else, read the campaign status. Google labels a campaign "Limited by budget" only when it genuinely wants to spend more than the cap allows. If your status reads eligible , limited by bid strategy , or shows a learning notice, the budget is not your bottleneck — and raising it will do nothing except sit unspent. 
+
+ This is the whole point of the headline stat. Across 2026 account audits, roughly 60% of "PMax isn't spending" cases resolved to a bid or Quality Score constraint , and only about 18% were truly budget-limited . The rest were split across approvals, tracking, and thin inputs. If you skip the status check and go straight to the budget, you're fixing the wrong four-in-five campaigns. 
+
+## 1. Bid targets too aggressive (the most common cause)
+
+ This is the one to check first, because it accounts for the largest slice. A tight Target ROAS or Target CPA tells Smart Bidding to only enter auctions it can win profitably at that target . Set the target too high — or too low a CPA — and the algorithm walks away from most of the auction. The result looks exactly like a budget problem: spend flatlines well under the cap. It isn't. The campaign is behaving as instructed; you instructed it to be picky. 
+
+ The fix is counterintuitive: loosen or remove the target and let it learn . Start with "Maximize conversions" (or "Maximize conversion value") with no target, let the campaign gather data and find volume, then introduce a target gradually once you can see what CPA or ROAS it actually achieves. Setting an aggressive target on day one is asking the system to optimize against a number it has no data to hit yet. 
+
+- Status reads "limited by bid strategy" or eligible, not "limited by budget."
+ 
+- Your Target CPA sits below your recent historical CPA, or your Target ROAS above recent achieved ROAS.
+ 
+- Fix: drop the target, run Maximize conversions, reintroduce the target after 2–3 weeks of data.
+
+## 2. You're still in the learning phase
+
+ For the first 7–14 days after launch — or after any significant edit — PMax delivers slowly and conservatively while Smart Bidding calibrates. Under-spend during this window is expected, not broken. The trap is impatience: you tweak the budget, then the target, then the assets, and each edit resets the learning clock , so the campaign never gets a clean run to ramp. 
+
+ The discipline here is the same one that keeps a winning campaign winning: batch your changes, then leave it alone. If you're mid-learning, the right move is often to do nothing for a week. We wrote the full version of this in how to scale a winner without breaking it — the mechanics of editing without resetting learning apply directly to a campaign that's still trying to find its feet. 
+
+## 3. Ad review delays and disapproved assets
+
+ New asset groups go through review, which typically takes up to 24–48 hours and can run longer. Until assets are approved, they can't serve — so a brand-new campaign that isn't spending may simply be waiting. Worse is the silent case: some assets are disapproved (policy, trademark, low-quality landing page) while others are approved, so the campaign serves in a starved, partial state and never reaches the channels the disapproved assets would have unlocked. 
+
+ Check the asset group status and the policy column. A single disapproved video or a rejected final URL can quietly cap delivery on YouTube or Display while Search chugs along, making the total look like a mysterious under-spend. 
+
+## 4. Narrow audience signals or thin asset groups
+
+ PMax uses your audience signals as a starting hint and your assets as the raw material to assemble ads for every channel. Give it too little of either and it has nothing to work with. A thin asset group — one headline variant, no video, a single image — can't build a YouTube or Display ad at all, so those channels stay dark and delivery concentrates on the one or two it can serve. Similarly, a narrow or empty audience signal gives Smart Bidding a weak cold-start. 
+
+- Fill every asset slot: multiple headlines, descriptions, images, and at least one video (Google will auto-generate a poor one if you don't — supply your own).
+ 
+- Add strong audience signals — your customer lists, high-intent custom segments — so the system has a warm start, not a cold one.
+
+## 5. Shared-budget cannibalization with Search
+
+ If PMax and your Search campaigns sit in a shared budget pool , PMax can starve Search — or the reverse can mask what's really happening. PMax has broader auction access than a standard Search campaign: it can serve across Search, Shopping, YouTube, Display, Gmail and Discover, so in a shared pool it often out-competes Search for the same money. The pool drains, and it looks like one campaign "won't spend" when really another is eating the budget. 
+
+ The fix is structural: give PMax and Search their own separate budgets so neither can cannibalize the other. This is the flip side of a problem we covered in depth — when PMax quietly absorbs your brand traffic and inflates its own numbers at Search's expense. If that's your situation, read Performance Max brand cannibalization for how to detect and fence it off. 
+
+## 6. Broken conversion tracking
+
+ This one is last by frequency but first by damage. Smart Bidding spends toward conversions it can measure . If your conversion tag is broken, double-firing, mapped to the wrong conversion action, or reporting zero, the algorithm has no signal to optimize against — so it does the safe thing and pulls delivery back. From the outside it looks like a budget or bid problem; underneath, the campaign is flying blind. 
+
+ Before you conclude anything else, confirm conversions are firing cleanly and landing on the right action. If you're not sure how to check end to end, our Google Ads account audit walkthrough covers the tracking checks that catch this — a mis-configured conversion event is one of the most common reasons a healthy-looking campaign refuses to spend. 
+
+## The diagnostic tool: the Channel Performance report
+
+ You don't have to guess which of these it is. Open the campaign, go to Insights , and read the Channel Performance report . It breaks delivery down by Search, Shopping, Display, YouTube, Gmail and Discover — so you can see, directly, which channel is silent. 
+
+ That silence is the tell. A dark YouTube row usually means a missing video asset or a disapproval. A dark Shopping row points at feed or Merchant Center issues. Broad silence across everything but Search points back at the bid target or the learning phase. The report turns "it won't spend" from a mystery into a specific, addressable gap. 
+
+## Work it in order — and change one thing at a time
+
+ The mistake that keeps campaigns stuck isn't missing a cause; it's fixing three at once, resetting learning, and losing the ability to tell what worked. Read the status. Check the target. Give it time. Confirm approvals and tracking. Read the Channel Performance report. Change one variable, then wait for the campaign to respond before you touch the next. 
+
+ This is exactly the kind of ranked, evidence-first diagnosis an AI media buyer is built to do. Instead of you eyeballing six possible causes, it reads the account, identifies which constraint is actually binding, ranks the fix by impact, and shows its work — the status flag, the target gap, the silent channel. If you want that run against a real PMax campaign, our Performance Max audit guide shows what a full read looks like, or you can request a demo and see what it says about yours — fifteen minutes, connected read-only. 
+
+## Frequently asked
+
+Q: Why is Performance Max not spending my full budget? 
+ Usually it isn't a budget problem at all. In 2026 data, ~60% of "not spending" cases trace to a bid target or Quality Score constraint choking delivery, and only ~18% are genuinely budget-limited. Check bid targets, learning phase and asset approvals before touching the budget. 
+
+Q: Is it a budget problem or a bid problem? 
+ Almost always a bid problem. The status will say "Limited by budget" only when the campaign truly wants more spend. If it reads eligible or limited by bid strategy, a tight Target ROAS or CPA is the real cap — loosen the target before you raise the budget. 
+
+Q: Does a tight tCPA or tROAS limit spend? 
+ Yes — this is the single most common cause. An aggressive Target CPA or ROAS tells Smart Bidding to only enter auctions it can win profitably, so it walks away from most of them. Start with no target, let it learn, then tighten gradually. 
+
+Q: How long is the PMax learning phase? 
+ Roughly 7–14 days after launch or a significant edit. During it, delivery ramps slowly and is deliberately conservative. Any major change — budget, target, assets, or audience signals — resets the clock, so batch your edits and then leave it alone. 
+
+Q: Does Performance Max steal budget from Search? 
+ In a shared budget pool, yes. PMax has broader auction access than a standard Search campaign, so it outcompetes Search for the same pool and can starve it. Give PMax and Search separate budgets so one campaign's delivery can't cannibalize the other. 
+
+Q: How do I see where PMax is spending? 
+ Open the campaign, go to Insights, and read the Channel Performance report. It breaks delivery down by Search, Shopping, Display, YouTube, Gmail and Discover, so you can see which channel is silent and whether an asset gap or signal gap is the reason. 
+
+Q: Can broken conversion tracking stop PMax spending? 
+ Yes. Smart Bidding spends toward conversions it can measure. If your conversion tag is broken, double-firing, or reporting into the wrong action, the algorithm can't find signal to optimize against and pulls back delivery. Audit tracking before you blame the budget. 
+
+ Keep reading 
+ 
+ Playbook How to audit a Performance Max campaign 
+ Playbook Performance Max brand cannibalization 
+
+ All articles 
+ Request demo
+
+========================================================================
+URL: https://adgent.app/google-ads-account-structure-2026
+========================================================================
+Adgent 
+
+ EN TR 
+ Request demo 
+
+ Product 
+ Pricing 
+ About 
+ Blog 
+ EN TR 
+ Request demo 
+
+ Playbook · 9 min read · July 2026 
+ 
+# Google Ads account structure in 2026 (and how to audit yours)
+
+ The old rules of structure were about manual control. In 2026 they're about signal quality — building an account so Smart Bidding has enough clean conversion data to actually learn. Here's the modern default, and how to audit whether yours measures up. 
+
+ N 
+ 
+ Nurettin Demiral 
+ Notes from building the analyst 
+
+ Short answer 
+ In 2026, Google Ads structure is about signal quality, not manual control — give Smart Bidding enough conversions per unit to learn. The modern default: Single Theme Ad Groups (STAGs) of 3-10 tight keywords, a Brand / Core Non-brand / (optional) Competitor campaign split, and 30+ conversions per month per campaign so bidding has signal. Structure to feed the algorithm, not to fight it. 
+
+ For fifteen years, account structure was how you controlled Google Ads by hand. You split campaigns to control budgets, split ad groups to control bids, and the buyer with the most granular structure usually won. That advice is now actively wrong. Smart Bidding sets the bids; your structure's only job is to feed it clean, concentrated signal. Build for that and you win. Build the old way — a hundred single-keyword ad groups, a campaign per product — and you starve the algorithm across so many thin units that it never learns. 
+
+ So this is the 2026 default, framed the way we think about it at Adgent: not just how to build the structure, but how to audit whether yours is right. Because most accounts we read weren't built wrong on purpose — they were built correct for 2018 and never re-cut for how bidding works now. 
+
+## The hierarchy, and what each level is for now
+
+ The four levels haven't changed. What each one is for has changed completely: 
+
+- Account. The billing and conversion-tracking boundary. One conversion action set, one source of truth. This is where signal is defined — if your conversion tracking is wrong here, nothing below it can be right.
+ 
+- Campaign. The bidding unit. This is where budget lives and where Smart Bidding learns. The campaign is now the thing you must feed with enough conversions — it's the level the algorithm optimizes against.
+ 
+- Ad group. The relevance unit. Its only remaining job is keeping keywords, ads and landing page tightly matched — it no longer controls bids at all. This is where STAGs live.
+ 
+- Ads & keywords. The message and the trigger. Keywords tell Google what intent you want; responsive search ads answer it. Quality Score still rides on how well the two align.
+
+ The shift in one line: campaigns are for bidding, ad groups are for relevance. Every structural mistake in 2026 is really a confusion of those two jobs — either splitting bidding units so fine they can't learn, or lumping unrelated intents into one ad group so no ad can answer them. 
+
+## STAGs: the one rule that governs ad groups
+
+ A Single Theme Ad Group is exactly what it says: an ad group where every keyword shares one intent. Three to ten keywords, all so closely related that a single ad and a single landing page can answer every one of them. That's not a style preference — it's the mechanism that drives relevance and Quality Score, and Google itself reports that raising ad relevance and landing-page experience is one of the largest levers on Quality Score , which in turn discounts your cost per click. 
+
+ The rule is a single test, and it's brutal in how it decides: 
+
+ Every keyword in an ad group must be answerable by the same ad and the same landing page. If you can't write one ad for all of them, the group is too broad — split it. 
+
+ Take "running shoes." If your ad group holds running shoes , trail running shoes , marathon shoes and waterproof running shoes , ask: can one headline honestly answer all four? It can't. Someone searching "waterproof running shoes" who lands on a generic running-shoe page bounces, and their bounce trains Smart Bidding that the whole group converts worse than it should. Split them into four STAGs, each with its own ad and its own page, and every impression now carries a clean signal. 
+
+ The 2018 version of this advice was SKAGs — Single Keyword Ad Groups, one keyword each. Close-variant matching killed that: Google now serves your ad on dozens of variants regardless, so a one-keyword group buys you nothing but fragmentation. The STAG is the correction — tight enough for relevance, broad enough that conversions concentrate instead of scattering across a hundred starved groups. 
+
+## The campaign split: isolate brand, above all
+
+ At the campaign level, split by intent , not by product line or geography or anything else that fragments signal. The modern default is three buckets: 
+
+- Brand. People searching your name. High intent, high conversion rate, low CPA — a different economy entirely.
+ 
+- Core Non-brand. Your real prospecting — category and problem-aware searches where the money is actually won or lost.
+ 
+- Competitor (optional). Bids on rival names. Expensive, low conversion rate — worth isolating so its poor efficiency never contaminates non-brand targets.
+
+ The non-negotiable one is brand . Brand searches convert at rates that dwarf non-brand — often several times higher at a fraction of the CPA — because the person already decided to buy from you. Leave brand mixed into non-brand and those cheap conversions flatter the blended average, hiding the fact that your actual prospecting is losing money. Worse, a single target CPA can't serve both economies at once: set it for brand and non-brand starves; set it for non-brand and you overpay for traffic you'd have won for free. Isolating brand is the single highest-leverage structural move in most accounts — the full case for it, including how Performance Max quietly eats brand credit, is in why brand must be isolated from Performance Max . 
+
+## The signal threshold: 30+ conversions a month, or bidding thrashes
+
+ Here's the number that quietly governs everything above. Google's own guidance is that Target CPA wants roughly 30 conversions in the trailing 30 days per campaign before its model is stable, and Target ROAS wants closer to 50 . Below that, Smart Bidding is fitting a curve to noise — it over-reacts to a lucky week, pulls back after a random dead Tuesday, and never settles. That's the thrash: bids swinging not because the market moved, but because the algorithm can't tell the difference between signal and randomness on too few data points. 
+
+ This is why granular structure now backfires. Split one healthy campaign carrying 90 conversions/month into six tidy product campaigns and you've made six units of 15 — all below threshold, all thrashing, all worse than the one you started with. The instinct to organize neatly is exactly the instinct to resist. Consolidate until each campaign clears the threshold, then stop. If you're weighing how to group budgets for this, the mechanics are in CBO vs ABO in 2026 ; if you're trying to grow a campaign that's already learning without resetting it, see how to scale a winner without breaking it . 
+
+## Structure for signal, not control — the 2026 shift
+
+ Everything above collapses into one mental model, and it's the whole point of this piece. The old question was "how do I structure this so I can control every bid?" The new question is "how do I structure this so the algorithm has the cleanest, most concentrated signal to learn from?" 
+
+ Those two questions produce opposite accounts. Controlling by hand pushes you toward more units, finer splits, single-keyword groups — maximum granularity. Feeding signal pushes you toward fewer, denser units — enough separation to keep intents clean, enough consolidation to keep every bidding unit above threshold. In 2026 the second account wins every time, because you are no longer the bidder. You're the person who decides what the bidder gets to see. 
+
+ You don't structure a Google Ads account to control the bids anymore. You structure it to control what the algorithm can learn. 
+
+## How to audit your existing structure
+
+ Now the part most guides skip. You almost certainly already have an account — the question isn't how to build one from scratch, it's whether the one you've got is quietly leaking signal. Run these four checks, in order of how much damage they do: 
+
+### 1. Are any ad groups too broad?
+
+ Open your biggest ad groups and apply the STAG test to each: could one ad honestly answer every keyword in here? If the group mixes intents you couldn't write a single relevant headline for, it's too broad — every mismatched impression is teaching Smart Bidding the wrong thing. This is the most common leak and the easiest to fix. 
+
+### 2. Are any campaigns below the conversion threshold?
+
+ Sort campaigns by conversions over the last 30 days. Anything under ~30 is a thrashing bidding unit, full stop. It either needs consolidating into a sibling or its bid strategy needs to move up to a portfolio that pools signal across campaigns. Thin campaigns don't just underperform — they degrade. 
+
+### 3. Is brand mixed into non-brand?
+
+ Check whether brand terms live in the same campaign as prospecting. If they do, your reported CPA is a fiction — cheap brand conversions are subsidizing losing non-brand targets, and you can't see it. Pull brand into its own campaign and watch the non-brand numbers tell the truth, often for the first time. 
+
+### 4. Is Performance Max overlapping Search?
+
+ If you run both, PMax will happily serve on queries your Search campaigns should own — including brand — and take the credit, because it has priority on many query types. That overlap makes both structures unreadable. Two of our deeper walkthroughs cover the full sweep: how to audit a Google Ads account end-to-end, and how to audit Performance Max specifically for cannibalization. 
+
+ Structural check The old rule (manual control) The 2026 rule (signal quality) 
+
+ Keywords per ad group 1 (SKAG) 3-10, single theme (STAG) 
+ Campaigns per account Many, granular Few, above threshold 
+ Split campaigns by Product / geo Intent (brand / non-brand) 
+ Bids set by You, by hand Smart Bidding 
+ Conversions per campaign Not a concern 30+ / month (50 for tROAS) 
+
+ Same four levels, opposite instincts. In 2026, granularity is the failure mode. 
+
+## The close: let something read the whole structure at once
+
+ The hard part of a structure audit isn't any single check — it's holding all four in your head at once, across every campaign, and seeing how they interact. A broad ad group inside a thin campaign that's also being cannibalized by PMax is three problems compounding, and a human scanning the UI at 8am rarely catches the compound. 
+
+ That's exactly the read an AI media buyer is built for: it ingests the whole account structure at once, flags the ad groups too broad to answer with one ad, the campaigns below threshold, the brand bleed and the PMax overlap — ranked by how much each is costing you, with the fix prepared and waiting for your approval. If you want to see what it would say about your structure, request a demo — fifteen minutes, connected read-only. 
+
+## Frequently asked
+
+Q: What's the best Google Ads account structure in 2026? 
+ Single Theme Ad Groups of 3-10 tightly related keywords, grouped into a small number of campaigns split by intent — Brand, Core Non-brand, and optionally Competitor — with each campaign carrying 30+ conversions per month so Smart Bidding has enough signal to learn. Structure for signal, not manual control. 
+
+Q: What is a Single Theme Ad Group (STAG)? 
+ A STAG is an ad group where every keyword shares one intent, so a single ad and a single landing page can answer all of them. The test: if you can't write one relevant ad for the whole group, it's too broad and needs splitting. 
+
+Q: How many ad groups per campaign? 
+ There's no fixed number — enough to keep each ad group a single tight theme, few enough that the campaign still clears the conversion threshold. In practice that's a handful to a couple of dozen STAGs, consolidated so budget and signal aren't spread too thin. 
+
+Q: Should brand be a separate campaign? 
+ Yes. Brand traffic converts at a far higher rate and lower CPA than non-brand, so mixing them lets cheap brand conversions flatter the average and hide non-brand losses. Isolating brand keeps its efficiency out of your prospecting numbers and stops Smart Bidding from over-crediting it. 
+
+Q: How many conversions does Smart Bidding need? 
+ Google's guidance is roughly 30 conversions in the past 30 days per campaign for tCPA, and closer to 50 for tROAS, before Smart Bidding has stable signal. Below that the algorithm thrashes — chasing noise — so consolidate campaigns to clear the threshold. 
+
+Q: How do I audit my Google Ads account structure? 
+ Check four things: are any ad groups too broad to answer with one ad? Are any campaigns below ~30 conversions/month? Is brand mixed into non-brand? Is Performance Max overlapping and cannibalizing Search? Each is a structural leak that quietly starves Smart Bidding of clean signal. 
+
+Q: Does account structure still matter with AI bidding? 
+ More than ever — it just changed jobs. You no longer structure to control bids by hand; you structure to feed the algorithm clean, concentrated conversion signal. Bad structure doesn't just waste effort now, it actively degrades what Smart Bidding can learn. 
+
+ Keep reading 
+ 
+ Playbook Why brand must be isolated from Performance Max 
+ Playbook How to audit a Google Ads account 
+
+ All articles 
+ Request demo
+
+========================================================================
 URL: https://adgent.app/why-is-my-meta-roas-dropping
 ========================================================================
 Adgent 
