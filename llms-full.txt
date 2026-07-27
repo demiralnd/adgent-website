@@ -935,13 +935,13 @@ Adgent
 
  Some findings you have to calculate. Others you can spot in thirty seconds — the tells that an account has been left on autopilot. If you see any of these, you've found recoverable spend before you've done a single sum. 
 
-- Conversion action set to "Every" instead of "One." A lead form counting every submission inflates your conversion count and teaches Smart Bidding to chase repeat form-fillers. For lead gen, this single toggle can overstate conversions by 20–40%.
+- Conversion action set to "Every" instead of "One." A lead form counting every submission inflates your conversion count and teaches Smart Bidding to chase repeat form-fillers. For lead gen, this single toggle can materially overstate conversions.
  
-- No audience exclusions on retargeting or PMax. You're paying full CPA to re-serve ads to people who already converted. On accounts with a healthy return rate, that's often 5–15% of spend re-buying customers you already own.
+- No audience exclusions on retargeting or PMax. You're paying full CPA to re-serve ads to people who already converted. On accounts with a healthy return rate, that's spend re-buying customers you already own.
  
 - Performance Max with zero audience signals. An empty signal means the algorithm cold-starts on your money. PMax will find the cheapest conversions it can — usually your existing branded traffic — and take credit for demand you'd have captured for free.
  
-- A search terms report nobody has opened in 90 days. Broad match without weekly negative-keyword pruning bleeds into junk queries continuously. If the last negative was added six months ago, assume 10–30% of search spend is landing on queries that will never convert.
+- A search terms report nobody has opened in 90 days. Broad match without weekly negative-keyword pruning bleeds into junk queries continuously. If the last negative was added six months ago, assume a meaningful share of search spend is landing on queries that will never convert.
  
 - Target CPA/ROAS running on under 15 conversions in 30 days. Below roughly 30 conversions a month per campaign, Smart Bidding doesn't have enough signal to learn — it thrashes, and CPA swings wildly week to week.
  
@@ -981,7 +981,7 @@ Adgent
  High-drift leaks: search terms, placements, pacing 
 
  Cost 
- $500–$3,000 for a one-off agency audit 
+ typically low four figures for a one-off agency audit 
  Software fee, then near-zero per re-run 
 
  Neither wins outright. A manual audit brings judgement a script can't; a continuous one catches the leaks that reopen the week after a manual audit ships. The strongest setup is a standing analyst for the high-drift checks and a human for the strategy calls — which is exactly what an AI media buyer is built to be. 
@@ -1033,7 +1033,7 @@ Q: What tools do you need to audit Google Ads?
  The account itself gets you most of the way: the search terms report, the placements and asset reports, the change history, and the conversions and attribution settings. Pair it with GA4 to reconcile conversions, and Google Tag Assistant or the Chrome Tag Assistant to confirm tags fire correctly. Beyond that, a spreadsheet to rank findings by recoverable spend — or a continuous tool that does the reading and ranking for you. 
 
 Q: How much can an audit recover? 
- It depends entirely on how neglected the account is, but on accounts that haven't been pruned in a while, 10–30% of spend is commonly sitting in wasted search terms, leaked placements and duplicate retargeting. The bigger, quieter win is measurement: fixing a mis-configured conversion often reshapes every downstream decision, which is worth more than any single line-item cut. 
+ It depends entirely on how neglected the account is, but on accounts that haven't been pruned in a while, recoverable spend usually sits in wasted search terms, leaked placements and duplicate retargeting. The bigger, quieter win is measurement: fixing a mis-configured conversion often reshapes every downstream decision, which is worth more than any single line-item cut. 
 
 Q: Can you automate a Google Ads audit? 
  The high-drift checks — wasted search terms, placement leakage, budget pacing — automate well, because they're rule-based and change constantly, so continuous monitoring beats a scheduled review. Judgement calls like strategy and structure still benefit from a human. The best setup automates the leaks that reopen weekly and keeps a person on the calls that need context. 
@@ -1073,7 +1073,7 @@ Adgent
  Notes from building the analyst 
 
  Short answer 
- Most of the time it isn't a budget problem. In 2026 data, ~60% of "not spending" cases trace to a bid target or Quality Score constraint choking delivery, and only ~18% are genuinely budget-limited . Check in order: bid targets too aggressive, learning phase, asset approvals, thin signals, shared-budget cannibalization, then broken conversion tracking. Loosen the target before you raise the budget. 
+ Most of the time it isn't a budget problem. In 2026 data, a bid target or Quality Score constraint is far more often the cause choking delivery; genuinely budget-limited cases are the minority . Check in order: bid targets too aggressive, learning phase, asset approvals, thin signals, shared-budget cannibalization, then broken conversion tracking. Loosen the target before you raise the budget. 
 
  "Performance Max isn't spending my budget" is one of the most common panics in a Google Ads account — and one of the most misdiagnosed. The instinct is to raise the budget, or to assume the campaign is broken. Both are usually wrong. A PMax campaign that under-delivers is almost always telling you something specific about its bid targets, its learning state, or its inputs — and the fix depends entirely on which one. 
 
@@ -1085,7 +1085,7 @@ Adgent
 
  Before anything else, read the campaign status. Google labels a campaign "Limited by budget" only when it genuinely wants to spend more than the cap allows. If your status reads eligible , limited by bid strategy , or shows a learning notice, the budget is not your bottleneck — and raising it will do nothing except sit unspent. 
 
- This is the whole point of the headline stat. Across 2026 account audits, roughly 60% of "PMax isn't spending" cases resolved to a bid or Quality Score constraint , and only about 18% were truly budget-limited . The rest were split across approvals, tracking, and thin inputs. If you skip the status check and go straight to the budget, you're fixing the wrong four-in-five campaigns. 
+ This is the whole point of the headline stat. Across 2026 account audits, a bid or Quality Score constraint is far more often the cause ; genuinely budget-limited cases are the minority . The rest were split across approvals, tracking, and thin inputs. If you skip the status check and go straight to the budget, you're fixing the wrong four-in-five campaigns. 
 
 ## 1. Bid targets too aggressive (the most common cause)
 
@@ -1146,7 +1146,7 @@ Adgent
 ## Frequently asked
 
 Q: Why is Performance Max not spending my full budget? 
- Usually it isn't a budget problem at all. In 2026 data, ~60% of "not spending" cases trace to a bid target or Quality Score constraint choking delivery, and only ~18% are genuinely budget-limited. Check bid targets, learning phase and asset approvals before touching the budget. 
+ Usually it isn't a budget problem at all. Far more often, a bid target or Quality Score constraint is choking delivery; genuinely budget-limited cases are the minority. Check bid targets, learning phase and asset approvals before touching the budget. 
 
 Q: Is it a budget problem or a bid problem? 
  Almost always a bid problem. The status will say "Limited by budget" only when the campaign truly wants more spend. If it reads eligible or limited by bid strategy, a tight Target ROAS or CPA is the real cap — loosen the target before you raise the budget. 
@@ -1365,7 +1365,7 @@ Adgent
 
  The test is simple. Put Ads Manager revenue next to your backend — Shopify, GA4, your store's own numbers — for the same window. 
 
- A 10–15% gap between backend revenue and Ads Manager almost always means a tracking issue, not a campaign issue. 
+ A 10–15% gap between backend revenue and Ads Manager usually means a tracking issue, not a campaign issue. 
 
  If the two agree, good — the drop is real and you move on to step two. If they've drifted apart, stop here. No amount of budget tuning fixes a broken signal, and every "optimization" you make on bad numbers digs the hole deeper. Fix the tracking, let a clean day of data land, then re-read the account. More often than not the ROAS was never actually down — the measurement was. 
 
@@ -1420,7 +1420,7 @@ Adgent
 ## Frequently asked
 
 Q: Why did my Meta ROAS suddenly drop? 
- Most sudden ROAS drops are signal problems, not campaign problems. Before you touch a budget, check tracking: a 10–15% gap between your backend revenue and Ads Manager almost always means a tracking issue, not a real performance drop. Only once the numbers are trustworthy should you look at scaling, saturation, creative and attribution. 
+ Most sudden ROAS drops are signal problems, not campaign problems. Before you touch a budget, check tracking: a 10–15% gap between your backend revenue and Ads Manager usually means a tracking issue, not a real performance drop. Only once the numbers are trustworthy should you look at scaling, saturation, creative and attribution. 
 
 Q: Does scaling budget lower ROAS? 
  It can, if you scale too fast. A single budget jump over about 20% re-enters the learning phase, so delivery gets unstable and ROAS wobbles for a few days before it settles. The fix is to raise budget in smaller steps and give each step time, not to yank it back the moment the number dips. 
@@ -1467,7 +1467,7 @@ Adgent
  
 # How much of your ad budget is wasted (and how to find it)
 
- The average Google Ads account wastes 20-40% of its budget — and it holds across hundreds of audited accounts. The good news: most of that waste has a name and an address, and you can find it in an afternoon. 
+ The best-documented study of this puts the median account near a third of budget wasted. The good news: most of that waste has a name and an address, and you can find it in an afternoon. 
 
  N 
  
@@ -1475,9 +1475,9 @@ Adgent
  Notes from building the analyst 
 
  Short answer 
- The average Google Ads account wastes 20-40% of its budget — a range that holds across hundreds of audited accounts. Most of it is findable in an afternoon: junk search terms, a location-targeting default, placement leakage, careless device bids, missing audience exclusions, and branded-search double-pay. Each leak has a rough recovery number you can attach to it. 
+ WordStream's 2026 study of 15,666 Google Ads accounts found the median account spending about $1,127 a month on clicks that didn't convert — roughly a third of a median $3,127 budget. Most of it is findable in an afternoon: junk search terms, a location-targeting default, placement leakage, careless device bids, missing audience exclusions, and branded-search double-pay. Each leak has a rough recovery number you can attach to it. 
 
- Ask a room of media buyers how much of the average account is wasted and you'll get a shrug and a range. Audit enough accounts and the range stops being a guess. The number that keeps coming back is 20-40% — a fifth to two-fifths of the budget spent on clicks that were never going to convert, placements nobody chose, and audiences you're paying twice to reach. 
+ Ask a room of media buyers how much of the average account is wasted and you'll get a shrug and a range. Audit enough accounts and the pattern stops being a guess. The best-sourced figure is WordStream's: a median of about $1,127 a month against a median $3,127 budget — roughly a third of it spent on clicks that were never going to convert, placements nobody chose, and audiences you're paying twice to reach. 
 
  That's not a doom stat. It's an opportunity that most accounts leave on the table because finding it is tedious, not hard. The waste isn't hiding in some sophisticated attribution model — it's sitting in reports you already have access to. Here's the playbook, ranked by how much each leak typically gives back when you close it. 
 
@@ -1489,7 +1489,7 @@ Adgent
 
  Every click on one of those is spend you can stop today with a negative keyword. Pull the search terms report over the last 30-60 days, sort by cost, and read down until the queries stop looking like buyers. On a neglected account this is where the afternoon pays for itself. 
 
- Typically recovers: 10-20% of spend. More on a broad-match-heavy account that's never been groomed, less on one that's already tightly matched. 
+ Adgent estimate (account-dependent): 10-20% of spend. More on a broad-match-heavy account that's never been groomed, less on one that's already tightly matched. 
 
 ## 2. Location targeting default — "interested in" vs "in"
 
@@ -1497,7 +1497,7 @@ Adgent
 
  Switch it to Presence: People in or regularly in your targeted locations and you cut the tourists and the researchers. The default exists because it maximizes reach — which is Google's interest, not yours. 
 
- Typically recovers: 15-25% for local and regional accounts. Negligible for genuinely national or global advertisers, which is exactly why it's easy to miss on the accounts it hurts most. 
+ Impact is account-specific and directly measurable — segment by location and read your own numbers. Google publishes no data on the spend effect. Negligible for genuinely national or global advertisers, which is exactly why it's easy to miss on the accounts it hurts most. 
 
 ## 3. Placement leakage — the leak in the average
 
@@ -1505,7 +1505,7 @@ Adgent
 
  Pull the placements report (or the Performance Max insights and partner report), sort by cost, and look for spend with clicks but no conversions. Exclude the worst offenders and add a mobile-app exclusion list if you're not deliberately advertising in apps. On accounts running Display or PMax at scale, this is often the second-biggest pool after search terms. 
 
- Typically recovers: 5-15% of spend on accounts with meaningful Display or Performance Max exposure. 
+ Adgent estimate (account-dependent): 5-15% of spend on accounts with meaningful Display or Performance Max exposure. 
 
 ## 4. Device bid adjustments — paying a premium for the worse device
 
@@ -1513,7 +1513,7 @@ Adgent
 
  Look at cost-per-conversion by device over a meaningful window and apply bid adjustments to match reality — down on the laggard, up on the leader. It's a smaller pool than the first three, but it's pure margin because you're not cutting volume, just re-pricing it. 
 
- Typically recovers: 3-8% of spend. 
+ Adgent estimate (account-dependent): 3-8% of spend. 
 
 ## 5. Audience saturation — paying full CPA to retarget converters
 
@@ -1521,7 +1521,7 @@ Adgent
 
  Add exclusions: existing-customer lists off your GA4 or Shopify audiences, recent purchasers out of prospecting, and converters out of top-of-funnel. It's not that retargeting is wrong — it's that unbounded retargeting saturates and the incremental return collapses while the spend doesn't. 
 
- Typically recovers: 5-10% of spend , concentrated in accounts leaning hard on retargeting. 
+ Adgent estimate (account-dependent): 5-10% of spend , concentrated in accounts leaning hard on retargeting. 
 
 ## 6. Branded-search double-pay
 
@@ -1529,7 +1529,7 @@ Adgent
 
  The test is simple: pause branded search for a controlled window and watch whether total branded traffic and conversions actually drop, or just shift to organic. If they shift, you were double-paying. 
 
- Typically recovers: 2-10% of spend — highly account-dependent, which is why it's a test, not a rule. 
+ Adgent estimate (account-dependent): 2-10% of spend — highly account-dependent, which is why it's a test, not a rule. 
 
 ## Attach a number to every leak
 
@@ -1540,13 +1540,13 @@ Adgent
  Leak Where it hides How to spot it Typically recovers 
 
  Wasted search terms Search terms report Junk queries, no intent 10-20% 
- Location default Location settings "Interest" not "presence" 15-25% (local) 
+ Location default Location settings "Interest" not "presence" Account-specific — measure it 
  Placement leakage Placements / PMax Spend, no conversions 5-15% 
  Device bids Device segment Flat bids, uneven CVR 3-8% 
  Audience saturation No exclusions Retargeting converters 5-10% 
  Branded double-pay Branded campaigns Non-incremental clicks 2-10% 
 
- These overlap — you won't recover every percentage additively — but stacked on a neglected account they explain the 20-40% almost exactly. 
+ These overlap — you won't recover every percentage additively — but stacked on a neglected account they account for most of that third. 
 
 ## The catch: doing this once isn't enough
 
@@ -1559,7 +1559,7 @@ Adgent
 ## Frequently asked
 
 Q: How much ad spend is typically wasted? 
- Across hundreds of audited accounts, the average Google Ads account wastes 20-40% of its budget. The range depends on account maturity, how much runs on defaults, and whether anyone reviews search terms and placements. Local and lead-gen accounts skew toward the high end because location and audience defaults quietly eat a bigger share. 
+ WordStream's 2026 analysis of 15,666 accounts found a median of about $1,127 a month on non-converting clicks against a median $3,127 spend — roughly a third. Two caveats: those accounts opted into a free audit tool, so they likely skew toward the unoptimised end, and "wasted" is defined loosely as clicks that didn't convert. Your own figure depends on account maturity, how much runs on defaults, and whether anyone reviews search terms and placements. Local and lead-gen accounts skew toward the high end because location and audience defaults quietly eat a bigger share. 
 
 Q: How do I find wasted ad spend? 
  Work the leaks in order of recovery: pull the search terms report for junk queries, check whether location targeting is set to "interested in" rather than "in", review placement and Display/Performance Max partner reports, sanity-check device bid adjustments, add exclusions for existing converters, and separate branded search so you're not double-paying. Most of it is findable in an afternoon. 
@@ -2089,7 +2089,7 @@ Adgent
 
 - Frequency above 5 on a prospecting audience. A cold audience seeing the same ad five-plus times in a week is fatigued and getting more expensive to reach. Rising frequency with climbing CPM is the clearest early fatigue tell there is — act before ROAS confirms it.
  
-- No retargeting exclusions. If purchasers and recent converters aren't excluded from prospecting, you're paying full CPA to re-serve ads to people who already bought. On accounts with a healthy return rate, that's often 5–15% of spend re-buying customers you already own.
+- No retargeting exclusions. If purchasers and recent converters aren't excluded from prospecting, you're paying full CPA to re-serve ads to people who already bought. On accounts with a healthy return rate, that's spend re-buying customers you already own.
  
 - A backend-vs-Ads-Manager revenue gap wider than 10–15%. When Ads Manager claims €40,000 in sales and Shopify or GA4 sees €30,000, someone is optimizing on a number that isn't real. A gap past roughly 10–15% means your pixel and CAPI setup is the first thing to fix, not your bids.
  
@@ -2129,7 +2129,7 @@ Adgent
  High-drift leaks: placements, frequency, CBO pacing 
 
  Cost 
- $500–$3,000 for a one-off agency audit 
+ typically low four figures for a one-off agency audit 
  Software fee, then near-zero per re-run 
 
  Neither wins outright. A manual audit brings judgement a script can't; a continuous one catches the leaks that reopen the week after a manual audit ships. The strongest setup is a standing analyst for the high-drift checks and a human for the strategy calls — which is exactly what an AI media buyer is built to be. 
@@ -2171,7 +2171,7 @@ Q: How often should I audit Meta ads?
  Match cadence to how fast each check goes stale. Run a full 20-point audit quarterly, a light monthly review on pacing, frequency and the ad sets that shifted most, and monitor the high-drift checks — placement drift, frequency, audience overlap and CBO leakage — continuously, because those reopen within a week of any manual pass. 
 
 Q: What are the red flags in a Meta ads account? 
- Frequency above 5 on a prospecting audience, no retargeting exclusions (usually costing 5–15% of spend re-buying existing customers), a backend-vs-Ads-Manager revenue gap wider than 10–15%, Audience Network eating a large share of a placement-optimised budget, and ad sets stuck in the learning phase after five days. Any one of these is recoverable spend you can find before you do a single calculation. 
+ Frequency above 5 on a prospecting audience, no retargeting exclusions (usually spend re-buying existing customers), a backend-vs-Ads-Manager revenue gap wider than 10–15%, Audience Network eating a large share of a placement-optimised budget, and ad sets stuck in the learning phase after five days. Any one of these is recoverable spend you can find before you do a single calculation. 
 
 Q: How do I check if my pixel is working? 
  Open Events Manager and confirm events fire once per action with a healthy event match quality score, that browser pixel and Conversions API events deduplicate on a shared event ID, and that your key conversion carries the right value. Use the Meta Pixel Helper on live pages and compare Ads Manager conversions against GA4 or Shopify — a gap wider than 10–15% means the signal, not your bids, is the first thing to fix. 

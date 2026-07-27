@@ -32,7 +32,7 @@ confident it is and why, and leaves out anything that didn't change the answer.
 - [Why Performance Max isn't spending your full budget](https://adgent.app/performance-max-not-spending-budget): Most "not spending" cases are bid or Quality Score constraints, not budget. A ranked diagnostic.
 - [Google Ads account structure in 2026](https://adgent.app/google-ads-account-structure-2026): STAGs, the Brand split, the conversion threshold, and how to audit your existing setup.
 - [Why is my Meta ROAS dropping? A diagnostic walkthrough](https://adgent.app/why-is-my-meta-roas-dropping): A ranked diagnosis of a falling Meta ROAS — tracking first, then scaling, saturation, creative fatigue.
-- [How much of your ad budget is wasted (and how to find it)](https://adgent.app/how-much-ad-spend-is-wasted): The average Google Ads account wastes 20–40% of its budget. A ranked playbook to find and recover it.
+- [How much of your ad budget is wasted (and how to find it)](https://adgent.app/how-much-ad-spend-is-wasted): WordStream's study of 15,666 accounts puts median wasted spend near a third of budget. A ranked playbook to find and recover it.
 - [How to audit a Performance Max campaign (the black box)](https://adgent.app/how-to-audit-performance-max): The checks that pierce the Performance Max black box — brand spend, tracking, placements — ranked by impact.
 - [CBO vs ABO vs Advantage+: which budget model in 2026?](https://adgent.app/cbo-vs-abo-vs-advantage-plus): A three-way comparison of Meta budget models and a decision guide for which to use when.
 - [Can AI run your ad account? What it can and cannot do](https://adgent.app/can-ai-run-your-ad-account): The honest take on AI ad management — what it automates well, and why the last click should stay human.
