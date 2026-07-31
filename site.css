@@ -841,3 +841,45 @@ html:not(.js) .chat-step { opacity: 1; transform: none; }
 .lang-switch a.on { color: var(--accent-on); background: var(--accent); }
 .lang-switch .sep { width: 1px; align-self: stretch; background: var(--border-default); }
 .footer .lang-switch { margin-top: 16px; }
+
+/* ═══════════════════════════════════════════════════════════
+   Audience pages — /for-agencies and /for-in-house
+   ═══════════════════════════════════════════════════════════ */
+
+/* two-lens comparison ("the trap") */
+.two-lens{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.8vw,20px);
+  margin:clamp(18px,2.6vh,30px) 0 clamp(14px,2vh,22px);}
+.lens{border:1px solid var(--border);background:var(--bg-card);border-radius:var(--r-lg);
+  padding:clamp(16px,2vw,24px);display:flex;flex-direction:column;gap:9px;box-shadow:var(--shadow-soft);}
+.lens.lens-us{border-color:var(--accent);box-shadow:var(--shadow-card);}
+.lens-cap{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;
+  color:var(--text-3);margin:0;}
+.lens.lens-us .lens-cap{color:var(--accent);}
+.lens-num{font-family:var(--font-editorial);font-weight:500;font-size:clamp(34px,5vw,52px);
+  line-height:1;letter-spacing:-.02em;margin:0;font-variant-numeric:tabular-nums;}
+.lens-num.good{color:var(--ok);}
+.lens-num.bad{color:var(--crit);}
+.lens-sub{font-family:var(--font-mono);font-size:12px;color:var(--text-3);margin:0;letter-spacing:.02em;}
+.lens-verdict{font-size:16px;font-weight:650;letter-spacing:-.01em;color:var(--text);margin:0;}
+.lens.lens-us .lens-verdict{color:var(--accent);}
+.lens-note{font-size:13px;line-height:1.5;color:var(--text-2);margin:0;}
+.lens-kicker{font-size:15px;line-height:1.6;color:var(--text);max-width:80ch;margin-top:6px;}
+.lens-kicker strong{color:var(--accent);}
+
+/* product cards used on the audience pages */
+.pcard{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r-lg);
+  padding:clamp(16px,2vw,24px);box-shadow:var(--shadow-soft);display:flex;flex-direction:column;gap:9px;}
+.pcard h3{font-size:16px;font-weight:650;letter-spacing:-.01em;color:var(--text);margin:0;}
+.pcard p{font-size:13.5px;line-height:1.55;color:var(--text-2);margin:0;}
+.pcard-n{font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;color:var(--text-3);margin:0;}
+
+@media (max-width:860px){
+  .two-lens{grid-template-columns:1fr;}
+}
+
+/* simple responsive grids for the audience pages */
+.grid{display:grid;gap:clamp(12px,1.8vw,20px);margin-top:clamp(16px,2.4vh,26px);}
+.grid.g3{grid-template-columns:repeat(3,1fr);}
+.grid.g2{grid-template-columns:repeat(2,1fr);}
+@media (max-width:900px){.grid.g3{grid-template-columns:1fr 1fr;}}
+@media (max-width:640px){.grid.g3,.grid.g2{grid-template-columns:1fr;}}
