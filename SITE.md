@@ -13,22 +13,32 @@
 
 **Feed both on every change.** They are not linked; nothing syncs them automatically.
 
-## sync-chrome.py — the fix for the duplication
+## build.py — the build step
 
 ```bash
-python3 sync-chrome.py --check   # report drift, change nothing
-python3 sync-chrome.py           # rewrite every page from index.html, regenerate sitemap.xml
+python3 build.py --check   # fail if any page is stale — run before deploy
+python3 build.py           # regenerate every page + sitemap.xml
 ```
 
-`index.html` and `tr/index.html` are the **source of truth** for the shared blocks. The script
-copies their nav, mobile menu and footer into every other page, and preserves each page's own
-`class="active"` on the current nav item — that part *should* differ.
+**`_partials/` is the source of truth**, not any page:
 
-It also **generates `sitemap.xml` from the files on disk**, so a new page can never be left out.
-`blog-post.html` is skipped: it is a deliberate `noindex` redirect stub.
+```
+_partials/header.en.html   _partials/header.tr.html
+_partials/mobile.en.html   _partials/mobile.tr.html
+_partials/footer.en.html   _partials/footer.tr.html
+```
 
-**Run it after** touching the nav, the footer, the brand line, or adding/removing a page. Then
-copy the whole site to the mirror.
+Pages carry markers instead of copies, so the block is regenerated rather than hand-maintained:
+
+```html
+<!--#header-->  ...regenerated, do not edit...  <!--/#header-->
+```
+
+`class="active"` on the current nav item is re-applied per page from its filename. Never hand-edit
+it. `sitemap.xml` is generated from the files on disk and **excludes any page carrying `noindex`**,
+so it can never contradict the robots meta tag.
+
+**Run it after** editing `_partials/`, or adding/removing a page. Then copy to the mirror.
 
 ## What this was fixing — measured 2026-08-01
 
@@ -61,8 +71,16 @@ redirect stub and correctly `noindex`.
 4. `class="active"` is per-page and the script keeps it — do not strip it.
 5. New page → create it, run the script, copy to the mirror.
 
-## If the site ever gets a build step
+## Search Console
 
-The right long-term fix is a template engine or a static-site generator, which removes the
-duplication instead of policing it. Until then this script is the guard rail — it is not a
-substitute for one.
+Verification is by **DNS TXT record** (`google-site-verification=2PYObJ...` on `adgent.app`), so
+nothing in the HTML affects it — a broken header cannot un-verify the property.
+
+What *did* affect indexing: **24 pages were missing from the sitemap**, and the sitemap listed 21
+`noindex` TR pages, telling Google to crawl pages it was simultaneously told not to index. Both
+are fixed — the sitemap is generated and skips `noindex` pages. It went 39 → 63 → **42 urls**, the
+last drop being the `noindex` exclusion.
+
+**TR indexing is deliberate:** `tr/index`, `about`, `pricing`, `privacy`, `terms`, `security` and
+`data-use` are indexed; the translated blog/SEO articles carry `noindex, nofollow`. If that should
+change, remove the meta tag and rebuild — the sitemap follows automatically.
