@@ -191,7 +191,13 @@
     function current() { return Math.round(track.scrollLeft / pageWidth()); }
     function goTo(i) {
       i = Math.max(0, Math.min(pageCount() - 1, i));
-      track.scrollTo({ left: i * pageWidth(), behavior: reduce ? 'auto' : 'smooth' });
+      if (pin) {
+        // pinned mode: scroll the page, the pin handler moves the track
+        var s = pinStart();
+        window.scrollTo({ top: s + (i / Math.max(1, pageCount() - 1)) * spacer.offsetHeight, behavior: reduce ? 'auto' : 'smooth' });
+      } else {
+        track.scrollTo({ left: i * pageWidth(), behavior: reduce ? 'auto' : 'smooth' });
+      }
     }
     function sync() {
       var cur = current();
@@ -209,8 +215,49 @@
     });
     var rt;
     window.addEventListener('resize', function () {
-      clearTimeout(rt); rt = setTimeout(function () { buildDots(); sync(); }, 150);
+      clearTimeout(rt); rt = setTimeout(function () { layout(); buildDots(); sync(); }, 150);
     });
+    /* --- pinned scroll: vertical page scroll drives the track sideways --- */
+    var pinSection = d.querySelector('[data-builds-pin]');
+    var spacer = d.querySelector('[data-builds-spacer]');
+    var sticky = pinSection && pinSection.querySelector('.builds-sticky');
+    // needs a real overflow to be worth pinning; skip on touch/reduced-motion
+    // (there a native swipe is better than hijacking the page scroll)
+    var coarse = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+    var pin = !!(pinSection && spacer && sticky) && !reduce && !coarse;
+
+    function overflow() { return track.scrollWidth - track.clientWidth; }
+    // rect-based, so a positioned ancestor can't throw the offset off
+    function pinStart() { return pinSection.getBoundingClientRect().top + window.pageYOffset; }
+
+    function layout() {
+      if (!pin) { if (spacer) spacer.style.height = '0px'; return; }
+      // spacer = how much page scroll the pin consumes. 1:1 with the track
+      // overflow so the pinned feel matches the distance travelled.
+      spacer.style.height = Math.max(0, overflow()) + 'px';
+    }
+
+    function onPinScroll() {
+      if (!pin) return;
+      var range = spacer.offsetHeight;
+      if (range <= 0) return;
+      var p = (window.pageYOffset - pinStart()) / range;
+      track.scrollLeft = Math.max(0, Math.min(1, p)) * overflow();
+    }
+
+    if (pin) {
+      // scroll-snap fights the programmatic scrollLeft — drop it while pinned
+      track.style.scrollSnapType = 'none';
+      track.style.scrollBehavior = 'auto';
+      track.style.overflowX = 'hidden';
+      window.addEventListener('scroll', function () {
+        if (ticking) return; ticking = true;
+        requestAnimationFrame(function () { onPinScroll(); sync(); ticking = false; });
+      }, { passive: true });
+      layout();
+      onPinScroll();
+    }
+
     buildDots();
     sync();
   })();

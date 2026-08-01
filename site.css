@@ -230,6 +230,14 @@ body.menu-open { overflow: hidden; }
 .co-narr b { color: var(--text); font-weight: 600; }
 
 /* ============ BUILT FROM CHAT — product screenshots ============ */
+/* pinned section: vertical scroll drives the track horizontally.
+   Spacer height is set by JS from the real track overflow; without JS the
+   section is a plain scroll-snap slider (spacer stays 0). */
+.builds-pin { padding-top: 0; padding-bottom: 0; }
+.builds-sticky { position: sticky; top: 0; padding: 88px 0; }
+.builds-spacer { height: 0; }
+@media (max-width: 640px) { .builds-sticky { padding: 64px 0; } }
+
 /* slider shell */
 .builds-slider { margin-top: 44px; position: relative; }
 .builds {
