@@ -36,6 +36,31 @@ write = lambda p, s: io.open(p, "w", encoding="utf-8").write(s)
 partial = lambda b, l: read(os.path.join(PARTIALS, f"{b}.{l}.html")).rstrip()
 
 
+def with_lang_switch(html, slug, lang):
+    """Point EN<->TR at the same page, not always at the homepage.
+
+    The switch lives in the shared header/mobile partials, so it used to be a
+    hardcoded "/" and "/tr/": on /pricing, clicking TR dropped you on the
+    Turkish homepage. Here we know the slug, so we can aim at the twin — but
+    only when the twin actually exists on disk, otherwise the homepage is
+    still the honest fallback.
+    """
+    en = "/" if slug == "index" else f"/{slug}"
+    tr = "/tr/" if slug == "index" else f"/tr/{slug}"
+    if not os.path.exists(os.path.join(ROOT, "index.html" if slug == "index" else f"{slug}.html")):
+        en = "/"
+    if not os.path.exists(os.path.join(ROOT, "tr", f"{slug}.html")):
+        tr = "/tr/"
+    on_en, on_tr = (' class="on"', "") if lang == "en" else ("", ' class="on"')
+    hre_en = "" if lang == "en" else ' hreflang="en"'
+    hre_tr = ' hreflang="tr"' if lang == "en" else ""
+    return re.sub(
+        r'<div class="lang-switch">.*?</div>',
+        '<div class="lang-switch"><a href="%s"%s%s>EN</a><span class="sep"></span>'
+        '<a href="%s"%s%s>TR</a></div>' % (en, on_en, hre_en, tr, on_tr, hre_tr),
+        html, flags=re.S)
+
+
 def with_active(html, slug, lang):
     if slug in SKIP or (slug != "index" and slug not in NAV_SLUGS):
         return html
@@ -48,6 +73,7 @@ def with_active(html, slug, lang):
 def render(html, slug, lang):
     for block in BLOCKS:
         body = with_active(partial(block, lang), slug, lang)
+        body = with_lang_switch(body, slug, lang)
         repl = f"<!--#{block}-->{body}<!--/#{block}-->"
         marked = re.compile(r"<!--#%s-->.*?<!--/#%s-->" % (block, block), re.S)
         if marked.search(html):
@@ -121,6 +147,42 @@ def sitemap(check_only=False):
     return 0
 
 
+def audit():
+    """Head-level invariants the partials can't enforce.
+
+    render() owns the header/mobile/footer; <head> is per-page and therefore
+    drifts. These three all shipped to production at least once.
+    """
+    problems = []
+    for path, slug, lang in pages():
+        if slug in SKIP:
+            continue
+        rel, html = os.path.relpath(path, ROOT), read(path)
+        twin = os.path.join(ROOT, "tr", f"{slug}.html") if lang == "en" else \
+               os.path.join(ROOT, f"{slug}.html")
+        # only <head> counts — the nav's lang-switch <a hreflang="tr"> is a link
+        # hint, not a declaration that a translation exists
+        head = html.split("</head>", 1)[0]
+
+        # 1. an English-only page must not claim a Turkish translation
+        if lang == "en" and not os.path.exists(twin) and \
+                re.search(r'<link rel="alternate"[^>]*hreflang="tr"', head):
+            problems.append(f"{rel}: claims hreflang=tr but tr/{slug}.html does not exist")
+
+        # 2. the page's own language must match its <html lang>
+        m = re.search(r'<html lang="([a-z-]+)"', html)
+        if m and m.group(1) != lang:
+            problems.append(f'{rel}: <html lang="{m.group(1)}"> on a {lang} page')
+
+        # 3. canonical must be self-referencing, not another page
+        want = ("https://adgent.app/" if lang == "en" else "https://adgent.app/tr/") if slug == "index" \
+               else (f"https://adgent.app/{slug}" if lang == "en" else f"https://adgent.app/tr/{slug}")
+        m = re.search(r'<link rel="canonical" href="([^"]+)"', html)
+        if m and m.group(1) != want:
+            problems.append(f"{rel}: canonical -> {m.group(1)}, expected {want}")
+    return problems
+
+
 def main():
     check = "--check" in sys.argv
     stale, wrote = [], 0
@@ -141,11 +203,18 @@ def main():
         else:
             print("OK — every page matches _partials/.")
         rc |= sitemap(check_only=True)
-        if rc == 0:
-            print("OK — sitemap current.")
     else:
         print("built %d page(s)" % wrote)
         sitemap()
+    bad = audit()
+    if bad:
+        print("HEAD PROBLEMS — %d:" % len(bad))
+        for b in bad[:20]:
+            print("   ", b)
+        rc = 1
+    elif check and rc == 0:
+        print("OK — sitemap current.")
+        print("OK — heads consistent (lang, canonical, hreflang).")
     return rc
 
 
