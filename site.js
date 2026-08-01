@@ -97,7 +97,9 @@
     /* close when a menu link is tapped, or on resize back to desktop */
     var mm = d.querySelector('.mobile-menu');
     if (mm) mm.addEventListener('click', function (e) { if (e.target.closest('a')) closeMenu(); });
-    window.addEventListener('resize', function () { if (window.innerWidth > 640) closeMenu(); });
+    /* must match the CSS breakpoint that shows .nav-burger, or the drawer
+       closes itself at widths where it's still the only nav */
+    window.addEventListener('resize', function () { if (window.innerWidth > 920) closeMenu(); });
     d.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
   }
 

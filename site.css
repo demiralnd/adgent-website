@@ -734,12 +734,16 @@ body.menu-open { overflow: hidden; }
   .split, .steps, .feat-grid, .stats, .foot-grid, .creative-grid { grid-template-columns: 1fr 1fr; }
   .feat-wide { grid-column: span 2; }
 }
-@media (max-width: 640px) {
-  .wrap { padding: 0 20px; }
+/* The hero stacks at 920px but the nav used to hold on until 640px, so between
+   641 and 920 the full nav sat in a narrow bar. Switch to the drawer with the
+   layout, not 280px later — the dropdown needs the room most. */
+@media (max-width: 920px) {
   .nav-links, .nav-login { display: none; }
-  /* on mobile the top bar shows only logo + burger; switcher & CTA live in the drawer */
   .nav-right > .lang-switch, .nav-right > .btn { display: none; }
   .nav-burger { display: inline-flex; }
+}
+@media (max-width: 640px) {
+  .wrap { padding: 0 20px; }
   .hero { padding: 56px 0 48px; }
   .band { padding: 56px 0; }
   .split, .steps, .feat-grid, .stats, .foot-grid, .co-kpis, .creative-grid { grid-template-columns: 1fr; }
