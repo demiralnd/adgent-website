@@ -198,7 +198,7 @@ body.menu-open { overflow: hidden; }
 }
 .hero h1 {
   font-weight: 800;
-  font-size: clamp(36px, 3.9vw, 52px);
+  font-size: clamp(34px, 3.4vw, 46px);
   line-height: 1.06;
   letter-spacing: -0.04em;
   margin: 10px 0 0;
