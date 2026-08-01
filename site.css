@@ -97,10 +97,13 @@ section { position: relative; z-index: 1; }
   transition: transform 160ms var(--ease), opacity 160ms;
 }
 .nav-drop:hover .caret, .nav-drop.open .caret { opacity: 1; transform: rotate(180deg); }
+.nav-links .nav-drop:hover > .nav-drop-t, .nav-links .nav-drop.open > .nav-drop-t {
+  color: var(--text); background: var(--bg-hover);
+}
 .nav-menu {
   position: absolute; top: calc(100% + 8px); left: 0; z-index: 60;
-  min-width: 288px; padding: 6px;
-  background: var(--bg); border: 1px solid var(--line); border-radius: var(--r-md);
+  min-width: 288px; padding: 7px;
+  background: var(--bg-elevated); border: 1px solid var(--border); border-radius: var(--r-md);
   box-shadow: 0 12px 32px rgba(0,0,0,0.10), 0 2px 6px rgba(0,0,0,0.05);
   opacity: 0; visibility: hidden; transform: translateY(-4px);
   transition: opacity 150ms var(--ease), transform 150ms var(--ease), visibility 150ms;
@@ -108,11 +111,12 @@ section { position: relative; z-index: 1; }
 .nav-drop:hover .nav-menu, .nav-drop:focus-within .nav-menu, .nav-drop.open .nav-menu {
   opacity: 1; visibility: visible; transform: translateY(0);
 }
-.nav-menu a {
-  display: block; padding: 9px 11px; border-radius: var(--r-sm);
+.nav-links .nav-menu a {
+  display: block; padding: 10px 12px; border-radius: var(--r-sm);
   font-weight: 500; color: var(--text);
 }
-.nav-menu .nm-t { display: block; font-size: 14px; }
+.nav-links .nav-menu a + a { margin-top: 2px; }
+.nav-menu .nm-t { display: block; font-size: 14px; font-weight: 600; }
 .nav-menu .nm-d { display: block; font-size: 12.5px; color: var(--text-2); margin-top: 2px; line-height: 1.35; }
 .nav-menu a:hover .nm-d { color: var(--text-2); }
 .nav-right { margin-left: auto; display: flex; align-items: center; gap: 8px; }
