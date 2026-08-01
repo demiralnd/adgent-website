@@ -546,6 +546,58 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- WHY ADGENT — the empty quadrant / five-at-once matrix -->
+<!-- GROUND-TRUTH ZONE: the two-verdict trap -->
+<section class="band" id="ground-truth">
+ <div class="wrap">
+ <div class="sec-head" data-reveal>
+ <span class="eyebrow"><span class="tick"></span>The blind spot</span>
+ <h2 class="sec-title">The platform can't see the number that <em>decides</em> it.</h2>
+ <p class="sec-sub">An ad platform optimizes toward what its pixel can measure — impressions, clicks, conversions. It has no access to cost of goods, contribution margin or what a customer is worth on the second order. So on the same campaign, it can only ever reach one verdict.</p>
+ </div>
+
+ <div class="gt-trap" data-reveal>
+ <div class="gt-lens gt-above">
+ <div class="gt-lens-h">
+ <span class="gt-tag">Platform lens</span>
+ <span class="gt-what">What the pixel measures</span>
+ </div>
+ <div class="gt-metric"><b>ROAS 3.2×</b><span class="gt-ok">healthy</span></div>
+ <p class="gt-said">Conversions are up and return on ad spend is above target.</p>
+ <div class="gt-verdict gt-verdict-scale">Verdict: <b>scale it</b></div>
+ </div>
+
+ <div class="gt-line" aria-hidden="true"><span>the revenue line</span></div>
+
+ <div class="gt-lens gt-below">
+ <div class="gt-lens-h">
+ <span class="gt-tag gt-tag-us">Ground truth</span>
+ <span class="gt-what">What your business knows</span>
+ </div>
+ <div class="gt-metric"><b>Margin negative</b><span class="gt-bad">on this cohort</span></div>
+ <p class="gt-said">The volume is discount-driven. Thin contribution per order, and these buyers rarely come back.</p>
+ <div class="gt-verdict gt-verdict-stop">Verdict: <b>stop</b></div>
+ </div>
+ </div>
+
+ <p class="gt-kicker" data-reveal>Same campaign. Two verdicts. Only one of them is looking at your profit — and it isn't the one spending your budget.</p>
+
+ <div class="gt-points" data-stagger>
+ <div class="gt-point">
+ <div class="gt-point-t">Reconciled against your own revenue</div>
+ <p>Adgent reads GA4, Shopify and Search Console alongside the ad platforms, so a report reflects money that actually landed — not what the pixel claimed.</p>
+ </div>
+ <div class="gt-point">
+ <div class="gt-point-t">A structural gap, not a feature gap</div>
+ <p>No optimizer built inside an ad platform can grade its own spend against your margin. It doesn't have the data, and it isn't neutral about the answer.</p>
+ </div>
+ <div class="gt-point">
+ <div class="gt-point-t">Judgment, not just another chart</div>
+ <p>Analysis tells you what happened. Adgent takes the position — what to do about it — and remembers the calls you've already made on this brand.</p>
+ </div>
+ </div>
+ </div>
+</section>
+
 <section class="band" id="why-adgent">
  <div class="wrap">
  <div class="sec-head" data-reveal>
@@ -578,12 +630,71 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- ROI MATH -->
-<section class="band band-sub">
+<section class="band band-sub" id="math">
  <div class="wrap">
  <div class="sec-head" data-reveal>
  <span class="eyebrow"><span class="tick"></span>The math</span>
  <h2 class="sec-title">It pays for itself in the <em>first</em> audit.</h2>
- <p class="sec-sub">The question isn't whether Adgent is worth it. It's how much you're leaving on the table without it.</p>
+ <p class="sec-sub">The question isn't whether Adgent is worth it. It's how much you're leaving on the table without it — so here is the arithmetic, on your own spend.</p>
+ </div>
+
+ <div class="math-wrap" data-reveal>
+ <div class="math-calc">
+ <div class="math-input">
+ <label for="math-spend">Your monthly ad spend</label>
+ <div class="math-field">
+ <span class="math-cur">₺</span>
+ <input id="math-spend" type="range" min="50000" max="2000000" step="10000" value="250000" data-math-spend aria-describedby="math-spend-out">
+ </div>
+ <output id="math-spend-out" class="math-spend-out" data-math-spend-out>₺250,000<span>/mo</span></output>
+ </div>
+
+ <div class="math-rows">
+ <div class="math-row">
+ <div class="math-row-l">
+ <div class="math-row-t">Placement leak</div>
+ <div class="math-row-s">Spend landing where it underperforms feed</div>
+ </div>
+ <div class="math-row-r"><b data-math-leak>₺11,250</b><span>/mo</span></div>
+ </div>
+ <div class="math-row">
+ <div class="math-row-l">
+ <div class="math-row-t">Creative fatigue</div>
+ <div class="math-row-s">Spend on ads past their efficient life</div>
+ </div>
+ <div class="math-row-r"><b data-math-fatigue>₺7,500</b><span>/mo</span></div>
+ </div>
+ <div class="math-row">
+ <div class="math-row-l">
+ <div class="math-row-t">Structure &amp; overlap</div>
+ <div class="math-row-s">Audiences bidding against each other</div>
+ </div>
+ <div class="math-row-r"><b data-math-overlap>₺5,000</b><span>/mo</span></div>
+ </div>
+ <div class="math-row math-total">
+ <div class="math-row-l">
+ <div class="math-row-t">Recoverable, first audit</div>
+ <div class="math-row-s">Found before Adgent changes anything</div>
+ </div>
+ <div class="math-row-r"><b data-math-total>₺23,750</b><span>/mo</span></div>
+ </div>
+ </div>
+
+ <p class="math-foot">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+ Modelled at <b>9.5%</b> of spend — the midpoint of what first audits surface across the accounts we've run. Yours will differ; Adgent shows you the real figure, line by line, with a link to verify each one in Ads Manager.
+ </p>
+ </div>
+
+ <aside class="math-aside">
+ <div class="math-aside-t">Why the leak is never zero</div>
+ <p>Nobody is careless. The waste accrues because accounts change daily and nobody re-audits daily — placements drift, creatives age, audiences start overlapping as you add campaigns.</p>
+ <p>A quarterly audit catches it a quarter late. That gap, every month, is the number above.</p>
+ <div class="math-aside-cut">
+ <span>Adgent re-audits</span>
+ <b>every night</b>
+ </div>
+ </aside>
  </div>
  </div>
 </section>

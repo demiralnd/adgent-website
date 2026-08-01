@@ -158,6 +158,36 @@
     });
   });
 
+  /* ---- the math: spend slider → recoverable leak ---- */
+  (function () {
+    var input = d.querySelector('[data-math-spend]');
+    if (!input) return;
+    var out = d.querySelector('[data-math-spend-out]');
+    // shares must total the 9.5% quoted in the section footnote
+    var SHARES = [
+      ['[data-math-leak]', 0.045],
+      ['[data-math-fatigue]', 0.030],
+      ['[data-math-overlap]', 0.020]
+    ];
+    var total = d.querySelector('[data-math-total]');
+    var fmt = new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 });
+
+    function render() {
+      var spend = +input.value;
+      if (out) out.innerHTML = '₺' + fmt.format(spend) + '<span>/mo</span>';
+      var sum = 0;
+      SHARES.forEach(function (s) {
+        var el = d.querySelector(s[0]);
+        var v = Math.round(spend * s[1]);
+        sum += v;
+        if (el) el.textContent = '₺' + fmt.format(v);
+      });
+      if (total) total.textContent = '₺' + fmt.format(sum);
+    }
+    input.addEventListener('input', render);
+    render();
+  })();
+
   /* ---- builds slider: scroll-snap track + dots + arrows ---- */
   (function () {
     var track = d.querySelector('[data-builds-track]');
@@ -230,11 +260,13 @@
     // rect-based, so a positioned ancestor can't throw the offset off
     function pinStart() { return pinSection.getBoundingClientRect().top + window.pageYOffset; }
 
+    // page scroll per pixel of track travel. >1 slows the cards down so each
+    // one gets read; at 1:1 four cards flick past in about one screen.
+    var PIN_PACE = 2.2;
+
     function layout() {
       if (!pin) { if (spacer) spacer.style.height = '0px'; return; }
-      // spacer = how much page scroll the pin consumes. 1:1 with the track
-      // overflow so the pinned feel matches the distance travelled.
-      spacer.style.height = Math.max(0, overflow()) + 'px';
+      spacer.style.height = Math.max(0, overflow() * PIN_PACE) + 'px';
     }
 
     function onPinScroll() {
