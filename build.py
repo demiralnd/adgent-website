@@ -180,6 +180,13 @@ def audit():
         m = re.search(r'<link rel="canonical" href="([^"]+)"', html)
         if m and m.group(1) != want:
             problems.append(f"{rel}: canonical -> {m.group(1)}, expected {want}")
+
+        # 4. a find-and-replace once ate the parens off these calls, which is a
+        #    syntax error — the whole inline block throws and analytics records
+        #    nothing. It shipped twice: 21 TR pages, then the EN homepage.
+        for broken in ("function gtag{", "new Date.getTime", "new Date)", "new Date;"):
+            if broken in html:
+                problems.append(f"{rel}: broken analytics JS — {broken!r}")
     return problems
 
 
