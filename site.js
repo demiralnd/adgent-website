@@ -306,7 +306,7 @@
 
     // page scroll per pixel of track travel. >1 slows the cards down so each
     // one gets read; at 1:1 four cards flick past in about one screen.
-    var PIN_PACE = 2.2;
+    var PIN_PACE = 1.15;
 
     function layout() {
       if (!pin) { if (spacer) spacer.style.height = '0px'; return; }

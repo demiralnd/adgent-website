@@ -34,6 +34,9 @@ body::before {
 
 /* ---------- layout ---------- */
 .wrap { max-width: 1200px; margin: 0 auto; padding: 0 32px; position: relative; z-index: 1; }
+/* nothing on the page should push the document wider than the viewport;
+   sections that animate or transform children can otherwise leak a few px */
+html, body { overflow-x: clip; max-width: 100%; }
 .lane { max-width: 760px; }
 section { position: relative; z-index: 1; }
 
@@ -508,19 +511,31 @@ body.menu-open { overflow: hidden; }
 .stack3d { display: grid; grid-template-columns: 1.02fr 1fr; gap: 40px; margin-top: 44px; align-items: stretch; }
 
 /* --- the 3D scene --- */
+/* The deck is sized FROM the scene, never the other way round: --s is a
+   single scale knob and every plate offset is a multiple of it, so the
+   stack cannot outgrow its box at any viewport height. */
 .s3-scene {
-  position: relative; min-height: 470px; border-radius: var(--r-xl);
+  --s: 1;
+  --gap: calc(42px * var(--s));   /* vertical space between plates */
+  --brk: calc(22px * var(--s));   /* extra break at the audit ceiling */
+  position: relative; aspect-ratio: 5 / 4; min-height: 0; border-radius: var(--r-xl);
   background: radial-gradient(120% 90% at 42% 34%, var(--bg-card) 0%, var(--bg-sub) 58%, var(--bg-inset) 100%);
   border: 1px solid var(--border); overflow: hidden;
-  perspective: 1500px; perspective-origin: 46% 40%;
+  perspective: 1500px; perspective-origin: 50% 42%;
+  container-type: inline-size;
 }
 .s3-deck {
-  position: absolute; left: 44%; top: 54%; width: 236px; height: 120px;
+  position: absolute; left: 50%; top: 50%;
+  width: calc(236px * var(--s)); height: calc(120px * var(--s));
   transform-style: preserve-3d;
-  transform: translate(-50%, -50%) rotateX(58deg) rotateZ(-42deg) scale(0.9);
+  /* pull the deck down by half its own stacked height so it stays centred
+     no matter how many plates there are */
+  transform: translate(-50%, calc(-50% + (var(--gap) * 3) + var(--brk))) rotateX(58deg) rotateZ(-42deg);
 }
 .s3-plate {
   position: absolute; inset: 0; transform-style: preserve-3d;
+  /* offset = index * gap, plus the ceiling break for L3 and above */
+  --z: calc(var(--i) * var(--gap));
   transform: translateZ(var(--z));
   transition: transform 420ms var(--ease);
 }
@@ -540,7 +555,7 @@ body.menu-open { overflow: hidden; }
 /* extruded side */
 .s3-edge {
   position: absolute; inset: 0; border-radius: 13px;
-  background: var(--edge); transform: translateZ(-13px); filter: brightness(0.62);
+  background: var(--edge); transform: translateZ(calc(-13px * var(--s))); filter: brightness(0.62);
 }
 .s3-l {
   font-family: var(--font-mono); font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em;
@@ -556,7 +571,8 @@ body.menu-open { overflow: hidden; }
 .s3-plate[data-i="6"] { --face2: #ff7a52; --edge: #ec491d; }
 
 /* hover / active lift */
-.s3-plate.on { transform: translateZ(var(--z)) translate3d(-14px, -14px, 0); }
+.s3-plate[data-tier="moat"] { --z: calc(var(--i) * var(--gap) + var(--brk)); }
+.s3-plate.on { transform: translateZ(var(--z)) translate3d(calc(-13px * var(--s)), calc(-13px * var(--s)), 0); }
 .s3-plate.on .s3-face { box-shadow: 0 26px 44px -18px rgba(28,25,20,0.7), 0 0 0 2.5px #fff inset; }
 
 /* zone captions */
@@ -569,8 +585,9 @@ body.menu-open { overflow: hidden; }
 .s3-zone-comm { bottom: 16px; color: var(--text-3); }
 
 /* the ceiling rule */
+/* sits at the break between L2 and L3 — nudged with the deck, not a fixed % */
 .s3-ceiling {
-  position: absolute; left: 0; right: 0; top: 50%; z-index: 1; pointer-events: none;
+  position: absolute; left: 0; right: 0; top: 62%; z-index: 1; pointer-events: none;
   border-top: 1px dashed var(--border-2);
 }
 .s3-ceiling span {
@@ -608,13 +625,10 @@ body.menu-open { overflow: hidden; }
 
 @media (max-width: 980px) {
   .stack3d { grid-template-columns: 1fr; gap: 24px; }
-  .s3-scene { min-height: 400px; }
-  .s3-deck { left: 50%; top: 60%; transform: translate(-50%, -50%) rotateX(56deg) rotateZ(-42deg) scale(0.7); }
+  .s3-scene { aspect-ratio: 4 / 3; --s: 0.8; }
 }
 @media (max-width: 560px) {
-  .s3-scene { min-height: 400px; }
-  .s3-deck { left: 50%; top: 70%; transform: translate(-50%, -50%) rotateX(56deg) rotateZ(-42deg) scale(0.46); }
-  /* captions move to the corners at this size — no room beside the deck */
+  .s3-scene { aspect-ratio: 1 / 1; --s: 0.56; }
   .s3-zone { max-width: 96px; font-size: 8px; right: 10px; }
   .s3-zone-moat { top: 10px; }
   .s3-zone-comm { bottom: 10px; }
