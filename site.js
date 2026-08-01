@@ -262,6 +262,32 @@
       timer = setInterval(function () { select((cur + 1) % plates.length); }, 2600);
     }
 
+    // Reserve the tallest row's height once, so opening any row can never
+    // change the column height and reflow the grid.
+    function lockHeight() {
+      var list = wrap.querySelector('[data-stack-list]');
+      if (!list) return;
+      var prev = list.style.minHeight;
+      list.style.minHeight = '';
+      // measure with the collapse transition off, or we capture mid-flight
+      list.style.transition = 'none';
+      // total = every row closed, plus the largest single expansion
+      var closed = 0, grow = 0;
+      rows.forEach(function (r) { closed += r.getBoundingClientRect().height; });
+      closed += 6 * (rows.length - 1);   // flex gap
+      rows.forEach(function (r) {
+        var body = r.querySelector('.s3-li-body > div');
+        if (body) grow = Math.max(grow, body.scrollHeight);
+      });
+      var max = closed + grow;
+      list.style.transition = '';
+      list.style.minHeight = max ? Math.ceil(max) + 'px' : prev;
+    }
+    // fonts change line counts, so lock after they resolve
+    if (d.fonts && d.fonts.ready) { d.fonts.ready.then(lockHeight); } else { lockHeight(); }
+    window.addEventListener('resize', function () { clearTimeout(lockT); lockT = setTimeout(lockHeight, 200); });
+    var lockT;
+
     select(DEFAULT);
     if (hasIO && !reduce) {
       new IntersectionObserver(function (es) {
