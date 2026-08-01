@@ -2,7 +2,7 @@
 
 > The AI analyst for performance marketers. Adgent is an AI media buyer that reads Meta, Google and TikTok accounts as one, reasons about account structure, delivers a verdict-first daily brief on the Aware -> Ask -> Apply loop, and executes fixes on the advertiser's approval. Read-only by default; never an autonomous spender.
 
-Full readable text of every page on adgent.app, for AI answer engines. Turkish versions live under /tr/.
+Full readable text of every page on adgent.app, for AI answer engines.
 
 
 ========================================================================

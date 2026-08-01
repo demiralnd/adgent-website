@@ -148,7 +148,6 @@ section { position: relative; z-index: 1; }
 .mobile-menu a:last-of-type { border-bottom: none; }
 .mobile-menu a.mm-sub { padding-left: 26px; font-size: 15px; font-weight: 500; color: var(--text-2); }
 .mobile-menu a:hover, .mobile-menu a:active { background: var(--bg-hover); }
-.mobile-menu .mm-lang { display: flex; gap: 0; margin-top: 12px; align-self: flex-start; }
 .mobile-menu .mm-cta { margin-top: 14px; }
 body.menu-open { overflow: hidden; }
 
@@ -739,7 +738,7 @@ body.menu-open { overflow: hidden; }
    layout, not 280px later — the dropdown needs the room most. */
 @media (max-width: 920px) {
   .nav-links, .nav-login { display: none; }
-  .nav-right > .lang-switch, .nav-right > .btn { display: none; }
+  .nav-right > .btn { display: none; }
   .nav-burger { display: inline-flex; }
 }
 @media (max-width: 640px) {
@@ -871,12 +870,6 @@ html:not(.js) .chat-step { opacity: 1; transform: none; }
 /* ============================================================
    Language switcher (EN ⇄ TR)
    ============================================================ */
-.lang-switch { display: inline-flex; align-items: center; border: 1px solid var(--border-default); border-radius: var(--radius-pill); overflow: hidden; height: 32px; font-family: var(--font-mono); font-size: 11.5px; font-weight: 600; letter-spacing: 0.04em; }
-.lang-switch a { display: inline-flex; align-items: center; padding: 0 11px; height: 100%; color: var(--text-tertiary); transition: color 120ms, background 120ms; }
-.lang-switch a:hover { color: var(--text-primary); background: var(--bg-hover); }
-.lang-switch a.on { color: var(--accent-on); background: var(--accent); }
-.lang-switch .sep { width: 1px; align-self: stretch; background: var(--border-default); }
-.footer .lang-switch { margin-top: 16px; }
 
 /* ═══════════════════════════════════════════════════════════
    Audience pages — /for-agencies and /for-in-house

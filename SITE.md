@@ -23,9 +23,9 @@ python3 build.py           # regenerate every page + sitemap.xml
 **`_partials/` is the source of truth**, not any page:
 
 ```
-_partials/header.en.html   _partials/header.tr.html
-_partials/mobile.en.html   _partials/mobile.tr.html
-_partials/footer.en.html   _partials/footer.tr.html
+_partials/header.en.html
+_partials/mobile.en.html
+_partials/footer.en.html
 ```
 
 Pages carry markers instead of copies, so the block is regenerated rather than hand-maintained:
@@ -64,8 +64,7 @@ redirect stub and correctly `noindex`.
 
 ## Rules
 
-1. **Never hand-edit the nav or footer in a single page.** Edit `index.html` (or `tr/index.html`),
-   then run the script.
+1. **Never hand-edit the nav or footer in a single page.** Edit `_partials/`, then run the script.
 2. **Never hand-edit `sitemap.xml`.** It is generated.
 3. **Both repos, every time.**
 4. `class="active"` is per-page and the script keeps it — do not strip it.
@@ -77,10 +76,19 @@ Verification is by **DNS TXT record** (`google-site-verification=2PYObJ...` on `
 nothing in the HTML affects it — a broken header cannot un-verify the property.
 
 What *did* affect indexing: **24 pages were missing from the sitemap**, and the sitemap listed 21
-`noindex` TR pages, telling Google to crawl pages it was simultaneously told not to index. Both
-are fixed — the sitemap is generated and skips `noindex` pages. It went 39 → 63 → **42 urls**, the
-last drop being the `noindex` exclusion.
+`noindex` pages, telling Google to crawl pages it was simultaneously told not to index. Both are
+fixed — the sitemap is generated and skips `noindex` pages.
 
-**TR indexing is deliberate:** `tr/index`, `about`, `pricing`, `privacy`, `terms`, `security` and
-`data-use` are indexed; the translated blog/SEO articles carry `noindex, nofollow`. If that should
-change, remove the meta tag and rebuild — the sitemap follows automatically.
+## The Turkish locale was removed — 2026-08-01
+
+The site is **English-only**. The `/tr/` tree (28 pages), the `.tr.html` partials and the language
+switcher are gone; `build.py` is single-locale and no page emits `hreflang` any more.
+
+**7 URLs were indexed when this happened** — `/tr/`, `/tr/pricing`, `/tr/about`, `/tr/privacy`,
+`/tr/terms`, `/tr/security`, `/tr/data-use` — and they now **404 by decision**, with no redirects.
+Expect them in Search Console's "Not found (404)" report until Google drops them; that is the
+expected outcome, not a regression. If they should instead point at the English pages, add
+`redirects` to `vercel.json` — every one of the seven has an English twin at the same slug.
+
+`build.py audit()` now fails the build if any page reintroduces an `hreflang` alternate or links
+to `/tr/`.
