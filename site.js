@@ -158,6 +158,50 @@
     });
   });
 
+  /* ---- the stack: isometric layers ↔ text column ---- */
+  (function () {
+    var wrap = d.querySelector('[data-stack]');
+    if (!wrap) return;
+    var plates = Array.prototype.slice.call(wrap.querySelectorAll('.s3-plate'));
+    var rows = Array.prototype.slice.call(wrap.querySelectorAll('[data-stack-list] li'));
+    if (!plates.length || !rows.length) return;
+
+    var DEFAULT = 4; // Judgment — the layer the section is arguing for
+    var cur = -1;
+    function select(i) {
+      if (i === cur) return;
+      cur = i;
+      plates.forEach(function (p) { p.classList.toggle('on', +p.dataset.i === i); });
+      rows.forEach(function (r) { r.classList.toggle('on', +r.dataset.i === i); });
+    }
+
+    rows.forEach(function (r) {
+      var i = +r.dataset.i;
+      r.addEventListener('mouseenter', function () { stop(); select(i); });
+      r.addEventListener('click', function () { stop(); select(i); });
+    });
+    plates.forEach(function (p) {
+      var i = +p.dataset.i;
+      p.addEventListener('mouseenter', function () { stop(); select(i); });
+      p.addEventListener('click', function () { stop(); select(i); });
+    });
+
+    // gentle autoplay so the stack shows it's interactive; first hover kills it
+    var timer = null;
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+    function play() {
+      if (reduce || timer) return;
+      timer = setInterval(function () { select((cur + 1) % plates.length); }, 2600);
+    }
+
+    select(DEFAULT);
+    if (hasIO && !reduce) {
+      new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) { play(); } else { stop(); } });
+      }, { threshold: 0.35 }).observe(wrap);
+    }
+  })();
+
   /* ---- the math: spend slider → recoverable leak ---- */
   (function () {
     var input = d.querySelector('[data-math-spend]');
