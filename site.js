@@ -158,6 +158,51 @@
     });
   });
 
+  /* ---- article reading progress bar ---- */
+  (function () {
+    var art = d.querySelector('.article');
+    if (!art) return;
+    var bar = d.createElement('div');
+    bar.className = 'readbar';
+    bar.innerHTML = '<i></i>';
+    d.body.appendChild(bar);
+    var fill = bar.firstChild;
+    var ticking = false;
+    function update() {
+      // progress across the article body only — not the nav or the footer,
+      // so the bar hits 100% when the reading actually ends
+      var r = art.getBoundingClientRect();
+      var total = r.height - window.innerHeight;
+      var p = total > 0 ? (-r.top) / total : 1;
+      fill.style.transform = 'scaleX(' + Math.max(0, Math.min(1, p)) + ')';
+    }
+    window.addEventListener('scroll', function () {
+      if (ticking) return; ticking = true;
+      requestAnimationFrame(function () { update(); ticking = false; });
+    }, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  })();
+
+  /* ---- blog listing: topic filter ---- */
+  (function () {
+    var topics = Array.prototype.slice.call(d.querySelectorAll('.topics .topic'));
+    var cards = Array.prototype.slice.call(d.querySelectorAll('.grid-posts .pcard'));
+    if (!topics.length || !cards.length) return;
+    topics.forEach(function (t) {
+      t.addEventListener('click', function (e) {
+        e.preventDefault();
+        var want = t.textContent.trim().toLowerCase();
+        topics.forEach(function (o) { o.classList.toggle('on', o === t); });
+        cards.forEach(function (c) {
+          var tag = c.querySelector('.post-tag');
+          var show = want === 'all' || (tag && tag.textContent.trim().toLowerCase() === want);
+          c.classList.toggle('hide', !show);
+        });
+      });
+    });
+  })();
+
   /* ---- the stack: isometric layers ↔ text column ---- */
   (function () {
     var wrap = d.querySelector('[data-stack]');
@@ -167,6 +212,7 @@
     if (!plates.length || !rows.length) return;
 
     var DEFAULT = 4; // Judgment — the layer the section is arguing for
+    var plateGuard = null;
     var SPREAD = 14; // px of extra Z given to plates on either side of the active one
     var cur = -1;
     var deck = wrap.querySelector('[data-stack-deck]');
@@ -184,6 +230,7 @@
         p.style.setProperty('--off', off + 'px');
       });
       rows.forEach(function (r) { r.classList.toggle('on', +r.dataset.i === i); });
+      if (plateGuard) plateGuard();
     }
 
     rows.forEach(function (r) {
@@ -192,13 +239,20 @@
       r.addEventListener('focus', function () { stop(); select(i); });
       r.addEventListener('click', function () { stop(); select(i); });
     });
-    // Plates are NOT hover targets: selecting one moves it, which can slide it
-    // out from under the pointer and re-trigger a neighbour — a feedback loop
-    // that reads as flicker. Click only; the text column drives hover.
+    // Plates move when selected, so a naive mouseenter loops: the plate slides
+    // out from under the pointer and re-triggers a neighbour. Guard it — ignore
+    // a hover that lands within a moment of the last selection, which is when
+    // plates are still travelling.
+    var lastSel = 0;
     plates.forEach(function (p) {
       var i = +p.dataset.i;
+      p.addEventListener('mouseenter', function () {
+        if (Date.now() - lastSel < 450) return;   // still animating; ignore
+        stop(); select(i);
+      });
       p.addEventListener('click', function () { stop(); select(i); });
     });
+    plateGuard = function () { lastSel = Date.now(); };
 
     // gentle autoplay so the stack shows it's interactive; first hover kills it
     var timer = null;
@@ -299,7 +353,7 @@
     var ticking = false;
     track.addEventListener('scroll', function () {
       if (ticking) return; ticking = true;
-      requestAnimationFrame(function () { sync(); ticking = false; });
+      requestAnimationFrame(function () { sync(); depth(); ticking = false; });
     });
     var rt;
     window.addEventListener('resize', function () {
@@ -327,12 +381,22 @@
       spacer.style.height = Math.max(0, overflow() * PIN_PACE) + 'px';
     }
 
+    function depth() {
+      // --p = how far this card is from the centre of the viewport, 0..1
+      var mid = track.clientWidth / 2;
+      cards.forEach(function (c) {
+        var d = Math.abs((c.offsetLeft - track.scrollLeft + c.offsetWidth / 2) - mid);
+        c.style.setProperty('--p', Math.min(1, d / (track.clientWidth * 0.75)).toFixed(3));
+      });
+    }
+
     function onPinScroll() {
       if (!pin) return;
       var range = spacer.offsetHeight;
       if (range <= 0) return;
       var p = (window.pageYOffset - pinStart()) / range;
       track.scrollLeft = Math.max(0, Math.min(1, p)) * overflow();
+      depth();
     }
 
     if (pin) {
@@ -346,9 +410,11 @@
       }, { passive: true });
       layout();
       onPinScroll();
+      depth();
     }
 
     buildDots();
     sync();
+    depth();
   })();
 })();
