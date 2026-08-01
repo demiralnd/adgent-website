@@ -168,10 +168,18 @@
 
     var DEFAULT = 4; // Judgment — the layer the section is arguing for
     var cur = -1;
+    var deck = wrap.querySelector('[data-stack-deck]');
     function select(i) {
       if (i === cur) return;
       cur = i;
-      plates.forEach(function (p) { p.classList.toggle('on', +p.dataset.i === i); });
+      if (deck) deck.classList.add('focused');
+      plates.forEach(function (p) {
+        var pi = +p.dataset.i;
+        p.classList.toggle('on', pi === i);
+        // above the active plate → push up, below → push down, so the
+        // active layer gains air on both sides instead of crowding one
+        p.style.setProperty('--dir', pi > i ? 1 : pi < i ? -1 : 0);
+      });
       rows.forEach(function (r) { r.classList.toggle('on', +r.dataset.i === i); });
     }
 

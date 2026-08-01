@@ -521,7 +521,7 @@ body.menu-open { overflow: hidden; }
   position: relative; aspect-ratio: 5 / 4; min-height: 0; border-radius: var(--r-xl);
   background: radial-gradient(120% 90% at 42% 34%, var(--bg-card) 0%, var(--bg-sub) 58%, var(--bg-inset) 100%);
   border: 1px solid var(--border); overflow: hidden;
-  perspective: 1500px; perspective-origin: 50% 42%;
+  perspective: 9000px; perspective-origin: 50% 50%;
   container-type: inline-size;
 }
 .s3-deck {
@@ -536,8 +536,7 @@ body.menu-open { overflow: hidden; }
   position: absolute; inset: 0; transform-style: preserve-3d;
   /* offset = index * gap, plus the ceiling break for L3 and above */
   --z: calc(var(--i) * var(--gap));
-  transform: translateZ(var(--z));
-  transition: transform 380ms cubic-bezier(0.34, 1.2, 0.44, 1);
+  transition: transform 400ms var(--ease);
 }
 .s3-face {
   position: absolute; inset: 0; border-radius: 13px;
@@ -572,13 +571,16 @@ body.menu-open { overflow: hidden; }
 
 /* hover / active lift */
 .s3-plate[data-tier="moat"] { --z: calc(var(--i) * var(--gap) + var(--brk)); }
-/* lift along the deck's own Z axis only — translating x/y here would move
-   the plate along the rotated axes and slide it into its neighbour */
-.s3-plate.on { --lift: calc(14px * var(--s)); transform: translateZ(calc(var(--z) + var(--lift))); }
+/* Focus opens the stack instead of shoving one plate into its neighbour:
+   plates above the active one move further up, plates below move down, so
+   the active plate gains clear air on BOTH sides and spacing stays even.
+   --dir is set per plate in JS (-1 below, 0 active, 1 above). */
+.s3-plate { --dir: 0; --spread: 0px; }
+.s3-deck.focused .s3-plate { --spread: calc(16px * var(--s)); }
+.s3-plate { transform: translateZ(calc(var(--z) + (var(--dir) * var(--spread)))); }
 .s3-plate.on .s3-face { box-shadow: 0 30px 50px -20px rgba(28,25,20,0.5); }
-/* everything that isn't the active plate settles back and dims slightly,
-   so the lift reads as focus rather than as a plate coming loose */
-.s3-deck:has(.s3-plate.on) .s3-plate:not(.on) .s3-face { opacity: 0.72; }
+/* non-active plates recede slightly so the active one reads as focus */
+.s3-deck.focused .s3-plate:not(.on) .s3-face { opacity: 0.68; }
 .s3-face { transition: box-shadow 320ms var(--ease), opacity 320ms var(--ease); }
 
 /* zone captions */
@@ -603,9 +605,13 @@ body.menu-open { overflow: hidden; }
 }
 
 /* --- the text column --- */
-.s3-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+/* deck stacks L0 at the bottom, so the column reads L6 down to L0 to match.
+   flex-direction reverses paint order only — DOM order stays L0..L6 so the
+   data-i wiring and hover mapping are unaffected. */
+.s3-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column-reverse; gap: 6px; justify-content: center; align-items: stretch; min-width: 0; }
 .s3-list li {
   padding: 13px 16px; border-radius: var(--r-lg); border: 1px solid transparent;
+  box-sizing: border-box; width: 100%; min-width: 0;
   cursor: pointer; transition: background 200ms var(--ease), border-color 200ms var(--ease);
 }
 .s3-list li:hover { background: var(--bg-hover); }
@@ -766,7 +772,7 @@ input[type="range"][data-math-spend]:focus-visible { outline: 2px solid var(--ac
 .ilogo .soon { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-3); border: 1px solid var(--border-2); padding: 1px 5px; border-radius: var(--radius-xs); }
 
 /* ---------- stats ---------- */
-.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
 .stat { padding: 4px 0; }
 .stat-v { font-family: var(--font-editorial); font-weight: 500; font-size: 46px; line-height: 1; letter-spacing: -0.025em; font-variant-numeric: tabular-nums; color: var(--text); }
 .stat-l { font-size: 13px; color: var(--text-2); margin-top: 12px; line-height: 1.5; }
