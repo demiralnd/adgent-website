@@ -101,6 +101,26 @@
     d.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
   }
 
+  /* ---- product dropdown ----
+     CSS handles hover and focus-within. This covers touch, where hover would
+     otherwise make the first tap follow the link instead of opening the menu. */
+  var drop = d.querySelector('.nav-drop');
+  if (drop && window.matchMedia('(hover: none)').matches) {
+    var trigger = drop.querySelector('.nav-drop-t');
+    trigger.addEventListener('click', function (e) {
+      if (drop.classList.contains('open')) return;   /* second tap follows the link */
+      e.preventDefault();
+      drop.classList.add('open');
+      trigger.setAttribute('aria-expanded', 'true');
+    });
+    d.addEventListener('click', function (e) {
+      if (!drop.contains(e.target)) {
+        drop.classList.remove('open');
+        trigger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
   /* ---- lead / subscribe form (Web3Forms) ----
      Progressive enhancement: posts via fetch and shows an inline thank-you.
      If JS is off or fetch fails, the plain <form> POST still reaches Web3Forms.
