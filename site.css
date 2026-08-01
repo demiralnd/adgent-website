@@ -507,6 +507,14 @@ body.menu-open { overflow: hidden; }
 .matrix tbody tr:last-child td.us { border-bottom-right-radius: var(--r-md); }
 .matrix-note { margin-top: 16px; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.02em; color: var(--text-3); text-align: center; }
 
+/* Unregistered custom properties can't interpolate — they snap between
+   values mid-transition, which reads as flicker. @property makes --off a
+   real animatable length, so plates glide instead of snapping. */
+@property --off {
+  syntax: '<length>';
+  inherits: false;
+  initial-value: 0px;
+}
 /* ---------- the stack: seven isometric layers ---------- */
 .stack3d { display: grid; grid-template-columns: 1.02fr 1fr; gap: 40px; margin-top: 44px; align-items: stretch; }
 
@@ -534,9 +542,13 @@ body.menu-open { overflow: hidden; }
 }
 .s3-plate {
   position: absolute; inset: 0; transform-style: preserve-3d;
-  /* offset = index * gap, plus the ceiling break for L3 and above */
+  /* offset = index * gap, plus the ceiling break for L3 and above.
+     --off is registered via @property so it interpolates; do NOT declare a
+     fallback here or the registered initial value stops applying. */
   --z: calc(var(--i) * var(--gap));
+  transform: translateZ(calc(var(--z) + var(--off)));
   transition: transform 400ms var(--ease);
+  will-change: transform;
 }
 .s3-face {
   position: absolute; inset: 0; border-radius: 13px;
@@ -575,9 +587,7 @@ body.menu-open { overflow: hidden; }
    plates above the active one move further up, plates below move down, so
    the active plate gains clear air on BOTH sides and spacing stays even.
    --dir is set per plate in JS (-1 below, 0 active, 1 above). */
-.s3-plate { --dir: 0; --spread: 0px; }
-.s3-deck.focused .s3-plate { --spread: calc(16px * var(--s)); }
-.s3-plate { transform: translateZ(calc(var(--z) + (var(--dir) * var(--spread)))); }
+
 .s3-plate.on .s3-face { box-shadow: 0 30px 50px -20px rgba(28,25,20,0.5); }
 /* non-active plates recede slightly so the active one reads as focus */
 .s3-deck.focused .s3-plate:not(.on) .s3-face { opacity: 0.68; }

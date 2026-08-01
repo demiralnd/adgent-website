@@ -167,6 +167,7 @@
     if (!plates.length || !rows.length) return;
 
     var DEFAULT = 4; // Judgment — the layer the section is arguing for
+    var SPREAD = 14; // px of extra Z given to plates on either side of the active one
     var cur = -1;
     var deck = wrap.querySelector('[data-stack-deck]');
     function select(i) {
@@ -176,9 +177,11 @@
       plates.forEach(function (p) {
         var pi = +p.dataset.i;
         p.classList.toggle('on', pi === i);
-        // above the active plate → push up, below → push down, so the
-        // active layer gains air on both sides instead of crowding one
-        p.style.setProperty('--dir', pi > i ? 1 : pi < i ? -1 : 0);
+        // above the active plate → push up, below → push down, so the active
+        // layer gains air on both sides. Set as a length (not a multiplier)
+        // so the registered --off property can interpolate it smoothly.
+        var off = pi > i ? SPREAD : pi < i ? -SPREAD : 0;
+        p.style.setProperty('--off', off + 'px');
       });
       rows.forEach(function (r) { r.classList.toggle('on', +r.dataset.i === i); });
     }
@@ -186,11 +189,14 @@
     rows.forEach(function (r) {
       var i = +r.dataset.i;
       r.addEventListener('mouseenter', function () { stop(); select(i); });
+      r.addEventListener('focus', function () { stop(); select(i); });
       r.addEventListener('click', function () { stop(); select(i); });
     });
+    // Plates are NOT hover targets: selecting one moves it, which can slide it
+    // out from under the pointer and re-trigger a neighbour — a feedback loop
+    // that reads as flicker. Click only; the text column drives hover.
     plates.forEach(function (p) {
       var i = +p.dataset.i;
-      p.addEventListener('mouseenter', function () { stop(); select(i); });
       p.addEventListener('click', function () { stop(); select(i); });
     });
 
