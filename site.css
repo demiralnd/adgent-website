@@ -1,3 +1,83 @@
+:root {
+  /* ---------- Fonts ---------- */
+  --font-ui: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --font-editorial: "Fraunces", "Newsreader", Georgia, serif;
+
+  /* ---------- Surfaces (warm light) ---------- */
+  --bg-app: #f3f2ef;
+  --bg-card: #ffffff;
+  --bg-sub: #f7f6f3;
+  --bg-inset: #efeeea;
+  --bg-band: #ebe9e4;        /* alt section band */
+  --bg-hover: rgba(28, 25, 20, 0.045);
+  --bg-active: rgba(28, 25, 20, 0.07);
+
+  /* ---------- Borders ---------- */
+  --border: rgba(28, 25, 20, 0.085);
+  --border-2: rgba(28, 25, 20, 0.14);
+
+  /* ---------- Text ---------- */
+  --text: #1c1a17;
+  --text-2: #6c685f;
+  --text-3: #9a958a;
+  --text-4: #b9b4a8;
+
+  /* ---------- Accent (coral) ---------- */
+  --accent: #ff5a2c;
+  --user-bubble: #1c1a17;
+  --accent-press: #ec491d;
+  --accent-soft: rgba(255, 90, 44, 0.11);
+  --accent-on: #ffffff;
+
+  /* ---------- Severity ---------- */
+  --ok: #16935a;   --ok-soft: rgba(22, 147, 90, 0.12);
+  --warn: #cf8a26; --warn-soft: rgba(207, 138, 38, 0.13);
+  --crit: #d8472f; --crit-soft: rgba(216, 71, 47, 0.10);
+  --info: #2f73e8; --info-soft: rgba(47, 115, 232, 0.12);
+
+  /* ---------- Radii ---------- */
+  --r-xl: 18px; --r-lg: 14px; --r-md: 11px; --r-sm: 8px; --r-pill: 999px;
+
+  /* ---------- Shadows (soft, warm) ---------- */
+  --shadow-card: 0 1px 2px rgba(28, 25, 20, 0.05), 0 10px 26px -14px rgba(28, 25, 20, 0.14);
+  --shadow-soft: 0 1px 2px rgba(28, 25, 20, 0.05);
+  --shadow-pop: 0 30px 70px -28px rgba(28, 25, 20, 0.26), 0 4px 14px -8px rgba(28, 25, 20, 0.16);
+
+  /* ---------- Motion ---------- */
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+
+  /* ---------- Back-compat aliases (so older class refs resolve) ---------- */
+  --bg-content: var(--bg-app);
+  --bg-sidebar: var(--bg-band);
+  --bg-elevated: var(--bg-card);
+  --border-default: var(--border);
+  --border-strong: var(--border-2);
+  --text-primary: var(--text);
+  --text-secondary: var(--text-2);
+  --text-tertiary: var(--text-3);
+  --text-disabled: var(--text-4);
+  --text-inverse: var(--accent-on);
+  --accent-hover: var(--accent-press);
+  --accent-subtle: var(--accent-soft);
+  --severity-critical: var(--crit);
+  --severity-warning: var(--warn);
+  --severity-ok: var(--ok);
+  --severity-critical-bg: var(--crit-soft);
+  --severity-warning-bg: var(--warn-soft);
+  --severity-ok-bg: var(--ok-soft);
+  --radius-xs: 4px;
+  --radius-sm: var(--r-sm);
+  --radius-md: var(--r-md);
+  --radius-lg: var(--r-lg);
+  --radius-xl: var(--r-xl);
+  --radius-pill: var(--r-pill);
+  --font-sans: var(--font-ui);
+  --ease-out: var(--ease);
+}
+
+
 /* ============================================================
    Adgent marketing site — layout layer (warm light · coral)
    Built on the real product language: Plus Jakarta Sans,
@@ -30,6 +110,45 @@ body::before {
     radial-gradient(820px 480px at 78% -6%, rgba(255,90,44,0.06), transparent 60%),
     radial-gradient(680px 460px at 8% 2%, rgba(255,160,90,0.05), transparent 58%);
   z-index: 0;
+}
+
+/* ---------- PARALLAX BACKGROUND ----------
+   Three fixed atmosphere layers that drift at different speeds as you read,
+   so the page has depth behind the content without ever competing with it.
+   JS writes --sy (scroll offset in px); each layer scales it differently. */
+.para {
+  position: fixed; inset: -10% -5%; z-index: 0;
+  pointer-events: none; overflow: hidden;
+}
+.para i { position: absolute; display: block; will-change: transform; }
+.para .p1 {
+  top: -8%; right: -6%; width: 62vw; height: 62vw;
+  background: radial-gradient(circle at 50% 50%, rgba(255,90,44,0.10), rgba(255,90,44,0) 62%);
+  transform: translate3d(0, calc(var(--sy, 0px) * 0.06), 0);
+}
+.para .p2 {
+  top: 22%; left: -14%; width: 54vw; height: 54vw;
+  background: radial-gradient(circle at 50% 50%, rgba(255,168,96,0.09), rgba(255,168,96,0) 60%);
+  transform: translate3d(0, calc(var(--sy, 0px) * -0.04), 0);
+}
+.para .p3 {
+  bottom: -18%; left: 26%; width: 48vw; height: 48vw;
+  background: radial-gradient(circle at 50% 50%, rgba(120,140,255,0.06), rgba(120,140,255,0) 62%);
+  transform: translate3d(0, calc(var(--sy, 0px) * 0.03), 0);
+}
+/* a faint ruled grid that drifts slowest of all — the "paper" under the story */
+.para .pgrid {
+  inset: -20% -10%; opacity: 0.5;
+  background-image:
+    linear-gradient(to right, rgba(28,25,20,0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(28,25,20,0.035) 1px, transparent 1px);
+  background-size: 72px 72px;
+  transform: translate3d(0, calc(var(--sy, 0px) * 0.02), 0);
+  mask-image: radial-gradient(120% 90% at 50% 30%, #000 20%, transparent 78%);
+}
+@media (max-width: 900px) { .para .pgrid { display: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .para i { transform: none !important; }
 }
 
 /* ---------- layout ---------- */
@@ -65,11 +184,13 @@ section { position: relative; z-index: 1; }
 }
 .sec-title em { font-family: var(--font-editorial); font-style: italic; font-weight: 500; color: var(--accent); letter-spacing: -0.015em; }
 .sec-sub {
-  font-size: 16.5px;
-  line-height: 1.6;
+  font-size: 17px;
+  line-height: 1.65;
   color: var(--text-2);
-  margin: 16px 0 0;
-  max-width: 560px;
+  margin: 18px 0 0;
+  /* ~62 characters per line. Long subs still exist in the copy, but at this
+     measure they break into readable lines instead of one dense slab. */
+  max-width: 52ch;
   text-wrap: pretty;
 }
 
@@ -171,8 +292,8 @@ body.menu-open { overflow: hidden; }
 .btn-lg { height: 48px; padding: 0 24px; font-size: 15px; }
 
 /* ---------- hero ---------- */
-.hero { padding: 88px 0 76px; }
-.hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.hero { padding: 88px 0 76px; position: relative; }
+.hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; position: relative; z-index: 1; }
 .hero-tag {
   display: inline-flex; align-items: center; gap: 9px;
   height: 30px; padding: 0 14px 0 11px; border-radius: var(--r-pill);
@@ -237,14 +358,28 @@ body.menu-open { overflow: hidden; }
    Spacer height is set by JS from the real track overflow; without JS the
    section is a plain scroll-snap slider (spacer stays 0). */
 .builds-pin { padding-top: 0; padding-bottom: 0; }
-.builds-sticky { position: sticky; top: 0; padding: 88px 0; }
+/* Generous vertical room is the point: the section should feel like it stops
+   the page rather than continuing it. Scales down on short viewports so the
+   heading + first card still share one screen. */
+/* Less bottom padding than top: the slider nav already sits below the cards,
+   and a symmetric pad left a visible void before the next section. */
+.builds-sticky { position: sticky; top: 0; padding: clamp(64px, 7vh, 92px) 0 clamp(32px, 3.5vh, 48px); }
 .builds-spacer { height: 0; }
+@media (max-height: 760px) { .builds-sticky { padding: 72px 0; } }
 @media (max-width: 640px) { .builds-sticky { padding: 64px 0; } }
 
+/* centred head — this section is the one place the page stops scanning
+   left-to-right and looks at one thing */
+.builds-pin .sec-head { max-width: 620px; margin-left: auto; margin-right: auto; text-align: center; }
+.builds-pin .sec-sub { margin-left: auto; margin-right: auto; }
+
 /* slider shell */
-.builds-slider { margin-top: 44px; position: relative; }
+.builds-slider { margin-top: clamp(36px, 4vh, 52px); position: relative; }
 .builds {
-  display: grid; grid-auto-flow: column; grid-auto-columns: calc(50% - 9px);
+  /* One card fills most of the view: these are product screenshots with real
+     numbers in them, and at half-width the mini-charts were unreadable. The
+     sliver of the next card is deliberate — it signals there's more. */
+  display: grid; grid-auto-flow: column; grid-auto-columns: min(720px, 82%);
   gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory;
   scroll-behavior: smooth; scroll-padding: 0;
   padding-bottom: 4px; margin: 0 -4px; padding-left: 4px; padding-right: 4px;
@@ -462,8 +597,37 @@ body.menu-open { overflow: hidden; }
 .panel.after li b { color: var(--text); font-weight: 600; }
 
 /* ---------- section spacing ---------- */
-.band { padding: 84px 0; }
-.band-sub { background: var(--bg-band); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+/* Vertical rhythm: sections need room to read as separate thoughts. Scales
+   with the viewport so a large screen gets real air instead of a fixed 84px. */
+/* Adjacent bands each contribute padding, so the seam between two sections is
+   double this value. 64–84 keeps that seam at 128–168px — air without a void. */
+/* one vertical rhythm for every band, so the page breathes evenly instead of
+   each section inventing its own spacing */
+.band { padding: clamp(76px, 8vh, 118px) 0; }
+.band + .band { padding-top: clamp(64px, 7vh, 104px); }
+.band > .wrap > .sec-head { margin-bottom: clamp(32px, 4vh, 52px); }
+.band-sub {
+  /* gradient instead of a flat slab: the band fades in from the page and back
+     out again, so neighbouring sections blend rather than butt together */
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--bg-band) 0%, transparent) 0%,
+    var(--bg-band) 14%,
+    var(--bg-band) 86%,
+    color-mix(in srgb, var(--bg-band) 0%, transparent) 100%
+  );
+  border-top: none; border-bottom: none;
+}
+/* hairline gradient dividers that fade out toward the right, echoing the seam */
+.band + .band::before,
+.band + .band-sub::before {
+  content: ""; position: absolute; left: 0; right: 0; top: 0; height: 1px;
+  background: linear-gradient(90deg,
+    color-mix(in oklab, var(--accent) 30%, transparent) 0%,
+    var(--border) 26%,
+    transparent 88%);
+  opacity: 0.7; pointer-events: none;
+}
 
 /* ---------- steps ---------- */
 .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
@@ -476,9 +640,16 @@ body.menu-open { overflow: hidden; }
 
 /* ---------- creative intelligence ---------- */
 /* Creative Intelligence — title left (sticky), cards 2x2 right */
-.creative-split { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 56px; align-items: start; }
-.creative-head { position: sticky; top: 96px; max-width: 460px; }
-.creative-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 0; }
+/* head + cards on the left, the worked example on the right: the mock is
+   taller than the four cards, so pairing it against the head+cards column
+   balances the block instead of leaving a well under the cards */
+/* Head across the top, then two equal columns: the worked example on the
+   left and the four capabilities stacked beside it. A 2x2 card grid finished
+   far above the mock and left a well under it. */
+.creative-split { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; align-items: start; }
+.creative-head { grid-column: 1 / -1; }
+.creative-head { max-width: 520px; }
+.creative-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 0; align-content: start; }
 @media (max-width: 960px) {
   .creative-split { grid-template-columns: 1fr; gap: 32px; }
   .creative-head { position: static; max-width: 700px; }
@@ -516,8 +687,6 @@ body.menu-open { overflow: hidden; }
   initial-value: 0px;
 }
 /* ---------- the stack: seven isometric layers ---------- */
-.stack3d { display: grid; grid-template-columns: minmax(0, 1.02fr) minmax(0, 1fr); gap: 40px; margin-top: 44px; align-items: center; }
-
 /* --- the 3D scene --- */
 /* The deck is sized FROM the scene, never the other way round: --s is a
    single scale knob and every plate offset is a multiple of it, so the
@@ -526,9 +695,10 @@ body.menu-open { overflow: hidden; }
   --s: 0.78;
   --gap: calc(50px * var(--s));   /* vertical space between plates */
   --brk: calc(30px * var(--s));   /* extra break at the audit ceiling */
-  position: relative; width: 100%; aspect-ratio: 5 / 4; min-height: 0; border-radius: var(--r-xl);
-  background: radial-gradient(120% 90% at 42% 34%, var(--bg-card) 0%, var(--bg-sub) 58%, var(--bg-inset) 100%);
-  border: 1px solid var(--border); overflow: hidden;
+  position: relative; width: 100%; aspect-ratio: 5 / 4; min-height: 0;
+  /* no card shell: the plates ARE the object. A border and panel background
+     around them just boxed in the one thing that should feel dimensional. */
+  background: none; border: none; border-radius: 0; overflow: visible;
   perspective: 9000px; perspective-origin: 50% 50%;
   container-type: inline-size;
 }
@@ -538,7 +708,9 @@ body.menu-open { overflow: hidden; }
   transform-style: preserve-3d;
   /* pull the deck down by half its own stacked height so it stays centred
      no matter how many plates there are */
-  transform: translate(-50%, calc(-50% + (var(--gap) * 3) + var(--brk))) rotateX(58deg) rotateZ(-42deg);
+  /* centred, not pushed down: the old offset put the plates at 96–155% of the
+     scene box, so nothing anchored to a percentage could line up with them */
+  transform: translate(-50%, -50%) rotateX(58deg) rotateZ(-42deg);
 }
 .s3-plate {
   position: absolute; inset: 0; transform-style: preserve-3d;
@@ -593,14 +765,6 @@ body.menu-open { overflow: hidden; }
 .s3-deck.focused .s3-plate:not(.on) .s3-face { opacity: 0.68; }
 .s3-face { transition: box-shadow 320ms var(--ease), opacity 320ms var(--ease); }
 
-/* zone captions */
-.s3-zone {
-  position: absolute; right: 18px; z-index: 3; max-width: 150px; text-align: right;
-  font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.09em;
-  text-transform: uppercase; line-height: 1.55;
-}
-.s3-zone-moat { top: 16px; color: var(--accent); }
-.s3-zone-comm { bottom: 16px; color: var(--text-3); }
 
 /* the ceiling rule */
 /* sits at the break between L2 and L3 — nudged with the deck, not a fixed % */
@@ -652,17 +816,14 @@ body.menu-open { overflow: hidden; }
 }
 
 @media (max-width: 1180px) {
-  .s3-scene { --s: 0.68; }
+  .stack3d .s3-scene { --s: 0.78; }
 }
 @media (max-width: 980px) {
   .stack3d { grid-template-columns: 1fr; gap: 24px; }
-  .s3-scene { aspect-ratio: 4 / 3; --s: 0.8; }
+  .stack3d .s3-scene { aspect-ratio: 4 / 3; --s: 0.85; }
 }
 @media (max-width: 560px) {
   .s3-scene { aspect-ratio: 1 / 1; --s: 0.56; }
-  .s3-zone { max-width: 96px; font-size: 8px; right: 10px; }
-  .s3-zone-moat { top: 10px; }
-  .s3-zone-comm { bottom: 10px; }
   .s3-list li p { display: block; }
   .s3-list li { cursor: default; }
 }
@@ -1046,15 +1207,21 @@ input[type="range"][data-math-spend]:focus-visible { outline: 2px solid var(--ac
 @media (prefers-reduced-motion: no-preference) {
   html.js [data-reveal] {
     opacity: 0;
-    transform: translateY(22px);
-    transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+    transform: translateY(30px);
+    /* slight blur on entry — the element resolves into focus rather than
+       just sliding. Cheap (compositor-only) and reads as expensive. */
+    filter: blur(6px);
+    transition:
+      opacity 0.85s var(--ease),
+      transform 0.85s cubic-bezier(.16,1,.3,1),
+      filter 0.6s var(--ease);
     transition-delay: var(--rd, 0ms);
-    will-change: opacity, transform;
+    will-change: opacity, transform, filter;
   }
-  html.js [data-reveal="left"]  { transform: translateX(-28px); }
-  html.js [data-reveal="right"] { transform: translateX(28px); }
-  html.js [data-reveal="scale"] { transform: translateY(22px) scale(0.97); }
-  html.js [data-reveal].in { opacity: 1; transform: none; }
+  html.js [data-reveal="left"]  { transform: translateX(-34px); }
+  html.js [data-reveal="right"] { transform: translateX(34px); }
+  html.js [data-reveal="scale"] { transform: translateY(26px) scale(0.96); }
+  html.js [data-reveal].in { opacity: 1; transform: none; filter: none; }
 }
 
 /* card hover lift + coral edge */
@@ -1196,13 +1363,21 @@ html:not(.js) .chat-step { opacity: 1; transform: none; }
    through a deck rather than sliding a flat strip. Driven by --p (0 at
    centre, 1 at the edges) which the pin handler sets per card. */
 .builds > .build {
-  transform: scale(calc(1 - 0.06 * var(--p, 0)));
-  opacity: calc(1 - 0.35 * var(--p, 0));
-  transition: transform 260ms var(--ease), opacity 260ms var(--ease);
+  /* deeper recede + a slight drop and tilt: off-centre cards read as sitting
+     behind the focused one, not beside it. Values are the ceiling of what
+     stays legible — past ~0.14 scale the mini-charts start to mush. */
+  transform:
+    scale(calc(1 - 0.14 * var(--p, 0)))
+    translateY(calc(18px * var(--p, 0)))
+    perspective(1200px) rotateY(calc(-5deg * var(--s, 0) * var(--p, 0)));
+  opacity: calc(1 - 0.5 * var(--p, 0));
+  transition: transform 420ms var(--ease), opacity 420ms var(--ease), filter 420ms var(--ease);
   transform-origin: 50% 60%;
+  filter: saturate(calc(1 - 0.4 * var(--p, 0)));
+  will-change: transform, opacity;
 }
 @media (prefers-reduced-motion: reduce) {
-  .builds > .build { transform: none; opacity: 1; }
+  .builds > .build { transform: none; opacity: 1; filter: none; }
 }
 
 /* ---------- article reading progress ---------- */
@@ -1229,3 +1404,2055 @@ html:not(.js) .chat-step { opacity: 1; transform: none; }
 .blog-feature .feature-visual { overflow: hidden; }
 .blog-feature .feature-visual img { transition: transform 620ms var(--ease); }
 .blog-feature:hover .feature-visual img { transform: scale(1.03); }
+
+/* ---------- builds: card is now near-full-width, so scale its contents ----------
+   The mini dashboards are the proof in this section; at half-width their
+   numbers were decorative. These sizes make them legible at arm's length. */
+.build-canvas { margin: 18px 20px 20px; padding: 18px; }
+.build-prompt { font-size: 14px; padding: 9px 17px 9px 14px; }
+.build-prompt svg { width: 15px; height: 15px; }
+.build-reply { font-size: 13px; }
+.build-cap .name { font-size: 16px; }
+.build-cap .tag { font-size: 11px; }
+.mkt { padding: 13px 14px; }
+.mkt-l { font-size: 11.5px; }
+.mkt-v { font-size: 24px; }
+.mkt-d { font-size: 11px; }
+.mini-chart svg { height: 68px; }
+.mag-ent { font-size: 13.5px; }
+.mag-rec { font-size: 12px; }
+.mag-sev { font-size: 11.5px; }
+.mag-imp .v { font-size: 14px; }
+.mag-imp .l { font-size: 10px; }
+.mpl-t { font-size: 13.5px; }
+.mpl-s { font-size: 11.5px; }
+.mpl-n { width: 23px; height: 23px; font-size: 11.5px; }
+@media (max-width: 640px) {
+  .builds { grid-auto-columns: 90%; }
+  .build-canvas { margin: 14px 16px 16px; padding: 14px; }
+  .mkt-v { font-size: 19px; }
+  .mini-chart svg { height: 52px; }
+}
+
+/* ============================================================
+   INLINE CTA — a way out of the page at every high-intent beat
+   The page ran 16 sections with one CTA at the very bottom: a
+   reader convinced at section 6 had nowhere to go.
+   ============================================================ */
+.cta-inline {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 24px; flex-wrap: wrap;
+  margin-top: 44px; padding: 22px 26px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  box-shadow: var(--shadow-soft);
+  position: relative; overflow: hidden;
+}
+.cta-inline::before {
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+  background: linear-gradient(180deg, var(--accent), transparent);
+}
+.cta-inline p { margin: 0; font-size: 15.5px; color: var(--text-2); max-width: 54ch; }
+.cta-inline p b { color: var(--text); font-weight: 650; }
+.cta-inline .btn { flex: none; }
+@media (max-width: 620px) {
+  .cta-inline { flex-direction: column; align-items: stretch; text-align: left; }
+  .cta-inline .btn { width: 100%; justify-content: center; }
+}
+
+
+/* ---------- lead form: flatter, less repetition ----------
+   Was a grey card nested inside the white CTA card, with "Request a demo"
+   appearing three times (eyebrow, form heading, button) and the same sentence
+   printed on both sides. The form is the only thing in its column, so it
+   doesn't need its own container. */
+.cta-grid { align-items: start; }
+.lead-demo {
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+.lead-demo .lf-field span i {
+  font-style: normal; font-weight: 500; color: var(--text-4);
+  font-size: 11px; letter-spacing: 0.02em;
+}
+.lead-demo .lf-field + .lf-field { margin-top: 14px; }
+.lead-demo .btn { width: 100%; justify-content: center; margin-top: 20px; }
+.lead-demo .lead-fine { text-align: center; }
+/* the copy column is shorter than the form — let it sit against the top edge
+   instead of floating in the middle of a tall row */
+@media (min-width: 861px) {
+  .cta-grid > div:first-child { padding-top: 4px; }
+}
+
+/* ============================================================
+   HOW WE'RE BUILT — deck assembles on first view
+   ------------------------------------------------------------
+   The seven layers are the argument of this section, so they
+   should arrive as a stack being built, not appear pre-stacked.
+   Each plate drops in from below along the same Z axis it already
+   uses, staggered bottom-up (L0 first) so the order reads as
+   foundation → moat. Uses --in, a separate offset from --off, so
+   the hover/focus logic that owns --off is untouched.
+   ============================================================ */
+@property --in {
+  syntax: "<length>"; inherits: false; initial-value: 0px;
+}
+@media (prefers-reduced-motion: no-preference) {
+  html.js .s3-plate {
+    /* composed with the existing --z/--off translate */
+    transform: translateZ(calc(var(--z) + var(--off) + var(--in)));
+  }
+  html.js [data-stack]:not(.in) .s3-plate {
+    --in: -420px;
+    opacity: 0;
+  }
+  html.js [data-stack].in .s3-plate {
+    --in: 0px;
+    opacity: 1;
+    transition:
+      --in 900ms cubic-bezier(.16,1,.3,1),
+      opacity 500ms var(--ease),
+      transform 400ms var(--ease);
+    /* L0 lands first, each higher layer follows */
+    transition-delay: calc(var(--i) * 110ms);
+  }
+}
+
+/* ---------- stack: connector from each label to the deck ----------
+   A short rule that reaches toward the scene, plus a dot at the tip. It
+   brightens with the active row, so the eye can trace label → plate. */
+.s3-list li { position: relative; }
+.s3-list li::after {
+  content: ""; position: absolute; top: 22px;
+  width: 20px; height: 1px; background: var(--border-2);
+  transition: background 200ms var(--ease), width 200ms var(--ease);
+}
+.s3-list-b li::after { left: -22px; }
+.s3-list li.on::after { background: var(--accent); width: 26px; }
+.s3-list-b li.on::after { left: -28px; }
+/* the tip dot */
+.s3-list li::before {
+  content: ""; position: absolute; top: 19.5px;
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--border-2);
+  transition: background 200ms var(--ease), transform 200ms var(--ease);
+}
+.s3-list-b li::before { left: -25px; }
+.s3-list li.on::before { background: var(--accent); transform: scale(1.35); }
+.s3-list-b li.on::before { left: -31px; }
+
+/* stacked layout: connectors would point at nothing once the columns wrap */
+@media (max-width: 980px) {
+  .stack3d { grid-template-columns: 1fr; gap: 24px; }
+  .stack3d .s3-scene { order: -1; }
+  .s3-list li::after, .s3-list li::before { display: none; }
+}
+
+/* the open row's body must not spill past its column */
+.s3-list li.on { position: relative; z-index: 2; }
+.s3-list li.on { max-width: 100%; }
+.s3-list li p { max-width: 100%; }
+/* scene shouldn't dominate: at three columns it has less room than before */
+/* bigger plates now that the card shell is gone and they own the column */
+/* deck at this scale needs a taller box than 5/4, or the top plate clips and
+   the kicker below collides with the bottom one */
+/* The deck's plates span roughly 96–147% of a 540px box, i.e. it overflows.
+   Percentage anchors can only work if the box actually contains the deck. */
+.stack3d .s3-scene { --s: 0.78; aspect-ratio: auto; min-height: 560px; }
+
+/* ---------- stack: zone labels after the card shell was removed ----------
+   They used to sit in the panel's corners. With no panel they landed on top
+   of the plates and became unreadable — push them out past the deck. */
+/* the dashed ceiling rule loses its container too — keep it inside the deck */
+.stack3d .s3-ceiling { left: 8%; right: 8%; }
+
+/* Tag sits beside the title, never under it: the row header wraps only as a
+   last resort, and the tag itself never breaks mid-phrase. */
+.s3-li-h { flex-wrap: nowrap; }
+.s3-li-tag { white-space: nowrap; flex: none; }
+.s3-list h3 { min-width: 0; }
+@media (max-width: 1180px) { .s3-li-h { flex-wrap: wrap; } }
+
+
+
+/* the one description panel */
+.s3-detail {
+  position: relative; margin: 26px auto 0; max-width: 720px; min-height: 92px;
+  text-align: center;
+}
+.s3-d {
+  position: absolute; inset: 0;
+  opacity: 0; visibility: hidden;
+  transition: opacity 260ms var(--ease);
+}
+.s3-d.on { opacity: 1; visibility: visible; position: relative; }
+.s3-d-n {
+  display: block; font-family: var(--font-mono); font-size: 10.5px;
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent);
+  margin-bottom: 8px;
+}
+.s3-d p { font-size: 14.5px; line-height: 1.62; color: var(--text-2); margin: 0; text-wrap: pretty; }
+.s3-d p + p { margin-top: 8px; }
+.s3-d p.s3-li-v { color: var(--text-3); font-size: 13.5px; }
+@media (max-width: 980px) {
+  .s3-detail { text-align: left; margin-top: 18px; }
+}
+
+/* ============================================================
+   HOW WE'RE BUILT — description · deck · layers
+   ------------------------------------------------------------
+   All seven labels live in ONE column on the right, top-down
+   L6→L0, each pinned to its plate's centre (--cy) at a fixed
+   height. The description sits opposite, in its own column, and
+   swaps with the active layer. Because no element in the label
+   column ever changes size, overlap is impossible by
+   construction rather than by tuning.
+   ============================================================ */
+.stack3d {
+  display: grid; align-items: center;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1fr) minmax(0, 1.08fr);
+  gap: 26px; margin-top: 44px;
+}
+@media (min-width: 981px) {
+  .s3-list {
+    position: relative; display: block; gap: 0;
+    min-height: 560px !important; align-self: stretch;
+  }
+  .s3-list li {
+    position: absolute; left: 0; right: 0;
+    top: var(--cy, 50%); transform: translateY(-50%); z-index: 2;
+    margin: 0; padding: 6px 12px;
+    /* no fixed height: it accumulated down the column and pushed every row
+       progressively further from the plate it names */
+    display: flex; align-items: center; justify-content: flex-start;
+    text-align: left; background: none; border: 1px solid transparent;
+  }
+  .s3-list li.on {
+    background: var(--bg-card); border-color: var(--border);
+    box-shadow: var(--shadow-soft); transform: translateY(-50%);
+  }
+  /* the connector and its dot sit outside the row's card, so the active
+     row's background can never cover the trace running down the column */
+  .s3-list li::before, .s3-list li::after { z-index: 3; }
+  /* connector reaches left, toward the deck */
+  .s3-list li::after  { left: -22px; right: auto; top: 50%; margin-top: -0.5px; }
+  .s3-list li::before { left: -25px; right: auto; top: 50%; margin-top: -3px; }
+  .s3-list li.on::after  { left: -28px; }
+  .s3-list li.on::before { left: -31px; }
+
+  /* description column: right-aligned so it reads toward the deck */
+  .s3-detail { text-align: right; margin: 0; max-width: none; min-height: 150px;
+               display: flex; flex-direction: column; justify-content: center; }
+  .s3-detail .s3-d p { margin-left: auto; }
+}
+@media (max-width: 980px) {
+  .stack3d { grid-template-columns: 1fr; gap: 22px; }
+  .stack3d .s3-scene { order: -1; }
+  .s3-detail { order: 1; }
+}
+/* labels are one line each — the row is a fixed 40px, so a wrap would clip */
+@media (min-width: 981px) { .s3-list h3 { white-space: nowrap; } }
+
+/* ---------- report findings: scan first, read on demand ----------
+   Four findings with their reasoning all expanded is 180 words of prose in
+   the one place the page is meant to feel like a *report*. Collapsed, the
+   list reads as four ranked headlines with the money attached — which is how
+   an audit is actually skimmed. The first stays open as a worked example. */
+.report-flags .rflag { cursor: pointer; }
+.report-flags .rflag .rflag-w {
+  display: grid; grid-template-rows: 0fr;
+  transition: grid-template-rows 260ms var(--ease), margin-top 260ms var(--ease);
+  margin-top: 0;
+}
+.report-flags .rflag .rflag-w > * { overflow: hidden; min-height: 0; }
+.report-flags .rflag.open .rflag-w { grid-template-rows: 1fr; margin-top: 4px; }
+/* affordance: a chevron that turns when open */
+.report-flags .rflag-t::after {
+  content: ""; margin-left: auto; width: 8px; height: 8px; flex: none;
+  border-right: 1.5px solid var(--text-4); border-bottom: 1.5px solid var(--text-4);
+  transform: rotate(45deg) translate(-2px, -2px);
+  transition: transform 240ms var(--ease);
+}
+.report-flags .rflag.open .rflag-t::after { transform: rotate(-135deg) translate(-2px, -2px); }
+.report-flags .rflag:hover { border-color: var(--border-2); }
+
+/* ---------- stack: the description gets a card ----------
+   Right-aligned prose floating on the page background read as an
+   afterthought. In a card it reads as the deck's read-out. */
+@media (min-width: 981px) {
+  .s3-detail {
+    text-align: left;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--r-xl);
+    box-shadow: var(--shadow-card);
+    padding: 22px 24px;
+    min-height: 0;
+  }
+  .s3-detail .s3-d p { margin-left: 0; }
+}
+
+/* the audit ceiling, marked in the layer column where it belongs */
+@media (min-width: 981px) {
+  .s3-list li.s3-div {
+    height: 20px; padding: 0 12px; pointer-events: none;
+    border: none; background: none; box-shadow: none;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .s3-list li.s3-div::after, .s3-list li.s3-div::before { display: none; }
+  .s3-list li.s3-div span {
+    font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--text-4); white-space: nowrap;
+  }
+  .s3-list li.s3-div::marker { content: none; }
+}
+@media (max-width: 980px) { .s3-list li.s3-div { display: none; } }
+
+/* ---------- comparison matrix: make the point visible in one glance ----------
+   25 cells of mostly dashes made the reader work for a conclusion that should
+   land instantly. The Adgent column is lifted out as a highlighted band; the
+   competitor columns recede so the eye reads the shape, not every cell. */
+.matrix { border-collapse: separate; border-spacing: 0; }
+.matrix th, .matrix td { transition: background 160ms var(--ease); }
+/* competitor cells: quieter */
+.matrix td:not(.us) { color: var(--text-4); }
+.matrix thead th:not(.mx-us):not(.mx-cap) { color: var(--text-3); font-weight: 600; }
+/* the Adgent column reads as one continuous highlighted band */
+.matrix .us { background: var(--accent-soft); }
+.matrix thead .mx-us {
+  color: var(--accent); font-weight: 800; background: var(--accent-soft);
+  border-top-left-radius: var(--r-md); border-top-right-radius: var(--r-md);
+  box-shadow: inset 0 2px 0 var(--accent);
+}
+.matrix tbody tr:hover td:not(.us) { background: var(--bg-hover); }
+.matrix tbody tr:hover th { background: var(--bg-hover); }
+/* capability labels carry the weight now */
+.matrix tbody th { font-weight: 600; color: var(--text); }
+
+/* ---------- FAQ: cards, not bare rules ----------
+   A stack of hairlines reads as a legal appendix. Cards give each question
+   a surface, and the open one lifts so the answer feels like a panel. */
+.faq { border-top: none; display: flex; flex-direction: column; gap: 10px; }
+.faq details {
+  border: 1px solid var(--border); border-radius: var(--r-lg);
+  background: var(--bg-card); box-shadow: var(--shadow-soft);
+  transition: border-color 200ms var(--ease), box-shadow 200ms var(--ease);
+}
+.faq details:hover { border-color: var(--border-2); }
+.faq details[open] { border-color: var(--border-2); box-shadow: var(--shadow-card); }
+.faq summary { padding: 18px 20px; font-size: 15.5px; }
+.faq summary .chev { color: var(--text-4); }
+.faq details[open] summary { padding-bottom: 10px; }
+.faq details[open] summary .chev { color: var(--accent); }
+.faq-a { padding: 0 20px 20px; max-width: 68ch; }
+
+/* ============================================================
+   HERO — dark command deck
+   ------------------------------------------------------------
+   The page opens on the surface the product actually is: a dark
+   operations console. Reuses the .moat treatment already proven
+   elsewhere on the site (same #141210, same particle + grid
+   language) so this reads as brand, not as a second theme.
+   Every decorative layer is z-index 0 inside a positioned hero
+   whose .hero-grid is z-index 1 — the content can never be
+   covered.
+   ============================================================ */
+.hero-dark {
+  background: #141210; color: #f4f2ee;
+  position: relative; overflow: hidden;
+  padding: 104px 0 92px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.hero-dark::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 0;
+  background:
+    radial-gradient(64% 58% at 78% -6%, rgba(255,90,44,0.22), transparent 58%),
+    radial-gradient(56% 74% at 4% 104%, rgba(255,120,60,0.10), transparent 56%);
+}
+.hero-grid-lines {
+  position: absolute; inset: 0; pointer-events: none; z-index: 0; opacity: 0.6;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.022) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.022) 1px, transparent 1px);
+  background-size: 46px 46px;
+  mask-image: radial-gradient(88% 78% at 62% 26%, #000, transparent 76%);
+  -webkit-mask-image: radial-gradient(88% 78% at 62% 26%, #000, transparent 76%);
+}
+.hero-particles { position: absolute; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+.hero-particles i {
+  position: absolute; border-radius: 50%; opacity: 0;
+  background: radial-gradient(circle, rgba(255,140,90,0.9), rgba(255,90,44,0));
+  will-change: transform, opacity;
+}
+.hero-particles i:nth-child(1){left:8%;  top:72%; width:5px;height:5px;}
+.hero-particles i:nth-child(2){left:22%; top:88%; width:3px;height:3px;}
+.hero-particles i:nth-child(3){left:37%; top:64%; width:4px;height:4px;}
+.hero-particles i:nth-child(4){left:52%; top:92%; width:6px;height:6px;}
+.hero-particles i:nth-child(5){left:64%; top:70%; width:3px;height:3px;}
+.hero-particles i:nth-child(6){left:78%; top:86%; width:5px;height:5px;}
+.hero-particles i:nth-child(7){left:88%; top:60%; width:4px;height:4px;}
+.hero-particles i:nth-child(8){left:15%; top:56%; width:3px;height:3px;}
+@media (prefers-reduced-motion: no-preference) {
+  .hero-particles i { animation: mote linear infinite; }
+  .hero-particles i:nth-child(1){animation-duration:14s; animation-delay:0s;}
+  .hero-particles i:nth-child(2){animation-duration:18s; animation-delay:-3s;}
+  .hero-particles i:nth-child(3){animation-duration:16s; animation-delay:-7s;}
+  .hero-particles i:nth-child(4){animation-duration:21s; animation-delay:-11s;}
+  .hero-particles i:nth-child(5){animation-duration:15s; animation-delay:-5s;}
+  .hero-particles i:nth-child(6){animation-duration:19s; animation-delay:-9s;}
+  .hero-particles i:nth-child(7){animation-duration:17s; animation-delay:-13s;}
+  .hero-particles i:nth-child(8){animation-duration:22s; animation-delay:-2s;}
+}
+
+/* --- type + chrome recoloured for the dark ground --- */
+.hero-dark .hero-slogan .w { color: rgba(244,242,238,0.5); }
+.hero-dark .hero-slogan .w3 { color: var(--accent); }
+.hero-dark .hero-slogan .arw { color: rgba(244,242,238,0.28); }
+.hero-dark h1 { color: #f8f6f2; }
+.hero-dark .hero-lede { color: rgba(244,242,238,0.74); }
+.hero-dark .hero-lede strong { color: #fff; }
+.hero-dark .hero-note { color: rgba(244,242,238,0.42); }
+/* the product cutout becomes a lit panel on the dark deck */
+.hero-dark .cutout {
+  background: rgba(255,255,255,0.045);
+  border-color: rgba(255,255,255,0.10);
+  box-shadow: 0 30px 70px -30px rgba(0,0,0,0.75), 0 0 0 1px rgba(255,255,255,0.02) inset;
+  backdrop-filter: blur(8px);
+}
+.hero-dark .co-kicker { color: rgba(244,242,238,0.45); }
+.hero-dark .float-chip {
+  background: rgba(28,25,20,0.86); border-color: rgba(255,255,255,0.12);
+  color: #f4f2ee; backdrop-filter: blur(10px);
+}
+.hero-dark .float-chip .lbl { color: rgba(244,242,238,0.5); }
+
+/* --- chat panel on the dark deck --- */
+.hero-dark .cmsg-bot {
+  background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.10);
+}
+.hero-dark .cmsg-bot .ct { color: rgba(248,246,242,0.92); }
+.hero-dark .cmsg-bot .ct b { color: #fff; }
+.hero-dark .chat-fix { border-top-color: rgba(255,255,255,0.10); }
+.hero-dark .fixnote { color: rgba(244,242,238,0.45); }
+.hero-dark .next-chip {
+  background: rgba(255,255,255,0.045); border-color: rgba(255,255,255,0.09);
+  color: rgba(244,242,238,0.78);
+}
+.hero-dark .next-chip:hover {
+  background: rgba(255,255,255,0.09); border-color: var(--accent); color: #fff;
+}
+.hero-dark .chat-input, .hero-dark [data-input] {
+  background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.10);
+  color: rgba(244,242,238,0.7);
+}
+.hero-dark .typing i { background: rgba(244,242,238,0.5); }
+
+
+/* ---------- FAQ: two columns, and a standing offer beside them ----------
+   A narrow question list left a dead half-page. The aside fills it with the
+   thing a hesitating reader actually needs: the offer, restated. */
+.faq-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr); gap: 40px; margin-top: 40px; align-items: start; }
+.faq { margin-top: 0; }
+.faq-aside { position: sticky; top: 96px; }
+.faq-aside-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--r-xl); box-shadow: var(--shadow-card);
+  padding: 26px; position: relative; overflow: hidden;
+}
+.faq-aside-card::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(420px 200px at 92% -18%, rgba(255,90,44,0.10), transparent 62%);
+}
+.faq-aside-k { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+.faq-aside-h { font-size: 19px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; margin: 12px 0 0; text-wrap: balance; }
+.faq-aside-p { font-size: 14px; line-height: 1.6; color: var(--text-2); margin: 12px 0 18px; text-wrap: pretty; }
+.faq-aside .btn { width: 100%; justify-content: center; }
+.faq-aside-l { list-style: none; margin: 18px 0 0; padding: 0; display: flex; flex-direction: column; gap: 9px; }
+.faq-aside-l li { display: flex; align-items: flex-start; gap: 9px; font-size: 12.5px; color: var(--text-2); line-height: 1.45; }
+.faq-aside-l svg { width: 14px; height: 14px; flex: none; color: var(--ok); stroke-width: 2.2; margin-top: 1px; }
+@media (max-width: 900px) {
+  .faq-grid { grid-template-columns: 1fr; gap: 26px; }
+  .faq-aside { position: static; }
+}
+
+/* ---------- why Adgent: the reasoning under the matrix ----------
+   The table shows WHAT differs; these say WHY each alternative can't close
+   the gap. Without them the section was a grid of ticks and nothing else. */
+.why-why { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 34px; }
+.why-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--r-lg); padding: 22px 20px 20px;
+  transition: transform 0.26s var(--ease), border-color 0.26s var(--ease), box-shadow 0.26s var(--ease);
+}
+.why-card:hover { transform: translateY(-3px); border-color: var(--border-2); box-shadow: var(--shadow-card); }
+.why-n { font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: 0.12em; color: var(--accent); }
+.why-card h3 { font-size: 15.5px; font-weight: 700; letter-spacing: -0.02em; margin: 10px 0 0; text-wrap: balance; }
+.why-card p { font-size: 13.5px; line-height: 1.6; color: var(--text-2); margin: 9px 0 0; text-wrap: pretty; }
+@media (max-width: 900px) { .why-why { grid-template-columns: 1fr; } }
+
+/* ---------- hero: live status strip ----------
+   The page used to open on a static three-word slogan. This says the same
+   thing by demonstrating it: the system is awake and reading the account
+   right now. Decorative only (aria-hidden) — the headline carries meaning. */
+.hero-status {
+  display: inline-flex; align-items: center; gap: 12px;
+  height: 30px; padding: 0 14px 0 12px; margin-bottom: 20px;
+  border-radius: var(--r-pill);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.10);
+  font-family: var(--font-mono); font-size: 11.5px;
+  max-width: 100%; overflow: hidden;
+}
+.hs-live { display: inline-flex; align-items: center; gap: 7px; color: var(--ok); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; flex: none; }
+.hs-live i { width: 6px; height: 6px; border-radius: 50%; background: var(--ok); flex: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .hs-live i { animation: hs-pulse 2.2s ease-in-out infinite; }
+  @keyframes hs-pulse {
+    0%, 100% { opacity: 1;   box-shadow: 0 0 0 0 rgba(22,147,90,0.55); }
+    50%      { opacity: 0.65; box-shadow: 0 0 0 5px rgba(22,147,90,0); }
+  }
+}
+.hs-sep { width: 1px; height: 13px; background: rgba(255,255,255,0.14); flex: none; }
+.hs-feed { color: rgba(244,242,238,0.62); white-space: nowrap; min-width: 0; overflow: hidden; }
+.hs-feed b { color: rgba(248,246,242,0.9); font-weight: 500; }
+.hs-line { display: inline-block; }
+@media (prefers-reduced-motion: no-preference) {
+  .hs-line.swap { animation: hs-swap 460ms var(--ease); }
+  @keyframes hs-swap {
+    0%   { opacity: 0; transform: translateY(7px); }
+    100% { opacity: 1; transform: none; }
+  }
+}
+@media (max-width: 620px) { .hero-status { display: none; } }
+
+/* ============================================================
+   BUILT FROM A SENTENCE — one conversation, not four cards
+   ------------------------------------------------------------
+   Was a pinned horizontal slider of four card+caption pairs.
+   The point ("you ask, it builds") is better made by showing a
+   single thread where four things get asked in a row — which is
+   also how the product is actually used. No slider, no dots, no
+   scroll hijack.
+   ============================================================ */
+.builds-chat {
+  max-width: 780px; margin: 40px auto 0;
+  display: flex; flex-direction: column; gap: 30px;
+  position: relative;
+}
+/* the thread line */
+/* the thread: a faint rail, with an accent segment that fills as you scroll */
+/* no rail of its own: the circuit arrives from the brain and runs down the
+   right-hand side, so the turns hang off that line instead of a second one */
+.bt { position: relative; padding-right: 44px; }
+.bt-ask {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-left: auto;
+  background: var(--user-bubble, #1c1a17); color: #faf9f6;
+  border-radius: var(--r-pill); padding: 9px 16px;
+  font-size: 13.5px; font-weight: 500; line-height: 1.35;
+  max-width: 100%;
+}
+/* node on the thread */
+/* No node of its own: the circuit already runs down this column, and a second
+   column of dots read as a stray parallel line. */
+.bt-say {
+  display: flex; align-items: center; gap: 7px;
+  font-family: var(--font-mono); font-size: 12px; color: var(--text-3);
+  margin: 10px 0 12px; letter-spacing: 0.02em;
+}
+.bt-say .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--ok); flex: none; }
+/* the produced artefact */
+.bt .build-canvas {
+  margin: 0; background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--r-lg); box-shadow: var(--shadow-soft); padding: 18px;
+}
+.bt .build-cap {
+  margin: 10px 0 0; padding: 0 2px;
+  display: flex; align-items: center; justify-content: space-between; gap: 14px;
+}
+.bt .build-cap .name { font-size: 14px; font-weight: 700; letter-spacing: -0.01em; }
+.bt .build-cap .tag { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); }
+@media (max-width: 640px) {
+  .bt { padding-right: 30px; }
+}
+/* the artefact + its caption are one unit; keep the caption inside the width */
+.bt .build { display: block; background: none; border: none; box-shadow: none; padding: 0; overflow: visible; }
+.bt .build::after { display: none; }
+.bt .build-cap .tag { text-align: right; flex: none; }
+
+/* status strip on the light hero */
+.hero-status {
+  background: var(--bg-card); border-color: var(--border);
+  box-shadow: var(--shadow-soft);
+}
+.hs-sep { background: var(--border-2); }
+.hs-feed { color: var(--text-3); }
+.hs-feed b { color: var(--text-2); font-weight: 600; }
+
+/* stack: centre the description card against the deck, not the top of the row */
+@media (min-width: 981px) {
+  .stack3d { align-items: center; }
+  .s3-detail { align-self: center; }
+}
+
+/* ---------- creative intelligence: a worked example ----------
+   The four capability cards described the analysis; nothing showed it.
+   This is one ad, marked up the way Adgent marks it up: DNA chips, the
+   scene tags on the frame, and the hold curve with the drop called out. */
+.cr-demo {
+  margin-top: 0; max-width: none; background: var(--bg-card);
+  border: 1px solid var(--border); border-radius: var(--r-xl);
+  box-shadow: var(--shadow-card); padding: 16px; max-width: 460px;
+}
+.cr-demo-h { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+.cr-demo-k { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
+.cr-demo-id { font-family: var(--font-mono); font-size: 10px; color: var(--text-4); letter-spacing: 0.04em; }
+.cr-frame { position: relative; border-radius: var(--r-lg); overflow: hidden; aspect-ratio: 1/1; max-width: 260px; margin: 0 auto; }
+.cr-art { display: block; width: 100%; height: auto; }
+.cr-tag {
+  position: absolute; font-family: var(--font-mono); font-size: 9px;
+  letter-spacing: 0.06em; padding: 3px 8px; border-radius: var(--r-pill);
+  background: rgba(28,25,20,0.82); color: #f4f2ee; backdrop-filter: blur(6px);
+  white-space: nowrap;
+}
+.cr-tag-1 { left: 10px; top: 10px; display: inline-flex; align-items: center; gap: 6px; }
+.cr-tag-2 { right: 10px; top: 38px; }
+.cr-dna { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+.cr-dna span {
+  font-size: 10.5px; color: var(--text-3); background: var(--bg-sub);
+  border: 1px solid var(--border); border-radius: var(--r-pill); padding: 4px 10px;
+}
+.cr-dna b { color: var(--text); font-weight: 600; }
+.cr-hold { margin-top: 14px; }
+.cr-hold-h { display: flex; align-items: baseline; justify-content: space-between; font-size: 11px; color: var(--text-3); margin-bottom: 4px; }
+.cr-hold-h span:first-child { font-family: var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; }
+.cr-hold-v b { color: var(--crit); font-weight: 700; }
+.cr-hold svg { width: 100%; height: 46px; display: block; }
+.cr-verdict {
+  margin: 12px 0 0; padding-top: 12px; border-top: 1px solid var(--border);
+  font-size: 12.5px; line-height: 1.55; color: var(--text-2); text-wrap: pretty;
+}
+.cr-verdict b { color: var(--text); font-weight: 700; }
+@media (max-width: 960px) { .cr-demo { max-width: 560px; } }
+/* caption belongs to the artefact, so it sits inside the same card */
+.bt .build-canvas { padding-bottom: 14px; }
+.bt .build-cap {
+  margin: 0; padding: 12px 18px 14px;
+  background: var(--bg-card); border: 1px solid var(--border); border-top: none;
+  border-radius: 0 0 var(--r-lg) var(--r-lg);
+}
+.bt .build-canvas { border-radius: var(--r-lg) var(--r-lg) 0 0; border-bottom: none; }
+/* dashboard artefact: three series + a reconciled footer, not one lonely line */
+.mc-legend { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+.mc-l { display: inline-flex; align-items: center; gap: 5px; font-size: 10px; color: var(--text-3); }
+.mc-l::before { content: ""; width: 9px; height: 2px; border-radius: 1px; }
+.mc-l-a::before { background: var(--accent); }
+.mc-l-b::before { background: var(--info); opacity: 0.65; }
+.mc-l-c::before { background: var(--text-4); }
+.mc-days { margin-left: auto; font-family: var(--font-mono); font-size: 9.5px; color: var(--text-4); letter-spacing: 0.06em; }
+.mini-chart svg { height: 76px; }
+.mc-foot { display: flex; align-items: baseline; justify-content: space-between; margin-top: 8px; font-size: 11.5px; color: var(--text-3); }
+.mc-foot b { color: var(--text); font-weight: 700; font-variant-numeric: tabular-nums; }
+.mc-note { font-family: var(--font-mono); font-size: 9.5px; color: var(--text-4); }
+.cr-tag i { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); flex: none; }
+/* scrub bar: reads as a video being played and marked up */
+.cr-scrub { position: absolute; left: 10px; right: 10px; bottom: 9px; height: 3px; border-radius: 2px; background: rgba(255,255,255,0.22); overflow: hidden; }
+.cr-scrub b { display: block; height: 100%; background: var(--accent); border-radius: 2px; }
+/* the ask is the user's turn — right-aligned, like any chat */
+.bt { display: flex; flex-direction: column; }
+.bt .bt-ask { align-self: flex-end; text-align: left; }
+.bt .bt-say { align-self: flex-start; }
+
+/* the spine is positioned against the page, so body must anchor it */
+body { position: relative; }
+
+/* ============================================================
+   SPINE — one straight story line down the whole page
+   ------------------------------------------------------------
+   A single hairline rail in the left gutter, a coral progress
+   fill that follows the read, a travelling head, and one
+   numbered node per chapter. Every section hangs off the same
+   line, so the page reads as one continuous argument instead of
+   a stack of unrelated bands.
+   ============================================================ */
+.spine {
+  position: absolute; top: 0; left: max(18px, calc(50vw - 622px));
+  width: 2px; z-index: 40; pointer-events: none;
+}
+.spine-rail {
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 0,
+    rgba(28, 25, 20, 0.16) 90px,
+    rgba(28, 25, 20, 0.16) calc(100% - 220px),
+    transparent 100%
+  );
+}
+.spine-fill {
+  position: absolute; top: 0; left: 0; width: 2px; height: 0;
+  /* progress gradient: the story starts as a faint ember at the top and gains
+     heat all the way down to the head, so the drawn line reads as momentum */
+  background: linear-gradient(
+    to bottom,
+    color-mix(in oklab, var(--accent) 12%, transparent) 0,
+    color-mix(in oklab, var(--accent) 42%, transparent) 12%,
+    color-mix(in oklab, var(--accent) 74%, transparent) 46%,
+    var(--accent) 88%,
+    #ffb489 100%
+  );
+  /* the glow belongs to the progress: two soft halos so the drawn part reads as
+     lit glass rather than a flat stroke (box-shadow, not a child — .spine-fill
+     clips its children to carry the travelling flow) */
+  box-shadow: 0 0 8px rgba(255, 90, 44, 0.34), 0 0 22px rgba(255, 90, 44, 0.18);
+  opacity: 0.94;
+  will-change: height;
+}
+
+
+.spine-head {
+  position: absolute; top: 0; left: 1px; width: 0; height: 0;
+  will-change: transform;
+}
+.spine-end {
+  position: absolute; bottom: -5px; left: 1px;
+  width: 9px; height: 9px; margin-left: -4.5px;
+  transform: rotate(45deg);
+  border: 1.5px solid rgba(28, 25, 20, 0.28);
+  background: var(--spine-ring, var(--bg-app));
+  transition: background 400ms var(--ease), border-color 400ms var(--ease),
+              box-shadow 400ms var(--ease);
+}
+.spine.complete .spine-end {
+  background: var(--accent); border-color: var(--accent);
+  box-shadow: 0 0 18px rgba(255, 90, 44, 0.6);
+}
+/* the head flares for a beat each time it crosses a chapter node, so the
+   line itself reacts to the story instead of just growing */
+.spine.beat .spine-fill { opacity: 1; box-shadow: 0 0 22px rgba(255, 90, 44, 0.55); }
+.spine.beat .spine-head > i:not(.spine-spark) {
+  transform: scale(1.22);
+  filter: drop-shadow(0 0 7px rgba(255, 90, 44, 0.95));
+}
+.spine-fill, .spine-head > i:not(.spine-spark) { transition: opacity 500ms var(--ease), filter 500ms var(--ease), transform 420ms var(--ease); }
+.spine-head.done > i:not(.spine-spark) { opacity: 0; }
+/* only the head's own dot gets the big treatment — the spark children are
+   separate <i>s and must keep their own small, ringless styling */
+.spine-head > i:not(.spine-spark) {
+  position: absolute; left: -5px; top: -5px;
+  width: 11px; height: 11px; border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid color-mix(in srgb, var(--accent) 72%, #b82f13);
+  box-shadow: 0 0 10px rgba(255, 90, 44, 0.68), 0 0 22px rgba(255, 90, 44, 0.32);
+  animation: spine-pulse 2.6s var(--ease) infinite;
+}
+/* over the dark Memory stage the protective ring must read as shadow, not as
+   a white disc punched out of the rail */
+.spine.on-dark { --spine-ring: #141210; }
+
+/* silent break: the marquee band is pure atmosphere — fade the whole rail
+   and head out as the reader crosses it, then back in on the other side */
+/* the marquee break isn't an on/off switch: the rail feathers out as it
+   approaches the band and feathers back in on the way out. --spine-vis is
+   written by the scroll loop (0 → 1) and only ever touches opacity, so the
+   fade stays on the compositor. */
+.spine { --spine-vis: 1; }
+.spine .spine-rail,
+.spine .spine-fill,
+.spine .spine-flow,
+.spine .spine-seg,
+.spine .spine-run,
+.spine .spine-head,
+.spine .spine-end,
+.spine .spine-node,
+.spine .spine-spark { transition: opacity 260ms var(--ease); }
+.spine.fading .spine-rail,
+.spine.fading .spine-fill,
+.spine.fading .spine-flow,
+.spine.fading .spine-seg,
+.spine.fading .spine-run,
+.spine.fading .spine-head,
+.spine.fading .spine-end,
+.spine.fading .spine-node,
+.spine.fading .spine-spark { opacity: var(--spine-vis); transition: none; }
+.spine.hidden .spine-rail,
+.spine.hidden .spine-fill,
+.spine.hidden .spine-flow,
+.spine.hidden .spine-seg,
+.spine.hidden .spine-run,
+.spine.hidden .spine-head,
+.spine.hidden .spine-end,
+.spine.hidden .spine-node,
+.spine.hidden .spine-spark { opacity: 0; }
+/* silent bands (the marquee): the rail itself is cut out with a feathered mask
+   in document coordinates, so the line never crosses that section even after
+   the head has scrolled past it */
+/* masked on the rail wrapper, not on .spine: the wrapper spans the whole
+   document (top 0, height 100%) so a document-coordinate gradient lines up,
+   while the travelling head stays outside the mask and never gets clipped. */
+.spine-cut { position: absolute; inset: 0; }
+.spine.has-gap .spine-cut {
+  -webkit-mask-image: var(--spine-gap-mask);
+  mask-image: var(--spine-gap-mask);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+
+
+
+@keyframes spine-pulse {
+  0%, 100% { box-shadow: 0 0 8px rgba(255,90,44,0.58), 0 0 18px rgba(255,90,44,0.24); }
+  50%      { box-shadow: 0 0 14px rgba(255,90,44,0.9), 0 0 30px rgba(255,90,44,0.42); }
+}
+
+/* ---------- FLOW ORNAMENTS ----------
+   The rail is 1:1 synchronised with the scroll, so all the "life" comes from
+   ornaments layered on top of it: a stream of light travelling inside the
+   drawn part, sparks drifting off the head, and faint ticks on the raw rail. */
+.spine-fill { overflow: hidden; }
+.spine-flow {
+  position: absolute; inset: 0; pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0px,
+    rgba(255, 236, 228, 0.85) 5px,
+    rgba(255, 255, 255, 0) 12px,
+    rgba(255, 255, 255, 0) 78px
+  );
+  background-size: 100% 78px;
+  opacity: 0.55;
+  animation: spine-flow 2.6s linear infinite;
+}
+@keyframes spine-flow {
+  from { background-position: 0 0; }
+  to   { background-position: 0 78px; }
+}
+.spine.beat .spine-flow { opacity: 0.95; animation-duration: 1.1s; }
+
+/* sparks ride with the head and fall back up the drawn rail */
+.spine-spark {
+  position: absolute; left: -1.5px; top: 0;
+  width: 3px; height: 3px; border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 8px rgba(255, 90, 44, 0.9);
+  opacity: 0; pointer-events: none;
+  animation: spine-spark 6.8s var(--ease) infinite;
+  animation-delay: var(--d, 0s);
+}
+@keyframes spine-spark {
+  0%   { opacity: 0; transform: translate(0, 4px) scale(0.4); }
+  12%  { opacity: 0.9; }
+  100% { opacity: 0; transform: translate(var(--dx, 0px), -120px) scale(0.2); }
+}
+.spine-spark:nth-child(2) { --dx: 4px; }
+.spine-spark:nth-child(3) { --dx: -5px; }
+.spine-spark:nth-child(4) { --dx: 2px; }
+
+/* faint ticks on the undrawn rail: the story still to come, measured out */
+.spine-rail::after {
+  content: ""; position: absolute; inset: 90px 0 220px 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(28, 25, 20, 0.22) 0px,
+    rgba(28, 25, 20, 0.22) 6px,
+    rgba(28, 25, 20, 0) 6px,
+    rgba(28, 25, 20, 0) 26px
+  );
+  opacity: 0.5;
+}
+
+/* ---------- NARRATIVE BEATS ON THE RAIL ----------
+   Three additions so the line reads as a story being told rather than a
+   static stroke: (1) the segment between the current chapter and the next
+   one glows and drifts, (2) a packet of light runs down the rail from the
+   chapter you just left to the one you just entered, (3) each node fires a
+   ring the moment the line reaches it. */
+
+/* (1) live segment: the stretch of rail the current chapter owns */
+.spine-seg {
+  position: absolute; left: -1px; width: 4px;
+  top: 0; height: 0; opacity: 0;
+  border-radius: 4px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0,
+    color-mix(in oklab, var(--accent) 55%, transparent) 18%,
+    color-mix(in oklab, var(--accent) 80%, transparent) 50%,
+    color-mix(in oklab, var(--accent) 55%, transparent) 82%,
+    transparent 100%
+  );
+  filter: blur(0.4px);
+  transition: top 700ms var(--ease), height 700ms var(--ease), opacity 500ms var(--ease);
+}
+.spine-seg.on { opacity: 0.5; }
+@media (prefers-reduced-motion: no-preference) {
+  .spine-seg.on { animation: spine-seg-breathe 3.4s var(--ease) infinite; }
+}
+@keyframes spine-seg-breathe {
+  0%, 100% { opacity: 0.28; }
+  50%      { opacity: 0.62; }
+}
+
+/* (2) travelling packet: the hand-over between two chapters */
+.spine-run {
+  position: absolute; left: -2px; top: 0;
+  width: 6px; height: 40px; margin-top: -20px;
+  border-radius: 6px;
+  background: linear-gradient(to bottom, transparent, var(--accent) 55%, transparent);
+  box-shadow: 0 0 16px rgba(255, 90, 44, 0.7);
+  opacity: 0; will-change: transform, opacity;
+}
+.spine-run.go { animation: spine-run 900ms var(--ease) 1; }
+@keyframes spine-run {
+  0%   { opacity: 0; transform: translateY(var(--from, 0px)) scaleY(0.5); }
+  18%  { opacity: 1; }
+  80%  { opacity: 1; }
+  100% { opacity: 0; transform: translateY(var(--to, 0px)) scaleY(1.6); }
+}
+
+/* (3) node fires when the line arrives */
+.spine-node.fired::before {
+  animation: spine-fire 620ms var(--ease) 1;
+}
+@keyframes spine-fire {
+  0%   { box-shadow: 0 0 0 0 rgba(255, 90, 44, 0.55); }
+  70%  { box-shadow: 0 0 0 14px rgba(255, 90, 44, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 90, 44, 0); }
+}
+.spine-node.fired .spine-arm { width: 74px; }
+@media (prefers-reduced-motion: no-preference) {
+  .spine-node.fired.fired::after { animation: node-jitter 420ms var(--ease) 1 !important; }
+}
+@keyframes node-jitter {
+  0%   { transform: scale(0.7); }
+  30%  { transform: scale(1.35) translateX(1px); }
+  55%  { transform: scale(1.1) translateX(-1px); }
+  100% { transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spine-seg, .spine-run, .spine-flow, .spine-spark { display: none; }
+  .spine-node.now::before { animation: none; }
+}
+
+
+/* the header no longer carries a progress bar — the rail is the only
+   progress instrument. Instead the nav gets a soft gradient scrim so content
+   scrolling underneath stays readable, and the active tab gets a gradient
+   underline that flows with the story. */
+.nav {
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--bg-app) 92%, transparent) 0%,
+    color-mix(in srgb, var(--bg-app) 74%, transparent) 100%
+  );
+}
+.nav::after {
+  content: ""; position: absolute; left: 0; top: 100%; height: 34px;
+  width: 100%; pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--bg-app) 70%, transparent) 0%,
+    color-mix(in srgb, var(--bg-app) 0%, transparent) 100%
+  );
+  opacity: 0; transition: opacity 320ms var(--ease);
+}
+.nav.stuck::after { opacity: 1; }
+.nav.stuck { box-shadow: 0 1px 0 var(--border), 0 10px 30px -22px rgba(28,25,20,0.28); }
+/* tab flow: the active link sits on a gradient underline that shares the
+   rail's coral, so navigation reads as part of the same system */
+.nav-links a { position: relative; }
+.nav-links a::after {
+  content: ""; position: absolute; left: 10px; right: 10px; bottom: 2px;
+  height: 2px; border-radius: 2px;
+  background: linear-gradient(90deg, var(--accent), color-mix(in oklab, var(--accent) 25%, transparent));
+  transform: scaleX(0); transform-origin: 0 50%; opacity: 0;
+  transition: transform 380ms var(--ease), opacity 300ms var(--ease);
+}
+.nav-links a:hover::after { transform: scaleX(0.55); opacity: 0.5; }
+.nav-links a.active::after { transform: scaleX(1); opacity: 1; }
+
+/* ---- chapter nodes ----
+   number and label live in the gutter, LEFT of the rail, so nothing can ever
+   collide with the content column. the label runs vertically down the rail. */
+.spine-node {
+  position: absolute; left: 1px; width: 0; height: 0;
+}
+.spine-node::before {
+  content: ""; position: absolute; left: -5px; top: -5px;
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--bg-app);
+  border: 1.5px solid rgba(28, 25, 20, 0.28);
+  box-shadow: 0 0 0 3px var(--bg-app);
+  transition: background 320ms var(--ease), border-color 320ms var(--ease),
+              box-shadow 320ms var(--ease), transform 320ms var(--ease);
+}
+.spine-node.lit::before {
+  background: var(--accent); border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--bg-app), 0 0 14px rgba(255, 90, 44, 0.55);
+  transform: scale(1.15);
+}
+.spine-node-n,
+.spine-node-l {
+  position: absolute;
+  font-family: var(--font-mono);
+  font-size: 10px; font-weight: 500; letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-4);
+  transition: color 320ms var(--ease), opacity 420ms var(--ease),
+              transform 420ms var(--ease);
+  opacity: 0;
+}
+.spine-node-n {
+  right: 15px; top: 0; transform: translate(4px, -50%);
+}
+.spine-node-l {
+  right: 16px; top: 15px;
+  writing-mode: vertical-rl; text-orientation: mixed;
+  letter-spacing: 0.2em;
+  transform: translate(4px, 0);
+}
+.spine-node.lit .spine-node-n { opacity: 1; transform: translate(0, -50%); color: var(--accent); }
+.spine-node.lit .spine-node-l { opacity: 1; transform: none; color: var(--text-3); }
+.spine-node.now .spine-node-l { color: var(--text-2); }
+
+/* the current chapter breathes: a soft halo ring around the live node */
+.spine-node::after {
+  content: ""; position: absolute; left: -1px; top: 0;
+  width: 28px; height: 28px; margin: -14px 0 0 -14px;
+  border-radius: 50%; pointer-events: none;
+  background: radial-gradient(circle, rgba(255, 90, 44, 0.4) 0%, rgba(255, 90, 44, 0) 68%);
+  opacity: 0; transform: scale(0.6);
+  transition: opacity 480ms var(--ease), transform 480ms var(--ease);
+}
+.spine-node::after {
+  width: 44px; height: 44px; margin: -22px 0 0 -22px;
+  background:
+    radial-gradient(circle, rgba(255, 90, 44, 0.5) 0%, rgba(255, 90, 44, 0) 62%),
+    radial-gradient(circle, rgba(255, 176, 132, 0.35) 0%, rgba(255, 176, 132, 0) 78%);
+}
+.spine-node.now::after { opacity: 1; transform: none; animation: spine-halo 3.2s var(--ease) infinite; }
+@keyframes spine-halo {
+  0%, 100% { transform: scale(0.78); opacity: 0.55; }
+  50%      { transform: scale(1.28); opacity: 1; }
+}
+.spine-node.now::before {
+  background: var(--accent); border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--bg-app), 0 0 0 1.5px rgba(255, 90, 44, 0.65),
+              0 0 14px rgba(255, 90, 44, 0.9), 0 0 34px rgba(255, 90, 44, 0.55);
+  transform: scale(1.45);
+  animation: spine-node-beat 2.4s var(--ease) infinite;
+}
+@keyframes spine-node-beat {
+  0%, 100% { box-shadow: 0 0 0 3px var(--bg-app), 0 0 0 1.5px rgba(255,90,44,0.55),
+                         0 0 12px rgba(255,90,44,0.7), 0 0 24px rgba(255,90,44,0.35); }
+  50%      { box-shadow: 0 0 0 3px var(--bg-app), 0 0 0 1.5px rgba(255,90,44,0.85),
+                         0 0 20px rgba(255,90,44,1), 0 0 44px rgba(255,90,44,0.6); }
+}
+/* the live number gets its own lift so the eye finds the current chapter */
+.spine-node.now .spine-node-n {
+  color: var(--accent); font-weight: 600;
+  text-shadow: 0 0 14px rgba(255, 90, 44, 0.6);
+}
+.spine-node.now .spine-arm {
+  height: 2px;
+  box-shadow: 0 0 12px rgba(255, 90, 44, 0.7);
+}
+
+/* a short arm reaching from the rail toward the section it introduces, so
+   every band visibly hangs off the same line */
+.spine-node .spine-arm {
+  position: absolute; left: 3px; top: 0;
+  height: 1px; width: 0;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  transition: width 520ms var(--ease);
+}
+.spine-node.lit .spine-arm { width: 40px; }
+.spine-node.now .spine-arm { width: 58px; }
+
+/* ---- seam: each chapter visibly hangs off the rail ----
+   a hairline that grows out of the node along the top edge of the section it
+   introduces, so one band hands over to the next instead of just stacking */
+.sec-seam {
+  position: absolute; top: 0; right: 0; height: 1px;
+  /* begins exactly on the rail, so each hand-over grows out of the line */
+  left: max(18px, calc(50vw - 622px));
+  z-index: 2; pointer-events: none; overflow: visible;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 90, 44, 0.65) 0,
+    rgba(255, 90, 44, 0.28) 14%,
+    rgba(28, 25, 20, 0.10) 46%,
+    transparent 100%
+  );
+  transform: scaleX(0); transform-origin: 0 50%; opacity: 0;
+  transition: transform 1100ms var(--ease), opacity 700ms var(--ease);
+}
+.chapter-live > .sec-seam { transform: none; opacity: 1; }
+.sec-seam::after {
+  content: ""; position: absolute; left: 0; top: -2px;
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--accent); opacity: 0;
+  box-shadow: 0 0 12px rgba(255, 90, 44, 0.7);
+  transition: opacity 700ms var(--ease) 240ms;
+}
+.chapter-live > .sec-seam::after { opacity: 1; }
+/* ---------- SECTION ENTRY MICRO-BEATS ----------
+   When the rail hands over to a band, the joint reacts: the spark on the seam
+   jitters as it ignites, a ring bursts out of it, and a soft bloom fades in
+   behind the section's opening lines. Short, one-shot, story-shaped. */
+@media (prefers-reduced-motion: no-preference) {
+  .chapter-live > .sec-seam::after {
+    animation: seam-spark 760ms var(--ease) 160ms 1;
+  }
+  /* ring burst out of the joint */
+  .sec-seam::before {
+    content: ""; position: absolute; left: -5px; top: -7px;
+    width: 15px; height: 15px; border-radius: 50%;
+    border: 1.5px solid rgba(255, 90, 44, 0.85);
+    opacity: 0; pointer-events: none;
+  }
+  .chapter-live > .sec-seam::before {
+    animation: seam-burst 820ms cubic-bezier(.16,1,.3,1) 180ms 1;
+  }
+  /* soft bloom behind the opening of the band */
+  .sec-bloom {
+    position: absolute; left: max(18px, calc(50vw - 622px)); top: -40px;
+    width: 420px; height: 260px; margin-left: -60px;
+    pointer-events: none; z-index: 0; opacity: 0;
+    background: radial-gradient(
+      60% 60% at 20% 30%,
+      rgba(255, 90, 44, 0.16) 0%,
+      rgba(255, 90, 44, 0.06) 42%,
+      rgba(255, 90, 44, 0) 72%
+    );
+    filter: blur(2px);
+  }
+  .chapter-live > .sec-bloom { animation: sec-bloom 1600ms var(--ease) 120ms 1; }
+}
+@keyframes seam-spark {
+  0%   { opacity: 0; transform: translate(0, 0) scale(0.4); }
+  22%  { opacity: 1; transform: translate(1px, -1px) scale(1.9); }
+  38%  { transform: translate(-1px, 1px) scale(1.5); }
+  54%  { transform: translate(1px, 0) scale(1.7); }
+  70%  { transform: translate(0, 0) scale(1.2); }
+  100% { opacity: 1; transform: none; }
+}
+@keyframes seam-burst {
+  0%   { opacity: 0.9; transform: scale(0.3); }
+  60%  { opacity: 0.35; }
+  100% { opacity: 0; transform: scale(2.6); }
+}
+@keyframes sec-bloom {
+  0%   { opacity: 0; transform: translateY(10px); }
+  35%  { opacity: 1; transform: none; }
+  100% { opacity: 0; transform: none; }
+}
+@media (max-width: 900px) { .sec-bloom { display: none; } }
+/* a light travels along the seam once, handing the story over to this band */
+.sec-seam i {
+  position: absolute; top: -1px; left: 0; width: 46px; height: 3px;
+  border-radius: 3px; opacity: 0;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  filter: blur(0.4px);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .chapter-live > .sec-seam i { animation: seam-run 1500ms var(--ease) 200ms 1; }
+}
+@keyframes seam-run {
+  0%   { opacity: 0; transform: translateX(0); }
+  12%  { opacity: 1; }
+  100% { opacity: 0; transform: translateX(min(760px, 60vw)); }
+}
+
+@media (max-width: 900px) { .sec-seam { display: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .spine-fill, .spine-head { display: none; }
+  .spine-node.now::after { animation: none; }
+  .sec-seam { transition: none; transform: none; opacity: 1; }
+  .sec-bloom { display: none; }
+  .spine-node .spine-node-n, .spine-node .spine-node-l { opacity: 1; transform: none; }
+}
+/* narrow screens keep the rail — only the wordy labels drop out. the page
+   gains a small left inset so the rail never sits on top of the content */
+@media (max-width: 1240px) and (min-width: 901px) {
+  /* wider left inset so the chapter reads horizontally in the gutter, to the
+     LEFT of the rail — right-aligned against the line */
+  body { padding-left: 176px; }
+  .spine { left: 148px; }
+  .sec-seam { left: 148px; }
+  .spine-node-n {
+    right: 16px; left: auto; top: 0;
+    font-size: 9px; letter-spacing: 0.08em; text-align: right;
+    transform: translate(6px, -142%);
+  }
+  .spine-node-l {
+    right: 16px; left: auto; top: 0;
+    writing-mode: horizontal-tb; text-orientation: initial;
+    font-size: 9px; letter-spacing: 0.1em;
+    white-space: nowrap; text-align: right;
+    transform: translate(6px, 12%);
+  }
+  .spine-node.lit .spine-node-n,
+  .spine-node.now .spine-node-n { transform: translate(0, -142%); }
+  .spine-node.lit .spine-node-l,
+  .spine-node.now .spine-node-l { transform: translate(0, 12%); }
+}
+
+
+@media (max-width: 900px) { .spine { display: none; } }
+
+
+/* ============================================================
+   ON-RAIL GLYPHS (brain, eye)
+   Both figures straddle the narrative rail in the left gutter: the line
+   runs down BEHIND them, so the story visibly passes through each beat.
+   JS sets --spine-x per figure (rail x minus the figure's own centre).
+   ============================================================ */
+.brainwrap, .metafig {
+  position: relative; z-index: 3;
+  width: max-content; margin-left: 0; margin-right: 0;
+  display: flex; align-items: center; gap: 14px;
+  transform: translateX(var(--spine-x, 0));
+  transition: transform 600ms var(--ease);
+}
+.brainwrap { margin-top: 54px; padding-right: 0; }
+.metafig { margin-top: 56px; }
+
+.brain, .metafig svg { position: relative; z-index: 1; display: block; }
+.brain { width: 92px; height: 92px; }
+.metafig svg { width: 96px; height: 96px; }
+.metafig-sm svg { width: 76px; height: 76px; }
+
+.brain path, .brain circle {
+  stroke: var(--text-4); stroke-width: 1.6; fill: none;
+  transition: stroke 500ms var(--ease), filter 500ms var(--ease);
+}
+.brainwrap.lit .brain path, .brainwrap.lit .brain circle {
+  stroke: var(--accent);
+  filter: drop-shadow(0 0 8px rgba(255,90,44,0.5));
+}
+.metafig path, .metafig circle {
+  fill: none; stroke: var(--text-4); stroke-width: 2;
+  stroke-linecap: round; stroke-linejoin: round;
+  transition: stroke 600ms var(--ease), opacity 600ms var(--ease), transform 700ms var(--ease);
+}
+.metafig.lit path, .metafig.lit circle { stroke: var(--accent); }
+
+/* captions read to the right of the figure, clear of the rail */
+.brain-cap, .metafig .mf-cap {
+  position: relative !important; top: auto; left: auto; right: auto;
+  margin: 0; align-self: center; transform: none; z-index: 3;
+  white-space: nowrap; background: none; padding: 2px 0;
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--text-4);
+  transition: color 500ms var(--ease);
+}
+.brainwrap.lit .brain-cap, .metafig.lit .mf-cap { color: var(--accent); }
+
+/* ---------- hero input: lights on arrival, then hands off to the circuit ----------
+   The bar draws its own border in accent on load, so the eye starts at the
+   thing you type into; the circuit then leaves from the send button. */
+@media (prefers-reduced-motion: no-preference) {
+  .hero .chat-input { position: relative; }
+  .hero .chat-input::after {
+    content: ""; position: absolute; inset: -1px; border-radius: inherit;
+    border: 1.5px solid var(--accent); opacity: 0;
+    animation: input-arm 1.1s var(--ease) 2.6s forwards;
+    pointer-events: none;
+  }
+  @keyframes input-arm {
+    0%   { opacity: 0; clip-path: inset(0 100% 0 0); }
+    30%  { opacity: 1; }
+    100% { opacity: 1; clip-path: inset(0 0 0 0); }
+  }
+  .hero .chat-input .send { transition: background 400ms var(--ease), box-shadow 400ms var(--ease); }
+  .hero .chat-input.armed .send { box-shadow: 0 0 0 4px var(--accent-soft); }
+}
+
+/* the revenue line lights when the circuit reaches it */
+.gt-line.lit::before { background: repeating-linear-gradient(to bottom, var(--accent) 0 6px, transparent 6px 12px); }
+.gt-line.lit span { color: var(--accent); }
+.gt-line::before, .gt-line span { transition: background 500ms var(--ease), color 500ms var(--ease); }
+
+/* form fields light as the circuit runs down them — the last nudge to fill it in */
+.lf-field input, .lf-field textarea { transition: border-color 400ms var(--ease), box-shadow 400ms var(--ease); }
+.lf-field.lit input, .lf-field.lit textarea {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+/* ---------- trust gate + section seams: light as the circuit passes ---------- */
+.tg-card { transition: border-color 500ms var(--ease), box-shadow 500ms var(--ease); }
+.tg-card.lit { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft), var(--shadow-card); }
+.tg-card.lit .rflag { border-color: color-mix(in srgb, var(--accent) 34%, var(--border)); }
+
+/* the Adgent column header lights when the circuit lands on it */
+.matrix .mx-us { transition: box-shadow 400ms var(--ease); }
+.matrix .mx-us.lit { box-shadow: inset 0 3px 0 var(--accent), 0 0 18px -4px rgba(255,90,44,0.6); }
+
+
+/* ---------- the circuit runs BEHIND content, above section backgrounds ----------
+   z-index 2 puts the trace over the band backgrounds (which is what made whole
+   sections look skipped). Cards then need to sit above it, or the line is drawn
+   across their faces — which reads as a mistake, not as routing. */
+/* Sections are z-index:1 and create their own stacking context, so a card
+   inside one can never rise above a z-index:2 sibling of the section no
+   matter how high its own z-index is. Lift the SECTIONS above the circuit,
+   then let the circuit show through their transparent backgrounds by giving
+   the bands no background of their own where it matters. */
+
+
+/* ---------- circuit stacking ----------
+   Sections paint an opaque background. At z-index:-1 the trace sat under all
+   of them and was invisible on every screen (measured: 0% visible). It has to
+   be above the section BACKGROUNDS but below their CONTENT — and sections must
+   not declare a z-index of their own, or they trap their children in a
+   stacking context where no card can ever rise above the svg. */
+section, .band, .moat, .hero { z-index: auto; }
+/* .wrap already carries z-index:1, which traps its children in a stacking
+   context level with the svg. Lift it so content sits above the trace. */
+.wrap { z-index: 2; }
+.cutout, .memcard, .build, .layer, .creative-card, .cr-demo, .s3-detail,
+.gt-lens, .why-card, .faq details, .faq-aside-card, .cta, .matrix-wrap,
+.rflag, .bt-ask, .marquee-row, .sec-head,
+.wrap > h2, .sec-title, .sec-sub, .eyebrow, .stack-kicker, .gt-kicker, .matrix-note, .gt-line,
+.s3-detail, .report-foot, .lead-fine {
+  position: relative; z-index: 2;
+}
+
+/* the hero's floating chips sit on top of the cutout, so they need to clear
+   both the trace and the panel */
+.float-chip { position: absolute; z-index: 5; }
+
+/* the circuit passes each ask on its way down — mark where it meets them */
+.bt { position: relative; }
+.bt::before {
+  content: ""; position: absolute; right: -34px; top: 16px;
+  width: 9px; height: 9px; border-radius: 50%;
+  background: var(--accent); box-shadow: 0 0 0 4px var(--bg-app);
+  z-index: 3;
+}
+@media (max-width: 900px) { .bt::before { display: none; } }
+
+
+/* ---------- memory section: the circuit sits this one out ----------
+   The dark band tells its own story; a trace running past it added nothing.
+   The section paints over the svg rather than the route being re-planned, so
+   the line still enters and leaves at the right heights on either side. */
+.moat { position: relative; z-index: 3; }
+
+/* ============================================================
+   METAPHOR FIGURES — the circuit wakes each one as it arrives
+   ------------------------------------------------------------
+   The brain (context) already worked as a beat in the story.
+   These give the other two claims a body: an eye that opens at
+   "awareness", a shield that seals at the trust gate. Each is
+   inert grey until the trace reaches it, then it animates once.
+   ============================================================ */
+/* eye: lids part, iris dilates, rays flick out */
+.metafig[data-fig="eye"] .mf-lid-t,
+.metafig[data-fig="eye"] .mf-lid-b { transform-origin: 48px 48px; }
+.metafig[data-fig="eye"]:not(.lit) .mf-lid-t { transform: translateY(20px) scaleY(0.12); }
+.metafig[data-fig="eye"]:not(.lit) .mf-lid-b { transform: translateY(-20px) scaleY(0.12); }
+.metafig[data-fig="eye"]:not(.lit) .mf-iris,
+.metafig[data-fig="eye"]:not(.lit) .mf-pupil { opacity: 0; transform: scale(0.4); transform-origin: 48px 48px; }
+.metafig[data-fig="eye"] .mf-ray { opacity: 0; stroke-width: 1.6; transition-delay: 260ms; }
+.metafig[data-fig="eye"].lit .mf-ray { opacity: 0.85; }
+.metafig[data-fig="eye"].lit .mf-pupil { fill: var(--accent); }
+
+
+@media (prefers-reduced-motion: reduce) {
+  .metafig path, .metafig circle { transform: none !important; opacity: 1 !important; stroke-dashoffset: 0 !important; }
+}
+/* when the gutter is too thin to hold a 92px glyph, the figures leave the rail
+   and return to the flow rather than hanging off the viewport edge */
+@media (max-width: 1240px) {
+  .brainwrap, .metafig { transform: none; margin-left: auto; margin-right: auto; }
+}
+
+/* ============================================================
+   TOKEN GUARD
+   The shadcn base tokens in src/styles.css declare --accent and --border on
+   :root after this file is imported, which silently repainted every coral
+   accent and hairline. Re-assert the brand values with higher specificity so
+   the whole page stays on one palette.
+   ============================================================ */
+:root:root {
+  --accent: #ff5a2c;
+  --border: rgba(28, 25, 20, 0.085);
+}
+
+/* =====================================================================
+   SECTION-BY-SECTION LAYOUT PASS
+   One shared measure, gap and card behaviour for every band, so the page
+   reads as one document instead of ten independently-styled sections.
+   ===================================================================== */
+:root { --gap: clamp(16px, 1.6vw, 24px); }
+
+/* --- shared grid rhythm: same gutter everywhere, cards always equal height */
+.layers, .steps, .feat-grid, .gt-points, .stats, .split, .ptiers, .creative-grid {
+  gap: var(--gap);
+  align-items: stretch;
+}
+.layers > *, .steps > *, .feat-grid > *, .gt-points > *, .split > * { height: 100%; }
+
+/* --- shared card behaviour: hairline accent that lights on hover, subtle lift */
+.layer, .step, .feat, .gt-point, .stat, .ptier {
+  position: relative;
+  transition: transform 380ms var(--ease), border-color 380ms var(--ease),
+              box-shadow 380ms var(--ease), background 380ms var(--ease);
+}
+.layer::after, .step::after, .feat::after {
+  content: ""; position: absolute; left: 0; right: 0; top: 0; height: 2px;
+  border-radius: 2px 2px 0 0;
+  background: linear-gradient(90deg, var(--accent), color-mix(in oklab, var(--accent) 12%, transparent));
+  transform: scaleX(0); transform-origin: 0 50%; opacity: 0;
+  transition: transform 460ms var(--ease), opacity 300ms var(--ease);
+}
+.layer:hover::after, .step:hover::after, .feat:hover::after { transform: scaleX(1); opacity: 1; }
+.layer:hover, .step:hover, .feat:hover, .gt-point:hover, .stat:hover, .ptier:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in oklab, var(--accent) 26%, var(--border));
+  box-shadow: 0 18px 40px -30px rgba(28, 25, 20, 0.5);
+}
+@media (prefers-reduced-motion: reduce) {
+  .layer:hover, .step:hover, .feat:hover, .gt-point:hover, .stat:hover, .ptier:hover { transform: none; }
+}
+
+/* --- section heads: identical spacing ladder in every band */
+.sec-head .eyebrow { margin-bottom: 2px; }
+.sec-head + * { margin-top: clamp(28px, 3.4vh, 44px); }
+
+/* --- hero: tighter column balance, lede on the same measure as sec-sub */
+.hero { padding: clamp(72px, 9vh, 104px) 0 clamp(64px, 8vh, 92px); }
+.hero-grid { grid-template-columns: 1.05fr 0.95fr; gap: clamp(36px, 4.5vw, 64px); }
+.hero-lede { max-width: 52ch; }
+
+/* --- Memory (moat): the dark block fades into the page top and bottom instead
+   of cutting it, so the parallax atmosphere carries through the seam */
+.moat { border-radius: 0; }
+.moat::after {
+  content: ""; position: absolute; left: 0; right: 0; top: 0; height: 120px;
+  pointer-events: none; z-index: 0;
+  background: linear-gradient(to bottom, color-mix(in srgb, var(--bg-app) 55%, transparent), transparent);
+}
+.moat .wrap { z-index: 1; }
+.moat-grid { gap: clamp(40px, 4.5vw, 68px); align-items: start; }
+.moat-points { margin-top: clamp(22px, 2.6vh, 32px); }
+
+/* --- The loop / The stack: cards keep an even internal ladder */
+.layer h3, .step h3, .feat h3 { margin-top: 12px; }
+.layer p, .step p, .feat p { max-width: 42ch; }
+.layer-ex { margin-top: 16px; }
+
+/* --- Trust gate / Creative / Ground truth: align tops, equal measure */
+.creative-split, .gt-trap, .integ, .math-wrap { gap: clamp(28px, 3.4vw, 48px); }
+.gt-points { margin-top: clamp(20px, 2.4vh, 28px); }
+
+/* --- closing CTA sits on its own gradient stage */
+.cta-grid { gap: clamp(32px, 4vw, 56px); }
+
+/* --- the rail must stay above every band (dark ones included) but under the nav */
+.spine { z-index: 40; }
+/* over the dark Memory band the unread rail needs more light to stay readable */
+.moat::after { height: 56px; opacity: 0.45; }
+
+/* =====================================================================
+   CONTRAST + GRADIENT + PERFORMANCE PASS
+   ===================================================================== */
+
+/* --- contrast: secondary/tertiary text and hairlines were too light on the
+   warm canvas; every level now clears AA for its size. */
+:root {
+  --text-2: #56524a;
+  --text-3: #7b7668;
+  --text-4: #a49e91;
+  --border: rgba(28, 25, 20, 0.115);
+  --border-2: rgba(28, 25, 20, 0.19);
+  --bg-band: #e8e5df;
+  --accent-soft: rgba(255, 90, 44, 0.13);
+  --shadow-card: 0 1px 2px rgba(28, 25, 20, 0.06), 0 12px 30px -16px rgba(28, 25, 20, 0.2);
+}
+.sec-sub, .hero-lede { color: var(--text-2); }
+.eyebrow { color: var(--accent); letter-spacing: 0.14em; }
+.layer p, .step p, .feat p, .gt-point p { color: var(--text-2); }
+
+/* Memory (moat) stays a dark stage — its own light-on-dark palette wins */
+.moat, .moat.band { background: #141210; color: #f4f2ee; }
+.moat .moat-sub { color: rgba(244, 242, 238, 0.66); }
+.moat .moat-eyebrow { color: var(--accent); letter-spacing: 0.14em; }
+.moat h2, .moat .moat-points li b { color: #f4f2ee; }
+.moat .moat-points li { color: rgba(244, 242, 238, 0.82); }
+.moat::before, .moat::after { z-index: 0; }
+.moat.band::before { background: none; }
+
+
+/* --- gradient stages: bands alternate between a flat canvas and a soft
+   vertical wash, so scrolling has a light/dark cadence instead of one tone. */
+.band { background: transparent; }
+.band:nth-of-type(even)::before {
+  content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--bg-band) 0%, transparent) 0%,
+    color-mix(in srgb, var(--bg-band) 72%, transparent) 34%,
+    color-mix(in srgb, var(--bg-band) 72%, transparent) 66%,
+    color-mix(in srgb, var(--bg-band) 0%, transparent) 100%
+  );
+}
+.band > .wrap { position: relative; z-index: 1; }
+
+/* the one editorial word in each headline carries a coral gradient */
+.sec-title em, .hero h1 em, .moat h2 em {
+  background: linear-gradient(96deg, var(--accent), color-mix(in oklab, var(--accent) 62%, #ffb27a));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+
+/* cards get an internal top-light gradient so they read as objects, not boxes */
+.layer, .step, .feat, .gt-point, .ptier, .stat {
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+  background-repeat: no-repeat; background-size: 100% 96px;
+}
+.moat .memcard { background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0)); }
+
+/* --- performance: the rail and its head are the only per-frame writers, so
+   promote them once and keep their paint isolated from the page. */
+.para { contain: layout style paint; }
+.spine { contain: layout style; }
+.spine-fill { will-change: height; }
+.spine-head { will-change: transform; }
+
+/* --- Creative: the head sits inside the split grid, so the shared head
+   spacing ladder was stacking on top of the grid gap and opening a well. */
+.creative-split { gap: var(--gap) clamp(28px, 3.4vw, 48px); }
+.creative-split .sec-head + * { margin-top: 0; }
+.creative-head { max-width: 58ch; margin-bottom: clamp(12px, 1.6vh, 22px); }
+.creative-grid { gap: var(--gap); }
+
+/* --- the remaining card families inherit the same object treatment:
+   top-light gradient, coral hairline on hover, small lift. */
+.creative-card, .tg-card, .mem-card, .memcard, .stat, .ptier, .gt-point {
+  transition: transform 380ms var(--ease), border-color 380ms var(--ease),
+              box-shadow 380ms var(--ease);
+}
+.creative-card, .tg-card {
+  position: relative;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+  background-repeat: no-repeat; background-size: 100% 84px;
+}
+.creative-card::after, .tg-card::after {
+  content: ""; position: absolute; left: 0; right: 0; top: 0; height: 2px;
+  border-radius: 2px 2px 0 0;
+  background: linear-gradient(90deg, var(--accent), color-mix(in oklab, var(--accent) 12%, transparent));
+  transform: scaleX(0); transform-origin: 0 50%; opacity: 0;
+  transition: transform 460ms var(--ease), opacity 300ms var(--ease);
+}
+.creative-card:hover::after, .tg-card:hover::after { transform: scaleX(1); opacity: 1; }
+.creative-card:hover, .tg-card:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in oklab, var(--accent) 26%, var(--border));
+  box-shadow: 0 18px 40px -30px rgba(28, 25, 20, 0.5);
+}
+@media (prefers-reduced-motion: reduce) {
+  .creative-card:hover, .tg-card:hover { transform: none; }
+}
+
+/* --- icon chips read as one family across sections */
+.creative-ic, .layer-phase .n, .feat-ic, .memcard-ic {
+  background-image: linear-gradient(140deg, color-mix(in oklab, var(--accent) 18%, transparent), transparent 70%);
+  box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--accent) 16%, transparent);
+}
+
+/* the split's own head must not carry the full band head spacing on top of the
+   grid gap — and the worked example lines up with the first capability card */
+.creative-split .sec-head.creative-head { margin-bottom: 4px; }
+.creative-split .cr-demo { margin-top: 0; align-self: start; }
+
+/* ============================================================
+   HOW WE'RE BUILT — the deck as one warm, lit object
+   The blue mid-tiers read as a different brand than the rest of
+   the page. One temperature ramp instead: cold stone at the
+   commodity base, warming through the ceiling, full accent on
+   the moat layers that we actually sell.
+   ============================================================ */
+.s3-plate[data-tier="base"]    { --face2: #cfcabf; --edge: #918b7f; }
+.s3-plate[data-i="1"]          { --face2: #d8d2c6; --edge: #9a9488; }
+.s3-plate[data-tier="ceiling"] { --face2: #e3d3bd; --edge: #b09274; }
+.s3-plate[data-i="3"] { --face2: #f7b992; --edge: #d98a55; }
+.s3-plate[data-i="4"] { --face2: #ffa878; --edge: #e2703c; }
+.s3-plate[data-i="5"] { --face2: #ff8f5c; --edge: #e2531f; }
+.s3-plate[data-i="6"] { --face2: #ff7448; --edge: #e63f12; }
+
+/* deck sits on a warm pool of light instead of empty paper */
+.s3-scene::before {
+  content: ""; position: absolute; left: 50%; top: 58%;
+  width: min(78%, 620px); aspect-ratio: 1.7 / 1;
+  transform: translate(-50%, -50%);
+  background:
+    radial-gradient(closest-side, color-mix(in oklab, var(--accent) 20%, transparent), transparent 72%);
+  filter: blur(6px); opacity: 0.7; pointer-events: none; z-index: 0;
+}
+.s3-deck { z-index: 1; }
+
+/* face gets real material: warm rim light + top sheen + inner edge */
+.s3-face {
+  border: 1px solid rgba(255,255,255,0.5);
+  box-shadow:
+    0 22px 40px -22px rgba(28,25,20,0.5),
+    inset 0 1px 0 rgba(255,255,255,0.55),
+    inset 0 -1px 0 rgba(0,0,0,0.12);
+}
+.s3-plate[data-tier="moat"] .s3-face {
+  box-shadow:
+    0 26px 44px -22px color-mix(in oklab, var(--accent) 42%, rgba(28,25,20,0.5)),
+    inset 0 1px 0 rgba(255,255,255,0.6),
+    inset 0 -1px 0 rgba(0,0,0,0.12);
+}
+/* the active plate ignites rather than just lifting */
+.s3-plate.on .s3-face {
+  box-shadow:
+    0 34px 60px -24px color-mix(in oklab, var(--accent) 55%, rgba(28,25,20,0.55)),
+    0 0 0 1px color-mix(in oklab, var(--accent) 40%, transparent),
+    inset 0 1px 0 rgba(255,255,255,0.7);
+}
+.s3-deck.focused .s3-plate:not(.on) .s3-face { opacity: 0.5; }
+/* a thin travelling sheen across the active face */
+.s3-plate.on .s3-face::after {
+  background:
+    linear-gradient(115deg, rgba(255,255,255,0.62), rgba(255,255,255,0.06) 46%, transparent 62%);
+}
+.s3-edge { filter: brightness(0.6) saturate(1.1); }
+
+/* ceiling rule reads as a threshold, not a stray dash */
+.s3-ceiling {
+  border-top: 1px dashed color-mix(in oklab, var(--accent) 34%, var(--border-2));
+}
+.s3-ceiling::after {
+  content: ""; position: absolute; left: 0; right: 0; top: 0; height: 46px;
+  background: linear-gradient(to bottom, color-mix(in oklab, var(--accent) 9%, transparent), transparent);
+  pointer-events: none;
+}
+
+/* the layer column: an instrument list, not plain text rows */
+@media (min-width: 981px) {
+  .s3-list::before {
+    content: ""; position: absolute; left: -25px; top: 4%; bottom: 4%;
+    width: 1px;
+    background: linear-gradient(to bottom,
+      transparent,
+      color-mix(in oklab, var(--accent) 34%, transparent) 12%,
+      var(--border-2) 62%,
+      transparent);
+  }
+  .s3-list li.on {
+    background: linear-gradient(100deg,
+      color-mix(in oklab, var(--accent) 8%, var(--bg-card)), var(--bg-card) 60%);
+    border-color: color-mix(in oklab, var(--accent) 28%, var(--border));
+    box-shadow: 0 16px 34px -26px rgba(28,25,20,0.55);
+  }
+}
+.s3-list li[data-tier="moat"] h3 { color: var(--text-1); }
+.s3-list li:not(.on) h3 { color: color-mix(in oklab, var(--text-1) 78%, var(--bg-app)); }
+.s3-list li.on .s3-li-n { color: var(--accent); text-shadow: 0 0 14px color-mix(in oklab, var(--accent) 45%, transparent); }
+.s3-list li.on .s3-li-tag { background: var(--accent-soft); color: var(--accent); }
+
+/* detail panel gets an accent spine so it belongs to the active row */
+.s3-detail { min-height: 168px; }
+.s3-d { padding-right: 16px; }
+@media (min-width: 981px) {
+  .s3-d { border-right: 1px solid color-mix(in oklab, var(--accent) 30%, transparent); }
+}
+
+/* the whole figure was floating in a tall empty box */
+.stack3d .s3-scene { min-height: 400px; }
+.stack3d { margin-top: 34px; }
+.stack-kicker { margin-top: 26px; }
+
+/* ============================================================
+   CREATIVE INTELLIGENCE — worked example stays with the reader
+   The demo used to end halfway down, leaving a dead column while
+   the capability cards ran on. It now pins while they pass.
+   ============================================================ */
+@media (min-width: 981px) {
+  .creative-split .cr-demo { position: sticky; top: 96px; }
+  .creative-grid { gap: 14px; }
+}
+.creative-card {
+  position: relative; overflow: hidden;
+  padding: 22px 22px 22px 26px;
+  background:
+    linear-gradient(180deg, color-mix(in oklab, var(--accent) 4%, var(--bg-card)), var(--bg-card) 46%);
+}
+/* left edge lights up with the card — the reading rail of this section */
+.creative-card::before {
+  content: ""; position: absolute; left: 0; top: 14px; bottom: 14px; width: 2px;
+  border-radius: 2px;
+  background: linear-gradient(to bottom, var(--accent), color-mix(in oklab, var(--accent) 12%, transparent));
+  opacity: 0.22; transition: opacity 240ms var(--ease), top 240ms var(--ease), bottom 240ms var(--ease);
+}
+.creative-card:hover::before { opacity: 1; top: 6px; bottom: 6px; }
+.creative-card:hover .creative-ic {
+  color: var(--accent);
+  box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--accent) 38%, transparent),
+              0 10px 24px -18px color-mix(in oklab, var(--accent) 60%, transparent);
+}
+.creative-ic { transition: box-shadow 240ms var(--ease), color 240ms var(--ease), transform 240ms var(--ease); }
+.creative-card:hover .creative-ic { transform: translateY(-1px) rotate(-3deg); }
+.creative-card h3 { margin-top: 14px; }
+/* faint index so the four capabilities read as a sequence */
+.creative-card { counter-increment: crcard; }
+.creative-grid { counter-reset: crcard; }
+.creative-card::after {
+  content: "0" counter(crcard);
+  position: absolute; inset: 18px 20px auto auto;
+
+  font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.1em;
+  color: var(--text-3); opacity: 0.55;
+  background: none; border: 0; transform: none; width: auto; height: auto;
+  transition: color 240ms var(--ease), opacity 240ms var(--ease);
+}
+.creative-card:hover::after { color: var(--accent); opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .creative-card:hover .creative-ic { transform: none; }
+}
+
+/* --- stack figure: trim the dead air and the stray hairlines --- */
+@media (min-width: 981px) {
+  .s3-list { min-height: 400px !important; }
+  /* the column trace should only span the labels it serves */
+  .s3-list::before {
+    top: 6%; bottom: 44%;
+    background: linear-gradient(to bottom,
+      transparent,
+      color-mix(in oklab, var(--accent) 30%, transparent) 14%,
+      var(--border-2) 82%,
+      transparent);
+  }
+  /* spine on the reading edge of the detail panel, not through its middle */
+  .s3-d { border-right: 0; padding-right: 0; padding-left: 0; }
+}
+.s3-ceiling::after { height: 30px; opacity: 0.6; }
+
+/* the index chip inherits the old hairline's full-width box — reset it */
+.creative-card::after { left: auto; bottom: auto; height: auto; }
+
+/* ============================================================
+   HOW WE'RE BUILT — v3: blue mid-tiers back, deck lit like a
+   physical object, description panel parked in one place.
+   Each plate carries its own light colour (--lit) so glow,
+   contact shadow and rim all agree with the material.
+   ============================================================ */
+.s3-plate { --lit: var(--accent); }
+.s3-plate[data-tier="base"]    { --face2: #c9c4b9; --edge: #8b867b; --lit: #8b867b; }
+.s3-plate[data-i="1"]          { --face2: #d3cdc2; --edge: #948e83; --lit: #948e83; }
+.s3-plate[data-tier="ceiling"] { --face2: #8fb0f6; --edge: #3f6fdd; --lit: #3f6fdd; }
+.s3-plate[data-i="3"] { --face2: #6f97f2; --edge: #2f5fca; --lit: #2f5fca; }
+.s3-plate[data-i="4"] { --face2: #4f74e0; --edge: #1d49c7; --lit: #2b55d6; }
+.s3-plate[data-i="5"] { --face2: #ff8f5c; --edge: #e2531f; --lit: var(--accent); }
+.s3-plate[data-i="6"] { --face2: #ff7448; --edge: #e63f12; --lit: var(--accent); }
+
+/* pool of light under the deck: warm on top, cool where the blue sits */
+.s3-scene::before {
+  background:
+    radial-gradient(closest-side at 50% 38%, color-mix(in oklab, var(--accent) 22%, transparent), transparent 74%),
+    radial-gradient(closest-side at 50% 78%, color-mix(in oklab, #3f6fdd 16%, transparent), transparent 76%);
+  opacity: 0.78;
+}
+
+/* material: rim light tinted by the plate itself */
+.s3-face {
+  box-shadow:
+    0 22px 40px -22px color-mix(in oklab, var(--lit) 34%, rgba(28,25,20,0.55)),
+    inset 0 1px 0 rgba(255,255,255,0.55),
+    inset 0 -1px 0 rgba(0,0,0,0.14);
+  transition: box-shadow 320ms var(--ease), opacity 320ms var(--ease), filter 320ms var(--ease);
+}
+.s3-plate[data-tier="moat"] .s3-face,
+.s3-plate[data-tier="ceiling"] .s3-face {
+  box-shadow:
+    0 26px 46px -22px color-mix(in oklab, var(--lit) 46%, rgba(28,25,20,0.5)),
+    inset 0 1px 0 rgba(255,255,255,0.6),
+    inset 0 -1px 0 rgba(0,0,0,0.14);
+}
+.s3-plate.on .s3-face {
+  box-shadow:
+    0 40px 70px -26px color-mix(in oklab, var(--lit) 62%, rgba(28,25,20,0.5)),
+    0 0 0 1px color-mix(in oklab, var(--lit) 45%, transparent),
+    0 0 46px -6px color-mix(in oklab, var(--lit) 34%, transparent),
+    inset 0 1px 0 rgba(255,255,255,0.75);
+  filter: saturate(1.12) brightness(1.03);
+}
+.s3-deck.focused .s3-plate:not(.on) .s3-face { opacity: 0.46; filter: saturate(0.72); }
+
+/* a slow sheen crawls across the lit face */
+.s3-plate.on .s3-face::after {
+  background: linear-gradient(115deg,
+    rgba(255,255,255,0.7), rgba(255,255,255,0.08) 44%, transparent 60%);
+  animation: s3-sheen 2.6s var(--ease) infinite;
+}
+@keyframes s3-sheen {
+  0%   { transform: translate3d(-14%, -10%, 0); opacity: 0.55; }
+  50%  { transform: translate3d(10%, 6%, 0);    opacity: 1; }
+  100% { transform: translate3d(-14%, -10%, 0); opacity: 0.55; }
+}
+
+/* the whole deck breathes, so the object never looks like a static PNG */
+.s3-deck { animation: s3-float 11s ease-in-out infinite; }
+@keyframes s3-float {
+  0%, 100% { transform: translate(-50%, -50%) rotateX(58deg) rotateZ(-42deg); }
+  50%      { transform: translate(-50%, calc(-50% - 6px)) rotateX(56.5deg) rotateZ(-40.5deg); }
+}
+.s3-scene:hover .s3-deck { animation-play-state: paused; }
+
+/* active plate rises a touch and grows a contact shadow on the plate below */
+.s3-plate.on { transform: translateZ(calc(var(--z) + var(--off))) scale(1.035); }
+.s3-plate.on .s3-edge { filter: brightness(0.72) saturate(1.25); }
+
+@media (prefers-reduced-motion: reduce) {
+  .s3-deck { animation: none; }
+  .s3-plate.on .s3-face::after { animation: none; }
+}
+
+/* ---------- the description panel: one fixed home ----------
+   It used to drift with the grid's vertical centring, so it moved
+   as rows opened. Now it's a real card, parked at the top of its
+   column and pinned while the figure passes. */
+@media (min-width: 981px) {
+  .stack3d { align-items: start; }
+  .s3-detail {
+    align-self: start; position: sticky; top: 104px;
+    text-align: left; margin: 0;
+    min-height: 236px; padding: 20px 22px;
+    border: 1px solid var(--border);
+    border-radius: var(--r-lg);
+    background: linear-gradient(180deg,
+      color-mix(in oklab, var(--accent) 5%, var(--bg-card)), var(--bg-card) 52%);
+    box-shadow: 0 20px 44px -34px rgba(28,25,20,0.5);
+    display: block;
+  }
+  .s3-detail::before {
+    content: ""; position: absolute; left: 0; top: 14px; bottom: 14px; width: 2px;
+    border-radius: 2px;
+    background: linear-gradient(to bottom, var(--accent), color-mix(in oklab, var(--accent) 10%, transparent));
+  }
+  .s3-detail .s3-d p { margin-left: 0; }
+  .s3-d.on { animation: s3-d-in 320ms var(--ease) both; }
+  .s3-list, .stack3d .s3-scene { align-self: center; }
+}
+@keyframes s3-d-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) { .s3-d.on { animation: none; } }
+
+/* ---------- STACK: more air after the intro, panel no longer drifts ---------- */
+@media (min-width: 981px) {
+  #stack .stack3d { margin-top: 64px; }
+  #stack .s3-list { margin-top: 64px; }
+  /* the panel used to slide down with the scroll — it now simply sits put */
+  .s3-detail { position: static; top: auto; align-self: start; }
+}
+
+/* ---------- STILL DECIDING? — the card parks over a gradient question mark ---------- */
+.faq-aside { position: relative; }
+@media (min-width: 981px) {
+  .faq-aside { position: relative; top: auto; min-height: 560px; }
+  .faq-aside-card {
+    position: sticky; top: 96px; z-index: 2;
+    background: var(--bg-card);
+  }
+  .faq-qm {
+    position: absolute; left: 50%; transform: translateX(-50%);
+    top: 340px; z-index: 0; pointer-events: none;
+    font-family: var(--font-display, inherit);
+    font-size: 260px; line-height: 0.8; font-weight: 800; font-style: normal;
+    background: linear-gradient(160deg,
+      color-mix(in oklab, var(--accent) 92%, transparent) 0%,
+      color-mix(in oklab, var(--accent) 40%, transparent) 52%,
+      color-mix(in oklab, var(--accent) 6%, transparent) 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    filter: drop-shadow(0 22px 40px rgba(255, 90, 44, 0.18));
+    opacity: 0; transition: opacity 700ms var(--ease), transform 900ms var(--ease);
+  }
+  .band-sub.live .faq-qm { opacity: 1; }
+}
+@media (max-width: 980px) { .faq-qm { display: none; } }
+
+/* ---------- the question glyph on the rail, sibling to the eye and the brain ---------- */
+.metafig[data-fig="q"] .mf-q-ring {
+  stroke-dasharray: 214; stroke-dashoffset: 214; opacity: 0.5;
+  transition: stroke-dashoffset 1100ms var(--ease), stroke 600ms var(--ease), opacity 600ms var(--ease);
+}
+.metafig[data-fig="q"].lit .mf-q-ring { stroke-dashoffset: 0; opacity: 1; }
+.metafig[data-fig="q"] .mf-q-hook {
+  stroke-dasharray: 78; stroke-dashoffset: 78;
+  transition: stroke-dashoffset 900ms var(--ease) 220ms, stroke 600ms var(--ease);
+}
+.metafig[data-fig="q"].lit .mf-q-hook { stroke-dashoffset: 0; }
+.metafig[data-fig="q"] .mf-q-dot { opacity: 0; transition: opacity 400ms var(--ease) 900ms, fill 400ms var(--ease); }
+.metafig[data-fig="q"].lit .mf-q-dot { opacity: 1; fill: var(--accent); stroke: none; }
+
+/* ---------- the hand-over into the audit form: flat, then revenue climbing ---------- */
+#lead > .sec-seam { display: none; }
+.seam-chart {
+  position: absolute; top: -66px; right: 0;
+  left: max(18px, calc(50vw - 622px));
+  height: 130px; z-index: 2; pointer-events: none; display: block;
+}
+.seam-chart svg { width: 100%; height: 100%; display: block; overflow: visible; }
+.seam-chart .sc-line {
+  stroke-dasharray: 1400; stroke-dashoffset: 1400;
+  transition: stroke-dashoffset 1800ms cubic-bezier(.22,.9,.2,1);
+  filter: drop-shadow(0 0 10px rgba(255, 90, 44, 0.35));
+}
+.seam-chart .sc-area { opacity: 0; transition: opacity 900ms var(--ease) 700ms; }
+.seam-chart .sc-tip {
+  position: absolute; right: 8%; top: 18px;
+  width: 9px; height: 9px; border-radius: 50%; margin: -4px 0 0 -4px;
+  background: var(--accent); opacity: 0;
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent) 22%, transparent);
+  transition: opacity 500ms var(--ease) 1500ms;
+}
+.seam-chart .sc-cap {
+  position: absolute; right: 8%; top: -4px; transform: translateX(14px);
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--accent); opacity: 0; white-space: nowrap;
+  transition: opacity 600ms var(--ease) 1650ms;
+}
+#lead.chapter-live .seam-chart .sc-line { stroke-dashoffset: 0; }
+#lead.chapter-live .seam-chart .sc-area,
+#lead.chapter-live .seam-chart .sc-tip,
+#lead.chapter-live .seam-chart .sc-cap { opacity: 1; }
+@media (prefers-reduced-motion: no-preference) {
+  #lead.chapter-live .seam-chart .sc-tip { animation: sc-tip 2.6s var(--ease) 1.8s infinite; }
+}
+@keyframes sc-tip {
+  0%, 100% { box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent) 22%, transparent); }
+  50%      { box-shadow: 0 0 0 9px color-mix(in oklab, var(--accent) 0%, transparent); }
+}
+@media (max-width: 900px) { .seam-chart { display: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .seam-chart .sc-line { transition: none; stroke-dashoffset: 0; }
+}
+
+/* ---------- STACK: remove the dead air under the deck ---------- */
+@media (min-width: 981px) {
+  #stack .stack3d { margin-top: 48px; margin-bottom: 0; }
+  #stack .s3-list { margin-top: 48px; }
+  .stack3d .s3-scene { min-height: 440px; }
+  .s3-list { min-height: 460px !important; }
+}
+.stack-kicker { margin-top: 14px; }
+
+/* ---------- STACK: the deck's art sits high inside its box ----------
+   The plates project upward out of the deck's own rect (rotateX), so a box
+   centred on the deck leaves a tall band of dead air underneath it. Push the
+   deck down by the projected height of the stack and let the box shrink to
+   what the art actually occupies. */
+@media (min-width: 981px) {
+  .stack3d .s3-scene { min-height: 392px; }
+  .s3-list { min-height: 392px !important; }
+  .s3-deck {
+    transform: translate(-50%, calc(-50% + 392px * var(--s))) rotateX(58deg) rotateZ(-42deg);
+  }
+  .stack3d .s3-ceiling { top: 78%; }
+  #stack .s3-list { margin-top: 40px; }
+  #stack .stack-kicker { margin-top: 0; }
+}
+
+/* ---------- the rail passes BEHIND nothing: glyph cut-outs ----------
+   Where the eye / brain / question-mark glyphs sit on the rail, the line is
+   masked out inside the glyph so the mark reads as a solid object the line
+   enters rather than a shape with a stripe through it. (mask string built in
+   behaviour.ts alongside the silent-band gaps.) */
+
+/* ============================================================
+   GLYPH ARRIVAL BURST + NEW ON-RAIL FIGURES
+   Every figure standing on the narrative line detonates once as the
+   line reaches it: two expanding rings and a short flash, the same
+   beat the Memory brain owned — now shared by the bolt (it acts),
+   the layered stack (it stacks), the shield (it seals), the eye and
+   the question mark, so the whole rail speaks one language.
+   ============================================================ */
+.brainwrap, .metafig { isolation: isolate; }
+.brainwrap::before, .metafig::before,
+.brainwrap::after, .metafig::after {
+  content: ""; position: absolute; z-index: 0;
+  left: var(--mf-cx, 48px); top: 50%;
+  width: 18px; height: 18px; margin: -9px 0 0 -9px;
+  border-radius: 50%; pointer-events: none;
+  opacity: 0;
+}
+.brainwrap::before, .metafig::before {
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+}
+/* second layer retired: one quiet ring is enough */
+.brainwrap::after, .metafig::after { display: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .brainwrap.pop::before, .metafig.pop::before { animation: mf-ring 620ms var(--ease) 1; }
+  .brainwrap.pop svg, .metafig.pop svg { animation: mf-kick 420ms var(--ease) 1; }
+  .brainwrap.pop .brain-cap, .metafig.pop .mf-cap { animation: mf-cap-in 500ms var(--ease) 1; }
+}
+@keyframes mf-ring {
+  0%   { opacity: 0.5; transform: scale(0.8); }
+  100% { opacity: 0; transform: scale(2.2); }
+}
+@keyframes mf-kick {
+  0%   { transform: scale(0.985); }
+  100% { transform: scale(1); }
+}
+@keyframes mf-cap-in {
+  0%   { opacity: 0; transform: translateX(-6px); letter-spacing: 0.28em; }
+  100% { opacity: 1; transform: none; letter-spacing: 0.12em; }
+}
+
+/* bolt (it acts): the ring closes, then the charge strikes through it */
+.metafig[data-fig="bolt"] .mf-b-ring {
+  stroke-dasharray: 208; stroke-dashoffset: 208; opacity: 0.6;
+  transition: stroke-dashoffset 900ms var(--ease), opacity 500ms var(--ease), stroke 600ms var(--ease);
+}
+.metafig[data-fig="bolt"].lit .mf-b-ring { stroke-dashoffset: 0; opacity: 1; }
+.metafig[data-fig="bolt"] .mf-b-bolt {
+  opacity: 0; transform: scale(0.6); transform-origin: 48px 48px;
+  transition: opacity 420ms var(--ease) 520ms, transform 520ms var(--ease) 520ms, fill 500ms var(--ease);
+}
+.metafig[data-fig="bolt"].lit .mf-b-bolt {
+  opacity: 1; transform: none;
+  fill: color-mix(in srgb, var(--accent) 24%, transparent);
+}
+
+/* layers (it stacks): the three plates settle into place, bottom-up */
+.metafig[data-fig="layers"] .mf-ly {
+  opacity: 0; transition: opacity 480ms var(--ease), transform 620ms var(--ease), stroke 600ms var(--ease);
+}
+.metafig[data-fig="layers"] .mf-ly-1 { transform: translateY(-14px); transition-delay: 460ms; }
+.metafig[data-fig="layers"] .mf-ly-2 { transform: translateY(-10px); transition-delay: 260ms; }
+.metafig[data-fig="layers"] .mf-ly-3 { transform: translateY(-6px);  transition-delay: 60ms; }
+.metafig[data-fig="layers"].lit .mf-ly { opacity: 1; transform: none; }
+.metafig[data-fig="layers"].lit .mf-ly-1 { fill: color-mix(in srgb, var(--accent) 14%, transparent); }
+
+/* shield (it seals): the outline draws, then the check locks it */
+.metafig[data-fig="shield"] .mf-sh {
+  stroke-dasharray: 260; stroke-dashoffset: 260;
+  transition: stroke-dashoffset 1000ms var(--ease), stroke 600ms var(--ease), fill 600ms var(--ease);
+}
+.metafig[data-fig="shield"].lit .mf-sh {
+  stroke-dashoffset: 0; fill: color-mix(in srgb, var(--accent) 10%, transparent);
+}
+.metafig[data-fig="shield"] .mf-sh-tick {
+  stroke-dasharray: 46; stroke-dashoffset: 46;
+  transition: stroke-dashoffset 520ms var(--ease) 680ms;
+}
+.metafig[data-fig="shield"].lit .mf-sh-tick { stroke-dashoffset: 0; }
+
+/* the new figures also live in the flow on narrow screens, where the rail
+   releases them — keep them from crowding the section above */
+.metafig[data-fig="bolt"], .metafig[data-fig="layers"], .metafig[data-fig="shield"] {
+  margin-top: 40px; margin-bottom: 6px;
+}
+.metafig-sm::before, .metafig-sm::after { --mf-cx: 38px; }

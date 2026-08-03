@@ -44,8 +44,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MWR4PVRF"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-
 <!-- NAV -->
+<div class="spine" data-spine aria-hidden="true">
+ <div class="spine-rail"></div>
+ <div class="spine-fill" data-spine-fill></div>
+ <div class="spine-head" data-spine-head><i></i></div>
+ <div class="spine-end"></div>
+</div>
 <!--#header--><header class="nav">
  <div class="wrap nav-in">
  <a class="brand" href="/">
@@ -81,14 +86,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <a class="btn btn-primary btn-sm mm-cta" href="#lead">Request demo</a>
 </div><!--/#mobile--><!-- HERO -->
 <section class="hero">
+ <div class="hero-grid-lines" aria-hidden="true"></div>
+ <div class="hero-particles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
  <div class="wrap hero-grid">
  <div class="hero-copy">
+ 
  <p class="hero-slogan"><span class="w w1">Aware</span><span class="arw"><svg viewBox="0 0 18 8" fill="none" stroke="currentColor"><path d="M0 4h16M13 1l3 3-3 3"/></svg></span><span class="w w2">Ask</span><span class="arw"><svg viewBox="0 0 18 8" fill="none" stroke="currentColor"><path d="M0 4h16M13 1l3 3-3 3"/></svg></span><span class="w w3">Apply</span></p>
  <p class="hero-tagline">Born AI-native. Raised by your reality.</p>
  <h1>Judgment, memory and execution — <em>all of it, on your word</em>.</h1>
  <p class="hero-lede"><strong>Not a dashboard — a verdict.</strong> Adgent reads Meta, Google and TikTok as one brain, checks the platforms' numbers against your real revenue, and applies the fix the moment you approve.</p>
  <p class="hero-note">A senior media buyer's judgment, 24/7, at a fraction of the salary.</p>
- <p class="hero-note">Read-only by default · you approve every change</p>
+ <div class="hero-cta">
+ <a class="btn btn-primary btn-lg" href="#lead">Get a free account audit</a>
+ </div>
+ <p class="hero-note hero-note-trust">Read-only by default · you approve every change</p>
  </div>
 
  <div class="hero-cutout">
@@ -156,7 +167,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- GOLDEN RULES / MEMORY (moat) -->
-<section class="band moat" id="memory">
+<section class="band moat" id="memory" data-chapter="Memory">
  <div class="moat-grid-lines"></div>
  <div class="moat-particles" aria-hidden="true">
  <i style="left:12%;width:6px;height:6px;animation-duration:14s;animation-delay:0s"></i>
@@ -211,7 +222,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- PROBLEM -->
 <!-- THREE LAYERS: READ / ASK / APPLY -->
-<section class="band" id="how-layers">
+<section class="band" id="how-layers" data-chapter="The loop">
  <div class="wrap">
  <div class="sec-head" data-reveal>
  <span class="eyebrow"><span class="tick"></span>The 3A loop</span>
@@ -252,6 +263,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  </div>
  </div>
  </div>
+
+ <div class="brainwrap" data-brain>
+  <svg class="brain" viewBox="0 0 64 64" aria-hidden="true">
+   <path d="M26 12c-5 0-8 3-8 7 -4 1-6 4-6 8 0 3 2 6 5 7 -1 4 2 8 6 8 1 3 4 5 7 5V12h-4z"/>
+   <path d="M38 12c5 0 8 3 8 7 4 1 6 4 6 8 0 3-2 6-5 7 1 4-2 8-6 8 -1 3-4 5-7 5V12h4z"/>
+   <path d="M30 20c-3 0-5 2-5 4M34 20c3 0 5 2 5 4M28 30c-3 1-5 3-5 6M36 30c3 1 5 3 5 6M32 12v40"/>
+   <circle cx="25" cy="24" r="1.6"/><circle cx="39" cy="24" r="1.6"/>
+   <circle cx="23" cy="36" r="1.6"/><circle cx="41" cy="36" r="1.6"/>
+  </svg>
+  <span class="brain-cap">context layer</span>
+ </div>
 </section>
 
 <!-- REAL REPORT (proof) -->
@@ -273,7 +295,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  </div>
 
  <div class="report-flags">
- <div class="rflag">
+ <div class="rflag open">
  <div class="rflag-ic crit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1Z"/><path d="m9 12 2 2 4-4"/></svg></div>
  <div class="rflag-main">
  <div class="rflag-t">Optimizing toward a value-less event <span class="sbadge crit">Trust Gate</span></div>
@@ -315,7 +337,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- BUILT FROM CHAT -->
-<section class="band builds-pin" id="builds" data-builds-pin>
+<section class="band band-glow builds-pin" id="builds" data-builds-pin data-chapter="It builds">
  <div class="builds-sticky">
  <div class="wrap">
  <div class="sec-head" data-reveal>
@@ -323,16 +345,38 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  <h2 class="sec-title">Ask for it in chat. Adgent <em>builds</em> it.</h2>
  <p class="sec-sub">A dashboard, a monitoring agent, a restructure plan, a new campaign — you describe it in plain language and Adgent assembles it from your live account data. Then you approve.</p>
  </div>
-
- <div class="builds-slider">
- <div class="builds" data-builds-track>
-
- <!-- 1. DASHBOARD -->
- <div class="build">
- <div class="build-head">
- <span class="build-prompt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2Z"/></svg>Build me a reservations dashboard, last 28 days</span>
- <p class="build-reply"><span class="dot"></span>Assembled from Meta · Google · TikTok + Shopify</p>
+ <div class="metafig metafig-sm" data-fig="bolt">
+  <svg viewBox="0 0 96 96" aria-hidden="true">
+   <circle class="mf-b-ring" cx="48" cy="48" r="33"/>
+   <path class="mf-b-bolt" d="M52 20 32 52h14l-4 24 22-34H50Z"/>
+  </svg>
+  <span class="mf-cap">it acts</span>
  </div>
+
+
+
+ <div class="builds-chat" data-builds-chat>
+  <div class="bt" data-bt>
+   <div class="bt-ask"><span>Plan a restructure to fix the iOS leak</span></div>
+   <div class="bt-say"><span class="dot"></span>4 steps · sequenced to protect learning</div>
+   <div class="build">
+ <div class="build-canvas">
+ <div class="mini-plan">
+ <div class="mpl-row"><span class="mpl-n">1</span><span class="mpl-t">Exclude Audience Network on CBO_CORE_US</span><span class="mpl-s">now</span></div>
+ <div class="mpl-row"><span class="mpl-n">2</span><span class="mpl-t">Shift freed budget to Feed, +20%</span><span class="mpl-s">now</span></div>
+ <div class="mpl-row"><span class="mpl-n">3</span><span class="mpl-t">Hold — let the ad set re-stabilize</span><span class="mpl-s">48h</span></div>
+ <div class="mpl-row"><span class="mpl-n">4</span><span class="mpl-t">Refresh retargeting creative</span><span class="mpl-s">day 3</span></div>
+ </div>
+ </div>
+ <div class="build-cap"><span class="name">Restructure plan</span><span class="tag">Nothing runs until you say go</span></div>
+ </div>
+
+ <!-- 2. DASHBOARD -->
+  </div>
+  <div class="bt" data-bt>
+   <div class="bt-ask"><span>Build me a reservations dashboard, last 28 days</span></div>
+   <div class="bt-say"><span class="dot"></span>Assembled from Meta · Google · TikTok + Shopify</div>
+   <div class="build">
  <div class="build-canvas">
  <div class="mini-kpis">
  <div class="mkt"><div class="mkt-l">Reservations</div><div class="mkt-v">4.8K</div><div class="mkt-d up">▲ 12.4%</div></div>
@@ -340,23 +384,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  <div class="mkt"><div class="mkt-l">CPA</div><div class="mkt-v">₺22.10</div><div class="mkt-d down">▼ 6.0%</div></div>
  </div>
  <div class="mini-chart">
- <svg viewBox="0 0 300 46" preserveAspectRatio="none" fill="none">
- <line x1="0" y1="12" x2="300" y2="12" stroke="var(--border)"/>
- <line x1="0" y1="30" x2="300" y2="30" stroke="var(--border)"/>
- <path d="M0,38 L43,34 L86,36 L129,26 L172,28 L215,16 L258,18 L300,8" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
- <circle cx="300" cy="8" r="3" fill="var(--accent)"/>
+ <div class="mc-legend"><span class="mc-l mc-l-a">Meta</span><span class="mc-l mc-l-b">Google</span><span class="mc-l mc-l-c">TikTok</span><span class="mc-days">last 28 days</span></div>
+ <svg viewBox="0 0 300 76" preserveAspectRatio="none" fill="none">
+ <defs><linearGradient id="mcf" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="var(--accent)" stop-opacity="0.20"/>
+  <stop offset="1" stop-color="var(--accent)" stop-opacity="0"/>
+ </linearGradient></defs>
+ <line x1="0" y1="18" x2="300" y2="18" stroke="var(--border)"/>
+ <line x1="0" y1="40" x2="300" y2="40" stroke="var(--border)"/>
+ <line x1="0" y1="62" x2="300" y2="62" stroke="var(--border)"/>
+ <path d="M0,66 L43,60 L86,63 L129,46 L172,49 L215,28 L258,31 L300,14 L300,76 L0,76 Z" fill="url(#mcf)"/>
+ <path d="M0,66 L43,60 L86,63 L129,46 L172,49 L215,28 L258,31 L300,14" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+ <path d="M0,70 L43,68 L86,64 L129,66 L172,58 L215,55 L258,50 L300,46" stroke="var(--info)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.65"/>
+ <path d="M0,73 L43,72 L86,71 L129,69 L172,70 L215,66 L258,64 L300,60" stroke="var(--text-4)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3 3"/>
+ <circle cx="300" cy="14" r="3.5" fill="var(--accent)"/>
  </svg>
+ <div class="mc-foot"><span>Blended ROAS <b>3.82×</b></span><span class="mc-note">reconciled to Shopify</span></div>
  </div>
  </div>
  <div class="build-cap"><span class="name">Dashboard</span><span class="tag">Live · auto-refreshing</span></div>
  </div>
 
- <!-- 2. AGENT -->
- <div class="build">
- <div class="build-head">
- <span class="build-prompt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2Z"/></svg>Watch my placements and flag leaks daily</span>
- <p class="build-reply"><span class="dot"></span>Agent live — scanning every morning</p>
- </div>
+ <!-- 3. AGENT -->
+  </div>
+  <div class="bt" data-bt>
+   <div class="bt-ask"><span>Watch my placements and flag leaks daily</span></div>
+   <div class="bt-say"><span class="dot"></span>Agent live — scanning every morning</div>
+   <div class="build">
  <div class="build-canvas">
  <div class="mini-agent">
  <div class="mag-row">
@@ -374,29 +428,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  <div class="build-cap"><span class="name">Monitoring agent</span><span class="tag">Runs daily · you approve</span></div>
  </div>
 
- <!-- 3. PLAN -->
- <div class="build">
- <div class="build-head">
- <span class="build-prompt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2Z"/></svg>Plan a restructure to fix the iOS leak</span>
- <p class="build-reply"><span class="dot"></span>4 steps · sequenced to protect learning</p>
- </div>
- <div class="build-canvas">
- <div class="mini-plan">
- <div class="mpl-row"><span class="mpl-n">1</span><span class="mpl-t">Exclude Audience Network on CBO_CORE_US</span><span class="mpl-s">now</span></div>
- <div class="mpl-row"><span class="mpl-n">2</span><span class="mpl-t">Shift freed budget to Feed, +20%</span><span class="mpl-s">now</span></div>
- <div class="mpl-row"><span class="mpl-n">3</span><span class="mpl-t">Hold — let the ad set re-stabilize</span><span class="mpl-s">48h</span></div>
- <div class="mpl-row"><span class="mpl-n">4</span><span class="mpl-t">Refresh retargeting creative</span><span class="mpl-s">day 3</span></div>
- </div>
- </div>
- <div class="build-cap"><span class="name">Restructure plan</span><span class="tag">Nothing runs until you say go</span></div>
- </div>
-
  <!-- 4. CAMPAIGN -->
- <div class="build">
- <div class="build-head">
- <span class="build-prompt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2Z"/></svg>Build a prospecting campaign for the spring launch</span>
- <p class="build-reply"><span class="dot"></span>Drafted across Meta &amp; Google — ready to review</p>
- </div>
+  </div>
+  <div class="bt" data-bt>
+   <div class="bt-ask"><span>Build a prospecting campaign for the spring launch</span></div>
+   <div class="bt-say"><span class="dot"></span>Drafted across Meta &amp; Google — ready to review</div>
+   <div class="build">
  <div class="build-canvas">
  <div class="mini-camp">
  <div class="mcp-row"><span class="mcp-flag" style="background:var(--ok)"></span><div><div class="mcp-n">Spring · Prospecting · Meta</div><div class="mcp-sub">3 ad sets · ₺8,000/mo</div></div><span class="msb ok">Ready</span></div>
@@ -408,15 +445,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  </div>
 
  </div>
- <div class="builds-nav">
- <div class="builds-arrows">
- <button class="builds-arrow" data-builds-prev aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M15 18l-6-6 6-6"/></svg></button>
- <button class="builds-arrow" data-builds-next aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 18l6-6-6-6"/></svg></button>
- </div>
- <div class="builds-dots" data-builds-dots></div>
- </div>
- </div>
- </div>
+  </div>
  </div>
  <div class="builds-spacer" data-builds-spacer aria-hidden="true"></div>
 </section>
@@ -452,9 +481,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- TRUST GATE -->
-<section class="band band-sub">
+<section class="band band-sub" id="trust-gate" data-chapter="Trust gate">
+ <div class="metafig metafig-sm" data-fig="shield">
+  <svg viewBox="0 0 96 96" aria-hidden="true">
+   <path class="mf-sh" d="M48 12 78 22v22c0 20-13 30-30 40C31 74 18 64 18 44V22Z"/>
+   <path class="mf-sh-tick" d="M36 47l9 9 17-18"/>
+  </svg>
+  <span class="mf-cap">it seals</span>
+ </div>
  <div class="wrap integ">
- <div class="cutout" data-reveal="left">
+
+ <div class="cutout tg-card" data-reveal="left">
  <div class="co-kicker">Trust Gate · attribution maturity</div>
  <div class="co-h1" style="margin-top:10px">We won't quote a number we can't stand behind.</div>
  <div class="report-flags" style="margin-top:16px">
@@ -477,18 +514,78 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  <div data-reveal="right">
  <span class="eyebrow"><span class="tick"></span><span id="trust"></span>Trust Gate</span>
  <h2 class="sec-title">The only tool that tells you when the number is <em>lying</em>.</h2>
- <p class="sec-sub">Most platforms report ROAS even when it can't be measured. Adgent doesn't. If a campaign optimizes toward a value-less event, or a metric is still inside the attribution window, we flag it — and refuse to manufacture false confidence. Honest beats impressive.</p>
+ <p class="sec-sub">Most platforms report ROAS even when it can't be measured. Adgent flags the number instead of manufacturing confidence in it.</p>
  </div>
  </div>
 </section>
 
 <!-- CREATIVE INTELLIGENCE -->
-<section class="band band-sub" id="creative">
+<section class="band band-sub" id="creative" data-chapter="Creative">
  <div class="wrap creative-split">
  <div class="sec-head creative-head" data-reveal="left">
  <span class="eyebrow"><span class="tick"></span>Creative intelligence</span>
  <h2 class="sec-title">It reads every creative like a <em>strategist</em> — not a tagger.</h2>
- <p class="sec-sub">Adgent pulls your live ads automatically — no upload step — and reads each one the way a senior buyer would. It names the creative's DNA, walks the story scene by scene, and shows you exactly where viewers drop off. Then it tells you which creatives are fatiguing and what to do — as an action you approve. Analysis, never generation.</p>
+ <p class="sec-sub">Adgent reads every live ad the way a senior buyer would — its DNA, the story scene by scene, and exactly where viewers leave. Analysis, never generation.</p>
+
+ 
+</div>
+ <div class="cr-demo" data-reveal>
+  <div class="cr-demo-h">
+   <span class="cr-demo-k">Analysed · 0:14 video</span>
+   <span class="cr-demo-id">SPRING_LAUNCH_V3</span>
+  </div>
+
+  <div class="cr-frame">
+   <svg class="cr-art" viewBox="0 0 300 300" fill="none" aria-hidden="true">
+    <defs>
+     <linearGradient id="crSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2b2724"/><stop offset="1" stop-color="#151311"/>
+     </linearGradient>
+     <linearGradient id="crGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff8a63"/><stop offset="1" stop-color="#e5400f"/>
+     </linearGradient>
+     <clipPath id="crClip"><rect width="300" height="300" rx="10"/></clipPath>
+    </defs>
+    <g clip-path="url(#crClip)">
+     <rect width="300" height="300" fill="url(#crSky)"/>
+     <circle cx="222" cy="86" r="96" fill="url(#crGlow)" opacity="0.30"/>
+     <circle cx="222" cy="86" r="58" fill="url(#crGlow)" opacity="0.55"/>
+     <!-- the product: a bottle silhouette, centred -->
+     <g transform="translate(150 168)">
+      <rect x="-19" y="-72" width="38" height="104" rx="13" fill="#f7f5f1" opacity="0.96"/>
+      <rect x="-8" y="-92" width="16" height="24" rx="5" fill="#f7f5f1" opacity="0.8"/>
+      <rect x="-19" y="-26" width="38" height="26" fill="url(#crGlow)" opacity="0.9"/>
+      <ellipse cx="0" cy="36" rx="34" ry="7" fill="#000" opacity="0.35"/>
+     </g>
+     <!-- ad copy, legible at this size -->
+     <text x="150" y="238" text-anchor="middle" fill="#f7f5f1" font-family="Plus Jakarta Sans, ui-sans-serif, system-ui, sans-serif" font-size="19" font-weight="700" letter-spacing="-0.4">Sold out twice.</text>
+     <text x="150" y="260" text-anchor="middle" fill="#f7f5f1" opacity="0.62" font-family="Plus Jakarta Sans, ui-sans-serif, system-ui, sans-serif" font-size="12">Back for 48 hours only</text>
+     <rect x="106" y="272" width="88" height="19" rx="9.5" fill="url(#crGlow)"/>
+     <text x="150" y="285" text-anchor="middle" fill="#fff" font-family="Plus Jakarta Sans, ui-sans-serif, system-ui, sans-serif" font-size="10" font-weight="700">Shop the drop</text>
+    </g>
+   </svg>
+   <span class="cr-tag cr-tag-1"><i></i>hook · 0:00–0:02</span>
+   <span class="cr-tag cr-tag-2">offer on-screen · 0:09</span>
+   <span class="cr-scrub"><b style="width:21%"></b></span>
+  </div>
+
+  <div class="cr-dna">
+   <span>Hook <b>Problem-first</b></span>
+   <span>Persona <b>Repeat buyer</b></span>
+   <span>Angle <b>Scarcity</b></span>
+   <span>Offer <b>20% bundle</b></span>
+  </div>
+
+  <div class="cr-hold">
+   <div class="cr-hold-h"><span>Hold curve</span><span class="cr-hold-v">61% drop at <b>0:03</b></span></div>
+   <svg viewBox="0 0 300 46" preserveAspectRatio="none" fill="none">
+    <path d="M0,4 L36,7 L60,30 L108,33 L156,36 L204,38 L252,40 L300,42"
+          stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="60" y1="0" x2="60" y2="46" stroke="var(--crit)" stroke-width="1" stroke-dasharray="3 3" opacity="0.7"/>
+   </svg>
+  </div>
+
+  <p class="cr-verdict"><b>Verdict</b> — the hook lands, the second beat doesn't. Cut 0:03–0:06 and move the offer forward.</p>
  </div>
  <div class="creative-grid" data-stagger>
  <div class="creative-card">
@@ -547,18 +644,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- WHY ADGENT — the empty quadrant / five-at-once matrix -->
 <!-- THE STACK: seven layers, commodity → moat -->
-<section class="band" id="stack">
+<section class="band" id="stack" data-chapter="The stack">
  <div class="wrap">
  <div class="sec-head" data-reveal>
  <span class="eyebrow"><span class="tick"></span>How we're built</span>
  <h2 class="sec-title">Touching the platform is easy. Knowing <em>what to do</em> is hard.</h2>
- <p class="sec-sub">Seven layers sit between a connected ad account and a decision you'd actually stand behind. The bottom two are becoming commodity — everyone will have them. Auditing the account is where most tools stop. What comes above that is the part that's hard to build, and the part that compounds on your account.</p>
+ <p class="sec-sub">Seven layers sit between a connected ad account and a decision you'd stand behind. Most tools stop at the audit. Everything above it is the hard part.</p>
+ </div>
+ <div class="metafig metafig-sm" data-fig="layers">
+  <svg viewBox="0 0 96 96" aria-hidden="true">
+   <path class="mf-ly mf-ly-1" d="M48 16 78 30 48 44 18 30 Z"/>
+   <path class="mf-ly mf-ly-2" d="M48 38 78 52 48 66 18 52 Z"/>
+   <path class="mf-ly mf-ly-3" d="M48 58 78 72 48 86 18 72 Z"/>
+  </svg>
+  <span class="mf-cap">it stacks</span>
  </div>
 
+
+
  <div class="stack3d" data-reveal data-stack>
+ <div class="s3-detail" data-stack-detail>
+  <div class="s3-d" data-i="6"><span class="s3-d-n">L6 · Operating surface</span><p>The morning brief, a queue of things worth acting on, chat, live dashboards, and a shell built for running many accounts at once.</p><p class="s3-li-v">A chat window wired to some data sources is not a product. The daily surface your team actually works in is.</p></div>
+  <div class="s3-d" data-i="5"><span class="s3-d-n">L5 · Safe execution</span><p>Every change goes through approval, with enforced scope and a full record of what was done. Read-only until you say otherwise, and reversible after.</p><p class="s3-li-v">Pointing a model at a live ad account is the easy part and the dangerous part. The approvals, the limits and the audit trail aren't around the product — they are the product.</p></div>
+  <div class="s3-d" data-i="4"><span class="s3-d-n">L4 · Judgment</span><p>Root cause rather than symptom, compared fairly across platforms, with the decision stated and the money attached to it.</p><p class="s3-li-v">The audit plus memory is what makes a position possible: not "here's what moved," but "here's what to do, and here's what it's worth."</p></div>
+  <div class="s3-d" data-i="3"><span class="s3-d-n">L3 · Memory</span><p>Context that survives the session: what was looked at, what was decided, and what you've told it about how this brand runs.</p><p class="s3-li-v">Memory is what turns an audit into judgment. A generic tool restarts from zero every time; here the context accumulates, across platforms, and it's yours.</p></div>
+  <div class="s3-d" data-i="2"><span class="s3-d-n">L2 · Audit</span><p>A full audit of what happened and where — trends, anomalies against an account's own history and its peers, breakdowns by placement, device and geography, and the same audit run on the creative itself: its DNA, the story scene by scene, and where viewers drop off.</p><p class="s3-li-v">Everyone can get you to the account numbers. Reading the creative this way is rarer — but it still only tells you what happened. Nobody takes the next step for you.</p></div>
+  <div class="s3-d" data-i="1"><span class="s3-d-n">L1 · Data correctness</span><p>A year of history, synced daily, with attribution normalized and conversion events reconciled into one comparable shape across platforms.</p><p class="s3-li-v">Raw platform output is not decision-ready. Skip this and you get answers delivered with total confidence and no basis — the most expensive kind of wrong.</p></div>
+  <div class="s3-d" data-i="0"><span class="s3-d-n">L0 · Connectivity</span><p>Reads your accounts directly from the ad platforms, and pulls in analytics and store data alongside them.</p><p class="s3-li-v">This layer only answers "can it reach the account." It's getting cheaper for everyone — which helps us, because it isn't what we sell.</p></div>
+ </div>
  <div class="s3-scene">
-  <div class="s3-zone s3-zone-moat"><span>Hard to build · compounds on your account</span></div>
-  <div class="s3-zone s3-zone-comm"><span>Becoming commodity</span></div>
   <div class="s3-deck" data-stack-deck>
    <div class="s3-plate" data-i="0" data-tier="base" style="--i:0"><div class="s3-edge"></div><div class="s3-face"></div></div>
    <div class="s3-plate" data-i="1" data-tier="base" style="--i:1"><div class="s3-edge"></div><div class="s3-face"></div></div>
@@ -568,32 +682,45 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
    <div class="s3-plate" data-i="5" data-tier="moat" style="--i:5"><div class="s3-edge"></div><div class="s3-face"></div></div>
    <div class="s3-plate" data-i="6" data-tier="moat" style="--i:6"><div class="s3-edge"></div><div class="s3-face"></div></div>
   </div>
-  <div class="s3-ceiling"><span>where most tools stop</span></div>
+  <div class="s3-ceiling"></div>
  </div>
 
- <ol class="s3-list" data-stack-list>
-  <li data-i="0" data-tier="base"><div class="s3-li-h"><span class="s3-li-n">L0</span><h3>Connectivity</h3><span class="s3-li-tag">The rail, not the moat</span></div><div class="s3-li-body"><div><p>Reads your accounts directly from the ad platforms, and pulls in analytics and store data alongside them.</p><p class="s3-li-v">This layer only answers "can it reach the account." It's getting cheaper for everyone — which helps us, because it isn't what we sell.</p></div></div></li>
-  <li data-i="1" data-tier="base"><div class="s3-li-h"><span class="s3-li-n">L1</span><h3>Data correctness</h3><span class="s3-li-tag">No confident-but-wrong</span></div><div class="s3-li-body"><div><p>A year of history, synced daily, with attribution normalized and conversion events reconciled into one comparable shape across platforms.</p><p class="s3-li-v">Raw platform output is not decision-ready. Skip this and you get answers delivered with total confidence and no basis — the most expensive kind of wrong.</p></div></div></li>
-  <li data-i="2" data-tier="ceiling"><div class="s3-li-h"><span class="s3-li-n">L2</span><h3>Audit</h3><span class="s3-li-tag">Where most tools stop</span></div><div class="s3-li-body"><div><p>A full audit of what happened and where — trends, anomalies against an account's own history and its peers, breakdowns by placement, device and geography, and the same audit run on the creative itself: its DNA, the story scene by scene, and where viewers drop off.</p><p class="s3-li-v">Everyone can get you to the account numbers. Reading the creative this way is rarer — but it still only tells you what happened. Nobody takes the next step for you.</p></div></div></li>
-  <li data-i="3" data-tier="moat"><div class="s3-li-h"><span class="s3-li-n">L3</span><h3>Memory</h3><span class="s3-li-tag">Audit → judgment</span></div><div class="s3-li-body"><div><p>Context that survives the session: what was looked at, what was decided, and what you've told it about how this brand runs.</p><p class="s3-li-v">Memory is what turns an audit into judgment. A generic tool restarts from zero every time; here the context accumulates, across platforms, and it's yours.</p></div></div></li>
-  <li data-i="4" data-tier="moat"><div class="s3-li-h"><span class="s3-li-n">L4</span><h3>Judgment</h3><span class="s3-li-tag">The decision</span></div><div class="s3-li-body"><div><p>Root cause rather than symptom, compared fairly across platforms, with the decision stated and the money attached to it.</p><p class="s3-li-v">The audit plus memory is what makes a position possible: not "here's what moved," but "here's what to do, and here's what it's worth."</p></div></div></li>
-  <li data-i="5" data-tier="moat"><div class="s3-li-h"><span class="s3-li-n">L5</span><h3>Safe execution</h3><span class="s3-li-tag">The trust layer</span></div><div class="s3-li-body"><div><p>Every change goes through approval, with enforced scope and a full record of what was done. Read-only until you say otherwise, and reversible after.</p><p class="s3-li-v">Pointing a model at a live ad account is the easy part and the dangerous part. The approvals, the limits and the audit trail aren't around the product — they are the product.</p></div></div></li>
-  <li data-i="6" data-tier="moat"><div class="s3-li-h"><span class="s3-li-n">L6</span><h3>Operating surface</h3><span class="s3-li-tag">Where the work happens</span></div><div class="s3-li-body"><div><p>The morning brief, a queue of things worth acting on, chat, live dashboards, and a shell built for running many accounts at once.</p><p class="s3-li-v">A chat window wired to some data sources is not a product. The daily surface your team actually works in is.</p></div></div></li>
+ <ol class="s3-list s3-list-b" data-stack-list>
+<li data-i="6" style="--cy:8.31%" data-tier="moat"><div class="s3-li-h"><span class="s3-li-n">L6</span><h3>Operating surface</h3><span class="s3-li-tag">Your daily surface</span></div></li>
+<li data-i="5" style="--cy:16.58%" data-tier="moat"><div class="s3-li-h"><span class="s3-li-n">L5</span><h3>Safe execution</h3><span class="s3-li-tag">The trust layer</span></div></li>
+<li data-i="4" style="--cy:24.79%" data-tier="moat"><div class="s3-li-h"><span class="s3-li-n">L4</span><h3>Judgment</h3><span class="s3-li-tag">The decision</span></div></li>
+<li data-i="3" style="--cy:30.8%" data-tier="moat"><div class="s3-li-h"><span class="s3-li-n">L3</span><h3>Memory</h3><span class="s3-li-tag">Audit → judgment</span></div></li>
+<li class="s3-div" style="--cy:35.57%" aria-hidden="true"><span>where most tools stop</span></li>
+<li data-i="2" style="--cy:40.35%" data-tier="ceiling"><div class="s3-li-h"><span class="s3-li-n">L2</span><h3>Audit</h3><span class="s3-li-tag">What happened, and where</span></div></li>
+<li data-i="1" style="--cy:46.29%" data-tier="base"><div class="s3-li-h"><span class="s3-li-n">L1</span><h3>Data correctness</h3><span class="s3-li-tag">No confident-but-wrong</span></div></li>
+<li data-i="0" style="--cy:52.2%" data-tier="base"><div class="s3-li-h"><span class="s3-li-n">L0</span><h3>Connectivity</h3><span class="s3-li-tag">Reads your accounts</span></div></li>
  </ol>
 </div>
+
 
  <p class="stack-kicker" data-reveal>The audit is the ceiling of the category. Memory, judgment and safe execution are the three layers above it — and they're where the work of the last year went.</p>
  </div>
 </section>
 
 <!-- GROUND-TRUTH ZONE: the two-verdict trap -->
-<section class="band band-sub" id="ground-truth">
+<section class="band band-sub" id="ground-truth" data-chapter="Ground truth">
  <div class="wrap">
  <div class="sec-head" data-reveal>
  <span class="eyebrow"><span class="tick"></span>The blind spot</span>
  <h2 class="sec-title">The platform can't see the number that <em>decides</em> it.</h2>
- <p class="sec-sub">An ad platform optimizes toward what its pixel can measure — impressions, clicks, conversions. It has no access to cost of goods, contribution margin or what a customer is worth on the second order. So on the same campaign, it can only ever reach one verdict.</p>
+ <p class="sec-sub">An ad platform optimizes toward what its pixel can measure. It never sees your cost of goods, your margin, or what a customer is worth on the second order.</p>
  </div>
+ <div class="metafig" data-fig="eye">
+  <svg viewBox="0 0 96 96" aria-hidden="true">
+   <path class="mf-lid-t" d="M10 48 C26 24 70 24 86 48"/>
+   <path class="mf-lid-b" d="M10 48 C26 72 70 72 86 48"/>
+   <circle class="mf-iris" cx="48" cy="48" r="15"/>
+   <circle class="mf-pupil" cx="48" cy="48" r="6"/>
+   <path class="mf-ray" d="M48 20 V6 M76 34 L88 26 M76 62 L88 70 M20 34 L8 26 M20 62 L8 70"/>
+  </svg>
+  <span class="mf-cap">it wakes up</span>
+ </div>
+
 
  <div class="gt-trap" data-reveal>
  <div class="gt-lens gt-above">
@@ -621,6 +748,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
  <p class="gt-kicker" data-reveal>Same campaign. Two verdicts. Only one of them is looking at your profit — and it isn't the one spending your budget.</p>
 
+
  <div class="gt-points" data-stagger>
  <div class="gt-point">
  <div class="gt-point-t">Reconciled against your own revenue</div>
@@ -636,14 +764,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  </div>
  </div>
  </div>
+
 </section>
 
-<section class="band" id="why-adgent">
+<section class="band" id="why-adgent" data-chapter="Why Adgent">
  <div class="wrap">
  <div class="sec-head" data-reveal>
  <span class="eyebrow"><span class="tick"></span>Why Adgent</span>
  <h2 class="sec-title">Analyze <em>or</em> act — everything else makes you choose.</h2>
- <p class="sec-sub">Reporting tools go deep but never touch the account. Platform AIs and rule engines act — but with no judgment, and never on your side. Adgent is the only one that does all five at once, and remembers your brand while it does.</p>
+ <p class="sec-sub">Reporting tools go deep but never touch the account. Platform AIs act, but with no judgment and never on your side. Adgent does both — and remembers your brand.</p>
  </div>
  <div class="matrix-wrap" data-reveal>
  <table class="matrix">
@@ -665,6 +794,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  </tbody>
  </table>
  <p class="matrix-note">One column checked all the way down. That column is the whole point.</p>
+
+ <div class="why-why" data-stagger>
+ <div class="why-card">
+  <span class="why-n">01</span>
+  <h3>Reporting tools can't act</h3>
+  <p>They read the account beautifully and then hand you a board. The work — the change that actually moves money — still lands on you.</p>
+ </div>
+ <div class="why-card">
+  <span class="why-n">02</span>
+  <h3>Platform AIs aren't on your side</h3>
+  <p>An optimiser that lives inside one ad platform will never tell you to move budget to a rival, or grade its own spend against your margin.</p>
+ </div>
+ <div class="why-card">
+  <span class="why-n">03</span>
+  <h3>Rules don't have judgment</h3>
+  <p>An automation rule fires on a threshold. It can't tell a placement leak from a seasonal dip, and it never remembers what you decided last month.</p>
+ </div>
+ </div>
  </div>
  </div>
 </section>
@@ -746,7 +893,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  <span class="eyebrow"><span class="tick"></span>Questions</span>
  <h2 class="sec-title">Good questions, answered plainly.</h2>
  </div>
- <div class="faq lane" style="margin-left:0" data-reveal>
+ <div class="metafig metafig-sm" data-fig="q">
+  <svg viewBox="0 0 96 96" aria-hidden="true">
+   <circle class="mf-q-ring" cx="48" cy="48" r="34"/>
+   <path class="mf-q-hook" d="M36 38a12 12 0 1 1 16 11.4c-2.6 1.1-4 3.3-4 6.1V60"/>
+   <circle class="mf-q-dot" cx="48" cy="70" r="2.6"/>
+  </svg>
+  <span class="mf-cap">it answers</span>
+ </div>
+ <div class="faq-grid">
+ <div class="faq" data-reveal>
  <details open>
  <summary>Does Adgent change my campaigns on its own? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary>
  <div class="faq-a">No. Access is read-only by default. When a fix or a campaign is ready, Adgent prepares it and waits — you apply it from chat with one message. The control is always yours; nothing is automatic.</div>
@@ -772,18 +928,54 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  <div class="faq-a">Agencies managing many accounts, ecommerce brands running their own spend, in-house growth teams, and independent performance marketers — anyone who'd rather talk to an analyst than decode a dashboard.</div>
  </details>
  </div>
+ <aside class="faq-aside" data-reveal="right">
+  <div class="faq-aside-card">
+   <span class="faq-aside-k">Still deciding?</span>
+   <p class="faq-aside-h">The fastest answer is your own account.</p>
+   <p class="faq-aside-p">We run one read-only audit and show you what it finds — the brief, the leaks, and what they're worth. No access to spend anything.</p>
+   <a class="btn btn-primary" href="#lead">Get a free audit</a>
+   <ul class="faq-aside-l">
+    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>Read-only — nothing is changed</li>
+    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>Findings you can verify in Ads Manager</li>
+    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>Takes one conversation</li>
+   </ul>
+  </div>
+  <i class="faq-qm" aria-hidden="true">?</i>
+ </aside>
+
  </div>
 </section>
 
 <!-- CTA + LEAD FORM -->
-<section class="band" id="lead">
+<section class="band" id="lead" data-chapter="Start">
+ <i class="seam-chart" aria-hidden="true">
+  <svg viewBox="0 0 1200 130" preserveAspectRatio="none">
+   <defs>
+    <linearGradient id="scStroke" x1="0" y1="1" x2="1" y2="0">
+     <stop offset="0" stop-color="rgba(28,25,20,0.18)"/>
+     <stop offset="42%" stop-color="rgba(255,90,44,0.45)"/>
+     <stop offset="100%" stop-color="#ff5a2c"/>
+    </linearGradient>
+    <linearGradient id="scFill" x1="0" y1="0" x2="0" y2="1">
+     <stop offset="0" stop-color="rgba(255,90,44,0.22)"/>
+     <stop offset="100%" stop-color="rgba(255,90,44,0)"/>
+    </linearGradient>
+   </defs>
+   <path class="sc-area" d="M0 112 H520 L640 106 L740 96 L830 80 L920 60 L1010 40 L1104 18 V130 H0 Z" fill="url(#scFill)"/>
+   <path class="sc-line" d="M0 112 H520 L640 106 L740 96 L830 80 L920 60 L1010 40 L1104 18"
+     fill="none" stroke="url(#scStroke)" stroke-width="2" stroke-linecap="round"
+     stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+  </svg>
+  <i class="sc-tip"></i>
+  <span class="sc-cap">recovered spend</span>
+ </i>
  <div class="wrap">
  <div class="cta" data-reveal="scale">
  <div class="cta-grid">
  <div>
- <span class="eyebrow"><span class="tick"></span>Request a demo</span>
+ <span class="eyebrow"><span class="tick"></span>Free account audit</span>
  <h2>Put an analyst on your account <em>this week</em>.</h2>
- <p>Tell us about your accounts and we'll get you set up across every channel.</p>
+ <p>Send us your accounts and we'll run the audit Adgent would run — the morning brief it would write, and where it would stop money leaking. No access to spend anything.</p>
  <ul class="cta-points">
  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>Connects Meta, Google &amp; TikTok</li>
  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>Reads GA4, Shopify &amp; Search Console for context</li>
@@ -791,8 +983,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  </ul>
  </div>
  <div class="lead lead-demo" id="leadCard">
- <h3>Request a demo</h3>
- <p class="lead-demo-sub">Tell us about your accounts and we'll show you the morning brief Adgent would write for them — and where it would save you money.</p>
  <!-- Web3Forms (free). Access key below is tied to osman@adgent.app — submissions email there.
  Optional spam protection: add Cloudflare Turnstile — see the commented block in site.js. -->
  <form class="lead-form" id="leadForm" action="https://api.web3forms.com/submit" method="POST">
@@ -809,10 +999,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  <label class="lf-field"><span>Company / agency</span>
  <input type="text" name="company" placeholder="Where you work" autocomplete="organization">
  </label>
- <label class="lf-field"><span>Which accounts do you run?</span>
- <textarea name="message" rows="3" placeholder="Meta / Google / TikTok — and roughly how many"></textarea>
+ <label class="lf-field"><span>Which accounts do you run? <i>optional</i></span>
+ <textarea name="message" rows="2" placeholder="Meta / Google / TikTok — and roughly how many"></textarea>
  </label>
- <button type="submit" class="btn btn-primary btn-lg">Request a demo</button>
+ <button type="submit" class="btn btn-primary btn-lg">Get my free audit</button>
  <p class="lead-fine" id="leadNote">We usually reply within a couple of working days.</p>
  </form>
  <div class="lead-done">
@@ -841,7 +1031,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  <h4>Product</h4>
  <a href="/" class="active">Overview</a>
  <a href="/pricing">Pricing</a>
- <a href="/#report">Real report</a>
+ <a href="/#trust-gate">Trust Gate</a>
  <a href="/#lead">Request demo</a>
  </div>
  <div class="foot-col">
