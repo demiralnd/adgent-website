@@ -1270,6 +1270,11 @@ input[type="range"][data-math-spend]:focus-visible { outline: 2px solid var(--ac
 /* ---------- responsive ---------- */
 @media (max-width: 920px) {
   .hero-grid, .integ, .cta-grid { grid-template-columns: 1fr; gap: 40px; }
+  /* Explicit stacking order: the copy (headline → lede → CTA) reads first, the
+     chat card follows. This matches DOM order, but pin it so a later rule
+     can't flip the card above the headline. */
+  .hero-copy { order: 1; }
+  .hero-cutout { order: 2; }
   .split, .steps, .feat-grid, .stats, .foot-grid, .creative-grid { grid-template-columns: 1fr 1fr; }
   .feat-wide { grid-column: span 2; }
 }
@@ -2932,8 +2937,14 @@ section, .band, .moat, .hero { z-index: auto; }
 
 /* --- hero: tighter column balance, lede on the same measure as sec-sub */
 .hero { padding: clamp(72px, 9vh, 104px) 0 clamp(64px, 8vh, 92px); }
-.hero-grid { grid-template-columns: 1.05fr 0.95fr; gap: clamp(36px, 4.5vw, 64px); }
 .hero-lede { max-width: 52ch; }
+/* Two-column balance is a DESKTOP tweak — it must not leak below the 920px
+   breakpoint, where .hero-grid collapses to a single column. Written
+   unguarded it sat later in the cascade than that mobile rule and silently
+   re-imposed two columns on phones. */
+@media (min-width: 921px) {
+  .hero-grid { grid-template-columns: 1.05fr 0.95fr; gap: clamp(36px, 4.5vw, 64px); }
+}
 
 /* --- Memory (moat): the dark block fades into the page top and bottom instead
    of cutting it, so the parallax atmosphere carries through the seam */
