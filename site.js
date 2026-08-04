@@ -778,4 +778,32 @@
     setTimeout(layout, 1000);
 
   })();
+
+  /* ---- the oversized "3A" ghost: its inner light band tracks the scroll ----
+     One custom property per frame (0 → 1 as the glyph crosses the viewport),
+     consumed by background-position in CSS. */
+  (function () {
+    var gs = Array.prototype.slice.call(
+      d.querySelectorAll('.ctx-ghost-text, .mem-ghost, .sec-ghost, .hero-mark-ghost')
+    );
+    if (!gs.length || reduce) return;
+    var t = false, last = [];
+    function tick() {
+      var h = window.innerHeight || 1;
+      for (var i = 0; i < gs.length; i++) {
+        var g = gs[i];
+        var r = g.getBoundingClientRect();
+        if (r.bottom < -400 || r.top > h + 400) continue;
+        var p = (h - r.top) / (h + r.height);
+        p = p < 0 ? 0 : (p > 1 ? 1 : p);
+        var v = Math.round(p * 1000) / 1000;
+        if (v !== last[i]) { last[i] = v; g.style.setProperty('--ghost-p', v); }
+      }
+    }
+    window.addEventListener('scroll', function () {
+      if (t) return; t = true;
+      requestAnimationFrame(function () { t = false; tick(); });
+    }, { passive: true });
+    tick();
+  })();
 })();
