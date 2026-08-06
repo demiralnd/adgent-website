@@ -54,8 +54,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
  .who-card .ic svg { width: 19px; height: 19px; stroke-width: 2; }
  .who-card h3 { font-size: 15px; font-weight: 600; margin: 16px 0 0; letter-spacing: -0.015em; }
  .who-card p { font-size: 13px; line-height: 1.55; color: var(--text-secondary); margin: 8px 0 0; }
- @media (max-width: 920px){ .principles.who { grid-template-columns: 1fr 1fr; } }
- @media (max-width: 640px){ .principles.who { grid-template-columns: 1fr; } }
+ /* The mobile rules used to read `.principles.who` — a combination that exists on
+    no element, so both grids stayed at 3 and 4 columns down to 390px and their
+    cards ran 57px and 181px off-screen. They are separate classes; target both. */
+ @media (max-width: 920px){ .principles { grid-template-columns: 1fr 1fr; } .who { grid-template-columns: 1fr 1fr; } }
+ @media (max-width: 640px){ .principles, .who { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
