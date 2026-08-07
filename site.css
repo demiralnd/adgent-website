@@ -830,7 +830,6 @@ body.menu-open { overflow: hidden; }
   .stack3d .s3-scene { aspect-ratio: 4 / 3; --s: 0.85; }
 }
 @media (max-width: 560px) {
-  .s3-scene { aspect-ratio: 1 / 1; --s: 0.56; }
   .s3-list li p { display: block; }
   .s3-list li { cursor: default; }
 }
@@ -1678,6 +1677,18 @@ html:not(.js) .chat-step { opacity: 1; transform: none; }
    Percentage anchors can only work if the box actually contains the deck. */
 .stack3d .s3-scene { --s: 0.78; aspect-ratio: auto; min-height: 560px; }
 
+/* Phone: that unconditional rule above sits after the @media block that tries
+   to shrink the deck, so at 390px the scene kept --s: 0.78 and the plates —
+   which paint 96–147% of their own box, as the comment above admits — landed on
+   the section's paragraph. The last two lines sat behind a plate and could not
+   be read. This does NOT register as overflow: getBoundingClientRect reports
+   the flattened box of a 3D-rotated element, not the painted one, so it was
+   found by sampling pixels, not by measuring boxes. Smaller deck, and enough
+   top padding that the plates start below the copy. */
+@media (max-width: 560px) {
+  .stack3d .s3-scene { --s: 0.5; min-height: 340px; padding-top: 190px; }
+}
+
 /* ---------- stack: zone labels after the card shell was removed ----------
    They used to sit in the panel's corners. With no panel they landed on top
    of the plates and became unreadable — push them out past the deck. */
@@ -2244,6 +2255,36 @@ body { position: relative; }
 .spine.complete .spine-end {
   background: var(--accent); border-color: var(--accent);
   box-shadow: 0 0 18px rgba(255, 90, 44, 0.6);
+}
+/* The rail spends the whole page drawing itself; when it finally lands, the
+   three words the story was actually about sign it off. They are the hero's
+   own kicker (Aware → Ask → Apply) returning at the end, in the editorial
+   face rather than the mono one — the page opens in an operator's voice and
+   closes in the brand's. Hidden until .complete so it reads as an arrival. */
+.spine-sign {
+  position: absolute; bottom: -5px; left: 14px;
+  display: flex; align-items: baseline; gap: 9px;
+  white-space: nowrap; pointer-events: none;
+  transform: translateY(50%);
+}
+.spine-sign i {
+  font-family: var(--font-editorial); font-style: italic; font-weight: 500;
+  font-size: 17px; letter-spacing: -0.01em; line-height: 1;
+  color: var(--accent);
+  opacity: 0; transform: translateX(-6px);
+  transition: opacity 520ms var(--ease), transform 520ms var(--ease);
+}
+/* the middle dots are drawn, not typed, so the words stay selectable text */
+.spine-sign i + i::before {
+  content: ""; display: inline-block; vertical-align: middle;
+  width: 3px; height: 3px; margin: -2px 9px 0 0; border-radius: 50%;
+  background: currentColor; opacity: 0.5;
+}
+.spine.complete .spine-sign i { opacity: 1; transform: none; }
+.spine.complete .spine-sign i:nth-child(2) { transition-delay: 130ms; }
+.spine.complete .spine-sign i:nth-child(3) { transition-delay: 260ms; }
+@media (prefers-reduced-motion: reduce) {
+  .spine-sign i { transition: none; transform: none; }
 }
 /* the head flares for a beat each time it crosses a chapter node, so the
    line itself reacts to the story instead of just growing */

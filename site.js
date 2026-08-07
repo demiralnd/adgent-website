@@ -706,7 +706,14 @@
       for (var i = 0; i < chapters.length; i++) if (pt > (chapters[i].y || 0)) passed = i;
       if (passed >= 0) beat(passed); else seg.classList.remove('on');
 
-      var comp = pt >= END - 4;
+      /* `pt` is the read position — the middle of the viewport, not its bottom —
+         so on a page whose rail ends just above the footer it stops roughly half
+         a screen short of END and the rail never registered as finished. Treat
+         "the reader is as far down as the page goes" as arrival too, otherwise
+         .complete can never fire and the end of the line has no ending. */
+      var atBottom = window.pageYOffset + window.innerHeight >=
+                     d.documentElement.scrollHeight - 2;
+      var comp = pt >= END - 4 || atBottom;
       if (comp !== wasComplete) { host.classList.toggle('complete', comp); wasComplete = comp; }
       /* --read is no longer consumed by any style (the header progress bar is
          gone), so nothing is written to :root during scroll at all. */
