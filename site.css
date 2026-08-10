@@ -3762,7 +3762,7 @@ section, .band, .moat, .hero { z-index: auto; }
 }
 
 /* inline source note — small, muted, sits after a stat in body copy */
-.src-note { font-size: .72em; opacity: .62; font-style: normal; white-space: nowrap; }
+.src-note { font-size: .68em; opacity: .5; font-style: normal; white-space: nowrap; letter-spacing: .01em; }
 
 /* the trust-gate finding carries weight without a fabricated money figure */
 .rflag-est-crit { color: var(--crit); font-weight: 600; }
