@@ -298,6 +298,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>Anything <b>irreversible always stops for you</b></li>
  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>And every change <b>tells you if it can be undone</b> — before you approve it</li>
  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>Undo it and put it back, and you <b>settle whether it worked</b> — on your own account, not a case study</li>
+ <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>Each company's data sits in its <b>own database file</b> — not a shared table with a filter on it</li>
  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>Set an agent to watch something and you see <b>every time it would have fired in the last 90 days</b> — before you turn it on</li>
  </ul>
  </div>
@@ -337,6 +338,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  <div class="rflag-main">
  <div class="rflag-t">Optimizing toward a value-less event <span class="sbadge crit">Trust Gate</span></div>
  <div class="rflag-w">The account optimizes for a <b>Purchase</b> event that carries no value. ROAS here is <b>unmeasurable</b> — most tools report a number anyway. Adgent flags it instead of inventing confidence.</div>
+ <div class="rflag-est rflag-est-crit">⚠ every ROAS-based decision on this account was made on this number</div>
  </div>
  </div>
  <div class="rflag">
@@ -493,34 +495,70 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  <div class="builds-spacer" data-builds-spacer aria-hidden="true"></div>
 </section>
 
-<!-- WHY CHAT -->
-<section class="band">
- <div class="wrap integ">
- <div data-reveal="left">
- <span class="eyebrow"><span class="tick"></span>Why chat</span>
- <h2 class="sec-title">A dashboard can't answer “<em>why</em>”.</h2>
- <p class="sec-sub">Everyone else hands you a board to decode. Adgent hands you a conversation: ask the question, get the answer, then apply it from the same place. Even your reports are one message away.</p>
- <ul class="cta-points" style="margin-top:28px">
- <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>“Why is CPA up this week?” — answered with evidence</li>
- <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>“Where do viewers drop off in this ad?” — scene by scene</li>
- <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>“Build me a dashboard for this client” — laid out for you</li>
- <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>“Build me a weekly report” — generated, ready to send</li>
- </ul>
+<!-- GROUND-TRUTH ZONE: the two-verdict trap -->
+<section class="band band-sub" id="ground-truth" data-chapter="Ground truth">
+ <div class="wrap">
+ <div class="sec-ghost" data-reveal aria-hidden="true"><svg viewBox="0 0 96 96"><path d="M10 48 C26 24 70 24 86 48"/><path d="M10 48 C26 72 70 72 86 48"/><circle cx="48" cy="48" r="15"/><circle class="solid" cx="48" cy="48" r="6"/><path d="M48 20 V6 M76 34 L88 26 M76 62 L88 70 M20 34 L8 26 M20 62 L8 70"/></svg></div>
+ <div class="sec-head" data-reveal>
+ <span class="eyebrow"><span class="tick"></span>The blind spot</span>
+ <h2 class="sec-title">The platform can't see the number that <em>decides</em> it.</h2>
+ <p class="sec-sub">An ad platform optimizes toward what its pixel can measure. It never sees your cost of goods, your margin, or what a customer is worth on the second order. So when it finds a campaign that converts cheaply and loses money on every order, it does the logical thing: it scales it. Nobody is asleep at the wheel — the dashboard is green, the target is met, and the report is correct on its own terms. That is the expensive part.</p>
  </div>
- <div class="cutout" data-reveal="right">
- <div class="co-kicker">Adgent · custom report</div>
- <div class="chat-thread" style="margin-top:10px">
- <div class="cmsg-user">Build me a weekly report for the client.</div>
- <div class="cmsg-bot">
- <div class="ct">Done — Meta, Google &amp; TikTok, last 7 days. Spend <b class="num">48,210 TL</b>, blended ROAS <b class="num">3.8×</b> cross-checked against Shopify revenue, two flags worth a look. Want it as a PDF or right here?</div>
- <div class="chat-fix">
- <span class="fixbtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/></svg>Export PDF</span>
- <span class="fixnote">Generated from live data</span>
+ <div class="metafig" data-fig="eye">
+  <svg viewBox="0 0 96 96" aria-hidden="true">
+   <path class="mf-lid-t" d="M10 48 C26 24 70 24 86 48"/>
+   <path class="mf-lid-b" d="M10 48 C26 72 70 72 86 48"/>
+   <circle class="mf-iris" cx="48" cy="48" r="15"/>
+   <circle class="mf-pupil" cx="48" cy="48" r="6"/>
+   <path class="mf-ray" d="M48 20 V6 M76 34 L88 26 M76 62 L88 70 M20 34 L8 26 M20 62 L8 70"/>
+  </svg>
+  <span class="mf-cap">it wakes up</span>
+ </div>
+
+
+ <div class="gt-trap" data-reveal>
+ <div class="gt-lens gt-above">
+ <div class="gt-lens-h">
+ <span class="gt-tag">Platform lens</span>
+ <span class="gt-what">What the pixel measures</span>
+ </div>
+ <div class="gt-metric"><b>ROAS 3.2×</b><span class="gt-ok">healthy</span></div>
+ <p class="gt-said">Conversions are up and return on ad spend is above target.</p>
+ <div class="gt-verdict gt-verdict-scale">Verdict: <b>scale it</b></div>
+ </div>
+
+ <div class="gt-line" aria-hidden="true"><span>the revenue line</span></div>
+
+ <div class="gt-lens gt-below">
+ <div class="gt-lens-h">
+ <span class="gt-tag gt-tag-us">Ground truth</span>
+ <span class="gt-what">What your business knows</span>
+ </div>
+ <div class="gt-metric"><b>Margin negative</b><span class="gt-bad">on this cohort</span></div>
+ <p class="gt-said">The volume is discount-driven. Thin contribution per order, and these buyers rarely come back.</p>
+ <div class="gt-verdict gt-verdict-stop">Verdict: <b>stop</b></div>
+ </div>
+ </div>
+
+ <p class="gt-kicker" data-reveal>Same campaign. Two verdicts. Only one of them is looking at your profit — and it isn't the one spending your budget.</p>
+
+
+ <div class="gt-points" data-stagger>
+ <div class="gt-point">
+ <div class="gt-point-t">Reconciled against your own revenue</div>
+ <p>Adgent reads GA4, Shopify and Search Console alongside the ad platforms, so a report reflects money that actually landed — not what the pixel claimed.</p>
+ </div>
+ <div class="gt-point">
+ <div class="gt-point-t">A structural gap, not a feature gap</div>
+ <p>No optimizer built inside an ad platform can grade its own spend against your margin. It doesn't have the data, and it isn't neutral about the answer.</p>
+ </div>
+ <div class="gt-point">
+ <div class="gt-point-t">Judgment, not just another chart</div>
+ <p>An audit tells you what happened. Adgent takes the position — what to do about it — and remembers the calls you've already made on this brand.</p>
  </div>
  </div>
  </div>
- </div>
- </div>
+
 </section>
 
 <!-- TRUST GATE -->
@@ -570,7 +608,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  <div class="sec-head creative-head" data-reveal="left">
  <span class="eyebrow"><span class="tick"></span>Creative intelligence</span>
  <h2 class="sec-title">It reads every creative like a <em>strategist</em> — not a tagger.</h2>
- <p class="sec-sub">Adgent reads every live ad the way a senior buyer would — its DNA, the story scene by scene, and exactly where viewers leave. Analysis, never generation.</p>
+ <p class="sec-sub">Creative is the single biggest driver of a campaign's sales — <b>49%</b>, more than targeting (11%) or reach (14%) <span class="src-note">NCSolutions (now Circana), 2023</span>. It is also the layer most tools only tag. Adgent reads every live ad the way a senior buyer would — its DNA, the story scene by scene, and exactly where viewers leave. No upload step: it reads what is already running. Analysis, never generation.</p>
 
  
 </div>
@@ -757,72 +795,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  </div>
 </section>
 
-<!-- GROUND-TRUTH ZONE: the two-verdict trap -->
-<section class="band band-sub" id="ground-truth" data-chapter="Ground truth">
- <div class="wrap">
- <div class="sec-ghost" data-reveal aria-hidden="true"><svg viewBox="0 0 96 96"><path d="M10 48 C26 24 70 24 86 48"/><path d="M10 48 C26 72 70 72 86 48"/><circle cx="48" cy="48" r="15"/><circle class="solid" cx="48" cy="48" r="6"/><path d="M48 20 V6 M76 34 L88 26 M76 62 L88 70 M20 34 L8 26 M20 62 L8 70"/></svg></div>
- <div class="sec-head" data-reveal>
- <span class="eyebrow"><span class="tick"></span>The blind spot</span>
- <h2 class="sec-title">The platform can't see the number that <em>decides</em> it.</h2>
- <p class="sec-sub">An ad platform optimizes toward what its pixel can measure. It never sees your cost of goods, your margin, or what a customer is worth on the second order.</p>
- </div>
- <div class="metafig" data-fig="eye">
-  <svg viewBox="0 0 96 96" aria-hidden="true">
-   <path class="mf-lid-t" d="M10 48 C26 24 70 24 86 48"/>
-   <path class="mf-lid-b" d="M10 48 C26 72 70 72 86 48"/>
-   <circle class="mf-iris" cx="48" cy="48" r="15"/>
-   <circle class="mf-pupil" cx="48" cy="48" r="6"/>
-   <path class="mf-ray" d="M48 20 V6 M76 34 L88 26 M76 62 L88 70 M20 34 L8 26 M20 62 L8 70"/>
-  </svg>
-  <span class="mf-cap">it wakes up</span>
- </div>
-
-
- <div class="gt-trap" data-reveal>
- <div class="gt-lens gt-above">
- <div class="gt-lens-h">
- <span class="gt-tag">Platform lens</span>
- <span class="gt-what">What the pixel measures</span>
- </div>
- <div class="gt-metric"><b>ROAS 3.2×</b><span class="gt-ok">healthy</span></div>
- <p class="gt-said">Conversions are up and return on ad spend is above target.</p>
- <div class="gt-verdict gt-verdict-scale">Verdict: <b>scale it</b></div>
- </div>
-
- <div class="gt-line" aria-hidden="true"><span>the revenue line</span></div>
-
- <div class="gt-lens gt-below">
- <div class="gt-lens-h">
- <span class="gt-tag gt-tag-us">Ground truth</span>
- <span class="gt-what">What your business knows</span>
- </div>
- <div class="gt-metric"><b>Margin negative</b><span class="gt-bad">on this cohort</span></div>
- <p class="gt-said">The volume is discount-driven. Thin contribution per order, and these buyers rarely come back.</p>
- <div class="gt-verdict gt-verdict-stop">Verdict: <b>stop</b></div>
- </div>
- </div>
-
- <p class="gt-kicker" data-reveal>Same campaign. Two verdicts. Only one of them is looking at your profit — and it isn't the one spending your budget.</p>
-
-
- <div class="gt-points" data-stagger>
- <div class="gt-point">
- <div class="gt-point-t">Reconciled against your own revenue</div>
- <p>Adgent reads GA4, Shopify and Search Console alongside the ad platforms, so a report reflects money that actually landed — not what the pixel claimed.</p>
- </div>
- <div class="gt-point">
- <div class="gt-point-t">A structural gap, not a feature gap</div>
- <p>No optimizer built inside an ad platform can grade its own spend against your margin. It doesn't have the data, and it isn't neutral about the answer.</p>
- </div>
- <div class="gt-point">
- <div class="gt-point-t">Judgment, not just another chart</div>
- <p>An audit tells you what happened. Adgent takes the position — what to do about it — and remembers the calls you've already made on this brand.</p>
- </div>
- </div>
- </div>
-
-</section>
-
 <section class="band" id="why-adgent" data-chapter="Why Adgent">
  <div class="wrap">
  <div class="sec-head" data-reveal>
@@ -852,20 +824,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  <p class="matrix-note">One column checked all the way down. That column is the whole point.</p>
 
  <div class="why-why" data-stagger>
- <div class="why-card">
+ <div class="why-card why-card-wide">
   <span class="why-n">01</span>
-  <h3>Reporting tools can't act</h3>
-  <p>They read the account beautifully and then hand you a board. The work — the change that actually moves money — still lands on you.</p>
- </div>
- <div class="why-card">
-  <span class="why-n">02</span>
-  <h3>Platform AIs aren't on your side</h3>
-  <p>An optimiser that lives inside one ad platform will never tell you to move budget to a rival, or grade its own spend against your margin.</p>
- </div>
- <div class="why-card">
-  <span class="why-n">03</span>
-  <h3>Rules don't have judgment</h3>
-  <p>An automation rule fires on a threshold. It can't tell a placement leak from a seasonal dip, and it never remembers what you decided last month.</p>
+  <h3>The optimiser inside the platform is not on your side</h3>
+  <p>It will never tell you to move budget to a rival, and it will never grade its own spend against your margin. That is not a flaw in the software — it is who it works for.</p>
  </div>
  </div>
  </div>
