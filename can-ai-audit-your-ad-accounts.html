@@ -203,6 +203,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
  <p>None of this makes AI a weak auditor. It makes it a partial one — the right partial, if you point it at detection and keep the human on interpretation.</p>
 
+ <h2>"Is the pixel installed" is not "is the pixel useful"</h2>
+
+ <p>One tracking check deserves separating out, because most audits stop one question short of it. Confirming a pixel is installed and firing is a green tick. Whether it produces a signal an optimiser can actually learn from is a different question, and the answer can be no while every tick stays green.</p>
+
+ <p>A real hotel account we read shows the gap. Thirty days of pixel data looked busy: <b>65,042 custom events, 16,404 initiate-checkout events, 515 add-to-cart, 216 leads.</b> Installed, firing, plenty of volume. Then the row that matters — <b>4 purchases.</b> Meta's optimiser needs roughly <b>50 conversions a week</b> to get out of the learning phase. Four in a month isn't a thin signal; it's below the floor where a conversion campaign can learn anything at all.</p>
+
+ <div class="answer-box">
+ <span class="lbl">The distinction</span>
+ <p>Installed and firing is a tracking check. Whether the event that pays fires often enough to train on is a signal-quality check. An audit that only does the first one hands you a green tick over an account that cannot optimise.</p>
+ </div>
+
+ <p>The useful finding wasn't "your pixel is broken" — it wasn't. It was that the setup is technically possible while the learning signal isn't there yet, which points at fixing the purchase event before building anything that optimises toward it. That check costs nothing to run before spend and is expensive to discover after. Worth asking of any audit, human or automated: does it read the conversion counts against what the platform needs to learn, or does it stop at "firing"?</p>
+
  <h2>Catches vs. misses, side by side</h2>
 
  <div class="cmp-wrap">
@@ -272,6 +285,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  <a class="rel-card" href="/how-to-audit-a-google-ads-account"><span class="rc-tag">Playbook</span><div class="rc-h">How to audit a Google Ads account</div></a>
  <a class="rel-card" href="/can-ai-run-your-ad-account"><span class="rc-tag">Product</span><div class="rc-h">Can AI run your ad account?</div></a>
  </div>
+ </div>
+
+ <div class="answer-box" style="margin-top:44px">
+ <span class="lbl">Who wrote this</span>
+ <p>Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyses creative; it doesn't make it.</p>
  </div>
 
  <div class="post-foot">

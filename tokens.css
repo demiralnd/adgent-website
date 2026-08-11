@@ -11,18 +11,24 @@
   --font-mono: "Geist Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
   --font-editorial: "Fraunces", "Newsreader", Georgia, serif;
 
-  /* ---------- Surfaces (warm light) ---------- */
-  --bg-app: #f3f2ef;
-  --bg-card: #ffffff;
-  --bg-sub: #f7f6f3;
-  --bg-inset: #efeeea;
-  --bg-band: #ebe9e4;        /* alt section band */
-  --bg-hover: rgba(28, 25, 20, 0.045);
-  --bg-active: rgba(28, 25, 20, 0.07);
+  /* ---------- Surfaces (white ground, neutral greys) ----------
+     White page, separation carried by bands + card borders — not by a
+     tinted ground. Greys are near-neutral (R−B ≤ 1) so nothing reads
+     as yellowed paper; the warmth of the brand comes from the coral,
+     the editorial serif and the photography, not from the substrate. */
+  --bg-app: #ffffff;         /* page ground */
+  --bg-card: #ffffff;        /* same as ground — cards separate via border+shadow */
+  --bg-sub: #fafafa;         /* subtle blocks on white */
+  --bg-inset: #f4f4f5;       /* inset wells, code, table stripes */
+  --bg-band: #f1f1f2;        /* alt section band — the main rhythm break */
+  --bg-hover: rgba(24, 24, 27, 0.04);
+  --bg-active: rgba(24, 24, 27, 0.065);
 
-  /* ---------- Borders ---------- */
-  --border: rgba(28, 25, 20, 0.085);
-  --border-2: rgba(28, 25, 20, 0.14);
+  /* ---------- Borders ----------
+     Stronger than the tinted-ground era: on a white page the border is
+     what makes a card a card. */
+  --border: rgba(24, 24, 27, 0.12);
+  --border-2: rgba(24, 24, 27, 0.18);
 
   /* ---------- Text ---------- */
   --text: #1c1a17;
@@ -46,10 +52,12 @@
   /* ---------- Radii ---------- */
   --r-xl: 18px; --r-lg: 14px; --r-md: 11px; --r-sm: 8px; --r-pill: 999px;
 
-  /* ---------- Shadows (soft, warm) ---------- */
-  --shadow-card: 0 1px 2px rgba(28, 25, 20, 0.05), 0 10px 26px -14px rgba(28, 25, 20, 0.14);
-  --shadow-soft: 0 1px 2px rgba(28, 25, 20, 0.05);
-  --shadow-pop: 0 30px 70px -28px rgba(28, 25, 20, 0.26), 0 4px 14px -8px rgba(28, 25, 20, 0.16);
+  /* ---------- Shadows (neutral, slightly deeper) ----------
+     Card and ground are both white, so the shadow does more work than
+     it did on a tinted page — lifted, but still soft. */
+  --shadow-card: 0 1px 2px rgba(24, 24, 27, 0.06), 0 12px 28px -14px rgba(24, 24, 27, 0.18);
+  --shadow-soft: 0 1px 2px rgba(24, 24, 27, 0.06);
+  --shadow-pop: 0 30px 70px -28px rgba(24, 24, 27, 0.30), 0 4px 14px -8px rgba(24, 24, 27, 0.18);
 
   /* ---------- Motion ---------- */
   --ease: cubic-bezier(0.22, 0.61, 0.36, 1);

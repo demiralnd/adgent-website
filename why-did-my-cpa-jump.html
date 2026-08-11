@@ -235,6 +235,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  <h3>How to confirm it</h3>
  <p>Look at the leading indicators, not just CPA. <b>CTR trending down, frequency trending up, CPM creeping</b> over a week or two — that's the fatigue signature. Because CPM turns before CPA does, CPM is the early-warning line worth watching; by the time CPA spikes, fatigue has usually been building for days. If the decline is a slow slide rather than a cliff, and it correlates with rising frequency, refresh the creative.</p>
 
+ <h2>5. The target itself may be unreachable</h2>
+
+ <p>The four causes above all assume the CPA you're aiming at was achievable in the first place. Sometimes it never was — and then "CPA jumped" is really "CPA returned to what this account actually costs."</p>
+
+ <p>Here's the shape of it, from a real hotel account we read. The target handed to the campaign was roughly <b>250 lira</b> per conversion. The account's own history at the booking stage sat around <b>4,000 lira</b>, ranging up to about <b>12,200</b> — an order of magnitude away, not a stretch goal. A target set that far below the account's real cost doesn't make the account cheaper. It changes what the optimiser buys: at 250 the only thing reachable is a <b>13-lira micro-lead</b>, a form fill or a soft enquiry that clears the target beautifully and books nobody. The currency is incidental; the ratio is the point. Read it as "the goal was set roughly sixteen times below what a real booking has ever cost here."</p>
+
+ <p>So CPA looks fine, then the real one jumps — because the campaign optimised itself toward the cheapest event it could find rather than the one that pays. At the account's actual budget and cost, the honest estimate was under one real booking a week.</p>
+
+ <div class="answer-box">
+ <span class="lbl">The check</span>
+ <p>Before you diagnose a CPA jump, compare the target to the account's own history at the stage that actually makes money. If the gap is an order of magnitude, the optimiser isn't failing your target — it's hitting it by buying something worthless.</p>
+ </div>
+
+ <p>One caveat worth copying: when the underlying funnel data is itself unreliable — a broken GA4 setup, events that don't line up — this estimate is directional, not precise. It tells you the target is out of reach by a wide margin; it doesn't promise the exact number. That distinction is worth keeping, because a confident figure built on a broken funnel is how you end up defending the wrong target for another month.</p>
+
  <h2>A note on the attribution window</h2>
 
  <p>One more trap before you act on any of this: make sure the CPA you're reacting to is real. Recent conversions are still landing. If you're looking at yesterday's number, a chunk of the conversions that will eventually be credited haven't been attributed yet — so CPA looks inflated simply because the window hasn't closed. This is the same day-one distortion covered in <a href="/attribution-window-day-one-data">why day-one data lies</a>: a fresh CPA is a floor, not a fact. Give it the full window before you call it a spike.</p>
@@ -281,6 +296,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  <a class="rel-card" href="/why-is-my-meta-roas-dropping"><span class="rc-tag">Attribution</span><div class="rc-h">Why is my Meta ROAS dropping?</div></a>
  <a class="rel-card" href="/cpm-is-the-early-creative-fatigue-signal"><span class="rc-tag">Attribution</span><div class="rc-h">CPM is the early creative-fatigue signal</div></a>
  </div>
+ </div>
+
+ <div class="answer-box" style="margin-top:44px">
+ <span class="lbl">Who wrote this</span>
+ <p>Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyses creative; it doesn't make it.</p>
  </div>
 
  <div class="post-foot">
