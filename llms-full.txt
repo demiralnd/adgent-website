@@ -8,369 +8,685 @@ Full readable text of every page on adgent.app, for AI answer engines.
 ========================================================================
 URL: https://adgent.app/
 ========================================================================
-Adgent 
+Adgent
 
- EN TR 
- Request demo 
+Product Overview
 
- Product 
- Pricing 
- About 
- Blog 
- EN TR 
- Request demo 
+What Adgent does, end to end
 
- Aware Ask Apply 
- 
-# Judgment you'd hire for, memory you'd pay for, execution you'd wait for — all of it, on your word.
+For agencies
 
- Adgent watches your Meta, Google and TikTok accounts as one brain, tells you what's working and what's bleeding — and applies the fix from the same chat, when you say go. 
- A senior media buyer's judgment, 24/7, at a fraction of the salary. 
- Read-only by default · you approve every change 
+A senior buyer on every client account
 
- ROAS 3.82× ▲ 
- Meta · Google · TikTok synced 
- CPA $22.10 ▼ 
- 
- Adgent · live on your account 
- 
- Why did Meta ROAS drop yesterday? 
+For in-house
 
- Spend held flat, but CBO_CORE_US pushed 38% of budget to Audience Network at 1.1× while feed sits at 4.2× . That's the drop. You told me last month to protect feed ROAS above 3× — so the exclusion I've prepped keeps it there. 
- 
- Apply exclusion 
- Nothing changes until you approve 
+The second opinion you don't have
 
- Build a live placement dashboard 
- Set an agent to watch this daily 
- Analyze this campaign's creatives 
+Pricing About Blog
 
- Ask anything — or say “launch a new campaign across channels” 
+Request demo
 
- Just ask — in plain language 
+Product For agencies For in-house Pricing About Blog Request demo
 
- Why did Meta ROAS drop yesterday? 
- Audit my placements 
- Which ad set has the best CPA? 
- Build me a weekly report 
- Build a dashboard for this client 
- Is my retargeting working? 
- Where am I wasting spend? 
- Compare Meta, Google & TikTok 
- Launch a new campaign across channels 
+Aware
 
- Scale my best campaign 20% 
- What changed since last week? 
- Find audience overlap 
- Why is CPM rising? 
- Draft a prospecting campaign 
- Which creatives are fatiguing? 
- Break down my top creative's DNA 
- Where do viewers drop off in this video? 
- Pause what's underperforming 
+Ask
 
- Intelligence + memory 
- 
-## It remembers your brand's golden rules .
+Apply
 
- Every analyst you've ever hired had to be told your rules twice. Adgent learns them once — from what you say in chat and the calls you make — and never forgets. Its judgment compounds on your account. 
+# The AI media buyer that reads your accounts and acts on your word.
 
-- Learned, not configured. Golden rules form from your prompts and your approve/reject decisions — no setup screen. 
- 
-- Carried across every session. The context accumulates. Tomorrow's brief already knows what you told it last month. 
- 
-- Yours, and cross-platform. Your rules and account memory follow the brand across Meta, Google and TikTok — not locked to one platform. 
+Not a dashboard — a verdict. Adgent reads Meta, Google and TikTok as one brain, checks the platforms' numbers against your real revenue, and applies the fix the moment you approve.
 
- Adgent · learning In the background · nothing to manage 
+A senior media buyer's judgment, 24/7, at a fraction of the salary.
 
- You, in chat “Don't scale anything past €500/day without flagging me — we've been burned by fast ramps.” 
- Adgent will remember this on every campaign 
+Get a free account audit
 
- You, on a suggestion Rejected “merge prospecting + retargeting” — again . 
- Noted — it won't suggest merging these again 
+Read-only by default · anything irreversible always stops for you
 
- You, in chat “Judge everything against Shopify revenue , not platform ROAS.” 
- Reports now reconcile to your store first 
+ROAS 3.82×
 
- You never set this up. Adgent learns from how you talk to it — and doesn't forget. 
+▲
 
- The 3A loop 
- 
+Meta · Google · TikTok
+
+synced
+
+CPA $22.10
+
+▼
+
+Adgent · live on your account
+
+Why did Meta ROAS drop yesterday?
+
+Spend held flat, but CBO_CORE_US pushed 38% of budget to Audience Network at 1.1× while feed sits at 4.2× . That's the drop. You told me last month to protect feed ROAS above 3× — so the exclusion I've prepped keeps it there.
+
+Apply exclusion
+
+Nothing changes until you approve
+
+Build a live placement dashboard
+
+Set an agent to watch this daily
+
+Analyze this campaign's creatives
+
+Ask anything — or say “launch a new campaign across channels”
+
+Why did Meta ROAS drop yesterday?
+
+Audit my placements
+
+Which ad set has the best CPA?
+
+Build me a weekly report
+
+Build a dashboard for this client
+
+Is my retargeting working?
+
+Where am I wasting spend?
+
+Compare Meta, Google & TikTok
+
+Launch a new campaign across channels
+
+Intelligence + memory
+
+## You explain the account once .
+
+Your rules, your exceptions, the calls you've already made — Adgent picks them up from the way you work and carries them into every verdict after. Nothing to configure, and nothing to repeat next month.
+
+Learned, not configured. Adgent shows you what it picked up from your account and asks before remembering it — no setup screen, and you can override any of it.
+
+Carried across every session. The context accumulates. Tomorrow's brief already knows what you told it last month.
+
+Yours, and cross-platform. Your rules and account memory follow the brand across Meta, Google and TikTok — not locked to one platform.
+
+Adgent · learning
+
+In the background · nothing to manage
+
+You, in chat
+
+“Don't scale anything past €500/day without flagging me — we've been burned by fast ramps.”
+
+Adgent will remember this on every campaign
+
+You, on a suggestion
+
+Rejected “merge prospecting + retargeting” — again .
+
+Noted — it won't suggest merging these again
+
+You, in chat
+
+“Judge everything against Shopify revenue , not platform ROAS.”
+
+Reports now reconcile to your store first
+
+You never set this up. Adgent learns from how you talk to it — and doesn't forget.
+
+context layer
+
+The 3A loop
+
 ## Aware. Ask. Apply. One loop.
 
- Three layers of an analyst's job, in one product — awareness to know, conversation to dig, execution to act. Control stays with you the whole way. 
+Three layers of an analyst's job, in one product — awareness to know, conversation to dig, execution to act. Control stays with you the whole way.
 
- 01 · Aware 
- 
-### Intelligence
+3A
 
- Adgent watches every account overnight and writes the verdict before you're awake. 
+01 · Aware
 
-- A daily brief ranked by impact
- 
-- A single health score per account
- 
-- Anomaly detection across Meta, Google & TikTok
+Intelligence
 
- 02 · Ask 
- 
-### Conversation
+Adgent watches every account overnight and writes the verdict before you're awake.
 
- Ask anything, at any level — and get an analyst's answer, not a chart to interpret. 
+A Daily Brief ranked by impact
 
-- Question any ad, campaign or account 
- 
-- Placement & demographic audits on demand
- 
-- Generate a custom report from one message
+A single health score per account
 
- 03 · Apply 
- 
-### Execution
+Anomaly detection across Meta, Google & TikTok
 
- When you're ready, act from the same chat. Read-only by default; you approve every move. 
+02 · Ask
 
-- One-tap fixes applied from chat
- 
-- Build cross-channel campaigns by message
- 
-- Every change waits for your approval 
+Conversation
 
- Real output 
- 
-## Not a promise. An actual report .
+Ask anything, at any level — and get an analyst's answer, not a chart to interpret.
 
- A real account audit Adgent ran for a hotel chain (anonymized). One pass surfaced roughly 31,400 TL/month in recoverable spend — and flagged a number most tools would have reported blindly. 
+Question any ad, campaign or account
 
- Account audit · a hotel chain · Meta · Google · TikTok 
- 4 findings, ranked by recoverable spend 
- 
- ~31,400 TL / month potential 
+Placement & demographic audits on demand
 
- Optimizing toward a value-less event Trust Gate 
- The account optimizes for a Purchase event that carries no value. ROAS here is unmeasurable — most tools report a number anyway. Adgent flags it instead of inventing confidence. 
+Generate a custom report from one message
 
- Zero retargeting in 90 days Opportunity 
- No RTG campaign is live. Site visitors and add-to-carts are never re-engaged — the cheapest demand in the account is going unworked. 
- ▲ est. +12,800 TL / mo 
+03 · Apply
 
- Two prospecting ad sets overlap 41% High 
- LAL_2% and INT_TRAVEL bid against each other on the same users, inflating CPM on both. 
- ▲ est. +9,200 TL / mo 
+Execution
 
- Placement leak to Audience Network High 
- 38% of spend lands on Audience Network at a fraction of feed performance. 
- ▲ est. +9,400 TL / mo 
+When you're ready, act from the same chat — the fix applied where you found it.
 
- Every figure links back to where to verify it in Ads Manager. Adgent decides — you confirm.
+One-tap fixes applied from chat
 
- Built from a sentence 
- 
+Build cross-channel campaigns by message
+
+Every change tells you if it can be undone — before you approve it
+
+one loop
+
+Built from a sentence
+
 ## Ask for it in chat. Adgent builds it.
 
- A dashboard, a monitoring agent, a restructure plan, a new campaign — you describe it in plain language and Adgent assembles it from your live account data. Then you approve. 
+A dashboard, a monitoring agent, a restructure plan, a new campaign — you describe it in plain language and Adgent assembles it from your live account data.
 
- Build me a reservations dashboard, last 28 days 
- Assembled from Meta · Google · TikTok + Shopify 
+it acts
 
- Reservations 4.8K ▲ 12.4% 
- ROAS 3.82× ▲ 8.1% 
- CPA ₺22.10 ▼ 6.0% 
+Adgent · your workspace
 
- Dashboard Live · auto-refreshing 
+Plan
 
- Watch my placements and flag leaks daily 
- Agent live — scanning every morning 
+Dashboard
 
- Critical 
- CBO_CORE_US Leaking to Audience Network — exclude 
- ₺1,743 est./mo 
+Agent
 
- Watch 
- RETARGET_7D Frequency climbing — creative fatigue 
- ₺620 est./mo 
+Campaign
 
- Monitoring agent Runs daily · you approve 
+Plan a restructure to fix the iOS leak
 
- Plan a restructure to fix the iOS leak 
- 4 steps · sequenced to protect learning 
+4 steps · sequenced to protect learning
 
- 1 Exclude Audience Network on CBO_CORE_US now 
- 2 Shift freed budget to Feed, +20% now 
- 3 Hold — let the ad set re-stabilize 48h 
- 4 Refresh retargeting creative day 3 
+1
 
- Restructure plan Nothing runs until you say go 
+Exclude Audience Network on CBO_CORE_US
 
- Build a prospecting campaign for the spring launch 
- Drafted across Meta & Google — ready to review 
+now
 
- Spring · Prospecting · Meta 3 ad sets · ₺8,000/mo Ready 
- Spring · Search · Google 12 keywords · ₺5,000/mo Ready 
- Spring · Retargeting awaiting audience size Review 
+2
 
- New campaign Drafted · launches on approval 
+Shift freed budget to Feed, +20%
 
- Why chat 
- 
-## A dashboard can't answer “ why ”.
+now
 
- Everyone else hands you a board to decode. Adgent hands you a conversation: ask the question, get the answer, then apply it from the same place. Even your reports are one message away. 
+3
 
-- “Why is CPA up this week?” — answered with evidence
- 
-- “Where do viewers drop off in this ad?” — scene by scene
- 
-- “Build me a dashboard for this client” — laid out for you
- 
-- “Build me a weekly report” — generated, ready to send
+Hold — let the ad set re-stabilize
 
- Adgent · custom report 
- 
- Build me a weekly report for the client. 
- 
- Done — Meta, Google & TikTok, last 7 days. Spend 48,210 TL , blended ROAS 3.8× cross-checked against Shopify revenue, two flags worth a look. Want it as a PDF or right here? 
- 
- Export PDF 
- Generated from live data 
+48h
 
- Trust Gate · attribution maturity 
- We won't quote a number we can't stand behind. 
+4
 
- ROAS unmeasurable on this campaign 
- Optimizing toward a value-less event. We say so — we don't print a confident multiple. 
+Refresh retargeting creative
 
- Inside the 7-day window — still attributing 
- This number is a draft and may revise up. Flagged, never trusted blindly. 
+day 3
 
- Trust Gate 
- 
-## The only tool that tells you when the number is lying .
+Restructure plan
 
- Most platforms report ROAS even when it can't be measured. Adgent doesn't. If a campaign optimizes toward a value-less event, or a metric is still inside the attribution window, we flag it — and refuse to manufacture false confidence. Honest beats impressive. 
+Nothing runs until you say go
 
- Creative intelligence 
- 
+Build me a reservations dashboard, last 28 days
+
+Assembled from Meta · Google · TikTok + Shopify
+
+Reservations
+
+4.8K
+
+▲ 12.4%
+
+ROAS
+
+3.82×
+
+▲ 8.1%
+
+CPA
+
+₺22.10
+
+▼ 6.0%
+
+Meta
+
+Google
+
+TikTok
+
+last 28 days
+
+Blended ROAS 3.82×
+
+reconciled to Shopify
+
+Dashboard
+
+Live · auto-refreshing
+
+Watch my placements and flag leaks daily
+
+Agent live — scanning every morning
+
+Critical
+
+CBO_CORE_US
+
+Leaking to Audience Network — exclude
+
+₺1,743
+
+est./mo
+
+Watch
+
+RETARGET_7D
+
+Frequency climbing — creative fatigue
+
+₺620
+
+est./mo
+
+Tested against your last 90 days
+
+9 times
+
+Roughly one alert every ten days — not a daily nag. How often it would have fired, not what it would have earned.
+
+Monitoring agent
+
+Backtested before it goes live
+
+Build a prospecting campaign for the spring launch
+
+Drafted across Meta & Google — ready to review
+
+Spring · Prospecting · Meta
+
+3 ad sets · ₺8,000/mo
+
+Ready
+
+Spring · Search · Google
+
+12 keywords · ₺5,000/mo
+
+Ready
+
+Spring · Retargeting
+
+awaiting audience size
+
+Review
+
+New campaign
+
+Drafted · launches on approval
+
+The blind spot
+
+## The platform can't see the number that decides it.
+
+An ad platform optimizes toward what its pixel can measure. It never sees your cost of goods, your margin, or what a customer is worth on the second order. So when it finds a campaign that converts cheaply and loses money on every order, it does the logical thing: it scales it. Nobody is asleep at the wheel — the dashboard is green, the target is met, and the report is correct on its own terms. That is the expensive part.
+
+it wakes up
+
+Platform lens
+
+What the pixel measures
+
+ROAS 3.2× healthy
+
+Conversions are up and return on ad spend is above target.
+
+Verdict: scale it
+
+the revenue line
+
+Ground truth
+
+What your business knows
+
+Margin negative on this cohort
+
+The volume is discount-driven. Thin contribution per order, and these buyers rarely come back.
+
+Verdict: stop
+
+Same campaign. Two verdicts. Only one of them is looking at your profit — and it isn't the one spending your budget.
+
+Reconciled against your own revenue
+
+Adgent reads GA4, Shopify and Search Console alongside the ad platforms, so a report reflects money that actually landed — not what the pixel claimed.
+
+A structural gap, not a feature gap
+
+No optimizer built inside an ad platform can grade its own spend against your margin. It doesn't have the data, and it isn't neutral about the answer.
+
+Judgment, not just another chart
+
+An audit tells you what happened. Adgent takes the position — what to do about it — and remembers the calls you've already made on this brand.
+
+it seals
+
+Trust Gate · one real account, two refusals
+
+It said no. Twice. Before a lira was spent.
+
+"Your target is unreachable — here's why"
+
+Asked for a ₺250 cost per conversion. The account's own history at the booking stage sits near ₺4,000 . At 250 the only reachable thing is a ₺13 micro-lead that clears the target and books nobody.
+
+"This pixel can't teach a campaign yet"
+
+Thirty days: 65,042 custom events, 16,404 initiate-checkout — and 4 purchases. Meta's own docs put the floor at 50 events in 7 days [developers.meta.com]
+
+. Technically possible to build. Nothing there for the optimiser to learn from.
+
+Trust Gate
+
+## The test of a thinking tool: does it ever tell you no ?
+
+Anything that only says yes is executing, not reasoning. Both refusals came from one real account, unprompted, before any budget moved — each showing the account's own numbers as the reason. A tool that checks this afterwards reports the same facts a month later, once the money has already taught the algorithm nothing.
+
+Creative intelligence
+
 ## It reads every creative like a strategist — not a tagger.
 
- Adgent pulls your live ads automatically — no upload step — and reads each one the way a senior buyer would. It names the creative's DNA, walks the story scene by scene, and shows you exactly where viewers drop off. Then it tells you which creatives are fatiguing and what to do — as an action you approve. Analysis, never generation. 
+Creative is the single biggest driver of a campaign's sales — 49% , more than targeting (11%) or reach (14%) [NCSolutions / Circana, 2023]
 
-### Creative DNA
+. It is also the layer most tools only tag. Adgent reads every live ad the way a senior buyer would — its DNA, the story scene by scene, and exactly where viewers leave. No upload step: it reads what is already running. Analysis, never generation.
 
- Every ad, decoded: hook, format, persona, angle, offer, visuals and audio — so you can see why a creative works, not just that it did. 
+it reads
 
-### Scene-by-scene storyboard
+Analysed · 0:14 video
 
- Video ads broken down shot by shot — what happens in each moment, so a weak opening or a slow middle is obvious at a glance. 
+SPRING_LAUNCH_V3
 
-### Where viewers leave
+hook · 0:00–0:02
 
- A creative funnel that tracks the hold-curve across your ads — the exact scene where attention drops, so you fix the leak instead of guessing. 
+offer on-screen · 0:09
 
-### Fatigue, verdict-first
+Hook Problem-first
 
- It flags the creatives wearing out — before the numbers slide — and hands you a dollar-valued refresh you can apply from chat. 
+Persona Repeat buyer
 
- Getting started 
- 
-## Connect your channels once. Then just talk.
+Angle Scarcity
 
- STEP 01 
+Offer 20% bundle
 
-### Connect your accounts
+Hold curve
 
- Authorize Meta, Google and TikTok — plus GA4, Shopify and Search Console for context. Read-only by default; nothing moves without your word. 
+61% drop at 0:03
 
- STEP 02 
+Verdict — the hook lands, the second beat doesn't. Cut 0:03–0:06 and move the offer forward.
 
-### Adgent learns your accounts
+Creative DNA
 
- It builds baselines and audits every channel overnight — pacing, fatigue, placement drift, attribution maturity. 
+Every ad, decoded: hook, format, persona, angle, offer, visuals and audio — so you can see why a creative works, not just that it did.
 
- STEP 03 
+Scene-by-scene storyboard
 
-### Aware, ask, apply
+Video ads broken down shot by shot — what happens in each moment, so a weak opening or a slow middle is obvious at a glance.
 
- Read the morning brief, ask whatever you need, and apply fixes or build campaigns from chat — on your approval. 
+Where viewers leave
 
- Why Adgent 
- 
+A creative funnel that tracks the hold-curve across your ads — the exact scene where attention drops, so you fix the leak instead of guessing.
+
+Fatigue, verdict-first
+
+It flags the creatives wearing out — before the numbers slide — and hands you a dollar-valued refresh you can apply from chat.
+
+How we're built
+
+## Touching the platform is easy. Knowing what to do is hard.
+
+Seven layers sit between a connected ad account and a decision you'd stand behind. Most tools stop at the audit. Everything above it is the hard part.
+
+it stacks
+
+L6 · Operating surface
+
+The morning brief, a queue of things worth acting on, chat, live dashboards, and a shell built for running many accounts at once.
+
+A chat window wired to some data sources is not a product. The daily surface your team actually works in is.
+
+L5 · Safe execution
+
+Read-only until you say otherwise. Every write is logged with its before-state, labelled reversible or not before you approve, and undone in one click. Each company's data sits in its own database file.
+
+Pointing a model at a live ad account is the easy part and the dangerous part. The ledger also does a second job nobody asks of it: a change you can undo and redo is a change you can settle, instead of argue about.
+
+L4 · Judgment
+
+Root cause rather than symptom, compared fairly across platforms, with the decision stated and the money attached to it.
+
+The audit plus memory is what makes a position possible: not "here's what moved," but "here's what to do, and here's what it's worth."
+
+L3 · Memory
+
+Context that survives the session: what was looked at, what was decided, and what you've told it about how this brand runs.
+
+Memory is what turns an audit into judgment. A generic tool restarts from zero every time; here the context accumulates, across platforms, and it's yours.
+
+L2 · Audit
+
+What happened and where — trends, anomalies against the account's own history and its peers, breakdowns by placement, device and geography. Then the same audit on the creative: its DNA, the story scene by scene, and where viewers drop off.
+
+Everyone can get you to the account numbers. Reading the creative this way is rarer — but it still only tells you what happened. Nobody takes the next step for you.
+
+L1 · Data correctness
+
+A year of history, synced daily, with attribution normalized and conversion events reconciled into one comparable shape across platforms.
+
+Raw platform output is not decision-ready. Skip this and you get answers delivered with total confidence and no basis — the most expensive kind of wrong.
+
+L0 · Connectivity
+
+Reads your accounts directly from the ad platforms, and pulls in analytics and store data alongside them.
+
+This layer only answers "can it reach the account." It's getting cheaper for everyone — which helps us, because it isn't what we sell.
+
+L6
+
+Operating surface
+
+Your daily surface
+
+L5
+
+Safe execution
+
+The trust layer
+
+L4
+
+Judgment
+
+The decision
+
+L3
+
+Memory
+
+Audit → judgment
+
+where most tools stop
+
+L2
+
+Audit
+
+What happened, and where
+
+L1
+
+Data correctness
+
+No confident-but-wrong
+
+L0
+
+Connectivity
+
+Reads your accounts
+
+The audit is the ceiling of the category. Memory, judgment and safe execution are the three layers above it — and they're where the work of the last year went.
+
+Why Adgent
+
 ## Analyze or act — everything else makes you choose.
 
- Reporting tools go deep but never touch the account. Platform AIs and rule engines act — but with no judgment, and never on your side. Adgent is the only one that does all five at once, and remembers your brand while it does. 
+Reporting tools go deep but never touch the account. Platform AIs act, but with no judgment and never on your side. Adgent does both — and remembers your brand.
 
- Capability 
- Reporting tools 
- Platform AIs 
- Automation rules 
- Adgent 
+Capability
 
- Executes across platforms — ✓ ✓ ✓ 
- Reasons about account structure — — — ✓ 
- Deep config & measurement diagnostics ✓ — — ✓ 
- Chat-native verdicts + live reports — — — ✓ 
- Remembers your brand's rules — — — ✓ 
+Reporting tools
 
- One column checked all the way down. That column is the whole point. 
+Platform AIs
 
- The math 
- 
-## It pays for itself in the first audit.
+Automation rules
 
- The question isn't whether Adgent is worth it. It's how much you're leaving on the table without it. 
+Adgent
 
- Questions 
- 
+Executes across platforms
+
+—
+
+✓
+
+✓
+
+✓
+
+Reasons about account structure
+
+—
+
+—
+
+—
+
+✓
+
+Deep config & measurement diagnostics
+
+✓
+
+—
+
+—
+
+✓
+
+Chat-native verdicts + live reports
+
+—
+
+—
+
+—
+
+✓
+
+Remembers your brand's rules
+
+—
+
+—
+
+—
+
+✓
+
+One column checked all the way down. That column is the whole point.
+
+Each row on its own is buyable somewhere. The reason no column but ours is checked all the way down is that the top rows only work if the ones under them do — judgment needs memory, and memory needs a year of your history in one place. That order is the product.
+
+Questions
+
 ## Good questions, answered plainly.
 
-Q: Does Adgent change my campaigns on its own? 
- No. Access is read-only by default. When a fix or a campaign is ready, Adgent prepares it and waits — you apply it from chat with one message. The control is always yours; nothing is automatic. 
+it answers
 
-Q: Which ad platforms does it cover? 
- Meta, Google and TikTok Ads, read and reasoned about as one account — and it pulls in GA4, Shopify and Search Console so reports reflect real revenue, not just platform-reported numbers. 
+Does Adgent change my campaigns on its own? No. Access is read-only by default. When a fix or a campaign is ready, Adgent prepares it and waits — you apply it from chat with one message. The control is always yours; nothing is automatic.
 
-Q: What can I actually do from chat? 
- Ask about any ad, campaign, or account; run placement and demographic audits; generate custom reports; apply prepared fixes; and build cross-channel campaigns — all by message, all on your approval. 
+Which ad platforms does it cover? Meta, Google and TikTok Ads, read and reasoned about as one account — and it pulls in GA4, Shopify and Search Console so reports reflect real revenue, not just platform-reported numbers.
 
-Q: What is the Trust Gate? 
- It's how Adgent stays honest about numbers. If a campaign optimizes toward a value-less event, or a metric is still inside Meta's 7-day attribution window, we flag it rather than report a confident figure. We'd rather tell you a number can't be trusted than pretend it can. 
+What can I actually do from chat? Ask about any ad, campaign, or account; run placement and demographic audits; generate custom reports; apply prepared fixes; and build cross-channel campaigns — all by message.
 
-Q: Will it really pay for itself? 
- In our audits, a single account's first pass typically surfaces meaningful recoverable spend — before counting the analyst hours saved. Talk to sales and we'll show you what Adgent finds in your account. 
+What is the Trust Gate? It's how Adgent stays honest about numbers. If a campaign optimizes toward a value-less event, or a metric is still inside Meta's 7-day attribution window, we flag it rather than report a confident figure. We'd rather tell you a number can't be trusted than pretend it can.
 
-Q: Who is Adgent for? 
- Agencies managing many accounts, ecommerce brands running their own spend, in-house growth teams, and independent performance marketers — anyone who'd rather talk to an analyst than decode a dashboard. 
+How do I know an agent won't spam me? You see it before you turn it on. Describe what to watch and Adgent replays it against your last 90 days — every time it would have fired, on what, and how often. Nine alerts in three months is a useful agent; four hundred is one you'd have muted by Thursday. Adjust the threshold and the answer updates, all before anything reaches you.
 
- Request a demo 
- 
+Will it really pay for itself? In our audits, a single account's first pass typically surfaces meaningful recoverable spend — before counting the hours it saves your team. Talk to sales and we'll show you what Adgent finds in your account.
+
+Who is Adgent for? Agencies managing many accounts, ecommerce brands running their own spend, in-house growth teams, and independent performance marketers — anyone who'd rather talk to an analyst than decode a dashboard.
+
+Still deciding?
+
+The fastest answer is your own account.
+
+We run one read-only audit and show you what it finds — the brief, the leaks, and what they're worth. No access to spend anything.
+
+Get a free audit Read-only — nothing is changed
+
+Findings you can verify in Ads Manager
+
+Takes one conversation
+
+Free account audit
+
 ## Put an analyst on your account this week .
 
- Tell us about your accounts and we'll get you set up across every channel. 
+Send us your accounts and we'll run the audit Adgent would run — the morning brief it would write, and where it would stop money leaking. No access to spend anything.
 
-- Connects Meta, Google & TikTok
- 
-- Reads GA4, Shopify & Search Console for context
- 
-- Read-only until you say otherwise
+Connects Meta, Google & TikTok
 
-### Request a demo
+Reads GA4, Shopify & Search Console for context
 
- Tell us about your accounts and we'll show you the morning brief Adgent would write for them — and where it would save you money. 
+Tells you what it can't answer yet, and why
 
- Name 
+What you get back
 
- Work email 
+The brief it would write on day one, the leaks it found and what they're worth — and, where the data can't carry a verdict, the things it won't call yet and why.
 
- Company / agency 
+Findings you can check line by line in your own Ads Manager. No access to spend anything.
 
- Which accounts do you run? 
+Name
 
- Request a demo 
- We usually reply within a couple of working days. 
+Work email
 
-### Thanks — we've got it.
+Company / agency
 
- We'll be in touch within a couple of working days to set up your accounts.
+Which accounts do you run? optional
+
+Get my free audit
+
+We usually reply within a couple of working days.
+
+Thanks — we've got it.
+
+We'll be in touch within a couple of working days to set up your accounts.
+
+Adgent
+
+The AI media buyer for performance marketers. One brief each morning — the thinking already done.
+
+Product
+
+Overview Pricing Trust Gate Request demo
+
+Company
+
+About Blog Contact
+
+Legal
+
+Privacy Terms Security Data use
+
+© 2026 Adgent. All rights reserved.
 
 ========================================================================
 URL: https://adgent.app/pricing
