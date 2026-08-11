@@ -3628,3 +3628,31 @@ section, .band, .moat, .hero { z-index: auto; }
 .cta-proof p { font-size: 13px; line-height: 1.62; color: var(--text-2); margin: 0; text-wrap: pretty; }
 .cta-proof p + p { margin-top: 9px; }
 .cta-proof b { color: var(--text); font-weight: 650; }
+
+
+/* ============================================================
+   HOW WE'RE BUILT — the three columns share one height.
+   At EOF on purpose: these values had been set in eight different places
+   (panel 92/150/168/236/360, deck 400/440/392, list 400/460/392) and whichever
+   block happened to come last decided the layout. The columns are centred
+   against each other, so three different heights meant three different centres
+   — which is what read as "the elements don't line up".
+
+   One number for all three. The panel needs the most (~312px of copy for L5
+   plus 44px of padding), so 380 covers every column with a little air. The
+   deck's plates project upward out of its own box via rotateX, so its art is
+   pushed back down by the same number — otherwise the box centres on geometry
+   the eye never sees.
+   ============================================================ */
+@media (min-width: 981px) {
+  .stack3d { align-items: center; }
+  .s3-detail { min-height: 380px; }
+  .stack3d .s3-scene { min-height: 380px; }
+  .s3-list { min-height: 380px !important; }
+  .s3-detail, .stack3d .s3-scene, .s3-list { align-self: center; }
+  .s3-deck {
+    transform: translate(-50%, calc(-50% + 380px * var(--s))) rotateX(58deg) rotateZ(-42deg);
+  }
+  /* the three columns start on the same line too */
+  #stack .s3-list, #stack .stack3d { margin-top: 44px; }
+}
