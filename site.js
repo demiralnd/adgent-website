@@ -115,10 +115,30 @@
         input = c.querySelector('[data-input]');
     function show(el) { if (el) el.classList.add('show'); }
     if (reduce) { [user, bot, input].forEach(show); if (typing) typing.style.display = 'none'; return; }
-    setTimeout(function () { show(user); }, 350);
-    setTimeout(function () { show(typing); }, 850);
-    setTimeout(function () { if (typing) typing.style.display = 'none'; show(bot); }, 2000);
-    setTimeout(function () { show(input); }, 2400);
+    /* Was 350/850/2000/2400ms — for the first two seconds the card sat almost
+       empty, then filled. Halved; the card reserves its height in CSS so
+       nothing reflows as the lines land. */
+    setTimeout(function () { show(user); }, 200);
+    setTimeout(function () { show(typing); }, 500);
+    setTimeout(function () { if (typing) typing.style.display = 'none'; show(bot); }, 1100);
+    setTimeout(function () { show(input); }, 1350);
+  })();
+
+  /* ---- built-from-a-sentence: tabbed product window ---- */
+  (function () {
+    var win = d.querySelector('[data-appwin]'); if (!win) return;
+    var tabs = win.querySelectorAll('.appwin-tab');
+    var panes = win.querySelectorAll('.appwin-pane');
+    function pick(i) {
+      Array.prototype.forEach.call(tabs, function (t, n) {
+        t.classList.toggle('on', n === i);
+        t.setAttribute('aria-selected', n === i ? 'true' : 'false');
+      });
+      Array.prototype.forEach.call(panes, function (p, n) { p.classList.toggle('on', n === i); });
+    }
+    Array.prototype.forEach.call(tabs, function (t, i) {
+      t.addEventListener('click', function () { pick(i); });
+    });
   })();
 
   /* ---- marquee: duplicate row content for a seamless -50% loop ---- */
@@ -367,23 +387,14 @@
     render();
   })();
 
-  /* ---- report findings: click to expand one at a time ---- */
+  /* ---- report findings: always open ----
+     These were a click-to-expand accordion, one at a time. There are only two
+     of them and each one IS the argument of the section — a reader who has to
+     click to discover the refusal usually doesn't. Both stay open; the class is
+     set here so the collapsed state never paints. */
   (function () {
     var flags = d.querySelectorAll('.report-flags .rflag');
-    if (!flags.length) return;
-    Array.prototype.forEach.call(flags, function (f) {
-      var t = f.querySelector('.rflag-t');
-      if (t) { t.setAttribute('role', 'button'); t.setAttribute('tabindex', '0'); }
-      function toggle() {
-        var wasOpen = f.classList.contains('open');
-        Array.prototype.forEach.call(flags, function (o) { o.classList.remove('open'); });
-        if (!wasOpen) f.classList.add('open');
-      }
-      f.addEventListener('click', toggle);
-      f.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
-      });
-    });
+    Array.prototype.forEach.call(flags, function (f) { f.classList.add('open'); });
   })();
 
   /* ---- FAQ: one open at a time ---- */
