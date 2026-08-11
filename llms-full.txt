@@ -374,15 +374,15 @@ Trust Gate · one real account, two refusals
 
 It said no. Twice. Before a lira was spent.
 
-"Your target is unreachable — here's why"
-
-Asked for a ₺250 cost per conversion. The account's own history at the booking stage sits near ₺4,000 . At 250 the only reachable thing is a ₺13 micro-lead that clears the target and books nobody.
-
 "This pixel can't teach a campaign yet"
 
 Thirty days: 65,042 custom events, 16,404 initiate-checkout — and 4 purchases. Meta's own docs put the floor at 50 events in 7 days [developers.meta.com]
 
 . Technically possible to build. Nothing there for the optimiser to learn from.
+
+"Your target is unreachable — here's why"
+
+Asked for a ₺250 cost per conversion. The account's own history at the booking stage sits near ₺4,000 . At 250 the only reachable thing is a ₺13 micro-lead that clears the target and books nobody.
 
 Trust Gate
 
