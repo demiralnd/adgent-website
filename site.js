@@ -124,21 +124,66 @@
     setTimeout(function () { show(input); }, 1350);
   })();
 
-  /* ---- built-from-a-sentence: tabbed product window ---- */
+  /* ---- built-from-a-sentence: scroll advances one conversation ----
+     The section is sticky over a spacer (CSS). Scrolling through that spacer
+     walks the thread: each turn's question appears, its answer builds under
+     it, then it slides up and the next one is asked. On mobile and under
+     reduced-motion the spacer is 0 and every turn is simply stacked — this
+     driver then does nothing, which is the intended fallback. */
   (function () {
-    var win = d.querySelector('[data-appwin]'); if (!win) return;
-    var tabs = win.querySelectorAll('.appwin-tab');
-    var panes = win.querySelectorAll('.appwin-pane');
-    function pick(i) {
-      Array.prototype.forEach.call(tabs, function (t, n) {
-        t.classList.toggle('on', n === i);
-        t.setAttribute('aria-selected', n === i ? 'true' : 'false');
+    var thread = d.querySelector('[data-thread]'); if (!thread) return;
+    var col = thread.querySelector('[data-thread-scroll]');
+    var turns = thread.querySelectorAll('.turn');
+    var sec = d.querySelector('[data-builds-pin]');
+    var spacer = d.querySelector('[data-builds-spacer]');
+    if (reduce || !sec || !spacer || !col || !turns.length) return;
+
+    var n = turns.length, cur = -1;
+
+    /* Align the active turn's TOP to the window's top, not its bottom.
+       Bottom-alignment is what a chat client does, but here it left a 54–132px
+       slice of the previous turn hanging in the window with its top cut off —
+       readable enough to look broken, not enough to be worth reading. Aligning
+       the top means exactly one turn is on screen, whole. */
+    function show(i) {
+      if (i === cur) return;
+      cur = i;
+      var t = turns[i];
+      /* A sliver of the previous turn stays visible above — enough to read as
+         a thread that continues, not enough to look like a half-cut message.
+         Kept below (window − tallest turn) so the active turn always clears:
+         the dashboard runs 376px in a 390px window, leaving 14. */
+      var y = Math.max(0, t.offsetTop - 12);
+      col.style.setProperty('--bfs-y', (-y) + 'px');
+      Array.prototype.forEach.call(turns, function (el, k) {
+        el.classList.toggle('on', k === i);
+        el.classList.toggle('said', k < i);
       });
-      Array.prototype.forEach.call(panes, function (p, n) { p.classList.toggle('on', n === i); });
     }
-    Array.prototype.forEach.call(tabs, function (t, i) {
-      t.addEventListener('click', function () { pick(i); });
-    });
+
+    var tick = false;
+    function onScroll() {
+      if (tick) return; tick = true;
+      requestAnimationFrame(function () {
+        tick = false;
+        var travel = spacer.offsetHeight;
+        if (travel < 1) { sec.classList.remove('pinning'); return; }
+        var top = sec.getBoundingClientRect().top;
+        var p = Math.min(1, Math.max(0, -top / travel));
+        sec.classList.toggle('pinning', top <= 0 && -top <= travel);
+        /* Equal dwell per turn across the first 85% of the travel; the last
+           15% holds the final turn on screen so it doesn't flash past as the
+           section unpins. (A plain floor(p*n) gives the last turn a sliver,
+           and floor(p*(n+1)) hands the extra slot to the wrong turns.) */
+        var hold = 0.92;
+        show(p >= hold ? n - 1 : Math.min(n - 1, Math.floor((p / hold) * n)));
+      });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    /* offsets change with width, so force a recompute rather than let the
+       early-exit in show() keep a stale translate */
+    window.addEventListener('resize', function () { cur = -1; onScroll(); }, { passive: true });
+    onScroll();
   })();
 
   /* ---- marquee: duplicate row content for a seamless -50% loop ---- */
@@ -176,23 +221,83 @@
     d.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
   }
 
-  /* ---- product dropdown ----
+  /* ---- nav dropdowns ----
      CSS handles hover and focus-within. This covers touch, where hover would
-     otherwise make the first tap follow the link instead of opening the menu. */
-  var drop = d.querySelector('.nav-drop');
-  if (drop && window.matchMedia('(hover: none)').matches) {
-    var trigger = drop.querySelector('.nav-drop-t');
-    trigger.addEventListener('click', function (e) {
-      if (drop.classList.contains('open')) return;   /* second tap follows the link */
-      e.preventDefault();
-      drop.classList.add('open');
-      trigger.setAttribute('aria-expanded', 'true');
+     otherwise make the first tap follow the link instead of opening the menu.
+     querySelectorAll, not querySelector: there is more than one dropdown. */
+  var drops = [].slice.call(d.querySelectorAll('.nav-drop'));
+  if (drops.length && window.matchMedia('(hover: none)').matches) {
+    drops.forEach(function (drop) {
+      var trigger = drop.querySelector('.nav-drop-t');
+      if (!trigger) return;
+      trigger.addEventListener('click', function (e) {
+        if (drop.classList.contains('open')) return;   /* second tap follows the link */
+        e.preventDefault();
+        /* only one open at a time, or two panels overlap */
+        drops.forEach(function (o) {
+          if (o !== drop) {
+            o.classList.remove('open');
+            var t = o.querySelector('.nav-drop-t');
+            if (t) t.setAttribute('aria-expanded', 'false');
+          }
+        });
+        drop.classList.add('open');
+        trigger.setAttribute('aria-expanded', 'true');
+      });
     });
     d.addEventListener('click', function (e) {
-      if (!drop.contains(e.target)) {
-        drop.classList.remove('open');
-        trigger.setAttribute('aria-expanded', 'false');
+      drops.forEach(function (drop) {
+        if (!drop.contains(e.target)) {
+          drop.classList.remove('open');
+          var t = drop.querySelector('.nav-drop-t');
+          if (t) t.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+  }
+
+  /* ---- keep aria-expanded honest on hover-opened dropdowns ----
+     CSS opens these on :hover and :focus-within, which the attribute knew
+     nothing about — it was hardcoded "false" and stayed false while the menu
+     was visibly open, so a screen reader was told the opposite of the truth.
+     The touch branch above owns the .open class; this only mirrors the
+     pointer/keyboard states it does not handle. */
+  drops.forEach(function (drop) {
+    var trigger = drop.querySelector('.nav-drop-t');
+    if (!trigger) return;
+    var sync = function () {
+      var open = drop.classList.contains('open') ||
+                 drop.matches(':hover') || drop.contains(d.activeElement);
+      trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    };
+    ['mouseenter', 'mouseleave', 'focusin', 'focusout'].forEach(function (ev) {
+      drop.addEventListener(ev, function () { setTimeout(sync, 0); });
+    });
+  });
+
+  /* ---- mega-menu visual panel ----
+     Each link carries data-mega="<key>"; the panel holds one .mega-panel-art
+     per key and shows the hovered one. Pure enhancement: with JS off the
+     panel simply keeps its default art and every link still works. */
+  var megaPanel = d.querySelector('[data-mega-panel]');
+  if (megaPanel) {
+    var arts = {}, caption = megaPanel.querySelector('.mega-panel-cap');
+    [].forEach.call(megaPanel.querySelectorAll('.mega-panel-art'), function (a) {
+      arts[a.getAttribute('data-art')] = a;
+    });
+    var showArt = function (key) {
+      var hit = arts[key];
+      if (!hit) return;
+      for (var k in arts) arts[k].classList.toggle('on', k === key);
+      if (caption) {
+        caption.querySelector('.mp-t').textContent = hit.getAttribute('data-t') || '';
+        caption.querySelector('.mp-d').textContent = hit.getAttribute('data-d') || '';
       }
+    };
+    [].forEach.call(d.querySelectorAll('[data-mega]'), function (link) {
+      var key = link.getAttribute('data-mega');
+      link.addEventListener('mouseenter', function () { showArt(key); });
+      link.addEventListener('focus', function () { showArt(key); });
     });
   }
 
@@ -220,6 +325,15 @@
             if (card) card.classList.add('sent');
             form.reset();
             if (note) note.textContent = 'Thanks — we\'ll be in touch within a couple of working days.';
+            /* Success hides the form, which destroys the button the user was
+               focused on — focus falls to <body> and a screen reader is told
+               nothing at all. Move focus to the thank-you so the outcome is
+               both announced and navigable. */
+            var done = card && card.querySelector('.lead-done h3');
+            if (done) {
+              done.setAttribute('tabindex', '-1');
+              done.focus();
+            }
           } else {
             throw new Error((res.j && res.j.message) || 'error');
           }
@@ -312,7 +426,11 @@
     rows.forEach(function (r) {
       var i = +r.dataset.i;
       r.addEventListener('mouseenter', function () { pause(); select(i); });
-      r.addEventListener('focus', function () { pause(); select(i); });
+      /* focusin, not focus: the focusable element is the <button> inside the
+         row, and focus does not bubble. Without this the whole widget was
+         mouse-only — a keyboard user reached exactly one of the seven layers,
+         which is the entire argument of the page. */
+      r.addEventListener('focusin', function () { pause(); select(i); });
       r.addEventListener('click', function () { pause(); select(i); });
     });
     // Plates move when selected, so a naive mouseenter loops: the plate slides
@@ -499,7 +617,11 @@
     var END = 0;
     /* metaphor glyphs (brain, eye) straddle the rail: shift each one sideways
        so its centre lands on the line and the rail runs behind it */
-    var glyphs = Array.prototype.slice.call(d.querySelectorAll('.brainwrap, .metafig'));
+    /* The pinned section's badge is excluded: it sits above the heading rather
+       than beside it, so straddling the rail there put it at the same height
+       as that section's chapter node and the two labels collided. */
+    var glyphs = Array.prototype.slice.call(d.querySelectorAll('.brainwrap, .metafig'))
+      .filter(function (g) { return !g.closest('[data-builds-pin]'); });
     glyphs.forEach(function (g) { g.classList.add('mf-burstable'); });
 
     function placeGlyphs() {
@@ -585,6 +707,10 @@
       }
     }
 
+    /* the one section that pins itself over a spacer — its node has to travel
+       with the pin instead of staying put in document space (see draw()) */
+    var pinnedChapter = null;
+
     function layout() {
       var foot = d.querySelector('footer');
       END = foot ? docTop(foot) - 56 : d.documentElement.scrollHeight;
@@ -594,7 +720,21 @@
         c.y = docTop(anchor) + 18;
         c.el.style.top = c.y + 'px';
         c.lit = c.now = c.live = null;
+        c.el.style.transform = '';
+        c.el.classList.remove('pinned-hold');
       });
+      pinnedChapter = null;
+      var pinSec = d.querySelector('[data-builds-pin]');
+      var pinSpacer = d.querySelector('[data-builds-spacer]');
+      if (pinSec && pinSpacer && pinSpacer.offsetHeight > 0) {
+        for (var k = 0; k < chapters.length; k++) {
+          if (chapters[k].sec === pinSec) {
+            pinnedChapter = chapters[k];
+            pinnedChapter.travel = function () { return pinSpacer.offsetHeight; };
+            break;
+          }
+        }
+      }
       placeGlyphs();
       measure();
       lastPt = -1; lastVis = -1; // geometry changed: force a full redraw
@@ -713,6 +853,32 @@
         var fading = vis < 0.999;
         if (fading !== wasHidden) { host.classList.toggle('fading', fading); wasHidden = fading; }
       }
+      /* A pinned section holds its heading still on screen while the document
+         scrolls a whole spacer's worth underneath it. Its chapter node is
+         placed in document space like every other one, so it slid ~2000px off
+         the top while the section it labels was still the thing being read —
+         the label and the thing it labels came apart. Carry the node with the
+         pin for as long as the pin lasts. */
+      if (pinnedChapter) {
+        var pc = pinnedChapter;
+        var off = pc.sec.getBoundingClientRect().top;   // 0 → -travel while stuck
+        var stuck = off <= 0 && -off <= pc.travel();
+        pc.el.style.transform = stuck ? 'translateY(' + Math.round(-off) + 'px)' : '';
+        pc.el.classList.toggle('pinned-hold', stuck);
+        /* While the pin holds, this chapter IS the one being read — the
+           read-position marker is already past its heading by then, so the
+           active styling would otherwise drop off mid-section. */
+        if (stuck) {
+          pc.el.classList.add('now', 'lit');
+          pc.held = true;
+        } else if (pc.held) {
+          /* hand the active state back to the normal chapter logic once the
+             pin lets go, or the node stays lit for the rest of the page */
+          pc.el.classList.remove('now');
+          pc.held = false;
+        }
+      }
+
       var passed = -1;
       for (var i = 0; i < chapters.length; i++) if (pt > (chapters[i].y || 0)) passed = i;
       if (passed >= 0) beat(passed); else seg.classList.remove('on');

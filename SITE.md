@@ -1,8 +1,13 @@
 # The website — how it's built and how to not break it
 
-> **Read this before editing any page.** The site is 64 plain static HTML files with no build
-> step, no framework and no template engine. That means **every page carries its own copy of the
-> header, nav, mobile menu and footer** — and copies drift unless something forces them not to.
+> **Read this before editing any page.** The site is 52 static HTML pages with no framework and no
+> template engine — but it **does have a build step**: `build.py` regenerates the shared header,
+> nav, mobile menu and footer into every page from `_partials/`, plus `sitemap.xml`, `llms.txt` and
+> `llms-full.txt`. Without it those blocks drift, because every page carries its own copy.
+>
+> ⚠️ **Corrected 2026-08-14.** This line previously said *"64 plain static HTML files with no build
+> step"* — and then documented `build.py` four sections below it. An agent reading only the opening
+> paragraph would hand-edit the nav, which is exactly what the script exists to prevent.
 
 ## The two repos
 
@@ -13,12 +18,35 @@
 
 **Feed both on every change.** They are not linked; nothing syncs them automatically.
 
+## Previewing locally — use `serve.py`, not `http.server`
+
+```bash
+python3 serve.py        # http://localhost:8899
+```
+
+`vercel.json` sets **`cleanUrls: true`**, so production serves `/pricing` from
+`pricing.html`. Python's plain `http.server` does not do that rewrite, so every
+extensionless link in the nav 404s under it — which reads as "the whole menu is
+broken" when nothing is wrong. `serve.py` mirrors the Vercel behaviour.
+
 ## build.py — the build step
 
 ```bash
 python3 build.py --check   # fail if any page is stale — run before deploy
-python3 build.py           # regenerate every page + sitemap.xml
+python3 build.py           # regenerate every page + sitemap.xml + llms.txt + llms-full.txt
 ```
+
+**Generated artifacts — never hand-edit any of these:**
+
+| File | Generated from |
+|---|---|
+| the `<!--#header-->` / `#mobile` / `#footer` blocks in every page | `_partials/*.en.html` |
+| `sitemap.xml` | the files on disk, excluding any page carrying `noindex` |
+| `llms.txt` | the pages, preserving the hand-written preamble at the top |
+| `llms-full.txt` | the pages |
+
+The two `llms*.txt` files are the AI-crawler surface and are covered by `--check` like everything
+else, so a new page that never gets a build run is missing from them silently.
 
 **`_partials/` is the source of truth**, not any page:
 

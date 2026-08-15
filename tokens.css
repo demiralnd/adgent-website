@@ -30,24 +30,34 @@
   --border: rgba(24, 24, 27, 0.12);
   --border-2: rgba(24, 24, 27, 0.18);
 
-  /* ---------- Text ---------- */
+  /* ---------- Text ----------
+     Ratios below are measured against the WORST ground these sit on
+     (--bg-band #e8e5df), not white — a token tuned on white fails the moment
+     it lands in a tinted band, which is where most of them are used. */
   --text: #1c1a17;
   --text-2: #6c685f;
-  --text-3: #9a958a;
-  --text-4: #b9b4a8;
+  --text-3: #69655e;   /* 4.61:1 on band, 5.80:1 on white — was #9a958a (2.37:1) */
+  --text-4: #696760;   /* 4.50:1 on band, 5.66:1 on white — was #b9b4a8 (1.64:1) */
 
-  /* ---------- Accent (coral) ---------- */
+  /* ---------- Accent (coral) ----------
+     --accent stays the brand colour: it is used for fills, and as display type
+     at 34-54px where 3:1 is the bar and it clears it. --accent-text is the same
+     hue darkened for text-sized use (eyebrows, chips, inline links), where it
+     did not. Never use --accent for small text. */
   --accent: #ff5a2c;
+  --accent-text: #b23f1f;   /* 4.61:1 on band, 5.80:1 on white */
   --user-bubble: #1c1a17;
   --accent-press: #ec491d;
   --accent-soft: rgba(255, 90, 44, 0.11);
   --accent-on: #ffffff;
 
-  /* ---------- Severity ---------- */
-  --ok: #16935a;   --ok-soft: rgba(22, 147, 90, 0.12);
-  --warn: #cf8a26; --warn-soft: rgba(207, 138, 38, 0.13);
-  --crit: #d8472f; --crit-soft: rgba(216, 71, 47, 0.10);
-  --info: #2f73e8; --info-soft: rgba(47, 115, 232, 0.12);
+  /* ---------- Severity ----------
+     These are read at 10-11px in badges, so they need the 4.5:1 text bar on
+     their own soft chip backgrounds, not just on white. */
+  --ok: #127648;   --ok-soft: rgba(22, 147, 90, 0.12);
+  --warn: #8b5c19; --warn-soft: rgba(207, 138, 38, 0.13);
+  --crit: #b53c27; --crit-soft: rgba(216, 71, 47, 0.10);
+  --info: #2863c8; --info-soft: rgba(47, 115, 232, 0.12);
 
   /* ---------- Radii ---------- */
   --r-xl: 18px; --r-lg: 14px; --r-md: 11px; --r-sm: 8px; --r-pill: 999px;
