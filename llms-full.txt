@@ -716,19 +716,17 @@ Trust Gate
 The test of a thinking tool: does it ever tell you no ?
 Anything that only says yes is executing, not reasoning. A tool that accepts every target you type and every campaign you ask for is not being helpful — it is being agreeable, which is the cheapest thing software can be. The Trust Gate is the part of Adgent that pushes back, with the account's own numbers as the reason, before any budget moves.
 A real refusal, from a real account
+Asking for something the account cannot do
+Set the target to ₺250 cost per conversion.
+I can, but I would be setting you up. This account has never come near that at the booking stage — its own history sits around ₺4,000. At ₺250 the only reachable conversion is a ₺13 micro-lead that clears the target and books nobody. You would hit the number and lose the quarter.
+What is actually achievable?
+On the last ninety days, ₺2,800&ndash;3,400 is defensible, and there is a real path to the low ₺2,000s if we fix the event definition first — three of your five conversion actions currently carry no value at all. Want me to show which?
 Trust Gate · one real account, two refusals
 It said no. Twice. Before a dollar was spent.
 "This pixel can't teach a campaign yet"
 Thirty days: 65,042 custom events, 16,404 initiate-checkout — and 4 purchases. Meta's own docs put the floor at 50 events in 7 days [developers.meta.com]. Technically possible to build. Nothing there for the optimiser to learn from.
 "Your target is unreachable — here's why"
 Asked for a ₺250 cost per conversion. The account's own history at the booking stage sits near ₺4,000 . At 250 the only reachable thing is a ₺13 micro-lead that clears the target and books nobody.
-Asking for something the account cannot do
-Set the target to ₺250 cost per conversion.
-I can, but I would be setting you up. This account has never come near that at the booking stage — its own history sits around ₺4,000. At ₺250 the only reachable conversion is a ₺13 micro-lead that clears the target and books nobody. You would hit the number and lose the quarter.
-What is actually achievable?
-On the last ninety days, ₺2,800&ndash;3,400 is defensible, and there is a real path to the low ₺2,000s if we fix the event definition first — three of your five conversion actions currently carry no value at all. Want me to show which?
-Refusal before spend
-Every refusal carries the numbers behind it.
 Both refusals came from one real account, unprompted, before a dollar was spent. A tool that checks this afterwards reports the same facts a month later — once the money has already taught the algorithm nothing.
 That account is still running. Left alone another quarter, the pixel with 4 purchases in thirty days keeps training on nothing, and the ₺250 target keeps getting hit by the ₺13 micro-lead that books nobody — so the number on the report improves while the bookings do not. Nothing here fails loudly enough to interrupt anyone. That is the whole reason it survives a quarter.
 What it refuses

@@ -3760,6 +3760,15 @@ section, .band, .moat, .hero { z-index: auto; }
   white-space: nowrap; display: inline-block; max-width: 100%;
 }
 @media (max-width: 520px) { .src-note { white-space: normal; overflow-wrap: anywhere; } }
+/* nowrap is right for a short bracketed credit — "[Cloudbeds, Mar 2026]" reads as
+   two fragments of debris when split. It is wrong for the notes inside chat
+   bubbles and captions, which are whole sentences: those overflowed their bubble
+   by up to 620px. Anything that is not a bracketed credit wraps normally. */
+.cmsg-bot .src-note,
+.chatfig .src-note,
+.ct .src-note,
+.askout-note .src-note,
+.build-cap .src-note { white-space: normal; display: inline; overflow-wrap: break-word; }
 /* A cited sentence ends at its citation; the next sentence starts on its own
    line instead of running on behind the brackets. The sentence-ending period
    was moved inside the span so nothing is orphaned on the new line. Suppressed
@@ -4736,3 +4745,22 @@ td .src-note::after,
 .agency-strip-a svg { width: 15px; height: 15px; stroke-width: 2; transition: transform 200ms var(--ease); }
 .agency-strip-a:hover svg { transform: translateX(3px); }
 @media (max-width: 620px) { .agency-strip { padding: 20px 18px; } .agency-strip p { font-size: 14.5px; } }
+
+/* ---- trust gate: the refusal card belongs beside the chat, not under it ----
+   The card sat alone in a full-width row with its right half empty, while the
+   chat below it repeated the same refusal into an output panel. One row now:
+   the conversation on the left, the two refusals it came from on the right. */
+.tg-split { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; align-items: start; }
+.tg-split .chatfig { margin: 0; }
+.tg-split-card { margin: 0; }
+@media (max-width: 980px) {
+  .tg-split { grid-template-columns: 1fr; gap: 22px; }
+}
+
+/* ---- a closing paragraph is part of the block above it, not a stray centred
+   note. It was centred at 780px under a full-width three-column grid, so the
+   page had three different alignments stacked: grid edge, panel edge, and a
+   centred column narrower than both. Left-aligned, and held to the reading
+   measure the rest of the section uses. */
+.hwb-locks + .stack-kicker,
+.hwb-iso + .stack-kicker { text-align: left; margin-left: 0; max-width: 68ch; }
