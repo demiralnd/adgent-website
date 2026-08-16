@@ -73,6 +73,34 @@ def main_landmark(html):
             + "\n</main>\n" + html[end:])
 
 
+def asset_stamp(name):
+    """Content hash for /site.css and /site.js.
+
+    Both are served with `max-age=14400`, so a visitor who loaded the site in
+    the last four hours keeps the old stylesheet after a deploy — which shows
+    up as a layout that is broken for them and fine for everyone else, and is
+    impossible to reproduce. Stamping the URL with the file's own hash means a
+    changed file is a changed URL, and the cached copy is never the wrong one.
+    """
+    path = os.path.join(ROOT, name)
+    if not os.path.exists(path):
+        return ""
+    import hashlib
+    h = hashlib.sha256(io.open(path, "rb").read()).hexdigest()[:8]
+    return "?v=" + h
+
+
+def stamp_assets(html):
+    for name in ("site.css", "site.js"):
+        v = asset_stamp(name)
+        if not v:
+            continue
+        # rewrite whether it is bare or already stamped, so re-running is safe
+        html = re.sub(r'(["\'])/%s(\?v=[a-f0-9]+)?\1' % re.escape(name),
+                      lambda m: m.group(1) + "/" + name + v + m.group(1), html)
+    return html
+
+
 def render(html, slug):
     for block in BLOCKS:
         body = with_active(partial(block), slug)
@@ -84,7 +112,7 @@ def render(html, slug):
             m = re.search(LEGACY[block], html, re.S)
             if m:
                 html = html[:m.start()] + repl + html[m.end():]
-    return main_landmark(html)
+    return stamp_assets(main_landmark(html))
 
 
 def pages():
