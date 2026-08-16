@@ -3128,7 +3128,12 @@ section, .band, .moat, .hero { z-index: auto; }
 /* --- gradient stages: bands alternate between a flat canvas and a soft
    vertical wash, so scrolling has a light/dark cadence instead of one tone. */
 .band { background: transparent; }
-.band:nth-of-type(even)::before {
+/* :not(.moat) is load-bearing. This wash is ordered AFTER .moat.band::before,
+   so on any page where a dark band happens to land on an even index it won
+   the cascade and painted the band light — the section stayed #141210 in the
+   computed style while a near-opaque light gradient sat on top of it. Caught
+   on /why-adgent 2026-08-16 by sampling pixels, not by reading the CSS. */
+.band:nth-of-type(even):not(.moat)::before {
   content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
   background: linear-gradient(
     to bottom,
@@ -4550,7 +4555,10 @@ td .src-note::after,
    cascade than the 940px stacking rule above and silently re-imposes the
    desktop grid on phones, pushing the output panel off-screen entirely. */
 @media (min-width: 941px) {
-  .askpair { grid-template-columns: 1fr 1fr; gap: 28px; align-items: start; }
+  /* stretch, not start: the output panel is always shorter than the chat
+     beside it (40-140px on every page that uses this), and top-aligning them
+     left a ragged step down the right column on six pages at once. */
+  .askpair { grid-template-columns: 1fr 1fr; gap: 28px; align-items: stretch; }
   /* Three identical chat-left/output-right pairs down one page stop being read
      by the third. Flip the middle one — order only, DOM sequence unchanged so
      the screen-reader path stays ask-then-answer. */
@@ -4564,7 +4572,10 @@ td .src-note::after,
 /* Previously both cards were stretched to the row height and the SVG was told
    to flex:1 into whatever was left — which fought the viewBox and squeezed the
    figure. Each card is now its own height; the shorter one just ends sooner. */
-.askpair > .askout .askout-fig { margin: 4px 0 0; }
+/* The figure keeps its aspect ratio, so equal-height columns leave slack
+   underneath it. Centre the figure in that slack instead of letting it sit at
+   the top with 200px of dead panel below — stretching the SVG would distort it. */
+.askpair > .askout .askout-fig { margin: auto 0; }
 
 /* 2. Readable bubbles. 13px inside a half-width column was too small. */
 .chatfig { padding: 22px; }
@@ -4994,3 +5005,9 @@ td .src-note::after,
   .arc-fig { max-width: 220px; margin-left: 0; }
   .arc-i { padding: 14px; }
 }
+
+/* The ghost mark is deliberately hung past the hero's right edge (right:-140px)
+   for the bleed, but nothing was clipping it, so it widened the document by 8px
+   and the whole homepage could be scrolled sideways. Clip at the hero — `clip`
+   rather than `hidden` so it does not create a scroll container. */
+.hero { overflow-x: clip; }
