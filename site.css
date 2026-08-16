@@ -4381,27 +4381,15 @@ td .src-note::after,
    what came back. A connector makes that relationship explicit
    instead of leaving two cards sitting next to each other.
    ============================================================ */
+/* The pair had gap:0 with a 34px arrow column doing the separating, so the two
+   cards sat welded together and the section read as one dense block. Real gap,
+   no connector column: side-by-side already says "this produced that". */
 .askpair {
-  display: grid; grid-template-columns: 1fr 34px 1fr;
-  gap: 0; align-items: center; margin-top: 32px;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 28px; align-items: start; margin-top: 44px;
 }
 .askpair > .chatfig { margin-top: 0; max-width: none; }
-.askpair-link {
-  position: relative; align-self: stretch;
-  display: grid; place-items: center;
-}
-.askpair-link::before {
-  content: ""; position: absolute; left: 50%; top: 0; bottom: 0;
-  width: 1px; background: var(--border-2); transform: translateX(-50%);
-}
-.askpair-arrow {
-  position: relative; display: grid; place-items: center;
-  width: 26px; height: 26px; border-radius: 50%;
-  background: var(--bg-elevated); border: 1px solid var(--border-2);
-  color: var(--accent-text);
-}
-.askpair-arrow svg { width: 13px; height: 13px; fill: none; stroke: currentColor;
-  stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.askpair-link { display: none; }
 .askout {
   padding: 20px; border-radius: var(--r-md);
   border: 1px solid var(--border); background: var(--bg-elevated);
@@ -4424,10 +4412,7 @@ td .src-note::after,
   font-size: 12.5px; line-height: 1.55; color: var(--text-3); text-wrap: pretty;
 }
 @media (max-width: 940px) {
-  .askpair { grid-template-columns: 1fr; }
-  .askpair-link { height: 34px; }
-  .askpair-link::before { left: 50%; top: 0; bottom: 0; width: 1px; }
-  .askpair-arrow svg { transform: rotate(90deg); }
+  .askpair { grid-template-columns: 1fr; gap: 20px; }
 }
 
 /* ============================================================
@@ -4560,26 +4545,26 @@ td .src-note::after,
    short wide panel, both with cramped type.
    ============================================================ */
 
-/* 1. Equal columns, aligned tops, and let both cards fill the row height
-      so the pair reads as one object rather than two loose cards.
-      MUST stay inside a min-width query: written unguarded it sat later in the
-      cascade than the 940px stacking rule above and silently re-imposed three
-      columns on phones, pushing the output panel off-screen entirely. */
+/* Equal columns with real space between them.
+   MUST stay inside a min-width query: written unguarded it sits later in the
+   cascade than the 940px stacking rule above and silently re-imposes the
+   desktop grid on phones, pushing the output panel off-screen entirely. */
 @media (min-width: 941px) {
-  .askpair { grid-template-columns: 1fr 40px 1fr; align-items: stretch; gap: 0; }
+  .askpair { grid-template-columns: 1fr 1fr; gap: 28px; align-items: start; }
+  /* Three identical chat-left/output-right pairs down one page stop being read
+     by the third. Flip the middle one — order only, DOM sequence unchanged so
+     the screen-reader path stays ask-then-answer. */
+  .askpair-flip > .chatfig { order: 2; }
+  .askpair-flip > .askout { order: 1; }
 }
 /* grid items default to min-width:auto, which lets a long line blow the
    column out rather than wrap */
 .askpair > .chatfig,
 .askpair > .askout { min-width: 0; }
-.askpair > .chatfig,
-.askpair > .askout { display: flex; flex-direction: column; }
-.askpair > .chatfig .chat-thread { flex: 1; justify-content: flex-start; }
-/* The figure was centred with auto margins, which parked a short SVG in the
-   middle of a tall card and left dead space under it. Let it grow into the
-   row instead, and keep the note pinned to the bottom edge. */
-.askpair > .askout .askout-fig { flex: 1; min-height: 0; height: auto; margin: 0; }
-.askpair > .askout .askout-note { margin-top: auto; }
+/* Previously both cards were stretched to the row height and the SVG was told
+   to flex:1 into whatever was left — which fought the viewBox and squeezed the
+   figure. Each card is now its own height; the shorter one just ends sooner. */
+.askpair > .askout .askout-fig { margin: 4px 0 0; }
 
 /* 2. Readable bubbles. 13px inside a half-width column was too small. */
 .chatfig { padding: 22px; }
@@ -4696,18 +4681,9 @@ td .src-note::after,
 /* the learning card keeps its own inner widths; clip rather than push the page */
 .memcard { max-width: 100%; overflow: hidden; }
 
-/* When the pair stacks, the connector becomes a short horizontal rule between
-   the two cards. align-self:stretch made it span the full row height, so it sat
-   on top of both cards — measured as a 350x30 overlap on 11 pages. */
-@media (max-width: 940px) {
-  .askpair { grid-template-columns: 1fr; }
-  /* stretch, not center: align-self:center left the 40px box floating inside a
-     taller implicit row, so its top edge sat above the card boundary */
-  .askpair-link { align-self: stretch; height: auto; min-height: 44px; width: 100%; margin: 0; }
-  .askpair-link::before { top: 6px; bottom: 6px; }
-  .askpair-link::before { left: 50%; top: 4px; bottom: 4px; width: 1px; height: auto; }
-  .askpair-arrow svg { transform: rotate(90deg); }
-}
+/* The connector column is gone (see .askpair above), which also retires the
+   350x30 stacked-overlap bug this block used to patch. Stacking now only needs
+   one column and a gap, set at the 940px rule further up. */
 
 /* Section motifs are decorative; a long label inside one must not push the
    column. The argument is in the copy beside them, never in the drawing. */
