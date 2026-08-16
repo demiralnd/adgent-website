@@ -354,32 +354,29 @@ URL: https://adgent.app/why-adgent
 id="main" tabindex="-1">
 Why Adgent
 Analyze or act. Everything else makes you choose.
-The tools that understand your account can't touch it. The ones that touch it don't understand it.
-That split is not an accident of the market — it is what happens when analysis and execution
-are built by different kinds of company, for different reasons. Adgent was built as one thing.
-This page is the argument, and then the architecture underneath it.
+The tools that understand your account cannot touch it. The ones that touch it do not understand it. You end up owning both and doing the joining yourself, every morning, in your head. Adgent was built as one thing — and the reason that is hard is the reason it is worth buying.
 Each row is buyable somewhere. The column is not.
 The four options on the table
 Every one of them is a reasonable purchase.
 This is not a page about bad products. Each category below does its job well, and most teams own two or three of them already. The question is what happens in the gap between them — because that gap is where the money leaks.
 Category Reporting & BI tools
-What they're genuinely good at: pulling every platform into one place, joining it to your store and your CRM, and rendering it faster and prettier than a native dashboard ever will.
-Where it stops: a chart is a description of the past. It has no opinion, so the work of turning it into a decision is still yours — and that work is the expensive part, done by your most expensive person, every morning.
-The tell: you have the dashboard, and you still don't know what to do on Monday.
-Category The ad platform's own AI
-What it's genuinely good at: it sees the auction from the inside, in real time, at a resolution no third party gets. For finding volume inside its own inventory, nothing beats it.
-Where it stops: it optimizes toward what its own pixel can measure, and it is not neutral about the answer. It cannot see your cost of goods or what a customer is worth on the second order — so a campaign that converts cheaply and loses money on every order gets scaled, correctly, by its own logic.
+Good at: every platform in one place, joined to your store, rendered faster than any native dashboard.
+Stops at: a chart is a description of the past. Turning it into a decision is still your most expensive person&rsquo;s morning.
+The tell: you have the dashboard, and you still don&rsquo;t know what to do on Monday.
+Category The ad platform&rsquo;s own AI
+Good at: seeing the auction from the inside, in real time, at a resolution no third party gets.
+Stops at: it optimises toward its own pixel and is not neutral about the answer. It cannot see your margin, so it scales what converts cheaply and loses money.
 The tell: the dashboard is green and the P&L disagrees.
 Category Rule-based automation
-What it's genuinely good at: doing the boring thing at 3am without being asked. A well-written rule is fast, cheap and completely predictable.
-Where it stops: a rule fires on a threshold, not on a reason. It cannot tell a creative that is wearing out from a week that was seasonally soft, and it will happily pause the wrong thing at speed. Rules also rot: nobody remembers why the 2024 one exists, so nobody deletes it.
+Good at: doing the boring thing at 3am, fast, cheap and completely predictable.
+Stops at: a rule fires on a threshold, not a reason — it cannot tell a fatiguing creative from a soft week, and it pauses the wrong thing at speed.
 The tell: a folder of rules, and no one willing to touch them.
 Category Another pair of human hands
-What it's genuinely good at: judgment, context, and accountability. A good senior buyer is still the best thing that can happen to an account, and this page is not an argument against hiring one.
-Where it stops: it does not scale, it costs the most, and it is the layer under the most pressure — the accounts per person keep climbing. The junior work of reading every account every morning is exactly the work seniors stop doing first.
+Good at: judgment, context and accountability. A good senior buyer is still the best thing that can happen to an account.
+Stops at: it does not scale and it costs the most. Reading every account every morning is exactly the work seniors stop doing first.
 The tell: the account nobody opened this week is the one you worry about.
 Notice the pattern: the two categories with judgment can't act at scale, and the two that act at scale have no judgment. That is the gap.
-Owning two or three of these and deciding later is itself a decision, and it has a price. Another quarter in the gap is another quarter of the dashboard being right and Monday still being unclear, of the platform scaling toward its own pixel, of rules nobody will touch, and of the account nobody opened. Doing nothing feels free because none of that arrives as an invoice — it arrives as the spend you would not have approved if someone had read it in time.
+Owning two or three and deciding later is itself a decision, and it has a price. It never arrives as an invoice — it arrives as the spend you would not have approved if someone had read it in time.
 The same four, row by row
 Where each one stops .
 The categories above, scored on the things a buyer actually has to have. Every row is available somewhere — the question is whether you can get them from one place, in an order that holds.
@@ -395,24 +392,35 @@ Chat-native verdicts + live reports — — — ✓
 Remembers your brand's rules — — — ✓
 One column checked all the way down. That column is the whole point.
 Each row on its own is buyable somewhere. The reason no column but ours is checked all the way down is that the top rows only work if the ones under them do — judgment needs memory, and memory needs a year of your history in one place. That order is the product.
+What the difference sounds like
+The argument above, in one real refusal .
+This is the moment the whole page is about. A tool without judgment builds what it is asked for. A tool with judgment does the division first and tells you the answer you did not want — from the account&rsquo;s own numbers, before the money moves.
+Asked to build a campaign
+Set up a Meta sales campaign for the winter offer.
+Technically I can — the page and pixel are both connected. But over the last thirty days that pixel recorded 4 purchases , against 16,404 initiate-checkouts and 65,042 custom events. Meta&rsquo;s own documentation puts the learning floor at 50 events in 7 days . [developers.meta.com] Four a month is about 8% of it. The campaign would spend and learn nothing.
+So what would you do?
+Optimise to initiate-checkout, which clears the floor comfortably — knowing it carries no purchase value, so judge it on bookings rather than on the number Meta reports back. Or fix the purchase event first and launch in a fortnight. Either way I would not build it as asked.
+Why it said no the account's own pixel
+Nothing here is a judgement call. It is a division anyone could do, and nothing else in the stack does it.
+A reporting tool would have shown all three numbers and left the arithmetic to you. The platform&rsquo;s own AI would have built the campaign. A rule has no threshold for &ldquo;this will not learn&rdquo;. That is the gap, and this is what closing it sounds like.
 How we're built
 Touching the platform is easy. Knowing what to do is hard.
 Seven layers sit between a connected ad account and a decision you'd stand behind. Most tools stop at the audit. Everything above it is the hard part.
 it stacks
-L6 · Operating surface The morning brief, a queue of things worth acting on, chat, live dashboards, and a workspace that lists every account you run with its own score, so you can see which to open first.
-A chat window wired to some data sources is not a product. The daily surface your team actually works in is.
-L5 · Safe execution Read-only until you say otherwise. Every write is logged with its before-state, labelled reversible or not before you approve, and undone on your approval. Each company's data sits in its own database file.
-Pointing a model at a live ad account is the easy part and the dangerous part. The ledger also does a second job nobody asks of it: a change you can undo and redo is a change you can settle, instead of argue about.
+L6 · Operating surface The morning brief, the queue of what is worth acting on, chat, live dashboards, and every account scored so you know which to open first.
+A chat window wired to some data is not a product. The surface your team works in every day is.
+L5 · Safe execution Read-only until you say otherwise. Every write is logged with its before-state, labelled reversible or not before you approve, and undone on your approval.
+Pointing a model at a live ad account is the easy part and the dangerous part. A change you can undo is a change you can be wrong about cheaply.
 L4 · Judgment Root cause rather than symptom, compared fairly across platforms, with the decision stated and the money attached to it.
-The audit plus memory is what makes a position possible: not "here's what moved," but "here's what to do, and here's what it's worth."
-L3 · Memory Context that survives the session: what was looked at, what was decided, and what you've told it about how this brand runs.
-Memory is what turns an audit into judgment. A generic tool restarts from zero every time; here the context accumulates, across platforms, and it's yours.
-L2 · Audit What happened and where — trends, anomalies against the account's own history and its peers, breakdowns by placement, device and geography. Then the same audit on the creative: its DNA, the story scene by scene, and where viewers drop off.
-Everyone can get you to the account numbers. Reading the creative this way is rarer — but it still only tells you what happened. Nobody takes the next step for you.
-L1 · Data correctness A year of history, synced daily, with attribution normalized and conversion events reconciled into one comparable shape across platforms.
-Raw platform output is not decision-ready. Skip this and you get answers delivered with total confidence and no basis — the most expensive kind of wrong.
-L0 · Connectivity Reads your accounts directly from the ad platforms, and pulls in analytics and store data alongside them.
-This layer only answers "can it reach the account." It's getting cheaper for everyone — which helps us, because it isn't what we sell.
+Not "here is what moved" but "here is what to do, and here is what it is worth."
+L3 · Memory Context that survives the session: what was looked at, what was decided, and what you have told it about how this brand runs.
+Memory is what turns an audit into a judgment. A generic tool restarts from zero every time.
+L2 · Audit What happened and where — anomalies against the account's own history and its peers, by placement, device and geography. Then the same read on the creative: its DNA, scene by scene, and where viewers drop off.
+Everyone can get you the numbers. This layer still only tells you what happened.
+L1 · Data correctness A year of history, synced daily, attribution normalized and conversion events reconciled into one comparable shape across platforms.
+Skip this and you get answers delivered with total confidence and no basis — the most expensive kind of wrong.
+L0 · Connectivity Reads your accounts directly from the ad platforms, with analytics and store data alongside.
+This only answers "can it reach the account" — and it is getting cheaper for everyone, which helps us, because it is not what we sell.
 L6 Operating surface Your daily surface
 L5 Safe execution The trust layer
 L4 Judgment The decision

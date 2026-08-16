@@ -967,13 +967,12 @@ html.js .builds-spacer { height: 300vh; }
   color: rgba(255,255,255,0.9);
 }
 
-/* tier palettes — cool/grey below, blue through the middle, accent on top */
-.s3-plate[data-tier="base"]    { --face2: #c3beb3; --edge: #8b867b; }
-.s3-plate[data-tier="ceiling"] { --face2: #8fb0f6; --edge: #3f6fdd; }
-.s3-plate[data-i="3"] { --face2: #6f97f2; --edge: #2f5fca; }
-.s3-plate[data-i="4"] { --face2: #4f74e0; --edge: #1d49c7; }
-.s3-plate[data-i="5"] { --face2: #ff8a63; --edge: #e0431b; }
-.s3-plate[data-i="6"] { --face2: #ff7a52; --edge: #ec491d; }
+/* Tier palette. The story is in the colour: the layers everyone has are
+   neutral stone, and the four above the ceiling warm toward the accent — so
+   "where most tools stop" is visible before a word is read. The middle used
+   to run through saturated blue, which is not in this palette at all and read
+   as a second brand competing with the accent. */
+/* palette lives in ONE place — see the ramp further down this file */
 
 /* hover / active lift */
 .s3-plate[data-tier="upper"] { --z: calc(var(--i) * var(--gap) + var(--brk)); }
@@ -3204,13 +3203,7 @@ section, .band, .moat, .hero { z-index: auto; }
    commodity base, warming through the ceiling, full accent on
    the moat layers that we actually sell.
    ============================================================ */
-.s3-plate[data-tier="base"]    { --face2: #cfcabf; --edge: #918b7f; }
-.s3-plate[data-i="1"]          { --face2: #d8d2c6; --edge: #9a9488; }
-.s3-plate[data-tier="ceiling"] { --face2: #e3d3bd; --edge: #b09274; }
-.s3-plate[data-i="3"] { --face2: #f7b992; --edge: #d98a55; }
-.s3-plate[data-i="4"] { --face2: #ffa878; --edge: #e2703c; }
-.s3-plate[data-i="5"] { --face2: #ff8f5c; --edge: #e2531f; }
-.s3-plate[data-i="6"] { --face2: #ff7448; --edge: #e63f12; }
+/* palette lives in ONE place — see the ramp further down this file */
 
 /* deck sits on a warm pool of light instead of empty paper */
 .s3-scene::before {
@@ -3372,11 +3365,15 @@ section, .band, .moat, .hero { z-index: auto; }
    contact shadow and rim all agree with the material.
    ============================================================ */
 .s3-plate { --lit: var(--accent); }
+/* One temperature ramp: cold stone at the commodity base, warming through the
+   ceiling, full accent on the layers we actually sell. An earlier pass fixed
+   this and a later block reintroduced the blue — the blue is not in the
+   palette anywhere else and reads as a second brand next to the accent. */
 .s3-plate[data-tier="base"]    { --face2: #c9c4b9; --edge: #8b867b; --lit: #8b867b; }
 .s3-plate[data-i="1"]          { --face2: #d3cdc2; --edge: #948e83; --lit: #948e83; }
-.s3-plate[data-tier="ceiling"] { --face2: #8fb0f6; --edge: #3f6fdd; --lit: #3f6fdd; }
-.s3-plate[data-i="3"] { --face2: #6f97f2; --edge: #2f5fca; --lit: #2f5fca; }
-.s3-plate[data-i="4"] { --face2: #4f74e0; --edge: #1d49c7; --lit: #2b55d6; }
+.s3-plate[data-tier="ceiling"] { --face2: #e3d3bd; --edge: #b09274; --lit: #b09274; }
+.s3-plate[data-i="3"] { --face2: #f7b992; --edge: #d98a55; --lit: #d98a55; }
+.s3-plate[data-i="4"] { --face2: #ffa878; --edge: #e2703c; --lit: #e2703c; }
 .s3-plate[data-i="5"] { --face2: #ff8f5c; --edge: #e2531f; --lit: var(--accent); }
 .s3-plate[data-i="6"] { --face2: #ff7448; --edge: #e63f12; --lit: var(--accent); }
 
@@ -3384,7 +3381,7 @@ section, .band, .moat, .hero { z-index: auto; }
 .s3-scene::before {
   background:
     radial-gradient(closest-side at 50% 38%, color-mix(in oklab, var(--accent) 22%, transparent), transparent 74%),
-    radial-gradient(closest-side at 50% 78%, color-mix(in oklab, #3f6fdd 16%, transparent), transparent 76%);
+    radial-gradient(closest-side at 50% 78%, color-mix(in oklab, #b09274 14%, transparent), transparent 76%);
   opacity: 0.78;
 }
 
