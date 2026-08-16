@@ -228,6 +228,30 @@ section { position: relative; z-index: 1; }
 
 /* Product dropdown — hover on pointer devices, click/focus everywhere else */
 .nav-drop { position: relative; }
+/* The panel opens 20px below the trigger, and the pointer has to cross that
+   gap to reach it. Nothing was hoverable in between, so the menu closed on the
+   way down and only reopened if you moved fast enough — with two menus side by
+   side it reads as "hover is broken". This bridges the gap: invisible, only
+   live while the menu is open, so it never blocks the links beside it. */
+.nav-drop::after {
+  content: ""; position: absolute; left: 0; right: 0; top: 100%; height: 22px;
+  pointer-events: none;
+}
+.nav-drop:hover::after,
+.nav-drop:focus-within::after,
+.nav-drop.open::after { pointer-events: auto; }
+/* A mega dropdown is position:static, so its ::after resolves against the nav
+   row rather than the trigger — top:100% would land below the whole header and
+   leave the real gap open. Pin it to the trigger's own bottom edge instead, and
+   span the panel's width since the panel is centred on the nav, not the link. */
+/* trigger bottom = half the 64px nav row plus half the 32px trigger */
+.nav-drop-mega::after { top: calc(50% + 16px); height: 22px; }
+.nav-drop-mega:hover::after,
+.nav-drop-mega:focus-within::after,
+.nav-drop-mega.open::after {
+  left: 50%; transform: translateX(-50%);
+  width: min(940px, calc(100vw - 32px)); right: auto;
+}
 .nav-drop-t { display: inline-flex; align-items: center; gap: 5px; }
 .nav-drop-t .caret {
   width: 9px; height: 6px; stroke-width: 1.9; opacity: 0.55;
