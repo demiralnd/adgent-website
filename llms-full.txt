@@ -249,7 +249,8 @@ See how it works
 02
 Ground truth
 Judged on the number that decides it, not the number the pixel can see
-An ad platform optimizes toward what its own pixel measures. It never sees your cost of goods, your return rate, or what a customer is worth on the second order. So when a campaign converts cheaply and loses money on every order, it does the logical thing and scales it. Adgent reads GA4 and Search Console alongside the ad platforms today, and Shopify is the next connection we are building — the one that closes the loop to money that actually landed.
+An ad platform optimizes toward what its own pixel measures. It never sees your cost of goods, your return rate, or what a customer is worth on the second order. So when a campaign converts cheaply and loses money on every order, it scales it.
+Adgent reads GA4 and Search Console alongside the ad platforms today. Shopify is the next connection we are building — the one that closes the loop to money that actually landed.
 Reconciled against your own revenue, not platform-reported conversions
 A structural gap, not a feature gap — no in-platform optimizer can grade its own spend against your margin
 The position stated, with the money attached to it
@@ -273,7 +274,8 @@ See how it works
 05
 Change Ledger
 Every change logged with what it replaced — and undoable on your approval
-Every change Adgent makes is written to a ledger with the state it replaced, labelled reversible or not before you approve it, and put back on your approval. Platform-side changes are read from Meta and Google's own change feeds and surfaced in your Overview, so a drift you did not cause still has a date and an actor. The ledger also does a second job nobody asks of it: a change you can undo and redo is a change you can settle, instead of argue about.
+Every change Adgent makes is written to a ledger with the state it replaced, labelled reversible or not before you approve it, and put back on your approval. Platform-side changes are read from Meta and Google's own change feeds and surfaced in your Overview, so a drift you did not cause still has a date and an actor.
+The ledger does a second job nobody asks of it: a change you can undo and redo is a change you can settle, instead of argue about.
 Before-state captured on every write, with actor and source attribution
 Reversible or not — labelled before you approve, not discovered after
 Adgent's own writes are reversible; platform-side changes are read and surfaced
@@ -289,7 +291,8 @@ See how it works
 07
 Dashboards & standing reports
 Describe the view. It gets built, and it stays live.
-The cut you want — the platforms, the window, the breakdown, the metric you judge on — described in one message and built on your data rather than configured in a form. What comes back stays wired to the account, so sharing it with a client does not turn it into a screenshot that is wrong by Thursday. Make it standing and it rebuilds itself before the Monday call, or watches one metric and stays quiet until that metric moves.
+The cut you want — the platforms, the window, the breakdown, the metric you judge on — described in one message rather than configured in a form. What comes back stays wired to the account, so sharing it with a client does not turn it into a screenshot that is wrong by Thursday.
+Make it standing and it rebuilds itself before the Monday call, or watches one metric and stays quiet until that metric moves.
 Custom reports generated from a single message
 Live dashboards you can share read-only, not static exports
 Standing agents that report only when the thing they watch changes
@@ -297,7 +300,8 @@ See how it works
 08
 Media planning
 A plan where every number shows where it came from
-The plan arrives as data, not a deck: budget split by platform, flight dates, line items with their buying types, and a cost range on each one — with the source campaigns and the window printed underneath every range. Where the account has no history for a market, it produces no estimate at all and recommends a short test instead. It lands as a Draft; nothing is applied until you approve it.
+The plan arrives as data, not a deck: budget split by platform, flight dates, line items with their buying types, and a cost range on each one — with the source campaigns and the window printed underneath every range.
+Where the account has no history for a market, it produces no estimate at all and recommends a short test instead. It lands as a Draft; nothing is applied until you approve it.
 Every cost range names the campaigns and window it was read from
 No history means no number — a test window instead of a plausible guess
 Assumptions, measurement caveats and open questions carried in the plan itself
@@ -305,7 +309,8 @@ See how it works
 09
 Campaign builds
 Drafted whole from a description — and held, paused, for you
-Structure, budget, targeting, copy and the creative slots, prefilled from what this account has actually proven rather than from a template — with the reason printed beside each choice, including the ones it declined. It blocks in the form where you can still fix things: a missing creative stops the build there, not after approval. What you approve is created paused, so switching it on is a second, separate decision.
+Structure, budget, targeting, copy and the creative slots, prefilled from what this account has actually proven rather than from a template — with the reason printed beside each choice, including the ones it declined.
+It blocks in the form where you can still fix things: a missing creative stops the build there, not after approval. What you approve is created paused, so switching it on is a second, separate decision.
 Every field prefilled from this account's own history, with the evidence named
 Refuses the build when the conversion signal cannot support it — before you spend
 Created paused, logged in the ledger, reversible like every other write
@@ -322,7 +327,8 @@ See it for in-house
 Underneath all eight
 None of it works without the layers under it.
 A verdict needs memory, memory needs correct data, and execution needs all of it. That order is the product — and it is why the list above cannot be assembled from parts.
-Worth pricing what the next quarter of not deciding costs. Eight jobs, done by hand or not at all, for another ninety mornings: that is roughly ninety un-read accounts per account you own, every creative graded on two scalars, and every platform-side setting change discovered whenever someone happens to look. None of it shows up as a line item. It shows up as the campaign you scaled in March and stopped in June.
+Worth pricing what the next quarter of not deciding costs. Eight jobs, done by hand or not at all, for another ninety mornings: roughly ninety un-read accounts per account you own, every creative graded on two scalars, every platform-side setting change discovered whenever someone happens to look.
+None of it shows up as a line item. It shows up as the campaign you scaled in March and stopped in June.
 The seven layers
 From connectivity to safe execution — and the line where the category stops.
 See the stack
@@ -786,7 +792,8 @@ URL: https://adgent.app/creative-intelligence
 id="main" tabindex="-1">
 Creative intelligence
 It reads every creative like a strategist — not a tagger.
-Creative is the single biggest driver of a campaign's sales — 49%, more than targeting (11%) or reach (14%) [NCSolutions / Circana, 2023]. It is also the layer most tools only tag. Adgent reads every live ad the way a senior buyer would: its DNA, the story scene by scene, and exactly where viewers leave. No upload step — it reads what is already running.
+Creative is the single biggest driver of a campaign's sales — 49%, more than targeting (11%) or reach (14%) [NCSolutions / Circana, 2023]. It is also the layer most tools only tag.
+Adgent reads every live ad the way a senior buyer would: its DNA, the story scene by scene, and exactly where viewers leave. No upload step — it reads what is already running.
 The hold curve, read against the storyboard — one scene explains the loss
 The difference that matters
 A tag says what is in the ad. A read says what the ad does .
@@ -839,7 +846,8 @@ The hold curve
 Where viewers leave, joined to what was on screen when they did. This is the join that matters: a retention chart without the scene under it tells you people left, not why.
 Fatigue, flagged before the numbers slide
 A creative wearing out shows up in the read before it shows up in the CPA. Frequency climbing while hold rate falls is a creative running out of road — and by the time the cost per acquisition confirms it, you have paid for the confirmation.
-Creative is 49% of what drives the sale, and a quarter of tagging instead of reading is a quarter of spending against the wrong half of it. The ad above loses 38% of viewers at 0:07 — the price overlay landing before the benefit. Nothing in a hook rate or a hold rate says which second to change, so the brief for the next round is written from the same two scalars as the last one. Three more months of that is three more months of reshooting the parts that were working.
+Creative is 49% of what drives the sale, and a quarter of tagging instead of reading is a quarter of spending against the wrong half of it. The ad above loses 38% of viewers at 0:07 — the price overlay landing before the benefit.
+Nothing in a hook rate or a hold rate says which second to change, so the next brief is written from the same two scalars as the last one. Three more months of that is three more months of reshooting the parts that were working.
 Next
 The creative read lands in the same place as everything else.
 It arrives in the morning verdict, ranked with everything else competing for your attention — and what you decide about a creative is remembered the next time one like it appears.
@@ -915,7 +923,8 @@ The same ad, three entries each reversible
 Nothing here is a one-way door.
 The part people do not expect
 It also catches the changes nobody made.
-Ad platforms move things on their own: an automated recommendation applies itself, a bid strategy flips, a budget reallocates under an automation somebody enabled last year. Those are read from the platforms' own change feeds, so drift arrives with a date and a source attached instead of surfacing three weeks later as an unexplained CPA rise. Being honest about the limit: a platform-side change cannot be undone from here — no before-state was captured, because Adgent did not make the write. What it can do is date it, name it, and offer to set the value back as a new change of its own.
+Ad platforms move things on their own: a recommendation applies itself, a bid strategy flips, a budget reallocates under an automation somebody enabled last year. Those are read from the platforms&rsquo; own change feeds, so drift arrives with a date and a source rather than surfacing three weeks later as an unexplained CPA rise.
+The honest limit: a platform-side change cannot be undone from here. No before-state was captured, because Adgent did not make the write. What it can do is date it, name it, and offer to set the value back as a change of its own.
 Which settles the argument nobody can normally win
 "Who changed this, and when?" costs teams more time than almost any other question in a shared ad account, and it is usually unanswerable — so it gets settled by whoever sounds most confident. Here it has a date and a source, including when the answer is the platform itself.
 And the before-state is the one thing that cannot be backfilled. Start next quarter and the entries you most want — the bid strategy that flipped at 03:14, the budget that reallocated itself, the setting nobody remembers touching — are already gone, because nothing captured what they replaced at the moment they were replaced. A ledger opened in November cannot restore August. Every month of waiting is a month you can describe but not undo.
@@ -963,7 +972,9 @@ URL: https://adgent.app/account-memory
 id="main" tabindex="-1">
 Account memory
 The difference between a tool and someone who knows the account .
-Everything that makes your account yours lives in someone&rsquo;s head: the client who will not run video, the market that looks unprofitable and is not, the suggestion you have now rejected four times. None of it is in the ad platforms. It is why a new hire takes a quarter to become useful, and why every generic AI tool still sounds like a stranger on day ninety. Adgent picks these up as you say them — and every verdict after that is written by something that already knows them.
+Everything that makes your account yours lives in someone&rsquo;s head: the client who will not run video, the market that looks unprofitable and is not, the suggestion you have now rejected four times. None of it is in the ad platforms.
+It is why a new hire takes a quarter to become useful, and why every generic AI tool still sounds like a stranger on day ninety.
+Adgent picks these up as you say them — and every verdict after that is written by something that already knows them.
 Said once. Applied ever after.
 Learned, not configured
 There is no setup screen, because nobody fills one in .
@@ -1006,7 +1017,8 @@ It knows which number you judge on
 Tell it once that this brand is judged against store revenue rather than platform ROAS, and every report after that reconciles to the store first. Not a per-report setting — a fact about the account.
 It carries your limits into execution
 "Nothing scales past this without flagging me" is a rule that has to survive to the moment a change is proposed, six weeks later, on a campaign that did not exist when you said it.
-Memory is the one thing here that only accrues by starting. A quarter of deferring is a quarter of re-explaining the account every session — the same exceptions retyped, the same rejected suggestion arriving again on Tuesday, the €500/day limit living in someone's head instead of in the thing proposing the change. The context you would have by March is not something you can buy in March. It is only worth what it has been running.
+Memory is the one thing here that only accrues by starting. A quarter of deferring is a quarter of re-explaining the account every session — the same exceptions retyped, the same rejected suggestion arriving again on Tuesday, the €500/day limit living in someone's head instead of in the thing proposing the change.
+The context you would have by March is not something you can buy in March. It is only worth what it has been running.
 Whose memory it is
 Yours, and it follows the brand .
 The context belongs to the account, not to one ad platform's view of it. Your rules travel with the brand across every platform you connect, so a decision made about a campaign on one platform is not forgotten when the same question comes up on another.
@@ -1047,12 +1059,14 @@ URL: https://adgent.app/built-from-chat
 id="main" tabindex="-1">
 What it builds
 Describe it in a sentence. It gets built .
-A campaign, a media plan, a live dashboard, a standing report — four different things, one way of asking for them. Not a template you fill in and not a chart library you assemble. You say what you want; the thing that answers it gets made. And the line that matters runs straight through the middle: two of these only ever read your account, and two of them can change it — so those two are drafted complete, held paused, and wait for you.
+A campaign, a media plan, a live dashboard, a standing report — four different things, one way of asking for them. Not a template you fill in and not a chart library you assemble. You say what you want; the thing that answers it gets made.
+The line that matters runs through the middle: two of these only ever read your account, and two of them can change it — so those two are drafted complete, held paused, and wait for you.
 One way of asking. Two very different consequences.
 Why this exists
 The thing you actually want is never the one on the menu .
 Every tool ships with a set of views and a set of forms someone else decided you would need. The question in your head at 9am is more specific than any of them — and building it yourself costs the hour you were going to spend on the account.
-The hour is the thing to price. One rebuilt-by-hand view a week, at the hour it costs your most expensive person, is most of a working week over a quarter — and that is only the ones that get built. The more expensive ones are the questions nobody asks because the answer would take an afternoon, which is how an account ends up run on the four views that shipped with the tool.
+The hour is the thing to price. One rebuilt-by-hand view a week, at the hour it costs your most expensive person, is most of a working week over a quarter — and that is only the ones that get built.
+The more expensive ones are the questions nobody asks because the answer would take an afternoon. That is how an account ends up run on the four views that shipped with the tool.
 Live dashboards
 A view that is still true on Thursday .
 Describe the cut you want — the platforms, the window, the breakdown, the metric you judge on — and get the view rather than a form to configure one. What gets built stays wired to the data, so sharing it with a client does not turn it into a screenshot that is wrong by the end of the week.
@@ -1074,7 +1088,8 @@ Silence is a result
 A watcher that reports every day trains you to ignore it. These are built to say nothing until the thing they watch actually moves, which is what makes the message worth opening when it comes.
 Media plans
 A plan is only worth reading if it shows where the numbers came from .
-Every media plan is a stack of forecasts, and almost none of them say what they were forecast from. A cell reading ₺1,400 CPA is either last quarter's campaign or somebody's optimism, and the deck does not tell you which. Adgent drafts the plan as data instead: budget split, flights, line items, and a cost range for each — with the source campaigns and the window printed under every range. Where the account has no history, it writes no number at all and says so.
+Every media plan is a stack of forecasts, and almost none of them say what they were forecast from. A cell reading ₺1,400 CPA is either last quarter's campaign or somebody's optimism, and the deck does not tell you which.
+Adgent drafts the plan as data instead: budget split, flights, line items, and a cost range for each — with the source campaigns and the window printed under every range. Where the account has no history, it writes no number at all and says so.
 The plan as a deck
 A budget split, agreed in a meeting nobody minuted
 A CPA per line, keyed in from memory of last quarter
@@ -1447,7 +1462,8 @@ Corrected value same spend
 Nothing in the interface flags it.
 The second thing the pixel cannot see
 You have two costs of acquisition. It can only count one.
-A marketplace has to buy buyers and sellers, and the two are not remotely comparable. Take a marketplace clearing $85 an order at a 13% take rate: allowable buyer acquisition cost lands near $11, while an active seller — who keeps producing orders for years — can be worth many times that. An order-of-magnitude difference in what a click is worth, inside one ad account, invisible to every platform reporting it.
+A marketplace has to buy buyers and sellers, and the two are not remotely comparable. Take a marketplace clearing $85 an order at a 13% take rate: allowable buyer acquisition cost lands near $11, while an active seller — who keeps producing orders for years — can be worth many times that.
+An order-of-magnitude difference in what a click is worth, inside one ad account, invisible to every platform reporting it.
 Buying demand into empty supply
 Below a threshold of live listings in a given city, buyer acquisition is waste no matter how cheap the click — the request cannot be filled. Premature geographic expansion is among the most-cited causes of marketplace failure after launch, and it always looks like a marketing success first.
 Liquidity is local, budgets are not
@@ -1459,7 +1475,8 @@ Never set a target return off gross volume.
 It is a single field, it is wrong by default in most implementations, and it instructs the bidding algorithm to overbid by the inverse of your take rate — permanently, and with total confidence. At a 13% take rate, a reported 6× is an actual 0.8×. Nothing in the interface flags it, because from the platform's point of view nothing is wrong.
 And the third mistake: bidding against your own supply
 Marketplaces routinely buy branded and category terms that their own sellers, or their own organic listings, were already winning. eBay's controlled shutdown of brand-keyword advertising found the traffic simply rerouted to its own organic results; measured return on that spend was negative [Blake, Nosko & Tadelis, Econometrica , 2015]. The reported figure was real. The incremental one was not.
-None of which corrects itself while you decide. A conversion value left on gross volume overbids by the inverse of your take rate every day it stays there — at 13%, that is a reported 6× sitting at roughly 0.8× on the revenue you keep, for another ninety days of spend. Fixing the field takes a minute. Fixing what the algorithm learned in the meantime takes a fortnight on top, so a quarter of waiting costs a quarter of mispriced bids plus the unlearning.
+None of which corrects itself while you decide. A conversion value left on gross volume overbids by the inverse of your take rate every day it stays there — at 13%, that is a reported 6× sitting at roughly 0.8× on the revenue you keep, for another ninety days of spend.
+Fixing the field takes a minute. Fixing what the algorithm learned in the meantime takes a fortnight on top, so a quarter of waiting costs a quarter of mispriced bids plus the unlearning.
 Where Adgent stands today
 The take rate lives in your systems, and we should say so.
 Net revenue, take rate by category, and cost of acquisition per side sit in your own backend or warehouse — there is no standard connector for that the way there is for a storefront. Adgent does not read it today. What it does is everything upstream of that number.
@@ -1509,11 +1526,13 @@ URL: https://adgent.app/local-multi-location
 id="main" tabindex="-1">
 For clinics, restaurants & multi-location brands
 The conversion isn't on the internet.
-Google does not measure store visits. It models them — extrapolated from a panel of volunteers, with thresholds it does not disclose and up to five days of delay [Google Ads Help, current]. In September 2025 those modelled visits started being counted as conversions by default, with a value Google assigns. Modelled foot traffic now flows into automated bidding next to real revenue, and nothing in the interface distinguishes them.
+Google does not measure store visits. It models them — extrapolated from a panel of volunteers, with thresholds it does not disclose and up to five days of delay [Google Ads Help, current].
+In September 2025 those modelled visits started being counted as conversions by default, at a value Google assigns. Modelled foot traffic now flows into automated bidding next to real revenue, and nothing in the interface distinguishes them.
 Not diminishing returns. Negative ones.
 The other half of the conversion
 Only 61% of callers reach a person.
-In local businesses the phone is not a secondary channel, it is the conversion. Across more than 60 million calls, 37% of phone leads convert — against 2&ndash;5% for a form [Invoca, Jun 2025]. But well over a third of callers never reach anybody. That is not a marketing problem and no ad platform will ever report it, yet it sets the ceiling on everything the ad spend can achieve.
+In local businesses the phone is not a secondary channel, it is the conversion. Across more than 60 million calls, 37% of phone leads convert — against 2&ndash;5% for a form [Invoca, Jun 2025].
+But well over a third of callers never reach anybody. No ad platform will ever report that, yet it sets the ceiling on everything the ad spend can achieve.
 In healthcare it gets worse before it gets better
 59% of callers reach a person, and of those, only 43% of agents ask the caller to book [Invoca healthcare report, 2025]. Two filters, applied after every dollar of media spend, invisible to the account that spent it.
 Inside one clinic&rsquo;s account
@@ -1543,7 +1562,9 @@ Demand has a shape, budgets are flat
 Saturday accounts for 26% of weekly restaurant reservations [Toast, Q3 2025] , and the growth is midweek. Home services move with weather. Spending evenly into a demand curve that is anything but even is the default configuration.
 The vocabulary tells you what matters
 Nobody in this vertical says ROAS. They say cost per new patient, cost per booked appointment, show rate, case acceptance, chair utilisation. A tool that reports in the platform's vocabulary is answering a question the operator did not ask.
-All three of these get worse with time rather than staying flat. Every one of them trains the bidding — so a quarter of leaving it alone is a quarter of the algorithm getting better at buying sixty-second wrong numbers, better at putting your own branches into the same auction, and better at finding people merely interested in your area. Meanwhile the modelled store visits Google began counting by default in September 2025 keep flowing into that bidding at a value Google assigns. The account does not drift toward neutral while you decide. It compounds in the direction it was last taught.
+All three get worse with time rather than staying flat, because every one of them trains the bidding. A quarter of leaving it alone is a quarter of the algorithm getting better at buying sixty-second wrong numbers, better at putting your own branches into the same auction, better at finding people merely interested in your area.
+Meanwhile the modelled store visits Google began counting by default in September 2025 keep flowing into that bidding at a value Google assigns.
+The account does not drift toward neutral while you decide. It compounds in the direction it was last taught.
 Where Adgent stands today
 Two honest limits, stated up front .
 Show rate and revenue per patient live in your practice-management or booking system — Adgent does not read those today . And cross-account comparison, which is what would let it spot two of your locations bidding against each other, is on the roadmap rather than in the product. We would rather you knew that before a demo than during one.
