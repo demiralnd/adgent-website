@@ -620,7 +620,10 @@ html.js .builds-spacer { height: 300vh; }
      sliver of the next card is deliberate — it signals there's more. */
   display: grid; grid-auto-flow: column; grid-auto-columns: min(720px, 82%);
   gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory;
-  scroll-behavior: smooth; scroll-padding: 0;
+  /* The nav is sticky and 64px tall, so scroll-padding:0 parked every anchor
+     target underneath it — jumping to #plan or #campaign landed with the
+     heading hidden behind the bar. */
+  scroll-behavior: smooth; scroll-padding-top: 84px;
   padding-bottom: 4px; margin: 0 -4px; padding-left: 4px; padding-right: 4px;
   scrollbar-width: none; -ms-overflow-style: none;
 }
@@ -1028,8 +1031,12 @@ html.js .builds-spacer { height: 300vh; }
 .s3-list li[data-tier="upper"] .s3-li-tag { background: var(--accent-soft); color: var(--accent); }.s3-list li.on .s3-li-body { grid-template-rows: 1fr; }.s3-list li p { font-size: 13px; line-height: 1.6; color: var(--text-2); margin: 9px 0 0; text-wrap: pretty; }
 .s3-list li p.s3-li-v { color: var(--text-3); font-size: 12.5px; }
 
+/* Left-aligned, not centred. Every heading, lede and card on these pages is
+   left-aligned; a centred paragraph between them reads as a caption that lost
+   its picture, and on /features it sat directly under left-aligned body copy
+   so the two blocks looked misaligned rather than deliberate. */
 .stack-kicker {
-  margin: 30px auto 0; max-width: 780px; text-align: center; font-size: 15px;
+  margin: 30px 0 0; max-width: 68ch; text-align: left; font-size: 15px;
   line-height: 1.6; color: var(--text-2); text-wrap: pretty;
 }
 
@@ -1078,7 +1085,7 @@ html.js .builds-spacer { height: 300vh; }
   padding: 8px 4px; writing-mode: vertical-rl; text-align: center;
 }
 
-.gt-kicker { margin: 22px auto 0; max-width: 760px; text-align: center; font-size: 15.5px; line-height: 1.6; color: var(--text-2); text-wrap: pretty; }
+.gt-kicker { margin: 22px 0 0; max-width: 68ch; text-align: left; font-size: 15.5px; line-height: 1.6; color: var(--text-2); text-wrap: pretty; }
 .gt-kicker + .gt-points { margin-top: 40px; }
 .gt-points { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .gt-point { background: var(--bg-sub); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 20px; }
@@ -2151,7 +2158,7 @@ html:not(.js) .chat-step { opacity: 1; transform: none; }
    three cards — one orphan card numbered "01" sitting a third of the way
    across. A single centred sentence carries the same argument. */
 .why-close {
-  max-width: 68ch; margin: 26px auto 0; text-align: center;
+  max-width: 68ch; margin: 26px 0 0; text-align: left;
   font-size: 14.5px; line-height: 1.65; color: var(--text-2); text-wrap: pretty;
 }
 .why-close b { color: var(--text); }
