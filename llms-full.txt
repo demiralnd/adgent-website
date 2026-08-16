@@ -37,11 +37,11 @@ Where am I wasting spend?
 Compare Meta & Google
 Launch a new campaign across channels
 Intelligence + memory
-You explain the account once .
-Your rules, your exceptions, the calls you've already made — Adgent picks them up from the way you work and carries them into every verdict after. Nothing to configure, and nothing to repeat next month.
-Learned, not configured. Adgent shows you what it picked up from your account and asks before remembering it — no setup screen, and you can override any of it.
-Carried across every session. The context accumulates. Tomorrow's brief already knows what you told it last month.
-Yours, and cross-platform. Your rules and account memory follow the brand across every platform you connect — not locked to one platform.
+The difference between a tool and someone who knows the account .
+The client who will not run video. The market that looks unprofitable and is not. The suggestion you have now rejected four times. None of it is in the ad platforms — it is why a new hire takes a quarter to become useful, and why generic AI still sounds like a stranger on day ninety.
+Learned, not configured. No setup screen to abandon half-filled. It picks rules up as you say them, shows you what it heard, and holds it only once you confirm.
+Week eight reads differently from week one. The rejected suggestion stops arriving. The number you actually judge on becomes the default. The brief gets shorter because what it knows is no longer re-argued.
+Yours, and cross-platform. Your rules follow the brand across every platform you connect — and a limit set in July still stops a change proposed in September.
 Adgent · learning
 In the background · nothing to manage
 You, in chat “Don't scale anything past €500/day without flagging me — we've been burned by fast ramps.”
@@ -287,12 +287,12 @@ Shown to you and confirmed before it is remembered — and overridable
 Follows the brand across every platform you connect, not locked to one
 See how it works
 07
-Built from chat
-Ask for it in a sentence. Adgent builds it.
-A report, a live dashboard, a cross-channel plan — described in one message and built while you watch. Not a template you fill in and not a chart library you assemble: you say what you want to see, and the thing that answers it gets made.
+Dashboards & standing reports
+Describe the view. It gets built, and it stays live.
+The cut you want — the platforms, the window, the breakdown, the metric you judge on — described in one message and built on your data rather than configured in a form. What comes back stays wired to the account, so sharing it with a client does not turn it into a screenshot that is wrong by Thursday. Make it standing and it rebuilds itself before the Monday call, or watches one metric and stays quiet until that metric moves.
 Custom reports generated from a single message
-Live dashboards you can share, not static exports
-Cross-channel campaigns drafted by description, applied on your approval
+Live dashboards you can share read-only, not static exports
+Standing agents that report only when the thing they watch changes
 See how it works
 08
 Media planning
@@ -301,6 +301,14 @@ The plan arrives as data, not a deck: budget split by platform, flight dates, li
 Every cost range names the campaigns and window it was read from
 No history means no number — a test window instead of a plausible guess
 Assumptions, measurement caveats and open questions carried in the plan itself
+See how it works
+09
+Campaign builds
+Drafted whole from a description — and held, paused, for you
+Structure, budget, targeting, copy and the creative slots, prefilled from what this account has actually proven rather than from a template — with the reason printed beside each choice, including the ones it declined. It blocks in the form where you can still fix things: a missing creative stops the build there, not after approval. What you approve is created paused, so switching it on is a second, separate decision.
+Every field prefilled from this account's own history, with the evidence named
+Refuses the build when the conversion signal cannot support it — before you spend
+Created paused, logged in the ledger, reversible like every other write
 See how it works
 By team
 The same product, read from where you sit .
@@ -498,22 +506,22 @@ TikTok Ads later
 Reads are read-only. A connector is listed here only once it is running in the product — the ones marked next are being built, and we would rather show you the line than blur it.
 Talk to sales
 What you get
-Every plan covers both platforms.
-Aware
+Both platforms, in every conversation we have.
+It reads
 Intelligence and answers across both ad platforms.
 Meta & Google in one view
 Daily brief & health score
 Anomaly detection
 Trust Gate flagging
 GA4 & Search Console context
-Ask
+It answers
 Answers about your account, by message.
 Ask-anything chat
 Placement & demographic audits
 Custom reports on demand
 Client-ready exports
 Slack & email delivery
-Apply
+It applies
 Execution — always on your approval.
 One-tap fixes from chat
 Cross-channel campaign builds
@@ -522,7 +530,7 @@ Roles & permissions
 Multi-account & agency structure
 Questions
 Plainly.
-Do all plans include both platforms? Yes. Meta and Google Ads are included on every tier — there's no "channel add-on". The difference between plans is execution and scale, not which channels you can see.
+Do all plans include both platforms? Yes. Meta and Google Ads come together — there is no "channel add-on", and no version of this that sees only one of them. What changes with scale is how many accounts are connected and whether execution is switched on, not which platforms you can read.
 How is it priced? Pricing depends on how many ad accounts you connect and whether you want execution as well as intelligence. Tell us what you're running and we'll walk you through the options.
 What counts as an ad account? One connected Meta or Google ad account equals one. A brand running multiple channels uses one slot per account; agencies connect as many as they manage.
 What data does it read beyond ads? Alongside Meta and Google Ads, Adgent reads GA4, Search Console and Merchant Center, so platform-reported numbers get checked against a source the platform does not control. Store reading (Shopify) is the next connection we are building.
@@ -569,12 +577,12 @@ Campaign 4 needs nothing. The dip is a two-day weekend pattern this account show
 The fix is a creative refresh, not a bid change. Bidding down here buys cheaper impressions of an ad people have stopped watching.
 The evidence sits underneath every line. You can disagree with it — but you are disagreeing with a position, not staring at a chart.
 In the morning brief
-Northlight is top of my list this morning. Why?
-Prospecting CPA is up 34% week on week , and it is not seasonal — the top creative crossed frequency 3.4 on Tuesday and hold rate fell with it. That is what put this account at the top of your workspace list: its own health score dropped and it opened two urgent actions overnight. I am reading Northlight only. The ordering of your other accounts comes from each one&rsquo;s own overnight read, not from me comparing them.
+What is the verdict on Northlight this morning?
+Prospecting CPA is up 34% week on week, and it is not seasonal. The top creative crossed frequency 3.4 on Tuesday and hold rate fell with it — that pairing is what makes it fatigue rather than an auction shift. This is Northlight&rsquo;s own read. I do not compare it against your other accounts — each one is analysed inside itself.
 Why not just bid down?
 Because the auction is not the problem. Bidding down here buys cheaper impressions of an ad people have stopped watching — you would pay less per view and lose the same money more slowly. The fix is a creative refresh , and I have costed it: roughly £2,400 of recoverable spend over the next fortnight.
-Morning brief Northlight
-Ranked by recoverable spend, not by what moved most.
+Northlight &#183; this morning one account
+One account, read on its own. The findings inside it are ranked by recoverable spend.
 What makes the ranking honest
 Ranked by what it costs , not by what changed most.
 A 60% swing on a campaign spending forty dollars a day is noise wearing a big percentage. Sorting by volatility puts noise at the top of your morning; sorting by money puts the decision there.
@@ -587,8 +595,8 @@ Platform-reported conversions are the starting point, not the answer. The verdic
 One health score per account
 A book of twenty accounts, scannable in a minute .
 The hard part of running many accounts is not analysing one of them. It is knowing which one to analyse. Each account is read on its own and carries a single score with the reason attached; the workspace sorts those scores so triage takes a glance rather than twenty logins. It is an ordering of separate reads — the analysis itself never leaves the account it is in.
-And the accounts nobody opened this week get read anyway
-This is the quiet failure mode of every busy team: the account that goes wrong is rarely the one you are watching. It is the one that has been fine for six weeks, so nobody looks, so the leak runs until the monthly report. An overnight read has no favourites.
+Including the account you cannot afford to lose, on the week it looked fine
+Every team already puts someone on the accounts that are visibly struggling. The expensive one is the retainer that has been quiet for six weeks — no fire, no complaint, nothing to escalate — so it gets a glance instead of a read, and the leak runs until the renewal conversation. That account gets the same overnight read as the one on fire, and if the read finds nothing it says so in one line.
 How this works across a book of clients &rarr;
 Next
 A verdict is only as good as the numbers under it.
@@ -721,12 +729,9 @@ Set the target to ₺250 cost per conversion.
 I can, but I would be setting you up. This account has never come near that at the booking stage — its own history sits around ₺4,000. At ₺250 the only reachable conversion is a ₺13 micro-lead that clears the target and books nobody. You would hit the number and lose the quarter.
 What is actually achievable?
 On the last ninety days, ₺2,800&ndash;3,400 is defensible, and there is a real path to the low ₺2,000s if we fix the event definition first — three of your five conversion actions currently carry no value at all. Want me to show which?
-Trust Gate · one real account, two refusals
-It said no. Twice. Before a dollar was spent.
-"This pixel can't teach a campaign yet"
-Thirty days: 65,042 custom events, 16,404 initiate-checkout — and 4 purchases. Meta's own docs put the floor at 50 events in 7 days [developers.meta.com]. Technically possible to build. Nothing there for the optimiser to learn from.
-"Your target is unreachable — here's why"
-Asked for a ₺250 cost per conversion. The account's own history at the booking stage sits near ₺4,000 . At 250 the only reachable thing is a ₺13 micro-lead that clears the target and books nobody.
+Where the target lands on this account
+₺250 is not a stretch. It is a different event .
+Between the ask and the outcome sits a second problem: thirty days of this pixel hold 65,042 custom events, 16,404 initiate-checkouts and 4 purchases — against Meta&rsquo;s own floor of 50 events in 7 days . [developers.meta.com]
 Both refusals came from one real account, unprompted, before a dollar was spent. A tool that checks this afterwards reports the same facts a month later — once the money has already taught the algorithm nothing.
 That account is still running. Left alone another quarter, the pixel with 4 purchases in thirty days keeps training on nothing, and the ₺250 target keeps getting hit by the ₺13 micro-lead that books nobody — so the number on the report improves while the bookings do not. Nothing here fails loudly enough to interrupt anyone. That is the whole reason it survives a quarter.
 What it refuses
@@ -784,7 +789,7 @@ id="main" tabindex="-1">
 Creative intelligence
 It reads every creative like a strategist — not a tagger.
 Creative is the single biggest driver of a campaign's sales — 49%, more than targeting (11%) or reach (14%) [NCSolutions / Circana, 2023]. It is also the layer most tools only tag. Adgent reads every live ad the way a senior buyer would: its DNA, the story scene by scene, and exactly where viewers leave. No upload step — it reads what is already running.
-The hold curve, against the storyboard
+The hold curve, read against the storyboard — one scene explains the loss
 The difference that matters
 A tag says what is in the ad. A read says what the ad does .
 Most creative analytics stops at attributes: this ad has a person, a kitchen, a price overlay, a voiceover. That is a filing system. It tells you what you already knew when you briefed it.
@@ -824,6 +829,7 @@ Diagnosis CTR × CVR DECISION TREE
 Creative fatigue — hook wear-out
 Three reads on every live ad
 DNA, the story, and where they leave .
+Two ads can share a format, a length and a hook rate and still be built from different arguments. The DNA is the part that makes them comparable — what the ad promises, how it proves it, and in what order — so a winner can be repeated on purpose instead of guessed at.
 01
 Creative DNA
 What the ad is actually built from — its structural pattern, its promise, the shape of its argument. This is what lets one account's winners be compared with each other rather than ranked by spend.
@@ -863,39 +869,58 @@ We'll be in touch within a couple of working days.
 
 ---
 
-# The Change Ledger — every change logged — Adgent
+# The Change Ledger — every change, undoable — Adgent
 URL: https://adgent.app/change-ledger
 
 id="main" tabindex="-1">
 Change Ledger
-Every change, logged with what it replaced .
-Read-only until you say otherwise. Approved before it applies. And put back from the same chat that applied it. Every change Adgent makes is written to a ledger with the state it replaced, labelled reversible or not before you approve it — so undoing it is a restore, not a reconstruction.
-Every write, with what it replaced
-What a ledger entry holds
-A log is not the same as an undo .
-Plenty of tools keep a history. A history tells you what happened; it does not put anything back. The difference is whether the state that got replaced was captured at the time — because if it was not, no amount of logging will reconstruct it later.
+The reason you can let it touch the account.
+Every change is captured with the exact state it replaced, so putting it back is a restore rather than a reconstruction. That is what makes the difference between a tool you supervise and one you actually use: when a change is genuinely undoable, approving it stops being a small act of courage. The caution you have been carrying was never about the tool — it was about not being able to get back.
+Undo is only real if something kept the old value
+What it is actually for
+The cost of a reversible mistake is an afternoon . The other kind is a quarter.
+Ask anyone why they hesitate before letting software change a live account and the answer is never "I want an audit trail". It is that a bad change on a client account is expensive, visible, and hard to walk back — so the safe move is to do nothing, and doing nothing is its own cost.
+Without it
+Every change is a decision you have to be sure about
+So the ones you are unsure about wait for a meeting
+Reversing means someone remembering what the number used to be
+The account drifts, slowly, in the direction of whatever nobody dared touch
+Caution reads as discipline. It is mostly just a cost nobody has priced.
+With it
+You approve it and watch. The old value is held, so Thursday is a real option.
+You test the thing you were unsure about — which is usually the one worth testing.
+Reversing is a restore , not four people reconstructing Monday from memory.
+You can be wrong on purpose , cheaply, which is the only way anyone learns an account.
+The ledger does not make you safer. It makes you faster, because being wrong got cheap.
+This is the part that sounds like a compliance feature and is not. A team that can undo anything runs more changes, learns the account faster, and stops routing every ordinary decision through a call. The log is the by-product. The behaviour it unlocks is the point.
+Why most undo buttons are not one
+A log tells you what happened. It cannot put anything back .
+Plenty of tools keep a history, and it reads convincingly right up to the moment you need it. The question is whether the replaced value was captured at the instant of the write — because if it was not, no amount of logging will reconstruct it afterwards.
 01
-The before-state, captured
-Not "budget changed" but the value it was, stored at the moment of the write. That is the thing a revert actually needs, and it has to be taken before the change, not inferred afterwards.
+The before-state, captured at the write
+Not "budget changed" but the figure it was, stored at the moment it stopped being true. That is the only thing a revert can actually use, and it has to be taken before the change — never inferred later from a report.
 02
-Reversible or not — labelled up front
-Some changes cannot be cleanly undone; a platform will not always take the old state back. Adgent tells you which kind you are approving before you approve it, rather than letting you find out when you try to reverse it.
+Reversible or not, said before you approve
+Some changes a platform will not take back — a bid strategy with no prior manual bid, a placement that cannot return to its automatic default. You are told which kind you are approving while deciding , not when you try to reverse it and find out.
 03
-Actor and source, on every entry
-Who or what made the change, and through which path. A ledger where every entry says "system" is a ledger nobody can settle an argument with.
-The question nobody can usually answer
-Who changed the bid strategy on campaign 4?
-Nobody on your team. Google changed it on 11 August at 03:14 — an automated recommendation applied itself. It was Target CPA at £38 before; it is Maximise Conversions now. That is when your CPA started drifting, which matches the question you asked me on Tuesday.
-Put it back.
-Not something I can undo — that change was made on Google's side, not mine. I can see it and date it; I cannot reach back into a change I did not write. What I can do is set it to Target CPA at £38 as a new change — that one goes through the ledger with its before-state, so it is mine to put back. Ready for your approval.
-Two records, not one dated
-It can date what it did not do. It can only put back what it wrote.
+The reversal goes through the same gates
+An undo is a write like any other: it re-reads the live account, runs the same guardrails as the forward change, and is logged as its own entry. Reverting a revert works too. Nothing here is a special path that skips the checks.
+What an undo sounds like
+It is not a button. It is a recommendation you can refuse .
+Reversing something is a decision, so it is treated as one. Adgent proposes the inverse change, tells you what it thinks the right call is, and says plainly when the answer depends on something only you know.
+Undoing something, six weeks on
+This ad was paused back in May and I do not think that was deliberate. Can you put it back?
+I can, and here is what I would weigh. It went ACTIVE &rarr; PAUSED on 10 August at 23:47, from chat, approved by you. Reactivating restores it exactly — the other four ads in the set are untouched. If the pause was accidental, this undoes it cleanly. If it was intentional, hold off on approving. I do not know which, and I would rather ask than guess.
+It was accidental. Put it back.
+Done — PAUSED &rarr; ACTIVE, logged as its own entry. Watch the next few days: if it keeps spending with no clicks, reactivating was the wrong call and it should go back to PAUSED. I can reverse this one too — the revert has a before-state of its own.
+The same ad, three entries each reversible
+Nothing here is a one-way door.
 The part people do not expect
-It also watches the changes you didn't make.
-Ad platforms change things on their own — automated rules fire, budgets get reallocated, a setting shifts under an automation you forgot you enabled. Those are read from the platforms' own change feeds and surfaced in the analysis, so the drift has a date and an actor attached rather than being a mystery you argue about. What Adgent cannot do is put a platform-side change back — no before-state was captured, because Adgent did not make the write.
-Which turns out to be an operations feature, not a safety feature
-The question "who changed this, and when?" costs teams more time than almost any other question in a shared ad account, and it is usually unanswerable — so it gets resolved by whoever sounds most confident. A change you can undo and redo is a change you can settle, instead of argue about.
-And the before-state is the part that cannot be backfilled. Decide next quarter instead and the entries you most want — the bid strategy that flipped at 03:14, the budget that reallocated itself, the setting nobody remembers touching — are gone, because nothing captured what they replaced at the moment they were replaced. A ledger started in November cannot tell you what August looked like. Every month of waiting is a month you can describe but not restore.
+It also catches the changes nobody made.
+Ad platforms move things on their own: an automated recommendation applies itself, a bid strategy flips, a budget reallocates under an automation somebody enabled last year. Those are read from the platforms' own change feeds, so drift arrives with a date and a source attached instead of surfacing three weeks later as an unexplained CPA rise. Being honest about the limit: a platform-side change cannot be undone from here — no before-state was captured, because Adgent did not make the write. What it can do is date it, name it, and offer to set the value back as a new change of its own.
+Which settles the argument nobody can normally win
+"Who changed this, and when?" costs teams more time than almost any other question in a shared ad account, and it is usually unanswerable — so it gets settled by whoever sounds most confident. Here it has a date and a source, including when the answer is the platform itself.
+And the before-state is the one thing that cannot be backfilled. Start next quarter and the entries you most want — the bid strategy that flipped at 03:14, the budget that reallocated itself, the setting nobody remembers touching — are already gone, because nothing captured what they replaced at the moment they were replaced. A ledger opened in November cannot restore August. Every month of waiting is a month you can describe but not undo.
 Why this matters most on client accounts &rarr; How access is scoped &rarr;
 The order it happens in
 Read-only &rarr; approve &rarr; reversible .
@@ -903,31 +928,31 @@ Three gates, and a change has to pass all of them. None of these is a setting yo
 1 &middot; Read-only by default
 A newly connected account has no write access at all. Adgent analyses, ranks and proposes, and cannot touch anything until execution is explicitly enabled for that account.
 2 &middot; Nothing applies unapproved
-Every proposed change is shown with its before-state, what it is expected to be worth, and whether it can be undone. You approve it from the same chat where you found the problem.
+Every proposed change arrives with its before-state, what it is expected to be worth, and whether it can be undone. You approve it from the same chat where you found the problem.
 3 &middot; Undo from the same chat
-One entry at a time, each rollback logged as its own change. The rollback path is tested against the platforms, not assumed — reverting is a real operation with its own failure modes, and it is treated like one.
+One entry at a time, each rollback logged as its own change. The reversal path is tested against the platforms rather than assumed — reverting is a real operation with its own failure modes, and it is treated like one.
 Next
-The ledger is one layer. It only works because of the ones under it.
-Reversal needs to know what a number meant and what you already decided — which is why safe execution sits at the top of the stack and not at the bottom.
+Cheap to undo is only half of it. The other half is not doing it at all.
+A reversible change is the floor. The layer above it is the one that declines to make the change in the first place when the account's own numbers say it will not work.
 Trust Gate
 It refuses unreachable targets before the budget moves.
 Read more
 The seven layers
 What sits between a connected account and a decision.
 Read more
-See the ledger on a real account
-Find out what changed in your account last month .
-Most teams cannot answer this, and the ones who can spend an afternoon on it. We will show you the ledger view on your own account — what Adgent applied and can put back, alongside what the platform changed on its own.
-Before-state captured on every write
-Reversible or not, labelled before you approve
-Actor and source on every entry
+See what it would have caught
+Ask it what changed in your account last month .
+Point it at an account and it will read the platforms' own change feeds — the automated recommendations that applied themselves, the settings that moved, the dates nobody has. Read-only; nothing is written.
+Every change dated, with its source
+Including the ones nobody on your team made
+Read-only until you switch execution on
 What comes back
-A log of what moved and who moved it — and a demonstration of an undo on a change of your choosing, from the proposal through to the restore.
+The drift in your account from the last thirty days, with dates and sources — usually including at least one change everyone assumed a person made.
 Name
 Work email
 Company
 What should we look at?
-See the ledger
+Show me what changed
 We usually reply within a couple of working days.
 Thanks — we've got it.
 We'll be in touch within a couple of working days.
@@ -939,8 +964,8 @@ URL: https://adgent.app/account-memory
 
 id="main" tabindex="-1">
 Account memory
-You explain the account once .
-Your rules, your exceptions, the calls you have already made. Adgent picks them up from what you tell it in chat and from the documents you give it, then carries them into every verdict after. Nothing to configure, and nothing to repeat next month. A generic tool restarts from zero every session; here the context accumulates — across platforms, and it is yours.
+The difference between a tool and someone who knows the account .
+Everything that makes your account yours lives in someone&rsquo;s head: the client who will not run video, the market that looks unprofitable and is not, the suggestion you have now rejected four times. None of it is in the ad platforms. It is why a new hire takes a quarter to become useful, and why every generic AI tool still sounds like a stranger on day ninety. Adgent picks these up as you say them — and every verdict after that is written by something that already knows them.
 Said once. Applied ever after.
 Learned, not configured
 There is no setup screen, because nobody fills one in .
@@ -964,7 +989,19 @@ Held rule six weeks later
 The rule outlived the session that set it.
 What it actually changes
 Memory is what turns an audit into a judgment .
-This is the least visible feature on the site and the one that decides whether people keep using the product after week three.
+An audit applies general rules to your account. A judgment applies your rules to your account — and that gap is the whole reason a good freelancer is worth more than a good checklist. This is the least visible thing on the site and the one that decides whether people are still using the product in month three.
+Week one, any tool
+&ldquo;Consider consolidating these campaigns&rdquo; — they are split by client, deliberately
+&ldquo;This market is underperforming&rdquo; — it is the one with the highest margin
+&ldquo;ROAS is below target&rdquo; — that is not the number you judge on
+Every finding needs the same context typed underneath it, again
+Technically correct and wrong about your account. On week eight it is saying the same four things.
+Week eight, here
+The consolidation suggestion is gone — you rejected it in June, and said why.
+That market is read on margin , because you told it once that it should be.
+Reports reconcile to store revenue first , with platform ROAS beside it as context.
+The brief is shorter , because what it already knows is not being re-argued every morning.
+Same product, same account. The difference is eight weeks of having been told things.
 It stops re-suggesting what you rejected
 The fastest way to make someone stop reading a daily brief is to put the same dismissed recommendation in it every morning. Rejecting something twice is information, and it gets treated as information.
 It knows which number you judge on
@@ -1006,76 +1043,40 @@ We'll be in touch within a couple of working days.
 
 ---
 
-# Built from chat — ask, and watch it build — Adgent
+# What it builds — campaigns, plans, dashboards — Adgent
 URL: https://adgent.app/built-from-chat
 
 id="main" tabindex="-1">
-Built from chat
-Ask for it in a sentence. Adgent builds it.
-A report, a live dashboard, a cross-channel plan — described in one message and built while you watch. Not a template you fill in, and not a chart library you assemble. You say what you want to see; the thing that answers it gets made.
-One message in. A working dashboard out.
+What it builds
+Describe it in a sentence. It gets built .
+A campaign, a media plan, a live dashboard, a standing report — four different things, one way of asking for them. Not a template you fill in and not a chart library you assemble. You say what you want; the thing that answers it gets made. And the line that matters runs straight through the middle: two of these only ever read your account, and two of them can change it — so those two are drafted complete, held paused, and wait for you.
+One way of asking. Two very different consequences.
 Why this exists
-The report you actually want is never the one on the menu .
-Every reporting tool ships with a set of views someone else decided you would need. The question in your head at 9am is more specific than any of them — and building it yourself costs an hour you were going to spend on the account.
-Custom reports, from one message
-Describe the cut you want — the platforms, the window, the breakdown, the metric you judge on — and get the report rather than a form to configure one.
-Live dashboards, not exports
-What gets built stays connected to the data and keeps updating. You can share it with a client or a colleague without turning it into a screenshot that is wrong by Thursday.
-Campaigns drafted by description
-Cross-channel structures built from what you said you wanted — and then held, complete, until you approve them. Describing is not applying.
-The hour is the thing to price. One rebuilt-by-hand view a week, at the hour it costs your most expensive person, is most of a working week over a quarter — and that is only the reports that get built. The more expensive ones are the questions nobody asks because the answer would take an afternoon, which is how an account ends up run on the four views that shipped with the tool.
+The thing you actually want is never the one on the menu .
+Every tool ships with a set of views and a set of forms someone else decided you would need. The question in your head at 9am is more specific than any of them — and building it yourself costs the hour you were going to spend on the account.
+The hour is the thing to price. One rebuilt-by-hand view a week, at the hour it costs your most expensive person, is most of a working week over a quarter — and that is only the ones that get built. The more expensive ones are the questions nobody asks because the answer would take an afternoon, which is how an account ends up run on the four views that shipped with the tool.
+Live dashboards
+A view that is still true on Thursday .
+Describe the cut you want — the platforms, the window, the breakdown, the metric you judge on — and get the view rather than a form to configure one. What gets built stays wired to the data, so sharing it with a client does not turn it into a screenshot that is wrong by the end of the week.
 Asking for a view that does not exist yet
 Build me a weekly report by placement, against store revenue, for this client.
 Building it now. Placement breakdown across Meta and Google, weekly buckets, reconciled against recorded revenue rather than platform-reported. One thing worth knowing before you send it: Audience Network is 22% of spend and 4% of revenue on this account. It will be the loudest thing on the chart.
 Can the client see it live?
-Yes — it is a live view, not an export, so it stays current after you share it. Read-only for them.
+Yes — it is a live view, not an export, so it stays current after you share it. Read-only for them. Building a view touches nothing in the account — it only reads.
 Built view live
 Audience Network: the loudest thing on the chart.
-The part that makes it safe
-Building something is not the same as doing it.
-A drafted campaign is an artifact, not an action. It sits there, fully specified, until you approve it — and when you do, it goes through the same gates as every other change: shown with its before-state, labelled reversible or not, and logged.
-And it will tell you when what you asked for will not work
-Ask for a campaign built to a target the account has never reached and you get pushback with the account's own history attached, before anything is launched. Building on request does not mean building whatever is requested.
-See the Trust Gate &rarr; See the Change Ledger &rarr;
-Next
-It is the same chat where the problem was found.
-The point of building from chat is that you never leave the place you were working. The verdict names the problem, you ask for the thing that shows it, and the fix applies from the same message.
-Daily verdict
-Every account read overnight, ranked by what it costs you.
-Read more
-All features
-The whole product on one page, seven capabilities deep.
-Read more
-Describe a report, get a report
-Tell us the view you keep rebuilding by hand.
-The weekly cut nobody has automated, the client slide that takes an hour, the breakdown your BI tool will not do. Describe it in a sentence and we will build it on your data.
-Custom reports from one message
-Live dashboards, shareable, not exports
-Nothing applies to an account without approval
-What comes back
-The thing you described, running on your own numbers — plus how long it took, which is the part most people do not believe.
-Name
-Work email
-Company
-What should we look at?
-Describe a report
-We usually reply within a couple of working days.
-Thanks — we've got it.
-We'll be in touch within a couple of working days.
-
----
-
-# Media planning that shows its basis — Adgent
-URL: https://adgent.app/media-planning
-
-id="main" tabindex="-1">
-Media planning
+Agents & standing reports
+Some things you want once. Some you want every week .
+A view you ask for is a one-off. A standing job is the same request, made permanent: the report that rebuilds itself before the Monday call, or an agent watching one specific thing that speaks up only when it moves. You set what it watches and when it should bother you; the rest of the time it stays quiet.
+The report that writes itself
+The client cut you rebuild every Monday, produced before the call instead of during it — same shape each week, on current data, so the comparison to last week is real rather than reassembled.
+An agent per thing you worry about
+Set one on the metric you check obsessively — the branded search share, the one campaign that carries the quarter, a placement you do not trust. It watches only that, and stays silent while nothing changes.
+Silence is a result
+A watcher that reports every day trains you to ignore it. These are built to say nothing until the thing they watch actually moves, which is what makes the message worth opening when it comes.
+Media plans
 A plan is only worth reading if it shows where the numbers came from .
-Every media plan is a stack of forecasts, and almost none of them say what they were forecast from. A cell reading ₺1,400 CPA is either last quarter's campaign or somebody's optimism, and the deck does not tell you which. Adgent drafts the plan as data instead: budget split, flights, line items, and a cost range for each — with the source campaigns and the window printed underneath every range. Where the account has no history, it writes no number at all and says so.
-One line estimated, one line refused
-What you are competing with
-The real alternative is two days in a spreadsheet .
-Nobody buys a planning tool because planning is impossible. They buy it because the plan takes a planner two days — pulling last quarter's costs by hand, splitting budget by feel, writing flights into a grid — and by the time it is finished, nothing in it can be traced back to a campaign. The reasoning was real. It just did not survive the transfer into cells.
+Every media plan is a stack of forecasts, and almost none of them say what they were forecast from. A cell reading ₺1,400 CPA is either last quarter's campaign or somebody's optimism, and the deck does not tell you which. Adgent drafts the plan as data instead: budget split, flights, line items, and a cost range for each — with the source campaigns and the window printed under every range. Where the account has no history, it writes no number at all and says so.
 The plan as a deck
 A budget split, agreed in a meeting nobody minuted
 A CPA per line, keyed in from memory of last quarter
@@ -1088,42 +1089,6 @@ The market with no history gets no number. It gets a two-to-four-week test inste
 The measurement caveat is in the plan , not discovered in the QBR.
 It arrives as a Draft with open questions attached — nothing is applied to any account.
 Reviewable by anyone, in the ten minutes before the call.
-Plans &#8250; VESTMARK_Q4_WINTER &#8250; Draft
-Total budget ₺1,850,000
-Flight 1 Nov – 31 Jan
-Line items 6
-Allocated 100% balanced
-Status Draft not applied
-Brief RESTATED
-Fill the winter shoulder season across three Vestmark properties without buying the weeks that sell themselves. Weight toward direct booking. Norvik is the proven market; Dalmere has never been run.
-Budget split BY PLATFORM
-Allocated ₺1,850,000 of ₺1,850,000.
-Flights ACROSS THE RANGE
-Line items PLATFORM &#183; BUYING TYPE
-01 Norvik &#183; always-on — Google &#183; Search + PMax &#183; bookings &#183; 1 Nov–31 Jan ₺620,000
-02 Norvik &#183; direct push — Meta &#183; Conversion VP + DPA &#183; bookings &#183; 1 Nov–15 Jan ₺410,000
-03 Ashenford &#183; shoulder weeks — Google &#183; Search &#183; bookings &#183; 15 Nov–31 Jan ₺340,000
-04 Ashenford &#183; retargeting — Meta &#183; DPA &#183; bookings &#183; 1 Nov–20 Dec ₺185,000
-05 Dalmere &#183; market entry — Meta &#183; Conversions &#183; bookings &#183; 1 Dec–31 Jan ₺195,000
-06 Brand defence — Google &#183; Search &#183; bookings &#183; 1 Nov–31 Jan ₺100,000
-Estimated outcomes RANGE &#183; BASIS
-LINE 01 ₺1,150–1,450 CPA
-basis: search_brand_norvik_tr ~₺1,180 and norvik_stays_pmax ~₺1,390 proxy CPA, last 60 days
-LINE 02 ₺1,600–2,050 CPA
-basis: norvik_direct_vp ~₺1,720 and norvik_dpa_winter ~₺1,940 proxy CPA, last 60 days
-LINE 05 no estimate
-Dalmere has 0 campaigns in this account's history. Nothing to ground a range in, so none is given — start with a 2–4 week test-and-observe flight and re-plan on its own data.
-Ranges are grounded in this account's own history (see each basis) — estimates, not commitments.
-Assumptions & open questions UNRESOLVED
-CAVEAT conversion is a value proxy
-The conversion action carries a value proxy rather than confirmed booking value, and a funnel step is dropping before confirmation — so true CPA cannot be verified yet. Every figure above is directional until that is fixed.
-ASKS 3 open
-Is the Dalmere opening date fixed to 1 Dec? &#183; Should brand defence be capped, or scale with demand? &#183; Does the Ashenford retargeting pool refresh before the shoulder weeks?
-Note: line items sum to ₺1,850,000 — exactly the total budget.
-Read the estimated-outcomes panel next to the empty one. The same planner produced both: it gave a range where two live campaigns supported one, and gave nothing where the account had never run in that market. That is the whole argument on this page. A plan that estimates everything is easier to present and impossible to check, because it never distinguishes the line it knows something about from the line it does not.
-How it gets asked for
-One sentence in. A draft back — with the gap named first.
-The plan is not a form you fill in. You say what the quarter has to do, and the first thing that comes back is usually not the plan — it is the thing you did not mention that the plan depends on.
 Asking for the winter plan
 Build me a Q4 winter plan for Vestmark. ₺1.85m across the three properties, Nov to end of Jan.
 Before I split that, one gap. Norvik and Ashenford both have live search and social history I can price off. Dalmere has none — zero campaigns in this account. I can still give it budget, but I will not attach a cost estimate to it, because there is nothing here to ground one in. Do you want it planned as a test flight, or held back until Norvik proves the season?
@@ -1131,8 +1096,6 @@ Plan it as a test. What does the rest look like?
 Draft is up: Google 56 / Meta 44 , six line items, allocated to the exact total. Ranges on four of them with the source campaigns named underneath. One caveat I would not bury: your conversion action carries a value proxy, and a funnel step is dropping before confirmation — so the CPA figures are directional until that is fixed. Nothing is applied. It sits as a Draft until you approve it.
 Plan draft Draft &#183; not applied
 The gap is stated before the plan, not after it.
-What makes the artifact honest
-Three things in the plan that a deck cannot carry.
 01
 Every range names its basis
 A cost range is written as the campaigns it came from and the window they were read over — not as a figure with a source that lives in someone's head. You can open those campaigns and disagree with the read, which is the only kind of forecast worth reviewing.
@@ -1140,43 +1103,53 @@ A cost range is written as the campaigns it came from and the window they were r
 No history means no number
 A market the account has never run in gets budget and a test window, and no estimate at all. The blank is the finding. Filling it with a plausible figure is how a plan starts lying in the first row and keeps the tone for the rest of the page.
 03
-It says what it does not know
-The measurement caveat sits with the figures, not in a footnote: if the conversion action carries a value proxy rather than confirmed value, every cost below it is directional. The unresolved items stay unresolved and addressed to you by name — the opening date, the brand cap, the retargeting pool. A planner who closes those silently has made three decisions nobody will find until the quarter is running.
-One account, one plan
-The plan is built from the connected account's own Meta and Google Ads history and nothing else. There is no pooled benchmark under it and no learning carried across from another advertiser — which is also why the empty line stays empty: there is no other account's Dalmere to borrow a number from.
-Where the account's own numbers come from &rarr;
-Margin and lifetime value are not in any of this by default — no ad platform reports them and no connection supplies them. If a market is worth more per booking than another, you say so in chat and the plan carries it from then on. That is the honest version: the context is yours, and it gets used, but it is not inferred from a data feed that does not have it.
-Then what
-A Draft is a plan nothing has happened to yet .
-The plan sits as data with a status on it. Approving a line item is what moves it toward a build, and every write that follows lands in the ledger with the state it replaced — so a plan you approved in November is still a plan you can walk back in December.
-Nothing is applied by drafting
-Producing the plan touches no campaign, no budget and no setting. It is an artifact you read, argue with, and edit before any of it becomes a change request.
 Approval is per line, not per plan
-You can take the two Norvik lines and leave the Dalmere test in draft until the opening date is confirmed. A plan is not a single yes.
-What ships is undoable from chat
-Anything Adgent writes to an account is logged with what it replaced. To reverse it you ask in chat, it proposes the inverse change, and you approve that too.
+You can take the two Norvik lines and leave the Dalmere test in draft until the opening date is confirmed. A plan is not a single yes — and producing it touches no campaign, no budget and no setting.
+The plan is built from the connected account's own Meta and Google Ads history and nothing else. There is no pooled benchmark under it and no learning carried across from another advertiser — which is also why the empty line stays empty: there is no other account's Dalmere to borrow a number from.
+Campaign builds
+Built complete. Then held , until you approve it.
+Structure, budget, targeting, copy and the creative slots — drafted whole from what you described, prefilled from what this account has actually proven rather than from a template. What you get back is a specification you can read line by line, not a half-configured campaign waiting for twenty more clicks.
+Asking for a campaign, and hearing why not yet
+Set up a Meta sales campaign for the winter offer. ₺3,500 a week.
+I can build it, but check this first. The page and pixel are both connected, so nothing is technically blocking it. But over thirty days that pixel fired 4 purchases — against 16,404 initiate-checkouts and 65,042 custom events. Meta's own guidance puts the floor at 50 events in 7 days. [developers.meta.com] A sales campaign optimising on 4 purchases a month has nothing to learn from. It will spend the ₺3,500 and stay in learning.
+So what do I do?
+Two options, and I would take the first. Optimise to initiate-checkout instead — 16,404 events is well above the floor — knowing it carries no purchase value, so judge it on bookings, not on the number Meta reports back. Or fix the purchase event first and launch in a fortnight. Say which and I will draft it. It arrives paused either way.
+Campaign draft paused &#183; awaiting you
+Every choice carries the reason it was made, including the ones it declined.
+Prefilled from evidence, not from a template
+The bid strategy it proposes is the one proven in this account. The keyword variants are ones that have run. Where it picks something second-best it says why — the ideal option was not available in this ad set.
+It blocks in the form, not at the end
+A missing creative stops the build where you can still fix it, rather than failing after approval. The same applies to a conversion event that cannot carry value: you are told before, not after.
+It arrives paused
+Approval creates the campaign in a paused state. Turning it on is a second, separate decision — and like every other write, it lands in the ledger with the state it replaced.
+The part that makes it safe
+Building something is not the same as doing it.
+A drafted plan or campaign is an artifact, not an action. It sits there, fully specified, until you approve it — and when you do, it goes through the same gates as every other change: shown with its before-state, labelled reversible or not, and logged.
+And it will tell you when what you asked for will not work
+Ask for a campaign built to a target the account has never reached, or a plan for a market with no history behind it, and you get pushback with the account's own numbers attached — before anything is launched. Building on request does not mean building whatever is requested.
+See the Trust Gate &rarr; See the Change Ledger &rarr;
 Next
-The same two habits, in the rest of the product.
-Grounding a number in the account's own history, and declining to produce one where there is nothing to ground it in, are not planning features. They are how everything here is built.
-Trust Gate
-The same refusal, applied to targets: it says no before the budget moves.
+It is the same chat where the problem was found.
+The point of building from chat is that you never leave the place you were working. The verdict names the problem, you ask for the thing that shows it, and the fix applies from the same message.
+Daily verdict
+Every account read overnight, ranked by what it costs you.
 Read more
-Ground truth
-Judged against the number that decides it, not the one the pixel can see.
+Account memory
+The rules it builds against — said once, applied from then on.
 Read more
-One plan, drafted on your account
-Give it the quarter you are about to plan by hand .
-Send the budget, the flight window and the markets. We will run the draft Adgent would produce — and you can check every range against the campaigns it names.
-Every cost range printed with its source campaigns and window
-Markets with no history come back with no estimate, on purpose
-Arrives as a Draft — nothing is applied to any account
+Describe it, get it back built
+Tell us the thing you keep rebuilding by hand.
+The weekly cut nobody has automated, the client slide that takes an hour, the quarterly plan that costs a planner two days. Describe it in a sentence and we will build it on your data.
+Live dashboards and standing reports, from one message
+Plans with every range showing its basis
+Nothing reaches an account without your approval
 What comes back
-The plan as data: split, flights, line items, ranges with their basis — and the open questions it would put to you before you present it. Roughly the two days a planner would have spent building the first version.
+The thing you described, running on your own numbers — plus how long it took, which is the part most people do not believe.
 Name
 Work email
 Company
-What should we look at?
-Draft my plan
+What should we build?
+Describe it
 We usually reply within a couple of working days.
 Thanks — we've got it.
 We'll be in touch within a couple of working days.
@@ -1895,19 +1868,22 @@ Growth teams
 Give the whole team one source of truth on what changed and what to do next.
 Independents
 The senior buyer you can't afford to hire, watching your accounts every night.
-2025
-Founded to make judgment, not dashboards, the default.
-3
-Ad channels read as one brain — Meta and Google.
-5
-Sources read together — ads, GA4 and Search Console.
 Request a demo
 Put an analyst on your account .
-Connect your accounts and Adgent gets to work across every account you connect. We listen closely to the teams we onboard.
+Connect what you run and Adgent gets to work. We are early enough that you talk to the people building it, and close enough to the work that what you tell us tends to ship.
 Connects Meta & Google Ads
 Direct line to the team
-Shape the roadmap
+Read-only until you say otherwise
+What comes back
+The read Adgent would run on your accounts overnight — and the accounts it would tell you to leave alone, which is usually the more surprising half.
+Name
+Work email
+Company
+What should we look at?
 Request demo
+We usually reply within a couple of working days.
+Thanks — we've got it.
+We'll be in touch within a couple of working days.
 
 ---
 
@@ -3479,11 +3455,11 @@ Where am I wasting spend?
 Compare Meta & Google
 Launch a new campaign across channels
 Intelligence + memory
-You explain the account once .
-Your rules, your exceptions, the calls you've already made — Adgent picks them up from the way you work and carries them into every verdict after. Nothing to configure, and nothing to repeat next month.
-Learned, not configured. Adgent shows you what it picked up from your account and asks before remembering it — no setup screen, and you can override any of it.
-Carried across every session. The context accumulates. Tomorrow's brief already knows what you told it last month.
-Yours, and cross-platform. Your rules and account memory follow the brand across every platform you connect — not locked to one platform.
+The difference between a tool and someone who knows the account .
+The client who will not run video. The market that looks unprofitable and is not. The suggestion you have now rejected four times. None of it is in the ad platforms — it is why a new hire takes a quarter to become useful, and why generic AI still sounds like a stranger on day ninety.
+Learned, not configured. No setup screen to abandon half-filled. It picks rules up as you say them, shows you what it heard, and holds it only once you confirm.
+Week eight reads differently from week one. The rejected suggestion stops arriving. The number you actually judge on becomes the default. The brief gets shorter because what it knows is no longer re-argued.
+Yours, and cross-platform. Your rules follow the brand across every platform you connect — and a limit set in July still stops a change proposed in September.
 Adgent · learning
 In the background · nothing to manage
 You, in chat “Don't scale anything past €500/day without flagging me — we've been burned by fast ramps.”

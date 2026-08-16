@@ -1,5 +1,12 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/media-planning",
+      "destination": "/built-from-chat#plan",
+      "permanent": true
+    }
+  ]
 }

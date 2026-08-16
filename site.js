@@ -279,8 +279,11 @@
      Each link carries data-mega="<key>"; the panel holds one .mega-panel-art
      per key and shows the hovered one. Pure enhancement: with JS off the
      panel simply keeps its default art and every link still works. */
-  var megaPanel = d.querySelector('[data-mega-panel]');
-  if (megaPanel) {
+     There is one panel per mega-menu (Product, Solutions), so each is wired to
+     the links inside its own dropdown — a single global lookup would let a
+     Solutions link try to drive the Product panel and silently do nothing. */
+  [].forEach.call(d.querySelectorAll('[data-mega-panel]'), function (megaPanel) {
+    var scope = megaPanel.closest('.nav-drop-mega') || d;
     var arts = {}, caption = megaPanel.querySelector('.mega-panel-cap');
     [].forEach.call(megaPanel.querySelectorAll('.mega-panel-art'), function (a) {
       arts[a.getAttribute('data-art')] = a;
@@ -294,12 +297,12 @@
         caption.querySelector('.mp-d').textContent = hit.getAttribute('data-d') || '';
       }
     };
-    [].forEach.call(d.querySelectorAll('[data-mega]'), function (link) {
+    [].forEach.call(scope.querySelectorAll('[data-mega]'), function (link) {
       var key = link.getAttribute('data-mega');
       link.addEventListener('mouseenter', function () { showArt(key); });
       link.addEventListener('focus', function () { showArt(key); });
     });
-  }
+  });
 
   /* ---- lead / subscribe form (Web3Forms) ----
      Progressive enhancement: posts via fetch and shows an inline thank-you.

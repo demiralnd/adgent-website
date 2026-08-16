@@ -26,10 +26,9 @@ confident it is and why, and leaves out anything that didn't change the answer.
 - [Ground truth — judged on your margin — Adgent](https://adgent.app/ground-truth): An ad platform optimises toward its own pixel. It never sees your cost of goods or second-order value. Adgent reconciles against GA4 and Search Console.
 - [The Trust Gate — a tool that can say no — Adgent](https://adgent.app/trust-gate): Adgent refuses unreachable targets and flags metrics that can't be trusted yet, using the account's own numbers as the reason — before any budget moves.
 - [Creative intelligence, scene by scene — Adgent](https://adgent.app/creative-intelligence): Adgent reads live creative the way a senior buyer would: its DNA, the story beat by beat, and exactly where viewers leave. No upload step.
-- [The Change Ledger — every change logged — Adgent](https://adgent.app/change-ledger): Every change is written with its before-state, labelled reversible or not before you approve it, and undone on your approval. Platform-side changes are recorded separately, so drift you did not cause still has a date and an actor.
+- [The Change Ledger — every change, undoable — Adgent](https://adgent.app/change-ledger): Every change is captured with the exact value it replaced, so undoing it is a restore rather than a reconstruction — which is what makes approving one cheap. Platform-side changes are dated too.
 - [Account memory — you explain the account once](https://adgent.app/account-memory): Your rules, exceptions and the calls you already made are carried into every verdict after. Nothing to configure, nothing to repeat next month.
-- [Built from chat — ask, and watch it build — Adgent](https://adgent.app/built-from-chat): A report, a live dashboard or a cross-channel plan, described in one message and built while you watch. Not a template, and not a chart library to assemble.
-- [Media planning that shows its basis — Adgent](https://adgent.app/media-planning): Adgent drafts a media plan as data: budget split, flight dates, line items and a CPA range each — every range naming the campaigns behind it.
+- [What it builds — campaigns, plans, dashboards — Adgent](https://adgent.app/built-from-chat): A campaign, a media plan, a live dashboard or a standing report — described in one sentence and built on your own data. The two that can change an account arrive drafted and paused, waiting for your approval.
 
 ## By industry
 

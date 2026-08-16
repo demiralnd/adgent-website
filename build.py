@@ -26,8 +26,10 @@ import re, sys, os, glob, io, datetime
 ROOT = os.path.dirname(os.path.abspath(__file__))
 PARTIALS = os.path.join(ROOT, "_partials")
 SKIP = {"blog-post"}
+# media-planning folded into built-from-chat on 2026-08-16 — the old URL 301s
+# in vercel.json, so it must not reappear here or the nav will link to a redirect.
 FEATURE_SLUGS = ["daily-verdict", "ground-truth", "trust-gate", "creative-intelligence",
-                 "change-ledger", "account-memory", "built-from-chat", "media-planning"]
+                 "change-ledger", "account-memory", "built-from-chat"]
 NAV_SLUGS = ({"", "features", "why-adgent", "security", "data-use",
               "for-agencies", "for-in-house", "pricing", "about", "blog"}
              | set(FEATURE_SLUGS))
