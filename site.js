@@ -278,7 +278,7 @@
   /* ---- mega-menu visual panel ----
      Each link carries data-mega="<key>"; the panel holds one .mega-panel-art
      per key and shows the hovered one. Pure enhancement: with JS off the
-     panel simply keeps its default art and every link still works. */
+     panel simply keeps its default art and every link still works.
      There is one panel per mega-menu (Product, Solutions), so each is wired to
      the links inside its own dropdown — a single global lookup would let a
      Solutions link try to drive the Product panel and silently do nothing. */
