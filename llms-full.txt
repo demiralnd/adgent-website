@@ -356,27 +356,32 @@ Why Adgent
 Analyze or act. Everything else makes you choose.
 The tools that understand your account cannot touch it. The ones that touch it do not understand it. You end up owning both and doing the joining yourself, every morning, in your head. Adgent was built as one thing — and the reason that is hard is the reason it is worth buying.
 Each row is buyable somewhere. The column is not.
-The four options on the table
-Every one of them is a reasonable purchase.
-This is not a page about bad products. Each category below does its job well, and most teams own two or three of them already. The question is what happens in the gap between them — because that gap is where the money leaks.
-Category Reporting & BI tools
-Good at: every platform in one place, joined to your store, rendered faster than any native dashboard.
-Stops at: a chart is a description of the past. Turning it into a decision is still your most expensive person&rsquo;s morning.
-The tell: you have the dashboard, and you still don&rsquo;t know what to do on Monday.
-Category The ad platform&rsquo;s own AI
-Good at: seeing the auction from the inside, in real time, at a resolution no third party gets.
-Stops at: it optimises toward its own pixel and is not neutral about the answer. It cannot see your margin, so it scales what converts cheaply and loses money.
-The tell: the dashboard is green and the P&L disagrees.
-Category Rule-based automation
-Good at: doing the boring thing at 3am, fast, cheap and completely predictable.
-Stops at: a rule fires on a threshold, not a reason — it cannot tell a fatiguing creative from a soft week, and it pauses the wrong thing at speed.
-The tell: a folder of rules, and no one willing to touch them.
-Category Another pair of human hands
-Good at: judgment, context and accountability. A good senior buyer is still the best thing that can happen to an account.
-Stops at: it does not scale and it costs the most. Reading every account every morning is exactly the work seniors stop doing first.
-The tell: the account nobody opened this week is the one you worry about.
-Notice the pattern: the two categories with judgment can't act at scale, and the two that act at scale have no judgment. That is the gap.
-Owning two or three and deciding later is itself a decision, and it has a price. It never arrives as an invoice — it arrives as the spend you would not have approved if someone had read it in time.
+How the gap opened
+Nobody decided to stop reading the accounts. It just stopped fitting in the morning.
+Once upon a time
+Performance teams bought media on three platforms that each graded their own homework.
+Every day
+Someone opened a dashboard and tried to read it before the standup.
+But one day
+Account counts per buyer outgrew the hours in a morning.
+Because of that
+Waste started hiding in the accounts nobody had read.
+Because of that
+Teams optimised against numbers that were already wrong.
+Because of that
+The fix arrived weeks after the money was gone.
+Until finally
+An analyst that reads every account overnight and hands you the verdict — and only touches the account when you say go.
+And ever since
+The morning starts with a decision instead of a dashboard.
+The same morning, twice
+Nothing here is a bad product. The gap is between them.
+Most teams already own two or three of these, and each one does its job. Draw the morning they produce together and the shape of the problem is visible before it is argued.
+08:40, today four tools, one unanswered question
+Four correct answers to four different questions. Nobody answers which account needs me today .
+08:40, with Adgent same four tools, one joined read
+Same inputs. One of them takes a position, and none of it moves without you.
+The two categories with judgment cannot act at scale. The two that act at scale have no judgment. That is the gap — and owning three of them and deciding later is itself a decision, priced not as an invoice but as the spend nobody read in time.
 The same four, row by row
 Where each one stops .
 The categories above, scored on the things a buyer actually has to have. Every row is available somewhere — the question is whether you can get them from one place, in an order that holds.
@@ -432,49 +437,34 @@ L0 Connectivity Reads your accounts
 The audit is the ceiling of the category. Memory, judgment and safe execution are the three layers above it — and they're where the work of the last year went.
 Why the order matters
 You cannot buy layer four without the three under it.
-This is not a feature list where you pick the rows you like. Each layer is load-bearing for the one above it, which is why a tool that starts at the top produces confident answers with nothing underneath them.
-Judgment needs memory
-A verdict is a position, and a position depends on what you already decided. Without memory, every session restarts from zero and the tool re-suggests the thing you rejected last month — which is how people stop reading the output.
-Memory needs correct data
-Remembering a wrong number is worse than not remembering. Attribution windows differ per platform, conversion events are named inconsistently, and a naive join across Meta and Google produces a comparison that looks clean and is not.
-Execution needs all of it
-Writing to a live ad account is easy to build and expensive to get wrong. A write is only safe when the system knows what the number means, what you already decided, and how to put it back.
-The uncomfortable version: most of the category is a very good layer two. That is a real product and it sells. It just is not a decision.
+Not a feature list you pick rows from. Each layer holds up the one above it — which is why a tool that starts at the top gives confident answers with nothing underneath them.
+Most of the category is a very good layer two. That is a real product and it sells — it just is not a decision.
 The trust layer, in detail
-Three locks, and a change has to pass all three .
-Layer five is the one people ask about first, so here it is in full. None of these is a setting you have to find and switch on.
-01
-Read-only until you say otherwise
-A connected account starts with no write access at all. Adgent analyses, ranks and proposes — and cannot touch the account until execution is explicitly turned on for it.
-02
-Nothing applies without approval
-Every proposed change is shown with its before-state, what it costs, and whether it can be undone — labelled before you approve, not discovered after. You approve from the same chat where you found it.
-03
-Reversible, on your approval
-Every change Adgent makes is written to a ledger with the state it replaced, and put back from the same chat. Platform-side changes are read and surfaced separately, so drift you did not cause still carries a date and an actor. A change you can undo is a change you can settle rather than argue about.
+Three gates. A change passes all three , or it does not happen.
+Layer five is the one people ask about first. None of it is a setting you have to find and switch on.
 And underneath all three: physical isolation
-Each company's analytical data lives in its own database file, not a shared table with a customer column in it. The separation is structural, so a query cannot reach across it even by mistake.
-Security in detail &rarr; What we do with your data &rarr; Inside the Change Ledger &rarr;
+Each company&rsquo;s analytical data lives in its own database file, not a shared table with a customer column in it. The separation is structural, so a query cannot reach across it even by mistake.
+Security in detail &rarr; Inside the Change Ledger &rarr;
 The honest version
-What we would tell you not to buy us for.
-A comparison page where the vendor wins every row is not a comparison, it is a brochure. Here is where the other options are the right call.
-If you need creative generated
-Adgent reads creative, it does not make it. Its analysis is deliberately scoped to what is already running — DNA, story beat by beat, and where viewers leave. If you want ads produced, that is a different tool and we will say so.
-If you want it to run unattended
-There is no mode where Adgent spends without a human approving. If what you want is hands-off autonomous buying, we are the wrong shape — and that is a design decision, not a missing feature.
-If one small account is all you run
-Below a certain spend, the daily read is a luxury and the platform's own tools plus an hour a week will get you most of the way. The value here scales with how many accounts go un-read.
-The three questions people actually ask
-The objections, answered before you have to raise them.
+Three reasons to not buy this.
+A comparison page where the vendor wins every row is a brochure. These are the cases where something else is the right call — said here rather than discovered on a call.
+Not for you if
+you need creative generated
+It reads creative — DNA, story, where viewers leave. It does not make it.
+Not for you if
+you want it to run unattended
+There is no mode where it spends without a human approving. That is a design decision, not a gap.
+Not for you if
+one small account is all you run
+Below a certain spend, the platform&rsquo;s own tools plus an hour a week get you most of the way. The value scales with how many accounts go un-read.
+Before you have to ask
+The three questions people actually ask .
 &ldquo;What stops it doing something stupid with my budget?&rdquo;
-Three things, in order: it starts read-only and cannot write until you turn execution on; nothing applies until you approve it, with the before-state and the cost shown; and every applied change is logged with what it replaced, undoable on your approval. It also refuses — an unreachable target gets pushed back on, with the account's own history as the reason, before any money moves.
-See the Trust Gate &rarr; See the Change Ledger &rarr;
+The three gates above, in order: read-only until you enable execution, nothing applies until you approve it with the before-state shown, and every applied change is logged with what it replaced. It also refuses outright — an unreachable target gets pushed back on, with the account&rsquo;s own history as the reason. The Trust Gate &rarr;
 &ldquo;How is this different from asking a general AI assistant?&rdquo;
-A general model with your data pasted in has no memory of your account, no reconciled history to reason over, and no way to act. The layers underneath are the difference: a year of history normalized into one comparable shape, memory of the calls you already made, and a write path that logs and reverses. Without those, you get fluent answers with nothing behind them.
-See the seven layers &rarr;
+A general model with your data pasted in has no memory of the account, no reconciled history to reason over, and no way to act. That is the dependency chain above: without the layers underneath, you get fluent answers with nothing behind them. The seven layers &rarr;
 &ldquo;We already have a dashboard. Why add another tool?&rdquo;
-You are not short on data — you are short on someone reading it in time. The dashboard tells you what happened; it does not tell you which of your accounts needs you this morning, or take a position on what to do about it. If your dashboard is already being read every day by someone senior, you may not need us. Most teams are honest that it isn't.
-See the daily verdict &rarr;
+You are not short on data — you are short on someone reading it in time. If your dashboard is already read every morning by someone senior, you may not need us. Most teams are honest that it is not. The daily verdict &rarr;
 Judge it against what you already own
 Give it one account for one week, beside the tools you already pay for.
 The argument on this page is only worth as much as it survives on your own account. Pick one, run the read next to your dashboard and your platform's recommendations for a week, and settle it on your own numbers rather than ours.

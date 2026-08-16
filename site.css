@@ -4806,3 +4806,191 @@ td .src-note::after,
    measure the rest of the section uses. */
 .hwb-locks + .stack-kicker,
 .hwb-iso + .stack-kicker { text-align: left; margin-left: 0; max-width: 68ch; }
+
+/* ============================================================
+   MIRRORED DIAGRAM — the same morning, drawn twice
+   The strongest technique in the deck corpus (micro1, SquadTrip):
+   one identical graphic, broken on the left and working on the
+   right, makes the product claim without a feature list. This
+   replaced four 90-word prose cards that restated, in text, the
+   comparison the hero SVG was already drawing.
+   ============================================================ */
+.mirror {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 22px;
+  align-items: stretch; margin-top: 34px;
+}
+.mirror-side {
+  min-width: 0; display: flex; flex-direction: column;
+  padding: 20px; border-radius: var(--r-lg, 16px);
+  border: 1px solid var(--border); background: var(--bg-elevated);
+}
+.mirror-after { border-color: color-mix(in srgb, var(--accent) 34%, var(--border)); }
+.mirror-h { display: flex; flex-direction: column; gap: 4px; margin-bottom: 4px; }
+.mirror-tag {
+  font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3);
+}
+.mirror-tag-us { color: var(--accent-text); }
+.mirror-sub { font-size: 13px; color: var(--text-2); }
+.mirror-fig { width: 100%; height: auto; display: block; margin: 12px 0 0; flex: 1; min-height: 0; }
+.mirror-note {
+  margin: 14px 0 0; padding-top: 12px; border-top: 1px solid var(--border);
+  font-size: 13px; line-height: 1.55; color: var(--text-2);
+}
+.mirror-note b { color: var(--text); font-weight: 650; }
+
+/* figure internals — neutral on the left, accent only where it earns it */
+.mr-tool rect { fill: var(--bg-2, var(--bg-hover)); stroke: var(--border-2); stroke-width: 1.1; }
+.mr-tool-in rect { fill: var(--bg-2, var(--bg-hover)); stroke: var(--border-2); stroke-width: 1.1; }
+.mr-t { font-family: var(--font-sans); font-size: 13px; font-weight: 650; fill: var(--text); }
+.mr-d { font-family: var(--font-mono); font-size: 11px; fill: var(--text-3); }
+.mr-s { font-family: var(--font-mono); font-size: 10.5px; fill: var(--text-3); }
+.mr-break { fill: none; stroke: var(--text-3); stroke-width: 1.6; stroke-linecap: round; opacity: 0.6; }
+.mr-break path:nth-child(-n+4) { stroke-dasharray: 4 5; }
+.mr-join { fill: none; stroke: var(--accent); stroke-width: 1.6; stroke-linecap: round; opacity: 0.75; }
+.mr-read { fill: var(--bg-2, var(--bg-hover)); stroke: var(--border-2); stroke-width: 1.1; }
+.mr-out { stroke-width: 1.4; }
+.mr-out-bad { fill: var(--bg-2, var(--bg-hover)); stroke: var(--border-2); stroke-dasharray: 6 5; }
+.mr-out-good { fill: var(--accent-soft); stroke: var(--accent); }
+.mr-gate { fill: none; stroke: var(--border-2); stroke-width: 1.2; stroke-dasharray: 5 5; }
+.mr-out-t { font-family: var(--font-sans); font-size: 15px; font-weight: 700; fill: var(--text); }
+.mr-out-t-acc { fill: var(--accent-text); }
+.mr-out-d { font-family: var(--font-mono); font-size: 11px; fill: var(--text-3); }
+
+@media (max-width: 900px) {
+  .mirror { grid-template-columns: 1fr; gap: 18px; }
+}
+
+/* ============================================================
+   STORY SPINE — eight panels, dark band
+   Adams' Story Spine, applied to Adgent in
+   marketing/reference/storytelling-and-canon.md:521-528. That copy
+   had been written and validated and never used anywhere. Eight
+   sentences, one figure each: prose becomes a sequence, and the
+   dark band gives the page the tension/release oscillation Duarte
+   argues for (this page had none — nine light sections in a row).
+   ============================================================ */
+.arc-head { max-width: 62ch; }
+.arc-head h2 {
+  font-size: clamp(26px, 3.2vw, 36px); font-weight: 800; letter-spacing: -0.032em;
+  line-height: 1.06; margin: 18px 0 0; text-wrap: balance;
+}
+.arc-head h2 em {
+  font-family: var(--font-editorial); font-style: italic; font-weight: 500; color: var(--accent);
+}
+.arc {
+  list-style: none; margin: 40px 0 0; padding: 0;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
+}
+.arc-i {
+  display: flex; flex-direction: column; gap: 8px;
+  padding: 16px; border-radius: var(--r-md, 12px);
+  border: 1px solid rgba(244,242,238,0.13);
+  background: rgba(244,242,238,0.035);
+}
+/* the two hinges of the story get the accent — the inciting incident
+   and the resolution. Everything else stays quiet on purpose. */
+.arc-turn { border-color: color-mix(in srgb, var(--accent) 42%, transparent); }
+.arc-end  { border-color: color-mix(in srgb, var(--accent) 42%, transparent);
+              background: color-mix(in srgb, var(--accent) 9%, transparent); }
+.arc-k {
+  font-family: var(--font-mono); font-size: 10.5px; font-weight: 700;
+  letter-spacing: 0.11em; text-transform: uppercase; color: var(--accent-text);
+}
+.arc-i p { margin: 0; font-size: 13.5px; line-height: 1.5; color: rgba(244,242,238,0.86); }
+.arc-fig { width: 100%; height: auto; display: block; margin-top: auto; padding-top: 10px; }
+
+/* figure vocabulary, dark-band variant of the sc-* system */
+.sp-box rect { fill: rgba(244,242,238,0.07); stroke: rgba(244,242,238,0.22); stroke-width: 1; }
+.sp-dark rect { fill: rgba(20,18,16,0.75); stroke: rgba(244,242,238,0.16); stroke-width: 1; }
+.sp-hi rect { fill: color-mix(in srgb, var(--accent) 26%, transparent); stroke: var(--accent); stroke-width: 1.1; }
+.sp-bar rect { fill: rgba(244,242,238,0.34); }
+.sp-line path { fill: none; stroke: rgba(244,242,238,0.3); stroke-width: 2; stroke-linecap: round; }
+.sp-line-lit path { stroke: var(--accent); }
+.sp-mark path { fill: none; stroke: var(--accent); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.sp-axis { fill: none; stroke: rgba(244,242,238,0.22); stroke-width: 1; }
+.sp-rise { fill: none; stroke: var(--accent); stroke-width: 2.2; stroke-linecap: round; }
+.sp-fall { fill: none; stroke: rgba(244,242,238,0.34); stroke-width: 2.2; stroke-linecap: round; }
+.sp-cap { fill: none; stroke: rgba(244,242,238,0.34); stroke-width: 1.2; stroke-dasharray: 4 4; }
+.sp-span { fill: none; stroke: rgba(244,242,238,0.3); stroke-width: 1.6; stroke-dasharray: 4 4; }
+.sp-dot circle { fill: var(--accent); }
+.sp-dot-late circle { fill: rgba(244,242,238,0.42); }
+.sp-t { font-family: var(--font-mono); font-size: 9px; fill: rgba(244,242,238,0.5); }
+.sp-t-r { text-anchor: end; }
+
+@media (max-width: 1080px) { .arc { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px)  { .arc { grid-template-columns: 1fr; } }
+
+/* ============================================================
+   DEPENDENCY CHAIN — the order, drawn
+   Three prose boxes argued a load-bearing chain in words while
+   the layer-stack graphic sat in the section directly above. One
+   left-to-right diagram with the failure mode hung off each link.
+   ============================================================ */
+.dep { margin-top: 30px; }
+.dep-fig { width: 100%; height: auto; display: block; overflow: visible; }
+.dep-b rect { fill: var(--bg-elevated); stroke: var(--border-2); stroke-width: 1.3; }
+.dep-b-acc rect { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 1.5; }
+.dep-t { font-family: var(--font-sans); font-size: 16px; font-weight: 700; fill: var(--text); }
+.dep-t-acc { fill: var(--accent-text); }
+.dep-d { font-family: var(--font-mono); font-size: 11px; fill: var(--text-3); }
+.dep-arrow path { fill: none; stroke: var(--accent); stroke-width: 1.8;
+  stroke-linecap: round; stroke-linejoin: round; }
+.dep-lbl { font-family: var(--font-mono); font-size: 11px; fill: var(--text-3); }
+.dep-fail path { fill: none; stroke: var(--text-3); stroke-width: 1.2;
+  stroke-dasharray: 3 4; opacity: 0.75; }
+.dep-f { font-family: var(--font-mono); font-size: 10.5px; fill: var(--text-3); text-anchor: middle; }
+.dep-f-b { text-anchor: middle; }
+
+/* ============================================================
+   THREE GATES — the sequence, drawn
+   The trust story is a sequence, and a sequence drawn as three
+   numbered prose cards is a list. One rail, three gates, and the
+   two points where a change is stopped labelled underneath.
+   ============================================================ */
+.gates { margin-top: 30px; }
+.gates-fig { width: 100%; height: auto; display: block; overflow: visible; }
+.gt-node circle { fill: var(--text-3); }
+.gt-node-acc circle { fill: var(--accent); }
+.gt-rail { fill: none; stroke: var(--border-2); stroke-width: 2; stroke-linecap: round; }
+.gt-rail-acc { stroke: var(--accent); }
+.gt-arrow { stroke: var(--border-2); stroke-linejoin: round; }
+.gt-gate rect { fill: var(--bg-elevated); stroke: var(--border-2); stroke-width: 1.3; }
+.gt-gate-acc rect { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 1.5; }
+.gt-n { font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.1em; fill: var(--text-3); }
+.gt-n-acc { fill: var(--accent-text); }
+.gt-t { font-family: var(--font-sans); font-size: 14px; font-weight: 700; fill: var(--text); }
+.gt-t-acc { fill: var(--accent-text); }
+.gt-d { font-family: var(--font-mono); font-size: 10.5px; fill: var(--text-3); }
+.gt-lbl { font-family: var(--font-mono); font-size: 10.5px; fill: var(--text-3); text-anchor: middle; }
+.gt-lbl-d { fill: var(--text-3); opacity: 0.75; }
+.gt-lbl-acc { fill: var(--accent-text); }
+.gt-drop path { fill: none; stroke: var(--text-3); stroke-width: 1.2; stroke-dasharray: 3 4; opacity: 0.7; }
+.gt-x { font-family: var(--font-mono); font-size: 10px; fill: var(--text-3); text-anchor: middle; }
+
+/* not-for-you — the disqualifying block, given the contrast it needs
+   to read as a deliberate statement rather than a caveat paragraph */
+.nfy { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 34px; }
+.nfy-i {
+  padding: 20px; border-radius: var(--r-md, 12px);
+  border: 1px solid rgba(244,242,238,0.14); background: rgba(244,242,238,0.04);
+}
+.nfy-k {
+  font-family: var(--font-mono); font-size: 10.5px; font-weight: 700;
+  letter-spacing: 0.11em; text-transform: uppercase; color: var(--accent-text);
+}
+.nfy-t {
+  font-size: 17px; font-weight: 700; letter-spacing: -0.02em;
+  color: #f4f2ee; margin-top: 10px; line-height: 1.25;
+}
+.nfy-t em { font-family: var(--font-editorial); font-style: italic; font-weight: 500; color: var(--accent); }
+.nfy-i p { margin: 10px 0 0; font-size: 13.5px; line-height: 1.55; color: rgba(244,242,238,0.72); }
+@media (max-width: 900px) { .nfy { grid-template-columns: 1fr; } }
+
+/* On one column the arc figures scale to full width and each panel becomes
+   half a screen tall — the sequence stops reading as a sequence. Cap them. */
+@media (max-width: 560px) {
+  .arc-fig { max-width: 220px; margin-left: 0; }
+  .arc-i { padding: 14px; }
+}
