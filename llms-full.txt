@@ -104,7 +104,7 @@ Described in chat · every field editable before you publish
 When CPA rises > 20% over 3 days , per campaign
 Also on budget changed · campaign paused — events, not just thresholds
 Quiet must hold 2 evals · 24h cooldown · recovers before it can fire again
-Then analyse and propose — never applies on its own
+Then analyze and propose — never applies on its own
 Preview it against your own history before you publish: how often it would have fired, on what.
 Monitoring agent Proposes · never applies
 Now show me how it's actually pacing
@@ -147,7 +147,7 @@ it seals
 Trust Gate · one real account, two refusals
 It said no. Twice. Before a dollar was spent.
 "This pixel can't teach a campaign yet"
-Thirty days: 65,042 custom events, 16,404 initiate-checkout — and 4 purchases. Meta's own docs put the floor at 50 events in 7 days [developers.meta.com]. Technically possible to build. Nothing there for the optimiser to learn from.
+Thirty days: 65,042 custom events, 16,404 initiate-checkout — and 4 purchases. Meta's own docs put the floor at 50 events in 7 days [developers.meta.com]. Technically possible to build. Nothing there for the optimizer to learn from.
 "Your target is unreachable — here's why"
 Asked for a ₺250 cost per conversion. The account's own history at the booking stage sits near ₺4,000 . At 250 the only reachable thing is a ₺13 micro-lead that clears the target and books nobody.
 Trust Gate
@@ -157,7 +157,7 @@ Creative intelligence
 It reads every creative like a strategist — not a tagger.
 Creative is the single biggest driver of a campaign's sales — 49% , more than targeting (11%) or reach (14%) [NCSolutions / Circana, 2023]. It is also the layer most tools only tag. Adgent reads every live ad the way a senior buyer would — its DNA, the story scene by scene, and exactly where viewers leave. No upload step: it reads what is already running.
 it reads
-Analysed · 0:14 video
+Analyzed · 0:14 video
 SPRING_LAUNCH_V3
 hook · 0:00–0:02
 offer on-screen · 0:09
@@ -233,11 +233,11 @@ URL: https://adgent.app/features
 
 id="main" tabindex="-1">
 Features
-Eight things a senior buyer does. Every morning.
+Nine things a senior buyer does. Every morning.
 Not a feature list — a job description.
 Each of these is a piece of work someone on your team is doing by hand right now,
 or not doing at all because there are more accounts than there are hours.
-Eight jobs, one loop, ending where you approve it.
+Nine jobs, one loop, ending where you approve it.
 01
 Daily verdict
 Every account read overnight — the position first, the evidence under it
@@ -274,10 +274,10 @@ See how it works
 05
 Change Ledger
 Every change logged with what it replaced — and undoable on your approval
-Every change Adgent makes is written to a ledger with the state it replaced, labelled reversible or not before you approve it, and put back on your approval. Platform-side changes are read from Meta and Google's own change feeds and surfaced in your Overview, so a drift you did not cause still has a date and an actor.
+Every change Adgent makes is written to a ledger with the state it replaced, labeled reversible or not before you approve it, and put back on your approval. Platform-side changes are read from Meta and Google's own change feeds and surfaced in your Overview, so a drift you did not cause still has a date and an actor.
 The ledger does a second job nobody asks of it: a change you can undo and redo is a change you can settle, instead of argue about.
 Before-state captured on every write, with actor and source attribution
-Reversible or not — labelled before you approve, not discovered after
+Reversible or not — labeled before you approve, not discovered after
 Adgent's own writes are reversible; platform-side changes are read and surfaced
 See how it works
 06
@@ -324,10 +324,10 @@ See it for agencies
 For in-house
 The second opinion a lean team never gets — and the agency's report, checked against your revenue.
 See it for in-house
-Underneath all eight
+Underneath all nine
 None of it works without the layers under it.
 A verdict needs memory, memory needs correct data, and execution needs all of it. That order is the product — and it is why the list above cannot be assembled from parts.
-Worth pricing what the next quarter of not deciding costs. Eight jobs, done by hand or not at all, for another ninety mornings: roughly ninety un-read accounts per account you own, every creative graded on two scalars, every platform-side setting change discovered whenever someone happens to look.
+Worth pricing what the next quarter of not deciding costs. Nine jobs, done by hand or not at all, for another ninety mornings: roughly ninety un-read accounts per account you own, every creative graded on two scalars, every platform-side setting change discovered whenever someone happens to look.
 None of it shows up as a line item. It shows up as the campaign you scaled in March and stopped in June.
 The seven layers
 From connectivity to safe execution — and the line where the category stops.
@@ -361,7 +361,7 @@ id="main" tabindex="-1">
 Why Adgent
 Analyze or act. Everything else makes you choose.
 The tools that understand your account cannot touch it. The ones that touch it do not understand it. You end up owning both and doing the joining yourself, every morning, in your head. Adgent was built as one thing — and the reason that is hard is the reason it is worth buying.
-Each row is buyable somewhere. The column is not.
+Some rows you can buy today. The column is what nobody assembles.
 How the gap opened
 Nobody decided to stop reading the accounts. It just stopped fitting in the morning.
 Once upon a time
@@ -373,7 +373,7 @@ Account counts per buyer outgrew the hours in a morning.
 Because of that
 Waste started hiding in the accounts nobody had read.
 Because of that
-Teams optimised against numbers that were already wrong.
+Teams optimized against numbers that were already wrong.
 Because of that
 The fix arrived weeks after the money was gone.
 Until finally
@@ -390,7 +390,7 @@ Same inputs. One of them takes a position, and none of it moves without you.
 The two categories with judgment cannot act at scale. The two that act at scale have no judgment. That is the gap — and owning three of them and deciding later is itself a decision, priced not as an invoice but as the spend nobody read in time.
 The same four, row by row
 Where each one stops .
-The categories above, scored on the things a buyer actually has to have. Every row is available somewhere — the question is whether you can get them from one place, in an order that holds.
+The categories above, scored on the things a buyer actually has to have. Execution and diagnostics you can buy today; the question is whether you can get the whole column from one place, in an order that holds.
 Capability
 Reporting tools
 Platform AIs
@@ -402,7 +402,7 @@ Deep config & measurement diagnostics ✓ — — ✓
 Chat-native verdicts + live reports — — — ✓
 Remembers your brand's rules — — — ✓
 One column checked all the way down. That column is the whole point.
-Each row on its own is buyable somewhere. The reason no column but ours is checked all the way down is that the top rows only work if the ones under them do — judgment needs memory, and memory needs a year of your history in one place. That order is the product.
+Some of these rows you can buy on their own. The reason the whole column is the hard part is that the top rows only work if the ones under them do — judgment needs memory, and memory needs a year of your history in one place. That order is the product.
 What the difference sounds like
 The argument above, in one real refusal .
 This is the moment the whole page is about. A tool without judgment builds what it is asked for. A tool with judgment does the division first and tells you the answer you did not want — from the account&rsquo;s own numbers, before the money moves.
@@ -410,17 +410,16 @@ Asked to build a campaign
 Set up a Meta sales campaign for the winter offer.
 Technically I can — the page and pixel are both connected. But over the last thirty days that pixel recorded 4 purchases , against 16,404 initiate-checkouts and 65,042 custom events. Meta&rsquo;s own documentation puts the learning floor at 50 events in 7 days . [developers.meta.com] Four a month is about 8% of it. The campaign would spend and learn nothing.
 So what would you do?
-Optimise to initiate-checkout, which clears the floor comfortably — knowing it carries no purchase value, so judge it on bookings rather than on the number Meta reports back. Or fix the purchase event first and launch in a fortnight. Either way I would not build it as asked.
+Optimize to initiate-checkout, which clears the floor comfortably — knowing it carries no purchase value, so judge it on bookings rather than on the number Meta reports back. Or fix the purchase event first and launch in a fortnight. Either way I would not build it as asked.
 Why it said no the account's own pixel
-Nothing here is a judgement call. It is a division anyone could do, and nothing else in the stack does it.
+Nothing here is a judgment call. It is a division anyone could do — and nothing in the account does it for you before the budget moves.
 A reporting tool would have shown all three numbers and left the arithmetic to you. The platform&rsquo;s own AI would have built the campaign. A rule has no threshold for &ldquo;this will not learn&rdquo;. That is the gap, and this is what closing it sounds like.
 How we're built
 Touching the platform is easy. Knowing what to do is hard.
 Seven layers sit between a connected ad account and a decision you'd stand behind. Most tools stop at the audit. Everything above it is the hard part.
-it stacks
 L6 · Operating surface The morning brief, the queue of what is worth acting on, chat, live dashboards, and every account scored so you know which to open first.
 A chat window wired to some data is not a product. The surface your team works in every day is.
-L5 · Safe execution Read-only until you say otherwise. Every write is logged with its before-state, labelled reversible or not before you approve, and undone on your approval.
+L5 · Safe execution Read-only until you say otherwise. Every write is logged with its before-state, labeled reversible or not before you approve, and undone on your approval.
 Pointing a model at a live ad account is the easy part and the dangerous part. A change you can undo is a change you can be wrong about cheaply.
 L4 · Judgment Root cause rather than symptom, compared fairly across platforms, with the decision stated and the money attached to it.
 Not "here is what moved" but "here is what to do, and here is what it is worth."
@@ -430,7 +429,7 @@ L2 · Audit What happened and where — anomalies against the account's own hist
 Everyone can get you the numbers. This layer still only tells you what happened.
 L1 · Data correctness A year of history, synced daily, attribution normalized and conversion events reconciled into one comparable shape across platforms.
 Skip this and you get answers delivered with total confidence and no basis — the most expensive kind of wrong.
-L0 · Connectivity Reads your accounts directly from the ad platforms, with analytics and store data alongside.
+L0 · Connectivity Reads your accounts directly from the ad platforms, with GA4 and Search Console alongside. Store reading is the next connection, not a live one.
 This only answers "can it reach the account" — and it is getting cheaper for everyone, which helps us, because it is not what we sell.
 L6 Operating surface Your daily surface
 L5 Safe execution The trust layer
@@ -496,7 +495,7 @@ URL: https://adgent.app/pricing
 id="main" tabindex="-1">
 Pricing
 Built around your accounts.
-Every plan covers Meta and Google Ads — and reads GA4 and Search Console for context, with Shopify next. Tell us what you're running and we'll put together the right fit.
+Every plan covers Meta and Google Ads — and reads GA4, Search Console and Merchant Center for context, with Shopify next. Tell us what you're running and we'll put together the right fit.
 Connected today
 Meta Ads connected
 Google Ads connected
@@ -507,7 +506,7 @@ Next
 Shopify next
 Salesforce & HubSpot next
 TikTok Ads later
-Reads are read-only. A connector is listed here only once it is running in the product — the ones marked next are being built, and we would rather show you the line than blur it.
+Reads are read-only. A connector is listed here only once it is running in the product — the ones marked next are being built, later is further out and uncommitted, and we would rather show you the line than blur it.
 Talk to sales
 What you get
 Both platforms, in every conversation we have.
@@ -582,7 +581,7 @@ The fix is a creative refresh, not a bid change. Bidding down here buys cheaper 
 The evidence sits underneath every line. You can disagree with it — but you are disagreeing with a position, not staring at a chart.
 In the morning brief
 What is the verdict on Northlight this morning?
-Prospecting CPA is up 34% week on week, and it is not seasonal. The top creative crossed frequency 3.4 on Tuesday and hold rate fell with it — that pairing is what makes it fatigue rather than an auction shift. This is Northlight&rsquo;s own read. I do not compare it against your other accounts — each one is analysed inside itself.
+Prospecting CPA is up 34% week on week, and it is not seasonal. The top creative crossed frequency 3.4 on Tuesday and hold rate fell with it — that pairing is what makes it fatigue rather than an auction shift. This is Northlight&rsquo;s own read. I do not compare it against your other accounts — each one is analyzed inside itself.
 Why not just bid down?
 Because the auction is not the problem. Bidding down here buys cheaper impressions of an ad people have stopped watching — you would pay less per view and lose the same money more slowly. The fix is a creative refresh , and I have costed it: roughly £2,400 of recoverable spend over the next fortnight.
 Northlight &#183; this morning one account
@@ -598,7 +597,7 @@ Against your real revenue
 Platform-reported conversions are the starting point, not the answer. The verdict reconciles them against what actually landed, so a campaign that looks efficient and loses money does not get promoted to the top as a success.
 One health score per account
 A book of twenty accounts, scannable in a minute .
-The hard part of running many accounts is not analysing one of them. It is knowing which one to analyse. Each account is read on its own and carries a single score with the reason attached; the workspace sorts those scores so triage takes a glance rather than twenty logins. It is an ordering of separate reads — the analysis itself never leaves the account it is in.
+The hard part of running many accounts is not analyzing one of them. It is knowing which one to analyze. Each account is read on its own and carries a single score with the reason attached; the workspace sorts those scores so triage takes a glance rather than twenty logins. It is an ordering of separate reads — the analysis itself never leaves the account it is in.
 Including the account you cannot afford to lose, on the week it looked fine
 Every team already puts someone on the accounts that are visibly struggling. The expensive one is the retainer that has been quiet for six weeks — no fire, no complaint, nothing to escalate — so it gets a glance instead of a read, and the leak runs until the renewal conversation. That account gets the same overnight read as the one on fire, and if the read finds nothing it says so in one line.
 How this works across a book of clients &rarr;
@@ -636,7 +635,7 @@ URL: https://adgent.app/ground-truth
 id="main" tabindex="-1">
 Ground truth
 The platform can't see the number that decides it.
-An ad platform optimises toward what its own pixel can measure. It never sees your cost of goods, your return rate, or what a customer is worth on the second order. So when it finds a campaign that converts cheaply and loses money on every order, it does the logical thing: it scales it. Nobody is asleep at the wheel — the dashboard is green, the target is met, and the report is correct on its own terms. That is the expensive part.
+An ad platform optimizes toward what its own pixel can measure. It never sees your cost of goods, your return rate, or what a customer is worth on the second order. So when it finds a campaign that converts cheaply and loses money on every order, it does the logical thing: it scales it. Nobody is asleep at the wheel — the dashboard is green, the target is met, and the report is correct on its own terms. That is the expensive part.
 Same campaign. Two verdicts. One is looking at profit.
 Platform lens
 What the pixel measures
@@ -663,10 +662,10 @@ This is worth being precise about, because it is the difference between a thing 
 It does not have the data
 Your cost of goods lives in your store or your ERP. Your return rate shows up weeks after the click. Your second-order value lives in a cohort nobody has sent to the ad platform, and mostly should not.
 It is not neutral about the answer
-An optimiser grading its own spend is being asked to mark its own homework. Even a perfectly honest one is measuring the objective it was given, and that objective is volume of a measurable event — not profit.
+An optimizer grading its own spend is being asked to mark its own homework. Even a perfectly honest one is measuring the objective it was given, and that objective is volume of a measurable event — not profit.
 The report is correct and the conclusion is wrong
 This is what makes it expensive. Nothing looks broken. There is no error state, no alert, no red number — just a well-run campaign steadily scaling something that loses money per order.
-Which is why waiting a quarter is not neutral. Nothing in the account will surface this on its own — the 3.2× campaign above keeps clearing its target, keeps earning budget, and keeps teaching the optimiser that discount-driven volume is what you want more of. Ninety days of that is not ninety days of no decision. It is ninety days of one decision, made by the system with the least visibility into your profit.
+Which is why waiting a quarter is not neutral. Nothing in the account will surface this on its own — the 3.2× campaign above keeps clearing its target, keeps earning budget, and keeps teaching the optimizer that discount-driven volume is what you want more of. Ninety days of that is not ninety days of no decision. It is ninety days of one decision, made by the system with the least visibility into your profit.
 What Adgent reads instead
 Reconciled against the numbers your business runs on.
 Adgent reads GA4 and Search Console alongside the ad platforms, so a report is checked against a source the platform does not control — and where the two disagree, the disagreement itself is the finding. Shopify reading is the next connection we are building.
@@ -685,7 +684,7 @@ Reads are read-only. A connector is listed here only once it is running in the p
 Store revenue, not platform-reported revenue
 Platform-attributed conversions and what your store recorded are two different numbers, and the gap between them is usually the whole argument. Both are shown, with the gap named.
 02
-Attribution normalised across platforms
+Attribution normalized across platforms
 Meta and Google count a conversion over different windows with different rules. Comparing them raw produces a clean-looking chart that is not a comparison. Adgent puts them into one comparable shape first.
 03
 The verdict follows the money
@@ -705,7 +704,7 @@ Free reconciliation check
 Find out how far your platform numbers are from your numbers.
 Give us read access and we'll put platform-reported revenue next to what your analytics recorded for the same window, and name the gap.
 Platform figures against GA4 and Search Console
-Attribution normalised across Meta and Google first
+Attribution normalized across Meta and Google first
 Where they disagree, the disagreement is the finding
 What comes back
 The size of the gap, campaign by campaign, and which of your winners change places once the numbers reconcile.
@@ -742,7 +741,7 @@ What it refuses
 Three kinds of no, and why each one saves money.
 01
 "This pixel can't teach a campaign yet"
-Below a certain volume of the right event, an optimiser has nothing to learn from. Launching anyway is technically possible and produces a campaign that spends while learning nothing. Adgent says so before the launch, not in the post-mortem.
+Below a certain volume of the right event, an optimizer has nothing to learn from. Launching anyway is technically possible and produces a campaign that spends while learning nothing. Adgent says so before the launch, not in the post-mortem.
 02
 "Your target is unreachable — here's why"
 Ask for a cost per conversion far below anything the account has ever achieved and something has to give. Usually what gives is the definition of the conversion: the target gets hit by a micro-event that converts nobody. The refusal shows the account's own history as the reason.
@@ -769,7 +768,7 @@ What sits between a connected account and a decision.
 Read more
 Ask it something it should refuse
 Try to make it tell you what you want to hear.
-Bring a target you suspect is unreachable, or a campaign you think is optimising toward nothing. The interesting outcome is the one where it pushes back.
+Bring a target you suspect is unreachable, or a campaign you think is optimizing toward nothing. The interesting outcome is the one where it pushes back.
 Refusals come with the account's own history attached
 Before the budget moves, not in the post-mortem
 You can still overrule it — knowingly
@@ -801,12 +800,12 @@ Most creative analytics stops at attributes: this ad has a person, a kitchen, a 
 Tagging
 Has: product close-up, female presenter, text overlay
 Format: 9:16 video, 14 seconds
-Hook rate 31%, hold rate 12%
+Hook rate 71%, hold rate 12%
 Two scalars and a list of nouns. Nothing here tells you which second to change.
 Reading it
 Retention holds through the demo and collapses at 0:07 — the second the price overlay lands, before the benefit is stated.
 The hook is doing its job. Losing viewers at seven seconds is not a thumbnail problem, and changing the opening frame would fix nothing.
-The fix is order, not content. The same three scenes, with the price after the payoff instead of before it.
+The fix is order, not content. The same four scenes, with the price after the payoff instead of before it.
 Same ad, same data. One of these is a decision you can hand to an editor.
 Creatives &#8250; SPRING_LAUNCH_V3
 Spend &#183; 28d &#163;41,280
@@ -898,7 +897,7 @@ You test the thing you were unsure about — which is usually the one worth test
 Reversing is a restore , not four people reconstructing Monday from memory.
 You can be wrong on purpose , cheaply, which is the only way anyone learns an account.
 The ledger does not make you safer. It makes you faster, because being wrong got cheap.
-This is the part that sounds like a compliance feature and is not. A team that can undo anything runs more changes, learns the account faster, and stops routing every ordinary decision through a call. The log is the by-product. The behaviour it unlocks is the point.
+This is the part that sounds like a compliance feature and is not. A team that can undo anything runs more changes, learns the account faster, and stops routing every ordinary decision through a call. The log is the by-product. The behavior it unlocks is the point.
 Why most undo buttons are not one
 A log tells you what happened. It cannot put anything back .
 Plenty of tools keep a history, and it reads convincingly right up to the moment you need it. The question is whether the replaced value was captured at the instant of the write — because if it was not, no amount of logging will reconstruct it afterwards.
@@ -915,7 +914,7 @@ What an undo sounds like
 It is not a button. It is a recommendation you can refuse .
 Reversing something is a decision, so it is treated as one. Adgent proposes the inverse change, tells you what it thinks the right call is, and says plainly when the answer depends on something only you know.
 Undoing something, six weeks on
-This ad was paused back in May and I do not think that was deliberate. Can you put it back?
+This ad was paused a while back and I do not think that was deliberate. Can you put it back?
 I can, and here is what I would weigh. It went ACTIVE &rarr; PAUSED on 10 August at 23:47, from chat, approved by you. Reactivating restores it exactly — the other four ads in the set are untouched. If the pause was accidental, this undoes it cleanly. If it was intentional, hold off on approving. I do not know which, and I would rather ask than guess.
 It was accidental. Put it back.
 Done — PAUSED &rarr; ACTIVE, logged as its own entry. Watch the next few days: if it keeps spending with no clicks, reactivating was the wrong call and it should go back to PAUSED. I can reverse this one too — the revert has a before-state of its own.
@@ -933,7 +932,7 @@ The order it happens in
 Read-only &rarr; approve &rarr; reversible .
 Three gates, and a change has to pass all of them. None of these is a setting you have to find and switch on.
 1 &middot; Read-only by default
-A newly connected account has no write access at all. Adgent analyses, ranks and proposes, and cannot touch anything until execution is explicitly enabled for that account.
+A newly connected account has no write access at all. Adgent analyzes, ranks and proposes, and cannot touch anything until execution is explicitly enabled for that account.
 2 &middot; Nothing applies unapproved
 Every proposed change arrives with its before-state, what it is expected to be worth, and whether it can be undone. You approve it from the same chat where you found the problem.
 3 &middot; Undo from the same chat
@@ -1124,9 +1123,9 @@ Built complete. Then held , until you approve it.
 Structure, budget, targeting, copy and the creative slots — drafted whole from what you described, prefilled from what this account has actually proven rather than from a template. What you get back is a specification you can read line by line, not a half-configured campaign waiting for twenty more clicks.
 Asking for a campaign, and hearing why not yet
 Set up a Meta sales campaign for the winter offer. ₺3,500 a week.
-I can build it, but check this first. The page and pixel are both connected, so nothing is technically blocking it. But over thirty days that pixel fired 4 purchases — against 16,404 initiate-checkouts and 65,042 custom events. Meta's own guidance puts the floor at 50 events in 7 days. [developers.meta.com] A sales campaign optimising on 4 purchases a month has nothing to learn from. It will spend the ₺3,500 and stay in learning.
+I can build it, but check this first. The page and pixel are both connected, so nothing is technically blocking it. But over thirty days that pixel fired 4 purchases — against 16,404 initiate-checkouts and 65,042 custom events. Meta's own guidance puts the floor at 50 events in 7 days. [developers.meta.com] A sales campaign optimizing on 4 purchases a month has nothing to learn from. It will spend the ₺3,500 and stay in learning.
 So what do I do?
-Two options, and I would take the first. Optimise to initiate-checkout instead — 16,404 events is well above the floor — knowing it carries no purchase value, so judge it on bookings, not on the number Meta reports back. Or fix the purchase event first and launch in a fortnight. Say which and I will draft it. It arrives paused either way.
+Two options, and I would take the first. Optimize to initiate-checkout instead — 16,404 events is well above the floor — knowing it carries no purchase value, so judge it on bookings, not on the number Meta reports back. Or fix the purchase event first and launch in a fortnight. Say which and I will draft it. It arrives paused either way.
 Campaign draft paused &#183; awaiting you
 Every choice carries the reason it was made, including the ones it declined.
 Prefilled from evidence, not from a template
@@ -1137,7 +1136,7 @@ It arrives paused
 Approval creates the campaign in a paused state. Turning it on is a second, separate decision — and like every other write, it lands in the ledger with the state it replaced.
 The part that makes it safe
 Building something is not the same as doing it.
-A drafted plan or campaign is an artifact, not an action. It sits there, fully specified, until you approve it — and when you do, it goes through the same gates as every other change: shown with its before-state, labelled reversible or not, and logged.
+A drafted plan or campaign is an artifact, not an action. It sits there, fully specified, until you approve it — and when you do, it goes through the same gates as every other change: shown with its before-state, labeled reversible or not, and logged.
 And it will tell you when what you asked for will not work
 Ask for a campaign built to a target the account has never reached, or a plan for a market with no history behind it, and you get pushback with the account's own numbers attached — before anything is launched. Building on request does not mean building whatever is requested.
 See the Trust Gate &rarr; See the Change Ledger &rarr;
@@ -1262,8 +1261,8 @@ Google retains a GCLID for 90 days [support.google.com, Google Ads Help]. Median
 90 days of memory. A 16-month cycle.
 The unit of conversion is wrong
 A form fill is one person out of ten, arriving two-thirds of the way through.
-6sense's 2025 buyer research — around 4,000 buyers, median deal size $300&ndash;400K — found first contact with a vendor happens at 61% of journey completion , roughly 26 weeks in, with an average buying group of 10.1 people [6sense, Nov 2025]. The ad platform treats that single form fill as the conversion, and optimises everything toward producing more of them.
-What the platform optimises toward
+6sense's 2025 buyer research — around 4,000 buyers, median deal size $300&ndash;400K — found first contact with a vendor happens at 61% of journey completion , roughly 26 weeks in, with an average buying group of 10.1 people [6sense, Nov 2025]. The ad platform treats that single form fill as the conversion, and optimizes everything toward producing more of them.
+What the platform optimizes toward
 Cost per form fill, falling
 Conversion volume, rising
 Every KPI tile green
@@ -1311,10 +1310,10 @@ It catches the spike
 Anomaly detection runs against the account's own history, and a sudden rise in conversions at a falling cost is treated as what it usually is — a signal to investigate, not a win to celebrate.
 02
 It refuses the valueless target
-The Trust Gate flags a campaign optimising toward an event that carries no value, and refuses a cost-per-conversion target the account's own history says is unreachable — before the budget moves, not in the post-mortem.
+The Trust Gate flags a campaign optimizing toward an event that carries no value, and refuses a cost-per-conversion target the account's own history says is unreachable — before the budget moves, not in the post-mortem.
 03
 It reconciles what it can reach
-GA4 and Search Console are read alongside the ad platforms, so on-site behaviour after the click is part of the verdict rather than a separate tab. Where the platform's number and the site's number disagree, the disagreement is the finding.
+GA4 and Search Console are read alongside the ad platforms, so on-site behavior after the click is part of the verdict rather than a separate tab. Where the platform's number and the site's number disagree, the disagreement is the finding.
 Coming next: the CRM side of the loop
 Salesforce and HubSpot reading is a later roadmap item; CRM exports through Drive or Sheets work today — the point of it is to judge a channel on pipeline that a human agreed to progress, rather than on form fills. We would rather tell you where that stands than imply it is already finished. And a note worth carrying into any vendor conversation: if someone claims to have closed click-to-closed-won end to end against a 90-day identifier and a 16-month payback, ask them which of the two numbers they changed.
 How ground truth works &rarr; See the Trust Gate &rarr;
@@ -1332,7 +1331,7 @@ The same read on every client you run — including the ones nobody opened this 
 How this works across a book of accounts
 Free lead-quality read
 Find out which of your cheap leads are the expensive ones .
-We will read the accounts for the failure that looks like success: conversion spikes at falling cost, campaigns optimising toward an event that carries no value.
+We will read the accounts for the failure that looks like success: conversion spikes at falling cost, campaigns optimizing toward an event that carries no value.
 Spikes treated as a signal, not a win
 Targets your own history rules out get flagged
 Native CRM reading — Salesforce and HubSpot — is a roadmap item; CRM exports come in through Drive or Sheets today
@@ -1364,7 +1363,7 @@ What the platform recorded
 Booking confirmed, revenue attributed on the day of click
 ROAS calculated and reported
 Budget scaled toward the campaign that produced it
-The number never gets corrected. A cancelled booking stays in the report permanently.
+The number never gets corrected. A canceled booking stays in the report permanently.
 What actually happened
 Cancellation is a channel property, not noise. OTA bookings cancel at 21.8% ; direct bookings at 10.6% [Cloudbeds, 2026].
 Two campaigns with identical reported ROAS can differ by more than 20 points of survival to arrival.
@@ -1381,7 +1380,7 @@ What changed in 2025
 The one mechanism that priced this risk was removed .
 Google discontinued commission-per-stay bidding for hotels on 20 February 2025 [Hospitality Net, Apr 2025]. Under that model the platform carried the cancellation risk — you paid on stays, not bookings. Removing it handed the risk back to advertisers wholesale, and nothing in the ad tooling replaced it.
 A documented case of what that looks like
-One account reported $139,500 in revenue at 6.98× ROAS . Underneath: fourteen cancelled bookings worth $21,000 stayed in the reports permanently, while forty-three real bookings were never tracked at all — total coverage of 68.4% [Stape, Jun 2026]. The reported figure was wrong in both directions at once, which is why it looked plausible.
+One account reported $139,500 in revenue at 6.98× ROAS . Underneath: fourteen canceled bookings worth $21,000 stayed in the reports permanently, while forty-three real bookings were never tracked at all — total coverage of 68.4% [Stape, Jun 2026]. The reported figure was wrong in both directions at once, which is why it looked plausible.
 The calendar problem
 Dashboards aggregate by click date. You decide by arrival date.
 "Last 30 days ROAS" answers a question no revenue manager asks. The same campaign is simultaneously right and wrong depending on which night the booking is for: on a compression night the spend is pure waste, because those rooms were selling anyway. On a need period thirty to sixty days out, it is the highest-value action in the account.
@@ -1400,13 +1399,13 @@ It reads every account daily, not monthly
 In a business where the reported number silently restates itself for months, the value of catching a drift in week one rather than at month-end is not marginal.
 02
 It reconciles against GA4 and Search Console
-On-site behaviour after the click, and the relationship between paid and organic — including the case where paid search is buying clicks that organic was already winning.
+On-site behavior after the click, and the relationship between paid and organic — including the case where paid search is buying clicks that organic was already winning.
 03
 It refuses targets your history says are unreachable
 The Trust Gate pushes back before budget moves, with the account's own numbers as the reason. In a seasonal business with compressed booking windows, a wrong target discovered in week four has already cost the season.
 Next
 The general mechanism behind the travel-specific problem.
-Every vertical on this site has its own version of the same gap: the platform optimises toward what its pixel can see, and the number that decides the business is somewhere else.
+Every vertical on this site has its own version of the same gap: the platform optimizes toward what its pixel can see, and the number that decides the business is somewhere else.
 Ground truth
 Judged against your real margin, not the number the pixel can see.
 Read more
@@ -1485,7 +1484,7 @@ It reads every account daily, geo by geo
 Breakdowns by geography are part of the read, not a report you have to go and build. A campaign performing on average while failing in half its cities is the normal case, not the edge case.
 02
 It pushes back on targets your history cannot support
-The Trust Gate refuses a target the account has never reached, and flags campaigns optimising toward an event that carries no real value — which is precisely what a conversion valued at gross volume is.
+The Trust Gate refuses a target the account has never reached, and flags campaigns optimizing toward an event that carries no real value — which is precisely what a conversion valued at gross volume is.
 03
 Every change is logged and reversible
 In an account where one conversion-value setting can misprice every bid, seeing exactly what changed, when and by whom — and putting it back on your approval — is not a compliance feature. It is how you find the setting.
@@ -1508,7 +1507,7 @@ Conversion value and target settings, read directly
 Geography broken out, because liquidity is local
 Take-rate reconciliation needs your warehouse — not yet
 What comes back
-What your accounts are actually optimising toward, what that means at your take rate, and which cities are being bought into with no supply to fill them.
+What your accounts are actually optimizing toward, what that means at your take rate, and which cities are being bought into with no supply to fill them.
 Name
 Work email
 Company
@@ -1532,12 +1531,12 @@ Not diminishing returns. Negative ones.
 The other half of the conversion
 Only 61% of callers reach a person.
 In local businesses the phone is not a secondary channel, it is the conversion. Across more than 60 million calls, 37% of phone leads convert — against 2&ndash;5% for a form [Invoca, Jun 2025].
-But well over a third of callers never reach anybody. No ad platform will ever report that, yet it sets the ceiling on everything the ad spend can achieve.
+But well over a third of callers never reach anybody. No ad platform reports that — it happens after the click leaves their view — yet it sets the ceiling on everything the ad spend can achieve.
 In healthcare it gets worse before it gets better
 59% of callers reach a person, and of those, only 43% of agents ask the caller to book [Invoca healthcare report, 2025]. Two filters, applied after every dollar of media spend, invisible to the account that spent it.
 Inside one clinic&rsquo;s account
 Cost per patient here looks fine. Anything I should know?
-The account average is hiding two campaigns. The service-based campaign is at roughly double this account&rsquo;s cost per booked appointment, and its radius runs four miles past the catchment — into territory your other branch is targeting too, going by the geography in this account. Separately, calls under forty seconds are counting as conversions here, so the bidding is learning to buy wrong numbers. I am reading this account only. I cannot open your other branch&rsquo;s account or compare the two.
+The account average is hiding two campaigns. The service-based campaign is at roughly double this account&rsquo;s cost per booked appointment, and its radius runs four miles past the catchment — into territory your other branch is targeting too, going by the geography in this account. Separately, any call over thirty seconds is counting as a conversion here, so the bidding is learning to buy long calls rather than booked appointments — wrong numbers and reschedules clear that bar. I am reading this account only. I cannot open your other branch&rsquo;s account or compare the two.
 What would you do first?
 Tighten the radius before you touch the budget — the overlap is costing you more than the spend level is. Show rate needs your booking system, and comparing two locations needs cross-account reading. Both roadmap, not shipped. What I can see today is this account&rsquo;s targeting overlap, its geographic bleed and its call-quality signal.
 Per-location read 12 separate reads
@@ -1618,11 +1617,11 @@ On iOS there is no user-level truth by design. Attribution returns a number betw
 A 6-bit answer, with noise on purpose
 The number everyone quotes is the wrong one
 Almost 70% of prompted users say yes. Only 8% of apps ever ask.
-The widely-repeated "opt-in is around 25%" figure conflates two different denominators. The defensible version is starker: when users are actually asked, most agree — but almost nobody asks [Kochava, Jun 2026]. Meanwhile only 11% of advertisers have fully implemented and are actively optimising SKAdNetwork, and roughly a third have not implemented it at all [Kochava Foundry via Adikteev, Jul 2026]. . The measurement problem here is as much an adoption problem as a technical one.
+The widely-repeated "opt-in is around 25%" figure conflates two different denominators. The defensible version is starker: when users are actually asked, most agree — but almost nobody asks [Kochava, Jun 2026]. Meanwhile only 11% of advertisers have fully implemented and are actively optimizing SKAdNetwork, and roughly a third have not implemented it at all [Kochava Foundry via Adikteev, Jul 2026]. . The measurement problem here is as much an adoption problem as a technical one.
 A blended early return is arithmetically meaningless
 Three revenue types mature at incompatible rates: ad monetisation reaches about 90% of its day-60 value by day 7, in-app purchases roughly 60% , subscriptions 52% [AppsFlyer, 2026]. Averaging them into one day-7 figure produces a number that describes no campaign.
 Nulls are not zeros
-Below the crowd-anonymity threshold you get nothing back, not a zero. Treating those as zeros systematically defames new and small campaigns — the exact ones you are trying to evaluate.
+Below the crowd-anonymity threshold you get nothing back, not a zero. Treating those as zeros systematically understates new and small campaigns — the exact ones you are trying to evaluate.
 The cascade compounds it
 One measured chain: the ad platform reports 120, the attribution provider 80, the studio's own backend 65 — a gap of roughly 46% from end to end [Airbridge, Mar 2026]. Each layer is honest. The disagreement is structural.
 On creative, where we are strongest
@@ -1730,7 +1729,7 @@ your margin" is what a client renews for. You can only say it if something is re
 their real revenue , not just the platform's.
 Built for a book of clients
 Every client account gets the read — and your team gets the answer in the room .
-Worth being precise about how the sorting works: each account is analysed on
+Worth being precise about how the sorting works: each account is analyzed on
 its own, and the workspace lists the results side by side — a card per client with its own
 health score, its own open actions and the date it was last read, sorted so the urgent ones
 come first. That is a triage list built from separate reads, not one analysis that compared
@@ -1738,7 +1737,7 @@ your clients to each other. Nothing is benchmarked against another client's acco
 One tool, every account
 Meta and Google for every client you connect — each one read on its own, each with its
 own morning brief. The same read on the fortieth account as on the first, and one client's
-spike never colours another client's numbers.
+spike never colors another client's numbers.
 Junior teams, senior output
 Your juniors run at senior-level judgment. The analyst catches what checklists miss and explains
 the why — so they learn as they go instead of escalating.
@@ -1778,16 +1777,16 @@ URL: https://adgent.app/for-in-house
 id="main" tabindex="-1">
 For in-house growth teams
 The senior nobody hired you .
-On your account, every morning. Adgent reads your Meta,
-Google as one brain overnight, checks what the platforms claim against what your store
-actually banked, and prepares the fix for your approval.
+On your account, every morning. Adgent reads your Meta
+and Google as one brain overnight, checks what the platforms claim against what your
+analytics actually recorded, and prepares the fix for your approval.
 Running client accounts instead? See Adgent for agencies →
 ROAS 3.2× ▲
 Meta · Google · GA4 synced
 Margin −8% ▼
 Adgent · your second opinion
 I want to scale the winner to $5k/day. Sanity-check me.
-I'd push back. Platform says 3.2× , but GA4 says those orders carry a 41% discount and 8% repeat rate — contribution margin is negative at that ROAS. Scaling it spends more to lose more. The prospecting set at 2.4× is the one that's actually profitable.
+I'd push back. Platform says 3.2× , but GA4 says those orders carry a 41% discount and an 8% return rate — contribution margin is negative at that ROAS. Read from GA4 today; direct store reading is the next connection. Scaling it spends more to lose more. The prospecting set at 2.4× is the one that's actually profitable.
 Scale the profitable one instead
 Nothing changes until you approve
 Show me margin, not just ROAS
@@ -1822,9 +1821,9 @@ The reading, done overnight. The deciding , still yours.
 A brief instead of a morning
 You open one thing: what's broken, what it's costing you, what to do about it — ranked. Not
 eleven tabs and a spreadsheet you rebuild every Monday.
-Reconciled to your store
-Platform-reported numbers checked against what actually landed, so you can tell the difference
-between revenue that grew and profit that didn't.
+Reconciled against your analytics
+Platform-reported numbers checked against what actually landed in GA4, so you can tell the difference
+between revenue that grew and profit that didn't. Direct store reading is the next connection.
 It remembers your rules
 Say it once — the margin floor, the campaign you never touch, the product you're clearing.
 It carries that into every judgment after, without a setup screen.
@@ -1926,7 +1925,7 @@ Read the article
 Latest
 Attribution &middot; 9 min
 Your Google Ads CPA is about to rise
-From Aug 17, budget-limited campaigns spend up to your target. If you've been beating it, your CPA rises. Act first.
+Live from 17 August: budget-limited campaigns spend up to your target. If you've been beating it, your CPA rises — and that is not a campaign breaking.
 Read
 Playbook &middot; 7 min
 How to choose an AI media buying tool
@@ -1938,7 +1937,7 @@ Yes — and better than a human on the tedious checks. What it catches, and the 
 Read
 Playbook &middot; 8 min
 Why PMax isn't spending your budget
-Most "PMax won't spend" cases aren't a budget problem - ~60% are bid/Quality Score constraints. A ranked diagnostic.
+Most "PMax won't spend" cases aren't a budget problem — far more often a bid target or Quality Score is choking delivery. A ranked diagnostic.
 Read
 Playbook &middot; 9 min
 Google Ads account structure in 2026
@@ -2037,7 +2036,7 @@ id="main" tabindex="-1">
 Legal
 Security
 Last updated 28 June 2026
-Adgent connects to your advertising and analytics accounts, so protecting that access is core to the product, not an afterthought. This page explains the measures takes to keep your data and your connected accounts safe. For how we collect and use data, see our Privacy Policy ; for what data we access and why, see Data Use .
+Adgent connects to your advertising and analytics accounts, so protecting that access is core to the product, not an afterthought. This page explains the measures Adgent takes to keep your data and your connected accounts safe. For how we collect and use data, see our Privacy Policy ; for what data we access and why, see Data Use .
 Contents
 Our approach
 Encryption
@@ -2082,7 +2081,7 @@ Found a security issue? We want to hear from you. Email osman@adgent.app with th
 12 Compliance
 We build Adgent to align with applicable data-protection laws, including the GDPR and CCPA, and with the developer and data-protection requirements of the platforms we integrate with, including Meta and Google. As we grow, we continue to mature our security program and pursue recognized certifications and assessments.
 Contact us
-Security questions or reports? Email osman@adgent.app . Adgent.
+Security questions or reports? Email osman@adgent.app . Adgent is operated by Osman Tıkna, a sole proprietorship established in Türkiye.
 
 ---
 
@@ -2131,7 +2130,7 @@ Our use of information from Google APIs (Google Ads, Google Analytics 4, and Sea
 Meta
 Data accessed via Meta's APIs is processed only as described here and in our Privacy Policy, and in line with applicable Meta terms and developer policies. You can request deletion or revoke access at any time.
 Contact us
-Questions about how we use your data? Email osman@adgent.app . Adgent. Read the full Privacy Policy .
+Questions about how we use your data? Email osman@adgent.app . Adgent is operated by Osman Tıkna, a sole proprietorship established in Türkiye. Read the full Privacy Policy .
 
 ---
 
@@ -2226,7 +2225,7 @@ Data accessed through Meta's APIs is processed in accordance with this policy an
 14 Changes to this policy
 We may update this policy from time to time. When we do, we will revise the "Last updated" date above and, for material changes, provide additional notice. If a change affects how we use data accessed through platform APIs, we will obtain your consent before applying the change to that data. Your continued use of Adgent after an update means you accept the revised policy.
 Contact us
-Questions about this policy or your data? Email osman@adgent.app . Adgent.
+Questions about this policy or your data? Email osman@adgent.app . Adgent is operated by Osman Tıkna, a sole proprietorship established in Türkiye — the data controller.
 
 ---
 
@@ -2278,9 +2277,9 @@ Use the service to build a competing product, or to transmit malware or unlawful
 07 Your data & privacy
 Our collection and use of information is described in our Privacy Policy , which is incorporated into these Terms. You retain ownership of your data and the data in your connected accounts. You grant us a limited license to access, process, and store that data solely to provide and improve the service for you, consistent with the Privacy Policy.
 08 Plans & billing
-Some features require a paid plan. Where you purchase a plan, you agree to the fees, billing cycle, and terms presented at checkout. Unless stated otherwise, paid plans are billed in advance, monthly plans may be cancelled at any time and take effect at the end of the current billing period, and fees are non-refundable except where required by law. We may change pricing on prospective notice.
+Some features require a paid plan. Where you purchase a plan, you agree to the fees, billing cycle, and terms presented at checkout. Unless stated otherwise, paid plans are billed in advance, monthly plans may be canceled at any time and take effect at the end of the current billing period, and fees are non-refundable except where required by law. We may change pricing on prospective notice.
 09 Intellectual property
-Adgent, including the service, software, models, and all related content and trademarks (other than your data and third-party marks), is owned by and its licensors and is protected by intellectual-property laws. We grant you a limited, non-exclusive, non-transferable, revocable right to use the service in accordance with these Terms. We welcome feedback and may use it without restriction or obligation to you.
+Adgent, including the service, software, models, and all related content and trademarks (other than your data and third-party marks), is owned by Adgent and its licensors and is protected by intellectual-property laws. We grant you a limited, non-exclusive, non-transferable, revocable right to use the service in accordance with these Terms. We welcome feedback and may use it without restriction or obligation to you.
 10 Third-party platforms
 Adgent integrates with third-party platforms including Meta, Google Ads, Google Analytics 4, Google Search Console and Google Merchant Center. We are not affiliated with, endorsed by, or sponsored by these companies, and their names and logos are the property of their respective owners. Your use of each platform is governed by that platform's own terms and policies, and we are not responsible for the platforms, their availability, or changes they make to their APIs that may affect the service.
 11 AI output & no guarantees
@@ -2288,9 +2287,9 @@ Adgent uses AI to analyze data and generate briefs, answers, recommendations, an
 12 Disclaimers
 To the fullest extent permitted by law, the service is provided "as is" and "as available" without warranties of any kind, whether express, implied, or statutory, including warranties of merchantability, fitness for a particular purpose, title, non-infringement, and any warranties arising from course of dealing or usage. We do not warrant that the service will be uninterrupted, error-free, or secure.
 13 Limitation of liability
-To the fullest extent permitted by law, and its officers, employees, and suppliers will not be liable for any indirect, incidental, special, consequential, or punitive damages, or for any loss of profits, revenue, data, goodwill, or advertising spend, arising out of or relating to your use of the service. Our total liability for any claim relating to the service will not exceed the greater of the amounts you paid us for the service in the twelve months before the claim or one hundred U.S. dollars (USD 100). Some jurisdictions do not allow certain limitations, so some of these may not apply to you.
+To the fullest extent permitted by law, Adgent and its officers, employees, and suppliers will not be liable for any indirect, incidental, special, consequential, or punitive damages, or for any loss of profits, revenue, data, goodwill, or advertising spend, arising out of or relating to your use of the service. Our total liability for any claim relating to the service will not exceed the greater of the amounts you paid us for the service in the twelve months before the claim or one hundred U.S. dollars (USD 100). Some jurisdictions do not allow certain limitations, so some of these may not apply to you.
 14 Indemnification
-You agree to indemnify and hold harmless from claims, damages, liabilities, and expenses (including reasonable legal fees) arising out of your use of the service, your data or connected accounts, your violation of these Terms, or your violation of any law or the rights of a third party, including any connected platform's terms.
+You agree to indemnify and hold Adgent harmless from claims, damages, liabilities, and expenses (including reasonable legal fees) arising out of your use of the service, your data or connected accounts, your violation of these Terms, or your violation of any law or the rights of a third party, including any connected platform's terms.
 15 Termination
 You may stop using Adgent and disconnect your platforms at any time. We may suspend or terminate your access if you violate these Terms, if required for security or legal reasons, or if a connected platform requires it. On termination, your right to use the service ends; we will handle your data as described in the Privacy Policy . Sections that by their nature should survive (including intellectual property, disclaimers, limitation of liability, and indemnification) will survive termination.
 16 Changes to these terms
@@ -2298,7 +2297,7 @@ We may update these Terms from time to time. We will revise the "Last updated" d
 17 Governing law
 These Terms are governed by the laws of the Republic of Türkiye , without regard to conflict-of-laws rules, and the courts and enforcement offices of Istanbul will have exclusive jurisdiction over disputes, except where applicable law gives you the right to bring a claim in your local courts. Nothing in these Terms limits any mandatory consumer-protection rights you may have.
 Contact us
-Questions about these Terms? Email osman@adgent.app . Adgent.
+Questions about these Terms? Email osman@adgent.app . Adgent is operated by Osman Tıkna, a sole proprietorship established in Türkiye.
 
 ---
 
@@ -2322,13 +2321,13 @@ And it's not just a coverage problem, it's a consistency problem. Two juniors lo
 You don't need a senior on every account. You need every account read like a senior would read it.
 That reframing is the whole point. The scarce thing was never the click or the report — it was the judgment : knowing which number matters today, why it moved, and whether the obvious fix is the right one. If you can automate that read and apply it to each client to the same standard, the staffing ratio stops being a ceiling.
 One tool, every account
-An AI media buyer built for agencies reads every client you connect overnight — Meta and Google — and treats each account as its own world. Same engine, same standard, but each client gets its own baselines, its own brief, and its own approval queue. The isolation is the point, not a caveat: one client's spike never colours another client's read, because no analysis ever sees two accounts at the same time.
+An AI media buyer built for agencies reads every client you connect overnight — Meta and Google — and treats each account as its own world. Same engine, same standard, but each client gets its own baselines, its own brief, and its own approval queue. The isolation is the point, not a caveat: one client's spike never colors another client's read, because no analysis ever sees two accounts at the same time.
 In the morning you don't open twelve dashboards. You get twelve briefs, each one verdict-first — what changed on that account, why, and what to do about it. Your workspace shows them as a card per client, each carrying the health score and open-action count from its own read, sorted so the accounts that need you sit at the top. The ranking is a sort over separate results, not a comparison between clients. The junior running six accounts wakes up already knowing which two to open first.
 Each account, its own brief. Baselines and anomalies are computed per client, so a verdict on one account is never diluted by the average of the book — and never benchmarked against another client's numbers either.
 Cross-channel by default. Meta and Google read together per client, plus GA4, Search Console and Merchant Center for context — the reconciliation your team does by hand, done overnight.
 One queue per client. Each client's prepared fixes sit in that client's own approval queue, and the workspace tells you which queues have something urgent waiting — so you know where to go without opening every tab.
 Junior teams, senior output
-Here's what actually changes on the floor. A junior buyer's weakness isn't effort — it's pattern library. They haven't seen a thousand accounts, so they don't yet recognise the placement drift hiding inside a healthy blended ROAS, or the day-one number that's still inside the attribution window and shouldn't be trusted. A senior recognises those in a glance.
+Here's what actually changes on the floor. A junior buyer's weakness isn't effort — it's pattern library. They haven't seen a thousand accounts, so they don't yet recognize the placement drift hiding inside a healthy blended ROAS, or the day-one number that's still inside the attribution window and shouldn't be trusted. A senior recognises those in a glance.
 An AI media buyer carries that pattern library into every account. When it flags what a Google Ads audit would surface — a Performance Max campaign eating brand search, a CBO budget starving the one ad set that works, a CPA that looks fine until you split by placement — the junior isn't guessing. They're reviewing a senior-quality read and making the call. That's how a team of juniors ships senior output: the judgment is supplied, the human still owns the decision.
 And it compounds. Juniors who spend six months reviewing verdict-first briefs learn the patterns faster than juniors who spend six months pulling numbers into spreadsheets. Every brief is a worked example — cause, evidence, recommended fix — so the training that used to depend on a senior having a spare hour now happens on every account, every night. The tool doesn't just cover for the gap — it closes it.
 It also standardises what "good" looks like. Because the same engine reads every account to the same standard, a client on a junior's book gets the same quality of read as a client on the senior's book. The agency's judgment stops being a property of whoever happens to be assigned and becomes a property of the agency itself — which is exactly what you want when you're trying to grow headcount without diluting the work.
@@ -2356,7 +2355,7 @@ Put it together and the agency math changes. You stop pricing on how many senior
 That's the bar we build Adgent to: one senior analyst's judgment applied to each client account across Meta and Google, honest about what it can and can't measure — including that it reads one account at a time and does not compare your clients to each other — executing only on your team's word. If you want to see what it would say about a live client account, request a demo — one real finding on your own account, before you change anything.
 Frequently asked
 What's the best AI tool for a media buying agency?
-The best AI tool for an agency reads each client account across Meta and Google as its own world, gives each one a verdict-first nightly brief, and stays read-only by default so every change is approval-gated. For an agency, the differentiator isn't cleverness on one account — it's the same senior-level judgment applied to the fortieth client as to the first. Note what that does and doesn't mean: the reads are per account, so a tool like this ranks your clients by the scores it computed separately, rather than analysing them against one another.
+The best AI tool for an agency reads each client account across Meta and Google as its own world, gives each one a verdict-first nightly brief, and stays read-only by default so every change is approval-gated. For an agency, the differentiator isn't cleverness on one account — it's the same senior-level judgment applied to the fortieth client as to the first. Note what that does and doesn't mean: the reads are per account, so a tool like this ranks your clients by the scores it computed separately, rather than analyzing them against one another.
 Can AI manage multiple client accounts?
 Yes, with one distinction worth understanding. A good AI media buyer treats each client as its own account with its own baselines, its own brief and its own approval queue — no cross-contamination between clients, because each analysis reads one account only. It reads every client you connect overnight and lists them by urgency, so a small team can cover more clients without dropping the ones that are fine. What it does not do is reason across accounts: it will not tell you what your clients have in common or benchmark one against another.
 Is it safe to use AI on client ad accounts?
@@ -2371,7 +2370,7 @@ Keep reading
 Product What is an AI media buyer?
 Playbook How to audit a Google Ads account
 Who wrote this
-Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyses creative; it doesn't make it.
+Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyzes creative; it doesn't make it.
 All articles
 Request demo
 
@@ -2444,7 +2443,7 @@ Keep reading
 Product What is an AI media buyer?
 Playbook How to audit a Google Ads account
 Who wrote this
-Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyses creative; it doesn't make it.
+Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyzes creative; it doesn't make it.
 All articles
 Request demo
 
@@ -2511,7 +2510,7 @@ Playbook How to audit a Google Ads account
 Product What is an AI media buyer?
 Attribution Placement drift: the leak in your average
 Who wrote this
-Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyses creative; it doesn't make it.
+Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyzes creative; it doesn't make it.
 All articles
 Request demo
 
@@ -2547,11 +2546,11 @@ Untrustworthy numbers. Yesterday's ROAS is still revising inside its attribution
 The fix on live spend. Finding the leak and committing the change are two different acts. An audit should surface and propose; a human should approve anything that touches real budget.
 None of this makes AI a weak auditor. It makes it a partial one — the right partial, if you point it at detection and keep the human on interpretation.
 "Is the pixel installed" is not "is the pixel useful"
-One tracking check deserves separating out, because most audits stop one question short of it. Confirming a pixel is installed and firing is a green tick. Whether it produces a signal an optimiser can actually learn from is a different question, and the answer can be no while every tick stays green.
-A real account we read shows the gap. Thirty days of pixel data looked busy: 65,042 custom events, 16,404 initiate-checkout events, 515 add-to-cart, 216 leads. Installed, firing, plenty of volume. Then the row that matters — 4 purchases. Meta's optimiser needs roughly 50 conversions a week to get out of the learning phase. Four in a month isn't a thin signal; it's below the floor where a conversion campaign can learn anything at all.
+One tracking check deserves separating out, because most audits stop one question short of it. Confirming a pixel is installed and firing is a green tick. Whether it produces a signal an optimizer can actually learn from is a different question, and the answer can be no while every tick stays green.
+A real account we read shows the gap. Thirty days of pixel data looked busy: 65,042 custom events, 16,404 initiate-checkout events, 515 add-to-cart, 216 leads. Installed, firing, plenty of volume. Then the row that matters — 4 purchases. Meta's optimizer needs roughly 50 conversions a week to get out of the learning phase. Four in a month isn't a thin signal; it's below the floor where a conversion campaign can learn anything at all.
 The distinction
-Installed and firing is a tracking check. Whether the event that pays fires often enough to train on is a signal-quality check. An audit that only does the first one hands you a green tick over an account that cannot optimise.
-The useful finding wasn't "your pixel is broken" — it wasn't. It was that the setup is technically possible while the learning signal isn't there yet, which points at fixing the purchase event before building anything that optimises toward it. That check costs nothing to run before spend and is expensive to discover after. Worth asking of any audit, human or automated: does it read the conversion counts against what the platform needs to learn, or does it stop at "firing"?
+Installed and firing is a tracking check. Whether the event that pays fires often enough to train on is a signal-quality check. An audit that only does the first one hands you a green tick over an account that cannot optimize.
+The useful finding wasn't "your pixel is broken" — it wasn't. It was that the setup is technically possible while the learning signal isn't there yet, which points at fixing the purchase event before building anything that optimizes toward it. That check costs nothing to run before spend and is expensive to discover after. Worth asking of any audit, human or automated: does it read the conversion counts against what the platform needs to learn, or does it stop at "firing"?
 Catches vs. misses, side by side
 Audit task AI catches it Human still owns it
 Wasted search terms & placements ✓ n/a
@@ -2569,7 +2568,7 @@ Two design choices carry the trust. First, it's read-only by default : the audit
 So — is there an AI that audits ad accounts? Yes, and the good ones are frank about the line: they catch the leaks a human would miss on the fortieth ad set, and they hand the judgment calls back to you. If you want to see what one finds in a real account, request a demo — one real finding on your own account, before you change anything. It'll read every account as one and rank what it finds. You keep the call.
 Frequently asked
 Is there an AI that audits ad accounts?
-Yes. There are AI tools that audit ad accounts by reading Meta and Google through their APIs, checking the same signals a senior buyer would — wasted spend, placement leakage, tracking gaps, ROAS drift — and ranking findings by recoverable spend. The strongest ones read Meta and Google as a single account and pull context from GA4 and Search Console. Audit several accounts and each is read separately — the tool lists them by urgency rather than analysing them against each other. They should stay read-only and propose fixes for approval rather than changing accounts on their own.
+Yes. There are AI tools that audit ad accounts by reading Meta and Google through their APIs, checking the same signals a senior buyer would — wasted spend, placement leakage, tracking gaps, ROAS drift — and ranking findings by recoverable spend. The strongest ones read Meta and Google as a single account and pull context from GA4 and Search Console. Audit several accounts and each is read separately — the tool lists them by urgency rather than analyzing them against each other. They should stay read-only and propose fixes for approval rather than changing accounts on their own.
 Can AI audit a Google Ads or Meta Ads account?
 Yes. AI reads the account through the platform API and runs the checks a manual audit would — conversion tracking, search-term and placement waste, budget pacing, bid strategy — in minutes instead of hours, and keeps them current instead of running once. Where it wins over a human is coverage and consistency: it reads every line, never gets bored on the fortieth ad set, and re-runs continuously.
 What can AI catch in an ad account audit?
@@ -2586,7 +2585,7 @@ Keep reading
 Playbook How to audit a Google Ads account
 Product Can AI run your ad account?
 Who wrote this
-Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyses creative; it doesn't make it.
+Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyzes creative; it doesn't make it.
 All articles
 Request demo
 
@@ -2624,10 +2623,10 @@ Mis-configured conversions. A broken pixel or a double-counted event can make RO
 Credit that isn't performance. A "great" placement can be view-through credit in disguise, taking the bow for conversions it didn't cause.
 A good AI can flag all of these — and the good ones do. But the final judgment on whether a number is real enough to bet spend on is where a human still wins, because catching a lie requires suspicion the metric itself can't provide. For more on one of these traps, see why day-one data lies .
 What that looks like in practice
-An example from a real account we read. Before writing a single campaign, the analyst checked whether the account could actually teach one. Over thirty days the pixel had fired plenty: 65,042 custom events, 16,404 initiate-checkout events, 515 add-to-cart — and 4 purchases . Meta's optimiser needs roughly 50 conversions a week to leave the learning phase. Four a month isn't a slow start; it's below the floor where the algorithm can learn anything at all.
+An example from a real account we read. Before writing a single campaign, the analyst checked whether the account could actually teach one. Over thirty days the pixel had fired plenty: 65,042 custom events, 16,404 initiate-checkout events, 515 add-to-cart — and 4 purchases . Meta's optimizer needs roughly 50 conversions a week to leave the learning phase. Four a month isn't a slow start; it's below the floor where the algorithm can learn anything at all.
 So the answer wasn't "here's your conversion campaign." It was that the setup is technically possible, but the learning signal isn't there yet — and building the campaign anyway would have spent budget teaching a model on four data points.
 What it said
-Setup is technically possible; the learning signal isn't there yet. A conversion campaign optimising on four purchases in thirty days has nothing to learn from — fix the purchase signal first, then build.
+Setup is technically possible; the learning signal isn't there yet. A conversion campaign optimizing on four purchases in thirty days has nothing to learn from — fix the purchase signal first, then build.
 That's the reasoning half of the job doing its work: not drafting faster, but noticing that the thing you asked for shouldn't be built yet, and showing you the account's own numbers as the reason. The human still makes the call. The point is that the call arrives before the spend, not after.
 Why fully autonomous is the wrong promise
 The autonomy pitch borrows its confidence from games. AI conquered chess and Go because those are closed systems: fixed rules, a clean reward, and every input is true. Advertising is none of that.
@@ -2671,7 +2670,7 @@ Keep reading
 Product What is an AI media buyer?
 Product AI media buyer vs. Performance Max vs. dashboard
 Who wrote this
-Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyses creative; it doesn't make it.
+Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyzes creative; it doesn't make it.
 All articles
 Request demo
 
@@ -2737,7 +2736,7 @@ Playbook How to audit a Google Ads account
 Product What is an AI media buyer?
 Scaling How to scale a winner without breaking it
 Who wrote this
-Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyses creative; it doesn't make it.
+Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyzes creative; it doesn't make it.
 All articles
 Request demo
 
@@ -2819,7 +2818,7 @@ Keep reading
 Scaling CBO vs ABO in 2026
 Scaling Scale a winner without breaking it
 Who wrote this
-Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyses creative; it doesn't make it.
+Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyzes creative; it doesn't make it.
 All articles
 Request demo
 
@@ -2866,7 +2865,7 @@ Why this is hard to do by eye, every morning
 Everything above is readable in principle. The problem is doing it across dozens of ad sets, every day, before the spend compounds. You'd have to hold each ad set's CPM and CTR against its own trailing baseline, separate a fatigue slope from an auction spike from a targeting miss, and do it fast enough to act while the creative still has salvageable reach. By hand that's an hour of squinting at exports — and it's the hour most teams skip until the CPA report forces it.
 That's why fatigue detection is one of the first reads Adgent does each morning. It tracks the CPM–CTR relationship per ad set against your account's own normal, tells fatigue apart from auction pressure and targeting drift, and writes the verdict in words with the reason attached — before the frequency column has noticed anything is wrong. You approve the refresh; it just makes sure you see the signal on day one instead of in next week's receipt.
 Catch fatigue on day one
-Reading the CPM–CTR relationship per ad set against its own trailing baseline is an hour of squinting at exports, and it is the hour most teams skip until the CPA report forces it. Adgent runs that read every morning, separates fatigue from auction pressure and targeting drift, and writes the verdict in words with the reason attached. It analyses creative; it doesn’t make it. If you want to see which of your ads is tiring while the reach is still salvageable, request a demo — one real finding on your own account, before you change anything.
+Reading the CPM–CTR relationship per ad set against its own trailing baseline is an hour of squinting at exports, and it is the hour most teams skip until the CPA report forces it. Adgent runs that read every morning, separates fatigue from auction pressure and targeting drift, and writes the verdict in words with the reason attached. It analyzes creative; it doesn’t make it. If you want to see which of your ads is tiring while the reach is still salvageable, request a demo — one real finding on your own account, before you change anything.
 Frequently asked
 What is the earliest signal of creative fatigue?
 A rising CPM alongside a falling CTR. The auction reprices your ad within hours as engagement decays, so cost climbs while response drops — days before enough impressions accumulate to move a frequency average.
@@ -2885,7 +2884,7 @@ Product What is an AI media buyer?
 Playbook How to audit a Google Ads account
 Scaling How to scale a winner without breaking it
 Who wrote this
-Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyses creative; it doesn't make it.
+Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyzes creative; it doesn't make it.
 All articles
 Request demo
 
@@ -2952,7 +2951,7 @@ Playbook How to audit a Google Ads account
 Product What is an AI media buyer?
 Attribution The 7-day window is lying before noon
 Who wrote this
-Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyses creative; it doesn't make it.
+Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyzes creative; it doesn't make it.
 All articles
 Request demo
 
@@ -3037,7 +3036,7 @@ Keep reading
 Playbook Why brand must be isolated from Performance Max
 Playbook How to audit a Google Ads account
 Who wrote this
-Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyses creative; it doesn't make it.
+Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyzes creative; it doesn't make it.
 All articles
 Request demo
 
@@ -3053,6 +3052,8 @@ On August 17, Google changes how target-based bidding works — and for a lot of
 N
 Nurettin Demiral
 Notes from building the analyst
+Update &#183; 17 August 2026
+The change is live from today . The checklist below is no longer advance work — it is a same-day audit, and the diagnostic section at the end is now the part that matters most: a CPA rising toward target this week is the platform following instructions, not a campaign breaking.
 Short answer
 Starting August 17, 2026 , Google makes budget-limited campaigns on target-based bidding perform more consistently toward the target you set. If your campaigns have been beating their target — actual CPA sitting below your Target CPA — this change lets Google spend up to the target, raising your actual CPA and your spend. Audit your targets before the date.
 Most Google Ads changes are quiet — a label moves, a report gets a new column, nobody notices. This one isn't. On August 17, 2026 , Google is changing the mechanics of target-based bidding in a way that will lift actual CPA on a large number of accounts, and it will happen whether or not you touch a single setting. If your CPA "jumps" in late August, this is very likely why — and it won't be your campaign breaking. It'll be the rules changing underneath it.
@@ -3100,7 +3101,7 @@ Keep reading
 Attribution Why did my CPA suddenly jump? What to check first
 Playbook Performance Max isn't spending its budget
 Who wrote this
-Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyses creative; it doesn't make it.
+Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyzes creative; it doesn't make it.
 All articles
 Request demo
 
@@ -3179,7 +3180,7 @@ Keep reading
 Playbook How to audit a Google Ads account
 Attribution Placement drift: the leak in your average
 Who wrote this
-Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyses creative; it doesn't make it.
+Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyzes creative; it doesn't make it.
 All articles
 Request demo
 
@@ -3229,7 +3230,7 @@ Conversion action set to "Every" instead of "One." A lead form counting every su
 No audience exclusions on retargeting or PMax. You're paying full CPA to re-serve ads to people who already converted. On accounts with a healthy return rate, that's spend re-buying customers you already own.
 Performance Max with zero audience signals. An empty signal means the algorithm cold-starts on your money. PMax will find the cheapest conversions it can — usually your existing branded traffic — and take credit for demand you'd have captured for free.
 A search terms report nobody has opened in 90 days. Broad match without weekly negative-keyword pruning bleeds into junk queries continuously. If the last negative was added six months ago, assume a meaningful share of search spend is landing on queries that will never convert.
-Target CPA/ROAS running on under 15 conversions in 30 days. Below roughly 30 conversions a month per campaign, Smart Bidding doesn't have enough signal to learn — it thrashes, and CPA swings wildly week to week.
+Target CPA/ROAS running on under 30 conversions in 30 days. Below roughly 30 conversions a month per campaign, Smart Bidding doesn't have enough signal to learn — it thrashes, and CPA swings wildly week to week.
 One "catch-all" ad group with 50+ keywords. Structure this loose means no query gets a relevant ad or landing page. Quality Score suffers, CPCs climb, and you can't diagnose anything because everything is averaged together.
 Auto-applied recommendations turned on. Google's auto-apply will quietly expand match types and raise budgets on its own schedule. An account where Google is making the changes isn't an account you're auditing — it's one you're discovering.
 Display and Search fused in one campaign. "Search with Display Select" pools two totally different funnels under one budget and one CPA target. The Display half almost always drags, hidden inside the blended number — the same trap as placement drift inside an average .
@@ -3251,12 +3252,12 @@ Catches drift
 No — it's a snapshot that ages fast
 Yes — flags what changed since yesterday
 Best at
-Judgement calls, strategy, context
+Judgment calls, strategy, context
 High-drift leaks: search terms, placements, pacing
 Cost
 typically low four figures for a one-off agency audit
 Software fee, then near-zero per re-run
-Neither wins outright. A manual audit brings judgement a script can't; a continuous one catches the leaks that reopen the week after a manual audit ships. The strongest setup is a standing analyst for the high-drift checks and a human for the strategy calls — which is exactly what an AI media buyer is built to be.
+Neither wins outright. A manual audit brings judgment a script can't; a continuous one catches the leaks that reopen the week after a manual audit ships. The strongest setup is a standing analyst for the high-drift checks and a human for the strategy calls — which is exactly what an AI media buyer is built to be.
 How often should you audit?
 Audit cadence should match how fast each check goes stale. Some things barely move; others rot within a week. A single quarterly review treats them all the same, which is why so many audits feel out of date the moment they land.
 Full audit — quarterly. The complete 12-point pass: structure, bid strategy, attribution, account hygiene. These are slow-moving and worth a deep, unhurried look four times a year.
@@ -3265,7 +3266,7 @@ Continuous — for the high-drift checks. Wasted search terms, placement leakage
 The blunt version: audit the slow things on a calendar and watch the fast things continuously. Anything you only check quarterly, you're effectively not checking.
 Common Google Ads audit mistakes
 A bad audit isn't just an incomplete one — it's one that draws confident conclusions from bad inputs. These are the mistakes that turn a review into a list of wrong decisions.
-Auditing before you've checked conversion tracking. Every performance judgement rests on the conversion signal. If you rank campaigns before verifying it fires once, with the right value, you're ranking noise. Measurement is step one for a reason.
+Auditing before you've checked conversion tracking. Every performance judgment rests on the conversion signal. If you rank campaigns before verifying it fires once, with the right value, you're ranking noise. Measurement is step one for a reason.
 Treating small-sample placements as decisions. A placement with 40 impressions and one conversion isn't a winner, and one with 200 clicks and no sale isn't dead — it's just noise. Cutting or scaling on samples this thin creates the very volatility you were trying to fix.
 Ignoring the attribution window. Recent conversions are still landing. Judge a campaign from inside its window and it always reads pessimistic — the Google cousin of Meta's day-one data problem . Let the window close before you call a verdict.
 Comparing across platforms as if they measure the same thing. Google and Meta count conversions differently, so a raw ROAS comparison is apples to oranges. Reconcile the models before you move budget between them.
@@ -3288,12 +3289,12 @@ The account itself gets you most of the way: the search terms report, the placem
 How much can an audit recover?
 It depends entirely on how neglected the account is, but on accounts that haven't been pruned in a while, wasted search terms, leaked placements and duplicate retargeting are where recoverable spend usually sits. The bigger, quieter win is measurement: fixing a mis-configured conversion often reshapes every downstream decision, which is worth more than any single line-item cut.
 Can you automate a Google Ads audit?
-The high-drift checks — wasted search terms, placement leakage, budget pacing — automate well, because they're rule-based and change constantly, so continuous monitoring beats a scheduled review. Judgement calls like strategy and structure still benefit from a human. The best setup automates the leaks that reopen weekly and keeps a person on the calls that need context.
+The high-drift checks — wasted search terms, placement leakage, budget pacing — automate well, because they're rule-based and change constantly, so continuous monitoring beats a scheduled review. Judgment calls like strategy and structure still benefit from a human. The best setup automates the leaks that reopen weekly and keeps a person on the calls that need context.
 Keep reading
 Product What is an AI media buyer?
 Attribution Placement drift: the leak in your average
 Who wrote this
-Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyses creative; it doesn't make it.
+Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyzes creative; it doesn't make it.
 All articles
 Request demo
 
@@ -3372,7 +3373,7 @@ Keep reading
 Playbook How to audit a Google Ads account
 Product What is an AI media buyer?
 Who wrote this
-Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyses creative; it doesn't make it.
+Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyzes creative; it doesn't make it.
 All articles
 Request demo
 
@@ -3424,7 +3425,7 @@ The last two are harder to fake in a demo, which is exactly why they're worth as
 Does it ever decline what you asked for — and show you the account's own numbers as the reason?
 Ask for something the account can't support: a target CPA well below anything it has ever produced, a conversion campaign on an event that barely fires. A tool that reasons will push back and show its work — your history at this stage sits here, your target sits there, and here is the gap. A tool that only executes will build it, cheerfully, and let you find out in four weeks. The reason matters as much as the refusal: "not recommended" with no numbers behind it is a shrug, not an analysis. Run this test in the demo, on a real account, and watch whether anything ever comes back as no.
 Does it tell you the account isn't ready before you spend, or after?
-Every account has preconditions — enough conversion volume for the optimiser to learn from, tracking that isn't broken, a signal that maps to something the business actually sells. A tool that checks those first will sometimes tell you the setup is technically possible but the learning signal isn't there yet, and name the fix. A tool that checks them afterwards reports the same fact as a performance problem a month later, once the budget has already taught the algorithm nothing. Same finding, very different price. Ask which one you're buying.
+Every account has preconditions — enough conversion volume for the optimizer to learn from, tracking that isn't broken, a signal that maps to something the business actually sells. A tool that checks those first will sometimes tell you the setup is technically possible but the learning signal isn't there yet, and name the fix. A tool that checks them afterwards reports the same fact as a performance problem a month later, once the budget has already taught the algorithm nothing. Same finding, very different price. Ask which one you're buying.
 Where Adgent fits
 To be plain about our own place on this map: Adgent is an analysis and diagnostics tool — an AI analyst, not a creative generator or a DSP. It reads Meta and Google as one account overnight, pulls GA4 and Search Console in for context, and hands you one brief per account ranked by recoverable spend. It's read-only by default; every change is drafted for your approval, and nothing writes to a live account on its own. It doesn't replace the categories above — you'll still want creative tools and you'll still run the platforms' bid AI. It fills the row those leave open: telling you why , on each account, and what to do next.
 So: which AI media buying tool is best? The one that fixes your bottleneck. Map your constraint to a category, check it isn't reselling the platform AI, check the access model, and buy that layer. If your constraint is understanding — why performance moved and where the spend leaks — request a demo and see what it finds in your own account — one real finding, before you change anything.
@@ -3438,7 +3439,7 @@ What's the difference between a DSP and an AI media buyer? A DSP (demand-side pl
 How do I choose between all the AI ad tools? Start from your bottleneck, not the tool list. Ask what's actually slowing you down: producing enough creative, understanding why performance moved, buying inventory at scale, or managing many accounts at once. Each maps to one category — generation, analysis and diagnostics, DSPs, or an agency-oriented analysis layer. Then check the access model and whether the tool duplicates the platform AI you already have. Buy the layer that fixes your constraint, not the one with the broadest feature list.
 Keep reading Product What is an AI media buyer?
 Product AI media buyer vs. Performance Max vs. dashboard
-Who wrote this Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyses creative; it doesn't make it.
+Who wrote this Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyzes creative; it doesn't make it.
 All articles Request demo
 
 ---
@@ -3541,7 +3542,7 @@ Described in chat · every field editable before you publish
 When CPA rises > 20% over 3 days , per campaign
 Also on budget changed · campaign paused — events, not just thresholds
 Quiet must hold 2 evals · 24h cooldown · recovers before it can fire again
-Then analyse and propose — never applies on its own
+Then analyze and propose — never applies on its own
 Preview it against your own history before you publish: how often it would have fired, on what.
 Monitoring agent Proposes · never applies
 Now show me how it's actually pacing
@@ -3584,7 +3585,7 @@ it seals
 Trust Gate · one real account, two refusals
 It said no. Twice. Before a dollar was spent.
 "This pixel can't teach a campaign yet"
-Thirty days: 65,042 custom events, 16,404 initiate-checkout — and 4 purchases. Meta's own docs put the floor at 50 events in 7 days [developers.meta.com]. Technically possible to build. Nothing there for the optimiser to learn from.
+Thirty days: 65,042 custom events, 16,404 initiate-checkout — and 4 purchases. Meta's own docs put the floor at 50 events in 7 days [developers.meta.com]. Technically possible to build. Nothing there for the optimizer to learn from.
 "Your target is unreachable — here's why"
 Asked for a ₺250 cost per conversion. The account's own history at the booking stage sits near ₺4,000 . At 250 the only reachable thing is a ₺13 micro-lead that clears the target and books nobody.
 Trust Gate
@@ -3594,7 +3595,7 @@ Creative intelligence
 It reads every creative like a strategist — not a tagger.
 Creative is the single biggest driver of a campaign's sales — 49% , more than targeting (11%) or reach (14%) [NCSolutions / Circana, 2023]. It is also the layer most tools only tag. Adgent reads every live ad the way a senior buyer would — its DNA, the story scene by scene, and exactly where viewers leave. No upload step: it reads what is already running.
 it reads
-Analysed · 0:14 video
+Analyzed · 0:14 video
 SPRING_LAUNCH_V3
 hook · 0:00–0:02
 offer on-screen · 0:09
@@ -3703,8 +3704,8 @@ Red flags: what a broken account looks like
 Some findings you have to calculate. Others you can spot in thirty seconds — the tells that an account has been left on autopilot. If you see any of these, you've found recoverable spend before you've done a single sum.
 Frequency above 5 on a prospecting audience. A cold audience seeing the same ad five-plus times in a week is fatigued and getting more expensive to reach. Rising frequency with climbing CPM is the clearest early fatigue tell there is — act before ROAS confirms it.
 No retargeting exclusions. If purchasers and recent converters aren't excluded from prospecting, you're paying full CPA to re-serve ads to people who already bought. On accounts with a healthy return rate, that's spend re-buying customers you already own.
-A backend-vs-Ads-Manager revenue gap wider than roughly 10–15% — our working threshold —. When Ads Manager claims €40,000 in sales and Shopify or GA4 sees €30,000, someone is optimizing on a number that isn't real. A gap past roughly 10–15% means your pixel and CAPI setup is the first thing to fix, not your bids.
-Audience Network eating a big share of a placement-optimised budget. When automatic placements let Audience Network absorb a large slice of spend at a fraction of feed performance, the blended ROAS looks fine while the leak sits hidden inside the average.
+A backend-vs-Ads-Manager revenue gap wider than roughly 10–15% — our working threshold. When Ads Manager claims €40,000 in sales and Shopify or GA4 sees €30,000, someone is optimizing on a number that isn't real. A gap past roughly 10–15% means your pixel and CAPI setup is the first thing to fix, not your bids.
+Audience Network eating a big share of a placement-optimized budget. When automatic placements let Audience Network absorb a large slice of spend at a fraction of feed performance, the blended ROAS looks fine while the leak sits hidden inside the average.
 Ad sets still in the learning phase after five days. Learning-limited ad sets never stabilize — usually because the conversion volume is too low or edits keep restarting the clock. If half the account is perpetually learning, the structure is fragmenting the signal.
 One giant CBO campaign with every audience inside it. Pooling prospecting, retargeting and lookalikes under one budget lets Meta chase the cheapest conversions — usually warm retargeting — and take credit for demand you'd have captured anyway.
 Default attribution, and nobody knows which window. An account reported on 7-day click / 1-day view while the team quotes numbers as if they were click-only is comparing ad sets that were never on the same footing.
@@ -3725,12 +3726,12 @@ Catches drift
 No — it's a snapshot that ages fast
 Yes — flags what changed since yesterday
 Best at
-Judgement calls, strategy, creative direction
+Judgment calls, strategy, creative direction
 High-drift leaks: placements, frequency, CBO pacing
 Cost
 typically low four figures for a one-off agency audit
 Software fee, then near-zero per re-run
-Neither wins outright. A manual audit brings judgement a script can't; a continuous one catches the leaks that reopen the week after a manual audit ships. The strongest setup is a standing analyst for the high-drift checks and a human for the strategy calls — which is exactly what an AI media buyer is built to be.
+Neither wins outright. A manual audit brings judgment a script can't; a continuous one catches the leaks that reopen the week after a manual audit ships. The strongest setup is a standing analyst for the high-drift checks and a human for the strategy calls — which is exactly what an AI media buyer is built to be.
 How often should you audit?
 Audit cadence should match how fast each check goes stale. Some things barely move; others rot within a week. A single quarterly review treats them all the same, which is why so many Meta audits feel out of date the moment they land.
 Full audit — quarterly. The complete 20-point pass: signal integrity, attribution, structure, catalog. These are slow-moving and worth a deep, unhurried look four times a year.
@@ -3751,20 +3752,20 @@ Work in order of recoverable spend, not report length. First verify the signal �
 How often should I audit Meta ads?
 Match cadence to how fast each check goes stale. Run a full 20-point audit quarterly, a light monthly review on pacing, frequency and the ad sets that shifted most, and monitor the high-drift checks — placement drift, frequency, audience overlap and CBO leakage — continuously, because those reopen within a week of any manual pass.
 What are the red flags in a Meta ads account?
-Frequency above 5 on a prospecting audience, no retargeting exclusions (usually spend re-buying existing customers), a backend-vs-Ads-Manager revenue gap wider than 10–15%, Audience Network eating a large share of a placement-optimised budget, and ad sets stuck in the learning phase after five days. Any one of these is recoverable spend you can find before you do a single calculation.
+Frequency above 5 on a prospecting audience, no retargeting exclusions (usually spend re-buying existing customers), a backend-vs-Ads-Manager revenue gap wider than 10–15%, Audience Network eating a large share of a placement-optimized budget, and ad sets stuck in the learning phase after five days. Any one of these is recoverable spend you can find before you do a single calculation.
 How do I check if my pixel is working?
 Open Events Manager and confirm events fire once per action with a healthy event match quality score, that browser pixel and Conversions API events deduplicate on a shared event ID, and that your key conversion carries the right value. Use the Meta Pixel Helper on live pages and compare Ads Manager conversions against GA4 or Shopify — a gap wider than 10–15% means the signal, not your bids, is the first thing to fix.
 What attribution setting should I use?
 For most direct-response accounts, 7-day click is the honest default — it captures the buying window without over-crediting view-through. The trap is judging performance on the default setting without knowing which window it uses, or comparing ad sets on different windows. Pick one attribution setting, apply it consistently, and remember recent numbers are still settling inside the window and read pessimistic.
 Can AI audit Meta ads?
-Yes, and it fits the high-drift checks better than a quarterly human pass. An AI media buyer reads the account through the API every morning, runs the same 20 checks, ranks findings by recoverable spend and flags what changed since yesterday — then prepares the fix for your approval. It complements a human, who still owns the strategy and judgement calls.
+Yes, and it fits the high-drift checks better than a quarterly human pass. An AI media buyer reads the account through the API every morning, runs the same 20 checks, ranks findings by recoverable spend and flags what changed since yesterday — then prepares the fix for your approval. It complements a human, who still owns the strategy and judgment calls.
 How long does a Meta audit take?
 A thorough manual audit of a single account takes a few hours to a full day, depending on how many campaigns and creatives it holds. A continuous, API-driven audit runs the same checks in minutes and re-runs on its own every morning — so the finding lands the day the leak opens, not 89 days later.
 Keep reading
 Playbook How to audit a Google Ads account, properly
 Creative CPM is the early creative-fatigue signal
 Who wrote this
-Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyses creative; it doesn't make it.
+Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyzes creative; it doesn't make it.
 All articles
 Request demo
 
@@ -3839,7 +3840,7 @@ Keep reading
 Attribution Why Meta and Google ROAS don't compare
 Product What is an AI media buyer?
 Who wrote this
-Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyses creative; it doesn't make it.
+Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyzes creative; it doesn't make it.
 All articles
 Request demo
 
@@ -3919,7 +3920,7 @@ Keep reading
 Playbook How to audit a Performance Max campaign
 Playbook How to audit a Google Ads account
 Who wrote this
-Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyses creative; it doesn't make it.
+Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyzes creative; it doesn't make it.
 All articles
 Request demo
 
@@ -3942,7 +3943,7 @@ So treat this as a diagnostic, not a checklist to blast through. Work the causes
 A campaign that won't spend is rarely short of budget. It's short of auctions it's allowed to win.
 First: is it actually a budget problem?
 Before anything else, read the campaign status. Google labels a campaign "Limited by budget" only when it genuinely wants to spend more than the cap allows. If your status reads eligible , limited by bid strategy , or shows a learning notice, the budget is not your bottleneck — and raising it will do nothing except sit unspent.
-This is the whole point. In the accounts we read, "PMax isn't spending" resolves to a bid or Quality Score constraint far more often than to the budget itself — truly budget-limited cases are the minority. The rest split across approvals, tracking, and thin inputs. If you skip the status check and go straight to the budget, you're fixing the wrong four-in-five campaigns.
+This is the whole point. In the accounts we read, "PMax isn't spending" resolves to a bid or Quality Score constraint far more often than to the budget itself — truly budget-limited cases are the minority. The rest split across approvals, tracking, and thin inputs. If you skip the status check and go straight to the budget, you're fixing the wrong thing on most campaigns.
 1. Bid targets too aggressive (the most common cause)
 This is the one to check first, because it accounts for the largest slice. A tight Target ROAS or Target CPA tells Smart Bidding to only enter auctions it can win profitably at that target . Set the target too high — or too low a CPA — and the algorithm walks away from most of the auction. The result looks exactly like a budget problem: spend flatlines well under the cap. It isn't. The campaign is behaving as instructed; you instructed it to be picky.
 The fix is counterintuitive: loosen or remove the target and let it learn . Start with "Maximize conversions" (or "Maximize conversion value") with no target, let the campaign gather data and find volume, then introduce a target gradually once you can see what CPA or ROAS it actually achieves. Setting an aggressive target on day one is asking the system to optimize against a number it has no data to hit yet.
@@ -3990,7 +3991,7 @@ Keep reading
 Playbook How to audit a Performance Max campaign
 Playbook Performance Max brand cannibalization
 Who wrote this
-Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyses creative; it doesn't make it.
+Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyzes creative; it doesn't make it.
 All articles
 Request demo
 
@@ -4055,7 +4056,7 @@ Playbook How to audit a Google Ads account
 Product What is an AI media buyer?
 Attribution Meta says 4.2×, Google says 3.1×
 Who wrote this
-Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyses creative; it doesn't make it.
+Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyzes creative; it doesn't make it.
 All articles
 Request demo
 
@@ -4119,7 +4120,7 @@ Playbook How to audit a Google Ads account
 Product What is an AI media buyer?
 Scaling CBO vs ABO in 2026
 Who wrote this
-Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyses creative; it doesn't make it.
+Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyzes creative; it doesn't make it.
 All articles
 Request demo
 
@@ -4208,7 +4209,7 @@ Keep reading
 Product Why Adgent leads with the verdict
 Attribution Placement drift: the leak in your average
 Who wrote this
-Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyses creative; it doesn't make it.
+Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyzes creative; it doesn't make it.
 All articles
 Request demo
 
@@ -4274,7 +4275,7 @@ Product What is an AI media buyer?
 Playbook How to audit a Google Ads account
 Attribution Placement drift: the leak in your average
 Who wrote this
-Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyses creative; it doesn't make it.
+Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyzes creative; it doesn't make it.
 All articles
 Request demo
 
@@ -4326,10 +4327,10 @@ How to confirm it
 Look at the leading indicators, not just CPA. CTR trending down, frequency trending up, CPM creeping over a week or two — that's the fatigue signature. Because CPM turns before CPA does, CPM is the early-warning line worth watching; by the time CPA spikes, fatigue has usually been building for days. If the decline is a slow slide rather than a cliff, and it correlates with rising frequency, refresh the creative.
 5. The target itself may be unreachable
 The four causes above all assume the CPA you're aiming at was achievable in the first place. Sometimes it never was — and then "CPA jumped" is really "CPA returned to what this account actually costs."
-Here's the shape of it, from a real account we read. The target handed to the campaign was roughly 250 lira per conversion. The account's own history at the booking stage sat around 4,000 lira , ranging up to about 12,200 — an order of magnitude away, not a stretch goal. A target set that far below the account's real cost doesn't make the account cheaper. It changes what the optimiser buys: at 250 the only thing reachable is a 13-lira micro-lead , a form fill or a soft enquiry that clears the target beautifully and books nobody. The currency is incidental; the ratio is the point. Read it as "the goal was set roughly sixteen times below what a real booking has ever cost here."
-So CPA looks fine, then the real one jumps — because the campaign optimised itself toward the cheapest event it could find rather than the one that pays. At the account's actual budget and cost, the honest estimate was under one real booking a week.
+Here's the shape of it, from a real account we read. The target handed to the campaign was roughly 250 lira per conversion. The account's own history at the booking stage sat around 4,000 lira , ranging up to about 12,200 — an order of magnitude away, not a stretch goal. A target set that far below the account's real cost doesn't make the account cheaper. It changes what the optimizer buys: at 250 the only thing reachable is a 13-lira micro-lead , a form fill or a soft enquiry that clears the target beautifully and books nobody. The currency is incidental; the ratio is the point. Read it as "the goal was set roughly sixteen times below what a real booking has ever cost here."
+So CPA looks fine, then the real one jumps — because the campaign optimized itself toward the cheapest event it could find rather than the one that pays. At the account's actual budget and cost, the honest estimate was under one real booking a week.
 The check
-Before you diagnose a CPA jump, compare the target to the account's own history at the stage that actually makes money. If the gap is an order of magnitude, the optimiser isn't failing your target — it's hitting it by buying something worthless.
+Before you diagnose a CPA jump, compare the target to the account's own history at the stage that actually makes money. If the gap is an order of magnitude, the optimizer isn't failing your target — it's hitting it by buying something worthless.
 One caveat worth copying: when the underlying funnel data is itself unreliable — a broken GA4 setup, events that don't line up — this estimate is directional, not precise. It tells you the target is out of reach by a wide margin; it doesn't promise the exact number. That distinction is worth keeping, because a confident figure built on a broken funnel is how you end up defending the wrong target for another month.
 A note on the attribution window
 One more trap before you act on any of this: make sure the CPA you're reacting to is real. Recent conversions are still landing. If you're looking at yesterday's number, a chunk of the conversions that will eventually be credited haven't been attributed yet — so CPA looks inflated simply because the window hasn't closed. This is the same day-one distortion covered in why day-one data lies : a fresh CPA is a floor, not a fact. Give it the full window before you call it a spike.
@@ -4353,7 +4354,7 @@ Keep reading
 Attribution Why is my Meta ROAS dropping?
 Attribution CPM is the early creative-fatigue signal
 Who wrote this
-Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyses creative; it doesn't make it.
+Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyzes creative; it doesn't make it.
 All articles
 Request demo
 
@@ -4423,6 +4424,6 @@ Keep reading
 Attribution CPM is the early creative-fatigue signal
 Attribution Scale a winner without breaking it
 Who wrote this
-Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyses creative; it doesn't make it.
+Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyzes creative; it doesn't make it.
 All articles
 Request demo

@@ -23,7 +23,7 @@ confident it is and why, and leaves out anything that didn't change the answer.
 ## Capabilities
 
 - [The daily verdict on every ad account — Adgent](https://adgent.app/daily-verdict): Adgent reads every connected Meta and Google account overnight and writes the verdict in plain language, ranked by cost. The account needing you is on top.
-- [Ground truth — judged on your margin — Adgent](https://adgent.app/ground-truth): An ad platform optimises toward its own pixel. It never sees your cost of goods or second-order value. Adgent reconciles against GA4 and Search Console.
+- [Ground truth — judged on your margin — Adgent](https://adgent.app/ground-truth): An ad platform optimizes toward its own pixel. It never sees your cost of goods or second-order value. Adgent reconciles against GA4 and Search Console.
 - [The Trust Gate — a tool that can say no — Adgent](https://adgent.app/trust-gate): Adgent refuses unreachable targets and flags metrics that can't be trusted yet, using the account's own numbers as the reason — before any budget moves.
 - [Creative intelligence, scene by scene — Adgent](https://adgent.app/creative-intelligence): Adgent reads live creative the way a senior buyer would: its DNA, the story beat by beat, and exactly where viewers leave. No upload step.
 - [The Change Ledger — every change, undoable — Adgent](https://adgent.app/change-ledger): Every change is captured with the exact value it replaced, so undoing it is a restore rather than a reconstruction — which is what makes approving one cheap. Platform-side changes are dated too.
@@ -42,7 +42,7 @@ confident it is and why, and leaves out anything that didn't change the answer.
 ## By team
 
 - [Adgent for agencies — a senior buyer on each client account](https://adgent.app/for-agencies): Adgent puts senior judgment on every client account: read overnight across Meta and Google, one account at a time, applied only when your team approves.
-- [Adgent for in-house teams — the senior you don't have](https://adgent.app/for-in-house): Running paid alone? Adgent reads Meta and Google overnight, checks platform numbers against what your store actually banked, and prepares the fix for approval.
+- [Adgent for in-house teams — the senior you don't have](https://adgent.app/for-in-house): Running paid alone? Adgent reads Meta and Google overnight, checks platform numbers against what your analytics actually recorded, and prepares the fix for approval.
 
 ## Company
 
