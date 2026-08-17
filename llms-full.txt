@@ -264,7 +264,7 @@ See how it works
 04
 Creative intelligence
 It reads every creative like a strategist — not a tagger
-Creative is the single biggest driver of a campaign's sales. It is also the layer most tools only tag. Adgent reads every live ad the way a senior buyer would: its DNA, the story scene by scene, and exactly where viewers leave. No upload step — it reads what is already running.
+Creative is the single biggest driver of a campaign's sales. It is also the layer most tools only tag . Adgent reads every live ad the way a senior buyer would: its DNA, the story scene by scene, and exactly where viewers leave. No upload step — it reads what is already running.
 Scene-by-scene decomposition joined to per-moment retention
 The hold curve: where viewers leave, and what was on screen when they did
 Fatigue flagged before the numbers slide, with a valued refresh you can apply from chat
@@ -565,7 +565,7 @@ Daily verdict
 Every account read before you open your laptop.
 You should not have to go hunting for the problem. Adgent reads every connected account overnight, ranks what it found by what it is costing you, and writes the answer in plain language. The account that needs you today is at the top. The ones that are fine say so in one line and get out of your way.
 The brief, ranked by what it costs you
-The shape of it
+What a daily ad account brief contains
 A verdict is a position , not a summary.
 Most morning emails are a list of numbers that went up and down. That is a description of yesterday, and it leaves the actual work — deciding what it means — exactly where it was.
 What a report gives you
@@ -586,7 +586,7 @@ Why not just bid down?
 Because the auction is not the problem. Bidding down here buys cheaper impressions of an ad people have stopped watching — you would pay less per view and lose the same money more slowly. The fix is a creative refresh , and I have costed it: roughly £2,400 of recoverable spend over the next fortnight.
 Northlight &#183; this morning one account
 One account, read on its own. The findings inside it are ranked by recoverable spend.
-What makes the ranking honest
+How findings are ranked by recoverable spend
 Ranked by what it costs , not by what changed most.
 A 60% swing on a campaign spending forty dollars a day is noise wearing a big percentage. Sorting by volatility puts noise at the top of your morning; sorting by money puts the decision there.
 Against its own history
@@ -595,7 +595,7 @@ Against its peers
 The same ad set is also compared with the others in its account. A campaign can be down and still be the healthiest thing you own, which changes what you should do about it.
 Against your real revenue
 Platform-reported conversions are the starting point, not the answer. The verdict reconciles them against what actually landed, so a campaign that looks efficient and loses money does not get promoted to the top as a success.
-One health score per account
+Scoring many ad accounts at once
 A book of twenty accounts, scannable in a minute .
 The hard part of running many accounts is not analyzing one of them. It is knowing which one to analyze. Each account is read on its own and carries a single score with the reason attached; the workspace sorts those scores so triage takes a glance rather than twenty logins. It is an ordering of separate reads — the analysis itself never leaves the account it is in.
 Including the account you cannot afford to lose, on the week it looked fine
@@ -660,7 +660,7 @@ Where are you getting the discount rate?
 From your analytics, not from Meta — I reconcile platform-reported conversions against what actually landed. Store reading (orders, cost per item, refunds) is the next connection we are building; today this comes from GA4.
 Reconciled view Campaign 12
 The disagreement is the finding, not an error.
-Why this is not fixable inside the platform
+Why ad platforms cannot see your margin
 It is a structural gap, not a feature gap.
 This is worth being precise about, because it is the difference between a thing that gets patched in the next release and a thing that cannot be patched at all.
 It does not have the data
@@ -675,7 +675,7 @@ Every number it reports is true. None of them is the one that decides whether a 
 3.2× the ROAS the platform reports on a campaign losing contribution
 41% average discount on the orders behind it
 8% of those orders came back — neither figure reaches the bidding
-What Adgent reads instead
+Reconciling ad platform numbers with revenue
 Reconciled against the numbers your business runs on.
 Adgent reads GA4 and Search Console alongside the ad platforms, so a report is checked against a source the platform does not control — and where the two disagree, the disagreement itself is the finding. Shopify reading is the next connection we are building.
 Connected today
@@ -750,7 +750,7 @@ The refusals on this page came from one real account, unprompted, before a pound
 4 purchases that pixel recorded in thirty days
 50 events in 7 days is Meta&rsquo;s own learning floor
 300× between the target asked for and what a booking actually costs
-What it refuses
+When an AI media buyer should refuse
 Three kinds of no, and why each one saves money.
 01
 "This pixel can't teach a campaign yet"
@@ -761,7 +761,7 @@ Ask for a cost per conversion far below anything the account has ever achieved a
 03
 "This number isn't ready to be trusted"
 A metric still inside its attribution window will move on its own. Reporting it as final produces confident figures that quietly revise themselves later. Adgent flags it instead of giving you a number that will change.
-Why this matters more with AI, not less
+Why a tool that never says no is a risk
 Confident nonsense is the failure. Refusal is the pass .
 The characteristic failure of a language model pointed at a data set is fluency without grounds — an answer that reads beautifully and is not supported by anything. In a reporting tool that costs you an afternoon. Wired to a live ad account, it costs you budget.
 It refuses before spending, not after
@@ -806,7 +806,7 @@ It reads every creative like a strategist — not a tagger.
 Creative is the single biggest driver of a campaign's sales — 49%, more than targeting (11%) or reach (14%) [NCSolutions / Circana, 2023]. It is also the layer most tools only tag.
 Adgent reads every live ad the way a senior buyer would: its DNA, the story scene by scene, and exactly where viewers leave. No upload step — it reads what is already running.
 The hold curve, read against the storyboard — one scene explains the loss
-The difference that matters
+Creative tagging vs creative analysis
 A tag says what is in the ad. A read says what the ad does .
 Most creative analytics stops at attributes: this ad has a person, a kitchen, a price overlay, a voiceover. That is a filing system. It tells you what you already knew when you briefed it.
 Tagging
@@ -843,7 +843,7 @@ Where viewers leave RETENTION × STORYBOARD
 0:11 Offer and end card &#8722;6% viewers
 Diagnosis CTR × CVR DECISION TREE
 Creative fatigue — hook wear-out
-Three reads on every live ad
+What creative analysis actually reports
 DNA, the story, and where they leave .
 Two ads can share a format, a length and a hook rate and still be built from different arguments. The DNA is the part that makes them comparable — what the ad promises, how it proves it, and in what order — so a winner can be repeated on purpose instead of guessed at.
 01
@@ -898,7 +898,7 @@ Change Ledger
 The reason you can let it touch the account.
 Every change is captured with the exact state it replaced, so putting it back is a restore rather than a reconstruction. That is what makes the difference between a tool you supervise and one you actually use: when a change is genuinely undoable, approving it stops being a small act of courage. The caution you have been carrying was never about the tool — it was about not being able to get back.
 Undo is only real if something kept the old value
-What it is actually for
+Why reversible changes matter
 The cost of a reversible mistake is an afternoon . The other kind is a quarter.
 Ask anyone why they hesitate before letting software change a live account and the answer is never "I want an audit trail". It is that a bad change on a client account is expensive, visible, and hard to walk back — so the safe move is to do nothing, and doing nothing is its own cost.
 Without it
@@ -919,7 +919,7 @@ Reversibility is not paperwork. It is what makes a wrong call cheap, and a cheap
 1 approval between a proposal and a change
 0 changes that arrive without the state they replaced
 &infin; undos — reverting a revert is just another entry
-Why most undo buttons are not one
+Can you undo a change in Google Ads?
 A log tells you what happened. It cannot put anything back .
 Plenty of tools keep a history, and it reads convincingly right up to the moment you need it. The question is whether the replaced value was captured at the instant of the write — because if it was not, no amount of logging will reconstruct it afterwards.
 01
@@ -931,7 +931,7 @@ Some changes a platform will not take back — a bid strategy with no prior manu
 03
 The reversal goes through the same gates
 An undo is a write like any other: it re-reads the live account, runs the same guardrails as the forward change, and is logged as its own entry. Reverting a revert works too. Nothing here is a special path that skips the checks.
-What an undo sounds like
+How reverting a change works
 It is not a button. It is a recommendation you can refuse .
 Reversing something is a decision, so it is treated as one. Adgent proposes the inverse change, tells you what it thinks the right call is, and says plainly when the answer depends on something only you know.
 Undoing something, six weeks on
@@ -941,7 +941,7 @@ It was accidental. Put it back.
 Done — PAUSED &rarr; ACTIVE, logged as its own entry. Watch the next few days: if it keeps spending with no clicks, reactivating was the wrong call and it should go back to PAUSED. I can reverse this one too — the revert has a before-state of its own.
 The same ad, three entries each reversible
 Nothing here is a one-way door.
-The part people do not expect
+Tracking changes you did not make
 It also catches the changes nobody made.
 Ad platforms move things on their own: a recommendation applies itself, a bid strategy flips, a budget reallocates under an automation somebody enabled last year. Those are read from the platforms&rsquo; own change feeds, so drift arrives with a date and a source rather than surfacing three weeks later as an unexplained CPA rise.
 The honest limit: a platform-side change cannot be undone from here. No before-state was captured, because Adgent did not make the write. What it can do is date it, name it, and offer to set the value back as a change of its own.
@@ -949,7 +949,7 @@ Which settles the argument nobody can normally win
 "Who changed this, and when?" costs teams more time than almost any other question in a shared ad account, and it is usually unanswerable — so it gets settled by whoever sounds most confident. Here it has a date and a source, including when the answer is the platform itself.
 And the before-state is the one thing that cannot be backfilled. Start next quarter and the entries you most want — the bid strategy that flipped at 03:14, the budget that reallocated itself, the setting nobody remembers touching — are already gone, because nothing captured what they replaced at the moment they were replaced. A ledger opened in November cannot restore August. Every month of waiting is a month you can describe but not undo.
 Why this matters most on client accounts &rarr; How access is scoped &rarr;
-The order it happens in
+Read-only, approval, then undo
 Read-only &rarr; approve &rarr; reversible .
 Three gates, and a change has to pass all of them. None of these is a setting you have to find and switch on.
 1 &middot; Read-only by default
@@ -995,7 +995,7 @@ Everything that makes your account yours lives in someone&rsquo;s head: the clie
 It is why a new hire takes a quarter to become useful, and why every generic AI tool still sounds like a stranger on day ninety.
 Adgent picks these up as you say them — and every verdict after that is written by something that already knows them.
 Said once. Applied ever after.
-Learned, not configured
+Why account memory beats a setup screen
 There is no setup screen, because nobody fills one in .
 Every tool that asks you to declare your rules up front gets a half-finished form and then quietly ignores it. You do not know your exceptions in the abstract — you know them when something violates one. So that is when Adgent picks them up: from what you say in chat, and from what you reject.
 It shows you what it learned and asks before keeping it, and you can override any of it. Memory you cannot see is not memory, it is drift.
@@ -1015,7 +1015,7 @@ six weeks later — scale campaign 9, it is working.
 It is working, and I would scale it — but that takes it to €640/day, past the limit you set in July. Flagging rather than applying. Say go and it goes.
 Held rule six weeks later
 The rule outlived the session that set it.
-What it actually changes
+How memory turns an audit into a decision
 Memory is what turns an audit into a judgment .
 An audit applies general rules to your account. A judgment applies your rules to your account — and that gap is the whole reason a good freelancer is worth more than a good checklist. This is the least visible thing on the site and the one that decides whether people are still using the product in month three.
 Week one, any tool
@@ -1043,7 +1043,7 @@ It is only worth what it has been running. A rule you set in July is still holdi
 1 sentence to set a limit, once
 0 setup screens, because nobody fills them in honestly
 both platforms — the rule crosses Meta and Google without restating
-Whose memory it is
+Where your rules are stored
 Yours, and it follows the brand .
 The context belongs to the account, not to one ad platform's view of it. Your rules travel with the brand across every platform you connect, so a decision made about a campaign on one platform is not forgotten when the same question comes up on another.
 And it is isolated per company
@@ -1085,12 +1085,12 @@ Describe it in a sentence. It gets built .
 A campaign, a media plan, a live dashboard, a standing report — four different things, one way of asking for them. Not a template you fill in and not a chart library you assemble. You say what you want; the thing that answers it gets made.
 The line that matters runs through the middle: two of these only ever read your account, and two of them can change it — so those two are drafted complete, held paused, and wait for you.
 One way of asking. Two very different consequences.
-Why this exists
+Building reports from a chat prompt
 The thing you actually want is never the one on the menu .
 Every tool ships with a set of views and a set of forms someone else decided you would need. The question in your head at 9am is more specific than any of them — and building it yourself costs the hour you were going to spend on the account.
 The hour is the thing to price. One rebuilt-by-hand view a week, at the hour it costs your most expensive person, is most of a working week over a quarter — and that is only the ones that get built.
 The more expensive ones are the questions nobody asks because the answer would take an afternoon. That is how an account ends up run on the four views that shipped with the tool.
-Live dashboards
+Live ad dashboards that stay current
 A view that is still true on Thursday .
 Describe the cut you want — the platforms, the window, the breakdown, the metric you judge on — and get the view rather than a form to configure one. What gets built stays wired to the data, so sharing it with a client does not turn it into a screenshot that is wrong by the end of the week.
 Asking for a view that does not exist yet
@@ -1100,7 +1100,7 @@ Can the client see it live?
 Yes — it is a live view, not an export, so it stays current after you share it. Read-only for them. Building a view touches nothing in the account — it only reads.
 Built view live
 Audience Network: the loudest thing on the chart.
-Agents & standing reports
+Scheduled reports and standing agents
 Some things you want once. Some you want every week .
 A view you ask for is a one-off. A standing job is the same request, made permanent: the report that rebuilds itself before the Monday call, or an agent watching one specific thing that speaks up only when it moves. You set what it watches and when it should bother you; the rest of the time it stays quiet.
 The report that writes itself
@@ -1109,7 +1109,7 @@ An agent per thing you worry about
 Set one on the metric you check obsessively — the branded search share, the one campaign that carries the quarter, a placement you do not trust. It watches only that, and stays silent while nothing changes.
 Silence is a result
 A watcher that reports every day trains you to ignore it. These are built to say nothing until the thing they watch actually moves, which is what makes the message worth opening when it comes.
-Media plans
+Building a media plan from account history
 A plan is only worth reading if it shows where the numbers came from .
 Every media plan is a stack of forecasts, and almost none of them say what they were forecast from. A cell reading ₺1,400 CPA is either last quarter's campaign or somebody's optimism, and the deck does not tell you which.
 Adgent drafts the plan as data instead: budget split, flights, line items, and a cost range for each — with the source campaigns and the window printed under every range. Where the account has no history, it writes no number at all and says so.
@@ -1147,7 +1147,7 @@ Built from the connected account&rsquo;s own history and nothing else. There is 
 0 history for the new market, so no estimate is offered
 6 line items allocated to the exact total
 paused is the state every build arrives in
-Campaign builds
+Building a campaign from a description
 Built complete. Then held , until you approve it.
 Structure, budget, targeting, copy and the creative slots — drafted whole from what you described, prefilled from what this account has actually proven rather than from a template. What you get back is a specification you can read line by line, not a half-configured campaign waiting for twenty more clicks.
 Asking for a campaign, and hearing why not yet
@@ -1163,7 +1163,7 @@ It blocks in the form, not at the end
 A missing creative stops the build where you can still fix it, rather than failing after approval. The same applies to a conversion event that cannot carry value: you are told before, not after.
 It arrives paused
 Approval creates the campaign in a paused state. Turning it on is a second, separate decision — and like every other write, it lands in the ledger with the state it replaced.
-The part that makes it safe
+Why a built campaign arrives paused
 Building something is not the same as doing it.
 A drafted plan or campaign is an artifact, not an action. It sits there, fully specified, until you approve it — and when you do, it goes through the same gates as every other change: shown with its before-state, labeled reversible or not, and logged.
 And it will tell you when what you asked for will not work
@@ -1224,7 +1224,7 @@ Can you catch that earlier next time?
 Partly, today: I can flag the campaigns whose order profile looks like the ones that returned last time. Reading refunds directly needs the store connection, which is the next one we are building.
 Restated quarter after returns
 The discount-led winner returned hardest.
-The second thing with no B2B analogue
+Ads spending after stock runs out
 Ads keep spending after the shelf is empty .
 A campaign succeeding hard enough to clear your inventory does not stop. It keeps buying clicks for a product nobody can buy, at the exact moment its performance history says to scale it. There is no version of this problem in lead generation or SaaS — you cannot run out of demos.
 Spend is subtracted last
@@ -1514,7 +1514,7 @@ Liquidity is local, budgets are not
 The same campaign is correct in one city and pure waste in the next, because the two have different supply density. Averaged into one account-level figure, both disappear.
 Leakage is worst where it looks best
 A controlled study of a services marketplace measured platform hours falling 13.3% and charges 8.2% as users moved transactions off-platform [Gu & Zhu, Management Science, 2021] — and the effect is strongest where buyer and seller are geographically close. Which is exactly where your matching looks most efficient.
-The one setting that causes most of it
+Setting conversion value on a marketplace
 Never set a target return off gross volume.
 It is a single field, it is wrong by default in most implementations, and it instructs the bidding algorithm to overbid by the inverse of your take rate — permanently, and with total confidence. At a 13% take rate, a reported 6× is an actual 0.8×. Nothing in the interface flags it, because from the platform's point of view nothing is wrong.
 And the third mistake: bidding against your own supply
@@ -4400,7 +4400,7 @@ N
 Nurettin Demiral
 Notes from building the analyst
 Short answer
-Most ROAS drops are signal problems, not campaign problems — so check tracking first. If Ads Manager and your backend revenue disagree by more than roughly 10–15% — the threshold we work to — suspect the number before the campaign. Only once the data is trustworthy do you work down the list: scaling too fast, audience saturation, creative fatigue, and the attribution window still settling.
+Most ROAS drops are signal problems, not campaign problems — so check tracking first . If Ads Manager and your backend revenue disagree by more than roughly 10–15% — the threshold we work to — suspect the number before the campaign. Only once the data is trustworthy do you work down the list: scaling too fast, audience saturation, creative fatigue, and the attribution window still settling.
 Your Meta ROAS is down and the temptation is immediate: cut the budget, pause the loser, do something . Resist it. The buyers who keep accounts healthy don't react to a falling number — they diagnose it, in a fixed order, because the order encodes what's most likely to be true. And the most likely thing is that the number itself is lying to you.
 So here's the checklist, ranked exactly the way a senior buyer runs it. Work top to bottom and stop at the first thing that explains the drop. Most of the time you'll stop at step one.
 1. Tracking and signal — is the drop even real?

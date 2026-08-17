@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="robots" content="noindex, nofollow"/>
+<title>Adgent — product walkthrough (local)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500;600;700&family=Fraunces:ital,wght@1,400;1,500&display=swap" rel="stylesheet"/>
+<style>
+/* Tokens copied from the product (adgent-core/frontend/src/app/globals.css).
+   Same names, so a value corrected there pastes straight in here. */
+:root{
+  --font-ui:"Plus Jakarta Sans",ui-sans-serif,system-ui,-apple-system,sans-serif;
+  --font-mono:"Geist Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  --accent:#ff5a2c;--accent-soft:rgba(255,90,44,.11);--accent-text:#b23f1f;
+  --bg-app:#f3f2ef;--bg-card:#fff;--bg-sub:#faf9f7;--bg-inset:#f0efec;
+  --bg-hover:rgba(28,25,20,.04);--bg-active:rgba(28,25,20,.07);
+  --border:rgba(28,25,20,.085);--border-2:rgba(28,25,20,.16);
+  --text:#1c1a17;--text-2:#5c574f;--text-3:#847d72;--text-4:#a09889;
+  --ok:#16935a;--ok-soft:rgba(22,147,90,.12);
+  --warn:#cf8a26;--warn-soft:rgba(207,138,38,.14);
+  --crit:#d8472f;--crit-soft:rgba(216,71,47,.12);
+  /* delivery-status colours are the product's own hex values */
+  --d-live:#22c55e;--d-off:#6b7280;--d-part:#f59e0b;--d-learn:#3b82f6;
+  --r-sm:8px;--r-md:11px;--r-lg:15px;
+  --ease:cubic-bezier(.22,.61,.36,1);--chat-width:390px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{font-family:var(--font-ui);background:var(--bg-app);color:var(--text);
+  -webkit-font-smoothing:antialiased;font-size:14px}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;text-align:left}
+svg{display:block}
+.shell{display:flex;height:100vh;overflow:hidden}
+
+/* sidebar */
+.snav{flex:none;width:214px;background:var(--bg-card);border-right:1px solid var(--border);display:flex;flex-direction:column}
+.acct{display:flex;align-items:center;gap:9px;padding:13px 12px;border-bottom:1px solid var(--border)}
+.acct .am{width:25px;height:25px;flex:none;border-radius:7px;display:grid;place-items:center;background:var(--accent);color:#fff;font-weight:800;font-size:11px}
+.acct .an{font-size:12.5px;font-weight:600}
+.acct .ah{font-family:var(--font-mono);font-size:10px;color:var(--text-3)}
+.snav-scroll{flex:1 1 auto;overflow-y:auto;padding:8px 10px}
+.snav-label{font-size:10px;font-weight:700;color:var(--text-4);letter-spacing:.09em;text-transform:uppercase;padding:12px 10px 6px}
+.snav-item{width:100%;display:flex;align-items:center;gap:10px;padding:7.5px 10px;border-radius:var(--r-md);color:var(--text-2);font-size:12.8px;font-weight:500;transition:background 130ms var(--ease),color 130ms var(--ease)}
+.snav-item:hover{background:var(--bg-hover);color:var(--text)}
+.snav-item.active{background:var(--accent-soft);color:var(--text);font-weight:600}
+.snav-item .ni{width:17px;height:17px;flex:none;color:var(--text-3)}
+.snav-item.active .ni{color:var(--accent)}
+.snav-item .tail{margin-left:auto;font-family:var(--font-mono);font-size:10px;padding:1px 6px;border-radius:20px;background:var(--bg-active);color:var(--text-3)}
+.snav-item .tail.hot{background:var(--crit-soft);color:var(--crit)}
+
+/* chat */
+.chat-col{flex:none;width:var(--chat-width);background:var(--bg-card);border-right:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden}
+.chat-head{flex:none;height:46px;display:flex;align-items:center;gap:9px;padding:0 14px;border-bottom:1px solid var(--border);background:var(--bg-sub)}
+.chat-head .dot{width:7px;height:7px;border-radius:50%;background:var(--ok)}
+.chat-head .t{font-size:12.5px;font-weight:600}
+.chat-head .r{margin-left:auto;font-family:var(--font-mono);font-size:10px;color:var(--text-3)}
+.chat-scroll{flex:1 1 auto;overflow-y:auto;padding:16px 15px 8px;display:flex;flex-direction:column;gap:13px}
+.msg{max-width:100%;font-size:13.4px;line-height:1.6}
+.msg-u{align-self:flex-end;max-width:88%;background:var(--accent);color:#fff;border-radius:14px 14px 4px 14px;padding:9px 13px;font-weight:500}
+.msg-a{align-self:flex-start;max-width:97%}
+.msg-a p{margin:0 0 9px}.msg-a p:last-child{margin-bottom:0}
+.msg-a b{font-weight:650}
+.num{font-family:var(--font-mono);font-variant-numeric:tabular-nums}
+.msg-note{font-family:var(--font-mono);font-size:11px;color:var(--text-3);border-left:2px solid var(--border-2);padding-left:9px;margin-top:9px;line-height:1.5}
+.typing{align-self:flex-start;display:flex;gap:4px;padding:8px 2px}
+.typing i{width:6px;height:6px;border-radius:50%;background:var(--text-4);animation:blink 1.3s infinite}
+.typing i:nth-child(2){animation-delay:.16s}.typing i:nth-child(3){animation-delay:.32s}
+@keyframes blink{0%,60%,100%{opacity:.25;transform:translateY(0)}30%{opacity:1;transform:translateY(-3px)}}
+
+/* proposal + agent draft cards */
+.prop{margin-top:10px;border:1px solid var(--border-2);border-radius:var(--r-md);background:var(--bg-sub);padding:12px 13px}
+.prop-h{display:flex;align-items:center;gap:7px;font-size:12.5px;font-weight:650}
+.prop-h .pi{width:15px;height:15px;color:var(--accent);flex:none}
+.prop-sub{margin-top:3px;font-size:12px;color:var(--text-2)}
+.prop-rows{margin-top:8px;display:flex;flex-direction:column;gap:3px;font-family:var(--font-mono);font-size:11.4px;color:var(--text-2)}
+.prop-rows .was{color:var(--text-4);text-decoration:line-through}
+.prop-rows .now{color:var(--text);font-weight:600}
+.prop-warn{margin-top:8px;display:flex;gap:6px;font-size:11.4px;color:var(--warn);line-height:1.45}
+.prop-warn svg{width:14px;height:14px;flex:none;margin-top:1px}
+.prop-rev{margin-top:8px;display:inline-flex;align-items:center;gap:5px;font-family:var(--font-mono);font-size:10.5px;color:var(--ok);background:var(--ok-soft);padding:2px 7px;border-radius:20px}
+.prop-acts{margin-top:11px;display:flex;gap:7px}
+.btn-ok{display:inline-flex;align-items:center;gap:5px;background:var(--accent);color:#fff;border-radius:var(--r-sm);padding:5px 11px;font-size:12.5px;font-weight:600}
+.btn-ok:hover{filter:brightness(1.06)}
+.btn-no{display:inline-flex;align-items:center;gap:5px;border:1px solid var(--border-2);border-radius:var(--r-sm);padding:5px 11px;font-size:12.5px;color:var(--text-2)}
+.btn-no:hover{background:var(--bg-hover)}
+.prop-done{margin-top:10px;font-size:12px;font-weight:600;display:flex;align-items:center;gap:6px}
+.prop-done.ok{color:var(--ok)}.prop-done.no{color:var(--text-3)}
+.prop-done svg{width:14px;height:14px}
+.bt{margin-top:9px;padding:9px 10px;border-radius:var(--r-sm);background:var(--bg-card);border:1px solid var(--border)}
+.bt-k{font-family:var(--font-mono);font-size:10px;letter-spacing:.07em;text-transform:uppercase;color:var(--text-3)}
+.bt-v{font-size:12.5px;margin-top:4px;line-height:1.5}
+.bt-v b{font-family:var(--font-mono);color:var(--accent-text)}
+
+/* composer */
+.chat-foot{flex:none;border-top:1px solid var(--border);padding:11px 14px 13px;background:var(--bg-card)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:9px}
+.chip{border:1px solid var(--border-2);border-radius:20px;padding:5px 11px;font-size:11.8px;color:var(--text-2);transition:border-color 130ms,color 130ms,background 130ms}
+.chip:hover:not(:disabled){border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+.chip:disabled{opacity:.38;cursor:default}
+.chip.done{border-style:dashed;color:var(--text-4)}
+.composer{display:flex;align-items:center;gap:8px;border:1px solid var(--border-2);border-radius:var(--r-md);padding:8px 10px;background:var(--bg-sub);color:var(--text-4);font-size:13px}
+.composer .send{margin-left:auto;width:24px;height:24px;border-radius:var(--r-sm);background:var(--bg-active);display:grid;place-items:center;color:var(--text-4)}
+
+/* canvas + tabs */
+.swork{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;background:var(--bg-app)}
+.swork-top{flex:none;height:46px;display:flex;align-items:center;gap:4px;padding:0 12px;background:var(--bg-sub);border-bottom:1px solid var(--border);overflow-x:auto}
+.ctab{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 11px;border-radius:9px 9px 0 0;font-size:12.2px;color:var(--text-3);position:relative;top:8px;border:1px solid transparent;border-bottom:none;white-space:nowrap}
+.ctab .ti{width:13px;height:13px}
+.ctab.active{background:var(--bg-app);border-color:var(--border);color:var(--text);font-weight:600}
+.ctab:not(.active):hover{color:var(--text-2)}
+.swork-scroll{flex:1 1 auto;overflow-y:auto}
+.pane{display:none}.pane.active{display:block}
+.lane{max-width:740px;margin:0 auto;padding:28px 24px 60px}
+.lane-wide{max-width:1080px;margin:0 auto;padding:22px 26px 60px}
+
+/* brief sheet */
+.brief-sheet{position:relative;z-index:1;background:linear-gradient(90deg,transparent calc(50% - .5px),color-mix(in srgb,var(--text) 4%,transparent) 50%,transparent calc(50% + .5px)),var(--bg-card);border:1px solid var(--border);border-radius:var(--r-lg);padding:30px 42px 38px;box-shadow:0 2px 3px rgba(40,30,20,.05),0 24px 50px -16px rgba(40,30,20,.22)}
+.brief-sheet::before,.brief-sheet::after{content:"";position:absolute;inset:0;z-index:-1;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r-lg)}
+.brief-sheet::before{transform:rotate(-.7deg) translateY(5px);opacity:.6}
+.brief-sheet::after{transform:rotate(.6deg) translateY(10px);opacity:.32}
+.brief-masthead{text-align:center;padding-bottom:20px;border-bottom:3px double var(--border-2);margin-bottom:24px}
+.bm-strip{display:flex;justify-content:space-between;font-family:var(--font-mono);font-size:9.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--text-4);padding-bottom:12px;border-bottom:1px solid var(--border);margin-bottom:16px}
+.bm-top{display:flex;align-items:center;justify-content:center;gap:15px}
+.bm-rule{flex:1 1 0;max-width:84px;height:1px;background:var(--border-2)}
+.bm-name{font-size:20px;font-weight:700;letter-spacing:.15em;text-transform:uppercase}
+.bm-line{font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-4);margin-top:12px}
+.brief-h1{font-size:28px;font-weight:600;letter-spacing:-.02em;margin:0 0 16px;line-height:1.16}
+.brief-h1 em{font-family:Fraunces,Georgia,serif;font-style:italic;font-weight:500;color:var(--accent)}
+.brief-lede{font-size:19.5px;line-height:1.5;font-weight:450;margin:0 0 16px}
+.brief-lede b{font-weight:600}
+.brief-p{font-size:15.4px;line-height:1.7;color:var(--text-2);margin:0 0 15px}
+.brief-p b{color:var(--text);font-weight:600;font-variant-numeric:tabular-nums}
+.brief-callout{margin:20px 0;padding:17px 19px;border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:var(--r-md);background:var(--bg-sub)}
+.bc-k{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+.brief-callout p{font-size:15.4px;line-height:1.6;color:var(--text);margin:0}
+.brief-sec{padding:13px 0 2px;border-top:1px solid var(--border);margin-top:20px}
+.bs-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.bs-ic{width:26px;height:26px;flex:none;border-radius:8px;display:grid;place-items:center}
+.bs-ic svg{width:14px;height:14px}
+.bs-ic--first{background:var(--warn-soft);color:var(--warn)}
+.bs-ic--done{background:var(--ok-soft);color:var(--ok)}
+.bs-k{font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text-2)}
+
+/* kpi + panels + tables */
+.kstrip{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;margin-bottom:16px}
+.kstrip.k3{grid-template-columns:repeat(3,1fr)}
+.kc{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r-md);padding:12px 13px}
+.kc .kk{font-family:var(--font-mono);font-size:9.6px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-3)}
+.kc .kv{font-size:21px;font-weight:700;letter-spacing:-.02em;margin-top:5px;font-variant-numeric:tabular-nums}
+.kc .kd{font-size:11.2px;margin-top:3px;font-family:var(--font-mono)}
+.kd.up{color:var(--ok)}.kd.dn{color:var(--crit)}.kd.mut{color:var(--text-3)}
+.panel{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r-md);overflow:hidden;margin-bottom:14px}
+.panel-h{padding:11px 14px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:9px}
+.panel-h .pt{font-size:13.2px;font-weight:650}
+.panel-h .ps{margin-left:auto;font-family:var(--font-mono);font-size:10.2px;color:var(--text-3)}
+.filt{display:flex;gap:6px;padding:9px 14px;border-bottom:1px solid var(--border);flex-wrap:wrap}
+.f{font-family:var(--font-mono);font-size:10.6px;padding:3px 9px;border-radius:20px;border:1px solid var(--border-2);color:var(--text-3)}
+.f.on{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+table{width:100%;border-collapse:collapse}
+th{font-family:var(--font-mono);font-size:9.8px;letter-spacing:.07em;text-transform:uppercase;color:var(--text-3);text-align:left;padding:9px 14px;border-bottom:1px solid var(--border);font-weight:600}
+td{padding:10px 14px;border-bottom:1px solid var(--border);font-size:12.8px;color:var(--text-2);vertical-align:top}
+tr:last-child td{border-bottom:none}
+tr.click:hover{background:var(--bg-hover);cursor:pointer}
+td.n{font-family:var(--font-mono);font-variant-numeric:tabular-nums;text-align:right;color:var(--text)}
+td .nm{color:var(--text);font-weight:600}
+td .sub{font-size:11px;color:var(--text-3);margin-top:2px}
+.pill{display:inline-flex;align-items:center;gap:5px;font-family:var(--font-mono);font-size:10.2px;padding:2px 8px;border-radius:20px}
+.pill.ok{background:var(--ok-soft);color:var(--ok)}
+.pill.warn{background:var(--warn-soft);color:var(--warn)}
+.pill.crit{background:var(--crit-soft);color:var(--crit)}
+.pill.mut{background:var(--bg-active);color:var(--text-3)}
+.dstat{display:inline-flex;align-items:center;gap:5px;font-size:11.4px}
+.dstat i{width:6px;height:6px;border-radius:50%;flex:none}
+.hs{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-mono);font-variant-numeric:tabular-nums}
+.hs .bar{width:34px;height:4px;border-radius:3px;background:var(--bg-active);overflow:hidden}
+.hs .bar i{display:block;height:100%;border-radius:3px}
+
+/* creative grid */
+.cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(196px,1fr));gap:12px;padding:14px}
+.ccard{border:1px solid var(--border);border-radius:var(--r-md);overflow:hidden;background:var(--bg-card)}
+.cthumb{aspect-ratio:4/5;background:linear-gradient(150deg,#2b2724,#151311);position:relative;display:grid;place-items:center}
+.cthumb .bottle{width:34px;height:74px;border-radius:12px;background:#f7f5f1;opacity:.95;position:relative}
+.cthumb .bottle::after{content:"";position:absolute;left:0;right:0;top:56%;height:22px;background:linear-gradient(90deg,#ff8a63,#e5400f)}
+.cthumb .halo{position:absolute;width:96px;height:96px;border-radius:50%;background:radial-gradient(circle,rgba(255,138,99,.5),transparent 65%);top:8px;right:-10px}
+.cbody{padding:10px 11px}
+.cname{font-family:var(--font-mono);font-size:10.6px;color:var(--text-3)}
+.cmet{display:flex;gap:10px;margin-top:6px;font-size:11.6px}
+.cmet b{font-variant-numeric:tabular-nums}
+.cflag{margin-top:7px;font-size:11px;color:var(--warn);display:flex;gap:5px;align-items:center}
+.cflag svg{width:12px;height:12px;flex:none}
+
+/* ledger + agents + analysis log */
+.led-row{display:flex;gap:12px;padding:12px 14px;border-bottom:1px solid var(--border)}
+.led-row:last-child{border-bottom:none}
+.led-ic{width:26px;height:26px;flex:none;border-radius:7px;display:grid;place-items:center;background:var(--bg-inset);color:var(--text-3)}
+.led-ic svg{width:14px;height:14px}
+.led-b{min-width:0;flex:1 1 auto}
+.led-t{font-size:12.8px;font-weight:600}
+.led-m{font-family:var(--font-mono);font-size:10.8px;color:var(--text-3);margin-top:2px;line-height:1.5}
+.led-a{margin-left:auto;align-self:center}
+.und{display:inline-flex;align-items:center;gap:5px;border:1px solid var(--border-2);border-radius:var(--r-sm);padding:4px 9px;font-size:11.8px;color:var(--text-2)}
+.und:hover{border-color:var(--accent);color:var(--accent)}
+.und svg{width:12px;height:12px}
+.acard{border:1px solid var(--border);border-radius:var(--r-md);padding:13px 14px;background:var(--bg-card);margin-bottom:10px}
+.acard.new{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.ah-row{display:flex;align-items:center;gap:8px}
+.ah-row .an2{font-size:13.2px;font-weight:650}
+.atrig{font-family:var(--font-mono);font-size:10.4px;color:var(--text-3);margin-top:4px}
+.adesc{font-size:12.4px;color:var(--text-2);margin-top:6px;line-height:1.55}
+.blank{padding:40px 24px;text-align:center;color:var(--text-3);font-size:13px}
+
+.msg,.prop,.pane.active>*{animation:rise 380ms var(--ease) both}
+@keyframes rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media (max-width:1180px){.snav{display:none}:root{--chat-width:340px}}
+@media (max-width:860px){.shell{flex-direction:column;height:auto}.chat-col{width:auto;height:66vh;border-right:none;border-bottom:1px solid var(--border)}.swork{min-height:80vh}.kstrip{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div class="shell">
+  <nav class="snav" aria-label="Workspace"></nav>
+
+  <section class="chat-col" aria-label="Chat">
+    <div class="chat-head">
+      <span class="dot"></span><span class="t">Adgent</span><span class="r">read-only</span>
+    </div>
+    <div class="chat-scroll" id="stream">
+      <div class="msg msg-a">
+        <p>Morning. I read <b>Northlight</b> overnight — Meta and Google as one account.</p>
+        <p>The brief is on the right. Pick a question and I will open what it refers to.</p>
+      </div>
+    </div>
+    <div class="chat-foot">
+      <div class="chips" id="chips"></div>
+      <div class="composer"><span id="composer-text">Pick a question above</span>
+        <span class="send"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+    </div>
+  </section>
+
+  <div class="swork">
+    <div class="swork-top" id="tabs"></div>
+    <div class="swork-scroll" id="canvas"></div>
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   Mock of the Adgent workspace. The view set, their names and
+   their filters are taken from the product's own registry
+   (components/canvas/registry/view-descriptors.json, 13 views),
+   not invented. Data is fabricated; mechanics are not.
+   ============================================================ */
+const I = {
+  brief:'M4 5h16M4 10h16M4 15h10',
+  overview:'M3 3v18h18M7 15l4-5 3 3 5-7',
+  actions:'m5 12 5 5L20 7',
+  campaigns:'M3 3h18v18H3zM3 9h18M9 21V9',
+  adsets:'M4 6h16M4 12h16M4 18h10',
+  ads:'M4 5h16v10H4zM8 19h8',
+  entity:'M12 3l8 4v6c0 4-3.5 7-8 8-4.5-1-8-4-8-8V7z',
+  creative:'M3 4h18v14H3zM3 15l5-4 3 2 4-5 6 6',
+  agents:'M12 3v4M8 21h8M5 9h14v8H5zM9 13h.01M15 13h.01',
+  ledger:'M3 12a9 9 0 1 0 3-6.7L3 8M3 3v5h5',
+  artifacts:'M4 4h16v5H4zM4 12h7v8H4zM13 12h7v8h-7z',
+  log:'M12 8v4l3 2M12 21a9 9 0 1 1 0-18 9 9 0 0 1 0 18z',
+};
+const svg = (d,c='',n=14) => `<svg class="${c}" width="${n}" height="${n}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="flex:none"><path d="${d}"/></svg>`;
+
+/* The 13 views the product exposes to the agent, in the product's own words. */
+const VIEWS = {
+  today:        {label:'Daily brief',   icon:I.brief},
+  overview:     {label:'Overview',      icon:I.overview},
+  action_items: {label:'Action items',  icon:I.actions},
+  campaigns:    {label:'Campaigns',     icon:I.campaigns},
+  adsets:       {label:'Ad sets',       icon:I.adsets},
+  ads:          {label:'Ads',           icon:I.ads},
+  entity:       {label:'SPRING_LAUNCH_V3', icon:I.entity},
+  creatives:    {label:'Creatives',     icon:I.creative},
+  agents:       {label:'Agents',        icon:I.agents},
+  ledger:       {label:'Change ledger', icon:I.ledger},
+  artifacts:    {label:'Artifacts',     icon:I.artifacts},
+  analysis_log: {label:'Analysis log',  icon:I.log},
+};
+
+const NAV = [
+  ['Today',   [['today','Daily brief'],['overview','Overview'],['action_items','Action items','3','hot']]],
+  ['Account', [['campaigns','Campaigns'],['adsets','Ad sets'],['ads','Ads'],['creatives','Creatives']]],
+  ['Build',   [['agents','Agents'],['artifacts','Artifacts']]],
+  ['Trail',   [['ledger','Change ledger'],['analysis_log','Analysis log']]],
+];
+
+const hs = (n) => {
+  const c = n>=70?'var(--ok)':n>=45?'var(--warn)':'var(--crit)';
+  return `<span class="hs">${n}<span class="bar"><i style="width:${n}%;background:${c}"></i></span></span>`;
+};
+const dstat = (k) => ({
+  delivering:['Delivering','var(--d-live)'], learning:['Learning','var(--d-learn)'],
+  partially:['Partially','var(--d-part)'], off:['Not delivering','var(--d-off)'],
+}[k] || ['—','var(--d-off)']);
+const dot = (k) => { const [l,c]=dstat(k); return `<span class="dstat"><i style="background:${c}"></i>${l}</span>`; };
+
+/* ---------- view bodies ---------- */
+const PANES = {
+
+today: `<div class="lane"><article class="brief-sheet">
+  <header class="brief-masthead">
+    <div class="bm-strip"><span>Northlight</span><span>Overnight read</span></div>
+    <div class="bm-top"><span class="bm-rule"></span><span class="bm-name">The Daily Verdict</span><span class="bm-rule"></span></div>
+    <div class="bm-line">Meta · Google · GA4 — read as one account</div>
+  </header>
+  <h1 class="brief-h1">Refresh the top creative. <em>Not</em> a bid change.</h1>
+  <p class="brief-lede">Prospecting CPA is up <b>34%</b> week on week, and it is not seasonal.</p>
+  <p class="brief-p">The top creative crossed <b>frequency 3.4</b> on Tuesday and hold rate fell with it. That pairing is what makes this fatigue rather than an auction shift — an auction shift moves CPM without touching how long people watch.</p>
+  <div class="brief-callout"><div class="bc-k">Why not just bid down</div>
+    <p>Because the auction is not the problem. Bidding down buys cheaper impressions of an ad people have stopped watching — you would pay less per view and lose the same money more slowly.</p></div>
+  <p class="brief-p">I have costed the refresh: roughly <b>£2,400</b> of recoverable spend over the next fortnight, on this account's own numbers.</p>
+  <section class="brief-sec"><div class="bs-head"><span class="bs-ic bs-ic--first">${svg('M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z')}</span><span class="bs-k">Do this first</span></div>
+    <p class="brief-p">Replace the hook on <b>SPRING_LAUNCH_V3</b>. It is nine days old, which at your volume is late middle age.</p></section>
+  <section class="brief-sec"><div class="bs-head"><span class="bs-ic bs-ic--done">${svg('m5 12 5 5L20 7')}</span><span class="bs-k">Working</span></div>
+    <p class="brief-p">The prospecting set at <b>2.4×</b> is the one actually clearing contribution. Not the headline number, and the one worth more budget.</p></section>
+</article></div>`,
+
+overview: `<div class="lane-wide">
+  <div class="kstrip">
+    <div class="kc"><div class="kk">Spend · 7d</div><div class="kv">£11,420</div><div class="kd mut">both platforms</div></div>
+    <div class="kc"><div class="kk">Results</div><div class="kv">312</div><div class="kd up">▲ 8.4%</div></div>
+    <div class="kc"><div class="kk">Cost / result</div><div class="kv">£36.60</div><div class="kd dn">▲ 34% w/w</div></div>
+    <div class="kc"><div class="kk">Account health</div><div class="kv">62</div><div class="kd dn">▼ 9 pts</div></div>
+  </div>
+  <div class="panel"><div class="panel-h"><span class="pt">Health, last 14 days</span><span class="ps">7d · 14d · 28d</span></div>
+    <div style="padding:16px 14px">
+      <svg viewBox="0 0 720 150" style="width:100%;height:auto">
+        <path d="M20 118h684" stroke="var(--border-2)" stroke-width="1" fill="none"/>
+        <path d="M20 40 C120 44 200 52 300 58 C420 66 520 92 700 104" fill="none" stroke="var(--accent)" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M20 74 C140 72 240 70 340 72 C460 74 560 78 700 80" fill="none" stroke="var(--text-3)" stroke-width="2" opacity=".45" stroke-dasharray="5 5"/>
+        <circle cx="700" cy="104" r="4.5" fill="var(--accent)"/>
+        <text x="20" y="140" font-family="var(--font-mono)" font-size="10" fill="var(--text-3)">14 days ago</text>
+        <text x="700" y="140" text-anchor="end" font-family="var(--font-mono)" font-size="10" fill="var(--text-3)">yesterday</text>
+        <text x="470" y="66" font-family="var(--font-mono)" font-size="10" fill="var(--text-3)">account average</text>
+      </svg>
+    </div></div>
+</div>`,
+
+action_items: `<div class="lane-wide">
+  <div class="panel">
+    <div class="panel-h"><span class="pt">Action items</span><span class="ps">ranked by recoverable spend</span></div>
+    <div class="filt"><span class="f on">active</span><span class="f">snoozed</span><span class="f">resolved</span></div>
+    <table><thead><tr><th>Finding</th><th>Where</th><th style="text-align:right">Cost</th><th style="text-align:right">State</th></tr></thead><tbody>
+      <tr><td><span class="nm">Creative fatigue</span><div class="sub">frequency 3.4 · hold rate falling</div></td><td>SPRING_LAUNCH_V3</td><td class="n">£2,400</td><td class="n"><span class="pill crit">act</span></td></tr>
+      <tr><td><span class="nm">Placement drift</span><div class="sub">22% of spend, 4% of revenue</div></td><td>Audience Network</td><td class="n">£1,180</td><td class="n"><span class="pill warn">review</span></td></tr>
+      <tr><td><span class="nm">Target below the floor</span><div class="sub">4 purchases in 30 days vs a 50-in-7 floor</div></td><td>Meta · sales</td><td class="n">—</td><td class="n"><span class="pill mut">blocked</span></td></tr>
+    </tbody></table></div></div>`,
+
+campaigns: `<div class="lane-wide">
+  <div class="panel">
+    <div class="panel-h"><span class="pt">Campaigns</span><span class="ps">sorted by health, ascending</span></div>
+    <div class="filt"><span class="f on">active</span><span class="f">paused</span><span class="f">no history</span><span class="f">all</span><span class="f" style="margin-left:auto">risk: all</span></div>
+    <table><thead><tr><th>Campaign</th><th>Delivery</th><th style="text-align:right">Health</th><th style="text-align:right">Spend 7d</th><th style="text-align:right">ROAS</th><th style="text-align:right">CPA</th></tr></thead><tbody>
+      <tr class="click" data-open="adsets"><td><span class="nm">Campaign 12 — discount-led</span><div class="sub">Meta · sales</div></td><td>${dot('delivering')}</td><td class="n">${hs(31)}</td><td class="n">£3,410</td><td class="n">3.2×</td><td class="n">£28.40</td></tr>
+      <tr class="click" data-open="adsets"><td><span class="nm">Prospecting — broad</span><div class="sub">Meta · sales</div></td><td>${dot('delivering')}</td><td class="n">${hs(74)}</td><td class="n">£2,860</td><td class="n">2.4×</td><td class="n">£38.10</td></tr>
+      <tr class="click" data-open="adsets"><td><span class="nm">PMax — catalogue</span><div class="sub">Google · performance max</div></td><td>${dot('learning')}</td><td class="n">${hs(58)}</td><td class="n">£3,190</td><td class="n">4.0×</td><td class="n">£22.80</td></tr>
+      <tr class="click" data-open="adsets"><td><span class="nm">Brand — exact</span><div class="sub">Google · search</div></td><td>${dot('delivering')}</td><td class="n">${hs(88)}</td><td class="n">£1,960</td><td class="n">8.1×</td><td class="n">£9.40</td></tr>
+    </tbody></table></div></div>`,
+
+adsets: `<div class="lane-wide">
+  <div class="panel">
+    <div class="panel-h"><span class="pt">Ad sets — Campaign 12</span><span class="ps">optimization goal · learning stage</span></div>
+    <div class="filt"><span class="f on">active</span><span class="f">paused</span><span class="f">goal: purchase</span><span class="f">stage: all</span></div>
+    <table><thead><tr><th>Ad set</th><th>Delivery</th><th>Goal</th><th style="text-align:right">Health</th><th style="text-align:right">Spend 7d</th><th style="text-align:right">Results</th></tr></thead><tbody>
+      <tr class="click" data-open="ads"><td><span class="nm">Broad · 25–55</span><div class="sub">no interest stack</div></td><td>${dot('delivering')}</td><td>Purchase</td><td class="n">${hs(66)}</td><td class="n">£1,740</td><td class="n">61</td></tr>
+      <tr class="click" data-open="ads"><td><span class="nm">Lookalike 3% · purchasers</span></td><td>${dot('learning')}</td><td>Purchase</td><td class="n">${hs(44)}</td><td class="n">£980</td><td class="n">18</td></tr>
+      <tr class="click" data-open="ads"><td><span class="nm">Retargeting · 30d viewers</span></td><td>${dot('partially')}</td><td>Purchase</td><td class="n">${hs(52)}</td><td class="n">£690</td><td class="n">27</td></tr>
+    </tbody></table></div></div>`,
+
+ads: `<div class="lane-wide">
+  <div class="panel">
+    <div class="panel-h"><span class="pt">Ads — Broad · 25–55</span><span class="ps">sorted by health, ascending</span></div>
+    <div class="filt"><span class="f on">active</span><span class="f">paused</span><span class="f">risk: all</span></div>
+    <table><thead><tr><th>Ad</th><th>Delivery</th><th style="text-align:right">Health</th><th style="text-align:right">Spend 7d</th><th style="text-align:right">Freq</th><th style="text-align:right">Hold</th></tr></thead><tbody>
+      <tr class="click" data-open="entity"><td><span class="nm">SPRING_LAUNCH_V3</span><div class="sub">video · 0:14 · 9 days old</div></td><td>${dot('delivering')}</td><td class="n">${hs(29)}</td><td class="n">£860</td><td class="n" style="color:var(--crit)">3.4</td><td class="n" style="color:var(--crit)">12%</td></tr>
+      <tr class="click" data-open="entity"><td><span class="nm">SPRING_LAUNCH_V1</span><div class="sub">video · 0:12 · 24 days old</div></td><td>${dot('delivering')}</td><td class="n">${hs(48)}</td><td class="n">£420</td><td class="n">2.6</td><td class="n">16%</td></tr>
+      <tr class="click" data-open="entity"><td><span class="nm">STATIC_OFFER_B</span><div class="sub">image · 6 days old</div></td><td>${dot('learning')}</td><td class="n">${hs(71)}</td><td class="n">£310</td><td class="n">1.4</td><td class="n">—</td></tr>
+      <tr><td><span class="nm">CAROUSEL_RANGE</span><div class="sub">carousel · 31 days old</div></td><td>${dot('off')}</td><td class="n">${hs(55)}</td><td class="n">£0</td><td class="n">—</td><td class="n">—</td></tr>
+    </tbody></table></div></div>`,
+
+entity: `<div class="lane-wide">
+  <div class="kstrip">
+    <div class="kc"><div class="kk">Spend · 28d</div><div class="kv">£4,120</div><div class="kd mut">this ad</div></div>
+    <div class="kc"><div class="kk">Hook rate</div><div class="kv">71%</div><div class="kd up">▲ 4pt</div></div>
+    <div class="kc"><div class="kk">Hold rate</div><div class="kv">12%</div><div class="kd dn">▼ falling</div></div>
+    <div class="kc"><div class="kk">Frequency</div><div class="kv">3.4</div><div class="kd dn">crossed Tuesday</div></div>
+  </div>
+  <div class="panel"><div class="panel-h"><span class="pt">Where viewers leave</span><span class="ps">scene by scene</span></div>
+    <table><thead><tr><th>At</th><th>Scene</th><th style="text-align:right">Viewers lost</th></tr></thead><tbody>
+      <tr><td class="n" style="text-align:left">0:00</td><td>Hook · question to camera</td><td class="n">−9%</td></tr>
+      <tr><td class="n" style="text-align:left">0:03</td><td>Demonstration</td><td class="n">−12%</td></tr>
+      <tr><td class="n" style="text-align:left;color:var(--crit)">0:07</td><td><span class="nm">Price overlay</span><div class="sub">before the benefit is stated</div></td><td class="n" style="color:var(--crit)">−38%</td></tr>
+      <tr><td class="n" style="text-align:left">0:11</td><td>Offer and end card</td><td class="n">−6%</td></tr>
+    </tbody></table></div>
+  <div class="panel"><div class="panel-h"><span class="pt">Breakdowns</span><span class="ps">placement · demographics · device · country</span></div>
+    <table><thead><tr><th>Placement</th><th style="text-align:right">Spend</th><th style="text-align:right">Share of results</th></tr></thead><tbody>
+      <tr><td>Feed</td><td class="n">£2,180</td><td class="n">64%</td></tr>
+      <tr><td>Reels</td><td class="n">£1,010</td><td class="n">30%</td></tr>
+      <tr><td><span class="nm">Audience Network</span><div class="sub">22% of spend, 4% of results</div></td><td class="n">£930</td><td class="n" style="color:var(--crit)">4%</td></tr>
+    </tbody></table></div></div>`,
+
+creatives: `<div class="lane-wide">
+  <div class="panel">
+    <div class="panel-h"><span class="pt">Creatives</span><span class="ps">pooled across the ads that use them</span></div>
+    <div class="filt"><span class="f on">by creative</span><span class="f">by concept</span><span class="f">by tag</span><span class="f" style="margin-left:auto">28d</span><span class="f">video</span></div>
+    <div class="cgrid">
+      <div class="ccard"><div class="cthumb"><span class="halo"></span><span class="bottle"></span></div>
+        <div class="cbody"><div class="cname">m:vid:8841 · SPRING_LAUNCH_V3</div>
+          <div class="cmet"><span>hook <b>71%</b></span><span>hold <b>12%</b></span></div>
+          <div class="cflag">${svg('M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z')}fatigue · 9 days</div></div></div>
+      <div class="ccard"><div class="cthumb"><span class="halo" style="opacity:.5"></span><span class="bottle" style="height:66px"></span></div>
+        <div class="cbody"><div class="cname">m:vid:8102 · SPRING_LAUNCH_V1</div>
+          <div class="cmet"><span>hook <b>63%</b></span><span>hold <b>16%</b></span></div></div></div>
+      <div class="ccard"><div class="cthumb" style="background:linear-gradient(150deg,#3a332c,#1a1714)"><span class="bottle" style="height:58px;width:44px"></span></div>
+        <div class="cbody"><div class="cname">m:img:7730 · STATIC_OFFER_B</div>
+          <div class="cmet"><span>ctr <b>1.4%</b></span><span>spend <b>£310</b></span></div></div></div>
+      <div class="ccard"><div class="cthumb" style="background:linear-gradient(150deg,#26221e,#141210)"><span class="bottle" style="height:70px;opacity:.6"></span></div>
+        <div class="cbody"><div class="cname">m:car:7411 · CAROUSEL_RANGE</div>
+          <div class="cmet"><span>ctr <b>0.9%</b></span><span class="cname" style="margin:0">paused</span></div></div></div>
+    </div></div></div>`,
+
+agents: `<div class="lane-wide">
+  <div class="panel"><div class="panel-h"><span class="pt">Agents</span><span class="ps">built-in specialists + your own</span></div>
+    <div style="padding:13px 14px" id="agent-list">
+      <div class="acard"><div class="ah-row"><span class="an2">Fatigue watch</span><span class="pill ok">built-in</span></div>
+        <div class="atrig">condition · frequency &gt; 3 AND hold rate falling 3 days</div>
+        <div class="adesc">Flags a creative before CPI confirms it. Runs on every account, no setup.</div></div>
+      <div class="acard"><div class="ah-row"><span class="an2">Placement drift</span><span class="pill ok">built-in</span></div>
+        <div class="atrig">condition · spend share − result share &gt; 15pt</div>
+        <div class="adesc">Catches a placement earning budget it does not convert on.</div></div>
+      <div class="acard"><div class="ah-row"><span class="an2">Weekly client report</span><span class="pill mut">custom</span></div>
+        <div class="atrig">schedule · Mondays 08:00</div>
+        <div class="adesc">Rebuilds the shareable dashboard and writes the week in words.</div></div>
+    </div></div></div>`,
+
+artifacts: `<div class="lane-wide">
+  <div class="panel"><div class="panel-h"><span class="pt">Artifacts</span><span class="ps">saved dashboards and media plans</span></div>
+    <table><thead><tr><th>Name</th><th>Kind</th><th>Built</th><th style="text-align:right">State</th></tr></thead><tbody>
+      <tr><td><span class="nm">Weekly placement vs revenue</span><div class="sub">live view — still true on Thursday</div></td><td>Dashboard</td><td>from chat</td><td class="n"><span class="pill ok">live</span></td></tr>
+      <tr><td><span class="nm">Q4 winter plan — Vestmark</span><div class="sub">£1.85m · 6 line items · Nov–Jan</div></td><td>Media plan</td><td>from chat</td><td class="n"><span class="pill mut">draft</span></td></tr>
+    </tbody></table></div></div>`,
+
+ledger: `<div class="lane-wide">
+  <div class="panel"><div class="panel-h"><span class="pt">Change ledger</span><span class="ps" id="led-count">nothing applied yet</span></div>
+    <div id="led">
+      <div class="led-row" id="led-empty"><div class="led-ic">${svg('M12 8v4l3 2M12 21a9 9 0 1 1 0-18 9 9 0 0 1 0 18z')}</div>
+        <div class="led-b"><div class="led-t">No writes yet</div>
+          <div class="led-m">Adgent is read-only until you approve something. Approve a proposal in chat and it lands here with the state it replaced.</div></div></div>
+    </div></div></div>`,
+
+analysis_log: `<div class="lane-wide">
+  <div class="panel"><div class="panel-h"><span class="pt">Analysis log</span><span class="ps">daily · manual · backfill</span></div>
+    <table><thead><tr><th>Run</th><th>Kind</th><th>Scope</th><th style="text-align:right">State</th></tr></thead><tbody>
+      <tr><td><span class="nm">Today 04:12</span><div class="sub">17 campaigns · 44 ad sets · 96 ads</div></td><td>Daily</td><td>Meta + Google</td><td class="n"><span class="pill ok">complete</span></td></tr>
+      <tr><td><span class="nm">Yesterday 04:09</span></td><td>Daily</td><td>Meta + Google</td><td class="n"><span class="pill ok">complete</span></td></tr>
+      <tr><td><span class="nm">12 Aug 09:40</span><div class="sub">24 months, on connect</div></td><td>Backfill</td><td>Meta</td><td class="n"><span class="pill ok">complete</span></td></tr>
+    </tbody></table></div></div>`,
+};
+
+/* ---------- shell wiring ---------- */
+let openTabs=['today'], activeTab='today';
+const canvas=document.getElementById('canvas');
+const stream=document.getElementById('stream');
+const chipsEl=document.getElementById('chips');
+
+function renderNav(){
+  document.querySelector('.snav').innerHTML =
+    `<div class="acct"><span class="am">N</span><div><div class="an">Northlight</div><div class="ah">Meta · Google</div></div></div>
+     <div class="snav-scroll">` +
+    NAV.map(([g,items]) => `<div class="snav-label">${g}</div>` + items.map(([id,label,tail,cls]) =>
+      `<button class="snav-item ${id===activeTab?'active':''}" data-go="${id}">
+         <span class="ni">${svg(VIEWS[id].icon,'',17)}</span>${label}
+         ${tail?`<span class="tail ${cls||''}">${tail}</span>`:''}</button>`).join('')).join('') +
+    `</div>`;
+  document.querySelectorAll('[data-go]').forEach(b => b.onclick = () => show(b.dataset.go));
+}
+function renderTabs(){
+  document.getElementById('tabs').innerHTML = openTabs.map(id =>
+    `<button class="ctab ${id===activeTab?'active':''}" data-tab="${id}">${svg(VIEWS[id].icon,'ti',13)}${VIEWS[id].label}</button>`).join('');
+  document.querySelectorAll('[data-tab]').forEach(b => b.onclick = () => show(b.dataset.tab,false));
+}
+function show(id, open=true){
+  if(!VIEWS[id]) return;
+  if(open && !openTabs.includes(id)) openTabs.push(id);
+  if(!openTabs.includes(id)) openTabs.push(id);
+  activeTab=id;
+  canvas.innerHTML = `<div class="pane active">${PANES[id]||'<div class="blank">—</div>'}</div>`;
+  canvas.scrollTop=0;
+  canvas.querySelectorAll('[data-open]').forEach(r => r.onclick = () => show(r.dataset.open));
+  renderTabs(); renderNav();
+}
+
+/* ---------- the walkthrough ---------- */
+const SCRIPT=[
+ {q:"What's the verdict this morning?",view:'today',
+  a:`<p><b>Prospecting CPA is up 34% week on week, and it is not seasonal.</b></p>
+     <p>The top creative crossed <span class="num">frequency 3.4</span> on Tuesday and hold rate fell with it — that pairing is what makes it fatigue rather than an auction shift.</p>
+     <p>The fix is a creative refresh. I have costed it: roughly <span class="num">£2,400</span> recoverable over the next fortnight.</p>`,
+  note:"Northlight's own read. I do not compare it against your other accounts — each is analysed inside itself."},
+
+ {q:"Show me the account, not the story.",view:'overview',
+  a:`<p>Seven-day view. Spend is flat at <span class="num">£11,420</span>; results are up <span class="num">8.4%</span>, so the top line looks fine.</p>
+     <p>Health is down <span class="num">9 points</span> because the cost per result moved against you — the orange line pulling away from the account average is the same fatigue, seen from further back.</p>`},
+
+ {q:"Which campaign is dragging?",view:'campaigns',
+  a:`<p>Sorted by health, worst first. <b>Campaign 12</b> sits at <span class="num">31</span> — and it is the one reporting your best ROAS at <span class="num">3.2×</span>.</p>
+     <p>That is the disagreement worth opening: the platform grades it on volume, health grades it on what the volume is made of. Click through to its ad sets when you want the level below.</p>`},
+
+ {q:"Take me down to the ad that's fatiguing.",view:'entity',
+  a:`<p>Campaign 12 → Broad 25–55 → <b>SPRING_LAUNCH_V3</b>. Health <span class="num">29</span>, frequency <span class="num">3.4</span>, hold rate <span class="num">12%</span>.</p>
+     <p>The scene read is the useful part: retention holds through the demo and collapses at <span class="num">0:07</span>, the second the price overlay lands, before the benefit is stated. <b>The hook is doing its job.</b> The fix is order, not content.</p>
+     <p>The breakdown underneath also shows Audience Network taking <span class="num">22%</span> of spend for <span class="num">4%</span> of results.</p>`},
+
+ {q:"Scale campaign 12? It's our best ROAS.",view:'campaigns',
+  a:`<p><b>I would not.</b> Platform ROAS is <span class="num">3.2×</span>, genuinely your best. But the orders behind it carry a <span class="num">41%</span> average discount and an <span class="num">8%</span> return rate — contribution on that cohort is negative.</p>
+     <p>It is your best campaign at acquiring volume and your worst at acquiring profit. The platform can only see the first half.</p>`,
+  note:"Read from GA4 today; direct store reading is the next connection."},
+
+ {q:"Set a £250 target CPA on the sales campaign.",view:'action_items',
+  a:`<p><b>I can't set that one honestly.</b> This account's real booking-stage CPA is <span class="num">£4,028</span>. A £250 target does not reach it — what optimisation would actually buy at that price is the <span class="num">£13</span> micro-lead that books nobody.</p>
+     <p>Under the floor, a target does not get cheaper. It changes what gets bought.</p>`,
+  note:"Refused before any budget moved. Nothing was written."},
+
+ {q:"Build me an agent that watches this.",view:'agents',
+  a:`<p>Drafted. Before it goes live, here is the honest part — I replayed the condition over the last 30 days through the same edge, dwell and cooldown logic it would run under:</p>`,
+  agent:{name:'Fatigue on prospecting',trigger:'condition · frequency > 3 AND hold rate falling 3 days',
+    scope:'Meta · prospecting ad sets',
+    backtest:'Would have fired <b>4 times</b> in 30 days — 3 of them on ads that later lost CPI. One would have been early.'}},
+
+ {q:"Fine — pause the fatigued creative.",view:'ads',
+  a:`<p>That I can do, and it is reversible. Here is the exact write, with the state it replaces:</p>`,
+  proposal:{title:'Pause ad · SPRING_LAUNCH_V3',sub:'Meta · Campaign 12 · Broad 25–55',
+    rows:[['status','ACTIVE','PAUSED'],['daily budget','£120','unchanged']],
+    warn:'The other three ads in the set are untouched. Pausing does not reallocate their budget on its own.',
+    ledger:{t:'ACTIVE → PAUSED · SPRING_LAUNCH_V3',m:'you, from chat · approved just now'}}},
+];
+
+let step=0,busy=false;
+const el=h=>{const d=document.createElement('div');d.innerHTML=h.trim();return d.firstElementChild;};
+const down=()=>stream.scrollTop=stream.scrollHeight;
+
+function renderChips(){
+  chipsEl.innerHTML=SCRIPT.map((s,i)=>{
+    const done=i<step,next=i===step;
+    return `<button class="chip ${done?'done':''}" data-step="${i}" ${(!next||busy)?'disabled':''}>${done?'✓ ':''}${s.q}</button>`;
+  }).join('');
+  chipsEl.querySelectorAll('[data-step]').forEach(b=>b.onclick=()=>ask(+b.dataset.step));
+  document.getElementById('composer-text').textContent =
+    step>=SCRIPT.length ? "That's the walkthrough — reload to run it again" : "Pick a question above";
+}
+function say(html,note){
+  const m=el(`<div class="msg msg-a">${html}${note?`<div class="msg-note">${note}</div>`:''}</div>`);
+  stream.appendChild(m); down(); return m;
+}
+function addAgent(host,a){
+  host.appendChild(el(`<div class="prop">
+    <div class="prop-h">${svg('M12 3v4M8 21h8M5 9h14v8H5zM9 13h.01M15 13h.01','pi')}${a.name}</div>
+    <div class="prop-sub">${a.scope}</div>
+    <div class="prop-rows"><div>${a.trigger}</div></div>
+    <div class="bt"><div class="bt-k">Backtest · last 30 days</div><div class="bt-v">${a.backtest}</div></div>
+    <span class="prop-rev">${svg('m5 12 5 5L20 7')}proposes only — it never applies on its own</span>
+  </div>`));
+  const list=document.getElementById('agent-list');
+  if(list) list.prepend(el(`<div class="acard new"><div class="ah-row"><span class="an2">${a.name}</span><span class="pill warn">draft</span></div>
+    <div class="atrig">${a.trigger}</div><div class="adesc">Backtested before going live: ${a.backtest.replace(/<[^>]+>/g,'')}</div></div>`));
+}
+function addProposal(host,p){
+  const card=el(`<div class="prop">
+    <div class="prop-h">${svg('M18.36 6.64A9 9 0 1 1 5.64 6.64M12 2v10','pi')}${p.title}</div>
+    <div class="prop-sub">${p.sub}</div>
+    <div class="prop-rows">${p.rows.map(([k,w,n])=>`<div>${k} · <span class="was">${w}</span> → <span class="now">${n}</span></div>`).join('')}</div>
+    <div class="prop-warn">${svg('M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z')}${p.warn}</div>
+    <span class="prop-rev">${svg('M3 12a9 9 0 1 0 3-6.7L3 8M3 3v5h5')}reversible · logged with its before-state</span>
+    <div class="prop-acts">
+      <button class="btn-ok">${svg('m5 12 5 5L20 7')}Approve</button>
+      <button class="btn-no">${svg('M18 6 6 18M6 6l12 12')}Reject</button></div></div>`);
+  host.appendChild(card);
+  const settle=ok=>{
+    card.querySelector('.prop-acts').remove();
+    card.appendChild(el(`<div class="prop-done ${ok?'ok':'no'}">${svg(ok?'m5 12 5 5L20 7':'M18 6 6 18M6 6l12 12')}${ok?'Approved — change applied, and reversible.':'Rejected — nothing changed.'}</div>`));
+    if(ok){
+      show('ledger');
+      document.getElementById('led-empty')?.remove();
+      document.getElementById('led').prepend(el(`<div class="led-row">
+        <div class="led-ic">${svg('M12 8v4l3 2M12 21a9 9 0 1 1 0-18 9 9 0 0 1 0 18z')}</div>
+        <div class="led-b"><div class="led-t">${p.ledger.t}</div><div class="led-m">${p.ledger.m}</div></div>
+        <div class="led-a"><button class="und">${svg('M3 12a9 9 0 1 0 3-6.7L3 8M3 3v5h5')}Undo</button></div></div>`));
+      document.getElementById('led-count').textContent='1 change · reversible';
+      say(`<p>Done — <span class="num">ACTIVE → PAUSED</span>, logged as its own entry with the state it replaced.</p>
+           <p>Undoing it is one click. <b>Watch the next few days:</b> if the set's CPA does not recover, the fatigue was not the whole story.</p>`);
+    } else say(`<p>Left alone. Nothing was written — the ad is still <span class="num">ACTIVE</span>.</p>`);
+    down();
+  };
+  card.querySelector('.btn-ok').onclick=()=>settle(true);
+  card.querySelector('.btn-no').onclick=()=>settle(false);
+}
+function ask(i){
+  if(busy||i!==step) return;
+  busy=true;
+  const s=SCRIPT[i];
+  stream.appendChild(el(`<div class="msg msg-u">${s.q}</div>`)); down(); renderChips();
+  const dots=el('<div class="typing"><i></i><i></i><i></i></div>');
+  stream.appendChild(dots); down();
+  setTimeout(()=>{
+    dots.remove();
+    if(s.view) show(s.view);
+    const m=say(s.a,s.note);
+    if(s.agent) addAgent(m,s.agent);
+    if(s.proposal) addProposal(m,s.proposal);
+    step=i+1; busy=false; renderChips(); down();
+  },850);
+}
+show('today'); renderChips();
+</script>
+</body>
+</html>
