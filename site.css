@@ -5278,3 +5278,8 @@ td .src-note::after,
 .band-ink .sc-card rect, .band-ink .dv-side, .band-ink .pcard {
   background: rgba(244,242,238,0.05); border-color: rgba(244,242,238,0.14);
 }
+
+/* Cache note, 2026-08-17: the hashed URL is immutable by construction — one
+   build, one hash — so vercel.json now says so (max-age=1y, immutable). The
+   previous 4h max-age let an edge hold a body under a hash that had already
+   moved on, which shows up as new HTML asking for a stylesheet it does not get. */
