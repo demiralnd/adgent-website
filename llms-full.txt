@@ -9,7 +9,6 @@
 # Adgent — The AI media buyer that acts on your word
 URL: https://adgent.app/
 
-id="main" tabindex="-1">
 Aware Ask Apply
 The AI media buyer that reads your accounts and acts on your word.
 Not a dashboard — a verdict. Adgent reads Meta and Google as one brain, checks the platforms' numbers against your real revenue, and applies the fix the moment you approve.
@@ -231,7 +230,6 @@ We'll be in touch within a couple of working days to set up your accounts.
 # Adgent features — what an AI media buyer actually does
 URL: https://adgent.app/features
 
-id="main" tabindex="-1">
 Features
 Nine things a senior buyer does. Every morning.
 Not a feature list — a job description.
@@ -362,7 +360,6 @@ We'll be in touch within a couple of working days.
 # Why Adgent — analyze or act, everything else makes you choose
 URL: https://adgent.app/why-adgent
 
-id="main" tabindex="-1">
 Why Adgent
 Analyze or act. Everything else makes you choose.
 The tools that understand your account cannot touch it. The ones that touch it do not understand it. You end up owning both and doing the joining yourself, every morning, in your head. Adgent was built as one thing — and the reason that is hard is the reason it is worth buying.
@@ -497,7 +494,6 @@ We'll be in touch within a couple of working days.
 # Pricing — plans that scale with ad spend — Adgent
 URL: https://adgent.app/pricing
 
-id="main" tabindex="-1">
 Pricing
 Built around your accounts.
 Every plan covers Meta and Google Ads — and reads GA4, Search Console and Merchant Center for context, with Shopify next. Tell us what you're running and we'll put together the right fit.
@@ -565,7 +561,6 @@ We'll be in touch within a couple of working days to set up your accounts.
 # The daily verdict on every ad account — Adgent
 URL: https://adgent.app/daily-verdict
 
-id="main" tabindex="-1">
 Daily verdict
 Every account read before you open your laptop.
 You should not have to go hunting for the problem. Adgent reads every connected account overnight, ranks what it found by what it is costing you, and writes the answer in plain language. The account that needs you today is at the top. The ones that are fine say so in one line and get out of your way.
@@ -642,7 +637,6 @@ We'll be in touch within a couple of working days.
 # Ground truth — judged on your margin — Adgent
 URL: https://adgent.app/ground-truth
 
-id="main" tabindex="-1">
 Ground truth
 The platform can't see the number that decides it.
 An ad platform optimizes toward what its own pixel can measure. It never sees your cost of goods, your return rate, or what a customer is worth on the second order. So when it finds a campaign that converts cheaply and loses money on every order, it does the logical thing: it scales it. Nobody is asleep at the wheel — the dashboard is green, the target is met, and the report is correct on its own terms. That is the expensive part.
@@ -737,7 +731,6 @@ We'll be in touch within a couple of working days.
 # The Trust Gate — a tool that can say no — Adgent
 URL: https://adgent.app/trust-gate
 
-id="main" tabindex="-1">
 Trust Gate
 The test of a thinking tool: does it ever tell you no ?
 Anything that only says yes is executing, not reasoning. A tool that accepts every target you type and every campaign you ask for is not being helpful — it is being agreeable, which is the cheapest thing software can be. The Trust Gate is the part of Adgent that pushes back, with the account's own numbers as the reason, before any budget moves.
@@ -808,7 +801,6 @@ We'll be in touch within a couple of working days.
 # Creative intelligence, scene by scene — Adgent
 URL: https://adgent.app/creative-intelligence
 
-id="main" tabindex="-1">
 Creative intelligence
 It reads every creative like a strategist — not a tagger.
 Creative is the single biggest driver of a campaign's sales — 49%, more than targeting (11%) or reach (14%) [NCSolutions / Circana, 2023]. It is also the layer most tools only tag.
@@ -902,7 +894,6 @@ We'll be in touch within a couple of working days.
 # The Change Ledger — every change, undoable — Adgent
 URL: https://adgent.app/change-ledger
 
-id="main" tabindex="-1">
 Change Ledger
 The reason you can let it touch the account.
 Every change is captured with the exact state it replaced, so putting it back is a restore rather than a reconstruction. That is what makes the difference between a tool you supervise and one you actually use: when a change is genuinely undoable, approving it stops being a small act of courage. The caution you have been carrying was never about the tool — it was about not being able to get back.
@@ -998,7 +989,6 @@ We'll be in touch within a couple of working days.
 # Account memory — you explain the account once
 URL: https://adgent.app/account-memory
 
-id="main" tabindex="-1">
 Account memory
 The difference between a tool and someone who knows the account .
 Everything that makes your account yours lives in someone&rsquo;s head: the client who will not run video, the market that looks unprofitable and is not, the suggestion you have now rejected four times. None of it is in the ad platforms.
@@ -1090,7 +1080,6 @@ We'll be in touch within a couple of working days.
 # What it builds — campaigns, plans, dashboards — Adgent
 URL: https://adgent.app/built-from-chat
 
-id="main" tabindex="-1">
 What it builds
 Describe it in a sentence. It gets built .
 A campaign, a media plan, a live dashboard, a standing report — four different things, one way of asking for them. Not a template you fill in and not a chart library you assemble. You say what you want; the thing that answers it gets made.
@@ -1211,7 +1200,6 @@ We'll be in touch within a couple of working days.
 # Paid ads for ecommerce — Adgent
 URL: https://adgent.app/ecommerce
 
-id="main" tabindex="-1">
 For ecommerce & DTC
 January's returns rewrite December's ROAS.
 19.3% of online sales come back [NRF, Oct 2025]. They come back after the quarter closes — so the number you reported at month-end was provisional and nobody told you. The ad platform never retracts a conversion it already counted, which means your best-performing campaign of the season is graded on revenue that has since walked back out of the building.
@@ -1299,7 +1287,6 @@ We'll be in touch within a couple of working days.
 # Paid ads for lead generation — Adgent
 URL: https://adgent.app/lead-generation
 
-id="main" tabindex="-1">
 For lead generation
 The click identifier expires before the deal closes.
 Google retains a GCLID for 90 days [support.google.com, Google Ads Help]. Median CAC payback in B2B SaaS is 16 months [Aleph × Benchmarkit, 342 companies]. Those two numbers cannot both be respected. By the time a deal is closed-won, the identifier that would attribute it is gone — so for long-cycle B2B, a meaningful share of won revenue cannot be tied back to the click at all. This is an architectural ceiling, not a tooling gap.
@@ -1401,7 +1388,6 @@ We'll be in touch within a couple of working days.
 # Paid ads for hotels and travel — Adgent
 URL: https://adgent.app/travel-hospitality
 
-id="main" tabindex="-1">
 For hotels & travel
 The booking converts. The stay is what pays.
 Your conversion fires when someone books. Your revenue exists when they arrive. Between those two moments sits a cancellation rate that differs by channel, lands outside every attribution window, and never reaches the algorithm that spent the money. Your own accounting already knows this — a deposit is a liability, not revenue. The ad platform is the only system in your business that books it as a win.
@@ -1492,7 +1478,6 @@ We'll be in touch within a couple of working days.
 # Paid ads for marketplaces — Adgent
 URL: https://adgent.app/marketplaces
 
-id="main" tabindex="-1">
 For marketplaces
 The platform counts the transaction. You bank the take rate .
 A marketplace reporting 6× ROAS at a 13% take rate is running at 0.8× on the revenue it actually keeps. That is not a rounding error, it is an order of magnitude — and it is the default state of every marketplace ad account where the conversion value is set to transaction value. Which is most of them.
@@ -1582,7 +1567,6 @@ We'll be in touch within a couple of working days.
 # Paid ads for multi-location brands — Adgent
 URL: https://adgent.app/local-multi-location
 
-id="main" tabindex="-1">
 For clinics, restaurants & multi-location brands
 The conversion isn't on the internet.
 Google does not measure store visits. It models them — extrapolated from a panel of volunteers, with thresholds it does not disclose and up to five days of delay [Google Ads Help, current].
@@ -1674,7 +1658,6 @@ We'll be in touch within a couple of working days.
 # Paid ads for mobile apps and games — Adgent
 URL: https://adgent.app/mobile-apps
 
-id="main" tabindex="-1">
 For mobile apps & games
 A 6-bit integer, with noise added on purpose .
 On iOS there is no user-level truth by design. Attribution returns a number between 0 and 63, on delayed windows, with random jitter deliberately applied, and nulls below thresholds nobody publishes. This is not a measurement that happens to be imprecise — it is a privacy mechanism working exactly as intended. Every dashboard that renders it as a count is presenting a probabilistic estimate as though it were a fact.
@@ -1753,7 +1736,6 @@ We'll be in touch within a couple of working days.
 # Adgent for agencies — a senior buyer on each client account
 URL: https://adgent.app/for-agencies
 
-id="main" tabindex="-1">
 For performance agencies
 A senior buyer on each client account.
 Starting with the one you can't afford to lose.
@@ -1848,7 +1830,6 @@ read-only by default — connecting one moves nothing
 # Adgent for in-house teams — the senior you don't have
 URL: https://adgent.app/for-in-house
 
-id="main" tabindex="-1">
 For in-house growth teams
 The senior nobody hired you .
 On your account, every morning. Adgent reads your Meta
@@ -1935,7 +1916,6 @@ The second opinion a one-person team never gets: the platform&rsquo;s number che
 # About Adgent — the team building the AI analyst
 URL: https://adgent.app/about
 
-id="main" tabindex="-1">
 About
 We're building the analyst , not the dashboard.
 Performance marketers drown in data and starve for judgment. Adgent exists to flip that — to do the thinking, and hand back a verdict you can act on before your coffee's cold.
@@ -1987,7 +1967,6 @@ We'll be in touch within a couple of working days.
 # Blog — Field notes on Meta Ads, attribution, and scaling | Adgent
 URL: https://adgent.app/blog
 
-id="main" tabindex="-1">
 Blog
 Notes on reading signal from noise.
 Field notes on Meta Ads, attribution, and what it takes to turn a wall of metrics into a decision worth making.
@@ -2111,7 +2090,6 @@ A real person reads every note.
 # Security — how Adgent protects your ad data
 URL: https://adgent.app/security
 
-id="main" tabindex="-1">
 Legal
 Security
 Last updated 28 June 2026
@@ -2167,7 +2145,6 @@ Security questions or reports? Email osman@adgent.app . Adgent is operated by Os
 # Data use — what Adgent reads, and what it never does
 URL: https://adgent.app/data-use
 
-id="main" tabindex="-1">
 Legal
 Data Use
 Last updated 28 June 2026
@@ -2216,7 +2193,6 @@ Questions about how we use your data? Email osman@adgent.app . Adgent is operate
 # Privacy Policy — how Adgent handles your data
 URL: https://adgent.app/privacy
 
-id="main" tabindex="-1">
 Legal
 Privacy Policy
 Effective 28 June 2026 · Last updated 28 June 2026
@@ -2311,7 +2287,6 @@ Questions about this policy or your data? Email osman@adgent.app . Adgent is ope
 # Terms of Service — using Adgent
 URL: https://adgent.app/terms
 
-id="main" tabindex="-1">
 Legal
 Terms of Service
 Effective 28 June 2026 · Last updated 28 June 2026
@@ -2383,7 +2358,6 @@ Questions about these Terms? Email osman@adgent.app . Adgent is operated by Osma
 # An AI media buyer for agencies: managing many accounts — Adgent
 URL: https://adgent.app/ai-media-buyer-for-agencies
 
-id="main" tabindex="-1">
 Product · 7 min read · July 2026
 An AI media buyer for agencies: managing many accounts
 You can't staff a senior buyer on every client account — the math never works. An AI media buyer applies the same senior-level judgment to each of them, account by account, so a junior team ships senior output across a book that keeps growing.
@@ -2458,7 +2432,6 @@ Request demo
 # AI media buyer vs PMax vs dashboard — Adgent
 URL: https://adgent.app/ai-media-buyer-vs-performance-max-vs-dashboard
 
-id="main" tabindex="-1">
 Product · 8 min read · July 2026
 AI media buyer vs Performance Max vs dashboard: which do you need?
 They get compared as if they're the same purchase — but they're not even the same category. One reports what happened, one optimizes the auction for you, one reasons about your account for you. Here's how to tell which one you actually need.
@@ -2531,7 +2504,6 @@ Request demo
 # The 7-day window is lying to you before noon — Adgent
 URL: https://adgent.app/attribution-window-day-one-data
 
-id="main" tabindex="-1">
 Attribution · 8 min read · April 2026
 The 7-day window is lying to you before noon
 Meta's attribution window quietly rewrites yesterday's numbers for a week. Pausing a campaign on day-one data is the most expensive reflex in performance marketing — here's how to read a metric that isn't done yet.
@@ -2598,7 +2570,6 @@ Request demo
 # Can AI audit your ad accounts? — Adgent
 URL: https://adgent.app/can-ai-audit-your-ad-accounts
 
-id="main" tabindex="-1">
 Product · 7 min read · July 2026
 Can AI audit your ad accounts?
 Yes — and for the tedious, high-volume checks it's genuinely better than a human. But an audit is more than a checklist, and there's a ceiling where judgment takes over. Here's an honest split of what AI catches and what it still misses.
@@ -2673,7 +2644,6 @@ Request demo
 # Can AI run your ad account? What it can and cannot do — Adgent
 URL: https://adgent.app/can-ai-run-your-ad-account
 
-id="main" tabindex="-1">
 Product · 7 min read · July 2026
 Can AI run your ad account?
 The honest answer to the "AI replaces your team" pitch. AI can do the reasoning and the busywork — but it should not hold the last click on live spend. The judgment automates; the accountability stays human.
@@ -2758,7 +2728,6 @@ Request demo
 # CBO vs ABO in 2026: when each still wins — Adgent
 URL: https://adgent.app/cbo-vs-abo-2026
 
-id="main" tabindex="-1">
 Scaling · 6 min read · March 2026
 CBO vs ABO in 2026: when each still wins
 CBO won the argument years ago and mostly deserved to. But "mostly" is doing real work in that sentence — and the cases where ABO still wins are the cases where you're trying to learn something.
@@ -2824,7 +2793,6 @@ Request demo
 # CBO vs ABO vs Advantage+: which budget model in 2026? — Adgent
 URL: https://adgent.app/cbo-vs-abo-vs-advantage-plus
 
-id="main" tabindex="-1">
 Scaling · 8 min read · July 2026
 CBO vs ABO vs Advantage+: which budget model in 2026?
 For years the argument was CBO vs ABO. Then Advantage+ made it a three-way question — because now you can hand Meta the budget, the split, and the whole structure. Here's how to pick, honestly, by what you're actually trying to buy.
@@ -2906,7 +2874,6 @@ Request demo
 # Frequency is a lagging indicator. Watch CPM. — Adgent
 URL: https://adgent.app/cpm-is-the-early-creative-fatigue-signal
 
-id="main" tabindex="-1">
 Creative fatigue · 5 min read · April 2026
 Frequency is a lagging indicator. Watch CPM.
 Frequency tells you an audience has seen your ad too often. CPM tells you the auction already noticed. One of those is news; the other is a receipt.
@@ -2972,7 +2939,6 @@ Request demo
 # Meta says 4.2×, Google says 3.1×. Both are right. — Adgent
 URL: https://adgent.app/cross-platform-comparability-meta-google
 
-id="main" tabindex="-1">
 Attribution · 7 min read · February 2026
 Meta says 4.2×, Google says 3.1×. Both are right.
 Two platforms, two ROAS figures, one budget decision. The numbers aren't measuring the same thing — and moving money between them as if they were is the most common expensive mistake in multi-channel accounts.
@@ -2984,7 +2950,7 @@ No — not directly. Meta and Google measure ROAS with different attribution win
 You're running both. Meta reports 4.2×, Google reports 3.1×, and the conclusion writes itself: move budget to Meta. It's the most natural decision in the account, and you have almost no evidence for it.
 Three ways the numbers disagree
 Meta and Google aren't reporting the same metric under the same name. They're reporting three different disagreements at once.
-Different windows. Meta defaults to 7-day click, 1-day view. Google Ads runs its own conversion windows, commonly 30-day click. A longer window catches more conversions — mechanically, not because the channel worked harder.
+Different windows. Meta defaults to 7-day click, 1-day view. Google Ads runs its own windows , commonly 30-day click. A longer window catches more conversions — mechanically, not because the channel worked harder.
 Different models. Google's data-driven attribution spreads credit across the path. Meta credits the platform's own touchpoints on a last-touch basis. One is sharing credit; the other is claiming it.
 Different definitions. A "purchase" fired by Meta's pixel and a "conversion" counted by a Google tag can be counting different events, deduplicated differently, at different points in the funnel.
 Both platforms are honest. Neither is comparable. The dishonesty is in the subtraction you do between them.
@@ -3039,7 +3005,6 @@ Request demo
 # Google Ads account structure in 2026 — Adgent
 URL: https://adgent.app/google-ads-account-structure-2026
 
-id="main" tabindex="-1">
 Playbook · 9 min read · July 2026
 Google Ads account structure in 2026 (and how to audit yours)
 The old rules of structure were about manual control. In 2026 they're about signal quality — building an account so Smart Bidding has enough clean conversion data to actually learn. Here's the modern default, and how to audit whether yours measures up.
@@ -3124,7 +3089,6 @@ Request demo
 # Google Ads CPA rise: Aug 2026 bidding change — Adgent
 URL: https://adgent.app/google-ads-target-cpa-roas-change-2026
 
-id="main" tabindex="-1">
 Attribution · 7 min read · July 2026
 Your Google Ads CPA is about to rise: the Aug 2026 bidding change
 On August 17, Google changes how target-based bidding works — and for a lot of accounts, actual CPA is going to climb without anyone touching a campaign. Here's exactly what changes, who it hits, and what to do before the date.
@@ -3189,7 +3153,6 @@ Request demo
 # How much ad budget is wasted? — Adgent
 URL: https://adgent.app/how-much-ad-spend-is-wasted
 
-id="main" tabindex="-1">
 Playbook · 8 min read · July 2026
 How much of your ad budget is wasted (and how to find it)
 The best-documented study of this puts the median account near a third of budget wasted. The good news: most of that waste has a name and an address, and you can find it in an afternoon.
@@ -3268,7 +3231,6 @@ Request demo
 # How to audit a Google Ads account: a 12-point checklist — Adgent
 URL: https://adgent.app/how-to-audit-a-google-ads-account
 
-id="main" tabindex="-1">
 Playbook · 9 min read · July 2026
 How to audit a Google Ads account, properly
 Most account audits are a 40-point checklist that produces a 40-point to-do list. This one is shorter and ordered differently: the checks that move money first, ranked by recoverable spend — not by how thorough the report looks.
@@ -3382,7 +3344,6 @@ Request demo
 # How to audit a Performance Max campaign (the black box) — Adgent
 URL: https://adgent.app/how-to-audit-performance-max
 
-id="main" tabindex="-1">
 Playbook · 9 min read · July 2026
 How to audit a Performance Max campaign (the black box)
 Performance Max either becomes your best campaign or your biggest waste source — and Google won't tell you which. Here are the checks that pierce the black box, ranked by how much money they recover, in the order you should actually run them.
@@ -3461,7 +3422,7 @@ Request demo
 # How to choose an AI media buying tool — Adgent
 URL: https://adgent.app/how-to-choose-an-ai-media-buying-tool
 
-id="main" tabindex="-1"> Playbook · 7 min read · July 2026
+Playbook · 7 min read · July 2026
 How to choose an AI media buying tool
 "AI ad tool" describes four different products solving four different problems. This is a neutral map of the categories — creative generation, bid automation, analysis and diagnostics, and DSPs — and a framework for picking the one that fixes your actual bottleneck.
 N
@@ -3526,7 +3487,6 @@ All articles Request demo
 # Adgent — The AI media buyer that acts on your word
 URL: https://adgent.app/index
 
-id="main" tabindex="-1">
 Aware Ask Apply
 The AI media buyer that reads your accounts and acts on your word.
 Not a dashboard — a verdict. Adgent reads Meta and Google as one brain, checks the platforms' numbers against your real revenue, and applies the fix the moment you approve.
@@ -3748,7 +3708,6 @@ We'll be in touch within a couple of working days to set up your accounts.
 # The Meta Ads account audit: a 20-point checklist — Adgent
 URL: https://adgent.app/meta-ads-account-audit-checklist
 
-id="main" tabindex="-1">
 Playbook · 9 min read · July 2026
 The Meta Ads account audit: a 20-point checklist
 Most Meta audits are a screenshot tour of the dashboard. This one is ordered differently: the checks that recover spend first, ranked by impact — and the signal check that has to come before all of them, because a broken pixel makes every other number a guess.
@@ -3853,7 +3812,6 @@ Request demo
 # Meta vs Google Ads: which platform for your first $10k? — Adgent
 URL: https://adgent.app/meta-vs-google-ads-which-first
 
-id="main" tabindex="-1">
 Attribution · 8 min read · July 2026
 Meta vs Google Ads: which platform for your first $10k?
 It's not the fight you think. Google Ads captures demand that already exists; Meta creates demand that doesn't. Which you start with comes down to one question — do people already search for what you sell?
@@ -3928,7 +3886,6 @@ Request demo
 # Is Performance Max cannibalizing your branded search? — Adgent
 URL: https://adgent.app/performance-max-brand-cannibalization
 
-id="main" tabindex="-1">
 Playbook · 6 min read · July 2026
 Is Performance Max cannibalizing your branded search?
 Performance Max loves a cheap conversion — and nothing is cheaper than someone typing your brand name. Left unchecked, it quietly absorbs demand you already own, takes the credit, and reports a ROAS you can't actually bank. Here's how to catch it and shut it down.
@@ -4008,7 +3965,6 @@ Request demo
 # Why Performance Max isn’t spending your full budget — Adgent
 URL: https://adgent.app/performance-max-not-spending-budget
 
-id="main" tabindex="-1">
 Playbook · 8 min read · July 2026
 Why Performance Max isn’t spending your full budget
 You set the budget, the campaign is live, and it's spending a fraction of the cap. Before you touch the budget slider — it's probably not the budget. Here's how to diagnose the real constraint, ranked by how often it's the culprit.
@@ -4079,7 +4035,6 @@ Request demo
 # Placement drift: the leak hiding in your average — Adgent
 URL: https://adgent.app/placement-drift-the-leak-in-the-average
 
-id="main" tabindex="-1">
 Attribution · 7 min read · March 2026
 Placement drift: the leak hiding in your average
 Your account is at 3.8× and everything looks fine. Inside that number, one placement is returning 1.1× on a fifth of your budget — and the average is doing an excellent job of hiding it.
@@ -4144,7 +4099,6 @@ Request demo
 # How to scale a winner without breaking it — Adgent
 URL: https://adgent.app/scale-a-winner-without-breaking-it
 
-id="main" tabindex="-1">
 Scaling · 6 min read · April 2026
 How to scale a winner without breaking it
 You found a campaign that works. Now the hard part: adding budget without handing it back to the learning phase. The rule isn't about how much you add — it's about how fast.
@@ -4208,7 +4162,6 @@ Request demo
 # What is an AI media buyer? A plain-language guide — Adgent
 URL: https://adgent.app/what-is-an-ai-media-buyer
 
-id="main" tabindex="-1">
 Product · 7 min read · July 2026
 What is an AI media buyer?
 The term is new, the job isn't. An AI media buyer reads your ad accounts like a senior strategist, tells you what to do and why, and makes the change on your approval — not a dashboard with a chatbot bolted on.
@@ -4268,13 +4221,13 @@ Does it flag what it can't measure? The honest ones say "this number can't be tr
 Does it work across channels as one account? Meta and Google read together, not three separate tools bolted side by side.
 That's the bar we build Adgent to: a senior media buyer's judgment across Meta and Google, honest about what it can and can't measure, executing only on your word. If you want to see what it would say about a real account, request a demo — one real finding on your own account, before you change anything.
 Frequently asked
-What is an AI media buyer, in one sentence?
+What is an AI media buyer?
 Software that reads your ad accounts like a senior strategist, tells you what to do and why, and executes the change on your approval — reasoning about account structure, not just rendering metrics.
-How is it different from a dashboard?
+How is an AI media buyer different from a dashboard?
 A dashboard renders your data and hands the analysis back to you. An AI media buyer does the analysis: it ranks issues by impact, says how confident it is and why, and proposes the specific fix — then applies it when you approve.
-Is it the same as Meta Advantage+ or Performance Max?
+Is an AI media buyer the same as Meta Advantage+ or Google Performance Max?
 No. Those are the platform's own automation, optimizing toward the platform's auction. An AI media buyer sits on the advertiser's side, reasons across Meta and Google together, and cross-checks platform numbers against real revenue.
-Does it change campaigns automatically?
+Does an AI media buyer change campaigns automatically?
 It shouldn't. A well-built AI media buyer is read-only by default: it prepares each change as an approval-gated action and only writes to a live account once you say go.
 Does an AI media buyer replace a media buyer?
 No — it changes what the buyer spends time on. It automates the reasoning and the busywork (nightly account reads, anomaly detection, report generation) so the human focuses on strategy, creative direction, and the final call on every change. The best setups keep a human in the loop, not out of it.
@@ -4297,7 +4250,6 @@ Request demo
 # Why Adgent leads with the verdict — Adgent
 URL: https://adgent.app/why-adgent-leads-with-the-verdict
 
-id="main" tabindex="-1">
 Product · 4 min read · March 2026
 Why Adgent leads with the verdict
 A dashboard is a filing cabinet that renders. It shows you everything and concludes nothing. Every Adgent brief inverts that: the verdict first, the evidence underneath, and nothing you didn't need.
@@ -4363,7 +4315,6 @@ Request demo
 # Why did my CPA suddenly jump? What to check first — Adgent
 URL: https://adgent.app/why-did-my-cpa-jump
 
-id="main" tabindex="-1">
 Attribution · 7 min read · July 2026
 Why did my CPA suddenly jump? What to check first
 CPA doubled overnight and nothing you changed explains it. Before you panic-pause anything, run the checklist — a spike is almost always one of four things, and half the time it isn't a media problem at all.
@@ -4442,7 +4393,6 @@ Request demo
 # Why is my Meta ROAS dropping? A diagnostic walkthrough — Adgent
 URL: https://adgent.app/why-is-my-meta-roas-dropping
 
-id="main" tabindex="-1">
 Attribution · 8 min read · July 2026
 Why is my Meta ROAS dropping?
 A falling ROAS sends most buyers straight to the budget slider. That's usually the wrong first move. Here's the diagnostic a senior buyer actually runs — in order — and why the answer is almost always further up the list than you think.

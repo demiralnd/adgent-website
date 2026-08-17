@@ -90,6 +90,40 @@ def asset_stamp(name):
     return "?v=" + h
 
 
+def twitter_card(html):
+    """Mirror og:title / og:description into twitter:* when they are missing.
+
+    Twenty-five pages declared twitter:card and twitter:image but neither text
+    tag. X falls back to og:*, but Slack, LinkedIn and Discord are less reliable
+    about it — and on the pages where og:description is deliberately shorter
+    than the meta description, the fallback is not the copy anyone chose. The
+    articles already do this correctly; deriving it here closes the gap without
+    touching 25 heads by hand, and a new page inherits it.
+    """
+    head_end = html.find("</head>")
+    if head_end == -1 or "twitter:card" not in html[:head_end]:
+        return html
+    head = html[:head_end]
+    if "twitter:title" in head and "twitter:description" in head:
+        return html
+
+    def og(prop):
+        m = re.search(r'<meta property="og:%s" content="([^"]*)"' % prop, head)
+        return m.group(1) if m else None
+
+    add = []
+    if "twitter:title" not in head and og("title"):
+        add.append('<meta name="twitter:title" content="%s"/>' % og("title"))
+    if "twitter:description" not in head and og("description"):
+        add.append('<meta name="twitter:description" content="%s"/>' % og("description"))
+    if not add:
+        return html
+    # sit them beside the card/image tags they belong with
+    anchor = re.search(r'<meta name="twitter:card"[^>]*/?>', head)
+    at = anchor.end() if anchor else head_end
+    return html[:at] + "\n" + "\n".join(add) + html[at:]
+
+
 def stamp_assets(html):
     for name in ("site.css", "site.js"):
         v = asset_stamp(name)
@@ -155,7 +189,7 @@ def render(html, slug):
             m = re.search(LEGACY[block], html, re.S)
             if m:
                 html = html[:m.start()] + repl + html[m.end():]
-    return stamp_assets(mark_figures(main_landmark(html)))
+    return stamp_assets(twitter_card(mark_figures(main_landmark(html))))
 
 
 def pages():
@@ -284,7 +318,17 @@ def _page_text(slug):
     if not os.path.exists(path):
         return None
     html = read(path)
-    body = html.split("<main", 1)[-1].split("</main>", 1)[0] if "<main" in html else html
+    # Split past the WHOLE opening tag. Splitting on "<main" alone left the
+    # rest of it (`id="main" tabindex="-1">`) at the head of the text, and the
+    # tag-stripper below could not remove it because it no longer began with
+    # "<" — so every one of the 51 entries in llms-full.txt opened with markup,
+    # in the file robots.txt points AI crawlers at.
+    if "<main" in html:
+        after = html.split("<main", 1)[1]
+        body = after.split(">", 1)[1] if ">" in after else after
+        body = body.split("</main>", 1)[0]
+    else:
+        body = html
     body = re.sub(r"<(script|style|svg)\b.*?</\1>", " ", body, flags=re.S | re.I)
     # keep block boundaries so sentences do not run together
     body = re.sub(r"</(p|li|h[1-6]|div|section|tr)>", "\n", body, flags=re.I)

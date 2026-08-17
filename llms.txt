@@ -4,9 +4,9 @@
 > reasons about your account, and delivers one brief each morning — the verdict first,
 > the evidence underneath. It proposes actions and executes them on your approval.
 
-Adgent. It reads Meta and Google Ads through the
-platforms' own APIs, enriches with GA4 and Merchant Center, and reconciles platform
-claims against ground-truth revenue. It is read-only by default; every write action to
+Adgent is an AI media buyer for Meta and Google Ads. It reads both accounts through the
+platforms' own APIs, enriches with GA4, Search Console and Merchant Center, and reconciles
+platform claims against ground-truth revenue. It is read-only by default; every write action to
 a live ad account is approval-gated.
 
 What separates Adgent from a dashboard: a dashboard renders your data and hands the

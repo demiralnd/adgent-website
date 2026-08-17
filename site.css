@@ -5283,3 +5283,146 @@ td .src-note::after,
    build, one hash — so vercel.json now says so (max-age=1y, immutable). The
    previous 4h max-age let an edge hold a body under a hash that had already
    moved on, which shows up as new HTML asking for a stylesheet it does not get. */
+
+/* ============================================================
+   MEGA-MENU PANEL ART — the drawing assembles as you hover
+   ------------------------------------------------------------
+   Each panel drawing already tells a small story in the order its
+   parts are authored: the thing you said, the ties that carry it,
+   the rows it lands in, the ticks that confirm. It was appearing
+   all at once on a 220ms fade, so none of that order was legible.
+
+   The panel is a hover surface, so this is faster and lighter than
+   the in-page figures: ~460ms end to end, nothing springy. It
+   replays on every hover — unlike the page figures, which fire once
+   — because the panel is a thing you point at deliberately.
+   ============================================================ */
+@media (prefers-reduced-motion: no-preference) {
+  html.js .mega-panel-art .mp-bubble,
+  html.js .mega-panel-art .mp-card,
+  html.js .mega-panel-art .mp-plate {
+    opacity: 0; transform: translateY(-5px);
+    transition: opacity 240ms var(--ease), transform 300ms cubic-bezier(.16,1,.3,1);
+  }
+  html.js .mega-panel-art.on .mp-bubble,
+  html.js .mega-panel-art.on .mp-card,
+  html.js .mega-panel-art.on .mp-plate { opacity: 1; transform: none; }
+
+  /* the ties draw themselves, left to right, after the bubble lands */
+  html.js .mega-panel-art .mp-tie {
+    stroke-dasharray: 90; stroke-dashoffset: 90;
+    transition: stroke-dashoffset 340ms var(--ease) 120ms;
+  }
+  html.js .mega-panel-art.on .mp-tie { stroke-dashoffset: 0; }
+
+  /* rows and bars arrive in sequence — what the rule applied to */
+  html.js .mega-panel-art .mp-rows rect,
+  html.js .mega-panel-art .mp-frames rect,
+  html.js .mega-panel-art .mp-grid rect {
+    opacity: 0; transform: translateX(-6px);
+    transition: opacity 260ms var(--ease), transform 320ms cubic-bezier(.16,1,.3,1);
+  }
+  html.js .mega-panel-art.on .mp-rows rect,
+  html.js .mega-panel-art.on .mp-frames rect,
+  html.js .mega-panel-art.on .mp-grid rect { opacity: 1; transform: none; }
+  html.js .mega-panel-art .mp-rows rect:nth-child(2),
+  html.js .mega-panel-art .mp-frames rect:nth-child(2) { transition-delay: 90ms; }
+  html.js .mega-panel-art .mp-rows rect:nth-child(3),
+  html.js .mega-panel-art .mp-frames rect:nth-child(3) { transition-delay: 150ms; }
+  html.js .mega-panel-art .mp-rows rect:nth-child(n+4),
+  html.js .mega-panel-art .mp-frames rect:nth-child(n+4) { transition-delay: 200ms; }
+
+  html.js .mega-panel-art .mp-bars rect {
+    transform-box: fill-box; transform-origin: 50% 100%;
+    transform: scaleY(0.08); opacity: 0;
+    transition: transform 360ms cubic-bezier(.16,1,.3,1) 120ms, opacity 200ms var(--ease) 120ms;
+  }
+  html.js .mega-panel-art.on .mp-bars rect { transform: scaleY(1); opacity: 1; }
+
+  /* the confirmation is the last thing to arrive, as it should be */
+  html.js .mega-panel-art .mp-tick path {
+    stroke-dasharray: 22; stroke-dashoffset: 22;
+    transition: stroke-dashoffset 260ms var(--ease) 300ms;
+  }
+  html.js .mega-panel-art.on .mp-tick path { stroke-dashoffset: 0; }
+
+  html.js .mega-panel-art .mp-acc rect,
+  html.js .mega-panel-art .mp-acc circle,
+  html.js .mega-panel-art .mp-dot-acc {
+    transform-box: fill-box; transform-origin: 50% 50%;
+    opacity: 0; transform: scale(0.5);
+    transition: opacity 220ms var(--ease) 280ms, transform 300ms cubic-bezier(.34,1.56,.64,1) 280ms;
+  }
+  html.js .mega-panel-art.on .mp-acc rect,
+  html.js .mega-panel-art.on .mp-acc circle,
+  html.js .mega-panel-art.on .mp-dot-acc { opacity: 1; transform: none; }
+
+  html.js .mega-panel-art .mp-lbl,
+  html.js .mega-panel-art .mp-t,
+  html.js .mega-panel-art .mp-d {
+    opacity: 0; transition: opacity 240ms var(--ease) 220ms;
+  }
+  html.js .mega-panel-art.on .mp-lbl,
+  html.js .mega-panel-art.on .mp-t,
+  html.js .mega-panel-art.on .mp-d { opacity: 1; }
+
+  /* the nav icon nudges toward its label on hover — a small, cheap sign
+     that the row is live, on a surface where nothing else moves */
+  html.js .nav-mega a .mega-ic svg { transition: transform 240ms cubic-bezier(.16,1,.3,1); }
+  html.js .nav-mega a:hover .mega-ic svg { transform: translateX(1.5px) scale(1.06); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mega-panel-art * { opacity: 1 !important; transform: none !important;
+                      stroke-dashoffset: 0 !important; transition: none !important; }
+}
+
+/* ============================================================
+   SECTION TRANSITIONS — the page should breathe between arguments
+   ------------------------------------------------------------
+   Sections already blend through .band-sub's gradient. Two things
+   were missing: the ink bands cut in hard on both edges, and a
+   section's own head arrived at the same instant as its body, so a
+   long page read as one continuous slab rather than a sequence of
+   arguments.
+   ============================================================ */
+
+/* an ink band should arrive as a change of ground, not a cut: the light
+   section above it darkens into it, and lifts back out below */
+.band-ink::after {
+  content: ""; position: absolute; left: 0; right: 0; top: 0; height: 90px;
+  background: linear-gradient(to bottom, rgba(20,18,16,0), rgba(20,18,16,0) 44%, transparent);
+  pointer-events: none;
+}
+.band + .band-ink { position: relative; }
+.band + .band-ink::before {
+  /* keep the accent glow, and add the entry fade above it */
+  background:
+    linear-gradient(to bottom, rgba(255,255,255,0.055), transparent 120px),
+    radial-gradient(72% 62% at 82% -10%, rgba(255,90,44,0.18), transparent 58%),
+    radial-gradient(58% 78% at 4% 110%, rgba(255,120,60,0.07), transparent 56%);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* a section head leads its own body by a beat, so the eye is given the
+     claim before the evidence under it — the same order the figures use */
+  html.js .band .sec-head[data-reveal] { transition-delay: 0ms; }
+  html.js .band .sec-head[data-reveal] + * { transition-delay: 110ms; }
+
+  /* The eyebrow's tick draws itself, so a section announces itself quietly.
+     Scoped to eyebrows that actually sit inside a reveal target: an eyebrow
+     outside one never receives .in, so a bare scaleX(0) would leave it
+     permanently zero-width — which is what the browser check caught on 34
+     pages. Animate only where something will definitely switch it back on. */
+  html.js [data-reveal] .eyebrow .tick {
+    transform-origin: left center; transform: scaleX(0);
+    transition: transform 420ms cubic-bezier(.16,1,.3,1) 80ms;
+  }
+  html.js [data-reveal].in .eyebrow .tick { transform: scaleX(1); }
+
+  /* the ink band's own contents lead with the statement, then the facts */
+  html.js .band-ink .ink-line { transition-delay: 0ms; }
+  html.js .band-ink .ink-sub { transition-delay: 120ms; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .eyebrow .tick { transform: none !important; }
+}
