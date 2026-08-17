@@ -335,6 +335,11 @@ See the stack
 Why Adgent
 What each category of tool can and cannot do — and where we are the wrong purchase.
 See the comparison
+None of it shows up as a line item .
+It shows up as the campaign you scaled in March and stopped in June, and by then the account has already learned from it.
+9 jobs a senior buyer does before lunch
+7 layers between a connected account and a decision
+1 approval before anything moves
 Free account audit
 Name the account you worry about most. You get its morning read this week .
 One account, one read, back within five working days — the brief Adgent would write on it, where it would stop money leaking, and what it would refuse to answer yet. Read-only, and you keep the findings whether or not anything comes of it.
@@ -610,6 +615,11 @@ Read more
 Trust Gate
 It refuses unreachable targets before the budget moves.
 Read more
+A brief that never says stop is a newsletter.
+Two things decide whether a morning read is worth reading: whether it is measured against money that actually landed, and whether it is willing to tell you the thing you did not want to hear.
+1 account on top, ranked by what it costs you
+34% CPA rise caught before the week&rsquo;s spend repeated it
+£2,400 recoverable, attached to the verdict rather than implied
 See tomorrow morning's brief
 Have it read your accounts tonight .
 Send us the accounts you run and we'll run the read Adgent would run overnight — the brief it would write, ranked by what each finding is costing you.
@@ -666,6 +676,11 @@ An optimizer grading its own spend is being asked to mark its own homework. Even
 The report is correct and the conclusion is wrong
 This is what makes it expensive. Nothing looks broken. There is no error state, no alert, no red number — just a well-run campaign steadily scaling something that loses money per order.
 Which is why waiting a quarter is not neutral. Nothing in the account will surface this on its own — the 3.2× campaign above keeps clearing its target, keeps earning budget, and keeps teaching the optimizer that discount-driven volume is what you want more of. Ninety days of that is not ninety days of no decision. It is ninety days of one decision, made by the system with the least visibility into your profit.
+The platform grades its own homework, and it passes .
+Every number it reports is true. None of them is the one that decides whether a campaign is worth running.
+3.2× the ROAS the platform reports on a campaign losing contribution
+41% average discount on the orders behind it
+8% of those orders came back — neither figure reaches the bidding
 What Adgent reads instead
 Reconciled against the numbers your business runs on.
 Adgent reads GA4 and Search Console alongside the ad platforms, so a report is checked against a source the platform does not control — and where the two disagree, the disagreement itself is the finding. Shopify reading is the next connection we are building.
@@ -737,6 +752,11 @@ Where the target lands on this account
 Between the ask and the outcome sits a second problem: thirty days of this pixel hold 65,042 custom events, 16,404 initiate-checkouts and 4 purchases — against Meta&rsquo;s own floor of 50 events in 7 days . [developers.meta.com]
 Both refusals came from one real account, unprompted, before a dollar was spent. A tool that checks this afterwards reports the same facts a month later — once the money has already taught the algorithm nothing.
 That account is still running. Left alone another quarter, the pixel with 4 purchases in thirty days keeps training on nothing, and the ₺250 target keeps getting hit by the ₺13 micro-lead that books nobody — so the number on the report improves while the bookings do not. Nothing here fails loudly enough to interrupt anyone. That is the whole reason it survives a quarter.
+A tool that cannot say no is a tool that spends .
+The refusals on this page came from one real account, unprompted, before a pound moved. Nothing here fails loudly enough to interrupt anyone — which is why it survives a quarter.
+4 purchases that pixel recorded in thirty days
+50 events in 7 days is Meta&rsquo;s own learning floor
+300× between the target asked for and what a booking actually costs
 What it refuses
 Three kinds of no, and why each one saves money.
 01
@@ -847,6 +867,11 @@ Fatigue, flagged before the numbers slide
 A creative wearing out shows up in the read before it shows up in the CPA. Frequency climbing while hold rate falls is a creative running out of road — and by the time the cost per acquisition confirms it, you have paid for the confirmation.
 Creative is 49% of what drives the sale, and a quarter of tagging instead of reading is a quarter of spending against the wrong half of it. The ad above loses 38% of viewers at 0:07 — the price overlay landing before the benefit.
 Nothing in a hook rate or a hold rate says which second to change, so the next brief is written from the same two scalars as the last one. Three more months of that is three more months of reshooting the parts that were working.
+Hook rate says whether . It never says which second.
+So the next brief gets written from the same two scalars as the last one, and the creative that follows is a guess with better production values.
+49% of a campaign&rsquo;s sales are driven by the creative itself
+0:07 the second this ad loses 38% of its viewers
+4 scenes read individually, not one average
 Next
 The creative read lands in the same place as everything else.
 It arrives in the morning verdict, ranked with everything else competing for your attention — and what you decide about a creative is remembered the next time one like it appears.
@@ -898,6 +923,11 @@ Reversing is a restore , not four people reconstructing Monday from memory.
 You can be wrong on purpose , cheaply, which is the only way anyone learns an account.
 The ledger does not make you safer. It makes you faster, because being wrong got cheap.
 This is the part that sounds like a compliance feature and is not. A team that can undo anything runs more changes, learns the account faster, and stops routing every ordinary decision through a call. The log is the by-product. The behavior it unlocks is the point.
+A team that can undo anything runs more changes.
+Reversibility is not paperwork. It is what makes a wrong call cheap, and a cheap wrong call is how an account gets learned quickly.
+1 approval between a proposal and a change
+0 changes that arrive without the state they replaced
+&infin; undos — reverting a revert is just another entry
 Why most undo buttons are not one
 A log tells you what happened. It cannot put anything back .
 Plenty of tools keep a history, and it reads convincingly right up to the moment you need it. The question is whether the replaced value was captured at the instant of the write — because if it was not, no amount of logging will reconstruct it afterwards.
@@ -1018,6 +1048,11 @@ It carries your limits into execution
 "Nothing scales past this without flagging me" is a rule that has to survive to the moment a change is proposed, six weeks later, on a campaign that did not exist when you said it.
 Memory is the one thing here that only accrues by starting. A quarter of deferring is a quarter of re-explaining the account every session — the same exceptions retyped, the same rejected suggestion arriving again on Tuesday, the €500/day limit living in someone's head instead of in the thing proposing the change.
 The context you would have by March is not something you can buy in March. It is only worth what it has been running.
+The context you would have by March cannot be bought in March.
+It is only worth what it has been running. A rule you set in July is still holding in September, on every account under the brand.
+1 sentence to set a limit, once
+0 setup screens, because nobody fills them in honestly
+both platforms — the rule crosses Meta and Google without restating
 Whose memory it is
 Yours, and it follows the brand .
 The context belongs to the account, not to one ad platform's view of it. Your rules travel with the brand across every platform you connect, so a decision made about a campaign on one platform is not forgotten when the same question comes up on another.
@@ -1118,6 +1153,11 @@ A market the account has never run in gets budget and a test window, and no esti
 Approval is per line, not per plan
 You can take the two Norvik lines and leave the Dalmere test in draft until the opening date is confirmed. A plan is not a single yes — and producing it touches no campaign, no budget and no setting.
 The plan is built from the connected account's own Meta and Google Ads history and nothing else. There is no pooled benchmark under it and no learning carried across from another advertiser — which is also why the empty line stays empty: there is no other account's Dalmere to borrow a number from.
+A plan with no blank in it is a plan that is guessing .
+Built from the connected account&rsquo;s own history and nothing else. There is no pooled benchmark underneath and no learning carried across from another advertiser — which is also why the empty line stays empty.
+0 history for the new market, so no estimate is offered
+6 line items allocated to the exact total
+paused is the state every build arrives in
 Campaign builds
 Built complete. Then held , until you approve it.
 Structure, budget, targeting, copy and the creative slots — drafted whole from what you described, prefilled from what this account has actually proven rather than from a template. What you get back is a specification you can read line by line, not a half-configured campaign waiting for twenty more clicks.
@@ -1206,6 +1246,11 @@ At 3× return on 50% gross margin: a third goes to ads, half to cost of goods, l
 Cost peaks exactly when volume does
 Peak-season impression costs run far above the annual average, compressed into a handful of days. The most expensive inventory of the year is bought at the moment nobody has time to watch the account.
 A quarter is exactly the wrong unit to wait. It is one full return cycle: whatever you set budgets against this quarter gets restated by roughly a fifth next quarter, and the restatement never reaches the account that spent the money. So the discount-led campaign that returns hardest gets funded again, on a ranking that January already corrected. Deciding in three months means deciding with the same overstated number you have now, plus one more season of spend behind it.
+A quarter is exactly the wrong unit to wait .
+It is one full return cycle: whatever you set budgets against this quarter gets restated by roughly a fifth after it closes, and the ad platforms never retract the conversions.
+19.3% of online orders come back
+26% return rate on the discount-led winner — 11% on the other
+0 of it reaches the platform that spent the money
 Where Adgent stands today
 Store reading is the next connection we are building.
 Closing this loop properly means reading your store: orders, cost per item, and refunds. That connection is the next one we are building — it is not in the product today — and refund data in particular is what turns "returns restate your quarter" from a true statement about the world into something a tool can act on. Today Adgent reads the ad platforms, GA4, Search Console and Merchant Center. Here is what that already covers.
@@ -1326,6 +1371,11 @@ Read more
 Ground truth
 Judged against your real margin, not the number the pixel can see.
 Read more
+Your cheapest lead is often your most expensive customer.
+And no dashboard sorted by cost per lead will ever show you that, because the outcome lands months after the click that gets the credit.
+312 of 480 conversions from one placement, overnight
+61% of the buying journey is done before first contact
+26 weeks from that first contact to a decision
 Running these accounts for clients?
 The same read on every client you run — including the ones nobody opened this week. When a client's pipeline argument arrives, your team walks in with the reasoning already attached rather than a screenshot of the platform's number.
 How this works across a book of accounts
@@ -1391,6 +1441,11 @@ A closed period keeps changing as cancellations land. Any figure you reported at
 Brand defence is the quiet leak
 Paying to reacquire guests who were already coming to you is the most reliably profitable-looking spend in the account, and the hardest to justify on incrementality.
 Notice that a quarter is barely longer than one cycle of this. At 79 days from click to cancellation, a decision deferred to next quarter is a decision made on bookings whose outcome is still in flight — and in the meantime budget keeps flowing toward the channel cancelling at 21.8% rather than the one at 10.6%, because on reported ROAS they are indistinguishable. Since February 2025 that risk sits with you, not the platform. Waiting is not holding the position. It is funding the wrong channel for one more booking window.
+The outcome arrives 79 days after the click.
+A quarter is barely longer than one cycle of this, so a decision deferred to next quarter is a decision made on a number that has not finished happening yet.
+79 days from click to the cancellation that undoes it
+2× the cancellation rate of your direct bookings
+3rd where metasearch lands on stayed nights, not first
 Where Adgent stands today
 The honest line, since this vertical deserves one.
 Stayed revenue lives in your PMS or CRS — Opera, Mews, Cloudbeds. Adgent does not read those today , so it cannot compute a stayed-revenue ROAS or split cancellation rate by campaign. Property-system reading is the roadmap item that would close this, and we would rather name it than imply it is finished.
@@ -1459,6 +1514,11 @@ How much has that cost us?
 I can show you the spend that sat above break-even under the corrected value — it is the majority of the last two months. Fixing the field takes a minute; unlearning it takes the algorithm a fortnight.
 Corrected value same spend
 Nothing in the interface flags it.
+Two numbers, seven times apart, for the same spend.
+DoorDash states it plainly in its own filing: sales and marketing was 2.5% of gross order value and 18.1% of net revenue. Your bidding is optimising against whichever one the conversion value happens to carry.
+6× the ROAS reported off gross transaction value
+0.8× the same campaign on the revenue you keep
+13% take rate is the whole distance between them
 The second thing the pixel cannot see
 You have two costs of acquisition. It can only count one.
 A marketplace has to buy buyers and sellers, and the two are not remotely comparable. Take a marketplace clearing $85 an order at a 13% take rate: allowable buyer acquisition cost lands near $11, while an active seller — who keeps producing orders for years — can be worth many times that.
@@ -1563,7 +1623,11 @@ The vocabulary tells you what matters
 Nobody in this vertical says ROAS. They say cost per new patient, cost per booked appointment, show rate, case acceptance, chair utilisation. A tool that reports in the platform's vocabulary is answering a question the operator did not ask.
 All three get worse with time rather than staying flat, because every one of them trains the bidding. A quarter of leaving it alone is a quarter of the algorithm getting better at buying sixty-second wrong numbers, better at putting your own branches into the same auction, better at finding people merely interested in your area.
 Meanwhile the modelled store visits Google began counting by default in September 2025 keep flowing into that bidding at a value Google assigns.
-The account does not drift toward neutral while you decide. It compounds in the direction it was last taught.
+The account does not drift toward neutral while you decide .
+It compounds in the direction it was last taught — every day, on the budget you already approved.
+60s the call length the bidding learned to buy, because duration was the conversion
+39% of callers never reach a person, and no ad platform reports it
+12 locations read on their own, never ranked against each other
 Where Adgent stands today
 Two honest limits, stated up front .
 Show rate and revenue per patient live in your practice-management or booking system — Adgent does not read those today . And cross-account comparison, which is what would let it spot two of your locations bidding against each other, is on the roadmap rather than in the product. We would rather you knew that before a demo than during one.
@@ -1659,6 +1723,11 @@ Read more
 Daily verdict
 Every account read overnight, ranked by what it costs you.
 Read more
+At a fourteen-day lifespan, a quarter is eighteen generations.
+Creative volume and lifespan are the constraints that actually bind a user-acquisition team right now — and reading creative is the half of this vertical Adgent is strongest on.
+5&ndash;14 days is the creative lifespan now
+2,500 creatives shipped per app per quarter
+9 days old is late middle age for your best performer
 Running these accounts for clients?
 The same read on every client you run — including the ones nobody opened this week, because attention follows whichever account is currently on fire. It costs the same whether a client spends £10k a month or £1M.
 How this works across a book of accounts
@@ -1768,6 +1837,11 @@ Pick that client account and connect it read-only — nothing can move. We'll sh
 you the morning brief Adgent would write for it, and where it would save that client money. You're
 judging the product on your own data, not on our pitch.
 Request a demo
+The account nobody opened this month is the one that drifts .
+Not the one on fire — that one gets attention. The quiet one keeps spending to a target it stopped clearing, and the report still looks fine.
+every account read overnight, including the quiet ones
+3.2× ROAS the deck showed while margin fell 8%
+read-only by default — connecting one moves nothing
 
 ---
 
@@ -1850,6 +1924,11 @@ Your live account, connected read-only — nothing can move. We'll show you the
 morning brief Adgent would write for it: the wasted spend, the broken conversion setup, and what
 your ads actually earned.
 Request a demo
+One person, two platforms, and nobody to check the call.
+The second opinion a one-person team never gets: the platform&rsquo;s number checked against what your analytics actually recorded, before you scale the winner.
+3.2× platform ROAS on a campaign with negative contribution
+2.4× the prospecting set that is actually profitable
+0 changes applied without you
 
 ---
 

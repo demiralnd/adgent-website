@@ -101,6 +101,49 @@ def stamp_assets(html):
     return html
 
 
+def mark_figures(html):
+    """Stamp data-anim on every content figure, so it inherits entry motion.
+
+    The animation lives entirely in site.css under `[data-anim] … [data-anim].in`,
+    keyed off the class the existing reveal observer already adds. Marking the
+    figures here rather than by hand means a new page — or a new chart on an old
+    page — animates for free, and nobody has to remember the attribute.
+
+    Deliberately skipped: the nav/footer blocks (regenerated above, and their
+    little glyphs are decoration, not argument) and pure icons, which have no
+    internal order worth revealing. A figure already carrying data-anim is left
+    as it is, so a hand-tuned exception survives a rebuild.
+    """
+    start = html.find('<!--/#mobile-->')
+    end = html.find('<!--#footer-->')
+    if start == -1 or end == -1 or end < start:
+        return html
+    head, body, tail = html[:start], html[start:end], html[end:]
+
+    ICON_BOXES = ('0 0 24 24', '0 0 20 20', '0 0 16 16', '0 0 12 8')
+
+    def stamp(m):
+        tag = m.group(0)
+        if 'data-anim' in tag:
+            return tag
+        vb = re.search(r'viewBox="([^"]+)"', tag)
+        if not vb or vb.group(1).strip() in ICON_BOXES:
+            return tag
+        # an ornament (a caret, a tick, a 18x8 arrow) has no internal order to
+        # reveal; animating it just makes small marks flicker on scroll
+        try:
+            _, _, vw, vh = [float(v) for v in vb.group(1).split()]
+        except ValueError:
+            return tag
+        if vw < 60 or vh < 40:
+            return tag
+        return tag[:-1].rstrip() + ' data-anim>'
+
+    # only the opening <svg …> tag of each figure
+    body = re.sub(r'<svg\b[^>]*>', stamp, body)
+    return head + body + tail
+
+
 def render(html, slug):
     for block in BLOCKS:
         body = with_active(partial(block), slug)
@@ -112,7 +155,7 @@ def render(html, slug):
             m = re.search(LEGACY[block], html, re.S)
             if m:
                 html = html[:m.start()] + repl + html[m.end():]
-    return stamp_assets(main_landmark(html))
+    return stamp_assets(mark_figures(main_landmark(html)))
 
 
 def pages():

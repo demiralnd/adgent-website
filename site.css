@@ -1224,7 +1224,11 @@ input[type="range"][data-math-spend]:focus-visible { outline: 2px solid var(--ac
 
 /* ---------- footer ---------- */
 .footer { background: var(--bg-band); border-top: 1px solid var(--border); padding: 56px 0 36px; margin-top: 8px; }
-.foot-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
+.foot-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr 1fr; gap: 40px; }
+/* the footer is the site's second navigation: 17 destination pages used to be
+   unreachable from it, including every product and solution page. Five columns
+   at desktop, folding to two and then one. */
+@media (max-width: 1180px) { .foot-grid { grid-template-columns: 1.4fr 1fr 1fr 1fr; } }
 .foot-brand .brand { margin-bottom: 16px; }
 .foot-brand p { font-size: 13px; line-height: 1.6; color: var(--text-3); max-width: 280px; }
 /* .foot-h is an h2 for document outline reasons — h4 after page content ending
@@ -5023,3 +5027,254 @@ td .src-note::after,
    and the whole homepage could be scrolled sideways. Clip at the hero — `clip`
    rather than `hidden` so it does not create a scroll container. */
 .hero { overflow-x: clip; }
+
+/* ============================================================
+   FIGURE MOTION — one pass on entry, in the order the argument runs
+   ------------------------------------------------------------
+   The site's grammar is verdict-first, evidence-underneath. These
+   animations reproduce that order rather than decorating it: the
+   quantity accumulates, its connectors assert themselves, evidence
+   cards land, and only then does the accent verdict — and the one
+   point the figure is about — arrive.
+
+   Rules held here, deliberately:
+   - one pass, never a loop (the site already breathes elsewhere)
+   - compositor properties only: transform / opacity / dashoffset.
+     Bars scale rather than grow their height attribute, because
+     animating height re-lays-out the SVG on every frame.
+   - transform-box: fill-box, or scaleY would pivot on the viewBox
+     origin instead of the shape's own baseline
+   - text reaches full opacity inside 400ms: motion never delays reading
+   - reduced-motion lands on the FINAL frame, never a middle state
+   `data-fig` is stamped by build.py, so a new figure inherits this.
+   ============================================================ */
+@media (prefers-reduced-motion: no-preference) {
+  html.js [data-anim] .sc-bars rect,
+  html.js [data-anim] .sc-ghost rect,
+  html.js [data-anim] .mo-fill rect,
+  html.js [data-anim] .sc-acc > rect,
+  html.js [data-anim] .mp-bars rect {
+    transform-box: fill-box; transform-origin: 50% 100%;
+    transform: scaleY(0.04); opacity: 0;
+    transition: transform 620ms cubic-bezier(.16,1,.3,1), opacity 260ms var(--ease);
+  }
+  html.js [data-anim].in .sc-bars rect,
+  html.js [data-anim].in .sc-ghost rect,
+  html.js [data-anim].in .mo-fill rect,
+  html.js [data-anim].in .sc-acc > rect,
+  html.js [data-anim].in .mp-bars rect { transform: scaleY(1); opacity: 1; }
+
+  /* a bar's own neighbours arrive left to right */
+  html.js [data-anim] .sc-bars rect:nth-child(2),
+  html.js [data-anim] .mo-fill rect:nth-child(2) { transition-delay: 60ms; }
+  html.js [data-anim] .sc-bars rect:nth-child(3),
+  html.js [data-anim] .mo-fill rect:nth-child(3) { transition-delay: 120ms; }
+  html.js [data-anim] .sc-bars rect:nth-child(4),
+  html.js [data-anim] .mo-fill rect:nth-child(4) { transition-delay: 180ms; }
+  html.js [data-anim] .sc-bars rect:nth-child(n+5) { transition-delay: 240ms; }
+  /* the dashed "came back" caps follow the bar they sit on */
+  html.js [data-anim] .sc-ghost rect { transition-delay: 300ms; }
+
+  /* 2 · draw — a line traces its own path, which is time passing */
+  html.js [data-anim] .sc-line-acc,
+  html.js [data-anim] .sc-line-dim,
+  html.js [data-anim] .sc-axis,
+  html.js [data-anim] .mo-line,
+  html.js [data-anim] .mr-join,
+  html.js [data-anim] .sp-span,
+  html.js [data-anim] .mo-helix path {
+    stroke-dasharray: var(--len, 1000); stroke-dashoffset: var(--len, 1000);
+    transition: stroke-dashoffset 760ms var(--ease);
+  }
+  html.js [data-anim].in .sc-line-acc,
+  html.js [data-anim].in .sc-line-dim,
+  html.js [data-anim].in .sc-axis,
+  html.js [data-anim].in .mo-line,
+  html.js [data-anim].in .mr-join,
+  html.js [data-anim].in .sp-span,
+  html.js [data-anim].in .mo-helix path { stroke-dashoffset: 0; }
+  html.js [data-anim] .sc-line-acc { transition-delay: 120ms; }
+
+  /* 3 · trace — dashed connectors extend: a dependency asserting itself.
+     These keep their dash pattern, so they fade and slide a little
+     instead of drawing (a drawn dash reads as a solid line mid-flight) */
+  html.js [data-anim] .sc-dash,
+  html.js [data-anim] .sc-dash-acc,
+  html.js [data-anim] .mo-dash,
+  html.js [data-anim] .dep-fail path,
+  html.js [data-anim] .gt-drop path,
+  html.js [data-anim] .mp-dashed,
+  html.js [data-anim] .tgp-brace {
+    opacity: 0; transform: translateY(-4px);
+    transition: opacity 420ms var(--ease) 180ms, transform 420ms var(--ease) 180ms;
+  }
+  html.js [data-anim].in .sc-dash,
+  html.js [data-anim].in .sc-dash-acc,
+  html.js [data-anim].in .mo-dash,
+  html.js [data-anim].in .dep-fail path,
+  html.js [data-anim].in .gt-drop path,
+  html.js [data-anim].in .mp-dashed,
+  html.js [data-anim].in .tgp-brace { opacity: 1; transform: none; }
+
+  /* 4 · settle — evidence cards land, staggered */
+  html.js [data-anim] .sc-card rect,
+  html.js [data-anim] .sc-card-acc,
+  html.js [data-anim] .sc-plate,
+  html.js [data-anim] .gt-gate rect,
+  html.js [data-anim] .dep-b rect,
+  html.js [data-anim] .mr-tool rect,
+  html.js [data-anim] .mr-read,
+  html.js [data-anim] .mr-out,
+  html.js [data-anim] .tgp-ask rect,
+  html.js [data-anim] .mp-card {
+    opacity: 0; transform: translateY(6px);
+    transition: opacity 460ms var(--ease), transform 460ms cubic-bezier(.16,1,.3,1);
+  }
+  html.js [data-anim].in .sc-card rect,
+  html.js [data-anim].in .sc-card-acc,
+  html.js [data-anim].in .sc-plate,
+  html.js [data-anim].in .gt-gate rect,
+  html.js [data-anim].in .dep-b rect,
+  html.js [data-anim].in .mr-tool rect,
+  html.js [data-anim].in .mr-read,
+  html.js [data-anim].in .mr-out,
+  html.js [data-anim].in .tgp-ask rect,
+  html.js [data-anim].in .mp-card { opacity: 1; transform: none; }
+  html.js [data-anim] .sc-card rect:nth-child(2),
+  html.js [data-anim] .gt-gate rect:nth-child(2),
+  html.js [data-anim] .dep-b rect:nth-child(2),
+  html.js [data-anim] .mr-tool rect:nth-child(2) { transition-delay: 80ms; }
+  html.js [data-anim] .sc-card rect:nth-child(3),
+  html.js [data-anim] .mr-tool rect:nth-child(3) { transition-delay: 160ms; }
+  html.js [data-anim] .sc-card rect:nth-child(n+4),
+  html.js [data-anim] .mr-tool rect:nth-child(n+4) { transition-delay: 240ms; }
+
+  /* 5 · land — the verdict arrives after what justifies it */
+  html.js [data-anim] text {
+    opacity: 0;
+    transition: opacity 340ms var(--ease) 200ms;
+  }
+  html.js [data-anim].in text { opacity: 1; }
+  html.js [data-anim] .sc-t-acc,
+  html.js [data-anim] .sc-t-big-acc,
+  html.js [data-anim] .mo-t-acc,
+  html.js [data-anim] .gt-t-acc,
+  html.js [data-anim] .dep-t-acc,
+  html.js [data-anim] .mr-out-t-acc,
+  html.js [data-anim] .tgp-mult { transition-delay: 420ms; }
+
+  /* 6 · mark — the one point the figure is about, last */
+  html.js [data-anim] circle.sc-acc,
+  html.js [data-anim] .sc-acc circle,
+  html.js [data-anim] .sp-dot circle,
+  html.js [data-anim] .gt-node circle,
+  html.js [data-anim] .dep-node circle,
+  html.js [data-anim] .mp-dot-acc,
+  html.js [data-anim] .mo-node circle {
+    transform-box: fill-box; transform-origin: 50% 50%;
+    opacity: 0; transform: scale(0.3);
+    transition: opacity 300ms var(--ease) 520ms, transform 380ms cubic-bezier(.34,1.56,.64,1) 520ms;
+  }
+  html.js [data-anim].in circle.sc-acc,
+  html.js [data-anim].in .sc-acc circle,
+  html.js [data-anim].in .sp-dot circle,
+  html.js [data-anim].in .gt-node circle,
+  html.js [data-anim].in .dep-node circle,
+  html.js [data-anim].in .mp-dot-acc,
+  html.js [data-anim].in .mo-node circle { opacity: 1; transform: none; }
+
+  /* the strike-through that cancels a number draws itself, after the number */
+  html.js [data-anim] .sc-strike path,
+  html.js [data-anim] .mp-strike {
+    stroke-dasharray: 40; stroke-dashoffset: 40;
+    transition: stroke-dashoffset 300ms var(--ease) 560ms;
+  }
+  html.js [data-anim].in .sc-strike path,
+  html.js [data-anim].in .mp-strike { stroke-dashoffset: 0; }
+}
+
+/* motion off: every figure sits at its finished frame, not a middle one */
+@media (prefers-reduced-motion: reduce) {
+  [data-anim] *, [data-anim] {
+    transform: none !important; opacity: 1 !important;
+    stroke-dashoffset: 0 !important; transition: none !important;
+  }
+}
+
+/* ============================================================
+   DARK BAND — the page's hardest sentence, on ink
+   ------------------------------------------------------------
+   The product pages ran five to ten white sections in a row, so the
+   argument had no crest: everything was equally lit and nothing was
+   emphasised. `.moat` already solved this on two pages — ink ground,
+   a low accent glow, the light-on-dark type scale. This generalises
+   that surface so any section can carry it.
+
+   Used sparingly and on purpose: ONE per page, on the sentence the
+   page would keep if it could keep only one. A second dark band on
+   the same page would make it wallpaper again.
+   ============================================================ */
+.band-ink {
+  background: #141210; color: #f4f2ee;
+  position: relative; overflow: hidden;
+  /* the light sections butt straight against it, so the edge itself
+     does the work — no border needed */
+  padding-block: clamp(56px, 7vw, 96px);
+}
+.band-ink::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(72% 62% at 82% -10%, rgba(255,90,44,0.18), transparent 58%),
+    radial-gradient(58% 78% at 4% 110%, rgba(255,120,60,0.07), transparent 56%);
+}
+.band-ink > .wrap { position: relative; z-index: 1; }
+
+/* type on ink: the same scale the moat block already uses */
+.band-ink .eyebrow { color: rgba(244,242,238,0.62); }
+.band-ink .eyebrow .tick { background: var(--accent); }
+.band-ink .sec-title, .band-ink h2, .band-ink h3 { color: #f8f6f2; }
+.band-ink .sec-title em, .band-ink h2 em { color: var(--accent); }
+.band-ink .sec-sub, .band-ink p { color: rgba(244,242,238,0.72); }
+.band-ink .stack-kicker { color: rgba(244,242,238,0.66); }
+.band-ink b, .band-ink strong { color: #fff; }
+.band-ink a:not(.btn) { color: var(--accent); }
+.band-ink .src-note { color: rgba(244,242,238,0.42); }
+
+/* the one-line statement a dark band exists to carry */
+.ink-line {
+  margin: 0; max-width: 30ch;
+  font-size: clamp(26px, 3.4vw, 42px); font-weight: 700;
+  letter-spacing: -0.03em; line-height: 1.12; color: #f8f6f2;
+  text-wrap: balance;
+}
+.ink-line em { font-style: normal; color: var(--accent); }
+.ink-sub {
+  margin: 20px 0 0; max-width: 54ch;
+  font-size: 15.5px; line-height: 1.62; color: rgba(244,242,238,0.68);
+  text-wrap: pretty;
+}
+.ink-split {
+  display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(28px, 4vw, 64px);
+  align-items: center;
+}
+@media (max-width: 900px) { .ink-split { grid-template-columns: 1fr; gap: 26px; } }
+
+/* a small evidence rail beside the statement, when the page has numbers
+   worth showing rather than asserting */
+.ink-facts { display: flex; flex-direction: column; gap: 14px; margin: 0; }
+.ink-fact {
+  display: flex; gap: 14px; align-items: baseline;
+  padding: 14px 16px; border-radius: var(--r-md);
+  background: rgba(244,242,238,0.05);
+  border: 1px solid rgba(244,242,238,0.12);
+}
+.ink-fact b {
+  font-family: var(--font-mono); font-size: 15px; font-weight: 700;
+  color: var(--accent); flex: none; min-width: 4.5ch;
+}
+.ink-fact span { font-size: 13.5px; line-height: 1.5; color: rgba(244,242,238,0.78); }
+
+/* cards keep working on ink without each page restating them */
+.band-ink .sc-card rect, .band-ink .dv-side, .band-ink .pcard {
+  background: rgba(244,242,238,0.05); border-color: rgba(244,242,238,0.14);
+}

@@ -81,6 +81,61 @@
     revealEls.forEach(function (el) { el.classList.add('in'); });
   }
 
+  /* ---- figures: draw once on entry --------------------------------------
+     site.css animates [data-anim] against [data-anim].in; build.py stamps the
+     attribute. Two jobs are left for here:
+
+     1. Measure each stroked path so the draw covers exactly its own length.
+        A fixed dasharray would make short connectors finish instantly and
+        long curves stop short, and the length is only knowable at runtime.
+     2. Add `.in` when the figure reaches the viewport, with the same
+        belt-and-braces the reveal observer uses above: anything already on
+        screen at load draws immediately, and a timeout guarantees nothing
+        stays hidden if the observer never fires. Evidence must never depend
+        on an animation callback arriving.
+  ---------------------------------------------------------------------- */
+  (function () {
+    var figs = d.querySelectorAll('[data-anim]');
+    if (!figs.length) return;
+    var DRAWN = '.sc-line-acc,.sc-line-dim,.sc-axis,.mo-line,.mr-join,.sp-span,.mo-helix path';
+
+    function measure(fig) {
+      fig.querySelectorAll(DRAWN).forEach(function (p) {
+        var len = 0;
+        try { len = p.getTotalLength(); } catch (e) { return; }
+        // a hairline or an unrendered path gets no dash treatment at all,
+        // otherwise it would be stuck invisible behind a 0-length offset
+        if (!len || len < 2) { p.style.strokeDasharray = 'none'; return; }
+        p.style.setProperty('--len', Math.ceil(len + 1));
+      });
+    }
+
+    if (reduce) { figs.forEach(function (f) { f.classList.add('in'); }); return; }
+    figs.forEach(measure);
+
+    if (hasIO) {
+      var fio = new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('in'); fio.unobserve(e.target); }
+        });
+      }, { threshold: 0.2, rootMargin: '0px 0px -8% 0px' });
+      figs.forEach(function (f) { fio.observe(f); });
+      requestAnimationFrame(function () {
+        figs.forEach(function (f) {
+          var r = f.getBoundingClientRect();
+          if (r.top < (window.innerHeight || 0) && r.bottom > 0) {
+            f.classList.add('in'); fio.unobserve(f);
+          }
+        });
+      });
+      setTimeout(function () {
+        figs.forEach(function (f) { f.classList.add('in'); });
+      }, 8000);
+    } else {
+      figs.forEach(function (f) { f.classList.add('in'); });
+    }
+  })();
+
   /* ---- count-up numbers ---- */
   function fmt(v, dec) { return v.toLocaleString('en-US', { minimumFractionDigits: dec, maximumFractionDigits: dec }); }
   function count(el) {
