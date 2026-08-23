@@ -77,7 +77,12 @@ one loop
 it acts
 Built from a sentence
 Ask for it in chat. Adgent builds it.
-One conversation: it plans the quarter, builds the campaigns, watches them, and assembles the dashboard you read them in — from your live account data, and nothing launches until you approve it.
+One conversation: it plans the quarter, builds the campaigns, watches them, and assembles the dashboard you read them in — from your live account data, and nothing launches until you approve it. And when you change your mind, it puts the change back.
+01 Media plan Draft
+02 Campaigns On approval
+03 Watcher Proposes only
+04 Dashboard Live
+05 Put it back Real account
 Plan Q2 for the spring launch — ₺400K across Meta and Google
 Drafted from your own Q1 costs · one gap named first
 Before the split: your Q1 CPMs came from a sale period. I've planned off the non-promo weeks instead — say if that's wrong.
@@ -120,6 +125,14 @@ CPA
 Meta Google GA4 last 28 days
 Blended ROAS 3.82× reconciled to GA4
 Dashboard Live · auto-refreshing
+Actually — put that budget back
+Reverted from the ledger · confirmed on the platform
+The four artefacts above are a walkthrough. This one is not: it is a change made on a live Google Ads account during testing, then taken back.
+Applied daily budget ₺1,500 → ₺1,650
+Logged ledger row, with the state it replaced
+Reverted back to ₺1,500 — verified in Google Ads
+Same chain on a paused ad group: ENABLED → PAUSED → ENABLED
+Reversal Confirmed on the platform
 The blind spot
 The platform can't see the number that decides it.
 An ad platform optimizes toward what its pixel can measure. It never sees your cost of goods, your margin, or what a customer is worth on the second order. So when it finds a campaign that converts cheaply and loses money on every order, it does the logical thing: it scales it. Nobody is asleep at the wheel — the dashboard is green, the target is met, and the report is correct on its own terms. That is the expensive part.
@@ -143,15 +156,17 @@ No optimizer built inside an ad platform can grade its own spend against your ma
 Judgment, not just another chart
 An audit tells you what happened. Adgent takes the position — what to do about it — and remembers the calls you've already made on this brand.
 it seals
-Trust Gate · one real account, two refusals
-It said no. Twice. Before a dollar was spent.
+Trust Gate · one real account, three refusals
+It said no. Three times. Before a dollar was spent.
 "This pixel can't teach a campaign yet"
 Thirty days: 65,042 custom events, 16,404 initiate-checkout — and 4 purchases. Meta's own docs put the floor at 50 events in 7 days [developers.meta.com]. Technically possible to build. Nothing there for the optimizer to learn from.
 "Your target is unreachable — here's why"
 Asked for a ₺250 cost per conversion. The account's own history at the booking stage sits near ₺4,000 . At 250 the only reachable thing is a ₺13 micro-lead that clears the target and books nobody.
+"I can name the worst segment. I can't act on it."
+Asked to exclude the worst device. It ranked them — tablet at ₺39 CPA against mobile's ₺27 — then refused its own finding: the write tool it holds does not exclude devices. It said so, instead of quietly substituting a change it could make. The limit it disclosed was its own.
 Trust Gate
 The test of a thinking tool: does it ever tell you no ?
-Anything that only says yes is executing, not reasoning. Both refusals came from one real account, unprompted, before any budget moved — each showing the account's own numbers as the reason. A tool that checks this afterwards reports the same facts a month later, once the money has already taught the algorithm nothing.
+Anything that only says yes is executing, not reasoning. All three came from one real account, unprompted, before any budget moved . Two show the account's own numbers as the reason. The third is the harder one: asked to act, it disclosed the limit of its own tools rather than swapping in a change it was able to make. A tool that checks this afterwards reports the same facts a month later, once the money has already taught the algorithm nothing.
 Creative intelligence
 It reads every creative like a strategist — not a tagger.
 Creative is the single biggest driver of a campaign's sales — 49% , more than targeting (11%) or reach (14%) [NCSolutions / Circana, 2023]. It is also the layer most tools only tag. Adgent reads every live ad the way a senior buyer would — its DNA, the story scene by scene, and exactly where viewers leave. No upload step: it reads what is already running.
@@ -3596,7 +3611,12 @@ one loop
 it acts
 Built from a sentence
 Ask for it in chat. Adgent builds it.
-One conversation: it plans the quarter, builds the campaigns, watches them, and assembles the dashboard you read them in — from your live account data, and nothing launches until you approve it.
+One conversation: it plans the quarter, builds the campaigns, watches them, and assembles the dashboard you read them in — from your live account data, and nothing launches until you approve it. And when you change your mind, it puts the change back.
+01 Media plan Draft
+02 Campaigns On approval
+03 Watcher Proposes only
+04 Dashboard Live
+05 Put it back Real account
 Plan Q2 for the spring launch — ₺400K across Meta and Google
 Drafted from your own Q1 costs · one gap named first
 Before the split: your Q1 CPMs came from a sale period. I've planned off the non-promo weeks instead — say if that's wrong.
@@ -3639,6 +3659,14 @@ CPA
 Meta Google GA4 last 28 days
 Blended ROAS 3.82× reconciled to GA4
 Dashboard Live · auto-refreshing
+Actually — put that budget back
+Reverted from the ledger · confirmed on the platform
+The four artefacts above are a walkthrough. This one is not: it is a change made on a live Google Ads account during testing, then taken back.
+Applied daily budget ₺1,500 → ₺1,650
+Logged ledger row, with the state it replaced
+Reverted back to ₺1,500 — verified in Google Ads
+Same chain on a paused ad group: ENABLED → PAUSED → ENABLED
+Reversal Confirmed on the platform
 The blind spot
 The platform can't see the number that decides it.
 An ad platform optimizes toward what its pixel can measure. It never sees your cost of goods, your margin, or what a customer is worth on the second order. So when it finds a campaign that converts cheaply and loses money on every order, it does the logical thing: it scales it. Nobody is asleep at the wheel — the dashboard is green, the target is met, and the report is correct on its own terms. That is the expensive part.
@@ -3662,15 +3690,17 @@ No optimizer built inside an ad platform can grade its own spend against your ma
 Judgment, not just another chart
 An audit tells you what happened. Adgent takes the position — what to do about it — and remembers the calls you've already made on this brand.
 it seals
-Trust Gate · one real account, two refusals
-It said no. Twice. Before a dollar was spent.
+Trust Gate · one real account, three refusals
+It said no. Three times. Before a dollar was spent.
 "This pixel can't teach a campaign yet"
 Thirty days: 65,042 custom events, 16,404 initiate-checkout — and 4 purchases. Meta's own docs put the floor at 50 events in 7 days [developers.meta.com]. Technically possible to build. Nothing there for the optimizer to learn from.
 "Your target is unreachable — here's why"
 Asked for a ₺250 cost per conversion. The account's own history at the booking stage sits near ₺4,000 . At 250 the only reachable thing is a ₺13 micro-lead that clears the target and books nobody.
+"I can name the worst segment. I can't act on it."
+Asked to exclude the worst device. It ranked them — tablet at ₺39 CPA against mobile's ₺27 — then refused its own finding: the write tool it holds does not exclude devices. It said so, instead of quietly substituting a change it could make. The limit it disclosed was its own.
 Trust Gate
 The test of a thinking tool: does it ever tell you no ?
-Anything that only says yes is executing, not reasoning. Both refusals came from one real account, unprompted, before any budget moved — each showing the account's own numbers as the reason. A tool that checks this afterwards reports the same facts a month later, once the money has already taught the algorithm nothing.
+Anything that only says yes is executing, not reasoning. All three came from one real account, unprompted, before any budget moved . Two show the account's own numbers as the reason. The third is the harder one: asked to act, it disclosed the limit of its own tools rather than swapping in a change it was able to make. A tool that checks this afterwards reports the same facts a month later, once the money has already taught the algorithm nothing.
 Creative intelligence
 It reads every creative like a strategist — not a tagger.
 Creative is the single biggest driver of a campaign's sales — 49% , more than targeting (11%) or reach (14%) [NCSolutions / Circana, 2023]. It is also the layer most tools only tag. Adgent reads every live ad the way a senior buyer would — its DNA, the story scene by scene, and exactly where viewers leave. No upload step: it reads what is already running.

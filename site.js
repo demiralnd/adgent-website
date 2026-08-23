@@ -161,6 +161,7 @@
     counters.forEach(count);
   }
 
+
   /* ---- hero chat build-in ---- */
   (function () {
     var c = d.querySelector('[data-hero-chat]'); if (!c) return;
@@ -179,66 +180,49 @@
     setTimeout(function () { show(input); }, 1350);
   })();
 
-  /* ---- built-from-a-sentence: scroll advances one conversation ----
-     The section is sticky over a spacer (CSS). Scrolling through that spacer
-     walks the thread: each turn's question appears, its answer builds under
-     it, then it slides up and the next one is asked. On mobile and under
-     reduced-motion the spacer is 0 and every turn is simply stacked — this
-     driver then does nothing, which is the intended fallback. */
+  /* ---- built-from-a-sentence: four artefacts, one click apart ----
+     Replaced a sticky-over-300vh-spacer scroll pin (2026-08-23). That mechanic
+     could only ever show one artefact at a time, while the section's claim is
+     that ONE conversation produced FOUR — so it hid the argument and charged
+     three screens of scroll for the privilege. Plain tabs: all four named on
+     arrival, no scroll cost, and it degrades to the first panel with JS off. */
   (function () {
-    var thread = d.querySelector('[data-thread]'); if (!thread) return;
-    var col = thread.querySelector('[data-thread-scroll]');
-    var turns = thread.querySelectorAll('.turn');
-    var sec = d.querySelector('[data-builds-pin]');
-    var spacer = d.querySelector('[data-builds-spacer]');
-    if (reduce || !sec || !spacer || !col || !turns.length) return;
+    var stage = d.querySelector('[data-bstage]'); if (!stage) return;
+    var tabs = stage.querySelectorAll('[data-btab]');
+    var panels = stage.querySelectorAll('[data-bpanel]');
+    if (!tabs.length || tabs.length !== panels.length) return;
 
-    var n = turns.length, cur = -1;
-
-    /* Align the active turn's TOP to the window's top, not its bottom.
-       Bottom-alignment is what a chat client does, but here it left a 54–132px
-       slice of the previous turn hanging in the window with its top cut off —
-       readable enough to look broken, not enough to be worth reading. Aligning
-       the top means exactly one turn is on screen, whole. */
-    function show(i) {
-      if (i === cur) return;
-      cur = i;
-      var t = turns[i];
-      /* A sliver of the previous turn stays visible above — enough to read as
-         a thread that continues, not enough to look like a half-cut message.
-         Kept below (window − tallest turn) so the active turn always clears:
-         the dashboard runs 376px in a 390px window, leaving 14. */
-      var y = Math.max(0, t.offsetTop - 12);
-      col.style.setProperty('--bfs-y', (-y) + 'px');
-      Array.prototype.forEach.call(turns, function (el, k) {
-        el.classList.toggle('on', k === i);
-        el.classList.toggle('said', k < i);
+    function select(i, focus) {
+      Array.prototype.forEach.call(tabs, function (t, k) {
+        var on = k === i;
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+        t.tabIndex = on ? 0 : -1;
       });
+      Array.prototype.forEach.call(panels, function (pnl, k) {
+        var on = k === i;
+        pnl.hidden = !on;
+        pnl.classList.toggle('on', on);
+      });
+      if (focus) tabs[i].focus();
     }
 
-    var tick = false;
-    function onScroll() {
-      if (tick) return; tick = true;
-      requestAnimationFrame(function () {
-        tick = false;
-        var travel = spacer.offsetHeight;
-        if (travel < 1) { sec.classList.remove('pinning'); return; }
-        var top = sec.getBoundingClientRect().top;
-        var p = Math.min(1, Math.max(0, -top / travel));
-        sec.classList.toggle('pinning', top <= 0 && -top <= travel);
-        /* Equal dwell per turn across the first 85% of the travel; the last
-           15% holds the final turn on screen so it doesn't flash past as the
-           section unpins. (A plain floor(p*n) gives the last turn a sliver,
-           and floor(p*(n+1)) hands the extra slot to the wrong turns.) */
-        var hold = 0.92;
-        show(p >= hold ? n - 1 : Math.min(n - 1, Math.floor((p / hold) * n)));
-      });
-    }
-    window.addEventListener('scroll', onScroll, { passive: true });
-    /* offsets change with width, so force a recompute rather than let the
-       early-exit in show() keep a stale translate */
-    window.addEventListener('resize', function () { cur = -1; onScroll(); }, { passive: true });
-    onScroll();
+    stage.addEventListener('click', function (e) {
+      var t = e.target.closest('[data-btab]'); if (!t) return;
+      select(+t.getAttribute('data-btab'), false);
+    });
+
+    /* Arrow-key roving focus is what makes a tablist a tablist for anyone not
+       using a mouse; without it the pattern is only half-implemented. */
+    stage.addEventListener('keydown', function (e) {
+      var t = e.target.closest('[data-btab]'); if (!t) return;
+      var i = +t.getAttribute('data-btab'), n = tabs.length, j = null;
+      if (e.key === 'ArrowRight') j = (i + 1) % n;
+      else if (e.key === 'ArrowLeft') j = (i - 1 + n) % n;
+      else if (e.key === 'Home') j = 0;
+      else if (e.key === 'End') j = n - 1;
+      if (j === null) return;
+      e.preventDefault(); select(j, true);
+    });
   })();
 
   /* ---- marquee: duplicate row content for a seamless -50% loop ---- */
@@ -675,11 +659,7 @@
     var END = 0;
     /* metaphor glyphs (brain, eye) straddle the rail: shift each one sideways
        so its centre lands on the line and the rail runs behind it */
-    /* The pinned section's badge is excluded: it sits above the heading rather
-       than beside it, so straddling the rail there put it at the same height
-       as that section's chapter node and the two labels collided. */
-    var glyphs = Array.prototype.slice.call(d.querySelectorAll('.brainwrap, .metafig'))
-      .filter(function (g) { return !g.closest('[data-builds-pin]'); });
+    var glyphs = Array.prototype.slice.call(d.querySelectorAll('.brainwrap, .metafig'));
     glyphs.forEach(function (g) { g.classList.add('mf-burstable'); });
 
     function placeGlyphs() {

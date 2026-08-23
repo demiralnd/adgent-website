@@ -564,23 +564,62 @@ body.menu-open { overflow: hidden; }
    not JS, so the behaviour is identical with JS disabled except that the
    pane doesn't change (a plain tabbed window, which is a fine fallback).
    Zeroed under reduced-motion and on narrow screens — see below. */
+/* Redesigned 2026-08-23. The pin (sticky + a 300vh spacer) could only ever
+   show ONE artefact, while the section's whole claim is that one conversation
+   produced FOUR different ones — the mechanic withheld the argument it was
+   built to make, and cost three screens of scroll to do it. Now: all four
+   named up front, one click apart, no scroll toll. */
 .builds-pin { padding-top: 0; padding-bottom: 0; }
-.builds-sticky { position: sticky; top: 0; padding: clamp(30px, 3.4vh, 52px) 0 clamp(18px, 2vh, 26px); }
-.builds-spacer { height: 0; }
-html.js .builds-spacer { height: 300vh; }
-/* The badge sits ABOVE the title here, not between the title and the thread —
-   in the middle it split the section in two and pushed the pinned block past
-   a 1280×800 laptop's usable height. At the top it costs far less, so its
-   default 56px of lead is trimmed rather than the badge dropped. */
-/* centred over the heading, off the rail — see the glyph filter in site.js */
-.builds-pin .metafig {
-  margin: 0 auto 10px; transform: none !important;
-  display: flex; flex-direction: column; align-items: center;
+.builds-sticky { position: static; padding: clamp(48px, 7vh, 88px) 0; }
+
+.bstage { max-width: 940px; margin: clamp(22px, 3vh, 34px) auto 0; }
+
+/* Tabs read as a spec strip, not browser chrome: number, what it is, and its
+   standing. The standing line is the argument — three of the four say the
+   thing never acts on its own. */
+.bstage-tabs {
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px;
+  margin-bottom: 18px;
 }
-/* the badge is decorative and it competes with the thread for the one thing
-   that is scarce here — vertical room inside a laptop viewport */
-.builds-pin .metafig svg { width: 54px; height: 54px; }
-.builds-pin .sec-head { margin-top: 0; }
+.bstage-tabs button {
+  display: flex; flex-direction: column; gap: 3px; text-align: left;
+  font: inherit; cursor: pointer; padding: 12px 14px;
+  background: var(--bg-sub); border: 1px solid var(--border);
+  border-radius: var(--r-lg); position: relative; isolation: isolate;
+  transition: border-color .2s var(--ease), background-color .2s var(--ease), transform .2s var(--ease);
+}
+.bstage-tabs button:hover { border-color: var(--border-2); transform: translateY(-2px); }
+.bt-n { font-family: var(--font-mono); font-size: 10px; letter-spacing: .12em; color: var(--text-4); }
+.bt-l { font-size: 14px; font-weight: 700; letter-spacing: -0.01em; color: var(--text-2); }
+.bt-s { font-family: var(--font-mono); font-size: 10px; letter-spacing: .08em;
+        text-transform: uppercase; color: var(--text-4); }
+.bstage-tabs button[aria-selected="true"] {
+  background: var(--bg); border-color: var(--accent);
+}
+.bstage-tabs button[aria-selected="true"] .bt-l { color: var(--text-1); }
+.bstage-tabs button[aria-selected="true"] .bt-n,
+.bstage-tabs button[aria-selected="true"] .bt-s { color: var(--accent); }
+.bstage-tabs button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* The box is sized by its CONTENT, not by a number. The 386px floor here was
+   inherited from the old scroll-window (354px) — a viewport constraint that
+   stopped existing when the pin went. Keeping it squeezed every artefact:
+   the panel held the height while the canvas inside it was clipped.
+   Now each panel takes the room it needs; the floor only stops the shortest
+   one from making the section look collapsed. */
+.bstage-panels {
+  background: var(--bg-sub); border: 1px solid var(--border);
+  border-radius: var(--r-lg); padding: 20px;
+}
+.bpanel { display: none; }
+.bpanel.on { display: block; animation: bpin .34s var(--ease) both; }
+.bpanel[hidden] { display: none; }
+@keyframes bpin { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .bpanel.on { animation: none; } }
+/* The badge rides the left rail like every other chapter glyph. It used to be
+   forced above the heading and off the rail: the pin made vertical room scarce
+   and put the badge level with its own chapter node, so the two labels
+   collided. No pin, no collision — it rejoins the rail. */
 
 /* Short viewports don't pin — but the bar has to sit low enough to cover a
    real laptop window. A maximised Chrome on a 1440-class MacBook leaves only
@@ -588,23 +627,21 @@ html.js .builds-spacer { height: 300vh; }
    810px threshold silently switched the pin off on the most common screen
    there is. Measured: the trimmed block is 728px, so the bar sits just under
    the 733px a maximised 1440-class window actually gives. */
-@media (max-height: 725px) {
-  html.js .builds-spacer { height: 0; }
-  .builds-sticky { position: static; padding: 56px 0; }
-  .thread { height: auto; overflow: visible; }
-  .thread .thread-scroll { position: static; transform: none; gap: 34px; }
-  .thread .turn { opacity: 1; }
-}
-/* Mobile: no pin. A sticky section that eats four screens of scroll is the
-   single most-complained-about pattern on a phone, and the tab bar already
-   gives the whole story in one screen. */
+/* Short viewports: the whole point of the redesign is that nothing here is
+   height-sensitive any more — one panel, one screen. Only the padding tightens. */
+@media (max-height: 725px) { .builds-sticky { padding: 44px 0; } }
+
+/* Narrow: four tabs across is too tight to read, so they go two-up. The
+   standing line ("Proposes only") is the one that must survive — it carries
+   the argument — so it stays and only the box tightens. */
 @media (max-width: 860px) {
-  html.js .builds-spacer { height: 0; }
-  .builds-sticky { position: static; padding: 64px 0; }
-}
-@media (prefers-reduced-motion: reduce) {
-  html.js .builds-spacer { height: 0; }
-  .builds-sticky { position: static; }
+  .builds-sticky { padding: 56px 0; }
+  .bstage-tabs { grid-template-columns: repeat(2, 1fr); gap: 6px; }
+  /* the fifth is the real one — it gets the full row rather than a widow slot */
+  .bstage-tabs button:last-child { grid-column: 1 / -1; }
+  .bstage-tabs button { padding: 10px 11px; }
+  .bt-l { font-size: 13px; }
+  .bstage-panels { min-height: 0; }
 }
 
 /* centred head — this section is the one place the page stops scanning
@@ -2279,9 +2316,9 @@ html:not(.js) .chat-step { opacity: 1; transform: none; }
 .mini-chart svg { height: 58px; }
 /* Same reason for the KPI row: a later block scales it up to 24px/13px for
    standalone use, which is right there and too tall inside the thread. */
-.thread .mkt { padding: 9px 11px; }
-.thread .mkt-v { font-size: 19px; margin-top: 2px; }
-.thread .mkt-l { font-size: 10.5px; }
+.bstage .mkt { padding: 9px 11px; }
+.bstage .mkt-v { font-size: 19px; margin-top: 2px; }
+.bstage .mkt-l { font-size: 10.5px; }
 .mc-foot { display: flex; align-items: baseline; justify-content: space-between; margin-top: 8px; font-size: 11.5px; color: var(--text-3); }
 .mc-foot b { color: var(--text); font-weight: 700; font-variant-numeric: tabular-nums; }
 .mc-note { font-family: var(--font-mono); font-size: 9.5px; color: var(--text-4); }
@@ -2975,7 +3012,7 @@ section, .band, .moat, .hero { z-index: auto; }
 .wrap { z-index: 2; }
 .cutout, .memcard, .build, .layer, .creative-card, .cr-demo, .s3-detail,
 .gt-lens, .why-card, .faq details, .faq-aside-card, .cta, .matrix-wrap,
-.rflag, .thread, .marquee-row, .sec-head,
+.rflag, .bstage, .marquee-row, .sec-head,
 .wrap > h2, .sec-title, .sec-sub, .eyebrow, .stack-kicker, .gt-kicker, .matrix-note, .gt-line,
 .s3-detail, .report-foot, .lead-fine {
   position: relative; z-index: 2;
@@ -3890,33 +3927,8 @@ td .src-note::after,
 
    Height is measured: the tallest turn (the dashboard) renders at 376px, and
    400 keeps the whole pinned block inside a 1280×800 laptop. */
-.thread {
-  position: relative; max-width: 720px; margin: clamp(20px, 2.6vh, 32px) auto 0;
-  height: 354px; overflow: hidden;
-  /* No top fade. It was doing the same job as the .32 dim on earlier turns,
-     and doing it worse: the previous turn is perfectly readable up there, so
-     fading it as well just made it look half-rendered. Scrollback in a real
-     chat isn't blurred — it's simply older. */
-}
-.thread-scroll {
-  position: absolute; left: 0; right: 0; top: 0;
-  display: flex; flex-direction: column; gap: 34px;
-  transform: translateY(var(--bfs-y, 0px));
-  transition: transform 560ms cubic-bezier(.22,1,.36,1);
-  will-change: transform;
-}
-/* Three states, and the distinction matters: turns already asked stay
-   visible above (dimmed, like scrollback); the turn being read is at full
-   strength; turns not yet asked are invisible — showing the next question
-   before it has been asked breaks the illusion that you are watching it
-   happen, and the bottom of the window is exactly where the next turn
-   would otherwise peek through. */
-.turn {
-  display: flex; flex-direction: column;
-  opacity: 0; transition: opacity 460ms var(--ease);
-}
-.turn.said { opacity: .32; }
-.turn.on { opacity: 1; }
+/* The four artefacts keep their own styling; the scroll-thread host that
+   used to wrap them is gone (see .bstage above). */
 
 /* media plan artefact — the split, with the gap named above it. The callout
    comes first on purpose: the plan page's whole argument is that the first
@@ -3969,29 +3981,18 @@ td .src-note::after,
 .appwin-say .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex: none; }
 /* the produced artefact is its own card — the chat has no frame, so this
    needs one or it floats on the page background */
-.thread .build-canvas {
+.bstage .build-canvas {
   margin: 12px 0 0; padding: 18px;
   background: var(--bg-card); border: 1px solid var(--border);
   border-radius: var(--r-lg); box-shadow: var(--shadow-soft);
 }
-.thread .build-cap { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 11px; padding: 0 2px; font-size: 12px; color: var(--text-3); }
-.thread .build-cap .name { font-weight: 700; color: var(--text); }
-.thread .build-cap .tag { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .03em; color: var(--text-4); margin-left: auto; }
+.bstage .build-cap { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 11px; padding: 0 2px; font-size: 12px; color: var(--text-3); }
+.bstage .build-cap .name { font-weight: 700; color: var(--text); }
+.bstage .build-cap .tag { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .03em; color: var(--text-4); margin-left: auto; }
 
-/* No pin on mobile or under reduced motion: the thread simply becomes the
-   whole conversation, scrolled by the page itself. No fixed height, no mask,
-   no translate — every turn at full strength. */
 @media (max-width: 860px) {
-  .thread { height: auto; overflow: visible; }
-  .thread-scroll { position: static; transform: none; gap: 34px; }
-  .turn { opacity: 1; }
   .appwin-ask span { max-width: 100%; font-size: 14px; }
-  .thread .build-canvas { padding: 14px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .thread { height: auto; overflow: visible; }
-  .thread-scroll { position: static; transform: none; transition: none; gap: 34px; }
-  .turn { opacity: 1; transition: none; }
+  .bpanel .build-canvas { padding: 14px; }
 }
 
 /* the copy column ran three bullets against a five-field form and closed on a
@@ -5425,4 +5426,36 @@ td .src-note::after,
 }
 @media (prefers-reduced-motion: reduce) {
   .eyebrow .tick { transform: none !important; }
+}
+
+/* ---- reversal artefact (panel 05) ------------------------------------------
+   The only panel on this section carrying real account data, so it says so
+   plainly rather than dressing up as another mock. The three steps read down
+   as a chain; the last one turns back on itself, which is the whole point. */
+.mini-rb { display: flex; flex-direction: column; gap: 8px; }
+.mrb-note {
+  margin-bottom: 4px; padding: 10px 12px;
+  border-left: 2px solid var(--accent); border-radius: 0 var(--r-sm, 6px) var(--r-sm, 6px) 0;
+  background: color-mix(in oklab, var(--accent) 8%, transparent);
+  font-size: 12.5px; line-height: 1.5; color: var(--text-2); text-wrap: pretty;
+}
+.mrb-step {
+  display: grid; grid-template-columns: 88px 1fr; align-items: baseline; gap: 12px;
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--r-md); padding: 10px 12px;
+}
+.mrb-k {
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--text-4);
+}
+.mrb-v { font-size: 13px; color: var(--text-2); text-wrap: pretty; }
+.mrb-v b { color: var(--text); font-variant-numeric: tabular-nums; }
+.mrb-back { border-color: color-mix(in oklab, var(--accent) 42%, var(--border)); }
+.mrb-back .mrb-k { color: var(--accent); }
+.mrb-foot {
+  margin-top: 2px; font-size: 12px; color: var(--text-3); text-wrap: pretty;
+}
+.mrb-foot b { color: var(--text-2); font-variant-numeric: tabular-nums; }
+@media (max-width: 860px) {
+  .mrb-step { grid-template-columns: 1fr; gap: 3px; }
 }

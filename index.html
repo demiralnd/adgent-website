@@ -39,7 +39,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="icon" type="image/svg+xml" href="/assets/logo-app.svg"/>
 <link rel="apple-touch-icon" href="/assets/logo-app.svg"/>
 <link rel="stylesheet" href="/tokens.css"/>
-<link rel="stylesheet" href="/site.css?v=495ba01c"/>
+<link rel="stylesheet" href="/site.css?v=2bcf84a3"/>
 </head>
 <body><!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MWR4PVRF"
@@ -397,12 +397,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  <div class="sec-head" data-reveal>
  <span class="eyebrow"><span class="tick"></span>Built from a sentence</span>
  <h2 class="sec-title">Ask for it in chat. Adgent <em>builds</em> it.</h2>
- <p class="sec-sub">One conversation: it plans the quarter, builds the campaigns, watches them, and assembles the dashboard you read them in — from your live account data, and nothing launches until you approve it.</p>
+ <p class="sec-sub">One conversation: it plans the quarter, builds the campaigns, watches them, and assembles the dashboard you read them in — from your live account data, and nothing launches until you approve it. And when you change your mind, it puts the change back.</p>
  </div>
 
- <div class="thread" data-thread aria-label="One conversation, four things built">
-  <div class="thread-scroll" data-thread-scroll>
-  <div class="turn on" data-turn="0">
+ <div class="bstage" data-bstage>
+ <div class="bstage-tabs" role="tablist" aria-label="Five steps from one conversation">
+  <button type="button" role="tab" id="bt-0" aria-controls="bp-0" aria-selected="true" data-btab="0"><span class="bt-n">01</span><span class="bt-l">Media plan</span><span class="bt-s">Draft</span></button>
+  <button type="button" role="tab" id="bt-1" aria-controls="bp-1" aria-selected="false" tabindex="-1" data-btab="1"><span class="bt-n">02</span><span class="bt-l">Campaigns</span><span class="bt-s">On approval</span></button>
+  <button type="button" role="tab" id="bt-2" aria-controls="bp-2" aria-selected="false" tabindex="-1" data-btab="2"><span class="bt-n">03</span><span class="bt-l">Watcher</span><span class="bt-s">Proposes only</span></button>
+  <button type="button" role="tab" id="bt-3" aria-controls="bp-3" aria-selected="false" tabindex="-1" data-btab="3"><span class="bt-n">04</span><span class="bt-l">Dashboard</span><span class="bt-s">Live</span></button>
+  <button type="button" role="tab" id="bt-4" aria-controls="bp-4" aria-selected="false" tabindex="-1" data-btab="4"><span class="bt-n">05</span><span class="bt-l">Put it back</span><span class="bt-s">Real account</span></button>
+ </div>
+ <div class="bstage-panels">
+  <div class="bpanel on" id="bp-0" role="tabpanel" aria-labelledby="bt-0" data-bpanel="0">
    <div class="appwin-ask"><span>Plan Q2 for the spring launch — ₺400K across Meta and Google</span></div>
    <div class="appwin-say"><span class="dot"></span>Drafted from your own Q1 costs · one gap named first</div>
    <div class="build-canvas">
@@ -416,7 +423,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  </div>
    <div class="build-cap"><span class="name">Media plan</span><span class="tag">Draft · nothing built yet</span></div>
   </div>
-  <div class="turn" data-turn="1">
+  <div class="bpanel" id="bp-1" role="tabpanel" aria-labelledby="bt-1" hidden data-bpanel="1">
    <div class="appwin-ask"><span>Approved — build the top two lines</span></div>
    <div class="appwin-say"><span class="dot"></span>Drafted across Meta &amp; Google — ready to review</div>
    <div class="build-canvas">
@@ -428,7 +435,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  </div>
    <div class="build-cap"><span class="name">New campaign</span><span class="tag">Drafted · launches on approval</span></div>
   </div>
-  <div class="turn" data-turn="2">
+  <div class="bpanel" id="bp-2" role="tabpanel" aria-labelledby="bt-2" hidden data-bpanel="2">
    <div class="appwin-ask"><span>Watch CPA on these and tell me before it gets away from me</span></div>
    <div class="appwin-say"><span class="dot"></span>Described in chat · every field editable before you publish</div>
    <div class="build-canvas">
@@ -444,7 +451,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  </div>
    <div class="build-cap"><span class="name">Monitoring agent</span><span class="tag">Proposes · never applies</span></div>
   </div>
-  <div class="turn" data-turn="3">
+  <div class="bpanel" id="bp-3" role="tabpanel" aria-labelledby="bt-3" hidden data-bpanel="3">
    <div class="appwin-ask"><span>Now show me how it's actually pacing</span></div>
    <div class="appwin-say"><span class="dot"></span>Assembled from Meta · Google + GA4</div>
    <div class="build-canvas">
@@ -474,11 +481,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  </div>
    <div class="build-cap"><span class="name">Dashboard</span><span class="tag">Live · auto-refreshing</span></div>
   </div>
+  <div class="bpanel" id="bp-4" role="tabpanel" aria-labelledby="bt-4" hidden data-bpanel="4">
+   <div class="appwin-ask"><span>Actually — put that budget back</span></div>
+   <div class="appwin-say"><span class="dot"></span>Reverted from the ledger · confirmed on the platform</div>
+   <div class="build-canvas">
+ <div class="mini-rb">
+ <div class="mrb-note">The four artefacts above are a walkthrough. This one is not: it is a change made on a live Google Ads account during testing, then taken back.</div>
+ <div class="mrb-step"><span class="mrb-k">Applied</span><span class="mrb-v">daily budget <b>₺1,500</b> → <b>₺1,650</b></span></div>
+ <div class="mrb-step"><span class="mrb-k">Logged</span><span class="mrb-v">ledger row, with the state it replaced</span></div>
+ <div class="mrb-step mrb-back"><span class="mrb-k">Reverted</span><span class="mrb-v">back to <b>₺1,500</b> — verified in Google Ads</span></div>
+ <div class="mrb-foot"><span>Same chain on a paused ad group: <b>ENABLED → PAUSED → ENABLED</b></span></div>
+ </div>
+ </div>
+   <div class="build-cap"><span class="name">Reversal</span><span class="tag">Confirmed on the platform</span></div>
+  </div>
   </div>
  </div>
  </div>
  </div>
- <div class="builds-spacer" data-builds-spacer aria-hidden="true"></div>
 </section>
 
 <!-- GROUND-TRUTH ZONE: the two-verdict trap -->
@@ -560,8 +580,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  <div class="sec-ghost" data-reveal aria-hidden="true"><svg viewBox="0 0 96 96" data-fig data-anim><path d="M48 12 78 22v22c0 20-13 30-30 40C31 74 18 64 18 44V22Z"/><path d="M36 47l9 9 17-18"/></svg></div>
 
  <div class="cutout tg-card" data-reveal="left">
- <div class="co-kicker">Trust Gate · one real account, two refusals</div>
- <div class="co-h1" style="margin-top:10px">It said no. Twice. Before a dollar was spent.</div>
+ <div class="co-kicker">Trust Gate · one real account, three refusals</div>
+ <div class="co-h1" style="margin-top:10px">It said no. Three times. Before a dollar was spent.</div>
  <div class="report-flags" style="margin-top:16px">
  <div class="rflag">
  <div class="rflag-ic crit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg></div>
@@ -577,12 +597,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  <div class="rflag-w"><span class="rflag-copy">Asked for a <b>₺250</b> cost per conversion. The account's own history at the booking stage sits near <b>₺4,000</b>. At 250 the only reachable thing is a <b>₺13</b> micro-lead that clears the target and books nobody.</span></div>
  </div>
  </div>
+ <div class="rflag">
+ <div class="rflag-ic ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg></div>
+ <div class="rflag-main">
+ <div class="rflag-t">"I can name the worst segment. I can't act on it."</div>
+ <div class="rflag-w"><span class="rflag-copy">Asked to exclude the worst device. It ranked them — tablet at <b>₺39</b> CPA against mobile's <b>₺27</b> — then refused its own finding: <b>the write tool it holds does not exclude devices.</b> It said so, instead of quietly substituting a change it could make. The limit it disclosed was its own.</span></div>
+ </div>
+ </div>
  </div>
  </div>
  <div data-reveal="right">
  <span class="eyebrow"><span class="tick"></span><span id="trust"></span>Trust Gate</span>
  <h2 class="sec-title">The test of a thinking tool: does it ever tell you <em>no</em>?</h2>
- <p class="sec-sub">Anything that only says yes is executing, not reasoning. Both refusals came from one real account, unprompted, <b>before any budget moved</b> — each showing the account's own numbers as the reason. A tool that checks this afterwards reports the same facts a month later, once the money has already taught the algorithm nothing.</p>
+ <p class="sec-sub">Anything that only says yes is executing, not reasoning. All three came from one real account, unprompted, <b>before any budget moved</b>. Two show the account's own numbers as the reason. The third is the harder one: asked to act, it disclosed the limit of its <em>own</em> tools rather than swapping in a change it was able to make. A tool that checks this afterwards reports the same facts a month later, once the money has already taught the algorithm nothing.</p>
  </div>
  </div>
 </section>
@@ -892,6 +919,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  </div>
 </footer><!--/#footer-->
 
-<script src="/site.js?v=77a9ac5d"></script>
+<script src="/site.js?v=136ee362"></script>
 </body>
 </html>
