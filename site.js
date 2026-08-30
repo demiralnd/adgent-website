@@ -1,6 +1,151 @@
 /* Adgent marketing site — interactions
    reveal-on-scroll · counters · hero chat build · marquee · nav · lead form
    All motion respects prefers-reduced-motion. */
+
+/* Optional measurement stays off until the visitor explicitly enables it. */
+(function () {
+  var d = document;
+  var dataLayer = window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function () { dataLayer.push(arguments); };
+
+  window.gtag('consent', 'default', {
+    analytics_storage: 'denied',
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    functionality_storage: 'denied',
+    personalization_storage: 'denied',
+    security_storage: 'granted'
+  });
+  window.gtag('set', 'ads_data_redaction', true);
+
+  function loadGoogleAnalytics() {
+    if (d.querySelector('script[data-adgent-ga]')) return;
+    var script = d.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-1NCS2ZFMLR';
+    script.setAttribute('data-adgent-ga', '');
+    d.head.appendChild(script);
+    window.gtag('js', new Date());
+    window.gtag('config', 'G-1NCS2ZFMLR');
+    window.gtag('config', 'G-7BSLN2NWVP');
+  }
+
+  function loadGoogleTagManager() {
+    if (d.querySelector('script[data-adgent-gtm]')) return;
+    dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+    var script = d.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-MWR4PVRF';
+    script.setAttribute('data-adgent-gtm', '');
+    d.head.appendChild(script);
+  }
+
+  import('/assets/vendor/cookieconsent-3.1.0.esm.js').then(function (cc) {
+    function syncConsent() {
+      var analytics = cc.acceptedCategory('analytics');
+      var advertising = cc.acceptedCategory('advertising');
+      window.gtag('consent', 'update', {
+        analytics_storage: analytics ? 'granted' : 'denied',
+        ad_storage: advertising ? 'granted' : 'denied',
+        ad_user_data: advertising ? 'granted' : 'denied',
+        ad_personalization: advertising ? 'granted' : 'denied'
+      });
+      if (analytics) loadGoogleAnalytics();
+      if (advertising) loadGoogleTagManager();
+    }
+
+    return cc.run({
+      mode: 'opt-in',
+      revision: 1,
+      cookie: {
+        name: 'adgent_cookie_consent',
+        expiresAfterDays: 182,
+        sameSite: 'Lax'
+      },
+      guiOptions: {
+        consentModal: {
+          layout: 'cloud inline',
+          position: 'bottom center',
+          equalWeightButtons: true
+        },
+        preferencesModal: {
+          layout: 'box',
+          equalWeightButtons: true
+        }
+      },
+      categories: {
+        necessary: {
+          readOnly: true
+        },
+        analytics: {
+          autoClear: {
+            cookies: [{ name: /^_ga/ }, { name: '_gid' }],
+            reloadPage: false
+          }
+        },
+        advertising: {
+          autoClear: {
+            cookies: [{ name: /^_gcl/ }, { name: '_fbp' }],
+            reloadPage: false
+          }
+        }
+      },
+      onConsent: syncConsent,
+      onChange: syncConsent,
+      language: {
+        default: 'en',
+        translations: {
+          en: {
+            consentModal: {
+              label: 'Cookie consent',
+              title: 'Your choice, before measurement.',
+              description: 'We use necessary storage to remember this choice. With your permission, we also use analytics and advertising measurement. Optional tags stay off until you choose.',
+              acceptAllBtn: 'Accept all',
+              acceptNecessaryBtn: 'Reject optional',
+              showPreferencesBtn: 'Choose',
+              footer: '<a href="/privacy">Privacy policy</a>'
+            },
+            preferencesModal: {
+              title: 'Cookie settings',
+              acceptAllBtn: 'Accept all',
+              acceptNecessaryBtn: 'Reject optional',
+              savePreferencesBtn: 'Save choice',
+              closeIconLabel: 'Close cookie settings',
+              sections: [
+                {
+                  description: 'Optional tags are off unless you enable them. You can change this choice anytime from Cookie settings in the footer.'
+                },
+                {
+                  title: 'Necessary',
+                  description: 'Remembers your cookie choice and supports essential security. Always on.',
+                  linkedCategory: 'necessary'
+                },
+                {
+                  title: 'Analytics',
+                  description: 'Google Analytics measures visits and page use only after you enable it.',
+                  linkedCategory: 'analytics'
+                },
+                {
+                  title: 'Advertising',
+                  description: 'Google Tag Manager may load advertising measurement tags only after you enable it.',
+                  linkedCategory: 'advertising'
+                }
+              ]
+            }
+          }
+        }
+      }
+    }).then(function () {
+      d.querySelectorAll('[data-cookie-settings]').forEach(function (button) {
+        button.addEventListener('click', function () { cc.showPreferences(); });
+      });
+    });
+  }).catch(function (error) {
+    console.error('Cookie settings failed to load; optional measurement remains disabled.', error);
+  });
+})();
+
 (function () {
   var d = document, root = d.documentElement;
   root.classList.add('js');

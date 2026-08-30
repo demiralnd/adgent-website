@@ -2,22 +2,6 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1NCS2ZFMLR"></script>
-<script>
- window.dataLayer = window.dataLayer || [];
- function gtag(){dataLayer.push(arguments);}
- gtag('js', new Date());
- gtag('config', 'G-1NCS2ZFMLR');
- gtag('config', 'G-7BSLN2NWVP');
-</script>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-MWR4PVRF');</script>
-<!-- End Google Tag Manager -->
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Security — how Adgent protects your ad data</title>
 <meta name="description" content="How Adgent protects the advertising and analytics data you connect — encryption, access controls, token handling, and incident response."/>
@@ -39,14 +23,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="icon" type="image/svg+xml" href="/assets/logo-app.svg"/>
 <link rel="apple-touch-icon" href="/assets/logo-app.svg"/>
 <link rel="stylesheet" href="/tokens.css"/>
-<link rel="stylesheet" href="/site.css?v=2bcf84a3"/>
+<link rel="stylesheet" href="/site.css?v=dde77fd0"/>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MWR4PVRF"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
 <!-- NAV -->
 <!--#header--><a class="skip-link" href="#main">Skip to content</a>
 <header class="nav">
@@ -219,9 +198,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  <h2><span class="secnum">03</span>Access tokens &amp; secrets</h2>
  <p>When you connect a platform, we store the authorization tokens that let Adgent act on your behalf. We never ask for or store your platform passwords.</p>
  <ul>
- <li>Tokens are encrypted at rest and treated as secrets — never exposed to other customers and never shared except with the service providers that operate the platform on our behalf.</li>
+ <li>Tokens are encrypted at rest and treated as secrets. They are used only to authenticate requests to the platform you connected, are never exposed to other customers, and are never included in AI prompts or sent to AI model providers.</li>
  <li>We request the minimum scopes needed for the features you use.</li>
- <li>You can revoke Adgent's access at any time from your Adgent settings or from the platform's own permission settings, which immediately stops further access.</li>
+ <li>You can revoke Adgent's access at any time from your Adgent settings or from the platform's own permission settings, which immediately stops new scheduled access.</li>
  <li>Application secrets and API credentials are kept confidential and rotated when appropriate.</li>
  </ul>
  </section>
@@ -258,7 +237,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
  <section id="retention">
  <h2><span class="secnum">10</span>Retention &amp; deletion</h2>
- <p>We keep data only as long as needed to provide the service and for legitimate legal and security purposes. Connected data is deleted or de-identified when you disconnect a platform or delete your account, subject to limited retention required by law. You can request deletion at any time — see <a href="/privacy#rights">Your rights &amp; data deletion</a>.</p>
+ <p>We keep data only as long as needed to provide the service and for legitimate legal and security purposes. Disconnecting a platform stops new scheduled access but does not, by itself, delete data already stored by Adgent. A verified platform-data deletion request begins without undue delay. Deleting a company closes access immediately and schedules permanent deletion of its data from active systems within 30 days, subject to limited retention required by law. See <a href="/privacy#rights">Your rights &amp; data deletion</a>.</p>
  </section>
 
  <section id="disclosure">
@@ -331,6 +310,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  <a href="/terms">Terms</a>
  <a href="/security" class="active">Security</a>
  <a href="/data-use">Data use</a>
+ <a href="/data-deletion">Data deletion</a>
+ <button type="button" data-cookie-settings>Cookie settings</button>
  </div>
  </div>
  <div class="foot-bottom">
@@ -342,6 +323,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  </div>
 </footer><!--/#footer-->
 
-<script src="/site.js?v=136ee362"></script>
+<script src="/site.js?v=6ab3f761"></script>
 </body>
 </html>

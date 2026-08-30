@@ -156,17 +156,15 @@ No optimizer built inside an ad platform can grade its own spend against your ma
 Judgment, not just another chart
 An audit tells you what happened. Adgent takes the position — what to do about it — and remembers the calls you've already made on this brand.
 it seals
-Trust Gate · one real account, three refusals
-It said no. Three times. Before a dollar was spent.
+Trust Gate · one real account, two refusals
+It said no. Twice. Before a dollar was spent.
 "This pixel can't teach a campaign yet"
 Thirty days: 65,042 custom events, 16,404 initiate-checkout — and 4 purchases. Meta's own docs put the floor at 50 events in 7 days [developers.meta.com]. Technically possible to build. Nothing there for the optimizer to learn from.
 "Your target is unreachable — here's why"
 Asked for a ₺250 cost per conversion. The account's own history at the booking stage sits near ₺4,000 . At 250 the only reachable thing is a ₺13 micro-lead that clears the target and books nobody.
-"I can name the worst segment. I can't act on it."
-Asked to exclude the worst device. It ranked them — tablet at ₺39 CPA against mobile's ₺27 — then refused its own finding: the write tool it holds does not exclude devices. It said so, instead of quietly substituting a change it could make. The limit it disclosed was its own.
 Trust Gate
 The test of a thinking tool: does it ever tell you no ?
-Anything that only says yes is executing, not reasoning. All three came from one real account, unprompted, before any budget moved . Two show the account's own numbers as the reason. The third is the harder one: asked to act, it disclosed the limit of its own tools rather than swapping in a change it was able to make. A tool that checks this afterwards reports the same facts a month later, once the money has already taught the algorithm nothing.
+Anything that only says yes is executing, not reasoning. Both came from one real account, unprompted, before any budget moved , and both show the account's own numbers as the reason. A tool that checks this afterwards reports the same facts a month later, once the money has already taught the algorithm nothing.
 Creative intelligence
 It reads every creative like a strategist — not a tagger.
 Creative is the single biggest driver of a campaign's sales — 49% , more than targeting (11%) or reach (14%) [NCSolutions / Circana, 2023]. It is also the layer most tools only tag. Adgent reads every live ad the way a senior buyer would — its DNA, the story scene by scene, and exactly where viewers leave. No upload step: it reads what is already running.
@@ -2171,9 +2169,9 @@ In transit — all traffic to and from Adgent, and all calls to platform APIs, a
 At rest — data we store, including connection tokens and cached reporting data, is encrypted at rest.
 03 Access tokens & secrets
 When you connect a platform, we store the authorization tokens that let Adgent act on your behalf. We never ask for or store your platform passwords.
-Tokens are encrypted at rest and treated as secrets — never exposed to other customers and never shared except with the service providers that operate the platform on our behalf.
+Tokens are encrypted at rest and treated as secrets. They are used only to authenticate requests to the platform you connected, are never exposed to other customers, and are never included in AI prompts or sent to AI model providers.
 We request the minimum scopes needed for the features you use.
-You can revoke Adgent's access at any time from your Adgent settings or from the platform's own permission settings, which immediately stops further access.
+You can revoke Adgent's access at any time from your Adgent settings or from the platform's own permission settings, which immediately stops new scheduled access.
 Application secrets and API credentials are kept confidential and rotated when appropriate.
 04 Access controls
 Access to systems and data is governed by least-privilege principles. Internal access is limited to personnel who need it to operate the service, is authenticated, and is logged. We do not allow humans to read your connected data except in narrow circumstances: with your affirmative consent (for example, support you request), where necessary for security or to investigate abuse, where required by law, or where the data has been aggregated or de-identified for internal operations.
@@ -2188,7 +2186,7 @@ If we become aware of a security incident that compromises user data, we begin r
 09 Service providers
 We use a small set of trusted service providers (sub-processors) to host, operate, secure, and support Adgent, including cloud infrastructure and the AI model provider that processes data to generate your results. We require them to protect data, to use it only to provide their service to us, and to delete it when it is no longer needed. We do not sell your data, and we do not transfer it for advertising.
 10 Retention & deletion
-We keep data only as long as needed to provide the service and for legitimate legal and security purposes. Connected data is deleted or de-identified when you disconnect a platform or delete your account, subject to limited retention required by law. You can request deletion at any time — see Your rights & data deletion .
+We keep data only as long as needed to provide the service and for legitimate legal and security purposes. Disconnecting a platform stops new scheduled access but does not, by itself, delete data already stored by Adgent. A verified platform-data deletion request begins without undue delay. Deleting a company closes access immediately and schedules permanent deletion of its data from active systems within 30 days, subject to limited retention required by law. See Your rights & data deletion .
 11 Report a vulnerability
 Found a security issue? We want to hear from you. Email osman@adgent.app with the details and we will acknowledge your report and work to address it promptly. Please give us a reasonable chance to fix an issue before disclosing it publicly.
 12 Compliance
@@ -2203,7 +2201,7 @@ URL: https://adgent.app/data-use
 
 Legal
 Data Use
-Last updated 28 June 2026
+Last updated 30 August 2026
 This is the plain-language version of how Adgent handles the data in your connected accounts. It is a companion to our full Privacy Policy — where the two cover the same ground, the Privacy Policy governs. The short version: we read what you connect to do the analysis you asked for, we keep you in control of every change, and we never sell your data, use it for ads, or train AI models on it.
 Contents
 What we connect to
@@ -2219,10 +2217,11 @@ With your authorization, Adgent reads data from the platforms you connect. We re
 Meta & Google Ads (advertising) — account, campaign, ad set, and ad structure; budgets, bids, and settings; and performance metrics such as spend, impressions, clicks, conversions, ROAS, CPA, CPM, placements, and audiences. Where you grant execution access, we can apply changes you approve.
 Google Analytics 4 — aggregated traffic, engagement, and conversion reporting, to give your ad data on-site context.
 Google Search Console — search performance reporting such as queries, clicks, and impressions.
+Google Drive and Google Sheets — the content and metadata of files you select or create for use with Adgent, to import or export reports and provide business context. This permission does not let Adgent browse or access other files in your Drive.
 02 Why we access it
 Every connection exists to power a feature you can see. We use the data to build your daily brief and health score, detect anomalies, answer the questions you ask, generate the reports and audits you request, and prepare recommended changes. We do not request access to data we do not need, and we do not request access for features that do not yet exist.
 03 How we use it
-Your connected data is used solely to provide the service back to you. It is processed — including by the AI that powers Adgent's analysis — to generate your briefs, answers, and reports, and, on your approval, to carry out changes you ask for. We do not use one customer's data to benefit another.
+Your connected data is used solely to provide the service back to you. It is processed — including by the AI that powers Adgent's analysis — to generate your briefs, answers, and reports, and, on your approval, to carry out changes you ask for. We do not use one customer's data to benefit another. OAuth tokens authenticate requests to the platform you connected; they are never included in AI prompts or sent to AI model providers.
 04 What we never do
 We never sell your data or transfer it to data brokers or resellers.
 We never use your data for advertising , including retargeting or interest-based ads.
@@ -2232,15 +2231,20 @@ We never use your data to determine credit-worthiness or for lending.
 05 Google Limited Use
 Adgent's use and transfer of information received from Google APIs to any other app will adhere to the Google API Services User Data Policy , including the Limited Use requirements.
 06 Your control
-Read-only by default — Adgent only reads unless you grant execution access.
+Read-only by default — Google Analytics and Search Console permissions are read-only, and Google Drive is limited to files you select. Google Ads provides one OAuth scope for both reading and writing, so Adgent separately gates write actions.
 You approve every change — nothing is applied to your accounts until you say go.
-Disconnect anytime — revoke access from Adgent or from the platform's settings, which stops further access immediately.
-Delete anytime — request deletion of your data, or delete your account, at any time. See Your rights & data deletion .
+Disconnect anytime — revoke access from Adgent or from the platform's settings, which stops new scheduled access immediately. Disconnecting does not delete data already stored by Adgent.
+Delete anytime — delete a company's data from Adgent Settings; access closes immediately and permanent deletion from active systems is scheduled within 30 days. To delete your Adgent login account or request deletion of data from one connected platform, follow our data-deletion instructions .
 07 Per-platform notes
 Google
-Our use of information from Google APIs (Google Ads, Google Analytics 4, and Search Console) adheres to the Google API Services User Data Policy, including the Limited Use requirements. We do not use Google user data for ads, do not sell it, and do not use it to train generalized AI/ML models.
+Adgent requests only these Google OAuth scopes:
+Google Ads — https://www.googleapis.com/auth/adwords for account, campaign, settings, and performance data. Because Google provides one scope for both read and write access, Adgent separately gates every write action behind your explicit approval.
+Google Analytics — https://www.googleapis.com/auth/analytics.readonly for aggregated reporting.
+Google Drive — https://www.googleapis.com/auth/drive.file for files you select or create for use with Adgent.
+Google Search Console — https://www.googleapis.com/auth/webmasters.readonly for authorized site-performance reporting.
+Our use of information from Google APIs adheres to the Google API Services User Data Policy, including the Limited Use requirements. We do not use Google user data for ads, do not sell it, and do not use it to train generalized AI/ML models.
 Meta
-Data accessed via Meta's APIs is processed only as described here and in our Privacy Policy, and in line with applicable Meta terms and developer policies. You can request deletion or revoke access at any time.
+Data accessed via Meta's APIs is processed only as described here and in our Privacy Policy, and in line with applicable Meta terms and developer policies. You can revoke access in Meta and follow our data-deletion instructions at any time.
 Contact us
 Questions about how we use your data? Email osman@adgent.app . Adgent is operated by Osman Tıkna, a sole proprietorship established in Türkiye. Read the full Privacy Policy .
 
@@ -2251,8 +2255,8 @@ URL: https://adgent.app/privacy
 
 Legal
 Privacy Policy
-Effective 28 June 2026 · Last updated 28 June 2026
-This Privacy Policy explains how Adgent , a service operated by Osman Tıkna (a sole proprietorship established in Türkiye, the data controller) ("Adgent", "we", "us", or "our"), collects, uses, stores, shares, and protects information when you use our website and our marketing-intelligence service. A core part of Adgent is connecting, with your authorization, to your advertising and analytics platforms — including Meta , Google Ads , Google Analytics 4 , Google Search Console and Google Merchant Center — to read reporting data and, only on your explicit approval, carry out changes you ask us to make.
+Effective 30 August 2026 · Last updated 30 August 2026
+This Privacy Policy explains how Adgent , a service operated by Osman Tıkna (a sole proprietorship established in Türkiye, the data controller) ("Adgent", "we", "us", or "our"), collects, uses, stores, shares, and protects information when you use our website and our marketing-intelligence service. A core part of Adgent is connecting, with your authorization, to your advertising and analytics platforms — including Meta , Google Ads , Google Analytics 4 , Google Search Console , and the Google Drive and Google Sheets files you select — to read reporting data and, only on your explicit approval, carry out changes you ask us to make.
 Contents
 Who we are and scope
 Information we collect
@@ -2279,15 +2283,17 @@ Communications — messages you send us, including support requests and the ques
 Billing details — where you hold a paid plan, billing contact information and payment status (card processing is handled by our payment provider; we do not store full card numbers).
 Information we collect automatically
 Usage & device data — log data such as IP address, browser type, pages viewed, and actions taken, used to operate, secure, and improve the service.
-Cookies & similar technologies — used for sign-in, security, preferences, and basic analytics. You can control non-essential cookies through your browser settings.
+Cookies & similar technologies — necessary cookies support sign-in, security, and remembering your cookie choice. On our website, Google Analytics and Google Tag Manager stay off unless you enable the optional analytics or advertising categories. You can change or withdraw your consent at any time through Cookie settings in the footer.
 Connection credentials
 When you connect a platform, we receive and store authorization tokens (for example, OAuth access and refresh tokens) that let Adgent access that account on your behalf. We never ask for, collect, or store your platform passwords.
 03 Connected platform data
 With your authorization, Adgent accesses data from the platforms you connect. The data we read depends on which platforms you connect and the permissions you grant, and may include:
 Advertising platforms (Meta, Google) — account, campaign, ad set, and ad structure; budgets, bids, and settings; performance and delivery metrics (such as spend, impressions, clicks, conversions, ROAS, CPA, CPM, placements, and audiences). Where you grant execution access, we can apply changes you approve, such as adjusting budgets, pausing or editing campaigns, or building new campaigns.
-Analytics sources (Google Analytics 4, Google Search Console, Google Merchant Center) — aggregated reporting data such as sessions, traffic and conversion metrics, store revenue and order metrics, and search performance, used to give your advertising data business context.
+Google Analytics 4 — aggregated traffic, engagement, and conversion reporting, used to give your advertising data on-site context.
+Google Search Console — search performance reporting such as queries, clicks, and impressions for properties you authorize.
+Google Drive and Google Sheets — the content and metadata of files that you select or create for use with Adgent, used to import or export reports and provide business context. Adgent cannot browse or access other files in your Drive through this permission.
 We request only the access needed to provide the features you use. We do not request access to data we do not need, and we do not "future-proof" by requesting access to data for features that do not yet exist.
-Read-only by default. Adgent operates in read-only mode unless you grant execution access, and even then no change is made to your accounts until you explicitly approve it. You remain in control of every change.
+Read-only by default. Google Analytics and Search Console permissions are read-only, and Google Drive access is limited to files you select. Google Ads provides one OAuth scope for both reading and writing; Adgent gates write actions so no change is made to your accounts until you explicitly approve it. You remain in control of every change.
 04 How we use information
 We use information solely to provide, secure, and improve the user-facing features of Adgent. Specifically, we use it to:
 Analyze your connected accounts and produce briefs, health scores, anomaly alerts, and reports;
@@ -2296,7 +2302,7 @@ Prepare recommended changes and, on your explicit approval, apply them to your c
 Provide support, communicate with you about the service, and manage billing;
 Maintain the security, integrity, and reliability of the service, and detect and prevent fraud or abuse;
 Comply with legal obligations.
-Our use of data accessed through platform APIs is limited to the practices described in this policy. If we ever want to use that data in a new way, we will update this policy and obtain your consent before doing so.
+Our use of data accessed through platform APIs is limited to the practices described in this policy. Before accessing a type of Google user data not previously disclosed, or using Connected Platform Data for a new or different purpose, we will update this policy, notify affected users, and obtain consent where the connected-platform rules or applicable law require it.
 05 Limited use & AI commitments
 We hold ourselves to strict limits on what we do with the data we access on your behalf. We do not :
 Sell or transfer your data to third parties such as advertising platforms, data brokers, or information resellers;
@@ -2305,6 +2311,7 @@ Use your data to determine credit-worthiness or for lending purposes;
 Allow humans to read your data, except with your affirmative consent (for example, for support you request), where necessary for security or to investigate abuse, to comply with law, or where the data has been aggregated/de-identified and is used for internal operations;
 Use your Connected Platform Data to train generalized or non-personalized artificial-intelligence or machine-learning models.
 Adgent uses AI to analyze and reason over your data in order to deliver the service back to you . Data is processed transiently to generate your briefs, answers, and reports; it is not used to train foundation models or models for the benefit of any other customer.
+OAuth access and refresh tokens are never included in AI prompts or sent to AI model providers. Each customer's Connected Platform Data is maintained separately and is not used to provide or improve the service for another customer or advertiser.
 Adgent's use and transfer of information received from Google APIs to any other app will adhere to the Google API Services User Data Policy , including the Limited Use requirements.
 06 Legal bases
 Where the GDPR or similar laws apply, we process personal data on the following bases: performance of a contract (to provide the service you sign up for); legitimate interests (to secure, maintain, and improve the service, where not overridden by your rights); consent (for example, when you authorize a platform connection or opt in to non-essential cookies); and legal obligation (to comply with applicable law). You may withdraw consent at any time.
@@ -2313,14 +2320,14 @@ We do not sell your data. We share it only as needed to run the service:
 Service providers (sub-processors) — trusted vendors that help us host, operate, secure, and support Adgent, including cloud infrastructure providers and the AI model provider that processes data to generate your results. They may only process data on our instructions and to provide their service to us, and are contractually required to protect it and delete it when no longer needed.
 The platforms you connect — when you approve a change, we send the corresponding instruction to that platform's API to carry it out.
 Legal & safety — where required by law, regulation, legal process, or governmental request, or to protect the rights, property, or safety of Adgent, our users, or the public.
-Business transfers — in connection with a merger, acquisition, financing, or sale of assets, subject to the protections of this policy and with notice to affected users.
+Business transfers — in connection with a merger, acquisition, financing, or sale of assets, subject to the protections of this policy and with notice to affected users. Data received from Google APIs will not be transferred as part of a business transfer without your explicit prior consent.
 08 Data retention
-We keep information only as long as needed to provide the service and for legitimate legal, security, and operational purposes. Connected Platform Data is retained while your connection is active and your account is open, and is deleted (or de-identified) when it is no longer necessary to provide the service, when you disconnect a platform, or when you delete your account — subject to limited retention required by law. You can request deletion at any time as described below.
+We keep information only as long as needed to provide the service and for legitimate legal, security, and operational purposes. Disconnecting or revoking a platform connection stops new access but does not, by itself, delete data already stored by Adgent. Connected Platform Data is deleted when it is no longer necessary to provide the service, when you submit a verified deletion request, or when permanent account deletion completes — subject to limited retention required by law. You can request deletion at any time as described below.
 09 Your rights & data deletion
 Depending on where you live, you may have rights to access, correct, delete, restrict, or object to the processing of your personal data, to data portability, and to withdraw consent. We give every user an easily accessible way to exercise these rights:
 Disconnect at any time — you can revoke Adgent's access to any connected platform at any time from your Adgent settings or from that platform's app/permission settings. Revoking access stops further data access immediately.
-Request correction or deletion — email osman@adgent.app and we will action your request without undue delay.
-Delete your account — deleting your account deletes the associated user and Connected Platform Data, except where we are required to retain limited records by law.
+Request correction or deletion — follow our data-deletion instructions or email osman@adgent.app , and we will action your request without undue delay.
+Delete company data or your account — a company-deletion request closes access to that company immediately and marks its connections disconnected so Adgent does not start new scheduled collection. It then schedules permanent deletion of the company's Adgent records and Connected Platform Data from active systems within 30 days. To request deletion of your Adgent login account as well, follow our data-deletion instructions . Limited records may be retained where required by law.
 We will not charge you to exercise these rights, and we will not discriminate against you for doing so. If you are in the EEA or UK and have an unresolved concern, you may contact your local data protection authority.
 10 Security
 We take reasonable and appropriate measures to protect data against unauthorized access, use, alteration, loss, or disclosure. These include encryption of data in transit and at rest, access controls and least-privilege practices, protection of access tokens and application secrets, and monitoring. We provide a clearly marked way to report security concerns, and we begin remediation and notify affected parties as required by law if an incident occurs. No method of transmission or storage is completely secure, but we work to protect your data and continually improve our safeguards.
@@ -2330,11 +2337,13 @@ We may process and store information in countries other than your own, including
 Adgent is a business tool intended for use by adults aged 18 and over. It is not directed to children, and we do not knowingly collect personal information from children. If you believe a child has provided us with personal information, contact us and we will delete it.
 13 Platform-specific disclosures
 Google
-Adgent's use of information received from Google APIs (including Google Ads, Google Analytics 4, and Google Search Console) adheres to the Google API Services User Data Policy , including the Limited Use requirements. We do not use Google user data for advertising, do not sell it, and do not use it to train generalized AI/ML models.
+Adgent requests only these Google OAuth scopes: Google Ads ( https://www.googleapis.com/auth/adwords ), Google Analytics ( https://www.googleapis.com/auth/analytics.readonly ), Google Drive ( https://www.googleapis.com/auth/drive.file ), and Google Search Console ( https://www.googleapis.com/auth/webmasters.readonly ). The Analytics and Search Console scopes are read-only. The Drive scope limits access to files you select or create for use with Adgent. Google Ads provides one scope for read and write access, so Adgent separately gates every write action behind your explicit approval.
+Adgent's use of information received from Google APIs adheres to the Google API Services User Data Policy , including the Limited Use requirements. We do not use Google user data for advertising, do not sell it, and do not use it to train generalized AI/ML models.
 Meta
-Data accessed through Meta's APIs is processed in accordance with this policy and with applicable Meta terms and developer policies. You can ask us to delete data accessed via Meta at any time using the contact details below, and you may revoke Adgent's access from your Meta account settings.
+Data accessed through Meta's APIs is processed in accordance with this policy and with applicable Meta terms and developer policies. You can ask us to delete data accessed via Meta at any time using our data-deletion instructions , and you may revoke Adgent's access from your Meta account settings.
 14 Changes to this policy
-We may update this policy from time to time. When we do, we will revise the "Last updated" date above and, for material changes, provide additional notice. If a change affects how we use data accessed through platform APIs, we will obtain your consent before applying the change to that data. Your continued use of Adgent after an update means you accept the revised policy.
+We may update this policy from time to time. When we do, we will revise the "Last updated" date above and notify registered users by email to the address associated with their account, through a conspicuous in-product notice, or both. For material changes, we will provide notice before the change takes effect and state its effective date.
+Unless applicable law or a connected platform's policy requires consent, this notice does not require you to re-accept the policy. If a change would allow us to access a type of Google user data that was not previously disclosed, use Connected Platform Data in a new way or for a different purpose, or otherwise requires consent under applicable law, we will obtain your consent before applying that change. Non-material changes may take effect when posted.
 Contact us
 Questions about this policy or your data? Email osman@adgent.app . Adgent is operated by Osman Tıkna, a sole proprietorship established in Türkiye — the data controller.
 
@@ -2345,7 +2354,7 @@ URL: https://adgent.app/terms
 
 Legal
 Terms of Service
-Effective 28 June 2026 · Last updated 28 June 2026
+Effective 30 August 2026 · Last updated 30 August 2026
 These Terms of Service ("Terms") govern your access to and use of Adgent , a marketing-intelligence service operated by Osman Tıkna (a sole proprietorship established in Türkiye) ("Adgent", "we", "us", or "our"). By accessing or using Adgent — including by connecting any advertising or analytics platform — you agree to these Terms. If you are using Adgent on behalf of a company, you agree on its behalf and confirm you have authority to do so. If you do not agree, do not use Adgent.
 Contents
 The service
@@ -2367,7 +2376,7 @@ Changes to these terms
 Governing law
 Contact us
 01 The service
-Adgent is an AI marketing-intelligence service that, with your authorization, reads the advertising and analytics accounts you connect — including Meta, Google Ads, Google Analytics 4, Google Search Console and Google Merchant Center — analyzes them, answers your questions, and, where you grant execution access, applies changes that you approve. Features available to you depend on your plan and the connections and permissions you grant.
+Adgent is an AI marketing-intelligence service that, with your authorization, reads the advertising and analytics accounts you connect — including Meta, Google Ads, Google Analytics 4, Google Search Console, and Google Drive or Google Sheets files you select — analyzes them, answers your questions, and, where you grant execution access, applies changes that you approve. Features available to you depend on your plan and the connections and permissions you grant.
 02 Eligibility
 You must be at least 18 years old and able to form a binding contract to use Adgent. You represent that you own, or are authorized to manage, the advertising and analytics accounts you connect, and that your use of Adgent with those accounts does not violate any agreement between you and the relevant platform or any third party.
 03 Accounts
@@ -2385,13 +2394,13 @@ Interfere with, disrupt, or place undue load on the service or its infrastructur
 Resell, sublicense, or provide the service to third parties except as expressly permitted;
 Use the service to build a competing product, or to transmit malware or unlawful, infringing, or harmful content.
 07 Your data & privacy
-Our collection and use of information is described in our Privacy Policy , which is incorporated into these Terms. You retain ownership of your data and the data in your connected accounts. You grant us a limited license to access, process, and store that data solely to provide and improve the service for you, consistent with the Privacy Policy.
+Our collection and use of information is described in our Privacy Policy , which is incorporated into these Terms. You retain ownership of your data and the data in your connected accounts. You grant us a limited license to access, process, and store that data solely to provide and improve the user-facing service for you, consistent with the Privacy Policy.
 08 Plans & billing
 Some features require a paid plan. Where you purchase a plan, you agree to the fees, billing cycle, and terms presented at checkout. Unless stated otherwise, paid plans are billed in advance, monthly plans may be canceled at any time and take effect at the end of the current billing period, and fees are non-refundable except where required by law. We may change pricing on prospective notice.
 09 Intellectual property
 Adgent, including the service, software, models, and all related content and trademarks (other than your data and third-party marks), is owned by Adgent and its licensors and is protected by intellectual-property laws. We grant you a limited, non-exclusive, non-transferable, revocable right to use the service in accordance with these Terms. We welcome feedback and may use it without restriction or obligation to you.
 10 Third-party platforms
-Adgent integrates with third-party platforms including Meta, Google Ads, Google Analytics 4, Google Search Console and Google Merchant Center. We are not affiliated with, endorsed by, or sponsored by these companies, and their names and logos are the property of their respective owners. Your use of each platform is governed by that platform's own terms and policies, and we are not responsible for the platforms, their availability, or changes they make to their APIs that may affect the service.
+Adgent integrates with third-party platforms including Meta, Google Ads, Google Analytics 4, Google Search Console, and Google Drive and Google Sheets. We are not affiliated with, endorsed by, or sponsored by these companies, and their names and logos are the property of their respective owners. Your use of each platform is governed by that platform's own terms and policies, and we are not responsible for the platforms, their availability, or changes they make to their APIs that may affect the service.
 11 AI output & no guarantees
 Adgent uses AI to analyze data and generate briefs, answers, recommendations, and reports. This output is provided for informational and decision-support purposes, may contain errors or omissions, and should be reviewed before you act on it. We do not guarantee any particular result, including any improvement in advertising performance, return on ad spend, or savings. You are solely responsible for decisions you make and changes you approve.
 12 Disclaimers
@@ -2403,7 +2412,8 @@ You agree to indemnify and hold Adgent harmless from claims, damages, liabilitie
 15 Termination
 You may stop using Adgent and disconnect your platforms at any time. We may suspend or terminate your access if you violate these Terms, if required for security or legal reasons, or if a connected platform requires it. On termination, your right to use the service ends; we will handle your data as described in the Privacy Policy . Sections that by their nature should survive (including intellectual property, disclaimers, limitation of liability, and indemnification) will survive termination.
 16 Changes to these terms
-We may update these Terms from time to time. We will revise the "Last updated" date above and, for material changes, provide additional notice. Your continued use of Adgent after an update means you accept the revised Terms.
+We may update these Terms from time to time. When we do, we will revise the "Last updated" date above and notify registered users by email to the address associated with their account, through a conspicuous in-product notice, or both. For material changes, we will provide reasonable advance notice and state the effective date. Changes required urgently for legal, security, or connected-platform compliance may take effect sooner.
+Unless applicable law requires your express consent, your continued use of Adgent on or after the effective date means you accept the revised Terms. If you do not agree, you must stop using Adgent and may terminate your account before the change takes effect.
 17 Governing law
 These Terms are governed by the laws of the Republic of Türkiye , without regard to conflict-of-laws rules, and the courts and enforcement offices of Istanbul will have exclusive jurisdiction over disputes, except where applicable law gives you the right to bring a claim in your local courts. Nothing in these Terms limits any mandatory consumer-protection rights you may have.
 Contact us
@@ -3058,6 +3068,40 @@ Request demo
 
 ---
 
+# Data deletion — remove your Adgent and connected-platform data
+URL: https://adgent.app/data-deletion
+
+Legal
+Data Deletion
+Last updated 30 August 2026
+You can disconnect a platform, delete a company and its connected-platform data, request deletion of your Adgent login account, or send us a platform-data deletion request at any time. These instructions apply to data accessed from Meta and Google as well as the account information you provide directly to Adgent.
+Contents
+Disconnect a platform
+Delete company data or your account
+Meta data deletion
+What deletion covers
+Verification and timing
+Contact us
+01 Disconnect a platform
+Open Settings → Connections in Adgent and disconnect the relevant platform. You can also revoke Adgent directly from that platform's app or permission settings. Revoking access stops Adgent from accessing new data through that connection.
+Disconnecting a platform does not delete data already stored by Adgent or your login account. To delete stored data, follow the company-data or email-request steps below.
+02 Delete company data or your account
+Sign in to Adgent and open Settings .
+Use the company deletion control to delete that company's Adgent records and Connected Platform Data, then confirm the request.
+To delete your Adgent login account as well, or if you cannot sign in or do not see the company deletion control, email osman@adgent.app from the address associated with your account. Include your account email and company or workspace name. Do not send platform passwords, access tokens, or other credentials.
+03 Meta data deletion
+To revoke Adgent's Meta access, open Facebook Settings & privacy → Settings → Apps and Websites , select Adgent, and choose Remove . Then delete the relevant company data as described above or email osman@adgent.app to request deletion of data previously accessed through Meta.
+For an email request, include the email address used with Adgent and the affected business or ad-account name. We will send status and completion confirmation to the verified email address.
+04 What deletion covers
+Deletion covers the requested Adgent account or workspace, including stored profile information, authorization tokens, Connected Platform Data, and reports associated with it. It does not delete information held independently by Meta, Google, or another platform; use that platform's own deletion controls for its copy.
+Limited records may be retained where required by law, for security and fraud prevention, or in encrypted backups until those backups are overwritten. Any retained data remains protected and is not used for other purposes.
+05 Verification and timing
+We may ask for reasonable information to verify your identity and authority over the affected account. A verified request to delete data from a connected platform begins without undue delay. A company-deletion request closes access immediately and marks its connections disconnected so Adgent does not start new scheduled collection, then schedules permanent deletion from active systems within 30 days. Automated deletion requests receive a status URL; for verified email requests, we send confirmation when deletion from active systems is complete. We never ask for your Meta or Google password or OAuth token.
+Contact us
+Send deletion requests or questions to osman@adgent.app . Adgent is operated by Osman Tıkna, a sole proprietorship established in Türkiye. See our Privacy Policy and Data Use summary.
+
+---
+
 # Google Ads account structure in 2026 — Adgent
 URL: https://adgent.app/google-ads-account-structure-2026
 
@@ -3690,17 +3734,15 @@ No optimizer built inside an ad platform can grade its own spend against your ma
 Judgment, not just another chart
 An audit tells you what happened. Adgent takes the position — what to do about it — and remembers the calls you've already made on this brand.
 it seals
-Trust Gate · one real account, three refusals
-It said no. Three times. Before a dollar was spent.
+Trust Gate · one real account, two refusals
+It said no. Twice. Before a dollar was spent.
 "This pixel can't teach a campaign yet"
 Thirty days: 65,042 custom events, 16,404 initiate-checkout — and 4 purchases. Meta's own docs put the floor at 50 events in 7 days [developers.meta.com]. Technically possible to build. Nothing there for the optimizer to learn from.
 "Your target is unreachable — here's why"
 Asked for a ₺250 cost per conversion. The account's own history at the booking stage sits near ₺4,000 . At 250 the only reachable thing is a ₺13 micro-lead that clears the target and books nobody.
-"I can name the worst segment. I can't act on it."
-Asked to exclude the worst device. It ranked them — tablet at ₺39 CPA against mobile's ₺27 — then refused its own finding: the write tool it holds does not exclude devices. It said so, instead of quietly substituting a change it could make. The limit it disclosed was its own.
 Trust Gate
 The test of a thinking tool: does it ever tell you no ?
-Anything that only says yes is executing, not reasoning. All three came from one real account, unprompted, before any budget moved . Two show the account's own numbers as the reason. The third is the harder one: asked to act, it disclosed the limit of its own tools rather than swapping in a change it was able to make. A tool that checks this afterwards reports the same facts a month later, once the money has already taught the algorithm nothing.
+Anything that only says yes is executing, not reasoning. Both came from one real account, unprompted, before any budget moved , and both show the account's own numbers as the reason. A tool that checks this afterwards reports the same facts a month later, once the money has already taught the algorithm nothing.
 Creative intelligence
 It reads every creative like a strategist — not a tagger.
 Creative is the single biggest driver of a campaign's sales — 49% , more than targeting (11%) or reach (14%) [NCSolutions / Circana, 2023]. It is also the layer most tools only tag. Adgent reads every live ad the way a senior buyer would — its DNA, the story scene by scene, and exactly where viewers leave. No upload step: it reads what is already running.

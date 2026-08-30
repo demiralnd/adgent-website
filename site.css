@@ -1,3 +1,5 @@
+@import url("/assets/vendor/cookieconsent-3.1.0.css");
+
 :root {
   /* ---------- Fonts ---------- */
   --font-ui: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
@@ -1271,14 +1273,56 @@ input[type="range"][data-math-spend]:focus-visible { outline: 2px solid var(--ac
 /* .foot-h is an h2 for document outline reasons — h4 after page content ending
    in h2/h3 skipped a heading level on 44 pages. Styling is unchanged. */
 .foot-col .foot-h { font-family: var(--font-mono); font-size: 10px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-3); margin: 0 0 16px; }
-.foot-col a { display: block; font-size: 13.5px; color: var(--text-2); padding: 6px 0; transition: color 120ms; }
-.foot-col a:hover { color: var(--text); }
+.foot-col a, .foot-col button { display: block; font-size: 13.5px; color: var(--text-2); padding: 6px 0; transition: color 120ms; }
+.foot-col button { width: 100%; border: 0; background: none; font-family: inherit; font-weight: inherit; text-align: left; cursor: pointer; }
+.foot-col a:hover, .foot-col button:hover { color: var(--text); }
+.foot-col button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .foot-bottom { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border); }
 .foot-bottom span { font-size: 12.5px; color: var(--text-3); }
 .foot-social { display: flex; gap: 8px; }
 .foot-social a { width: 36px; height: 36px; border-radius: var(--r-sm); border: 1px solid var(--border-2); background: var(--bg-card); display: grid; place-items: center; color: var(--text-2); transition: color 120ms, border-color 120ms; }
 .foot-social a:hover { color: var(--text); border-color: var(--text-4); }
 .foot-social svg { width: 16px; height: 16px; stroke-width: 2; }
+
+/* ---------- consent manager ---------- */
+#cc-main {
+  --cc-font-family: var(--font-ui);
+  --cc-modal-border-radius: var(--r-xl);
+  --cc-btn-border-radius: var(--r-sm);
+  --cc-bg: var(--bg-card);
+  --cc-primary-color: var(--text);
+  --cc-secondary-color: var(--text-2);
+  --cc-btn-primary-bg: var(--accent);
+  --cc-btn-primary-color: var(--accent-on);
+  --cc-btn-primary-border-color: var(--accent);
+  --cc-btn-primary-hover-bg: var(--accent-press);
+  --cc-btn-primary-hover-color: var(--accent-on);
+  --cc-btn-primary-hover-border-color: var(--accent-press);
+  --cc-btn-secondary-bg: var(--bg-sub);
+  --cc-btn-secondary-color: var(--text);
+  --cc-btn-secondary-border-color: var(--border-2);
+  --cc-btn-secondary-hover-bg: var(--bg-inset);
+  --cc-btn-secondary-hover-color: var(--text);
+  --cc-btn-secondary-hover-border-color: var(--border-2);
+  --cc-separator-border-color: var(--border);
+  --cc-toggle-on-bg: var(--accent);
+  --cc-cookie-category-block-bg: var(--bg-sub);
+  --cc-cookie-category-block-border: var(--border);
+  --cc-cookie-category-block-hover-bg: var(--bg-inset);
+  --cc-cookie-category-block-hover-border: var(--border-2);
+  --cc-footer-bg: var(--bg-sub);
+  --cc-footer-color: var(--text-2);
+  --cc-footer-border-color: var(--border);
+}
+#cc-main .cm, #cc-main .pm {
+  border: 1px solid var(--border-2);
+  box-shadow: var(--shadow-pop);
+}
+#cc-main .cm__title, #cc-main .pm__title {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+#cc-main .cm__btn, #cc-main .pm__btn { min-height: 44px; }
 
 /* ---------- page header (interior pages) ---------- */
 .phead { padding: 76px 0 12px; }
@@ -1305,6 +1349,7 @@ input[type="range"][data-math-spend]:focus-visible { outline: 2px solid var(--ac
 .legal-body h3 { font-size: 15.5px; font-weight: 600; color: var(--text); margin: 26px 0 8px; }
 .legal-body p { font-size: 15px; line-height: 1.72; color: var(--text-2); margin: 0 0 15px; text-wrap: pretty; }
 .legal-body p b, .legal-body li b { color: var(--text); font-weight: 600; }
+.legal-body code { overflow-wrap: anywhere; }
 .legal-body ul { margin: 0 0 15px; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 9px; }
 .legal-body ul li { position: relative; padding-left: 19px; font-size: 14.5px; line-height: 1.62; color: var(--text-2); }
 .legal-body ul li::before { content: ""; position: absolute; left: 3px; top: 9px; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
@@ -3825,7 +3870,7 @@ section, .band, .moat, .hero { z-index: auto; }
 
   /* Footer links were the smallest targets left — 29px, and there are eleven of
      them stacked, so a miss lands on a neighbour rather than empty space. */
-  .foot-col a { padding: 13px 0; }
+  .foot-col a, .foot-col button { padding: 13px 0; }
 
   /* Legibility — the two places running text dropped below 12.5px. */
   .post-meta { font-size: 12px; letter-spacing: 0.06em; }

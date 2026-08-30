@@ -26,11 +26,13 @@ import re, sys, os, glob, io, datetime
 ROOT = os.path.dirname(os.path.abspath(__file__))
 PARTIALS = os.path.join(ROOT, "_partials")
 SKIP = {"blog-post"}
+# Pages that live in a subdirectory, so the root glob never sees them.
+EXTRA_SLUGS = ["demo"]
 # media-planning folded into built-from-chat on 2026-08-16 — the old URL 301s
 # in vercel.json, so it must not reappear here or the nav will link to a redirect.
 FEATURE_SLUGS = ["daily-verdict", "ground-truth", "trust-gate", "creative-intelligence",
                  "change-ledger", "account-memory", "built-from-chat"]
-NAV_SLUGS = ({"", "features", "why-adgent", "security", "data-use",
+NAV_SLUGS = ({"", "features", "why-adgent", "security", "data-use", "data-deletion",
               "for-agencies", "for-in-house", "pricing", "about", "blog"}
              | set(FEATURE_SLUGS))
 BLOCKS = ["header", "mobile", "footer"]
@@ -135,6 +137,17 @@ def stamp_assets(html):
     return html
 
 
+def gate_analytics(html):
+    """Remove legacy tags; site.js loads measurement only after consent."""
+    html = re.sub(
+        r'\s*<!-- Google tag \(gtag\.js\) -->.*?<!-- End Google Tag Manager -->\s*',
+        '\n', html, flags=re.S)
+    return re.sub(
+        r'\s*<!-- Google Tag Manager \(noscript\) -->.*?'
+        r'<!-- End Google Tag Manager \(noscript\) -->\s*',
+        '\n', html, flags=re.S)
+
+
 def mark_figures(html):
     """Stamp data-anim on every content figure, so it inherits entry motion.
 
@@ -179,6 +192,7 @@ def mark_figures(html):
 
 
 def render(html, slug):
+    html = gate_analytics(html)
     for block in BLOCKS:
         body = with_active(partial(block), slug)
         repl = f"<!--#{block}-->{body}<!--/#{block}-->"
@@ -200,7 +214,7 @@ def pages():
         yield p, name[:-5]
 
 
-_PRIO = {"": "1.0", "features": "0.9", "pricing": "0.8", "blog": "0.8",
+_PRIO = {"": "1.0", "features": "0.9", "demo": "0.9", "pricing": "0.8", "blog": "0.8",
          "for-agencies": "0.8", "for-in-house": "0.8", "why-adgent": "0.8",
          "about": "0.6", "security": "0.4",
          "data-use": "0.4", "privacy": "0.3", "terms": "0.3"}
@@ -218,7 +232,7 @@ def sitemap(check_only=False):
     base, today = "https://adgent.app", datetime.date.today().isoformat()
     slugs = [os.path.basename(p)[:-5] for p in sorted(glob.glob(os.path.join(ROOT, "*.html")))
              if not _noindex(p) and not os.path.basename(p).startswith("_")]
-    slugs = [s for s in slugs if s not in SKIP]
+    slugs = [s for s in slugs if s not in SKIP] + EXTRA_SLUGS
     rows = []
     for slug in ["index"] + [s for s in slugs if s != "index"]:
         path = "" if slug == "index" else slug
@@ -246,7 +260,7 @@ def sitemap(check_only=False):
 # Hand-maintained, it went stale immediately: 20 real pages missing and a
 # platform list that contradicted the site. Derive it from the pages instead.
 _LLMS_GROUPS = [
-    ("Product", ["", "features", "why-adgent", "pricing"]),
+    ("Product", ["", "features", "why-adgent", "pricing", "demo"]),
     ("Capabilities", FEATURE_SLUGS),
     ("By industry", ["ecommerce", "lead-generation", "travel-hospitality",
                      "marketplaces", "local-multi-location", "mobile-apps"]),
@@ -255,9 +269,15 @@ _LLMS_GROUPS = [
 ]
 
 
+def _page_path(slug):
+    """Slug -> file. Subdirectory pages (demo) live at <slug>/index.html."""
+    path = os.path.join(ROOT, ("index" if slug == "" else slug) + ".html")
+    return path if os.path.exists(path) else os.path.join(ROOT, slug, "index.html")
+
+
 def _page_meta(slug):
     """(title, description) straight from the page's own head."""
-    path = os.path.join(ROOT, ("index" if slug == "" else slug) + ".html")
+    path = _page_path(slug)
     if not os.path.exists(path):
         return None
     head = read(path).split("</head>", 1)[0]
@@ -314,7 +334,7 @@ def llms(check_only=False):
 
 def _page_text(slug):
     """Readable body text of a page, for the full-text LLM feed."""
-    path = os.path.join(ROOT, ("index" if slug == "" else slug) + ".html")
+    path = _page_path(slug)
     if not os.path.exists(path):
         return None
     html = read(path)
@@ -417,15 +437,15 @@ def audit():
         #    assets are not pages.
         for href in set(re.findall(r'href="(/[^"#?.]*)"', html)):
             target = "index" if href == "/" else href.strip("/")
-            if not os.path.exists(os.path.join(ROOT, target + ".html")):
+            page = os.path.join(ROOT, target + ".html")
+            directory_page = os.path.join(ROOT, target, "index.html")
+            if not os.path.exists(page) and not os.path.exists(directory_page):
                 problems.append(f"{rel}: links to {href}, which has no page")
 
-        # 5. a find-and-replace once ate the parens off these calls, which is a
-        #    syntax error — the whole inline block throws and analytics records
-        #    nothing. It shipped twice: 21 TR pages, then the EN homepage.
-        for broken in ("function gtag{", "new Date.getTime", "new Date)", "new Date;"):
-            if broken in html:
-                problems.append(f"{rel}: broken analytics JS — {broken!r}")
+        # 5. Measurement is owned by site.js and must never appear in page HTML:
+        #    page-level tags execute before the visitor can choose.
+        if "googletagmanager.com" in html or "gtag(" in html:
+            problems.append(f"{rel}: analytics bypasses the consent gate")
     return problems
 
 

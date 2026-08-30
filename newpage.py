@@ -45,10 +45,6 @@ def scaffold(slug, title, desc, body=""):
     if os.path.exists(path):
         raise SystemExit(f"{slug}.html already exists — edit it, don't scaffold over it")
     html = (head_for(slug, title, desc) + "</head>\n<body>\n"
-            '<!-- Google Tag Manager (noscript) -->\n'
-            '<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MWR4PVRF"\n'
-            'height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>\n'
-            '<!-- End Google Tag Manager (noscript) -->\n\n'
             "<!--#header--><!--/#header-->\n<!--#mobile--><!--/#mobile-->\n\n"
             + body +
             "\n<!--#footer--><!--/#footer-->\n"

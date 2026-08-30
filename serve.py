@@ -7,7 +7,7 @@ vercel.json instead of guessing.
 """
 import http.server, os, socket, sys
 
-ROOT = '/Users/nurettindemiral/adgent-website'
+ROOT = os.path.dirname(os.path.abspath(__file__))
 
 
 class Server(http.server.ThreadingHTTPServer):
