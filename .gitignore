@@ -2,3 +2,4 @@ build/
 build.zip
 .DS_Store
 .fontcache/
+__pycache__/

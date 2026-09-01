@@ -500,8 +500,11 @@ body.menu-open { overflow: hidden; }
   transition: background 140ms var(--ease), border-color 140ms, color 140ms, box-shadow 140ms;
 }
 .btn svg { width: 16px; height: 16px; stroke-width: 2; }
-.btn-primary { background: var(--accent); color: var(--accent-on); box-shadow: 0 1px 2px rgba(110,38,8,0.12), 0 8px 20px -10px rgba(255,90,44,0.5); }
-.btn-primary:hover { background: var(--accent-press); }.btn-sm { height: 36px; padding: 0 15px; font-size: 13.5px; }
+/* White-on-accent is 3.11:1 — below AA for anything under 24px. Fills that
+   carry white text use --accent-fill (4.68:1); --accent stays the brand colour
+   for graphics and display type, where 3:1 is the bar. */
+.btn-primary { background: var(--accent-fill); color: var(--accent-on); box-shadow: 0 1px 2px rgba(110,38,8,0.12), 0 8px 20px -10px rgba(255,90,44,0.5); }
+.btn-primary:hover { background: var(--accent-fill-hover); }.btn-sm { height: 36px; padding: 0 15px; font-size: 13.5px; }
 .btn-lg { height: 48px; padding: 0 24px; font-size: 15px; }
 
 /* ---------- hero ---------- */
@@ -515,7 +518,7 @@ body.menu-open { overflow: hidden; }
 .hero-slogan .w { transition: color 200ms; }
 .hero-slogan .w1 { color: var(--text-3); }
 .hero-slogan .w2 { color: var(--text-2); }
-.hero-slogan .w3 { color: var(--accent); }
+.hero-slogan .w3 { color: var(--accent-text); }
 .hero-slogan .arw { width: 18px; height: 8px; flex: none; color: var(--border-2); }
 .hero-slogan .arw svg { width: 100%; height: 100%; stroke-width: 1.5; }
 .hero-slogan:hover .w1 { color: var(--text-2); }
@@ -572,7 +575,7 @@ body.menu-open { overflow: hidden; }
    built to make, and cost three screens of scroll to do it. Now: all four
    named up front, one click apart, no scroll toll. */
 .builds-pin { padding-top: 0; padding-bottom: 0; }
-.builds-sticky { position: static; padding: clamp(48px, 7vh, 88px) 0; }
+.builds-sticky { position: static; padding: clamp(30px, 3.6vh, 48px) 0; }
 
 .bstage { max-width: 940px; margin: clamp(22px, 3vh, 34px) auto 0; }
 
@@ -600,7 +603,7 @@ body.menu-open { overflow: hidden; }
 }
 .bstage-tabs button[aria-selected="true"] .bt-l { color: var(--text-1); }
 .bstage-tabs button[aria-selected="true"] .bt-n,
-.bstage-tabs button[aria-selected="true"] .bt-s { color: var(--accent); }
+.bstage-tabs button[aria-selected="true"] .bt-s { color: var(--accent-text); }
 .bstage-tabs button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
 /* The box is sized by its CONTENT, not by a number. The 386px floor here was
@@ -652,7 +655,7 @@ body.menu-open { overflow: hidden; }
 .builds-pin .sec-sub { margin-left: auto; margin-right: auto; }
 
 /* slider shell */
-.builds-slider { margin-top: clamp(36px, 4vh, 52px); position: relative; }
+.builds-slider { margin-top: clamp(26px, 3vh, 38px); position: relative; }
 .builds {
   /* One card fills most of the view: these are product screenshots with real
      numbers in them, and at half-width the mini-charts were unreadable. The
@@ -849,9 +852,9 @@ body.menu-open { overflow: hidden; }
    browser zoom — but zooming shrinks body copy too, and several body styles
    are already 12.5-13.5px, which 80% would push under 11px. So the compaction
    is taken out of vertical space and heading size ONLY; body copy is untouched. */
-.band { padding: clamp(46px, 5vh, 70px) 0; }
-.band + .band { padding-top: clamp(40px, 4.4vh, 62px); }
-.band > .wrap > .sec-head { margin-bottom: clamp(20px, 2.5vh, 30px); }
+.band { padding: clamp(34px, 3.6vh, 52px) 0; }
+.band + .band { padding-top: clamp(26px, 2.9vh, 42px); }
+.band > .wrap > .sec-head { margin-bottom: clamp(16px, 2vh, 24px); }
 .band-sub {
   /* gradient instead of a flat slab: the band fades in from the page and back
      out again, so neighbouring sections blend rather than butt together */
@@ -906,7 +909,7 @@ body.menu-open { overflow: hidden; }
 .creative-ic svg { width: 20px; height: 20px; stroke-width: 2; }
 .creative-card h3 { font-size: 15.5px; font-weight: 700; letter-spacing: -0.015em; margin: 16px 0 0; }
 .creative-card p { font-size: 13.5px; line-height: 1.6; color: var(--text-2); margin: 8px 0 0; text-wrap: pretty; }
-.creative-card p em { font-family: var(--font-editorial); font-style: italic; font-weight: 500; color: var(--accent); }
+.creative-card p em { font-family: var(--font-editorial); font-style: italic; font-weight: 500; color: var(--accent-text); }
 
 /* ---------- why-adgent matrix ---------- */
 .matrix-wrap { margin-top: 26px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
@@ -915,7 +918,7 @@ body.menu-open { overflow: hidden; }
 .matrix thead th { font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-3); background: var(--bg-sub); border-bottom: 1px solid var(--border-2); }
 .matrix thead th:first-child { border-top-left-radius: var(--r-md); }
 .matrix thead th.mx-cap { text-align: left; }
-.matrix thead th.mx-us { background: var(--accent); color: var(--accent-on); border-top-right-radius: var(--r-md); letter-spacing: 0.04em; }
+.matrix thead th.mx-us { background: var(--accent-fill); color: var(--accent-on); border-top-right-radius: var(--r-md); letter-spacing: 0.04em; }
 .matrix tbody th { text-align: left; font-weight: 600; font-size: 14px; color: var(--text); }
 .matrix td.yes { color: var(--ok); font-weight: 700; font-size: 16px; }
 .matrix td.no { color: var(--text-4); }
@@ -1066,8 +1069,8 @@ body.menu-open { overflow: hidden; }
   font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.08em; text-transform: uppercase;
   color: var(--text-3); background: var(--bg-inset); border-radius: var(--r-pill); padding: 3px 9px;
 }
-.s3-list li[data-tier="upper"] .s3-li-n { color: var(--accent); }
-.s3-list li[data-tier="upper"] .s3-li-tag { background: var(--accent-soft); color: var(--accent); }.s3-list li.on .s3-li-body { grid-template-rows: 1fr; }.s3-list li p { font-size: 13px; line-height: 1.6; color: var(--text-2); margin: 9px 0 0; text-wrap: pretty; }
+.s3-list li[data-tier="upper"] .s3-li-n { color: var(--accent-text); }
+.s3-list li[data-tier="upper"] .s3-li-tag { background: var(--accent-soft); color: var(--accent-text); }.s3-list li.on .s3-li-body { grid-template-rows: 1fr; }.s3-list li p { font-size: 13px; line-height: 1.6; color: var(--text-2); margin: 9px 0 0; text-wrap: pretty; }
 .s3-list li p.s3-li-v { color: var(--text-3); font-size: 12.5px; }
 
 /* Left-aligned, not centred. Every heading, lede and card on these pages is
@@ -1113,7 +1116,7 @@ body.menu-open { overflow: hidden; }
 .gt-verdict { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border); font-size: 14px; color: var(--text-3); }
 .gt-verdict b { font-weight: 700; }
 .gt-verdict-scale b { color: var(--text-2); }
-.gt-verdict-stop b { color: var(--accent); }
+.gt-verdict-stop b { color: var(--accent-text); }
 
 /* the dividing line between the lenses */
 .gt-line { position: relative; width: 46px; display: grid; place-items: center; }
@@ -1221,8 +1224,11 @@ input[type="range"][data-math-spend]:focus-visible { outline: 2px solid var(--ac
 .cta h2 em { font-family: var(--font-editorial); font-style: italic; font-weight: 500; color: var(--accent); }
 .cta p { font-size: 15px; line-height: 1.6; color: var(--text-2); margin: 16px 0 0; max-width: 420px; }
 .cta-points { list-style: none; margin: 24px 0 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
-.cta-points li { display: flex; align-items: center; gap: 10px; font-size: 13.5px; color: var(--text-2); }
-.cta-points li svg { width: 16px; height: 16px; color: var(--ok); stroke-width: 2; flex: none; }
+/* Normal flow, not flex: a flex li turns every inline child (<b>, <em>) into its
+   own flex item, so a wrapping sentence broke into staggered columns at 390px.
+   The tick is positioned instead, which keeps the text one continuous run. */
+.cta-points li { position: relative; padding-left: 26px; font-size: 13.5px; line-height: 1.5; color: var(--text-2); }
+.cta-points li svg { position: absolute; left: 0; top: 0.15em; width: 16px; height: 16px; color: var(--ok); stroke-width: 2; }
 
 .lead { background: var(--bg-sub); border: 1px solid var(--border); border-radius: var(--r-xl); padding: 26px; }
 .lead h3 { font-size: 16px; font-weight: 700; letter-spacing: -0.015em; margin: 0; }
@@ -1292,12 +1298,12 @@ input[type="range"][data-math-spend]:focus-visible { outline: 2px solid var(--ac
   --cc-bg: var(--bg-card);
   --cc-primary-color: var(--text);
   --cc-secondary-color: var(--text-2);
-  --cc-btn-primary-bg: var(--accent);
+  --cc-btn-primary-bg: var(--accent-fill);
   --cc-btn-primary-color: var(--accent-on);
-  --cc-btn-primary-border-color: var(--accent);
-  --cc-btn-primary-hover-bg: var(--accent-press);
+  --cc-btn-primary-border-color: var(--accent-fill);
+  --cc-btn-primary-hover-bg: var(--accent-fill-hover);
   --cc-btn-primary-hover-color: var(--accent-on);
-  --cc-btn-primary-hover-border-color: var(--accent-press);
+  --cc-btn-primary-hover-border-color: var(--accent-fill-hover);
   --cc-btn-secondary-bg: var(--bg-sub);
   --cc-btn-secondary-color: var(--text);
   --cc-btn-secondary-border-color: var(--border-2);
@@ -1392,13 +1398,13 @@ input[type="range"][data-math-spend]:focus-visible { outline: 2px solid var(--ac
 
 /* ---------- chat cutout (hero + why-chat) ---------- */
 .chat-thread { display: flex; flex-direction: column; gap: 11px; margin-top: 6px; }
-.cmsg-user { align-self: flex-end; max-width: 86%; background: var(--accent); color: var(--accent-on); border-radius: 14px 14px 4px 14px; padding: 10px 13px; font-size: 13px; font-weight: 500; line-height: 1.45; }
+.cmsg-user { align-self: flex-end; max-width: 86%; background: var(--accent-fill); color: var(--accent-on); border-radius: 14px 14px 4px 14px; padding: 10px 13px; font-size: 13px; font-weight: 500; line-height: 1.45; }
 .cmsg-bot { align-self: flex-start; max-width: 94%; background: var(--bg-sub); border: 1px solid var(--border); border-radius: 14px 14px 14px 4px; padding: 13px; }
 .cmsg-bot .ct { font-size: 13px; line-height: 1.58; color: var(--text); }
 .cmsg-bot .ct b { font-weight: 600; }
 .cmsg-bot .ct .num { font-variant-numeric: tabular-nums; }
 .chat-fix { display: flex; align-items: center; gap: 11px; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); flex-wrap: wrap; }
-.fixbtn { display: inline-flex; align-items: center; gap: 6px; height: 30px; padding: 0 12px; border-radius: var(--r-sm); background: var(--accent); color: var(--accent-on); font-size: 12px; font-weight: 600; }
+.fixbtn { display: inline-flex; align-items: center; gap: 6px; height: 30px; padding: 0 12px; border-radius: var(--r-sm); background: var(--accent-fill); color: var(--accent-on); font-size: 12px; font-weight: 600; }
 .fixbtn svg { width: 13px; height: 13px; stroke-width: 2.5; }
 .fixnote { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.02em; color: var(--text-3); }
 .fixnote svg { width: 12px; height: 12px; stroke-width: 2; }
@@ -1412,7 +1418,7 @@ input[type="range"][data-math-spend]:focus-visible { outline: 2px solid var(--ac
 .chat-input .send svg { width: 14px; height: 14px; stroke-width: 2; }
 
 /* ---------- three-layer loop (read / ask / apply) ---------- */
-.layers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 48px; position: relative; }
+.layers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: clamp(26px, 3vh, 36px); position: relative; }
 
 /* ghost context-layer glyph — whispers above the Execution card */
 /* silent oversized "3A" ghost above the loop cards */
@@ -1582,8 +1588,8 @@ input[type="range"][data-math-spend]:focus-visible { outline: 2px solid var(--ac
 @media (max-width: 640px) {
   .wrap { padding: 0 20px; }
   .hero { padding: 40px 0 34px; }
-  .band { padding: 40px 0; }
-  .split, .steps, .feat-grid, .stats, .foot-grid, .co-kpis, .creative-grid { grid-template-columns: 1fr; }
+  .band { padding: 30px 0; }
+  .split, .steps, .feat-grid, .stats, .co-kpis, .creative-grid { grid-template-columns: 1fr; }
   .feat-wide { grid-column: span 1; }
   .cta { padding: 32px 24px; }
   .stats { grid-template-columns: 1fr 1fr; }
@@ -2004,7 +2010,7 @@ html:not(.js) .chat-step { opacity: 1; transform: none; }
 .s3-d.on { opacity: 1; visibility: visible; position: relative; }
 .s3-d-n {
   display: block; font-family: var(--font-mono); font-size: 10.5px;
-  letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent);
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-text);
   margin-bottom: 8px;
 }
 .s3-d p { font-size: 14.5px; line-height: 1.62; color: var(--text-2); margin: 0; text-wrap: pretty; }
@@ -2137,7 +2143,7 @@ html:not(.js) .chat-step { opacity: 1; transform: none; }
 /* the Adgent column reads as one continuous highlighted band */
 .matrix .us { background: var(--accent-soft); }
 .matrix thead .mx-us {
-  color: var(--accent); font-weight: 800; background: var(--accent-soft);
+  color: var(--accent-text); font-weight: 800; background: var(--accent-soft);
   border-top-left-radius: var(--r-md); border-top-right-radius: var(--r-md);
   box-shadow: inset 0 2px 0 var(--accent);
 }
@@ -2985,8 +2991,8 @@ body { position: relative; }
   transform: translateX(var(--spine-x, 0));
   transition: transform 600ms var(--ease);
 }
-.brainwrap { margin-top: 30px; padding-right: 0; }
-.metafig { margin-top: 56px; }
+.brainwrap { margin-top: 18px; padding-right: 0; }
+.metafig { margin-top: 26px; }
 
 .brain, .metafig svg { position: relative; z-index: 1; display: block; }
 .brain { width: 92px; height: 92px; }
@@ -3400,8 +3406,8 @@ section, .band, .moat, .hero { z-index: auto; }
 }
 .s3-list li[data-tier="upper"] h3 { color: var(--text-1); }
 .s3-list li:not(.on) h3 { color: color-mix(in oklab, var(--text-1) 78%, var(--bg-app)); }
-.s3-list li.on .s3-li-n { color: var(--accent); text-shadow: 0 0 14px color-mix(in oklab, var(--accent) 45%, transparent); }
-.s3-list li.on .s3-li-tag { background: var(--accent-soft); color: var(--accent); }
+.s3-list li.on .s3-li-n { color: var(--accent-text); text-shadow: 0 0 14px color-mix(in oklab, var(--accent) 45%, transparent); }
+.s3-list li.on .s3-li-tag { background: var(--accent-soft); color: var(--accent-text); }
 
 /* detail panel gets an accent spine so it belongs to the active row */
 .s3-detail { min-height: 168px; }
@@ -3608,7 +3614,11 @@ section, .band, .moat, .hero { z-index: auto; }
 }
 
 /* ---------- STILL DECIDING? — the card simply sits sticky in its column ---------- */
-.faq-aside { position: relative; }
+/* `top: auto` matters: the earlier `.faq-aside { position: sticky; top: 96px }`
+   is neutralised on narrow screens by `position: static`, but this rule made it
+   `relative` again at every width — so below 981px the leftover 96px offset
+   dropped the card into the next section (56px overlap with #lead). */
+.faq-aside { position: relative; top: auto; }
 @media (min-width: 981px) {
   .faq-aside { position: relative; top: auto; min-height: 560px; }
   .faq-aside-card {
@@ -3747,7 +3757,7 @@ section, .band, .moat, .hero { z-index: auto; }
 /* the new figures also live in the flow on narrow screens, where the rail
    releases them — keep them from crowding the section above */
 .metafig[data-fig="bolt"], .metafig[data-fig="layers"], .metafig[data-fig="shield"] {
-  margin-top: 40px; margin-bottom: 6px;
+  margin-top: 22px; margin-bottom: 4px;
 }
 .metafig-sm::before, .metafig-sm::after { --mf-cx: 38px; }
 
@@ -3790,7 +3800,7 @@ section, .band, .moat, .hero { z-index: auto; }
   transition: stroke-dashoffset 600ms var(--ease) 220ms, stroke 600ms var(--ease);
 }
 .metafig[data-fig="creative"].lit .mf-cr-base { stroke-dashoffset: 0; }
-.metafig[data-fig="creative"] { margin-top: 40px; margin-bottom: 6px; }
+.metafig[data-fig="creative"] { margin-top: 22px; margin-bottom: 4px; }
 .creative-split > .metafig[data-fig="creative"] { grid-column: 1 / -1; justify-self: start; }
 
 /* ============================================================
@@ -4044,7 +4054,7 @@ td .src-note::after,
 
 .appwin-ask { display: flex; justify-content: flex-end; }
 .appwin-ask span {
-  background: var(--accent); color: var(--accent-on);
+  background: var(--accent-fill); color: var(--accent-on);
   font-size: 14.5px; font-weight: 600; line-height: 1.45;
   padding: 11px 16px; border-radius: 16px 16px 5px 16px; max-width: 84%;
   text-wrap: pretty;
@@ -5523,7 +5533,7 @@ td .src-note::after,
 .mrb-v { font-size: 13px; color: var(--text-2); text-wrap: pretty; }
 .mrb-v b { color: var(--text); font-variant-numeric: tabular-nums; }
 .mrb-back { border-color: color-mix(in oklab, var(--accent) 42%, var(--border)); }
-.mrb-back .mrb-k { color: var(--accent); }
+.mrb-back .mrb-k { color: var(--accent-text); }
 .mrb-foot {
   margin-top: 2px; font-size: 12px; color: var(--text-3); text-wrap: pretty;
 }
@@ -5531,3 +5541,50 @@ td .src-note::after,
 @media (max-width: 860px) {
   .mrb-step { grid-template-columns: 1fr; gap: 3px; }
 }
+
+/* ============================================================
+   2026-09-02 — accessibility + density pass
+   ============================================================ */
+
+/* One focus ring for the whole site. Only the skip link, the tab strip and the
+   form fields had one; every nav, footer and card link fell back to Chrome's
+   default blue outline, which reads as unstyled. */
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--accent-fill);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* The hero offered one action and no lower-commitment path, so anyone not ready
+   to hand over an account had nowhere to go. Quiet second button. */
+.btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--border-2); }
+.btn-ghost:hover { background: var(--bg-sub); border-color: var(--text-4); }
+
+/* A 42ch measure is right beside two siblings and a hole once the grid is one
+   column and the card is 700px wide — which is what 641-920px gets. */
+@media (max-width: 920px) {
+  .layer p, .step p, .gt-point p { max-width: none; }
+}
+
+@media (max-width: 980px) {
+  /* Stacked, the sticky FAQ aside repeats the audit ask that #lead makes
+     directly under it: the same CTA twice, 360px apart. Desktop keeps it,
+     where it is a sidebar rather than a duplicate. */
+  .faq-aside { display: none; }
+}
+
+@media (max-width: 640px) {
+  /* 22 destinations in a single column made the footer three phone screens
+     tall — longer than the section it follows. */
+  .foot-grid { grid-template-columns: 1fr 1fr; gap: 28px 20px; }
+  .foot-brand { grid-column: 1 / -1; }
+  .foot-bottom { margin-top: 32px; }
+}
+
+/* `.builds-pin { padding: 0 }` was written to hand spacing to .builds-sticky,
+   but `.band + .band` outranks a single class, so the section paid for both.
+   Match the specificity and the intent holds. */
+.band.builds-pin, .band + .band.builds-pin { padding-top: 0; padding-bottom: 0; }

@@ -14,6 +14,7 @@ The AI media buyer that reads your accounts and acts on your word.
 Not a dashboard — a verdict. Adgent reads Meta and Google as one brain, checks the platforms' numbers against your real revenue, and applies the fix the moment you approve.
 A senior media buyer's judgment, 24/7, at a fraction of the salary.
 Get a free account audit
+See how it works
 ROAS 3.82× ▲
 Meta · Google synced
 CPA $22.10 ▼
@@ -73,7 +74,6 @@ When you're ready, act from the same chat — the fix applied where you found it
 One-tap fixes applied from chat
 Build cross-channel campaigns by message
 Every change tells you if it can be undone — before you approve it
-one loop
 it acts
 Built from a sentence
 Ask for it in chat. Adgent builds it.
@@ -3596,6 +3596,7 @@ The AI media buyer that reads your accounts and acts on your word.
 Not a dashboard — a verdict. Adgent reads Meta and Google as one brain, checks the platforms' numbers against your real revenue, and applies the fix the moment you approve.
 A senior media buyer's judgment, 24/7, at a fraction of the salary.
 Get a free account audit
+See how it works
 ROAS 3.82× ▲
 Meta · Google synced
 CPA $22.10 ▼
@@ -3655,7 +3656,6 @@ When you're ready, act from the same chat — the fix applied where you found it
 One-tap fixes applied from chat
 Build cross-channel campaigns by message
 Every change tells you if it can be undone — before you approve it
-one loop
 it acts
 Built from a sentence
 Ask for it in chat. Adgent builds it.

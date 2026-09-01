@@ -40,12 +40,17 @@
   --text-4: #696760;   /* 4.50:1 on band, 5.66:1 on white — was #b9b4a8 (1.64:1) */
 
   /* ---------- Accent (coral) ----------
-     --accent stays the brand colour: it is used for fills, and as display type
-     at 34-54px where 3:1 is the bar and it clears it. --accent-text is the same
-     hue darkened for text-sized use (eyebrows, chips, inline links), where it
-     did not. Never use --accent for small text. */
+     --accent stays the brand colour: it is used for graphics, rails and display
+     type at 34-54px where 3:1 is the bar and it clears it. --accent-text is the
+     same hue darkened for text-sized use (eyebrows, chips, inline links), where
+     it did not. Never use --accent for small text.
+     --accent-fill is for any surface that carries white text below 24px —
+     buttons, chat bubbles, table headers. White on --accent is 3.11:1 and fails
+     AA; on --accent-fill it is 4.68:1. */
   --accent: #ff5a2c;
   --accent-text: #b23f1f;   /* 4.61:1 on band, 5.80:1 on white */
+  --accent-fill: #d1421d;        /* white on this: 4.68:1 */
+  --accent-fill-hover: #b83a19;  /* white on this: 5.74:1 */
   --user-bubble: #1c1a17;
   --accent-press: #ec491d;
   --accent-soft: rgba(255, 90, 44, 0.11);
