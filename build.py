@@ -21,7 +21,7 @@ hand-edit the nav or footer inside a page — edit _partials/ and rebuild.
 The site is English-only. The Turkish locale was removed on 2026-08-01; audit() still
 guards against a stray hreflang reappearing.
 """
-import re, sys, os, glob, io, datetime
+import re, sys, os, glob, io, json, hashlib, datetime
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 PARTIALS = os.path.join(ROOT, "_partials")
@@ -127,7 +127,11 @@ def twitter_card(html):
 
 
 def stamp_assets(html):
-    for name in ("site.css", "site.js"):
+    #  tokens.css is stamped too: site.css now reads variables that only exist
+    #  in the newer tokens.css (--accent-fill), and an unstamped tokens.css can
+    #  be served from cache next to a fresh site.css — which resolves those
+    #  vars to nothing and paints buttons transparent.
+    for name in ("tokens.css", "site.css", "site.js"):
         v = asset_stamp(name)
         if not v:
             continue
@@ -228,8 +232,42 @@ def _noindex(path):
     return "noindex" in read(path).lower()
 
 
+def _lastmods(persist=True):
+    """Per-page lastmod that only moves when the page actually changes.
+
+    It used to stamp today's date on all 52 URLs on every build, so a CSS-only
+    change told Google the whole site was rewritten. A signal that is always
+    "today" is a signal Google learns to ignore.
+
+    The cache-bust query on the stylesheets changes in every page on every CSS
+    edit, so it is stripped before hashing — otherwise nothing would be stable.
+    """
+    state_path = os.path.join(ROOT, ".lastmod.json")
+    try:
+        state = json.loads(read(state_path))
+    except Exception:
+        state = {}
+    today = datetime.date.today().isoformat()
+    out, dirty = {}, False
+    for path in sorted(glob.glob(os.path.join(ROOT, "*.html"))):
+        slug = os.path.basename(path)[:-5]
+        body = re.sub(r'(site\.css|site\.js|tokens\.css)\?v=[0-9a-f]+', r"\1", read(path))
+        digest = hashlib.sha1(body.encode("utf-8")).hexdigest()
+        prev = state.get(slug)
+        if prev and prev.get("sha") == digest:
+            out[slug] = prev["date"]
+        else:
+            out[slug] = today
+            state[slug] = {"sha": digest, "date": today}
+            dirty = True
+    if dirty and persist:
+        write(state_path, json.dumps(state, indent=1, sort_keys=True) + "\n")
+    return out
+
+
 def sitemap(check_only=False):
     base, today = "https://adgent.app", datetime.date.today().isoformat()
+    dates = _lastmods(persist=not check_only)
     slugs = [os.path.basename(p)[:-5] for p in sorted(glob.glob(os.path.join(ROOT, "*.html")))
              if not _noindex(p) and not os.path.basename(p).startswith("_")]
     slugs = [s for s in slugs if s not in SKIP] + EXTRA_SLUGS
@@ -237,7 +275,8 @@ def sitemap(check_only=False):
     for slug in ["index"] + [s for s in slugs if s != "index"]:
         path = "" if slug == "index" else slug
         loc = f"{base}/{path}"
-        rows.append(f"  <url><loc>{loc}</loc><lastmod>{today}</lastmod><changefreq>{_freq(path)}"
+        rows.append(f"  <url><loc>{loc}</loc><lastmod>{dates.get(slug, today)}</lastmod>"
+                    f"<changefreq>{_freq(path)}"
                     f"</changefreq><priority>{_PRIO.get(path,'0.7')}</priority></url>")
     xml = ('<?xml version="1.0" encoding="UTF-8"?>\n'
            '<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>\n'
@@ -246,8 +285,11 @@ def sitemap(check_only=False):
     p = os.path.join(ROOT, "sitemap.xml")
     if check_only:
         cur = read(p) if os.path.exists(p) else ""
-        if cur.count("<url>") != len(rows):
-            print("SITEMAP STALE — %d urls on disk, %d pages" % (cur.count("<url>"), len(rows)))
+        if cur.strip() != xml.strip():
+            if cur.count("<url>") != len(rows):
+                print("SITEMAP STALE — %d urls on disk, %d pages" % (cur.count("<url>"), len(rows)))
+            else:
+                print("SITEMAP STALE — a page changed since the last build (lastmod)")
             return 1
         return 0
     write(p, xml)
@@ -446,6 +488,27 @@ def audit():
         #    page-level tags execute before the visitor can choose.
         if "googletagmanager.com" in html or "gtag(" in html:
             problems.append(f"{rel}: analytics bypasses the consent gate")
+
+        # 6. SEO/GEO head invariants. Every one of these was missing on at
+        #    least half the site on 2026-09-02, and a <head> has no owner, so
+        #    nothing but this check keeps them from drifting back out.
+        indexable = "noindex" not in head
+        if indexable:
+            if not re.search(r'<meta name="description" content="\S', head):
+                problems.append(f"{rel}: no meta description")
+            #    Without max-snippet:-1 Google caps the text it may quote, which
+            #    also caps what an answer engine can lift from the page.
+            if "max-snippet:-1" not in head:
+                problems.append(f"{rel}: robots meta without max-snippet:-1")
+            if "og:image" in head and "og:image:alt" not in head:
+                problems.append(f"{rel}: og:image without og:image:alt")
+            if "og:locale" not in head:
+                problems.append(f"{rel}: no og:locale")
+        #    Fonts must be discovered in the head. As an @import inside
+        #    tokens.css they were two stylesheet round-trips deep, which is
+        #    LCP paid for nothing.
+        if "fonts.googleapis.com" not in head:
+            problems.append(f"{rel}: webfonts not linked from <head>")
     return problems
 
 

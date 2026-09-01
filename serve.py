@@ -33,6 +33,22 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 return html
         return p
 
+    def send_error(self, code, message=None, explain=None):
+        # Vercel serves /404.html for any unmatched route. Python's default is
+        # a bare "Error response" page, so a local preview cannot show the 404
+        # the visitor actually gets.
+        page = os.path.join(ROOT, '404.html')
+        if code == 404 and os.path.exists(page):
+            body = open(page, 'rb').read()
+            self.send_response(404)
+            self.send_header('Content-Type', 'text/html; charset=utf-8')
+            self.send_header('Content-Length', str(len(body)))
+            self.end_headers()
+            if self.command != 'HEAD':
+                self.wfile.write(body)
+            return
+        super().send_error(code, message, explain)
+
     def end_headers(self):
         # No caching, ever. Without this the browser serves a stale site.css
         # from memory cache after an edit and the preview shows the previous

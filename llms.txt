@@ -27,9 +27,9 @@ confident it is and why, and leaves out anything that didn't change the answer.
 - [Ground truth — judged on your margin — Adgent](https://adgent.app/ground-truth): An ad platform optimizes toward its own pixel. It never sees your cost of goods or second-order value. Adgent reconciles against GA4 and Search Console.
 - [The Trust Gate — a tool that can say no — Adgent](https://adgent.app/trust-gate): Adgent refuses unreachable targets and flags metrics that can't be trusted yet, using the account's own numbers as the reason — before any budget moves.
 - [Creative intelligence, scene by scene — Adgent](https://adgent.app/creative-intelligence): Adgent reads live creative the way a senior buyer would: its DNA, the story beat by beat, and exactly where viewers leave. No upload step.
-- [The Change Ledger — every change, undoable — Adgent](https://adgent.app/change-ledger): Every change is captured with the exact value it replaced, so undoing it is a restore rather than a reconstruction — which is what makes approving one cheap. Platform-side changes are dated too.
+- [The Change Ledger — every change, undoable — Adgent](https://adgent.app/change-ledger): Every change is captured with the exact value it replaced, so undoing it is a restore rather than a reconstruction — which is what makes approving one cheap.
 - [Account memory — you explain the account once](https://adgent.app/account-memory): Your rules, exceptions and the calls you already made are carried into every verdict after. Nothing to configure, nothing to repeat next month.
-- [What it builds — campaigns, plans, dashboards — Adgent](https://adgent.app/built-from-chat): A campaign, a media plan, a live dashboard or a standing report — described in one sentence and built on your own data. The two that can change an account arrive drafted and paused, waiting for your approval.
+- [What it builds — campaigns, plans, dashboards — Adgent](https://adgent.app/built-from-chat): A campaign, a media plan, a live dashboard or a standing report — described in one sentence, built on your own data, and paused until you approve.
 
 ## By industry
 
@@ -50,9 +50,9 @@ confident it is and why, and leaves out anything that didn't change the answer.
 - [About Adgent — the team building the AI analyst](https://adgent.app/about): We're building the analyst, not the dashboard. Performance marketers drown in data and starve for judgment — Adgent exists to flip that.
 - [Blog — Field notes on Meta Ads, attribution, and scaling | Adgent](https://adgent.app/blog): Field notes on Meta and Google Ads, attribution windows, creative fatigue and budget scaling — from the team building Adgent, the AI analyst for paid media.
 - [Security — how Adgent protects your ad data](https://adgent.app/security): How Adgent protects the advertising and analytics data you connect — encryption, access controls, token handling, and incident response.
-- [Data use — what Adgent reads, and what it never does](https://adgent.app/data-use): A plain-language summary of exactly what data Adgent reads from Meta, Google Ads, GA4, Search Console, and user-selected Google Drive and Google Sheets files, why, and what we never do with it.
+- [Data use — what Adgent reads, and what it never does](https://adgent.app/data-use): Plain language on what Adgent reads from Meta, Google Ads, GA4, Search Console and the Drive files you pick — why it reads them, and what it never does.
 - [Privacy Policy — how Adgent handles your data](https://adgent.app/privacy): How Adgent collects, uses, stores, shares, and protects data from connected advertising and analytics platforms.
-- [Terms of Service — using Adgent](https://adgent.app/terms): The terms that govern your use of Adgent, the AI marketing-intelligence service.
+- [Terms of Service — using Adgent](https://adgent.app/terms): The terms that govern your use of Adgent, the AI media buyer for Meta and Google Ads: accounts, approvals, ad-account access, billing and liability.
 
 ## Articles
 
