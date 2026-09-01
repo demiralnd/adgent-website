@@ -23,7 +23,7 @@
 <link rel="icon" type="image/svg+xml" href="/assets/logo-app.svg"/>
 <link rel="apple-touch-icon" href="/assets/logo-app.svg"/>
 <link rel="stylesheet" href="/tokens.css"/>
-<link rel="stylesheet" href="/site.css?v=dde77fd0"/>
+<link rel="stylesheet" href="/site.css?v=a9baaafd"/>
 </head>
 <body>
 <!-- NAV -->
@@ -157,7 +157,7 @@
  <span class="eyebrow"><span class="tick"></span>Legal</span>
  <h1>Privacy Policy</h1>
  <p class="legal-updated">Effective 30 August 2026 · Last updated 30 August 2026</p>
- <p class="legal-intro">This Privacy Policy explains how <b>Adgent</b>, a service operated by <b>Osman Tıkna</b> (a sole proprietorship established in Türkiye, the data controller) ("Adgent", "we", "us", or "our"), collects, uses, stores, shares, and protects information when you use our website and our marketing-intelligence service. A core part of Adgent is connecting, with your authorization, to your advertising and analytics platforms — including <b>Meta</b>, <b>Google Ads</b>, <b>Google Analytics 4</b>, <b>Google Search Console</b>, and the <b>Google Drive and Google Sheets files you select</b> — to read reporting data and, only on your explicit approval, carry out changes you ask us to make.</p>
+ <p class="legal-intro">This Privacy Policy explains how <b>Adgent</b>, a service operated by <b>Osman Tıkna</b> (a sole proprietorship established in Türkiye, the data controller) ("Adgent", "we", "us", or "our"), collects, uses, stores, shares, and protects information when you use our website and our marketing-intelligence service. A core part of Adgent is connecting, with your authorization, to your advertising and analytics platforms — including <b>Meta</b>, <b>Google Ads</b>, <b>Google Analytics 4</b>, <b>Google Merchant Center</b>, <b>Google Search Console</b>, and the <b>Google Drive and Google Sheets files you select</b> — to read reporting data and, only on your explicit approval, carry out changes you ask us to make.</p>
  </header>
 
  <nav class="legal-toc" aria-label="Contents">
@@ -213,11 +213,12 @@
  <li><b>Advertising platforms (Meta, Google)</b> — account, campaign, ad set, and ad structure; budgets, bids, and settings; performance and delivery metrics (such as spend, impressions, clicks, conversions, ROAS, CPA, CPM, placements, and audiences). Where you grant execution access, we can apply changes you approve, such as adjusting budgets, pausing or editing campaigns, or building new campaigns.</li>
  <li><b>Google Analytics 4</b> — aggregated traffic, engagement, and conversion reporting, used to give your advertising data on-site context.</li>
  <li><b>Google Search Console</b> — search performance reporting such as queries, clicks, and impressions for properties you authorize.</li>
- <li><b>Google Drive and Google Sheets</b> — the content and metadata of files that you select or create for use with Adgent, used to import or export reports and provide business context. Adgent cannot browse or access other files in your Drive through this permission.</li>
+<li><b>Google Merchant Center</b> — product catalogue entries, item issues, account status, and Shopping performance for the account you select, used to diagnose Shopping campaigns against your product feed. Adgent only reads this account; it never creates, changes, or deletes anything in it.</li>
+<li><b>Google Drive and Google Sheets</b> — the content and metadata of files that you select or create for use with Adgent, used to import or export reports and provide business context. Adgent cannot browse or access other files in your Drive through this permission.</li>
  </ul>
  <p>We request only the access needed to provide the features you use. We do not request access to data we do not need, and we do not "future-proof" by requesting access to data for features that do not yet exist.</p>
  <div class="legal-callout">
- <p><b>Read-only by default.</b> Google Analytics and Search Console permissions are read-only, and Google Drive access is limited to files you select. Google Ads provides one OAuth scope for both reading and writing; Adgent gates write actions so no change is made to your accounts until you explicitly approve it. You remain in control of every change.</p>
+<p><b>Read-only by default.</b> Google Analytics and Search Console permissions are read-only, and Google Drive access is limited to files you select. Google Ads and Google Merchant Center are each published by Google as a single OAuth scope covering both reading and writing, with no read-only alternative. Adgent gates every Google Ads write behind your explicit approval, and never calls a write method on Merchant Center at all. You remain in control of every change.</p>
  </div>
  </section>
 
@@ -302,7 +303,7 @@
  <section id="platforms">
  <h2><span class="secnum">13</span>Platform-specific disclosures</h2>
  <h3>Google</h3>
- <p>Adgent requests only these Google OAuth scopes: Google Ads (<code>https://www.googleapis.com/auth/adwords</code>), Google Analytics (<code>https://www.googleapis.com/auth/analytics.readonly</code>), Google Drive (<code>https://www.googleapis.com/auth/drive.file</code>), and Google Search Console (<code>https://www.googleapis.com/auth/webmasters.readonly</code>). The Analytics and Search Console scopes are read-only. The Drive scope limits access to files you select or create for use with Adgent. Google Ads provides one scope for read and write access, so Adgent separately gates every write action behind your explicit approval.</p>
+<p>Adgent requests only these Google OAuth scopes: Google Ads (<code>https://www.googleapis.com/auth/adwords</code>), Google Analytics (<code>https://www.googleapis.com/auth/analytics.readonly</code>), Google Merchant Center (<code>https://www.googleapis.com/auth/content</code>), Google Search Console (<code>https://www.googleapis.com/auth/webmasters.readonly</code>), Google Drive (<code>https://www.googleapis.com/auth/drive.file</code>), and the sign-in scopes <code>openid</code> and <code>https://www.googleapis.com/auth/userinfo.email</code>. The Analytics and Search Console scopes are read-only. The Drive scope limits access to files you select or create for use with Adgent. Google publishes no read-only variant of the Google Ads or Merchant Center scopes: Adgent gates every Google Ads write behind your explicit approval, and never writes to Merchant Center. The sign-in scopes are used only to read the stable account identifier that tells us which Google account granted a connection, so it can be matched and revoked cleanly; we do not store the email address they return.</p>
  <p>Adgent's use of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, including the Limited Use requirements. We do not use Google user data for advertising, do not sell it, and do not use it to train generalized AI/ML models.</p>
  <h3>Meta</h3>
  <p>Data accessed through Meta's APIs is processed in accordance with this policy and with applicable Meta terms and developer policies. You can ask us to delete data accessed via Meta at any time using our <a href="/data-deletion">data-deletion instructions</a>, and you may revoke Adgent's access from your Meta account settings.</p>
@@ -385,6 +386,6 @@
  </div>
 </footer><!--/#footer-->
 
-<script src="/site.js?v=6ab3f761"></script>
+<script src="/site.js?v=93681809"></script>
 </body>
 </html>

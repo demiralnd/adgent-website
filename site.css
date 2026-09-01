@@ -1322,7 +1322,34 @@ input[type="range"][data-math-spend]:focus-visible { outline: 2px solid var(--ac
   font-weight: 700;
   letter-spacing: -0.02em;
 }
-#cc-main .cm__btn, #cc-main .pm__btn { min-height: 44px; }
+/* Compact the consent cloud: it was 864x164 (18% of a 900px viewport) with the three
+   buttons stacked in two rows. Wider + one button row + one-line copy = 780x103.
+   Accept and Reject keep identical weight (equalWeightButtons is a consent-law
+   requirement, not a style choice); only "Choose" drops to a link. */
+#cc-main .cm--cloud { max-width: 780px; }
+#cc-main .cm--cloud .cm__body { align-items: center; }
+#cc-main .cm--cloud .cm__texts { flex: 1 1 auto; padding: 13px 0; }
+#cc-main .cm--cloud .cm__title { font-size: 13.5px; line-height: 1.3; padding-inline: 18px; }
+#cc-main .cm--cloud .cm__desc { font-size: 12.5px; line-height: 1.5; padding: 1px 18px 0; }
+#cc-main .cm--cloud .cm__btns { flex: 0 0 auto; padding: 12px 18px 12px 0; }
+#cc-main .cm--cloud .cm__btns,
+#cc-main .cm--cloud .cm__btn-group {
+  display: flex; flex-direction: row; align-items: center; gap: 8px; flex-wrap: nowrap;
+}
+#cc-main .cm--cloud .cm__btn { min-height: 38px; font-size: 12.75px; padding-inline: 15px; white-space: nowrap; margin: 0; }
+#cc-main .cm--cloud .cm__btn--secondary {
+  background: transparent; border-color: transparent;
+  text-decoration: underline; text-underline-offset: 2px; padding-inline: 6px;
+}
+#cc-main .cm--cloud .cm__footer { padding: 5px 0 7px; font-size: 11px; }
+/* Phone: the library stacks the body anyway. Keep the 44px touch target there and put
+   Accept/Reject side by side so the sheet does not eat a third of the screen. */
+@media (max-width: 640px) {
+  #cc-main .cm--cloud .cm__btns { flex-direction: column; align-items: stretch; padding: 4px 18px 12px; }
+  #cc-main .cm--cloud .cm__btn { flex: 1 1 0; min-height: 44px; }
+  #cc-main .cm--cloud .cm__texts { padding: 13px 0 4px; }
+}
+#cc-main .pm__btn { min-height: 44px; }
 
 /* ---------- page header (interior pages) ---------- */
 .phead { padding: 76px 0 12px; }

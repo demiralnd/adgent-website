@@ -100,7 +100,7 @@
             consentModal: {
               label: 'Cookie consent',
               title: 'Your choice, before measurement.',
-              description: 'We use necessary storage to remember this choice. With your permission, we also use analytics and advertising measurement. Optional tags stay off until you choose.',
+              description: 'Analytics and advertising tags stay off until you allow them.',
               acceptAllBtn: 'Accept all',
               acceptNecessaryBtn: 'Reject optional',
               showPreferencesBtn: 'Choose',
