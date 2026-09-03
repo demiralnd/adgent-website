@@ -23,7 +23,13 @@
     if (d.querySelector('script[data-adgent-ga]')) return;
     var script = d.createElement('script');
     script.async = true;
-    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-1NCS2ZFMLR';
+    /* First-party path, not googletagmanager.com: /metrics is rewritten in
+       vercel.json to g-1ncs2zfmlr.fps.goog, the tag gateway origin for this
+       measurement ID. No trailing slash — trailingSlash:false would 308 it
+       away, and the origin 404s the slashless path, so the rewrite adds the
+       slash on the way out. Verified 2026-09-03: /metrics/healthy and
+       /metrics/?validate_geo=healthy both answer "ok". */
+    script.src = '/metrics';
     script.setAttribute('data-adgent-ga', '');
     d.head.appendChild(script);
     window.gtag('js', new Date());
