@@ -220,13 +220,18 @@
     // Anything already on screen at load reveals immediately. Without this a
     // wide-but-short element (the hero h1) can sit under the 0.12 threshold
     // and stay at opacity 0 forever — the page loads blank.
+    // Read every rect first, then apply every class. Interleaving them made each
+    // classList.add() invalidate layout for the getBoundingClientRect() that
+    // followed it — 23 forced synchronous reflows in one frame on the homepage,
+    // 136 ms of the 1,100 ms LCP render delay under 4x CPU. Measure all, mutate all.
     requestAnimationFrame(function () {
+      var onscreen = [];
+      var vh = window.innerHeight || 0;
       revealEls.forEach(function (el) {
         var r = el.getBoundingClientRect();
-        if (r.top < (window.innerHeight || 0) && r.bottom > 0) {
-          el.classList.add('in'); io.unobserve(el);
-        }
+        if (r.top < vh && r.bottom > 0) onscreen.push(el);
       });
+      onscreen.forEach(function (el) { el.classList.add('in'); io.unobserve(el); });
     });
     // Last-resort unhide. Reveal styles set opacity:0, so anything the observer
     // never fires for would be invisible for good — content must not depend on
