@@ -42,7 +42,10 @@
     dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
     var script = d.createElement('script');
     script.async = true;
-    script.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-MWR4PVRF';
+    /* Same first-party pattern as loadGoogleAnalytics: /tagging is rewritten
+       to gtm-mwr4pvrf.fps.goog, this container's gateway origin. The container
+       ID lives in the origin, so no ?id= is needed. */
+    script.src = '/tagging';
     script.setAttribute('data-adgent-gtm', '');
     d.head.appendChild(script);
   }

@@ -10,6 +10,14 @@
     {
       "source": "/metrics/:path*",
       "destination": "https://g-1ncs2zfmlr.fps.goog/metrics/:path*"
+    },
+    {
+      "source": "/tagging",
+      "destination": "https://gtm-mwr4pvrf.fps.goog/tagging/"
+    },
+    {
+      "source": "/tagging/:path*",
+      "destination": "https://gtm-mwr4pvrf.fps.goog/tagging/:path*"
     }
   ],
   "redirects": [
