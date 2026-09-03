@@ -41,6 +41,18 @@
     d.head.appendChild(script);
   }
 
+  // The consent stylesheet used to be an @import at the top of site.css, so the
+  // browser could not discover it until site.css had downloaded and parsed — the
+  // same chained-request problem the webfonts had, and it sat in the render path
+  // for every visitor. It is only needed once the banner exists, so it loads here,
+  // beside the module that draws it, and blocks nothing.
+  (function () {
+    var l = d.createElement('link');
+    l.rel = 'stylesheet';
+    l.href = '/assets/vendor/cookieconsent-3.1.0.css';
+    d.head.appendChild(l);
+  })();
+
   import('/assets/vendor/cookieconsent-3.1.0.esm.js').then(function (cc) {
     function syncConsent() {
       var analytics = cc.acceptedCategory('analytics');
@@ -512,6 +524,15 @@
             if (card) card.classList.add('sent');
             form.reset();
             if (note) note.textContent = 'Thanks — we\'ll be in touch within a couple of working days.';
+            /* The one number gtm/07 §7.8 asks for is the audit-request rate, and
+               nothing was reporting it: GA4 saw form_start from enhanced
+               measurement and no submission event at all, so 90 days of data had
+               no conversion in it. Fire it here, on the success branch only. */
+            dataLayer.push({
+              event: 'generate_lead',
+              form_id: id,
+              page_path: location.pathname
+            });
             /* Success hides the form, which destroys the button the user was
                focused on — focus falls to <body> and a screen reader is told
                nothing at all. Move focus to the thank-you so the outcome is

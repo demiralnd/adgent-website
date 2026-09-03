@@ -249,8 +249,15 @@ def _lastmods(persist=True):
         state = {}
     today = datetime.date.today().isoformat()
     out, dirty = {}, False
-    for path in sorted(glob.glob(os.path.join(ROOT, "*.html"))):
-        slug = os.path.basename(path)[:-5]
+    pages = [(os.path.basename(p)[:-5], p)
+             for p in sorted(glob.glob(os.path.join(ROOT, "*.html")))]
+    # Subdirectory pages (EXTRA_SLUGS) are invisible to the root glob, so their
+    # lastmod fell back to today() on every build — a permanent "just changed"
+    # signal, the exact failure this function exists to remove.
+    pages += [(s, _page_path(s)) for s in EXTRA_SLUGS]
+    for slug, path in pages:
+        if not os.path.exists(path):
+            continue
         body = re.sub(r'(site\.css|site\.js|tokens\.css)\?v=[0-9a-f]+', r"\1", read(path))
         digest = hashlib.sha1(body.encode("utf-8")).hexdigest()
         prev = state.get(slug)
@@ -270,7 +277,13 @@ def sitemap(check_only=False):
     dates = _lastmods(persist=not check_only)
     slugs = [os.path.basename(p)[:-5] for p in sorted(glob.glob(os.path.join(ROOT, "*.html")))
              if not _noindex(p) and not os.path.basename(p).startswith("_")]
-    slugs = [s for s in slugs if s not in SKIP] + EXTRA_SLUGS
+    # EXTRA_SLUGS used to be appended unconditionally, bypassing the _noindex filter
+    # above — so a noindex subdirectory page sat in the sitemap while its own meta
+    # tag told Google not to index it. That is the contradiction this file claims to
+    # make impossible; it is now actually impossible.
+    slugs = [s for s in slugs if s not in SKIP] + [
+        s for s in EXTRA_SLUGS
+        if os.path.exists(_page_path(s)) and not _noindex(_page_path(s))]
     rows = []
     for slug in ["index"] + [s for s in slugs if s != "index"]:
         path = "" if slug == "index" else slug

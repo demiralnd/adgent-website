@@ -18,6 +18,23 @@
 
 **Feed both on every change.** They are not linked; nothing syncs them automatically.
 
+⚠️ **The rule was not held — measured 2026-09-03.** The mirror was a full commit behind live
+(`53f6803` *"SEO/GEO: font delivery, honest lastmod, snippet limits, a 404 page"*): **61 files
+differed**, all 52 pages were stale against `_partials/`, `404.html` and `.lastmod.json` were
+missing entirely, and the mirror's own `build.py` was 492 lines against live's 568. Anyone
+reading the docs repo was reading a pre-SEO-pass site. Resynced live → mirror on 2026-09-03,
+preserving the mirror-only files (`TODO.md`, the three `adgent-*.html` doc artifacts, the
+`assets/og/*.svg` sources). Sync direction is **always live → mirror**; live is authoritative
+because it is the deploy source and the only one with a remote.
+
+```bash
+rsync -a --exclude='.git/' --exclude='__pycache__/' --exclude='.fontcache/' \
+      --exclude='BACKLOG.md' ~/adgent-website/ ~/adgent/website/
+```
+
+A hand-maintained mirror drifts by default. If this recurs, replace it with a git submodule or
+a symlink rather than re-litigating the copy discipline.
+
 ## Previewing locally — use `serve.py`, not `http.server`
 
 ```bash
@@ -63,8 +80,17 @@ Pages carry markers instead of copies, so the block is regenerated rather than h
 ```
 
 `class="active"` on the current nav item is re-applied per page from its filename. Never hand-edit
-it. `sitemap.xml` is generated from the files on disk and **excludes any page carrying `noindex`**,
-so it can never contradict the robots meta tag.
+it. `sitemap.xml` is generated from the files on disk and **excludes any page carrying `noindex`**.
+
+⚠️ **This was false until 2026-09-03 and is now true.** `EXTRA_SLUGS` (subdirectory pages —
+today just `demo`) was appended to the sitemap **unconditionally**, after and outside the
+`_noindex` filter, so the guarantee never covered it. Caught by a full-site Lighthouse sweep:
+deployed `/demo` served `<meta name="robots" content="noindex, nofollow">` while sitting in
+`sitemap.xml` at priority 0.9 — the exact contradiction this paragraph claimed was impossible.
+Same code path had a second defect: `_lastmods()` globbed only root `*.html`, so every
+subdirectory page fell through to `dates.get(slug, today)` and was stamped **today on every
+build** — the permanent-freshness signal that function exists to prevent. Both fixed in
+`build.py`; `demo` now carries a real content hash in `.lastmod.json`.
 
 **Run it after** editing `_partials/`, or adding/removing a page. Then copy to the mirror.
 
@@ -83,12 +109,123 @@ Before the script existed:
 
 All four are fixed and `--check` now passes.
 
-## What is genuinely fine
+## Measured state — full-site audit 2026-09-03
 
-Checked in the same pass, no action needed: **zero broken internal links**; every page has a
-title, meta description, canonical, og:image, `lang`, viewport, hreflang and exactly one `<h1>`;
-all images have `alt`. The only page failing those checks is `blog-post.html`, which is a
-redirect stub and correctly `noindex`.
+Every one of the 52 sitemap URLs was audited with Lighthouse (headless Chrome, mobile,
+`serve.py` so `cleanUrls` matches production):
+
+| Category | Result |
+|---|---|
+| SEO | **100/100 on 52/52** |
+| Accessibility | **100/100 on 52/52** |
+| Best practices | **100/100 on 52/52** |
+
+Also verified in the same pass: **zero broken internal links** and zero dead `#anchors`
+across 55 routes; **no orphan pages** — every indexable page is reachable from the homepage
+in ≤2 clicks; no duplicate `<title>` or duplicate meta description; every title ≤60ch and
+every description ≤160ch; **all 52 production URLs return HTTP 200**; no page carries an
+`hreflang` (single-locale since 2026-08-01 — the earlier note claiming every page has one
+was stale). `404.html`, `blog-post.html` and `index-demo-lab.html` are the only routes not
+in the sitemap, all three correctly: an error page, a `noindex` redirect stub, and a
+`noindex` lab page.
+
+**Structured data:** every page's JSON-LD parses, and **every `FAQPage` answer now matches
+its visible on-page text verbatim** — 251 Q&A pairs checked. Ten had drifted after the
+visible copy was edited without the schema (Google requires FAQ structured data to reflect
+visible content); all ten were corrected to the visible wording. Re-check with:
+
+```bash
+python3 - <<'PY'
+import re, json, html as H, glob
+def strip(x): return re.sub(r"\s+"," ",H.unescape(re.sub(r"<[^>]+>"," ",x))).strip()
+bad=[]
+for f in sorted(glob.glob("*.html"))+["demo/index.html"]:
+    h=open(f,encoding="utf-8").read(); head,_,rest=h.partition("</head>"); bt=strip(rest)
+    for m in re.findall(r'<script type="application/ld\+json">(.*?)</script>',head,re.S):
+        for n in json.loads(m).get("@graph",[]):
+            if n.get("@type")=="FAQPage":
+                for q in n["mainEntity"]:
+                    if strip(q["name"]) not in bt or strip(q["acceptedAnswer"]["text"]) not in bt:
+                        bad.append((f,q["name"]))
+print("mismatches:",len(bad),bad)
+PY
+```
+
+**Colour tokens.** 35 pages failed WCAG AA contrast because the inline blog stylesheet and
+`demo/index.html` still used `--accent` for small text and as a white-text background, and
+dragged compliant tokens back under AA with `opacity: 0.75`. `tokens.css:43-53` already
+decides this — *"Never use --accent for small text"*, `--accent-text` for text,
+`--accent-fill` for any surface carrying white text below 24px. Applying the existing rule
+fixed all 35. `demo/index.html` also carried a **stale copy** of the text tokens
+(`--text-3:#847d72`, `--text-4:#a09889`, pre-accessibility-fix) and was missing
+`--accent-fill` entirely — both corrected. It keeps its own `:root` block because it does
+not link `tokens.css`; **any token change in `tokens.css` must be mirrored there by hand.**
+
+**One HTML defect, worth knowing about:** `features.html` had an `<a>` nested inside another
+`<a>` (an inline link inside a whole-row link). Nested anchors are invalid, so the parser
+split the outer link and emitted an empty, focusable, unnamed one — the Creative
+intelligence row was not a working link. Fixed by unwrapping the inner link. There are now
+**zero nested anchors sitewide**; keep it that way when adding inline links to `.feat-row`.
+
+### The brand colour is back on filled surfaces — decided 2026-09-03
+
+`2941227` (2026-09-02) fixed a real contrast failure the wrong way round. White on the
+logo coral `#ff5a2c` is **3.11:1** and fails AA under 24px, so it introduced
+`--accent-fill: #d1421d` and kept the label white. Contrast passed; **every button on the
+site became a colour the logo does not contain.**
+
+Inverted instead — the fill is the logo colour, the label is ink:
+
+| Pairing | Ratio | |
+|---|---|---|
+| `#1c1a17` on `#ff5a2c` | **5.58:1** | AA at any size — what we now ship |
+| `#ffffff` on `#ff5a2c` | 3.11:1 | fails; this is why the fill was darkened |
+| `#ffffff` on `#d1421d` | 4.68:1 | passed, but off-brand |
+
+There is no third option: white text needs the background luminance below 0.183, and
+`#ff5a2c` is 0.288. Either the colour moves or the label does. The label moved.
+
+Done at token level (`tokens.css`), so buttons, table headers, chat bubbles, the cookie
+banner and the demo shell all follow one decision — `--accent-fill` is the logo colour and
+`--accent-on` is ink. `--text-inverse` was decoupled to `#ffffff` so dark bands keep white
+text. `demo/index.html` keeps its own `:root` copy and was updated by hand, including the
+severity colours, which were still the pre-accessibility values.
+
+Surfacing this also exposed two selectors that had been violating `tokens.css:47` all
+along — `.why-card-go` (13.5px) and `.hwb-lock-n` (12px) used raw `--accent`, and
+`.src-note` dragged a compliant token under AA with `opacity: .5`. All three fixed. They
+had been passing only because the reveal animation happened to hide them at capture time;
+**a Lighthouse pass on animated content is not proof unless the same pages pass twice.**
+
+### Performance — measured 2026-09-03, Slow 4G + 4× CPU, median of 3
+
+| | Production before | Local before | Local after |
+|---|---|---|---|
+| FCP | **1,156 ms** | 4,520 ms | **3,884 ms** |
+| Long tasks | 480 ms | 464 ms | ~450 ms |
+| `will-change` elements | 58 | 58 | **23** |
+| Transferred | 150 KB | 917 KB | 917 KB |
+
+Read the columns carefully: **production is not slow on the network.** `serve.py` does not
+compress, so the local figures carry 917 KB where Cloudflare ships 150 KB brotli'd — the
+local numbers are only useful against each other.
+
+Two real defects were removed:
+
+1. **A chained render-blocking request.** `site.css:1` still had
+   `@import url("/assets/vendor/cookieconsent-3.1.0.css")` — the trace shows it starting at
+   95 ms because its initiator is `site.css`, which finished at 90 ms. This is the exact
+   problem `53f6803` fixed for webfonts and left in place for the consent stylesheet. It is
+   now loaded by `site.js` next to the module that draws the banner, and blocks nothing.
+2. **58 permanently promoted compositor layers.** `[data-reveal]` set
+   `will-change: opacity, transform, filter` and never released it, so every revealed
+   element held its own layer plus a blur buffer for the life of the page. MDN is explicit
+   that the hint must be removed once the change is done. Dropped from the base rule.
+
+**What was not the cause:** the webfont change in `53f6803`. The request URL is byte-identical
+before and after that commit — same three families, same variants. It moved them out of a
+chained `@import` into a `<head>` link, which is strictly faster. The remaining cost is
+~480 ms of main-thread work in `site.js`; that needs a profile, not a guess.
 
 ## Rules
 
@@ -106,6 +243,15 @@ nothing in the HTML affects it — a broken header cannot un-verify the property
 What *did* affect indexing: **24 pages were missing from the sitemap**, and the sitemap listed 21
 `noindex` pages, telling Google to crawl pages it was simultaneously told not to index. Both are
 fixed — the sitemap is generated and skips `noindex` pages.
+
+**robots.txt — decided and applied 2026-09-03.** `LLM-Content:` and `LLM-Full-Content:` are not
+robots.txt directives (RFC 9309). GSC flagged them as two errors on 2026-08-04 and Lighthouse
+scored the homepage SEO **92/100** for the same single reason. They are now **comments**: both
+errors clear, the pointer stays readable, nothing is lost — `llms.txt` works by root-path
+convention and never needed a robots.txt pointer. Verified against `serve.py` locally, Lighthouse
+`robots-txt` audit: **valid, 0 errors**. Do not re-add them as live lines. *(Separately: no AI
+system is known to consume `llms.txt` at all — `research-output/geo-measurement-stack-r11.md:193`.
+The files cost nothing to generate; do not treat them as a GEO lever.)*
 
 ## The Turkish locale was removed — 2026-08-01
 

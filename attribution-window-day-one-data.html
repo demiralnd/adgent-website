@@ -29,13 +29,13 @@
 <meta name="twitter:image" content="https://adgent.app/assets/og/attribution-window-day-one-data.png"/>
 <link rel="icon" type="image/svg+xml" href="/assets/logo-app.svg"/>
 <link rel="apple-touch-icon" href="/assets/logo-app.svg"/>
-<link rel="stylesheet" href="/tokens.css?v=18a3e8e3"/>
-<link rel="stylesheet" href="/site.css?v=d8773b8c"/>
+<link rel="stylesheet" href="/tokens.css?v=78a61b54"/>
+<link rel="stylesheet" href="/site.css?v=bf282b02"/>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "headline": "The 7-day window is lying to you before noon", "image": ["https://adgent.app/assets/og/attribution-window-day-one-data.png"], "description": "Meta's 7-day click window keeps rewriting yesterday's ROAS. Why day-one data reads pessimistic by construction — and how to decide anyway.", "datePublished": "2026-04-14", "dateModified": "2026-04-14", "author": {"@type": "Person", "name": "Nurettin Demiral", "url": "https://www.linkedin.com/in/nurettin-demiral/", "sameAs": ["https://www.linkedin.com/in/nurettin-demiral/"]}, "publisher": {"@type": "Organization", "name": "Adgent", "url": "https://adgent.app", "logo": {"@type": "ImageObject", "url": "https://adgent.app/assets/logo.svg"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://adgent.app/attribution-window-day-one-data"}, "isPartOf": {"@type": "Blog", "name": "Adgent Blog", "@id": "https://adgent.app/blog"}, "articleSection": "Attribution", "keywords": "meta ads attribution window, 7-day click attribution, day one ROAS, attribution lag, when to pause a campaign", "wordCount": 1565, "inLanguage": "en", "about": {"@type": "Thing", "name": "Performance marketing analytics"}, "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".answer-box", ".standfirst"]}, "url": "https://adgent.app/attribution-window-day-one-data"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why does my Meta ROAS look low in the morning?", "acceptedAnswer": {"@type": "Answer", "text": "Because spend is fully counted but the conversions it earned aren't credited yet. Meta's 7-day click window keeps attaching purchases for days, so at 9am you're dividing a complete cost by an incomplete revenue. The figure reads pessimistic by construction and almost always revises up."}}, {"@type": "Question", "name": "How long does Meta attribution take to settle?", "acceptedAnswer": {"@type": "Answer", "text": "The default window is 7-day click, 1-day view, but most of the movement is over sooner. Roughly half of conversions land in the first 24 hours, then the curve tapers — by day three to four a revenue metric has usually stopped revising."}}, {"@type": "Question", "name": "Which metrics mature slowly and which are final?", "acceptedAnswer": {"@type": "Answer", "text": "Delivery metrics — CPM, CPC, CTR, hook rate, frequency — are effectively final within hours. Revenue-side metrics — ROAS, CPA, conversion rate — live inside the attribution window and revise for days. Kill on the fast signals, wait on the slow ones."}}, {"@type": "Question", "name": "Should I pause a campaign on day-one data?", "acceptedAnswer": {"@type": "Answer", "text": "Only on mature signals. A dead hook rate, mistargeted audience or broken landing page shows up in day-one delivery data and you should act. But pausing on day-one ROAS means killing conversions that were still about to land."}}, {"@type": "Question", "name": "What is the 7-day attribution window?", "acceptedAnswer": {"@type": "Answer", "text": "It's Meta's default rule for crediting sales to ads: if someone clicks and buys within seven days, the purchase is credited back to the ad and the day the spend landed. That's why yesterday's ROAS keeps filling in for a week."}}, {"@type": "Question", "name": "How do I decide before the window closes?", "acceptedAnswer": {"@type": "Answer", "text": "Act immediately on mature delivery metrics, compare only like-aged data instead of a matured average, and make revenue-based kill decisions once a metric stops revising — usually day three to four. That's early enough to protect budget, late enough to be true."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://adgent.app"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://adgent.app/blog"}, {"@type": "ListItem", "position": 3, "name": "The 7-day window is lying to you before noon", "item": "https://adgent.app/attribution-window-day-one-data"}]}]}</script>
 <style>
  .article { max-width: 720px; margin: 0 auto; }
  .article .post-meta { display: flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-tertiary); }
- .article .post-tag { color: var(--accent); }
+ .article .post-tag { color: var(--accent-text); }
  .article h1 { font-weight: 600; font-size: clamp(30px, 4.4vw, 46px); line-height: 1.06; letter-spacing: -0.035em; margin: 18px 0 0; text-wrap: balance; }
  .article .standfirst { font-size: 19px; line-height: 1.6; color: var(--text-secondary); margin: 22px 0 0; text-wrap: pretty; }
  .byline { display: flex; align-items: center; gap: 12px; margin: 28px 0 0; padding: 20px 0; border-top: 1px solid var(--border-default); border-bottom: 1px solid var(--border-default); }
@@ -64,7 +64,7 @@
  .post-hero-cover { max-width: 720px; margin: 30px auto 0; border: 1px solid var(--border-default); border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 1200 / 630; }
  .post-hero-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
  .answer-box { max-width: 720px; margin: 30px auto 0; background: var(--bg-sub); border: 1px solid var(--border-default); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-md) var(--radius-md) 0; padding: 20px 24px; }
- .answer-box .lbl { font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
+ .answer-box .lbl { font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent-text); }
  .answer-box p { font-size: 17px; line-height: 1.6; color: var(--text); margin: 10px 0 0; text-wrap: pretty; }
  .faq { max-width: 720px; margin: 44px auto 0; }
  .faq h2 { font-size: 25px; font-weight: 600; letter-spacing: -0.02em; }
@@ -76,12 +76,12 @@
  .faq details[open] summary .chev { transform: rotate(180deg); }
  .faq .faq-a { font-size: 15.5px; line-height: 1.65; color: var(--text-secondary); margin: 12px 0 0; }
  .related { max-width: 720px; margin: 48px auto 0; }
- .related .eyebrow { font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); display: inline-flex; align-items: center; gap: 9px; }
+ .related .eyebrow { font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-text); display: inline-flex; align-items: center; gap: 9px; }
  .related .eyebrow .tick { width: 16px; height: 1px; background: var(--accent); }
  .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 18px 0 0; }
  .rel-card { background: var(--bg-elevated); border: 1px solid var(--border-default); border-radius: var(--radius-lg); padding: 18px 20px; transition: border-color 140ms; }
  .rel-card:hover { border-color: var(--border-strong); }
- .rel-card .rc-tag { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
+ .rel-card .rc-tag { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent-text); }
  .rel-card .rc-h { font-size: 15px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.25; margin: 8px 0 0; text-wrap: balance; }
  @media (max-width: 640px){ .related-grid { grid-template-columns: 1fr; } }
 </style>
@@ -370,6 +370,7 @@
  <a href="/change-ledger">Change Ledger</a>
  <a href="/account-memory">Account memory</a>
  <a href="/built-from-chat">Built from chat</a>
+ <a href="/demo">Interactive demo</a>
  </div>
  <div class="foot-col">
  <h2 class="foot-h">Who it is for</h2>
@@ -409,6 +410,6 @@
  </div>
 </footer><!--/#footer-->
 
-<script src="/site.js?v=93681809"></script>
+<script src="/site.js?v=a6b8b738"></script>
 </body>
 </html>

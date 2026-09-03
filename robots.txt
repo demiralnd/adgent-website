@@ -34,9 +34,12 @@ Allow: /
 User-agent: Meta-ExternalAgent
 Allow: /
 
-# LLM-friendly plain-text content for AI answer engines (GEO)
-# llms.txt = index; llms-full.txt = full content of every page.
-LLM-Content: https://adgent.app/llms.txt
-LLM-Full-Content: https://adgent.app/llms-full.txt
+# LLM-friendly plain text for AI answer engines (GEO):
+#   https://adgent.app/llms.txt       — index
+#   https://adgent.app/llms-full.txt  — full content of every page
+# Kept as a comment deliberately: LLM-Content / LLM-Full-Content are not robots.txt
+# directives (RFC 9309), no crawler reads them, and Search Console + Lighthouse both
+# report them as "Unknown directive". Serving the files at the site root is the
+# entire convention. Do not re-add them as live lines.
 
 Sitemap: https://adgent.app/sitemap.xml

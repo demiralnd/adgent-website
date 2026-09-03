@@ -41,21 +41,29 @@
   --text-4: #696760;   /* 4.50:1 on band, 5.66:1 on white — was #b9b4a8 (1.64:1) */
 
   /* ---------- Accent (coral) ----------
-     --accent stays the brand colour: it is used for graphics, rails and display
-     type at 34-54px where 3:1 is the bar and it clears it. --accent-text is the
-     same hue darkened for text-sized use (eyebrows, chips, inline links), where
-     it did not. Never use --accent for small text.
-     --accent-fill is for any surface that carries white text below 24px —
-     buttons, chat bubbles, table headers. White on --accent is 3.11:1 and fails
-     AA; on --accent-fill it is 4.68:1. */
+     --accent is the logo colour and it is what a filled surface uses. The only
+     question a filled surface has to answer is what colour its label is.
+
+     White on #ff5a2c is 3.11:1 and fails AA, so the fill used to be darkened to
+     #d1421d to keep the label white. That kept the contrast and lost the brand:
+     every button on the site was a colour the logo does not contain.
+
+     Inverted instead — the fill is the logo colour, the label is ink:
+       ink  #1c1a17 on #ff5a2c  = 5.58:1   AA at any size
+       white #ffffff on #ff5a2c = 3.11:1   fails, do not use
+     Hover darkens to --accent-press, which only raises the ink ratio.
+
+     --accent-text is the same hue darkened for accent-coloured *text* on a light
+     background — eyebrows, chips, inline links. Never use --accent for small text
+     on a light background; never use white on an accent fill. */
   --accent: #ff5a2c;
   --accent-text: #b23f1f;   /* 4.61:1 on band, 5.80:1 on white */
-  --accent-fill: #d1421d;        /* white on this: 4.68:1 */
-  --accent-fill-hover: #b83a19;  /* white on this: 5.74:1 */
+  --accent-fill: #ff5a2c;        /* the logo colour; ink on it is 5.58:1 */
+  --accent-fill-hover: #ec491d;  /* ink on this: 5.19:1 */
   --user-bubble: #1c1a17;
   --accent-press: #ec491d;
   --accent-soft: rgba(255, 90, 44, 0.11);
-  --accent-on: #ffffff;
+  --accent-on: #1c1a17;     /* the label colour ON an accent fill — ink, not white */
 
   /* ---------- Severity ----------
      These are read at 10-11px in badges, so they need the 4.5:1 text bar on
@@ -89,7 +97,7 @@
   --text-secondary: var(--text-2);
   --text-tertiary: var(--text-3);
   --text-disabled: var(--text-4);
-  --text-inverse: var(--accent-on);
+  --text-inverse: #ffffff;
   --accent-hover: var(--accent-press);
   --accent-subtle: var(--accent-soft);
   --severity-critical: var(--crit);

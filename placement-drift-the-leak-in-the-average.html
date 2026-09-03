@@ -29,13 +29,13 @@
 <meta name="twitter:image" content="https://adgent.app/assets/og/placement-drift-the-leak-in-the-average.png"/>
 <link rel="icon" type="image/svg+xml" href="/assets/logo-app.svg"/>
 <link rel="apple-touch-icon" href="/assets/logo-app.svg"/>
-<link rel="stylesheet" href="/tokens.css?v=18a3e8e3"/>
-<link rel="stylesheet" href="/site.css?v=d8773b8c"/>
+<link rel="stylesheet" href="/tokens.css?v=78a61b54"/>
+<link rel="stylesheet" href="/site.css?v=bf282b02"/>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "headline": "Placement drift: the leak hiding in your average", "image": ["https://adgent.app/assets/og/placement-drift-the-leak-in-the-average.png"], "description": "A blended ROAS of 3.8x can hide a placement returning 1.1x. How Advantage+ placements drift, and how to find the leak inside a healthy number.", "datePublished": "2026-03-19", "dateModified": "2026-03-19", "author": {"@type": "Person", "name": "Nurettin Demiral", "url": "https://www.linkedin.com/in/nurettin-demiral/", "sameAs": ["https://www.linkedin.com/in/nurettin-demiral/"]}, "publisher": {"@type": "Organization", "name": "Adgent", "url": "https://adgent.app", "logo": {"@type": "ImageObject", "url": "https://adgent.app/assets/logo.svg"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://adgent.app/placement-drift-the-leak-in-the-average"}, "isPartOf": {"@type": "Blog", "name": "Adgent Blog", "@id": "https://adgent.app/blog"}, "articleSection": "Attribution", "keywords": "placement drift, advantage plus placements, blended ROAS, audience network performance, meta ads placement breakdown", "wordCount": 1642, "inLanguage": "en", "about": {"@type": "Thing", "name": "Performance marketing analytics"}, "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".answer-box", ".standfirst"]}, "url": "https://adgent.app/placement-drift-the-leak-in-the-average"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How can a good blended ROAS hide a leak?", "acceptedAnswer": {"@type": "Answer", "text": "A blended ROAS is a weighted average, so placements that perform well carry the ones that don't. When most of your budget sits at 4.4×, a small slice at 1.1× barely moves the top-line 3.8× — the loss is real but averaged out of sight."}}, {"@type": "Question", "name": "What is placement drift?", "acceptedAnswer": {"@type": "Answer", "text": "Placement drift is the gradual, automatic reallocation of budget by Meta's Advantage+ delivery toward whatever surface is cheapest to trigger the conversion signal on — even when that surface converts poorly. It happens slowly, without any alert, and nothing in the interface announces it."}}, {"@type": "Question", "name": "How do Advantage+ placements drift?", "acceptedAnswer": {"@type": "Answer", "text": "Advantage+ moves budget across Feed, Stories, Reels and Audience Network chasing the cheapest optimization signal. If that signal fires more easily on one surface than another, the system pours spend there — generating cheap impressions and clicks, but not always the revenue that follows."}}, {"@type": "Question", "name": "How do I find a placement leak?", "acceptedAnswer": {"@type": "Answer", "text": "Break each campaign down by placement, sort by ROAS, and look at the bottom. Then check three things before you act: the spend volume behind the ratio, the attribution window feeding it, and the trend — a placement sliding for weeks, not one bad day."}}, {"@type": "Question", "name": "Why does averaging conceal wasted spend?", "acceptedAnswer": {"@type": "Answer", "text": "This is Simpson's paradox in a media-buying costume. A weighted average lets strong performers absorb weak ones, and the more strong performers you have, the more weakness they can carry before the top-line number moves at all. The waste never shows up in the summary."}}, {"@type": "Question", "name": "How do I fix placement leakage?", "acceptedAnswer": {"@type": "Answer", "text": "Confirm the leak is real — enough volume, a trusted attribution window, a directional trend — then cut it and redeploy that budget into the placements already carrying the account. In the 81%-at-4.4× example, that lifts blended ROAS from 3.8× to 4.4×."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://adgent.app"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://adgent.app/blog"}, {"@type": "ListItem", "position": 3, "name": "Placement drift: the leak hiding in your average", "item": "https://adgent.app/placement-drift-the-leak-in-the-average"}]}]}</script>
 <style>
  .article { max-width: 720px; margin: 0 auto; }
  .article .post-meta { display: flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-tertiary); }
- .article .post-tag { color: var(--accent); }
+ .article .post-tag { color: var(--accent-text); }
  .article h1 { font-weight: 600; font-size: clamp(30px, 4.4vw, 46px); line-height: 1.06; letter-spacing: -0.035em; margin: 18px 0 0; text-wrap: balance; }
  .article .standfirst { font-size: 19px; line-height: 1.6; color: var(--text-secondary); margin: 22px 0 0; text-wrap: pretty; }
  .byline { display: flex; align-items: center; gap: 12px; margin: 28px 0 0; padding: 20px 0; border-top: 1px solid var(--border-default); border-bottom: 1px solid var(--border-default); }
@@ -64,7 +64,7 @@
  .post-hero-cover { max-width: 720px; margin: 30px auto 0; border: 1px solid var(--border-default); border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 1200 / 630; }
  .post-hero-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
  .answer-box { max-width: 720px; margin: 30px auto 0; background: var(--bg-sub); border: 1px solid var(--border-default); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-md) var(--radius-md) 0; padding: 20px 24px; }
- .answer-box .lbl { font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
+ .answer-box .lbl { font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent-text); }
  .answer-box p { font-size: 17px; line-height: 1.6; color: var(--text); margin: 10px 0 0; text-wrap: pretty; }
  .faq { max-width: 720px; margin: 44px auto 0; }
  .faq h2 { font-size: 24px; font-weight: 600; letter-spacing: -0.025em; color: var(--text-primary); }
@@ -76,12 +76,12 @@
  .faq details[open] summary .chev { transform: rotate(180deg); }
  .faq .faq-a { font-size: 15.5px; line-height: 1.65; color: var(--text-secondary); margin: 12px 0 0; }
  .related { max-width: 720px; margin: 48px auto 0; }
- .related .eyebrow { font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); display: inline-flex; align-items: center; gap: 9px; }
+ .related .eyebrow { font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-text); display: inline-flex; align-items: center; gap: 9px; }
  .related .eyebrow .tick { width: 16px; height: 1px; background: var(--accent); }
  .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 18px 0 0; }
  .rel-card { background: var(--bg-elevated); border: 1px solid var(--border-default); border-radius: var(--radius-lg); padding: 18px 20px; transition: border-color 140ms; }
  .rel-card:hover { border-color: var(--border-strong); }
- .rel-card .rc-tag { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
+ .rel-card .rc-tag { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent-text); }
  .rel-card .rc-h { font-size: 15px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.25; margin: 8px 0 0; text-wrap: balance; }
  @media (max-width: 640px){ .related-grid { grid-template-columns: 1fr; } }
 </style>
@@ -365,6 +365,7 @@
  <a href="/change-ledger">Change Ledger</a>
  <a href="/account-memory">Account memory</a>
  <a href="/built-from-chat">Built from chat</a>
+ <a href="/demo">Interactive demo</a>
  </div>
  <div class="foot-col">
  <h2 class="foot-h">Who it is for</h2>
@@ -404,6 +405,6 @@
  </div>
 </footer><!--/#footer-->
 
-<script src="/site.js?v=93681809"></script>
+<script src="/site.js?v=a6b8b738"></script>
 </body>
 </html>

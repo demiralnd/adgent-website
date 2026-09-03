@@ -29,13 +29,13 @@
 <meta name="twitter:image" content="https://adgent.app/assets/og/cross-platform-comparability-meta-google.png"/>
 <link rel="icon" type="image/svg+xml" href="/assets/logo-app.svg"/>
 <link rel="apple-touch-icon" href="/assets/logo-app.svg"/>
-<link rel="stylesheet" href="/tokens.css?v=18a3e8e3"/>
-<link rel="stylesheet" href="/site.css?v=d8773b8c"/>
+<link rel="stylesheet" href="/tokens.css?v=78a61b54"/>
+<link rel="stylesheet" href="/site.css?v=bf282b02"/>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "headline": "Meta says 4.2×, Google says 3.1×. Both are right.", "image": ["https://adgent.app/assets/og/cross-platform-comparability-meta-google.png"], "description": "Why Meta and Google ROAS can't be compared directly — different windows, models, and definitions — and how to build a comparability boundary.", "datePublished": "2026-02-26", "dateModified": "2026-02-26", "author": {"@type": "Person", "name": "Nurettin Demiral", "url": "https://www.linkedin.com/in/nurettin-demiral/", "sameAs": ["https://www.linkedin.com/in/nurettin-demiral/"]}, "publisher": {"@type": "Organization", "name": "Adgent", "url": "https://adgent.app", "logo": {"@type": "ImageObject", "url": "https://adgent.app/assets/logo.svg"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://adgent.app/cross-platform-comparability-meta-google"}, "isPartOf": {"@type": "Blog", "name": "Adgent Blog", "@id": "https://adgent.app/blog"}, "articleSection": "Attribution", "keywords": "meta vs google ROAS, cross platform attribution, comparing ad platforms, attribution model differences, budget allocation across channels", "wordCount": 1510, "inLanguage": "en", "about": {"@type": "Thing", "name": "Performance marketing analytics"}, "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".answer-box", ".standfirst"]}, "url": "https://adgent.app/cross-platform-comparability-meta-google"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I compare Meta and Google ROAS directly?", "acceptedAnswer": {"@type": "Answer", "text": "Not directly. The two numbers use different attribution windows, credit models and conversion definitions, so they aren't the same unit. Normalize the windows, anchor both to your GA4 or store revenue, and compare direction over level."}}, {"@type": "Question", "name": "Why are Meta and Google ROAS different?", "acceptedAnswer": {"@type": "Answer", "text": "Three disagreements at once: different windows (Meta's 7-day click vs Google's 30-day), different credit models (Meta last-touch, Google data-driven), and different definitions of what counts as a conversion. Each platform is honest inside its own ruler."}}, {"@type": "Question", "name": "How do attribution windows differ between platforms?", "acceptedAnswer": {"@type": "Answer", "text": "Meta defaults to 7-day click, 1-day view. Google Ads commonly runs a 30-day click window. A longer window mechanically catches more conversions — the same buyers credited later — which inflates reported ROAS without the channel working any harder."}}, {"@type": "Question", "name": "What is the double-counting problem?", "acceptedAnswer": {"@type": "Answer", "text": "A buyer who sees a Meta ad Monday and clicks a Google ad Wednesday is one purchase — but both platforms report it, since from each seat it's true. Sum platform-reported revenue and you count the same money twice, claiming more than the business earned."}}, {"@type": "Question", "name": "How do I build a comparability boundary?", "acceptedAnswer": {"@type": "Answer", "text": "Anchor on ground truth — your store or GA4 revenue is the denominator every platform claim checks against. Normalize both platforms to the same window, compare direction rather than level, and watch the blended number that can't be double-counted."}}, {"@type": "Question", "name": "Which platform reports higher ROAS?", "acceptedAnswer": {"@type": "Answer", "text": "Usually whichever runs the longer window or leans on view-through credit — often Meta on default settings, but it varies by account. That's exactly why a higher reported number proves nothing until you match windows and check both against real revenue."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://adgent.app"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://adgent.app/blog"}, {"@type": "ListItem", "position": 3, "name": "Meta says 4.2×, Google says 3.1×. Both are right.", "item": "https://adgent.app/cross-platform-comparability-meta-google"}]}]}</script>
 <style>
  .article { max-width: 720px; margin: 0 auto; }
  .article .post-meta { display: flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-tertiary); }
- .article .post-tag { color: var(--accent); }
+ .article .post-tag { color: var(--accent-text); }
  .article h1 { font-weight: 600; font-size: clamp(30px, 4.4vw, 46px); line-height: 1.06; letter-spacing: -0.035em; margin: 18px 0 0; text-wrap: balance; }
  .article .standfirst { font-size: 19px; line-height: 1.6; color: var(--text-secondary); margin: 22px 0 0; text-wrap: pretty; }
  .byline { display: flex; align-items: center; gap: 12px; margin: 28px 0 0; padding: 20px 0; border-top: 1px solid var(--border-default); border-bottom: 1px solid var(--border-default); }
@@ -43,13 +43,13 @@
  .byline .who { font-size: 13px; font-weight: 600; }
  .byline .role { font-size: 12px; color: var(--text-tertiary); margin-top: 2px; }
  .answer-box { margin: 30px auto 0; max-width: 720px; background: var(--bg-sub); border: 1px solid var(--border-default); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-md) var(--radius-md) 0; padding: 20px 24px; }
- .answer-box .lbl { font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
+ .answer-box .lbl { font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent-text); }
  .answer-box p { font-size: 17px; line-height: 1.6; color: var(--text-primary); margin: 10px 0 0; text-wrap: pretty; }
  .prose { margin-top: 36px; }
  .prose p { font-size: 16.5px; line-height: 1.72; color: var(--text-secondary); margin: 0 0 22px; text-wrap: pretty; }
  .prose p b { color: var(--text-primary); font-weight: 500; }
- .prose a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(255,90,44,0.35); }
- .prose a:hover { border-bottom-color: var(--accent); }
+ .prose a { color: var(--accent-text); text-decoration: none; border-bottom: 1px solid rgba(255,90,44,0.35); }
+ .prose a:hover { border-bottom-color: var(--accent-text); }
  .prose h2 { font-size: 24px; font-weight: 600; letter-spacing: -0.025em; color: var(--text-primary); margin: 40px 0 16px; }
  .prose blockquote { margin: 32px 0; padding: 0 0 0 22px; border-left: 2px solid var(--accent); }
  .prose blockquote p { font-family: var(--font-editorial); font-style: italic; font-size: 21px; line-height: 1.5; color: var(--text-primary); margin: 0; letter-spacing: -0.01em; }
@@ -78,12 +78,12 @@
  .faq details[open] summary .chev { transform: rotate(180deg); }
  .faq .faq-a { font-size: 15.5px; line-height: 1.65; color: var(--text-secondary); margin: 12px 0 0; }
  .related { max-width: 720px; margin: 48px auto 0; }
- .related .eyebrow { font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); display: inline-flex; align-items: center; gap: 9px; }
+ .related .eyebrow { font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-text); display: inline-flex; align-items: center; gap: 9px; }
  .related .eyebrow .tick { width: 16px; height: 1px; background: var(--accent); }
  .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 18px 0 0; }
  .rel-card { background: var(--bg-elevated); border: 1px solid var(--border-default); border-radius: var(--radius-lg); padding: 18px 20px; transition: border-color 140ms; }
  .rel-card:hover { border-color: var(--border-strong); }
- .rel-card .rc-tag { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
+ .rel-card .rc-tag { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent-text); }
  .rel-card .rc-h { font-size: 15px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.25; margin: 8px 0 0; text-wrap: balance; }
  @media (max-width: 640px){ .related-grid { grid-template-columns: 1fr; } }
 </style>
@@ -370,6 +370,7 @@
  <a href="/change-ledger">Change Ledger</a>
  <a href="/account-memory">Account memory</a>
  <a href="/built-from-chat">Built from chat</a>
+ <a href="/demo">Interactive demo</a>
  </div>
  <div class="foot-col">
  <h2 class="foot-h">Who it is for</h2>
@@ -409,6 +410,6 @@
  </div>
 </footer><!--/#footer-->
 
-<script src="/site.js?v=93681809"></script>
+<script src="/site.js?v=a6b8b738"></script>
 </body>
 </html>

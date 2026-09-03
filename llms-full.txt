@@ -351,6 +351,16 @@ It shows up as the campaign you scaled in March and stopped in June, and by then
 9 jobs a senior buyer does before lunch
 7 layers between a connected account and a decision
 1 approval before anything moves
+Before you have to ask
+The questions people ask before the demo.
+What does Adgent actually do on day one?
+It reads. Connect your Meta and Google Ads accounts and the first thing you get is a morning brief on each one — the verdict first, the evidence under it, ranked by what each finding is costing you. No setup form, no template to choose, no dashboard to go hunting in. The account that needs you today sits at the top; the ones that are fine say so in one line. The daily verdict &rarr;
+What data does it read besides my ad accounts?
+Meta Ads and Google Ads directly, plus GA4, Search Console and Merchant Center as read-only context — so a platform-reported number can be checked against a source the platform does not control. Store reading is the next connection we are building. Everything outside the two ad platforms is read-only; nothing is written back to it. Ground truth &rarr;
+Will it change my campaigns without asking me?
+No. Access is read-only by default. When a fix is ready Adgent prepares it, costs it and waits — you approve it from chat, and only then does it reach the account. A campaign build lands paused, so switching it on is a second, separate decision. Every write is logged with the state it replaced and labelled reversible or not before you approve it. The Change Ledger &rarr;
+What does it cost to try it on one account?
+Nothing. Name the account you worry about most and you get its morning read back within five working days — the brief Adgent would write, where it would stop money leaking, and what it would refuse to answer yet. Read-only, with no access to spend anything, and you keep the findings either way. After that, price depends on how many accounts you connect and whether execution is switched on. Pricing &rarr;
 Free account audit
 Name the account you worry about most. You get its morning read this week .
 One account, one read, back within five working days — the brief Adgent would write on it, where it would stop money leaking, and what it would refuse to answer yet. Read-only, and you keep the findings whether or not anything comes of it.
@@ -370,7 +380,7 @@ We'll be in touch within a couple of working days.
 
 ---
 
-# Why Adgent — analyze or act, everything else makes you choose
+# Why Adgent — everything else makes you choose
 URL: https://adgent.app/why-adgent
 
 Why Adgent
@@ -571,10 +581,10 @@ We'll be in touch within a couple of working days to set up your accounts.
 
 ---
 
-# Adgent — interactive product demo
+# Adgent interactive demo — see the AI media buyer work
 URL: https://adgent.app/demo
 
-Adgent — interactive product demo
+Adgent interactive demo — see the AI media buyer work
 Adgent — interactive product demo
 This walkthrough runs in the browser. With JavaScript off, here is what it shows:
 one morning on a live-looking ad account, from the overnight verdict to a change
@@ -667,6 +677,16 @@ Two things decide whether a morning read is worth reading: whether it is measure
 1 account on top, ranked by what it costs you
 34% CPA rise caught before the week&rsquo;s spend repeated it
 £2,400 recoverable, attached to the verdict rather than implied
+Before you have to ask
+What the brief does, plainly .
+When does the morning brief actually arrive?
+It is already written when you start. Every connected account is read overnight, so the brief is waiting rather than being generated while you sit there. It covers complete days up to yesterday — there is no same-day spend figure in it and no intraday metric. The sync runs once a day; we would rather say that than imply a live feed.
+What does it say on a morning when nothing is wrong?
+That nothing is wrong, in one line. A brief that manufactures an action item every day teaches you to stop opening it. The quiet accounts still get the same full overnight read as the one on fire — including the retainer nobody has looked at for six weeks, which is usually where the leak has been running. Across a book of clients &rarr;
+Does it tell me which finding to deal with first?
+Yes — ranked by what it is costing you, not by what moved most. A 60% swing on a campaign spending forty dollars a day is noise wearing a big percentage. Anomalies are measured against the account&rsquo;s own weekday shape and seasonality, then against the other campaigns in that account, then against what actually landed as revenue — so the money ends up at the top of the list, not the volatility. Ground truth &rarr;
+How is this different from a scheduled report?
+A report tells you CPA is up 18% week on week. A verdict tells you which campaign to touch today, why the rise is not seasonal, and that the fix is a creative refresh rather than a bid change — with the evidence sitting underneath, so you can disagree with a position instead of staring at a chart. The interpreting is the part a report leaves you.
 See tomorrow morning's brief
 Have it read your accounts tonight .
 Send us the accounts you run and we'll run the read Adgent would run overnight — the brief it would write, ranked by what each finding is costing you.
@@ -761,6 +781,16 @@ Read more
 Why Adgent
 What each category of tool can and cannot do, row by row.
 Read more
+Before you have to ask
+The reconciliation questions, answered .
+What does it check the ad platform&rsquo;s numbers against?
+GA4, Search Console and Merchant Center, read alongside Meta and Google Ads — sources the ad platform does not control. Meta and Google also count a conversion over different windows with different rules, so those get put into one comparable shape before anything is compared. Store reading is the next connection we are building, and CRM reading after it.
+What happens when the platform&rsquo;s number and my analytics disagree?
+The disagreement is the finding, not an error to be smoothed over. Both numbers are shown with the gap named, and the verdict says which one it is judging on. A campaign reporting 3.2× on the platform while the orders behind it carry a 41% discount and an 8% return rate is your best at buying volume and your worst at buying profit. The daily verdict &rarr;
+What revenue can it not see?
+Anything that never reaches a connected source. Site-side analytics does not record a phone order, a marketplace sale or a deal closed in a salesperson&rsquo;s pipeline, so revenue landing off your site is missing until a connector reaches it. Where there is no basis for a figure, Adgent gives none and says why, rather than handing you a plausible guess. The Trust Gate &rarr;
+Why not just trust what the ad platform reports?
+Because an optimizer grading its own spend is marking its own homework. Every figure it reports can be true and still not be the one that decides anything: your cost of goods lives in your store, your return rate arrives weeks after the click, and second-order value sits in a cohort nobody has sent to the platform. It is a structural gap, not a feature gap.
 Free reconciliation check
 Find out how far your platform numbers are from your numbers.
 Give us read access and we'll put platform-reported revenue next to what your analytics recorded for the same window, and name the gap.
@@ -831,6 +861,16 @@ Read more
 The seven layers
 What sits between a connected account and a decision.
 Read more
+Before you have to ask
+What the gate does, and what it refuses .
+What actually stops a bad change from reaching my account?
+Two things, in order. Nothing is applied without you: every write is proposed and waits behind an approval card. Before you ever see one, the gate checks the ask against the account&rsquo;s own numbers — if a pixel has too little of the right event to teach a campaign, or a target sits far below anything the account has achieved, it refuses and shows the figures behind the refusal. Built from chat &rarr;
+What does it do if I ask for a target the account has never hit?
+It refuses, then tells you what is reachable. Ask for ₺250 per conversion on an account whose own history sits around ₺4,000 and the only conversion cheap enough is a ₺13 micro-lead that clears the target and books nobody — you would hit the number and lose the quarter. What comes back instead is a defensible range, read off the last ninety days.
+Can I overrule it and do it anyway?
+Yes. This is a gate, not a lock. Sometimes you know something the account data does not — a launch, a promotion, a client&rsquo;s decision that is already made. Every refusal carries the account&rsquo;s own figures precisely so you can overrule it on purpose rather than out of frustration. The call stays yours; what changes is that you make it knowing the cost.
+What gets logged when a change does go through?
+The state it replaced, who approved it, and an honest reversibility label given before you approve rather than discovered after. Adgent&rsquo;s own writes can be put back on your approval. Changes made directly in Meta or Google are read from those platforms&rsquo; own change feeds and surfaced too, so drift you did not cause still has a date and an actor. The Change Ledger &rarr;
 Ask it something it should refuse
 Try to make it tell you what you want to hear.
 Bring a target you suspect is unreachable, or a campaign you think is optimizing toward nothing. The interesting outcome is the one where it pushes back.
@@ -925,6 +965,16 @@ Read more
 Account memory
 Your rules and past calls, carried into every verdict after.
 Read more
+Before you have to ask
+What people ask about the creative read .
+How do I know a creative is dying before the CPA moves?
+Frequency climbing while hold rate falls. That pair turns before cost per acquisition does, because CPA only confirms the wear-out after you have already paid for the confirmation. Accounts are read overnight, so an ad running out of road is named in the next morning&rsquo;s brief rather than found in a monthly review. The daily verdict &rarr;
+Does it judge the creative itself or just the delivery numbers?
+The creative itself, then the numbers against it. It reads what the ad is built from — its structure, its promise, the order of its scenes — and joins that to where viewers actually leave. Delivery metrics tell you whether an ad worked. A hook rate never tells you which second to change; the scene under the drop does.
+How soon can it tell me anything about a new ad?
+The read of the creative arrives as soon as the ad is running, because the DNA and the scene order come from the ad rather than from performance. There is no upload step. Where viewers leave needs delivery behind it, so that part sharpens as impressions accumulate, and a new ad appears in the following morning&rsquo;s brief.
+What does it actually recommend doing about a weak ad?
+Which beat to change, and often that the footage is fine. In the example on this page the hook is working and 38% of viewers leave at 0:07 — the second the price overlay lands, before the benefit is stated — so the fix is the order of the scenes, not a reshoot. It reads and recommends; it does not generate or edit creative.
 One creative, read for free
 Pick the ad you can't explain. We'll read it.
 Point us at a live ad whose numbers do not match your instinct, and we will send back the read: its DNA, the story beat by beat, and the exact second viewers leave.
@@ -1019,6 +1069,16 @@ Read more
 The seven layers
 What sits between a connected account and a decision.
 Read more
+Before you have to ask
+The questions people ask before letting it write .
+Can I undo a change Adgent made to my ad account?
+Yes. Every change is captured with the exact state it replaced at the instant of the write, so putting it back is a restore rather than a reconstruction. The reversal is proposed as its own change, passes the same approval and guardrails as the forward one, and is logged as its own entry. Reverting a revert works the same way.
+Can it undo a change the ad platform made on its own?
+No, and that is worth saying plainly. When a recommendation applies itself or a bid strategy flips at 03:14, no before-state was captured, because Adgent did not make the write. Those changes are read from the platforms&rsquo; own change feeds, so they arrive dated and named — and Adgent can offer to set the value back as a change of its own.
+What exactly gets recorded when something changes?
+What was touched, the value it replaced, the value that replaced it, the time, who approved it, and whether it can be undone. Reversibility is stated while you are deciding, not discovered when you try to reverse it: some platform changes cannot be taken back, and those are labeled that way before you approve.
+Who can see the change history?
+Everyone working in that account sees the same entries, which is what stops &ldquo;who changed this, and when?&rdquo; being settled by whoever sounds most confident. Each entry carries a date and a source, including when the source is the platform itself. The history stays inside that one account — each company&rsquo;s data sits in its own file. Why this matters on client accounts &rarr;
 See what it would have caught
 Ask it what changed in your account last month .
 Point it at an account and it will read the platforms' own change feeds — the automated recommendations that applied themselves, the settings that moved, the dates nobody has. Read-only; nothing is written.
@@ -1110,6 +1170,16 @@ Read more
 The seven layers
 What sits between a connected account and a decision.
 Read more
+Before you have to ask
+What people ask about the memory .
+What does it actually remember about my account?
+The things that are not in the ad platforms: the limit you set once, the suggestion you rejected and the reason, the number you judge on, the market that looks unprofitable and is not. It picks these up from what you say in chat and from what you turn down, shows you what it heard, and asks before keeping it. You can override any of it.
+Is what it learns from my account shared with other clients?
+No. Each company&rsquo;s data sits in its own database file rather than in a shared table with a customer column in it, so the separation is structural — what one account taught Adgent cannot reach another account&rsquo;s verdict. Inside your own workspace the context follows the brand, so a rule set against one platform still holds on the others you connect.
+How long before the memory is worth anything?
+The first rule holds the moment you state it: say nothing scales past €500 a day without flagging you, and the next proposal that crosses it is flagged instead of applied. The compounding part takes weeks. By week eight the rejected suggestion is gone and the brief is shorter, because what it already knows is not re-argued every morning. The daily verdict &rarr;
+What happens when someone new starts working on the account?
+They inherit the context instead of rebuilding it. The rules belong to the account rather than to whoever set them, so the €500 a day limit, the consolidation you rejected in June and the number you judge on are all still being applied — and all still visible, and open to being overridden. That is the quarter a new hire usually spends becoming useful.
 Tell it one thing
 Say it once. See it come back next month.
 Give us the rule you are tired of repeating — the scaling limit, the metric you actually judge on, the suggestion you keep rejecting — and watch where it surfaces.
@@ -1230,6 +1300,16 @@ Read more
 Account memory
 The rules it builds against — said once, applied from then on.
 Read more
+Before you have to ask
+What people ask about building from chat .
+What can I actually get just by asking for it?
+Four kinds of thing: a live view, a standing report or watcher, a media plan, and a campaign. You describe what you want in chat — the platforms, the window, the breakdown, the metric you judge on — and get the artifact rather than a form to configure one. Views and reports only read the account; plans and campaigns arrive as drafts. All features &rarr;
+Does a dashboard built this way keep updating, or is it a snapshot?
+It keeps updating. What gets built stays wired to the account&rsquo;s data, so sharing it with a client does not turn it into a screenshot that is wrong by the end of the week, and their access is read-only. If you want the same cut every Monday, the same request can be made standing — rebuilt before the call instead of during it.
+Does asking for a campaign mean it goes live in my ad account?
+No. Building a view or a report touches nothing; it only reads. A plan arrives as a draft, approval is per line rather than per plan, and an approved campaign is created paused, so turning it on is a second and separate decision. Every write is shown with the state it replaced and logged. The Change Ledger &rarr;
+What happens if what I ask for is vague or the data is missing?
+It asks rather than guesses. A market with no history in the account gets budget and a test window and no cost estimate at all — the blank is the finding. Where the request could go two ways you get both options and a recommendation, and where the account cannot support what you asked for you get pushback with its own numbers attached.
 Describe it, get it back built
 Tell us the thing you keep rebuilding by hand.
 The weekly cut nobody has automated, the client slide that takes an hour, the quarterly plan that costs a planner two days. Describe it in a sentence and we will build it on your data.
@@ -1317,6 +1397,16 @@ Read more
 Running these accounts for clients?
 The same read on every client you run — including the ones nobody opened this week, because attention follows whichever account is currently on fire. It costs the same whether a client spends £10k a month or £1M.
 How this works across a book of accounts
+Before you have to ask
+What DTC teams want to know before they connect anything.
+Why does the revenue in my ad account not match what my store banked?
+Because the two count different things at different times. The platform credits a conversion when the pixel fires and never retracts it; your store nets out refunds, discounts and cancellations weeks later. Adgent reads GA4 alongside the ad platforms, so a divergence between the two becomes a finding rather than two tabs you compare by hand. Reading orders, cost per item and refunds from the store is the next connection we are building. How ground truth works &rarr;
+Can it tell me which campaigns get restated by returns?
+Partly today, and it is worth being exact about which part. It can flag the campaigns whose order profile looks like the ones that returned last time, because return rates are not uniform across campaigns — the discount-led winner usually returns hardest. Reading refunds directly needs the store connection, which is the next one we are building. Until then the platform figure is checked against GA4, not against your refund ledger.
+Does it know when I am paying to advertise something that is out of stock?
+Feed data is already in view. Merchant Center is read alongside the ad platforms, product availability included, which is the first half of catching spend that keeps running against a product nobody can buy. A campaign successful enough to clear your stock does not stop on its own: its performance history says scale it, at the exact moment the shelf is empty.
+Will it keep up during peak season?
+The read runs every night, so the worst case is that you find out the next morning rather than at month-end. Be clear on the grain: the data is day-level and current through yesterday, and there is no hourly figure. In a season where the most expensive inventory of the year is bought inside a handful of days, a nightly read is the difference that matters. The daily verdict &rarr;
 Free peak-season check
 Find out what your last quarter actually returned.
 We will put platform-reported revenue next to what your analytics recorded, and show you which campaigns change places once the numbers reconcile.
@@ -1418,6 +1508,16 @@ And no dashboard sorted by cost per lead will ever show you that, because the ou
 Running these accounts for clients?
 The same read on every client you run — including the ones nobody opened this week. When a client's pipeline argument arrives, your team walks in with the reasoning already attached rather than a screenshot of the platform's number.
 How this works across a book of accounts
+Before you have to ask
+The questions this vertical raises, answered plainly .
+How do I know whether my cheap leads are any good?
+Usually you cannot tell from the ad account alone, which is the honest starting point: your lowest cost per lead is frequently your highest cost per customer, and no dashboard sorted by cost per lead will show you that. What Adgent reads is the shape. A sudden rise in conversions at a falling cost is treated as something to investigate, not a win to celebrate.
+What if my campaigns are optimising toward the wrong conversion?
+That gets flagged before the budget moves. The Trust Gate marks a campaign optimising toward an event that carries no value, and refuses a cost-per-conversion target the account&rsquo;s own history says is unreachable. Primary and secondary events are classified separately, so the event actually driving the bidding is visible rather than assumed. See the Trust Gate &rarr;
+Can it judge a channel on closed deals instead of form fills?
+Not from the CRM directly, not yet. Native Salesforce and HubSpot reading is a roadmap item; today CRM exports come in through Drive or Sheets, and the ad platforms, GA4 and Search Console are read alongside them. Worth knowing why nobody closes this cleanly: Google retains a click identifier for 90 days, and median B2B payback runs around 16 months. How ground truth works &rarr;
+What happens if my tracking breaks and nobody notices?
+Broken tracking is treated as a finding, not as a blank space. Conversion tracking health is monitored — on Meta that includes the conversions API feed — and anomaly detection runs against the account&rsquo;s own history, so a collection that stops or a count that jumps overnight surfaces in the next morning&rsquo;s brief instead of at the end of the month.
 Free lead-quality read
 Find out which of your cheap leads are the expensive ones .
 We will read the accounts for the failure that looks like success: conversion spikes at falling cost, campaigns optimizing toward an event that carries no value.
@@ -1508,6 +1608,16 @@ Read more
 Running these accounts for clients?
 The same read on every client you run — including the ones nobody opened this week. A revenue manager who hears the compression-night argument from your team, not from their own P&L, is a client who stays.
 How this works across a book of accounts
+Before you have to ask
+The questions revenue managers ask first .
+Our booking window is weeks long. Does a daily read help at all?
+Yes, because the daily read is not trying to close the booking window. The outcome arrives roughly 79 days after the click — a 40-day booking window plus a cancellation landing 39 days before arrival — so no attribution window will ever contain it. What changes is that a drift is caught in week one instead of in a month-end figure that quietly restates itself for months. The daily verdict &rarr;
+Plenty of our bookings land by phone or through an OTA. What then?
+Then the ad account is scoring the wrong event, and Adgent names that rather than modelling around it. Stayed revenue and cancellation rate by channel live in your PMS or CRS — Opera, Mews, Cloudbeds — and Adgent does not read those today, so it cannot compute a stayed-revenue return. Property-system reading is the roadmap item that would close it.
+Can it tell a compression night from a need period?
+Not from ad data alone — occupancy and pickup live in revenue management, which Adgent does not read. What you can do is tell it. Facts you confirm in chat are kept as account memory and loaded into every later session, so &ldquo;these dates sell themselves, stop buying them&rdquo; is something it carries rather than something you repeat. Memory is user-confirmed, and you can override it. Account memory &rarr;
+The platform&rsquo;s revenue and my analytics disagree. Which one do I believe?
+Neither on its own — the disagreement is the finding. Adgent reads GA4 and Search Console alongside the ad platforms, so a gap between what the platform claimed and what the site recorded arrives as something to explain rather than two tabs you reconcile by hand. Neither number is stayed revenue, but a site-side count the platform does not control is the closest check available today. Ground truth &rarr;
 Free channel read
 See which channels book, and which ones cancel .
 We will read your accounts against the pattern this industry lives with: reported returns that never retract, and brand spend defending demand you already owned.
@@ -1597,6 +1707,16 @@ Read more
 Running these accounts for clients?
 The same read on every client you run — including the ones nobody opened this week. A seller client who learns their real return from you, rather than from their own finance team, is a client who renews.
 How this works across a book of accounts
+Before you have to ask
+The questions marketplace teams ask first .
+Why does our ROAS look strong when the business barely breaks even?
+Check what your conversion value is passing before anything else. Most marketplace accounts send gross transaction value, so the reported return is the real one divided by your take rate. At 13%, a reported 6× is roughly 0.8× on the revenue you actually keep. Changing the field takes a minute; the algorithm needs about a fortnight to unlearn what it was bidding against. Ground truth &rarr;
+Can it show me which listings sell, or only campaign totals?
+Lower than campaign totals. Every account is read bottom-up — ad, ad set, campaign, account — with breakdowns by geography, placement, device and demographic, so a campaign performing on average while failing in half its cities shows up as a finding. Where you run Shopping, your Merchant Center catalogue and item issues are read too, read-only. Listing-level margin still lives in your own systems.
+How do I stop budget flowing to what only looks profitable?
+By fixing what the account counts before you move money. The Trust Gate refuses a target your history has never reached and flags campaigns optimizing toward an event that carries no real value — which is exactly what a conversion valued at gross volume is. Prepared changes then wait in your approval queue; you approve every action, and each one is logged and reversible. The Trust Gate &rarr;
+What can it not see about my marketplace today?
+Your take rate. Net revenue, take rate by category and cost of acquisition per side sit in your backend or warehouse, and Adgent does not read them today. Seller-account connections for marketplaces such as Trendyol and Hepsiburada are a low-priority roadmap item, pulled forward only by demand. What it reads today is Meta and Google Ads, plus GA4, Search Console and Merchant Center.
 Free conversion-value audit
 Find out whether you are bidding on gross volume.
 It is one field, it is wrong by default in most implementations, and it instructs the algorithm to overbid by the inverse of your take rate. We will check it in an afternoon.
@@ -1688,6 +1808,16 @@ Read more
 Running these accounts for clients?
 The same read on every client you run — including the ones nobody opened this week, because attention follows whichever account is currently on fire. One senior-level pass per account per day, at the same price whatever they spend.
 How this works across a book of accounts
+Before you have to ask
+What multi-location operators ask first .
+We have twelve locations. Does it read all of them or just the biggest?
+All of them, one at a time. Every connected account gets the same daily read, including the ones nobody opened this week — which in a group is most of them. Each location is read against its own history, so a healthy group average cannot hide three sites losing money. It does not rank one location against another; that needs cross-account reading, which is roadmap. The daily verdict &rarr;
+Can it move budget from a weak location to a strong one?
+Not across accounts. Adgent mounts one location&rsquo;s data per session, which is a security boundary rather than a missing feature, so there is no blended judgment across the group. Within a location it will prepare budget and bid changes with that account&rsquo;s own numbers as the reason, and they wait for your approval. The workspace view does tell you which account needs attention first.
+Google says we got store visits. Should I trust that number?
+Treat it as a model, not a count. Google does not measure store visits; it extrapolates them from a panel of volunteers, with thresholds it does not publish and up to five days of delay. Since September 2025 those modelled visits count as conversions by default, at a value Google assigns. Adgent flags conversion actions carrying no real value so they stop feeding your bidding unexamined. The Trust Gate &rarr;
+What about show rate and the calls nobody answers?
+Adgent cannot see either — show rate and revenue per patient live in your booking or practice-management system, and there is no connection to it today. What it can see is what your bidding is being trained on: a thirty-second call counted as a conversion, a radius running past your catchment, placement and demographic waste. Fixing what the account counts comes before anything else. Ground truth &rarr;
 Free per-location read
 Find out what each location's account is actually buying.
 We will read every location's account — one at a time — for the geographic bleed, the call-quality signal feeding your bidding, and the targeting default nobody checks.
@@ -1766,6 +1896,16 @@ Creative volume and lifespan are the constraints that actually bind a user-acqui
 Running these accounts for clients?
 The same read on every client you run — including the ones nobody opened this week, because attention follows whichever account is currently on fire. It costs the same whether a client spends £10k a month or £1M.
 How this works across a book of accounts
+Before you have to ask
+What user-acquisition teams actually ask.
+Can it tell me whether the installs I am buying are any good?
+Not on its own, and it will say so. Install quality lives in your attribution provider, your mediation platform and your own warehouse, and Adgent reads none of those today — that is a roadmap commitment, not a setting. What it reads is Meta and Google Ads and the creative running on them, which is the half of this problem that moves fastest.
+How do I judge iOS campaigns when attribution comes back deliberately noisy?
+Read it as an estimate, never as a count, and never read blanks as zeros. Below the crowd-anonymity threshold you get nulls, not zeros, which understates exactly the new and small campaigns you are trying to evaluate. Adgent reads every account daily, current through the previous full day, and the Trust Gate flags metrics that cannot be trusted yet rather than rendering a jittered range as a fact. The Trust Gate &rarr;
+How early can I tell a creative is burning out?
+About a week before the cost confirms it, at high spend. The pattern is frequency climbing while hold rate falls, and it shows in the daily read rather than the post-mortem. Adgent reads every live ad scene by scene with the hold curve — where viewers leave, joined to what was on screen when they left — from the ads already running, with no upload step. Creative intelligence &rarr;
+What does ground truth mean when the conversion happens in the app?
+It means a number the ad platform does not control. For in-app revenue that number sits in your attribution provider, mediation platform or warehouse, and Adgent does not read those yet. On the web side it checks platform claims against GA4 and Search Console. If reconciling the platform-to-backend cascade is your whole requirement, ask any vendor which provider they actually read. Ground truth &rarr;
 Free creative read
 Have your top creatives read the way a buyer would.
 This is the half of user acquisition we are genuinely built for: creative volume against a five-to-fourteen-day lifespan, read scene by scene with the retention curve.
@@ -1867,6 +2007,16 @@ reversible before you approve it.
 And when a number can't be trusted yet — too few conversions, still inside an
 attribution window — the Trust Gate says so rather than printing a confident figure
 you'd have to defend to a client.
+Before you have to ask
+The questions agencies ask first .
+Can I run all my client accounts from one place?
+Yes — every client you connect gets its own read, and your workspace lists them side by side: a card per client with its own health score, its own open actions and the date it was last read, sorted so the urgent ones come first. What it will not do is reason across accounts. Each analysis reads one client only, so nothing is benchmarked against another client&rsquo;s account. The daily verdict &rarr;
+Does my client see that I am using this?
+Only if you show them. There is no client seat and no client login, and nothing goes to your client automatically. What you can hand over is a report: build the view you want, then share a link that stays wired to the data instead of a screenshot that is wrong by Thursday. Your team decides what goes in it and when it goes out.
+Can it change a client&rsquo;s budget without asking me?
+No. Adgent starts read-only, so a connected client account cannot be written to at all until your team hands it the keys. After that, every change arrives as a proposal with its reasoning attached and waits for your approval, and each one says up front whether it is reversible. The Change Ledger records what was applied and the state it replaced. The Change Ledger &rarr;
+What if my clients are not all on the same platforms?
+Each client is read on whatever they run of Meta and Google — the two are read as one brain per account, and a client on only one of them is fine. GA4, Search Console and Merchant Center come in read-only wherever they are connected. Other ad platforms are not connected today: TikTok is on the roadmap, not in the product.
 Next step
 Put a senior read on the account you worry about most .
 Pick that client account and connect it read-only — nothing can move. We'll show
@@ -1953,6 +2103,16 @@ did, it can put back on your approval, and every action says up front whether it
 reversible before you approve it.
 And when a number can't be trusted yet — too few conversions, still inside an
 attribution window — the Trust Gate says so instead of manufacturing confidence.
+Before you have to ask
+The questions you ask when there is nobody to ask.
+How do I sanity-check my own decisions with no senior to ask?
+You get a second read before you act, not after. Adgent reads your Meta and Google overnight, checks what the platforms claim against what your analytics actually recorded, and states a position — including pushing back when the campaign you want to scale is not the profitable one. The reasoning comes attached, so you can argue with it instead of taking it on faith. The daily verdict &rarr;
+How long before it is actually useful?
+The first brief comes out of the first overnight read. It backfills up to a year of your account history first, so that first verdict is judged against your own baselines rather than a generic benchmark. It sharpens as you tell it things — your margin floor, the campaign you never touch. Say it once and it carries that into every judgment after. Account memory &rarr;
+Does this mean I do not need my agency?
+That is your call, and it is not the point. Adgent does the reading — the nightly account read, the diagnostics, the reconciliation — and leaves the deciding to whoever is accountable for the result. Plenty of in-house teams use it the other way round: it checks the agency&rsquo;s report against their own revenue, so they walk into the call knowing which number will be challenged and why.
+What happens when I cannot trust the numbers?
+It says so rather than printing a confident figure. When there are too few conversions to judge, or the attribution window is still open, the Trust Gate marks the metric as untrustworthy and refuses a target the account&rsquo;s own history says is unreachable. Where the platform&rsquo;s number and your analytics disagree, the disagreement itself is the finding. The Trust Gate &rarr;
 Next step
 Point it at your own account this week .
 Your live account, connected read-only — nothing can move. We'll show you the
@@ -2018,7 +2178,7 @@ We'll be in touch within a couple of working days.
 
 ---
 
-# Blog — Field notes on Meta Ads, attribution, and scaling | Adgent
+# Blog — Meta Ads, attribution and scaling | Adgent
 URL: https://adgent.app/blog
 
 Blog
@@ -2425,7 +2585,7 @@ Questions about these Terms? Email osman@adgent.app . Adgent is operated by Osma
 
 ---
 
-# An AI media buyer for agencies: managing many accounts — Adgent
+# AI media buyer for agencies, many accounts — Adgent
 URL: https://adgent.app/ai-media-buyer-for-agencies
 
 Product · 7 min read · July 2026
@@ -2711,7 +2871,7 @@ Request demo
 
 ---
 
-# Can AI run your ad account? What it can and cannot do — Adgent
+# Can AI run your ad account? What it can and can't do
 URL: https://adgent.app/can-ai-run-your-ad-account
 
 Product · 7 min read · July 2026
@@ -2860,7 +3020,7 @@ Request demo
 
 ---
 
-# CBO vs ABO vs Advantage+: which budget model in 2026? — Adgent
+# CBO vs ABO vs Advantage+: which budget model in 2026?
 URL: https://adgent.app/cbo-vs-abo-vs-advantage-plus
 
 Scaling · 8 min read · July 2026
@@ -2881,7 +3041,7 @@ Buying Meta's judgment across the whole structure because your signal is strong?
 Almost every "which should I use" question dissolves once you answer that. Now the detail.
 The three side by side
 Here's the honest comparison across the dimensions that actually change your decision — who holds the controls, what each is best for, how it learns, when it wins, and where it bites you.
-ABO (ad-set budget) CBO (campaign budget) Advantage+ (Meta runs it)
+Dimension ABO (ad-set budget) CBO (campaign budget) Advantage+ (Meta runs it)
 Control level You set every ad-set budget by hand You set structure, Meta splits budget Meta owns budget, audience & placement
 Best for Fair, comparable testing Scaling proven winners Hands-off scale on strong signal
 Learning behavior Each set learns on its own fixed budget Meta reallocates toward the day's winners Meta learns across the whole account
@@ -3072,7 +3232,7 @@ Request demo
 
 ---
 
-# Data deletion — remove your Adgent and connected-platform data
+# Data deletion — remove your Adgent and platform data
 URL: https://adgent.app/data-deletion
 
 Legal
@@ -3332,7 +3492,7 @@ Request demo
 
 ---
 
-# How to audit a Google Ads account: a 12-point checklist — Adgent
+# How to audit a Google Ads account: 12-point checklist
 URL: https://adgent.app/how-to-audit-a-google-ads-account
 
 Playbook · 9 min read · July 2026
@@ -3445,7 +3605,7 @@ Request demo
 
 ---
 
-# How to audit a Performance Max campaign (the black box) — Adgent
+# How to audit a Performance Max campaign — Adgent
 URL: https://adgent.app/how-to-audit-performance-max
 
 Playbook · 9 min read · July 2026
@@ -3926,7 +4086,7 @@ Request demo
 
 ---
 
-# Meta vs Google Ads: which platform for your first $10k? — Adgent
+# Meta vs Google Ads: which for your first $10k? — Adgent
 URL: https://adgent.app/meta-vs-google-ads-which-first
 
 Attribution · 8 min read · July 2026
@@ -4000,7 +4160,7 @@ Request demo
 
 ---
 
-# Is Performance Max cannibalizing your branded search? — Adgent
+# Is Performance Max cannibalizing your branded search?
 URL: https://adgent.app/performance-max-brand-cannibalization
 
 Playbook · 6 min read · July 2026
@@ -4507,7 +4667,7 @@ Request demo
 
 ---
 
-# Why is my Meta ROAS dropping? A diagnostic walkthrough — Adgent
+# Why is my Meta ROAS dropping? A diagnostic walkthrough
 URL: https://adgent.app/why-is-my-meta-roas-dropping
 
 Attribution · 8 min read · July 2026

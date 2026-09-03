@@ -1,5 +1,3 @@
-@import url("/assets/vendor/cookieconsent-3.1.0.css");
-
 :root {
   /* ---------- Fonts ---------- */
   --font-ui: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
@@ -34,7 +32,7 @@
   --user-bubble: #1c1a17;
   --accent-press: #ec491d;
   --accent-soft: rgba(255, 90, 44, 0.11);
-  --accent-on: #ffffff;
+  --accent-on: #1c1a17;
 
   /* ---------- Severity ---------- */
   /* Read at 10-11px in badges, so they need the 4.5:1 text bar on their own
@@ -67,7 +65,7 @@
   --text-secondary: var(--text-2);
   --text-tertiary: var(--text-3);
   --text-disabled: var(--text-4);
-  --text-inverse: var(--accent-on);
+  --text-inverse: #ffffff;
   --accent-hover: var(--accent-press);
   --accent-subtle: var(--accent-soft);
   --severity-critical: var(--crit);
@@ -1374,7 +1372,7 @@ input[type="range"][data-math-spend]:focus-visible { outline: 2px solid var(--ac
 .legal-toc li { counter-increment: toc; break-inside: avoid; margin-bottom: 9px; }
 .legal-toc a { font-size: 13.5px; line-height: 1.4; color: var(--text-2); display: inline-flex; gap: 9px; }
 .legal-toc a::before { content: counter(toc, decimal-leading-zero); font-family: var(--font-mono); font-size: 11px; color: var(--text-4); flex: none; }
-.legal-toc a:hover { color: var(--accent); }
+.legal-toc a:hover { color: var(--accent-text); }
 .legal-body { margin-top: 8px; }
 .legal-body section { margin-top: 40px; scroll-margin-top: 84px; }
 .legal-body h2 { font-size: 21px; font-weight: 700; letter-spacing: -0.022em; color: var(--text); margin: 0 0 14px; display: flex; gap: 12px; align-items: baseline; text-wrap: balance; }
@@ -1393,7 +1391,7 @@ input[type="range"][data-math-spend]:focus-visible { outline: 2px solid var(--ac
 .legal-contact { margin-top: 44px; padding: 24px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--r-lg); box-shadow: var(--shadow-soft); }
 .legal-contact h3 { font-size: 15px; font-weight: 700; margin: 0 0 6px; color: var(--text); }
 .legal-contact p { font-size: 14px; line-height: 1.7; color: var(--text-2); margin: 0; }
-.legal-contact a { color: var(--accent); text-decoration: none; font-weight: 600; }
+.legal-contact a { color: var(--accent-text); text-decoration: none; font-weight: 600; }
 @media (max-width: 640px) { .legal-toc ol { columns: 1; } }
 
 /* ---------- chat cutout (hero + why-chat) ---------- */
@@ -1622,12 +1620,11 @@ input[type="range"][data-math-spend]:focus-visible { outline: 2px solid var(--ac
       transform 0.85s cubic-bezier(.16,1,.3,1),
       filter 0.6s var(--ease);
     transition-delay: var(--rd, 0ms);
-    will-change: opacity, transform, filter;
   }
   html.js [data-reveal="left"]  { transform: translateX(-34px); }
   html.js [data-reveal="right"] { transform: translateX(34px); }
   html.js [data-reveal="scale"] { transform: translateY(26px) scale(0.96); }
-  html.js [data-reveal].in { opacity: 1; transform: none; filter: none; }
+  html.js [data-reveal].in { opacity: 1; transform: none; filter: none; will-change: auto; }
 }.layer, .tier, .principle, .who-card, .pcard, .rflag {
   transition: transform 0.26s var(--ease), border-color 0.26s var(--ease), box-shadow 0.26s var(--ease);
 }.layer:hover, .principle:hover, .who-card:hover {
@@ -1731,14 +1728,14 @@ html:not(.js) .chat-step { opacity: 1; transform: none; }
 .lens.lens-us{border-color:var(--accent);box-shadow:var(--shadow-card);}
 .lens-cap{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;
   color:var(--text-3);margin:0;}
-.lens.lens-us .lens-cap{color:var(--accent);}
+.lens.lens-us .lens-cap{color:var(--accent-text);}
 .lens-num{font-family:var(--font-editorial);font-weight:500;font-size:clamp(34px,5vw,52px);
   line-height:1;letter-spacing:-.02em;margin:0;font-variant-numeric:tabular-nums;}
 .lens-num.good{color:var(--ok);}
 .lens-num.bad{color:var(--crit);}
 .lens-sub{font-family:var(--font-mono);font-size:12px;color:var(--text-3);margin:0;letter-spacing:.02em;}
 .lens-verdict{font-size:16px;font-weight:650;letter-spacing:-.01em;color:var(--text);margin:0;}
-.lens.lens-us .lens-verdict{color:var(--accent);}
+.lens.lens-us .lens-verdict{color:var(--accent-text);}
 .lens-note{font-size:13px;line-height:1.5;color:var(--text-2);margin:0;}
 .lens-kicker{font-size:15px;line-height:1.6;color:var(--text);max-width:80ch;margin-top:6px;}
 .lens-kicker strong{color: var(--accent-text);}
@@ -2311,7 +2308,7 @@ html:not(.js) .chat-step { opacity: 1; transform: none; }
 .why-card-go {
   display: inline-flex; align-items: center; gap: 6px;
   margin-top: auto; padding-top: 16px; align-self: flex-start;
-  font-size: 13.5px; font-weight: 600; color: var(--accent, var(--text));
+  font-size: 13.5px; font-weight: 600; color: var(--accent-text, var(--text));
 }
 .why-card-go svg { width: 15px; height: 15px; fill: none; stroke: currentColor;
   stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
@@ -3924,7 +3921,7 @@ section, .band, .moat, .hero { z-index: auto; }
    two lines reads as two separate fragments of debris. It only wraps when the
    note alone is wider than the column. */
 .src-note {
-  font-size: .68em; opacity: .5; font-style: normal; letter-spacing: .01em;
+  font-size: .68em; color: var(--text-3); font-style: normal; letter-spacing: .01em;
   white-space: nowrap; display: inline-block; max-width: 100%;
 }
 @media (max-width: 520px) { .src-note { white-space: normal; overflow-wrap: anywhere; } }
@@ -4141,7 +4138,7 @@ td .src-note::after,
 }
 .hwb-lock-n {
   font-family: var(--font-mono); font-size: 12px; font-weight: 700;
-  letter-spacing: 0.1em; color: var(--accent, var(--text-3));
+  letter-spacing: 0.1em; color: var(--accent-text, var(--text-3));
 }
 .hwb-lock h3 { margin: 12px 0 0; font-size: 16.5px; font-weight: 650; letter-spacing: -0.01em; }
 .hwb-lock p { margin: 9px 0 0; font-size: 14px; line-height: 1.62; color: var(--text-2); text-wrap: pretty; }
@@ -4843,7 +4840,7 @@ td .src-note::after,
 }
 .conns-note { margin: 14px 0 0; font-size: 13px; line-height: 1.6; color: var(--text-3); text-wrap: pretty; }
 @media (max-width: 620px) { .conn-t { white-space: normal; } }
-.conn-later { background: var(--bg-hover); color: var(--text-3); opacity: 0.75; }
+.conn-later { background: var(--bg-hover); color: var(--text-3); }
 
 /* ---- agency strip: the MD's motive, on a page written for the practitioner ----
    The vertical pages all address the person who owns one P&L. Agencies are the
