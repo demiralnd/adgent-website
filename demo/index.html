@@ -1695,5 +1695,11 @@ show('today'); renderChips();
   } else setTimeout(begin, 900);
 })();
 </script>
+<!-- Consent banner + GA4. This page is standalone — it carries its own CSS and its
+     own scripts — and it was the one page on the site with no measurement on it at
+     all, which is what GA4's tag-coverage warning was pointing at. site.js guards
+     every site-chrome lookup, so on this page it does nothing but the consent and
+     analytics block. Loaded last, deferred, so it cannot touch the demo's own boot. -->
+<script src="/site.js" defer></script>
 </body>
 </html>
