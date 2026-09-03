@@ -78,6 +78,13 @@ when it breaks: a renamed path, a dropped rewrite or a paste back to `googletagm
 would keep serving the site perfectly while collecting nothing. This check is the only place
 that notices.
 
+⚠️ **Debugging trap, hit on 2026-09-03.** Pages link the stamped URL (`/site.js?v=<hash>`), and
+`vercel.json` serves it `immutable` for a year. Cloudflare keys its cache on the full URL, so
+the **unstamped** `https://adgent.app/site.js` can keep answering with a copy from before the
+last deploy — it did, showing the pre-gateway `googletagmanager.com` sources hours after they
+were replaced. Nothing on the site requests that URL. Always verify against the stamp the page
+actually links.
+
 **`_partials/` is the source of truth**, not any page:
 
 ```
