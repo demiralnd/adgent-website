@@ -841,19 +841,29 @@
     var glyphs = Array.prototype.slice.call(d.querySelectorAll('.brainwrap, .metafig'));
     glyphs.forEach(function (g) { g.classList.add('mf-burstable'); });
 
+    // Three passes, not one interleaved loop. Writing par.style.position and then
+    // reading the next glyph's rect in the same iteration forced a synchronous
+    // layout per glyph; after the reveal pass was fixed this became the largest
+    // remaining reflow source in the trace. Position first, measure second,
+    // write third — one layout for the whole set.
     function placeGlyphs() {
       var railX = host.getBoundingClientRect().left + 1;
       var on = window.innerWidth > 1240 && railX > 60;
+      if (!on) {
+        glyphs.forEach(function (g) { g.style.removeProperty('--spine-x'); });
+        return;
+      }
       glyphs.forEach(function (g) {
-        if (!on) { g.style.removeProperty('--spine-x'); return; }
         var par = g.offsetParent || g.parentNode;
         if (par && window.getComputedStyle(par).position === 'static') par.style.position = 'relative';
+      });
+      var offsets = glyphs.map(function (g) {
         var pr = (g.offsetParent || d.body).getBoundingClientRect();
         var mark = g.querySelector('svg');
         var half = (mark ? mark.getBoundingClientRect().width : g.offsetWidth) / 2;
-        var dx = railX - pr.left - g.offsetLeft - half;
-        g.style.setProperty('--spine-x', Math.round(dx) + 'px');
+        return Math.round(railX - pr.left - g.offsetLeft - half);
       });
+      glyphs.forEach(function (g, i) { g.style.setProperty('--spine-x', offsets[i] + 'px'); });
     }
 
     /* every scroll-reactive element's document offset is measured ONCE per
