@@ -531,11 +531,16 @@ def audit():
                 problems.append(f"{rel}: og:image without og:image:alt")
             if "og:locale" not in head:
                 problems.append(f"{rel}: no og:locale")
-        #    Fonts must be discovered in the head. As an @import inside
-        #    tokens.css they were two stylesheet round-trips deep, which is
-        #    LCP paid for nothing.
-        if "fonts.googleapis.com" not in head:
-            problems.append(f"{rel}: webfonts not linked from <head>")
+        #    Fonts must be discovered in the head. They started as an @import
+        #    inside tokens.css — two stylesheet round-trips deep — then moved to
+        #    a <link> to fonts.googleapis.com, which was better but still put two
+        #    third-party origins in front of first paint for a 1.7 KB file.
+        #    They are now @font-face rules at the top of tokens.css itself, served
+        #    from our own origin, so the check is that nothing has crept back.
+        if "fonts.googleapis.com" in head or "fonts.gstatic.com" in head:
+            problems.append(f"{rel}: webfont loaded from a third-party origin")
+        if "/tokens" not in head:
+            problems.append(f"{rel}: tokens stylesheet not linked from <head>")
     return problems
 
 
