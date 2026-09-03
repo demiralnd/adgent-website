@@ -11,7 +11,7 @@
   ],
   "headers": [
     {
-      "source": "/tokens.css",
+      "source": "/tokens.min.css",
       "headers": [
         {
           "key": "Cache-Control",
@@ -20,7 +20,7 @@
       ]
     },
     {
-      "source": "/site.css",
+      "source": "/site.min.css",
       "headers": [
         {
           "key": "Cache-Control",

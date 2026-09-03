@@ -48,10 +48,13 @@
      #d1421d to keep the label white. That kept the contrast and lost the brand:
      every button on the site was a colour the logo does not contain.
 
-     Inverted instead — the fill is the logo colour, the label is ink:
-       ink  #1c1a17 on #ff5a2c  = 5.58:1   AA at any size
-       white #ffffff on #ff5a2c = 3.11:1   fails, do not use
-     Hover darkens to --accent-press, which only raises the ink ratio.
+     The fill is the logo colour. The label is white by owner decision on
+     2026-09-03, which is a deliberate trade, not an oversight:
+       white #ffffff on #ff5a2c = 3.11:1   below the 4.5:1 AA bar under 24px
+       ink   #1c1a17 on #ff5a2c = 5.58:1   passes, and was rejected on brand
+     Do not "fix" this back to ink without asking. If the contrast has to be
+     recovered without moving the colour, the route is type size: AA allows 3:1
+     at 18.66px bold or 24px, which the 14px button label does not reach today.
 
      --accent-text is the same hue darkened for accent-coloured *text* on a light
      background — eyebrows, chips, inline links. Never use --accent for small text
@@ -63,7 +66,7 @@
   --user-bubble: #1c1a17;
   --accent-press: #ec491d;
   --accent-soft: rgba(255, 90, 44, 0.11);
-  --accent-on: #1c1a17;     /* the label colour ON an accent fill — ink, not white */
+  --accent-on: #ffffff;     /* owner decision 2026-09-03: white on the brand coral */
 
   /* ---------- Severity ----------
      These are read at 10-11px in badges, so they need the 4.5:1 text bar on

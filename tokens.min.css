@@ -1,0 +1,83 @@
+
+
+:root {
+  
+  --font-ui: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --font-editorial: "Fraunces", "Newsreader", Georgia, serif;
+
+  
+  --bg-app: #ffffff;         
+  --bg-card: #ffffff;        
+  --bg-sub: #fafafa;         
+  --bg-inset: #f4f4f5;       
+  --bg-band: #f1f1f2;        
+  --bg-hover: rgba(24, 24, 27, 0.04);
+  --bg-active: rgba(24, 24, 27, 0.065);
+
+  
+  --border: rgba(24, 24, 27, 0.12);
+  --border-2: rgba(24, 24, 27, 0.18);
+
+  
+  --text: #1c1a17;
+  --text-2: #6c685f;
+  --text-3: #69655e;   
+  --text-4: #696760;   
+
+  
+  --accent: #ff5a2c;
+  --accent-text: #b23f1f;   
+  --accent-fill: #ff5a2c;        
+  --accent-fill-hover: #ec491d;  
+  --user-bubble: #1c1a17;
+  --accent-press: #ec491d;
+  --accent-soft: rgba(255, 90, 44, 0.11);
+  --accent-on: #ffffff;     
+
+  
+  --ok: #127648;   --ok-soft: rgba(22, 147, 90, 0.12);
+  --warn: #8b5c19; --warn-soft: rgba(207, 138, 38, 0.13);
+  --crit: #b53c27; --crit-soft: rgba(216, 71, 47, 0.10);
+  --info: #2863c8; --info-soft: rgba(47, 115, 232, 0.12);
+
+  
+  --r-xl: 18px; --r-lg: 14px; --r-md: 11px; --r-sm: 8px; --r-pill: 999px;
+
+  
+  --shadow-card: 0 1px 2px rgba(24, 24, 27, 0.06), 0 12px 28px -14px rgba(24, 24, 27, 0.18);
+  --shadow-soft: 0 1px 2px rgba(24, 24, 27, 0.06);
+  --shadow-pop: 0 30px 70px -28px rgba(24, 24, 27, 0.30), 0 4px 14px -8px rgba(24, 24, 27, 0.18);
+
+  
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+
+  
+  --bg-content: var(--bg-app);
+  --bg-sidebar: var(--bg-band);
+  --bg-elevated: var(--bg-card);
+  --border-default: var(--border);
+  --border-strong: var(--border-2);
+  --text-primary: var(--text);
+  --text-secondary: var(--text-2);
+  --text-tertiary: var(--text-3);
+  --text-disabled: var(--text-4);
+  --text-inverse: #ffffff;
+  --accent-hover: var(--accent-press);
+  --accent-subtle: var(--accent-soft);
+  --severity-critical: var(--crit);
+  --severity-warning: var(--warn);
+  --severity-ok: var(--ok);
+  --severity-critical-bg: var(--crit-soft);
+  --severity-warning-bg: var(--warn-soft);
+  --severity-ok-bg: var(--ok-soft);
+  --radius-xs: 4px;
+  --radius-sm: var(--r-sm);
+  --radius-md: var(--r-md);
+  --radius-lg: var(--r-lg);
+  --radius-xl: var(--r-xl);
+  --radius-pill: var(--r-pill);
+  --font-sans: var(--font-ui);
+  --ease-out: var(--ease);
+}

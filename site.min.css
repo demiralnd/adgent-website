@@ -1,61 +1,52 @@
 :root {
-  /* ---------- Fonts ---------- */
+  
   --font-ui: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "Geist Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
   --font-editorial: "Fraunces", "Newsreader", Georgia, serif;
 
-  /* ---------- Surfaces (white ground, neutral greys) ----------
-     White page; separation comes from bands + card borders, not from a
-     tinted substrate. Greys are near-neutral (R−B ≤ 1) so nothing reads
-     as yellowed paper. Warmth stays in the coral, the serif and the art.
-     NOTE: this block overrides tokens.css — keep the two in sync. */
+  
   --bg-app: #ffffff;
   --bg-card: #ffffff;
   --bg-sub: #fafafa;
   --bg-inset: #f4f4f5;
-  --bg-band: #f1f1f2;        /* alt section band */
+  --bg-band: #f1f1f2;        
   --bg-hover: rgba(24, 24, 27, 0.04);
   --bg-active: rgba(24, 24, 27, 0.065);
 
-  /* ---------- Borders ----------
-     Stronger than the tinted-ground era: on white, the border is what
-     makes a card a card. */
+  
   --border: rgba(24, 24, 27, 0.12);
   --border-2: rgba(24, 24, 27, 0.18);
 
-  /* ---------- Text ----------
-     Only --text lives here; the ramp is defined once, further down. */
+  
   --text: #1c1a17;
 
-  /* ---------- Accent (coral) ---------- */
+  
   --accent: #ff5a2c;
   --user-bubble: #1c1a17;
   --accent-press: #ec491d;
   --accent-soft: rgba(255, 90, 44, 0.11);
   --accent-on: #ffffff;
 
-  /* ---------- Severity ---------- */
-  /* Read at 10-11px in badges, so they need the 4.5:1 text bar on their own
-     soft chips — not just on white. Same duplicate-definition trap as the text
-     ramp: these live here because site.css loads after tokens.css. */
+  
+  
   --ok: #127648;   --ok-soft: rgba(22, 147, 90, 0.12);
   --warn: #8b5c19; --warn-soft: rgba(207, 138, 38, 0.13);
   --crit: #b53c27; --crit-soft: rgba(216, 71, 47, 0.10);
   --info: #2863c8; --info-soft: rgba(47, 115, 232, 0.12);
 
-  /* ---------- Radii ---------- */
+  
   --r-xl: 18px; --r-lg: 14px; --r-md: 11px; --r-sm: 8px; --r-pill: 999px;
 
-  /* ---------- Shadows (soft, warm) ---------- */
+  
   --shadow-card: 0 1px 2px rgba(24, 24, 27, 0.06), 0 12px 28px -14px rgba(24, 24, 27, 0.18);
   --shadow-soft: 0 1px 2px rgba(24, 24, 27, 0.06);
   --shadow-pop: 0 30px 70px -28px rgba(24, 24, 27, 0.30), 0 4px 14px -8px rgba(24, 24, 27, 0.18);
 
-  /* ---------- Motion ---------- */
+  
   --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
   --ease-in: cubic-bezier(0.4, 0, 1, 1);
 
-  /* ---------- Back-compat aliases (so older class refs resolve) ---------- */
+  
   --bg-content: var(--bg-app);
   --bg-sidebar: var(--bg-band);
   --bg-elevated: var(--bg-card);
@@ -85,12 +76,7 @@
 }
 
 
-/* ============================================================
-   Adgent marketing site — layout layer (warm light · coral)
-   Built on the real product language: Plus Jakarta Sans,
-   soft-shadowed white cards on a warm canvas, coral accent,
-   Fraunces italic for one editorial word.
-   ============================================================ */
+
 
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -101,14 +87,13 @@ body {
   font-family: var(--font-ui);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  /* no overflow-x here — see the html/body note under "layout": clipping on
-     body breaks every position:sticky on the page */
+  
 }
 a { color: inherit; text-decoration: none; }
 img, svg { display: block; }
 ::selection { background: var(--accent-soft); color: var(--text); }
 
-/* very faint warm atmosphere — keeps the canvas from going flat */
+
 body::before {
   content: "";
   position: fixed;
@@ -120,10 +105,7 @@ body::before {
   z-index: 0;
 }
 
-/* ---------- PARALLAX BACKGROUND ----------
-   Three fixed atmosphere layers that drift at different speeds as you read,
-   so the page has depth behind the content without ever competing with it.
-   JS writes --sy (scroll offset in px); each layer scales it differently. */
+
 .para {
   position: fixed; inset: -10% -5%; z-index: 0;
   pointer-events: none; overflow: hidden;
@@ -144,7 +126,7 @@ body::before {
   background: radial-gradient(circle at 50% 50%, rgba(120,140,255,0.06), rgba(120,140,255,0) 62%);
   transform: translate3d(0, calc(var(--sy, 0px) * 0.03), 0);
 }
-/* a faint ruled grid that drifts slowest of all — the "paper" under the story */
+
 .para .pgrid {
   inset: -20% -10%; opacity: 0.5;
   background-image:
@@ -159,14 +141,9 @@ body::before {
   .para i { transform: none !important; }
 }
 
-/* ---------- layout ---------- */
+
 .wrap { max-width: 1200px; margin: 0 auto; padding: 0 32px; position: relative; z-index: 1; }
-/* Nothing on the page should push the document wider than the viewport;
-   sections that animate or transform children can otherwise leak a few px.
-   ⚠️ The clip lives on <html> ONLY. On <body> it makes body a scroll
-   container, and every position:sticky inside the page then computes as
-   sticky but never sticks — which is exactly how the pinned chat section
-   silently stopped pinning. Horizontal leak is still caught at <html>. */
+
 html { overflow-x: clip; }
 html, body { max-width: 100%; }
 .lane { max-width: 760px; }
@@ -201,13 +178,12 @@ section { position: relative; z-index: 1; }
   line-height: 1.65;
   color: var(--text-2);
   margin: 18px 0 0;
-  /* ~62 characters per line. Long subs still exist in the copy, but at this
-     measure they break into readable lines instead of one dense slab. */
+  
   max-width: 52ch;
   text-wrap: pretty;
 }
 
-/* ---------- nav ---------- */
+
 .nav {
   position: sticky; top: 0; z-index: 50;
   background: color-mix(in srgb, var(--bg-app) 78%, transparent);
@@ -226,13 +202,9 @@ section { position: relative; z-index: 1; }
 .nav-links a:hover { color: var(--text); background: var(--bg-hover); }
 .nav-links a.active { color: var(--text); font-weight: 600; }
 
-/* Product dropdown — hover on pointer devices, click/focus everywhere else */
+
 .nav-drop { position: relative; }
-/* The panel opens 20px below the trigger, and the pointer has to cross that
-   gap to reach it. Nothing was hoverable in between, so the menu closed on the
-   way down and only reopened if you moved fast enough — with two menus side by
-   side it reads as "hover is broken". This bridges the gap: invisible, only
-   live while the menu is open, so it never blocks the links beside it. */
+
 .nav-drop::after {
   content: ""; position: absolute; left: 0; right: 0; top: 100%; height: 22px;
   pointer-events: none;
@@ -240,11 +212,8 @@ section { position: relative; z-index: 1; }
 .nav-drop:hover::after,
 .nav-drop:focus-within::after,
 .nav-drop.open::after { pointer-events: auto; }
-/* A mega dropdown is position:static, so its ::after resolves against the nav
-   row rather than the trigger — top:100% would land below the whole header and
-   leave the real gap open. Pin it to the trigger's own bottom edge instead, and
-   span the panel's width since the panel is centred on the nav, not the link. */
-/* trigger bottom = half the 64px nav row plus half the 32px trigger */
+
+
 .nav-drop-mega::after { top: calc(50% + 16px); height: 22px; }
 .nav-drop-mega:hover::after,
 .nav-drop-mega:focus-within::after,
@@ -281,24 +250,19 @@ section { position: relative; z-index: 1; }
 .nav-menu .nm-d { display: block; font-size: 12.5px; color: var(--text-2); margin-top: 2px; line-height: 1.35; }
 .nav-menu a:hover .nm-d { color: var(--text-2); }
 
-/* Mega menu — Features. Reuses .nav-drop's hover/focus-within/.open machinery;
-   only the panel geometry changes. Centred on the trigger, clamped to viewport. */
+
 .nav-drop-mega { position: static; }
 .nav-mega {
   left: 50%; transform: translate(-50%, -4px);
   width: min(940px, calc(100vw - 32px));
   min-width: 0; padding: 0;
 }
-/* Solutions carries one short column and one long one — an even split leaves
-   the team column mostly empty, so it gets the narrower track. */
+
 .nav-mega-sol .mega-cols { grid-template-columns: 0.8fr 1.2fr 300px; }
 .nav-drop-mega:hover .nav-mega,
 .nav-drop-mega:focus-within .nav-mega,
 .nav-drop-mega.open .nav-mega { transform: translate(-50%, 0); }
-/* Two menus, two questions. Product answers "what does it do" and splits on
-   the only distinction the buyer actually cares about — does this read my
-   account, or can it change it. Solutions answers "who is it for". Putting
-   industries and teams under Features was asking one menu to answer both. */
+
 .mega-cols {
   display: grid; grid-template-columns: 1fr 1fr 300px;
   gap: 6px; padding: 14px;
@@ -331,7 +295,7 @@ section { position: relative; z-index: 1; }
 .mega-tx { min-width: 0; }
 .mega-tx .nm-d { white-space: normal; }
 
-/* Right-hand visual panel — swapped on hover by site.js */
+
 .mega-panel {
   position: relative; overflow: hidden;
   border-radius: var(--r-md); border: 1px solid var(--border);
@@ -340,19 +304,16 @@ section { position: relative; z-index: 1; }
   padding: 16px; min-height: 288px;
 }
 .mega-panel-art {
-  /* stops above the caption block rather than behind it — the caption is the
-     panel's only in-flow child, so its height is what we clear */
+  
   position: absolute; left: 14px; right: 14px; top: 14px; bottom: 92px;
   display: grid; align-content: center;
   opacity: 0; transition: opacity 220ms var(--ease);
 }
 .mega-panel-art.on { opacity: 1; }
-/* Preview art: small scenes, not glyphs. Each shows the mechanism the item
-   describes — a ranked brief, two diverging lines, a refusal, a hold curve —
-   drawn from the same tokens as the rest of the site. */
+
 .mega-panel-art svg { width: 100%; height: auto; display: block; overflow: visible; }
 
-/* neutral structure */
+
 .mp-dim rect, .mp-rows rect, .mp-grid rect, .mp-frames rect { fill: var(--border); opacity: 0.5; }
 .mp-ink rect { fill: var(--text-2); opacity: 0.5; }
 .mp-was rect { fill: var(--text-3); opacity: 0.35; }
@@ -364,19 +325,18 @@ section { position: relative; z-index: 1; }
 .mp-grid rect { fill: var(--bg-elevated); stroke: var(--border); stroke-width: 1; opacity: 1; }
 .mp-rows rect { fill: var(--bg-elevated); stroke: var(--border); stroke-width: 1; opacity: 1; }
 
-/* the accented half — what the feature actually does */
+
 .mp-acc rect, .mp-acc circle { fill: var(--accent); }
 .mp-acc path { fill: none; stroke: var(--accent); stroke-width: 1.8;
   stroke-linecap: round; stroke-linejoin: round; }
 .mp-card-acc { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 1.2; }
-/* the class sits on a <g> in some figures and straight on the <circle> in others;
-   a descendant-only selector left the bare ones filling solid black (SVG default) */
+
 .mp-dot, .mp-dot circle { fill: var(--text-3); }
 .mp-dot-acc, .mp-dot-acc circle { fill: var(--accent); }
 .mp-tick path { fill: none; stroke: var(--accent); stroke-width: 2.2;
   stroke-linecap: round; stroke-linejoin: round; }
 
-/* lines */
+
 .mp-axis, .mp-tie, .mp-brace { fill: none; stroke: var(--border-2); stroke-width: 1.2; }
 .mp-tie { stroke-dasharray: 3 4; }
 .mp-dim-l { fill: none; stroke: var(--text-3); stroke-width: 2; opacity: 0.55; }
@@ -393,7 +353,7 @@ section { position: relative; z-index: 1; }
 .mp-back { fill: none; stroke: var(--accent); stroke-width: 1.8;
   stroke-linecap: round; stroke-linejoin: round; }
 
-/* filled regions with meaning */
+
 .mp-return rect { fill: var(--bg-2, #fff); stroke: var(--accent); stroke-width: 1.2;
   stroke-dasharray: 3 3; }
 .mp-over rect { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 1; }
@@ -403,15 +363,14 @@ section { position: relative; z-index: 1; }
 .mp-window { fill: none; stroke: var(--text-3); stroke-width: 1.2; stroke-dasharray: 4 4; opacity: 0.7; }
 .mp-carry { fill: var(--accent-soft); }
 
-/* labels inside the art */
+
 .mp-lbl { font-family: var(--font-mono); font-size: 11px; fill: var(--text-2); }
 .mp-lbl-dim { fill: var(--text-3); }
 .mp-lbl-acc { fill: var(--accent-text); }
 .mega-panel-cap { position: relative; }
 .mega-panel-cap .mp-t { display: block; font-size: 14px; font-weight: 650; color: var(--text); }
 .mega-panel-cap .mp-d { display: block; font-size: 12.5px; line-height: 1.45; color: var(--text-2); margin-top: 4px; }
-/* By team sits across the foot of the menu rather than in a column — two
-   audiences, side by side, where they read as a pair instead of a tail. */
+
 .mega-foot {
   border-top: 1px solid var(--border);
   padding: 12px 14px 14px;
@@ -449,7 +408,7 @@ section { position: relative; z-index: 1; }
 .nav.menu-open .nav-burger .ic-open { display: none; }
 .nav.menu-open .nav-burger .ic-close { display: block; }
 
-/* mobile menu drawer */
+
 .mobile-menu {
   display: none; position: fixed; left: 0; right: 0; top: 64px; z-index: 49;
   background: var(--bg-app); border-bottom: 1px solid var(--border);
@@ -466,8 +425,7 @@ section { position: relative; z-index: 1; }
 .mobile-menu a:hover, .mobile-menu a:active { background: var(--bg-hover); }
 .mobile-menu .mm-cta { margin-top: 14px; }
 
-/* Collapsible mobile groups — native <details>, no JS. Thirteen links in one
-   flat list is a scroll; grouped, the drawer opens to five rows. */
+
 .mm-group { border-bottom: 1px solid var(--border); }
 .mm-group > summary {
   display: flex; align-items: center; justify-content: space-between;
@@ -489,7 +447,7 @@ section { position: relative; z-index: 1; }
 }
 body.menu-open { overflow: hidden; }
 
-/* ---------- buttons ---------- */
+
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 8px;
   height: 42px; padding: 0 19px; border-radius: var(--r-sm);
@@ -498,14 +456,12 @@ body.menu-open { overflow: hidden; }
   transition: background 140ms var(--ease), border-color 140ms, color 140ms, box-shadow 140ms;
 }
 .btn svg { width: 16px; height: 16px; stroke-width: 2; }
-/* White-on-accent is 3.11:1 — below AA for anything under 24px. Fills that
-   carry white text use --accent-fill (4.68:1); --accent stays the brand colour
-   for graphics and display type, where 3:1 is the bar. */
+
 .btn-primary { background: var(--accent-fill); color: var(--accent-on); box-shadow: 0 1px 2px rgba(110,38,8,0.12), 0 8px 20px -10px rgba(255,90,44,0.5); }
 .btn-primary:hover { background: var(--accent-fill-hover); }.btn-sm { height: 36px; padding: 0 15px; font-size: 13.5px; }
 .btn-lg { height: 48px; padding: 0 24px; font-size: 15px; }
 
-/* ---------- hero ---------- */
+
 .hero { padding: 88px 0 76px; position: relative; }
 .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; position: relative; z-index: 1; }.hero-tag .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--ok); box-shadow: 0 0 0 3px var(--ok-soft); }
 .hero-slogan {
@@ -539,7 +495,7 @@ body.menu-open { overflow: hidden; }
 .hero-cta { display: flex; align-items: center; gap: 12px; margin-top: 32px; flex-wrap: wrap; }
 .hero-note { font-size: 12.5px; color: var(--text-3); margin-top: 16px; font-family: var(--font-mono); letter-spacing: 0.02em; }
 
-/* ---------- product cutout (faithful dashboard fragment) ---------- */
+
 .cutout {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -557,29 +513,15 @@ body.menu-open { overflow: hidden; }
 .co-kicker { font-family: var(--font-mono); font-size: 10px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-3); }
 .co-h1 { font-size: 19px; font-weight: 700; letter-spacing: -0.02em; margin: 8px 0 0; line-height: 1.25; }
 .co-h1 .day { font-family: var(--font-editorial); font-style: italic; font-weight: 500; color: var(--accent); }
-/* ============ BUILT FROM A SENTENCE — scroll tells the story ============ */
-/* The section pins to the viewport and vertical scroll advances the pane:
-   ask → artefact, four times, without anyone clicking a tab. The tab bar
-   stays as the manual control (and the a11y surface); scroll just drives it.
 
-   The spacer is what the page scrolls THROUGH while the sticky child stays
-   put — one extra viewport per pane after the first. It is set here in CSS,
-   not JS, so the behaviour is identical with JS disabled except that the
-   pane doesn't change (a plain tabbed window, which is a fine fallback).
-   Zeroed under reduced-motion and on narrow screens — see below. */
-/* Redesigned 2026-08-23. The pin (sticky + a 300vh spacer) could only ever
-   show ONE artefact, while the section's whole claim is that one conversation
-   produced FOUR different ones — the mechanic withheld the argument it was
-   built to make, and cost three screens of scroll to do it. Now: all four
-   named up front, one click apart, no scroll toll. */
+
+
 .builds-pin { padding-top: 0; padding-bottom: 0; }
 .builds-sticky { position: static; padding: clamp(30px, 3.6vh, 48px) 0; }
 
 .bstage { max-width: 940px; margin: clamp(22px, 3vh, 34px) auto 0; }
 
-/* Tabs read as a spec strip, not browser chrome: number, what it is, and its
-   standing. The standing line is the argument — three of the four say the
-   thing never acts on its own. */
+
 .bstage-tabs {
   display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px;
   margin-bottom: 18px;
@@ -604,12 +546,7 @@ body.menu-open { overflow: hidden; }
 .bstage-tabs button[aria-selected="true"] .bt-s { color: var(--accent-text); }
 .bstage-tabs button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
-/* The box is sized by its CONTENT, not by a number. The 386px floor here was
-   inherited from the old scroll-window (354px) — a viewport constraint that
-   stopped existing when the pin went. Keeping it squeezed every artefact:
-   the panel held the height while the canvas inside it was clipped.
-   Now each panel takes the room it needs; the floor only stops the shortest
-   one from making the section look collapsed. */
+
 .bstage-panels {
   background: var(--bg-sub); border: 1px solid var(--border);
   border-radius: var(--r-lg); padding: 20px;
@@ -619,57 +556,41 @@ body.menu-open { overflow: hidden; }
 .bpanel[hidden] { display: none; }
 @keyframes bpin { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .bpanel.on { animation: none; } }
-/* The badge rides the left rail like every other chapter glyph. It used to be
-   forced above the heading and off the rail: the pin made vertical room scarce
-   and put the badge level with its own chapter node, so the two labels
-   collided. No pin, no collision — it rejoins the rail. */
 
-/* Short viewports don't pin — but the bar has to sit low enough to cover a
-   real laptop window. A maximised Chrome on a 1440-class MacBook leaves only
-   ~730px of viewport once the menu bar, tab strip and dock are out, so an
-   810px threshold silently switched the pin off on the most common screen
-   there is. Measured: the trimmed block is 728px, so the bar sits just under
-   the 733px a maximised 1440-class window actually gives. */
-/* Short viewports: the whole point of the redesign is that nothing here is
-   height-sensitive any more — one panel, one screen. Only the padding tightens. */
+
+
+
 @media (max-height: 725px) { .builds-sticky { padding: 44px 0; } }
 
-/* Narrow: four tabs across is too tight to read, so they go two-up. The
-   standing line ("Proposes only") is the one that must survive — it carries
-   the argument — so it stays and only the box tightens. */
+
 @media (max-width: 860px) {
   .builds-sticky { padding: 56px 0; }
   .bstage-tabs { grid-template-columns: repeat(2, 1fr); gap: 6px; }
-  /* the fifth is the real one — it gets the full row rather than a widow slot */
+  
   .bstage-tabs button:last-child { grid-column: 1 / -1; }
   .bstage-tabs button { padding: 10px 11px; }
   .bt-l { font-size: 13px; }
   .bstage-panels { min-height: 0; }
 }
 
-/* centred head — this section is the one place the page stops scanning
-   left-to-right and looks at one thing */
+
 .builds-pin .sec-head { max-width: 620px; margin-left: auto; margin-right: auto; text-align: center; }
 .builds-pin .sec-sub { margin-left: auto; margin-right: auto; }
 
-/* slider shell */
+
 .builds-slider { margin-top: clamp(26px, 3vh, 38px); position: relative; }
 .builds {
-  /* One card fills most of the view: these are product screenshots with real
-     numbers in them, and at half-width the mini-charts were unreadable. The
-     sliver of the next card is deliberate — it signals there's more. */
+  
   display: grid; grid-auto-flow: column; grid-auto-columns: min(720px, 82%);
   gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory;
-  /* The nav is sticky and 64px tall, so scroll-padding:0 parked every anchor
-     target underneath it — jumping to #plan or #campaign landed with the
-     heading hidden behind the bar. */
+  
   scroll-behavior: smooth; scroll-padding-top: 84px;
   padding-bottom: 4px; margin: 0 -4px; padding-left: 4px; padding-right: 4px;
   scrollbar-width: none; -ms-overflow-style: none;
 }
 .builds::-webkit-scrollbar { display: none; }
 .builds > .build { scroll-snap-align: start; }
-/* nav row: dots + arrows */
+
 .builds-nav { display: flex; align-items: center; justify-content: center; gap: 18px; margin-top: 24px; }
 .builds-dots { display: flex; align-items: center; gap: 8px; }.builds-dot.on { background: var(--accent); width: 22px; border-radius: 4px; }@media (max-width: 640px) { .builds { grid-auto-columns: 88%; } .builds-arrows { display: none; } }
 .build {
@@ -679,7 +600,7 @@ body.menu-open { overflow: hidden; }
   position: relative; isolation: isolate;
   transition: transform 260ms var(--ease), box-shadow 260ms var(--ease), border-color 260ms var(--ease);
 }
-/* accent hairline that "draws" across the top on hover — the generate moment */
+
 .build::after {
   content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px;
   background: linear-gradient(90deg, var(--accent), transparent);
@@ -700,7 +621,7 @@ body.menu-open { overflow: hidden; }
 .build-cap .name { font-size: 14px; font-weight: 700; letter-spacing: -0.01em; }
 .build-cap .tag { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); }
 
-/* mini KPI tiles (dashboard) */
+
 .mini-kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
 .mkt { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--r-md); padding: 10px 11px; }
 .mkt-l { font-size: 10px; font-weight: 600; color: var(--text-3); }
@@ -710,7 +631,7 @@ body.menu-open { overflow: hidden; }
 .mini-chart { margin-top: 10px; }
 .mini-chart svg { width: 100%; height: 46px; display: block; }
 
-/* mini agent rows */
+
 .mini-agent { display: flex; flex-direction: column; gap: 8px; }
 .mag-row { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 10px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--r-md); padding: 9px 11px; }
 .mag-sev { display: inline-flex; align-items: center; gap: 5px; font-size: 10px; font-weight: 700; }
@@ -722,7 +643,7 @@ body.menu-open { overflow: hidden; }
 .mag-imp { text-align: right; }
 .mag-imp .v { font-size: 12px; font-weight: 700; font-variant-numeric: tabular-nums; }
 .mag-imp .l { font-size: 8.5px; color: var(--text-3); }
-/* backtest strip — the 90-day history the agent was tested against */
+
 .mag-hist { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--r-md); padding: 9px 11px; }
 .mag-hist-h { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; font-size: 10px; color: var(--text-2); }
 .mag-hist-h b { font-size: 11.5px; color: var(--text-1); font-variant-numeric: tabular-nums; }
@@ -730,7 +651,7 @@ body.menu-open { overflow: hidden; }
 .mag-hist-strip i { position: absolute; bottom: 0; left: calc(var(--x) * 1%); width: 3px; height: 11px; border-radius: 2px 2px 0 0; background: var(--crit); opacity: .75; }
 .mag-hist-f { font-size: 9px; color: var(--text-3); }
 
-/* mini plan steps */
+
 .mini-plan { display: flex; flex-direction: column; }
 .mpl-row { display: flex; align-items: center; gap: 11px; padding: 8px 0; border-bottom: 1px solid var(--border); }
 .mpl-row:last-child { border-bottom: none; }
@@ -738,7 +659,7 @@ body.menu-open { overflow: hidden; }
 .mpl-t { font-size: 12px; font-weight: 500; flex: 1; }
 .mpl-s { font-size: 10px; font-family: var(--font-mono); color: var(--text-3); }
 
-/* mini campaign rows */
+
 .mini-camp { display: flex; flex-direction: column; gap: 7px; }
 .mcp-row { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 9px; }
 .mcp-flag { width: 7px; height: 7px; border-radius: 50%; flex: none; }
@@ -748,7 +669,7 @@ body.menu-open { overflow: hidden; }
 .msb.ok { color: var(--ok); background: var(--ok-soft); }
 .msb.warn { color: var(--warn); background: rgba(207,138,38,0.13); }
 
-/* ============ GOLDEN RULES / MEMORY (the moat) ============ */
+
 .moat { background: #141210; color: #f4f2ee; position: relative; overflow: hidden; }
 .moat::before {
   content: ""; position: absolute; inset: 0; pointer-events: none;
@@ -756,7 +677,7 @@ body.menu-open { overflow: hidden; }
     radial-gradient(70% 60% at 84% -8%, rgba(255,90,44,0.20), transparent 56%),
     radial-gradient(60% 80% at 6% 108%, rgba(255,120,60,0.08), transparent 55%);
 }
-/* ambient particles — faint drifting motes, accent-tinted */
+
 .moat-particles { position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: 0; }
 .moat-particles i {
   position: absolute; border-radius: 50%;
@@ -772,7 +693,7 @@ body.menu-open { overflow: hidden; }
   86% { opacity: 0.5; }
   100% { transform: translateY(-70px) scale(1.1); opacity: 0; }
 }
-/* faint hairline grid to read as "structured memory" */
+
 .moat-grid-lines { position: absolute; inset: 0; pointer-events: none; z-index: 0; opacity: 0.5;
   background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
   background-size: 44px 44px; mask-image: radial-gradient(80% 70% at 70% 20%, #000, transparent 75%);
@@ -789,14 +710,14 @@ body.menu-open { overflow: hidden; }
 .moat-points li svg { width: 18px; height: 18px; flex: none; margin-top: 1px; color: var(--accent); stroke-width: 2; }
 .moat-points li b { color: #f4f2ee; font-weight: 600; }
 
-/* the memory card — accumulated golden rules */
+
 .memcard { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.10); border-radius: var(--r-xl); padding: 8px; box-shadow: 0 30px 70px -30px rgba(0,0,0,0.6); }
 .memcard-head { display: flex; align-items: center; gap: 10px; padding: 14px 16px 12px; }
 .memcard-ic { width: 30px; height: 30px; border-radius: 9px; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; flex: none; }
 .memcard-ic svg { width: 16px; height: 16px; stroke-width: 2; }
 .memcard-h { font-size: 13.5px; font-weight: 700; letter-spacing: -0.01em; }
 .memcard-sub { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(244,242,238,0.4); margin-top: 2px; }
-/* learning moments — Adgent quietly internalizing what you say/do (not a rules list) */
+
 .learns { display: flex; flex-direction: column; gap: 12px; padding: 4px; }
 .learn { position: relative; padding-left: 20px; }
 .learn::before { content: ""; position: absolute; left: 5px; top: 6px; bottom: -12px; width: 1px; background: linear-gradient(var(--accent), transparent); }
@@ -815,7 +736,7 @@ body.menu-open { overflow: hidden; }
 .co-health-main .ht { font-size: 13px; font-weight: 700; }
 .co-health-main .hs { font-size: 12px; color: var(--text-2); margin-top: 3px; }
 
-/* action item rows */
+
 .co-list { margin-top: 14px; display: flex; flex-direction: column; }.co-ic.crit { background: var(--crit-soft); color: var(--crit); }
 .co-ic.warn { background: var(--warn-soft); color: var(--warn); }
 .co-ic.ok { background: var(--ok-soft); color: var(--ok); }
@@ -832,30 +753,23 @@ body.menu-open { overflow: hidden; }
 .kpi-d { font-size: 11px; font-weight: 600; margin-top: 4px; font-variant-numeric: tabular-nums; }
 .kpi-d.up { color: var(--ok); } .kpi-d.down { color: var(--crit); }
 
-/* ---------- problem → solution ---------- */
+
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 44px; }.panel.before { background: var(--bg-sub); box-shadow: none; }
 .panel.before .panel-label { color: var(--crit); }
 .panel.after .panel-label { color: var(--ok); }.panel.before li svg { color: var(--text-4); }
 .panel.after li svg { color: var(--ok); }
 .panel.after li b { color: var(--text); font-weight: 600; }
 
-/* ---------- section spacing ---------- */
-/* Vertical rhythm: sections need room to read as separate thoughts. Scales
-   with the viewport so a large screen gets real air instead of a fixed 84px. */
-/* Adjacent bands each contribute padding, so the seam between two sections is
-   double this value. 64–84 keeps that seam at 128–168px — air without a void. */
-/* one vertical rhythm for every band, so the page breathes evenly instead of
-   each section inventing its own spacing */
-/* Tightened 2026-08-12. The page read as sprawling at 100% and better at 80%
-   browser zoom — but zooming shrinks body copy too, and several body styles
-   are already 12.5-13.5px, which 80% would push under 11px. So the compaction
-   is taken out of vertical space and heading size ONLY; body copy is untouched. */
+
+
+
+
+
 .band { padding: clamp(34px, 3.6vh, 52px) 0; }
 .band + .band { padding-top: clamp(26px, 2.9vh, 42px); }
 .band > .wrap > .sec-head { margin-bottom: clamp(16px, 2vh, 24px); }
 .band-sub {
-  /* gradient instead of a flat slab: the band fades in from the page and back
-     out again, so neighbouring sections blend rather than butt together */
+  
   background: linear-gradient(
     to bottom,
     color-mix(in srgb, var(--bg-band) 0%, transparent) 0%,
@@ -865,7 +779,7 @@ body.menu-open { overflow: hidden; }
   );
   border-top: none; border-bottom: none;
 }
-/* hairline gradient dividers that fade out toward the right, echoing the seam */
+
 .band + .band::before,
 .band + .band-sub::before {
   content: ""; position: absolute; left: 0; right: 0; top: 0; height: 1px;
@@ -876,7 +790,7 @@ body.menu-open { overflow: hidden; }
   opacity: 0.7; pointer-events: none;
 }
 
-/* ---------- steps ---------- */
+
 .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
 .step { position: relative; }
 .step-n { font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: 0.12em; color: var(--accent-text); }
@@ -885,14 +799,10 @@ body.menu-open { overflow: hidden; }
 .step h3 { font-size: 17px; font-weight: 700; letter-spacing: -0.02em; margin: 18px 0 0; }
 .step p { font-size: 14px; line-height: 1.6; color: var(--text-2); margin: 9px 0 0; text-wrap: pretty; }
 
-/* ---------- creative intelligence ---------- */
-/* Creative Intelligence — title left (sticky), cards 2x2 right */
-/* head + cards on the left, the worked example on the right: the mock is
-   taller than the four cards, so pairing it against the head+cards column
-   balances the block instead of leaving a well under the cards */
-/* Head across the top, then two equal columns: the worked example on the
-   left and the four capabilities stacked beside it. A 2x2 card grid finished
-   far above the mock and left a well under it. */
+
+
+
+
 .creative-split { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; align-items: start; }
 .creative-head { grid-column: 1 / -1; }
 .creative-head { max-width: 520px; }
@@ -909,7 +819,7 @@ body.menu-open { overflow: hidden; }
 .creative-card p { font-size: 13.5px; line-height: 1.6; color: var(--text-2); margin: 8px 0 0; text-wrap: pretty; }
 .creative-card p em { font-family: var(--font-editorial); font-style: italic; font-weight: 500; color: var(--accent-text); }
 
-/* ---------- why-adgent matrix ---------- */
+
 .matrix-wrap { margin-top: 26px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
 .matrix { border-collapse: separate; border-spacing: 0; width: 100%; min-width: 660px; font-size: 14px; }
 .matrix th, .matrix td { padding: 15px 16px; text-align: center; border-bottom: 1px solid var(--border); }
@@ -923,11 +833,7 @@ body.menu-open { overflow: hidden; }
 .matrix td.us { background: var(--accent-soft); color: var(--accent-text); }
 .matrix tbody tr:last-child th, .matrix tbody tr:last-child td { border-bottom: none; }
 .matrix tbody tr:last-child td.us { border-bottom-right-radius: var(--r-md); }
-/* Phone: a 660px-min table inside a horizontal scroller meant the one column
-   that carries the argument — ours, on the right — was off-screen until the
-   reader thought to swipe a table. Below 720px the table is re-laid as one
-   block per capability with the four competitor columns as inline chips, so
-   the checked column reads without any scrolling. */
+
 @media (max-width: 720px) {
   .matrix-wrap { overflow-x: visible; }
   .matrix { min-width: 0; display: block; }
@@ -943,26 +849,21 @@ body.menu-open { overflow: hidden; }
 }
 .matrix-note { margin-top: 16px; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.02em; color: var(--text-3); text-align: center; }
 
-/* Unregistered custom properties can't interpolate — they snap between
-   values mid-transition, which reads as flicker. @property makes --off a
-   real animatable length, so plates glide instead of snapping. */
+
 @property --off {
   syntax: '<length>';
   inherits: false;
   initial-value: 0px;
 }
-/* ---------- the stack: seven isometric layers ---------- */
-/* --- the 3D scene --- */
-/* The deck is sized FROM the scene, never the other way round: --s is a
-   single scale knob and every plate offset is a multiple of it, so the
-   stack cannot outgrow its box at any viewport height. */
+
+
+
 .s3-scene {
   --s: 0.78;
-  --gap: calc(50px * var(--s));   /* vertical space between plates */
-  --brk: calc(30px * var(--s));   /* extra break at the audit ceiling */
+  --gap: calc(50px * var(--s));   
+  --brk: calc(30px * var(--s));   
   position: relative; width: 100%; aspect-ratio: 5 / 4; min-height: 0;
-  /* no card shell: the plates ARE the object. A border and panel background
-     around them just boxed in the one thing that should feel dimensional. */
+  
   background: none; border: none; border-radius: 0; overflow: visible;
   perspective: 9000px; perspective-origin: 50% 50%;
   container-type: inline-size;
@@ -971,17 +872,13 @@ body.menu-open { overflow: hidden; }
   position: absolute; left: 50%; top: 50%;
   width: calc(236px * var(--s)); height: calc(120px * var(--s));
   transform-style: preserve-3d;
-  /* pull the deck down by half its own stacked height so it stays centred
-     no matter how many plates there are */
-  /* centred, not pushed down: the old offset put the plates at 96–155% of the
-     scene box, so nothing anchored to a percentage could line up with them */
+  
+  
   transform: translate(-50%, -50%) rotateX(58deg) rotateZ(-42deg);
 }
 .s3-plate {
   position: absolute; inset: 0; transform-style: preserve-3d;
-  /* offset = index * gap, plus the ceiling break for L3 and above.
-     --off is registered via @property so it interpolates; do NOT declare a
-     fallback here or the registered initial value stops applying. */
+  
   --z: calc(var(--i) * var(--gap));
   transform: translateZ(calc(var(--z) + var(--off)));
   transition: transform 400ms var(--ease);
@@ -994,13 +891,13 @@ body.menu-open { overflow: hidden; }
   box-shadow: 0 18px 34px -20px rgba(28,25,20,0.55);
   transition: box-shadow 260ms var(--ease);
 }
-/* glossy highlight */
+
 .s3-face::after {
   content: ""; position: absolute; inset: 0; border-radius: 13px;
   background: linear-gradient(135deg, rgba(255,255,255,0.3), transparent 58%);
   pointer-events: none;
 }
-/* extruded side */
+
 .s3-edge {
   position: absolute; inset: 0; border-radius: 13px;
   background: var(--edge); transform: translateZ(calc(-11px * var(--s))); filter: brightness(0.66);
@@ -1010,28 +907,21 @@ body.menu-open { overflow: hidden; }
   color: rgba(255,255,255,0.9);
 }
 
-/* Tier palette. The story is in the colour: the layers everyone has are
-   neutral stone, and the four above the ceiling warm toward the accent — so
-   "where most tools stop" is visible before a word is read. The middle used
-   to run through saturated blue, which is not in this palette at all and read
-   as a second brand competing with the accent. */
-/* palette lives in ONE place — see the ramp further down this file */
 
-/* hover / active lift */
+
+
+
 .s3-plate[data-tier="upper"] { --z: calc(var(--i) * var(--gap) + var(--brk)); }
-/* Focus opens the stack instead of shoving one plate into its neighbour:
-   plates above the active one move further up, plates below move down, so
-   the active plate gains clear air on BOTH sides and spacing stays even.
-   --dir is set per plate in JS (-1 below, 0 active, 1 above). */
+
 
 .s3-plate.on .s3-face { box-shadow: 0 30px 50px -20px rgba(28,25,20,0.5); }
-/* non-active plates recede slightly so the active one reads as focus */
+
 .s3-deck.focused .s3-plate:not(.on) .s3-face { opacity: 0.68; }
 .s3-face { transition: box-shadow 320ms var(--ease), opacity 320ms var(--ease); }
 
 
-/* the ceiling rule */
-/* sits at the break between L2 and L3 — nudged with the deck, not a fixed % */
+
+
 .s3-ceiling {
   position: absolute; left: 0; right: 0; top: 62%; z-index: 1; pointer-events: none;
   border-top: 1px dashed var(--border-2);
@@ -1042,12 +932,9 @@ body.menu-open { overflow: hidden; }
   text-transform: uppercase; color: var(--text-3);
 }
 
-/* --- the text column --- */
-/* deck stacks L0 at the bottom, so the column reads L6 down to L0 to match.
-   flex-direction reverses paint order only — DOM order stays L0..L6 so the
-   data-i wiring and hover mapping are unaffected. */
-/* height must not depend on which row is open, or the grid reflows and the
-   deck jumps as you move down the list */
+
+
+
 .s3-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column-reverse; gap: 6px; justify-content: center; align-items: stretch; min-width: 0; }
 .s3-list li {
   padding: 13px 16px; border-radius: var(--r-lg); border: 1px solid transparent;
@@ -1058,8 +945,7 @@ body.menu-open { overflow: hidden; }
 .s3-list li.on { background: var(--bg-card); border-color: var(--border); box-shadow: var(--shadow-soft); }
 .s3-li-h { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 .s3-li-n { font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--text-3); }
-/* The title span carries the type; the h3 is only a wrapper so the heading
-   sits outside the <button> (a heading inside a button is not exposed as one). */
+
 .s3-list h3 { font-size: 15.5px; font-weight: 700; letter-spacing: -0.02em; margin: 0; }
 .s3-li-hd { display: block; margin: 0; font: inherit; }
 .s3-li-t { font-size: 15.5px; font-weight: 700; letter-spacing: -0.02em; }
@@ -1071,10 +957,7 @@ body.menu-open { overflow: hidden; }
 .s3-list li[data-tier="upper"] .s3-li-tag { background: var(--accent-soft); color: var(--accent-text); }.s3-list li.on .s3-li-body { grid-template-rows: 1fr; }.s3-list li p { font-size: 13px; line-height: 1.6; color: var(--text-2); margin: 9px 0 0; text-wrap: pretty; }
 .s3-list li p.s3-li-v { color: var(--text-3); font-size: 12.5px; }
 
-/* Left-aligned, not centred. Every heading, lede and card on these pages is
-   left-aligned; a centred paragraph between them reads as a caption that lost
-   its picture, and on /features it sat directly under left-aligned body copy
-   so the two blocks looked misaligned rather than deliberate. */
+
 .stack-kicker {
   margin: 30px 0 0; max-width: 68ch; text-align: left; font-size: 15px;
   line-height: 1.6; color: var(--text-2); text-wrap: pretty;
@@ -1091,13 +974,13 @@ body.menu-open { overflow: hidden; }
   .s3-list li p { display: block; }
   .s3-list li { cursor: default; }
 }
-/* no motion: flatten to a plain readable list */
+
 @media (prefers-reduced-motion: reduce) {
   .s3-plate { transition: none; }
   .s3-list li p { display: block; }
 }
 
-/* ---------- ground-truth zone: the two-verdict trap ---------- */
+
 .gt-trap { display: grid; grid-template-columns: 1fr auto 1fr; gap: 0; margin-top: 44px; align-items: stretch; }
 .gt-lens { background: var(--bg-card); border: 1px solid var(--border); box-shadow: var(--shadow-card); padding: 24px 22px; display: flex; flex-direction: column; }
 .gt-above { border-radius: var(--r-xl) 0 0 var(--r-xl); }
@@ -1116,7 +999,7 @@ body.menu-open { overflow: hidden; }
 .gt-verdict-scale b { color: var(--text-2); }
 .gt-verdict-stop b { color: var(--accent-text); }
 
-/* the dividing line between the lenses */
+
 .gt-line { position: relative; width: 46px; display: grid; place-items: center; }
 .gt-line::before { content: ""; position: absolute; top: 0; bottom: 0; width: 2px; background: repeating-linear-gradient(to bottom, var(--border-2) 0 6px, transparent 6px 12px); }
 .gt-line span {
@@ -1142,11 +1025,11 @@ body.menu-open { overflow: hidden; }
   .gt-points { grid-template-columns: 1fr; }
 }
 
-/* ---------- the math (ROI calculator) ---------- */
+
 .math-wrap { display: grid; grid-template-columns: 1.55fr 1fr; gap: 20px; margin-top: 44px; align-items: start; }
 .math-calc { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--r-xl); box-shadow: var(--shadow-card); padding: 26px 24px 22px; }
 
-/* spend input */
+
 .math-input label { display: block; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: var(--text-3); }
 .math-field { display: flex; align-items: center; gap: 12px; margin-top: 14px; }
 .math-field .math-cur { font-size: 15px; font-weight: 700; color: var(--text-3); }
@@ -1167,7 +1050,7 @@ input[type="range"][data-math-spend]::-moz-range-thumb {
 }
 input[type="range"][data-math-spend]:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-/* leak rows */
+
 .math-rows { margin-top: 26px; border-top: 1px solid var(--border); }
 .math-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--border); }
 .math-row-t { font-size: 14.5px; font-weight: 600; letter-spacing: -0.01em; }
@@ -1183,7 +1066,7 @@ input[type="range"][data-math-spend]:focus-visible { outline: 2px solid var(--ac
 .math-foot svg { width: 15px; height: 15px; flex: none; margin-top: 2px; stroke-width: 2; }
 .math-foot b { color: var(--text-2); font-weight: 700; }
 
-/* aside */
+
 .math-aside { background: var(--bg-sub); border: 1px solid var(--border); border-radius: var(--r-xl); padding: 24px 22px; }
 .math-aside-t { font-size: 15px; font-weight: 700; letter-spacing: -0.015em; }
 .math-aside p { font-size: 13.5px; line-height: 1.65; color: var(--text-2); margin: 12px 0 0; text-wrap: pretty; }
@@ -1197,15 +1080,15 @@ input[type="range"][data-math-spend]:focus-visible { outline: 2px solid var(--ac
   .math-total .math-row-r b { font-size: 22px; }
   .math-row-s { display: none; }
 }
-/* ---------- integrations ---------- */
+
 .integ { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center; }.ilogo.live svg { color: var(--ok); }
-/* ---------- stats ---------- */
+
 .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
 .stat { padding: 4px 0; }
 .stat-v { font-family: var(--font-editorial); font-weight: 500; font-size: 46px; line-height: 1; letter-spacing: -0.025em; font-variant-numeric: tabular-nums; color: var(--text); }
 .stat-l { font-size: 13px; color: var(--text-2); margin-top: 12px; line-height: 1.5; }.quote .by { font-family: var(--font-ui); font-size: 13px; color: var(--text-3); margin-top: 24px; letter-spacing: 0.01em; }
 
-/* ---------- FAQ ---------- */
+
 .faq { margin-top: 44px; border-top: 1px solid var(--border-2); }
 .faq details { border-bottom: 1px solid var(--border-2); }
 .faq summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 22px 4px; cursor: pointer; list-style: none; font-size: 16.5px; font-weight: 600; letter-spacing: -0.015em; }
@@ -1214,7 +1097,7 @@ input[type="range"][data-math-spend]:focus-visible { outline: 2px solid var(--ac
 .faq details[open] summary .chev { transform: rotate(180deg); }
 .faq-a { padding: 0 4px 24px; font-size: 14.5px; line-height: 1.65; color: var(--text-2); max-width: 720px; text-wrap: pretty; }
 
-/* ---------- CTA + lead form ---------- */
+
 .cta { background: var(--bg-card); border: 1px solid var(--border); border-radius: 22px; box-shadow: var(--shadow-card); padding: 56px; position: relative; overflow: hidden; }
 .cta::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(620px 320px at 88% -20%, rgba(255,90,44,0.08), transparent 60%); }
 .cta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; position: relative; }
@@ -1222,9 +1105,7 @@ input[type="range"][data-math-spend]:focus-visible { outline: 2px solid var(--ac
 .cta h2 em { font-family: var(--font-editorial); font-style: italic; font-weight: 500; color: var(--accent); }
 .cta p { font-size: 15px; line-height: 1.6; color: var(--text-2); margin: 16px 0 0; max-width: 420px; }
 .cta-points { list-style: none; margin: 24px 0 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
-/* Normal flow, not flex: a flex li turns every inline child (<b>, <em>) into its
-   own flex item, so a wrapping sentence broke into staggered columns at 390px.
-   The tick is positioned instead, which keeps the text one continuous run. */
+
 .cta-points li { position: relative; padding-left: 26px; font-size: 13.5px; line-height: 1.5; color: var(--text-2); }
 .cta-points li svg { position: absolute; left: 0; top: 0.15em; width: 16px; height: 16px; color: var(--ok); stroke-width: 2; }
 
@@ -1265,17 +1146,14 @@ input[type="range"][data-math-spend]:focus-visible { outline: 2px solid var(--ac
 .lead.sent form { display: none; }
 .lead.sent .lead-done { display: block; }
 
-/* ---------- footer ---------- */
+
 .footer { background: var(--bg-band); border-top: 1px solid var(--border); padding: 56px 0 36px; margin-top: 8px; }
 .foot-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr 1fr; gap: 40px; }
-/* the footer is the site's second navigation: 17 destination pages used to be
-   unreachable from it, including every product and solution page. Five columns
-   at desktop, folding to two and then one. */
+
 @media (max-width: 1180px) { .foot-grid { grid-template-columns: 1.4fr 1fr 1fr 1fr; } }
 .foot-brand .brand { margin-bottom: 16px; }
 .foot-brand p { font-size: 13px; line-height: 1.6; color: var(--text-3); max-width: 280px; }
-/* .foot-h is an h2 for document outline reasons — h4 after page content ending
-   in h2/h3 skipped a heading level on 44 pages. Styling is unchanged. */
+
 .foot-col .foot-h { font-family: var(--font-mono); font-size: 10px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-3); margin: 0 0 16px; }
 .foot-col a, .foot-col button { display: block; font-size: 13.5px; color: var(--text-2); padding: 6px 0; transition: color 120ms; }
 .foot-col button { width: 100%; border: 0; background: none; font-family: inherit; font-weight: inherit; text-align: left; cursor: pointer; }
@@ -1288,7 +1166,7 @@ input[type="range"][data-math-spend]:focus-visible { outline: 2px solid var(--ac
 .foot-social a:hover { color: var(--text); border-color: var(--text-4); }
 .foot-social svg { width: 16px; height: 16px; stroke-width: 2; }
 
-/* ---------- consent manager ---------- */
+
 #cc-main {
   --cc-font-family: var(--font-ui);
   --cc-modal-border-radius: var(--r-xl);
@@ -1326,10 +1204,7 @@ input[type="range"][data-math-spend]:focus-visible { outline: 2px solid var(--ac
   font-weight: 700;
   letter-spacing: -0.02em;
 }
-/* Compact the consent cloud: it was 864x164 (18% of a 900px viewport) with the three
-   buttons stacked in two rows. Wider + one button row + one-line copy = 780x103.
-   Accept and Reject keep identical weight (equalWeightButtons is a consent-law
-   requirement, not a style choice); only "Choose" drops to a link. */
+
 #cc-main .cm--cloud { max-width: 780px; }
 #cc-main .cm--cloud .cm__body { align-items: center; }
 #cc-main .cm--cloud .cm__texts { flex: 1 1 auto; padding: 13px 0; }
@@ -1346,8 +1221,7 @@ input[type="range"][data-math-spend]:focus-visible { outline: 2px solid var(--ac
   text-decoration: underline; text-underline-offset: 2px; padding-inline: 6px;
 }
 #cc-main .cm--cloud .cm__footer { padding: 5px 0 7px; font-size: 11px; }
-/* Phone: the library stacks the body anyway. Keep the 44px touch target there and put
-   Accept/Reject side by side so the sheet does not eat a third of the screen. */
+
 @media (max-width: 640px) {
   #cc-main .cm--cloud .cm__btns { flex-direction: column; align-items: stretch; padding: 4px 18px 12px; }
   #cc-main .cm--cloud .cm__btn { flex: 1 1 0; min-height: 44px; }
@@ -1355,13 +1229,13 @@ input[type="range"][data-math-spend]:focus-visible { outline: 2px solid var(--ac
 }
 #cc-main .pm__btn { min-height: 44px; }
 
-/* ---------- page header (interior pages) ---------- */
+
 .phead { padding: 76px 0 12px; }
 .phead h1 { font-weight: 800; font-size: clamp(34px, 4.6vw, 54px); line-height: 1.04; letter-spacing: -0.04em; margin: 18px 0 0; text-wrap: balance; }
 .phead h1 em { font-family: var(--font-editorial); font-style: italic; font-weight: 500; color: var(--accent); }
 .phead p { font-size: 17px; line-height: 1.6; color: var(--text-2); margin: 20px 0 0; max-width: 600px; }
 
-/* ---------- legal / policy pages ---------- */
+
 .legal { max-width: 768px; margin: 0 auto; }
 .legal-updated { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-3); margin-top: 16px; }
 .legal-intro { font-size: 17px; line-height: 1.66; color: var(--text-2); margin: 22px 0 0; max-width: 100%; text-wrap: pretty; }
@@ -1394,7 +1268,7 @@ input[type="range"][data-math-spend]:focus-visible { outline: 2px solid var(--ac
 .legal-contact a { color: var(--accent-text); text-decoration: none; font-weight: 600; }
 @media (max-width: 640px) { .legal-toc ol { columns: 1; } }
 
-/* ---------- chat cutout (hero + why-chat) ---------- */
+
 .chat-thread { display: flex; flex-direction: column; gap: 11px; margin-top: 6px; }
 .cmsg-user { align-self: flex-end; max-width: 86%; background: var(--accent-fill); color: var(--accent-on); border-radius: 14px 14px 4px 14px; padding: 10px 13px; font-size: 13px; font-weight: 500; line-height: 1.45; }
 .cmsg-bot { align-self: flex-start; max-width: 94%; background: var(--bg-sub); border: 1px solid var(--border); border-radius: 14px 14px 14px 4px; padding: 13px; }
@@ -1415,11 +1289,11 @@ input[type="range"][data-math-spend]:focus-visible { outline: 2px solid var(--ac
 .chat-input .send { width: 30px; height: 30px; flex: none; border-radius: 50%; background: var(--accent); display: grid; place-items: center; color: var(--accent-on); }
 .chat-input .send svg { width: 14px; height: 14px; stroke-width: 2; }
 
-/* ---------- three-layer loop (read / ask / apply) ---------- */
+
 .layers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: clamp(26px, 3vh, 36px); position: relative; }
 
-/* ghost context-layer glyph — whispers above the Execution card */
-/* silent oversized "3A" ghost above the loop cards */
+
+
 .ctx-ghost {
   position: absolute; right: -18px; top: -190px; z-index: 0;
   pointer-events: none; opacity: 0; transform: translateY(22px) scale(.965);
@@ -1429,8 +1303,7 @@ input[type="range"][data-math-spend]:focus-visible { outline: 2px solid var(--ac
 .ctx-ghost-text {
   font-family: var(--font-display, var(--font-sans)); font-weight: 800;
   font-size: 190px; line-height: .78; letter-spacing: -0.05em;
-  /* a graphite mass barely lifted off the paper, with one slow band of
-     light travelling through the letterforms as the reader scrolls */
+  
   background-image: linear-gradient(
     104deg,
     color-mix(in srgb, var(--text-4) 26%, transparent) 0%,
@@ -1451,7 +1324,7 @@ input[type="range"][data-math-spend]:focus-visible { outline: 2px solid var(--ac
 }
 @media (max-width: 1100px) { .ctx-ghost { display: none; } }
 
-/* memory section: brain ghosts over both columns */
+
 .mem-ghost {
   position: absolute; top: 8px; width: 240px; z-index: 0;
   pointer-events: none; opacity: 0; transform: translateY(24px) scale(.96);
@@ -1464,7 +1337,7 @@ input[type="range"][data-math-spend]:focus-visible { outline: 2px solid var(--ac
 .mem-ghost svg {
   width: 100%; height: auto; fill: none; stroke: var(--accent); stroke-width: 1.1;
   stroke-linecap: round; stroke-linejoin: round; opacity: .34;
-  /* the light band inside the strokes drifts as the reader scrolls */
+  
   --gm: calc(var(--ghost-p, .5) * 100%);
   -webkit-mask-image: linear-gradient(200deg,
     rgba(0,0,0,.16) 0%,
@@ -1486,9 +1359,7 @@ input[type="range"][data-math-spend]:focus-visible { outline: 2px solid var(--ac
 @media (prefers-reduced-motion: reduce) { .mem-ghost svg { animation: none; } }
 @media (max-width: 1100px) { .mem-ghost { display: none; } }
 
-/* ---------- section echo glyphs: the rail figure, restated large & quiet ----
-   Each chapter repeats its own metaphor on the right-hand side, barely there,
-   with a slow band of light travelling through the strokes on scroll. */
+
 .wrap:has(> .sec-ghost) { position: relative; }
 .sec-ghost {
   position: absolute; right: -42px; top: -34px; width: 250px; z-index: 0;
@@ -1531,7 +1402,7 @@ input[type="range"][data-math-spend]:focus-visible { outline: 2px solid var(--ac
 .layer-ex li svg { width: 15px; height: 15px; flex: none; margin-top: 1px; color: var(--accent); stroke-width: 2; }
 .layer-ex li b { color: var(--text); font-weight: 600; }
 
-/* ---------- real report block ---------- */
+
 .report-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 .report-pot { display: inline-flex; align-items: baseline; gap: 7px; }
 .report-pot .v { font-family: var(--font-editorial); font-weight: 500; font-size: 26px; letter-spacing: -0.02em; color: var(--ok); font-variant-numeric: tabular-nums; }
@@ -1553,7 +1424,7 @@ input[type="range"][data-math-spend]:focus-visible { outline: 2px solid var(--ac
 .ptier .pflag { font-family: var(--font-mono); font-size: 9px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-text); height: 14px; }
 .ptier .pn { font-size: 16px; font-weight: 700; letter-spacing: -0.02em; margin-top: 4px; }.ptier .pp .amt { font-family: var(--font-editorial); font-weight: 500; font-size: 30px; line-height: 1; letter-spacing: -0.02em; }
 .ptier .pp .per { font-size: 11.5px; color: var(--text-3); }
-/* ---------- responsive: new components ---------- */
+
 @media (max-width: 920px) {
   .layers { grid-template-columns: 1fr; }
   .ptiers { grid-template-columns: 1fr 1fr; }
@@ -1564,20 +1435,16 @@ input[type="range"][data-math-spend]:focus-visible { outline: 2px solid var(--ac
   .ptiers { grid-template-columns: 1fr; }
 }.tier, .principle, .who-card, .pcard, .blog-feature { box-shadow: var(--shadow-card); }.panel.before, .tier-feats { box-shadow: none; }
 
-/* ---------- responsive ---------- */
+
 @media (max-width: 920px) {
   .hero-grid, .integ, .cta-grid { grid-template-columns: 1fr; gap: 40px; }
-  /* Explicit stacking order: the copy (headline → lede → CTA) reads first, the
-     chat card follows. This matches DOM order, but pin it so a later rule
-     can't flip the card above the headline. */
+  
   .hero-copy { order: 1; }
   .hero-cutout { order: 2; }
   .split, .steps, .feat-grid, .stats, .foot-grid, .creative-grid { grid-template-columns: 1fr 1fr; }
   .feat-wide { grid-column: span 2; }
 }
-/* The hero stacks at 920px but the nav used to hold on until 640px, so between
-   641 and 920 the full nav sat in a narrow bar. Switch to the drawer with the
-   layout, not 280px later — the dropdown needs the room most. */
+
 @media (max-width: 920px) {
   .nav-links, .nav-login { display: none; }
   .nav-right > .btn { display: none; }
@@ -1593,12 +1460,9 @@ input[type="range"][data-math-spend]:focus-visible { outline: 2px solid var(--ac
   .stats { grid-template-columns: 1fr 1fr; }
 }
 
-/* ============================================================
-   MOTION + RICHNESS LAYER (marketing only)
-   Ambient motion gated on no-preference + html.js fallback.
-   ============================================================ */
 
-/* aurora drift on the warm background */
+
+
 @media (prefers-reduced-motion: no-preference) {
   body::before { animation: aurora-drift 26s ease-in-out infinite alternate; }
   @keyframes aurora-drift {
@@ -1607,13 +1471,12 @@ input[type="range"][data-math-spend]:focus-visible { outline: 2px solid var(--ac
   }
 }
 
-/* scroll reveal — only hides when JS is live AND motion is allowed */
+
 @media (prefers-reduced-motion: no-preference) {
   html.js [data-reveal] {
     opacity: 0;
     transform: translateY(30px);
-    /* slight blur on entry — the element resolves into focus rather than
-       just sliding. Cheap (compositor-only) and reads as expensive. */
+    
     filter: blur(6px);
     transition:
       opacity 0.85s var(--ease),
@@ -1634,7 +1497,7 @@ input[type="range"][data-math-spend]:focus-visible { outline: 2px solid var(--ac
 }
 .tier:hover, .pcard:hover { transform: translateY(-3px); border-color: color-mix(in srgb, var(--accent) 30%, var(--border)); }
 
-/* primary button sheen */
+
 .btn-primary { position: relative; overflow: hidden; }
 .btn-primary::after {
   content: ""; position: absolute; top: 0; left: -130%; width: 55%; height: 100%;
@@ -1646,7 +1509,7 @@ input[type="range"][data-math-spend]:focus-visible { outline: 2px solid var(--ac
   @keyframes btn-sheen { to { left: 150%; } }
 }
 
-/* floating chips around hero cutout */
+
 .hero-cutout { position: relative; }
 .float-chip {
   position: absolute; z-index: 4; display: inline-flex; align-items: center; gap: 8px;
@@ -1667,7 +1530,7 @@ input[type="range"][data-math-spend]:focus-visible { outline: 2px solid var(--ac
 }
 @media (max-width: 900px) { .float-chip { display: none; } }
 
-/* hero chat build-in */
+
 .chat-step { opacity: 0; transform: translateY(8px); }
 .chat-step.show { opacity: 1; transform: none; transition: opacity 0.42s var(--ease), transform 0.42s var(--ease); }
 html:not(.js) .chat-step { opacity: 1; transform: none; }
@@ -1680,9 +1543,8 @@ html:not(.js) .chat-step { opacity: 1; transform: none; }
   @keyframes blink { 0%,60%,100% { opacity: 0.25; transform: translateY(0); } 30% { opacity: 1; transform: translateY(-3px); } }
 }
 
-/* capability marquee */
-/* the "Just ask — in plain language" label above this strip was cut: the chips
-   are already questions in plain language, so it captioned what it showed. */
+
+
 .marquee-band { padding: 18px 0; background: transparent; border-top: 0; border-bottom: 1px solid var(--border); position: relative; z-index: 1; overflow: hidden; }
 .marquee { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); }
 .marquee + .marquee { margin-top: 12px; }
@@ -1696,7 +1558,7 @@ html:not(.js) .chat-step { opacity: 1; transform: none; }
 .qchip { display: inline-flex; align-items: center; gap: 9px; height: 42px; padding: 0 17px; border-radius: var(--r-pill); background: var(--bg-card); border: 1px solid var(--border); box-shadow: var(--shadow-soft); font-size: 13.5px; font-weight: 500; color: var(--text); white-space: nowrap; }
 .qchip svg { width: 15px; height: 15px; color: var(--accent); stroke-width: 2; flex: none; }
 
-/* report scan sweep on reveal */
+
 .report-scan { position: relative; }
 @media (prefers-reduced-motion: no-preference) {
   .report-scan.in::after {
@@ -1708,19 +1570,15 @@ html:not(.js) .chat-step { opacity: 1; transform: none; }
   @keyframes scandown { 0% { transform: translateY(-25%); opacity: 0; } 25% { opacity: 1; } 100% { transform: translateY(190%); opacity: 0; } }
 }
 
-/* nav shadow once scrolled */
+
 .nav { transition: box-shadow 0.2s var(--ease), background 0.2s var(--ease); }
 .nav.scrolled { box-shadow: 0 1px 0 var(--border), 0 12px 30px -20px rgba(28,25,20,0.22); }
 
-/* ============================================================
-   Language switcher (EN ⇄ TR)
-   ============================================================ */
 
-/* ═══════════════════════════════════════════════════════════
-   Audience pages — /for-agencies and /for-in-house
-   ═══════════════════════════════════════════════════════════ */
 
-/* two-lens comparison ("the trap") */
+
+
+
 .two-lens{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.8vw,20px);
   margin:clamp(18px,2.6vh,30px) 0 clamp(14px,2vh,22px);}
 .lens{border:1px solid var(--border);background:var(--bg-card);border-radius:var(--r-lg);
@@ -1740,7 +1598,7 @@ html:not(.js) .chat-step { opacity: 1; transform: none; }
 .lens-kicker{font-size:15px;line-height:1.6;color:var(--text);max-width:80ch;margin-top:6px;}
 .lens-kicker strong{color: var(--accent-text);}
 
-/* product cards used on the audience pages */
+
 .pcard{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r-lg);
   padding:clamp(16px,2vw,24px);box-shadow:var(--shadow-soft);display:flex;flex-direction:column;gap:9px;}
 .pcard h3{font-size:16px;font-weight:650;letter-spacing:-.01em;color:var(--text);margin:0;}
@@ -1751,7 +1609,7 @@ html:not(.js) .chat-step { opacity: 1; transform: none; }
   .two-lens{grid-template-columns:1fr;}
 }
 
-/* simple responsive grids for the audience pages */
+
 .grid{display:grid;gap:clamp(12px,1.8vw,20px);margin-top:clamp(16px,2.4vh,26px);}
 .grid.g3{grid-template-columns:repeat(3,1fr);}
 .grid.g2{grid-template-columns:repeat(2,1fr);}
@@ -1759,14 +1617,10 @@ html:not(.js) .chat-step { opacity: 1; transform: none; }
 @media (max-width:640px){.grid.g3,.grid.g2{grid-template-columns:1fr;}}
 
 
-/* ---------- builds slider: depth on the pinned track ---------- */
-/* Cards recede as they leave centre, so the pinned scroll reads as moving
-   through a deck rather than sliding a flat strip. Driven by --p (0 at
-   centre, 1 at the edges) which the pin handler sets per card. */
+
+
 .builds > .build {
-  /* deeper recede + a slight drop and tilt: off-centre cards read as sitting
-     behind the focused one, not beside it. Values are the ceiling of what
-     stays legible — past ~0.14 scale the mini-charts start to mush. */
+  
   transform:
     scale(calc(1 - 0.14 * var(--p, 0)))
     translateY(calc(18px * var(--p, 0)))
@@ -1781,7 +1635,7 @@ html:not(.js) .chat-step { opacity: 1; transform: none; }
   .builds > .build { transform: none; opacity: 1; filter: none; }
 }
 
-/* ---------- article reading progress ---------- */
+
 .readbar {
   position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 60;
   background: transparent; pointer-events: none;
@@ -1793,12 +1647,12 @@ html:not(.js) .chat-step { opacity: 1; transform: none; }
 }
 @media (prefers-reduced-motion: reduce) { .readbar i { transition: none; } }
 
-/* ---------- blog listing ---------- */
+
 .topics .topic { cursor: pointer; }
 .grid-posts .pcard { transition: transform 260ms var(--ease), box-shadow 260ms var(--ease), border-color 260ms var(--ease), opacity 220ms var(--ease); }
 .grid-posts .pcard:hover { transform: translateY(-3px); box-shadow: var(--shadow-card); border-color: var(--border-2); }
 .grid-posts .pcard.hide { display: none; }
-/* cover image gets a slow zoom on hover — the card reads as a surface, not a link */
+
 .pcard-cover { overflow: hidden; }
 .pcard-cover img { transition: transform 520ms var(--ease); display: block; width: 100%; height: auto; }
 .pcard:hover .pcard-cover img { transform: scale(1.04); }
@@ -1806,9 +1660,7 @@ html:not(.js) .chat-step { opacity: 1; transform: none; }
 .blog-feature .feature-visual img { transition: transform 620ms var(--ease); }
 .blog-feature:hover .feature-visual img { transform: scale(1.03); }
 
-/* ---------- builds: card is now near-full-width, so scale its contents ----------
-   The mini dashboards are the proof in this section; at half-width their
-   numbers were decorative. These sizes make them legible at arm's length. */
+
 .build-canvas { margin: 18px 20px 20px; padding: 18px; }.build-cap .name { font-size: 16px; }
 .build-cap .tag { font-size: 11px; }
 .mkt { padding: 13px 14px; }
@@ -1833,11 +1685,7 @@ html:not(.js) .chat-step { opacity: 1; transform: none; }
   .mini-chart svg { height: 52px; }
 }
 
-/* ============================================================
-   INLINE CTA — a way out of the page at every high-intent beat
-   The page ran 16 sections with one CTA at the very bottom: a
-   reader convinced at section 6 had nowhere to go.
-   ============================================================ */
+
 .cta-inline {
   display: flex; align-items: center; justify-content: space-between;
   gap: 24px; flex-wrap: wrap;
@@ -1861,11 +1709,7 @@ html:not(.js) .chat-step { opacity: 1; transform: none; }
 }
 
 
-/* ---------- lead form: flatter, less repetition ----------
-   Was a grey card nested inside the white CTA card, with "Request a demo"
-   appearing three times (eyebrow, form heading, button) and the same sentence
-   printed on both sides. The form is the only thing in its column, so it
-   doesn't need its own container. */
+
 .cta-grid { align-items: start; }
 .lead-demo {
   background: transparent;
@@ -1879,28 +1723,18 @@ html:not(.js) .chat-step { opacity: 1; transform: none; }
 .lead-demo .lf-field + .lf-field { margin-top: 14px; }
 .lead-demo .btn { width: 100%; justify-content: center; margin-top: 20px; }
 .lead-demo .lead-fine { text-align: center; }
-/* the copy column is shorter than the form — let it sit against the top edge
-   instead of floating in the middle of a tall row */
+
 @media (min-width: 861px) {
   .cta-grid > div:first-child { padding-top: 4px; }
 }
 
-/* ============================================================
-   HOW WE'RE BUILT — deck assembles on first view
-   ------------------------------------------------------------
-   The seven layers are the argument of this section, so they
-   should arrive as a stack being built, not appear pre-stacked.
-   Each plate drops in from below along the same Z axis it already
-   uses, staggered bottom-up (L0 first) so the order reads as
-   foundation → moat. Uses --in, a separate offset from --off, so
-   the hover/focus logic that owns --off is untouched.
-   ============================================================ */
+
 @property --in {
   syntax: "<length>"; inherits: false; initial-value: 0px;
 }
 @media (prefers-reduced-motion: no-preference) {
   html.js .s3-plate {
-    /* composed with the existing --z/--off translate */
+    
     transform: translateZ(calc(var(--z) + var(--off) + var(--in)));
   }
   html.js [data-stack]:not(.in) .s3-plate {
@@ -1914,14 +1748,12 @@ html:not(.js) .chat-step { opacity: 1; transform: none; }
       --in 900ms cubic-bezier(.16,1,.3,1),
       opacity 500ms var(--ease),
       transform 400ms var(--ease);
-    /* L0 lands first, each higher layer follows */
+    
     transition-delay: calc(var(--i) * 110ms);
   }
 }
 
-/* ---------- stack: connector from each label to the deck ----------
-   A short rule that reaches toward the scene, plus a dot at the tip. It
-   brightens with the active row, so the eye can trace label → plate. */
+
 .s3-list li { position: relative; }
 .s3-list li::after {
   content: ""; position: absolute; top: 22px;
@@ -1931,7 +1763,7 @@ html:not(.js) .chat-step { opacity: 1; transform: none; }
 .s3-list-b li::after { left: -22px; }
 .s3-list li.on::after { background: var(--accent); width: 26px; }
 .s3-list-b li.on::after { left: -28px; }
-/* the tip dot */
+
 .s3-list li::before {
   content: ""; position: absolute; top: 19.5px;
   width: 6px; height: 6px; border-radius: 50%;
@@ -1942,59 +1774,43 @@ html:not(.js) .chat-step { opacity: 1; transform: none; }
 .s3-list li.on::before { background: var(--accent); transform: scale(1.35); }
 .s3-list-b li.on::before { left: -31px; }
 
-/* stacked layout: connectors would point at nothing once the columns wrap */
+
 @media (max-width: 980px) {
   .stack3d { grid-template-columns: 1fr; gap: 24px; }
   .stack3d .s3-scene { order: -1; }
   .s3-list li::after, .s3-list li::before { display: none; }
 }
 
-/* the open row's body must not spill past its column */
+
 .s3-list li.on { position: relative; z-index: 2; }
 .s3-list li.on { max-width: 100%; }
 .s3-list li p { max-width: 100%; }
-/* scene shouldn't dominate: at three columns it has less room than before */
-/* bigger plates now that the card shell is gone and they own the column */
-/* deck at this scale needs a taller box than 5/4, or the top plate clips and
-   the kicker below collides with the bottom one */
-/* The deck's plates span roughly 96–147% of a 540px box, i.e. it overflows.
-   Percentage anchors can only work if the box actually contains the deck. */
+
+
+
+
 .stack3d .s3-scene { --s: 0.78; aspect-ratio: auto; min-height: 560px; }
 
-/* Phone: that unconditional rule above sits after the @media block that tries
-   to shrink the deck, so at 390px the scene kept --s: 0.78 and the plates —
-   which paint 96–147% of their own box, as the comment above admits — landed on
-   the section's paragraph. The last two lines sat behind a plate and could not
-   be read. This does NOT register as overflow: getBoundingClientRect reports
-   the flattened box of a 3D-rotated element, not the painted one, so it was
-   found by sampling pixels, not by measuring boxes. Smaller deck, and enough
-   top padding that the plates start below the copy. */
-/* Superseded 2026-08-12. Shrinking the deck to --s:0.5 and pushing it down with
-   190px of padding still spent ~half a phone screen on decoration that carries
-   no information the list beside it doesn't already carry — and left a 340px
-   well under it. On phones the deck is dropped entirely and the L0–L6 list is
-   the component. Kept at >560px where it has the room to mean something. */
+
+
 @media (max-width: 560px) {
   .stack3d .s3-scene { display: none; }
   .stack3d { gap: 0; }
   .s3-detail { margin-top: 18px; }
 }
 
-/* ---------- stack: zone labels after the card shell was removed ----------
-   They used to sit in the panel's corners. With no panel they landed on top
-   of the plates and became unreadable — push them out past the deck. */
-/* the dashed ceiling rule loses its container too — keep it inside the deck */
+
+
 .stack3d .s3-ceiling { left: 8%; right: 8%; }
 
-/* Tag sits beside the title, never under it: the row header wraps only as a
-   last resort, and the tag itself never breaks mid-phrase. */
+
 .s3-li-h { flex-wrap: nowrap; }
 .s3-li-tag { white-space: nowrap; flex: none; }
 .s3-list h3, .s3-li-t { min-width: 0; }
 @media (max-width: 1180px) { .s3-li-h { flex-wrap: wrap; } }
 
 
-/* the one description panel */
+
 .s3-detail {
   position: relative; margin: 26px auto 0; max-width: 720px; min-height: 92px;
   text-align: center;
@@ -2017,29 +1833,14 @@ html:not(.js) .chat-step { opacity: 1; transform: none; }
   .s3-detail { text-align: left; margin-top: 18px; }
 }
 
-/* ============================================================
-   HOW WE'RE BUILT — description · deck · layers
-   ------------------------------------------------------------
-   All seven labels live in ONE column on the right, top-down
-   L6→L0, each pinned to its plate's centre (--cy) at a fixed
-   height. The description sits opposite, in its own column, and
-   swaps with the active layer. Because no element in the label
-   column ever changes size, overlap is impossible by
-   construction rather than by tuning.
-   ============================================================ */
+
 .stack3d {
   display: grid; align-items: center;
   grid-template-columns: minmax(0, 0.92fr) minmax(0, 1fr) minmax(0, 1.08fr);
   gap: 26px; margin-top: 44px;
 }
 @media (min-width: 981px) {
-  /* Rows used to be position:absolute, each pinned to its plate's height via
-     an inline --cy (8.31%, 16.58%, …) and centred with translateY(-50%). Two
-     things went wrong with that: the anchors only covered 8–52% of the column,
-     so the list bunched into the top half; and because each row grew from its
-     own centre, selecting one made it overlap its neighbours — which is what
-     read as "the selected layer jumps to the top". Rows are now in normal
-     flow, evenly spaced. Nothing moves when you pick one. */
+  
   .s3-list {
     position: relative; display: flex; flex-direction: column;
     justify-content: center; gap: 2px;
@@ -2056,16 +1857,15 @@ html:not(.js) .chat-step { opacity: 1; transform: none; }
     background: var(--bg-card); border-color: var(--border);
     box-shadow: var(--shadow-soft); transform: none;
   }
-  /* the connector and its dot sit outside the row's card, so the active
-     row's background can never cover the trace running down the column */
+  
   .s3-list li::before, .s3-list li::after { z-index: 3; }
-  /* connector reaches left, toward the deck */
+  
   .s3-list li::after  { left: -22px; right: auto; top: 50%; margin-top: -0.5px; }
   .s3-list li::before { left: -25px; right: auto; top: 50%; margin-top: -3px; }
   .s3-list li.on::after  { left: -28px; }
   .s3-list li.on::before { left: -31px; }
 
-  /* description column: right-aligned so it reads toward the deck */
+  
   .s3-detail { text-align: right; margin: 0; max-width: none; min-height: 150px;
                display: flex; flex-direction: column; justify-content: center; }
   .s3-detail .s3-d p { margin-left: auto; }
@@ -2075,30 +1875,20 @@ html:not(.js) .chat-step { opacity: 1; transform: none; }
   .stack3d .s3-scene { order: -1; }
   .s3-detail { order: 1; }
 }
-/* labels are one line each — the row is a fixed 40px, so a wrap would clip */
+
 @media (min-width: 981px) { .s3-list h3 { white-space: nowrap; } }
 
-/* ---------- report findings: scan first, read on demand ----------
-   Four findings with their reasoning all expanded is 180 words of prose in
-   the one place the page is meant to feel like a *report*. Collapsed, the
-   list reads as four ranked headlines with the money attached — which is how
-   an audit is actually skimmed. The first stays open as a worked example. */
+
 .report-flags .rflag { cursor: default; }
-/* Both findings now render open (site.js sets .open, and the default below is
-   open too so nothing collapses before JS runs). The grid-rows collapse trick
-   is kept only so the markup stays identical, but it starts at 1fr. */
+
 .report-flags .rflag .rflag-w {
   display: grid; grid-template-rows: 1fr; margin-top: 4px;
 }
-/* the animated row must hold exactly ONE grid child, or every inline <b> is
-   promoted to its own row and the sentence breaks apart. Wrap the copy in
-   .rflag-copy and animate that. */
-.report-flags .rflag .rflag-w > .rflag-copy { display: block; overflow: hidden; min-height: 0; }
-/* affordance: a chevron that turns when open */
 
-/* ---------- stack: the description gets a card ----------
-   Right-aligned prose floating on the page background read as an
-   afterthought. In a card it reads as the deck's read-out. */
+.report-flags .rflag .rflag-w > .rflag-copy { display: block; overflow: hidden; min-height: 0; }
+
+
+
 @media (min-width: 981px) {
   .s3-detail {
     text-align: left;
@@ -2112,7 +1902,7 @@ html:not(.js) .chat-step { opacity: 1; transform: none; }
   .s3-detail .s3-d p { margin-left: 0; }
 }
 
-/* the audit ceiling, marked in the layer column where it belongs */
+
 @media (min-width: 981px) {
   .s3-list li.s3-div {
     height: 20px; padding: 0 12px; pointer-events: none;
@@ -2128,16 +1918,13 @@ html:not(.js) .chat-step { opacity: 1; transform: none; }
 }
 @media (max-width: 980px) { .s3-list li.s3-div { display: none; } }
 
-/* ---------- comparison matrix: make the point visible in one glance ----------
-   25 cells of mostly dashes made the reader work for a conclusion that should
-   land instantly. The Adgent column is lifted out as a highlighted band; the
-   competitor columns recede so the eye reads the shape, not every cell. */
+
 .matrix { border-collapse: separate; border-spacing: 0; }
 .matrix th, .matrix td { transition: background 160ms var(--ease); }
-/* competitor cells: quieter */
+
 .matrix td:not(.us) { color: var(--text-4); }
 .matrix thead th:not(.mx-us):not(.mx-cap) { color: var(--text-3); font-weight: 600; }
-/* the Adgent column reads as one continuous highlighted band */
+
 .matrix .us { background: var(--accent-soft); }
 .matrix thead .mx-us {
   color: var(--accent-text); font-weight: 800; background: var(--accent-soft);
@@ -2146,12 +1933,10 @@ html:not(.js) .chat-step { opacity: 1; transform: none; }
 }
 .matrix tbody tr:hover td:not(.us) { background: var(--bg-hover); }
 .matrix tbody tr:hover th { background: var(--bg-hover); }
-/* capability labels carry the weight now */
+
 .matrix tbody th { font-weight: 600; color: var(--text); }
 
-/* ---------- FAQ: cards, not bare rules ----------
-   A stack of hairlines reads as a legal appendix. Cards give each question
-   a surface, and the open one lifts so the answer feels like a panel. */
+
 .faq { border-top: none; display: flex; flex-direction: column; gap: 10px; }
 .faq details {
   border: 1px solid var(--border); border-radius: var(--r-lg);
@@ -2199,13 +1984,13 @@ html:not(.js) .chat-step { opacity: 1; transform: none; }
   .hero-particles i:nth-child(8){animation-duration:22s; animation-delay:-2s;}
 }
 
-/* --- type + chrome recoloured for the dark ground --- */
+
 .hero-dark .hero-slogan .w { color: rgba(244,242,238,0.5); }
 .hero-dark .hero-slogan .w3 { color: var(--accent); }
 .hero-dark .hero-slogan .arw { color: rgba(244,242,238,0.28); }.hero-dark .hero-lede { color: rgba(244,242,238,0.74); }
 .hero-dark .hero-lede strong { color: #fff; }
 .hero-dark .hero-note { color: rgba(244,242,238,0.42); }
-/* the product cutout becomes a lit panel on the dark deck */
+
 .hero-dark .cutout {
   background: rgba(255,255,255,0.045);
   border-color: rgba(255,255,255,0.10);
@@ -2219,7 +2004,7 @@ html:not(.js) .chat-step { opacity: 1; transform: none; }
 }
 .hero-dark .float-chip .lbl { color: rgba(244,242,238,0.5); }
 
-/* --- chat panel on the dark deck --- */
+
 .hero-dark .cmsg-bot {
   background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.10);
 }
@@ -2240,9 +2025,7 @@ html:not(.js) .chat-step { opacity: 1; transform: none; }
 .hero-dark .typing i { background: rgba(244,242,238,0.5); }
 
 
-/* ---------- FAQ: two columns, and a standing offer beside them ----------
-   A narrow question list left a dead half-page. The aside fills it with the
-   thing a hesitating reader actually needs: the offer, restated. */
+
 .faq-grid { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 0.75fr); gap: 40px; margin-top: 40px; align-items: start; }
 .faq { margin-top: 0; }
 .faq-aside { position: sticky; top: 96px; }
@@ -2267,25 +2050,17 @@ html:not(.js) .chat-step { opacity: 1; transform: none; }
   .faq-aside { position: static; }
 }
 
-/* ---------- why Adgent: the reasoning under the matrix ----------
-   The table shows WHAT differs; these say WHY each alternative can't close
-   the gap. Without them the section was a grid of ticks and nothing else. */
-/* closing line under the matrix. Was a 3-col card grid that lost two of its
-   three cards — one orphan card numbered "01" sitting a third of the way
-   across. A single centred sentence carries the same argument. */
+
+
 .why-close {
   max-width: 68ch; margin: 26px 0 0; text-align: left;
   font-size: 14.5px; line-height: 1.65; color: var(--text-2); text-wrap: pretty;
 }
 .why-close b { color: var(--text); }
 
-/* Homepage bridge into /why-adgent and /how-were-built, where the matrix and
-   the seven-layer stack now live. */
+
 .why-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 30px; align-items: stretch; }
-/* The boxes were already equal height, but a one-line description next to a
-   two-line one left the two "Read more" links ~23px apart — the CTA is the eye's
-   landing point, so the row read as ragged even though the cards were level.
-   Column layout with the link pushed to the floor keeps them on one baseline. */
+
 .why-card {
   display: flex; flex-direction: column;
   padding: 24px; border-radius: var(--r-lg, var(--r-md));
@@ -2332,16 +2107,13 @@ html:not(.js) .chat-step { opacity: 1; transform: none; }
 }
 @media (max-width: 620px) { .hero-status { display: none; } }
 
-/* stack: centre the description card against the deck, not the top of the row */
+
 @media (min-width: 981px) {
   .stack3d { align-items: center; }
   .s3-detail { align-self: center; }
 }
 
-/* ---------- creative intelligence: a worked example ----------
-   The four capability cards described the analysis; nothing showed it.
-   This is one ad, marked up the way Adgent marks it up: DNA chips, the
-   scene tags on the frame, and the hold curve with the drop called out. */
+
 .cr-demo {
   margin-top: 0; max-width: none; background: var(--bg-card);
   border: 1px solid var(--border); border-radius: var(--r-xl);
@@ -2377,7 +2149,7 @@ html:not(.js) .chat-step { opacity: 1; transform: none; }
 }
 .cr-verdict b { color: var(--text); font-weight: 700; }
 @media (max-width: 960px) { .cr-demo { max-width: 560px; } }
-/* dashboard artefact: three series + a reconciled footer, not one lonely line */
+
 .mc-legend { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
 .mc-l { display: inline-flex; align-items: center; gap: 5px; font-size: 10px; color: var(--text-3); }
 .mc-l::before { content: ""; width: 9px; height: 2px; border-radius: 1px; }
@@ -2385,12 +2157,9 @@ html:not(.js) .chat-step { opacity: 1; transform: none; }
 .mc-l-b::before { background: var(--info); opacity: 0.65; }
 .mc-l-c::before { background: var(--text-4); }
 .mc-days { margin-left: auto; font-family: var(--font-mono); font-size: 9.5px; color: var(--text-4); letter-spacing: 0.06em; }
-/* 76 → 58: the dashboard turn is the tallest in the pinned thread and it set
-   the window height, which in turn set the height of the whole pinned block.
-   The curve reads fine at 58 and it bought ~18px off every viewport test. */
+
 .mini-chart svg { height: 58px; }
-/* Same reason for the KPI row: a later block scales it up to 24px/13px for
-   standalone use, which is right there and too tall inside the thread. */
+
 .bstage .mkt { padding: 9px 11px; }
 .bstage .mkt-v { font-size: 19px; margin-top: 2px; }
 .bstage .mkt-l { font-size: 10.5px; }
@@ -2398,22 +2167,14 @@ html:not(.js) .chat-step { opacity: 1; transform: none; }
 .mc-foot b { color: var(--text); font-weight: 700; font-variant-numeric: tabular-nums; }
 .mc-note { font-family: var(--font-mono); font-size: 9.5px; color: var(--text-4); }
 .cr-tag i { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); flex: none; }
-/* scrub bar: reads as a video being played and marked up */
+
 .cr-scrub { position: absolute; left: 10px; right: 10px; bottom: 9px; height: 3px; border-radius: 2px; background: rgba(255,255,255,0.22); overflow: hidden; }
 .cr-scrub b { display: block; height: 100%; background: var(--accent); border-radius: 2px; }
 
-/* the spine is positioned against the page, so body must anchor it */
+
 body { position: relative; }
 
-/* ============================================================
-   SPINE — one straight story line down the whole page
-   ------------------------------------------------------------
-   A single hairline rail in the left gutter, a coral progress
-   fill that follows the read, a travelling head, and one
-   numbered node per chapter. Every section hangs off the same
-   line, so the page reads as one continuous argument instead of
-   a stack of unrelated bands.
-   ============================================================ */
+
 .spine {
   position: absolute; top: 0; left: max(18px, calc(50vw - 622px));
   width: 2px; z-index: 40; pointer-events: none;
@@ -2430,8 +2191,7 @@ body { position: relative; }
 }
 .spine-fill {
   position: absolute; top: 0; left: 0; width: 2px; height: 0;
-  /* progress gradient: the story starts as a faint ember at the top and gains
-     heat all the way down to the head, so the drawn line reads as momentum */
+  
   background: linear-gradient(
     to bottom,
     color-mix(in oklab, var(--accent) 12%, transparent) 0,
@@ -2440,9 +2200,7 @@ body { position: relative; }
     var(--accent) 88%,
     #ffb489 100%
   );
-  /* the glow belongs to the progress: two soft halos so the drawn part reads as
-     lit glass rather than a flat stroke (box-shadow, not a child — .spine-fill
-     clips its children to carry the travelling flow) */
+  
   box-shadow: 0 0 8px rgba(255, 90, 44, 0.34), 0 0 22px rgba(255, 90, 44, 0.18);
   opacity: 0.94;
   will-change: height;
@@ -2466,11 +2224,7 @@ body { position: relative; }
   background: var(--accent); border-color: var(--accent);
   box-shadow: 0 0 18px rgba(255, 90, 44, 0.6);
 }
-/* The rail spends the whole page drawing itself; when it finally lands, the
-   three words the story was actually about sign it off. They are the hero's
-   own kicker (Aware → Ask → Apply) returning at the end, in the editorial
-   face rather than the mono one — the page opens in an operator's voice and
-   closes in the brand's. Hidden until .complete so it reads as an arrival. */
+
 .spine-sign {
   position: absolute; bottom: -5px; left: 14px;
   display: flex; align-items: baseline; gap: 9px;
@@ -2484,7 +2238,7 @@ body { position: relative; }
   opacity: 0; transform: translateX(-6px);
   transition: opacity 520ms var(--ease), transform 520ms var(--ease);
 }
-/* the middle dots are drawn, not typed, so the words stay selectable text */
+
 .spine-sign i + i::before {
   content: ""; display: inline-block; vertical-align: middle;
   width: 3px; height: 3px; margin: -2px 9px 0 0; border-radius: 50%;
@@ -2496,8 +2250,7 @@ body { position: relative; }
 @media (prefers-reduced-motion: reduce) {
   .spine-sign i { transition: none; transform: none; }
 }
-/* the head flares for a beat each time it crosses a chapter node, so the
-   line itself reacts to the story instead of just growing */
+
 .spine.beat .spine-fill { opacity: 1; box-shadow: 0 0 22px rgba(255, 90, 44, 0.55); }
 .spine.beat .spine-head > i:not(.spine-spark) {
   transform: scale(1.22);
@@ -2505,8 +2258,7 @@ body { position: relative; }
 }
 .spine-fill, .spine-head > i:not(.spine-spark) { transition: opacity 500ms var(--ease), filter 500ms var(--ease), transform 420ms var(--ease); }
 .spine-head.done > i:not(.spine-spark) { opacity: 0; }
-/* only the head's own dot gets the big treatment — the spark children are
-   separate <i>s and must keep their own small, ringless styling */
+
 .spine-head > i:not(.spine-spark) {
   position: absolute; left: -5px; top: -5px;
   width: 11px; height: 11px; border-radius: 50%;
@@ -2515,16 +2267,11 @@ body { position: relative; }
   box-shadow: 0 0 10px rgba(255, 90, 44, 0.68), 0 0 22px rgba(255, 90, 44, 0.32);
   animation: spine-pulse 2.6s var(--ease) infinite;
 }
-/* over the dark Memory stage the protective ring must read as shadow, not as
-   a white disc punched out of the rail */
+
 .spine.on-dark { --spine-ring: #141210; }
 
-/* silent break: the marquee band is pure atmosphere — fade the whole rail
-   and head out as the reader crosses it, then back in on the other side */
-/* the marquee break isn't an on/off switch: the rail feathers out as it
-   approaches the band and feathers back in on the way out. --spine-vis is
-   written by the scroll loop (0 → 1) and only ever touches opacity, so the
-   fade stays on the compositor. */
+
+
 .spine { --spine-vis: 1; }
 .spine .spine-rail,
 .spine .spine-fill,
@@ -2553,12 +2300,8 @@ body { position: relative; }
 .spine.hidden .spine-end,
 .spine.hidden .spine-node,
 .spine.hidden .spine-spark { opacity: 0; }
-/* silent bands (the marquee): the rail itself is cut out with a feathered mask
-   in document coordinates, so the line never crosses that section even after
-   the head has scrolled past it */
-/* masked on the rail wrapper, not on .spine: the wrapper spans the whole
-   document (top 0, height 100%) so a document-coordinate gradient lines up,
-   while the travelling head stays outside the mask and never gets clipped. */
+
+
 .spine-cut { position: absolute; inset: 0; }
 .spine.has-gap .spine-cut {
   -webkit-mask-image: var(--spine-gap-mask);
@@ -2573,10 +2316,7 @@ body { position: relative; }
   50%      { box-shadow: 0 0 14px rgba(255,90,44,0.9), 0 0 30px rgba(255,90,44,0.42); }
 }
 
-/* ---------- FLOW ORNAMENTS ----------
-   The rail is 1:1 synchronised with the scroll, so all the "life" comes from
-   ornaments layered on top of it: a stream of light travelling inside the
-   drawn part, sparks drifting off the head, and faint ticks on the raw rail. */
+
 .spine-fill { overflow: hidden; }
 .spine-flow {
   position: absolute; inset: 0; pointer-events: none;
@@ -2597,7 +2337,7 @@ body { position: relative; }
 }
 .spine.beat .spine-flow { opacity: 0.95; animation-duration: 1.1s; }
 
-/* sparks ride with the head and fall back up the drawn rail */
+
 .spine-spark {
   position: absolute; left: -1.5px; top: 0;
   width: 3px; height: 3px; border-radius: 50%;
@@ -2616,7 +2356,7 @@ body { position: relative; }
 .spine-spark:nth-child(3) { --dx: -5px; }
 .spine-spark:nth-child(4) { --dx: 2px; }
 
-/* faint ticks on the undrawn rail: the story still to come, measured out */
+
 .spine-rail::after {
   content: ""; position: absolute; inset: 90px 0 220px 0;
   background: repeating-linear-gradient(
@@ -2629,14 +2369,9 @@ body { position: relative; }
   opacity: 0.5;
 }
 
-/* ---------- NARRATIVE BEATS ON THE RAIL ----------
-   Three additions so the line reads as a story being told rather than a
-   static stroke: (1) the segment between the current chapter and the next
-   one glows and drifts, (2) a packet of light runs down the rail from the
-   chapter you just left to the one you just entered, (3) each node fires a
-   ring the moment the line reaches it. */
 
-/* (1) live segment: the stretch of rail the current chapter owns */
+
+
 .spine-seg {
   position: absolute; left: -1px; width: 4px;
   top: 0; height: 0; opacity: 0;
@@ -2661,7 +2396,7 @@ body { position: relative; }
   50%      { opacity: 0.62; }
 }
 
-/* (2) travelling packet: the hand-over between two chapters */
+
 .spine-run {
   position: absolute; left: -2px; top: 0;
   width: 6px; height: 40px; margin-top: -20px;
@@ -2678,7 +2413,7 @@ body { position: relative; }
   100% { opacity: 0; transform: translateY(var(--to, 0px)) scaleY(1.6); }
 }
 
-/* (3) node fires when the line arrives */
+
 .spine-node.fired::before {
   animation: spine-fire 620ms var(--ease) 1;
 }
@@ -2704,10 +2439,7 @@ body { position: relative; }
 }
 
 
-/* the header no longer carries a progress bar — the rail is the only
-   progress instrument. Instead the nav gets a soft gradient scrim so content
-   scrolling underneath stays readable, and the active tab gets a gradient
-   underline that flows with the story. */
+
 .nav {
   background: linear-gradient(
     to bottom,
@@ -2727,8 +2459,7 @@ body { position: relative; }
 }
 .nav.stuck::after { opacity: 1; }
 .nav.stuck { box-shadow: 0 1px 0 var(--border), 0 10px 30px -22px rgba(28,25,20,0.28); }
-/* tab flow: the active link sits on a gradient underline that shares the
-   rail's coral, so navigation reads as part of the same system */
+
 .nav-links a { position: relative; }
 .nav-links a::after {
   content: ""; position: absolute; left: 10px; right: 10px; bottom: 2px;
@@ -2740,9 +2471,7 @@ body { position: relative; }
 .nav-links a:hover::after { transform: scaleX(0.55); opacity: 0.5; }
 .nav-links a.active::after { transform: scaleX(1); opacity: 1; }
 
-/* ---- chapter nodes ----
-   number and label live in the gutter, LEFT of the rail, so nothing can ever
-   collide with the content column. the label runs vertically down the rail. */
+
 .spine-node {
   position: absolute; left: 1px; width: 0; height: 0;
 }
@@ -2784,7 +2513,7 @@ body { position: relative; }
 .spine-node.lit .spine-node-l { opacity: 1; transform: none; color: var(--text-3); }
 .spine-node.now .spine-node-l { color: var(--text-2); }
 
-/* the current chapter breathes: a soft halo ring around the live node */
+
 .spine-node::after {
   content: ""; position: absolute; left: -1px; top: 0;
   width: 28px; height: 28px; margin: -14px 0 0 -14px;
@@ -2817,7 +2546,7 @@ body { position: relative; }
   50%      { box-shadow: 0 0 0 3px var(--bg-app), 0 0 0 1.5px rgba(255,90,44,0.85),
                          0 0 20px rgba(255,90,44,1), 0 0 44px rgba(255,90,44,0.6); }
 }
-/* the live number gets its own lift so the eye finds the current chapter */
+
 .spine-node.now .spine-node-n {
   color: var(--accent); font-weight: 600;
   text-shadow: 0 0 14px rgba(255, 90, 44, 0.6);
@@ -2827,8 +2556,7 @@ body { position: relative; }
   box-shadow: 0 0 12px rgba(255, 90, 44, 0.7);
 }
 
-/* a short arm reaching from the rail toward the section it introduces, so
-   every band visibly hangs off the same line */
+
 .spine-node .spine-arm {
   position: absolute; left: 3px; top: 0;
   height: 1px; width: 0;
@@ -2837,16 +2565,13 @@ body { position: relative; }
 }
 .spine-node.lit .spine-arm { width: 40px; }
 .spine-node.now .spine-arm { width: 58px; }
-/* the node of a pinned section rides down with the pin (see draw()) — while
-   it holds, keep the arm at its active length so the label reads as current */
+
 .spine-node.pinned-hold .spine-arm { width: 58px; }
 
-/* ---- seam: each chapter visibly hangs off the rail ----
-   a hairline that grows out of the node along the top edge of the section it
-   introduces, so one band hands over to the next instead of just stacking */
+
 .sec-seam {
   position: absolute; top: 0; right: 0; height: 1px;
-  /* begins exactly on the rail, so each hand-over grows out of the line */
+  
   left: max(18px, calc(50vw - 622px));
   z-index: 2; pointer-events: none; overflow: visible;
   background: linear-gradient(
@@ -2868,15 +2593,12 @@ body { position: relative; }
   transition: opacity 700ms var(--ease) 240ms;
 }
 .chapter-live > .sec-seam::after { opacity: 1; }
-/* ---------- SECTION ENTRY MICRO-BEATS ----------
-   When the rail hands over to a band, the joint reacts: the spark on the seam
-   jitters as it ignites, a ring bursts out of it, and a soft bloom fades in
-   behind the section's opening lines. Short, one-shot, story-shaped. */
+
 @media (prefers-reduced-motion: no-preference) {
   .chapter-live > .sec-seam::after {
     animation: seam-spark 760ms var(--ease) 160ms 1;
   }
-  /* ring burst out of the joint */
+  
   .sec-seam::before {
     content: ""; position: absolute; left: -5px; top: -7px;
     width: 15px; height: 15px; border-radius: 50%;
@@ -2886,7 +2608,7 @@ body { position: relative; }
   .chapter-live > .sec-seam::before {
     animation: seam-burst 820ms cubic-bezier(.16,1,.3,1) 180ms 1;
   }
-  /* soft bloom behind the opening of the band */
+  
   .sec-bloom {
     position: absolute; left: max(18px, calc(50vw - 622px)); top: -40px;
     width: 420px; height: 260px; margin-left: -60px;
@@ -2920,7 +2642,7 @@ body { position: relative; }
   100% { opacity: 0; transform: none; }
 }
 @media (max-width: 900px) { .sec-bloom { display: none; } }
-/* a light travels along the seam once, handing the story over to this band */
+
 .sec-seam i {
   position: absolute; top: -1px; left: 0; width: 46px; height: 3px;
   border-radius: 3px; opacity: 0;
@@ -2945,11 +2667,9 @@ body { position: relative; }
   .sec-bloom { display: none; }
   .spine-node .spine-node-n, .spine-node .spine-node-l { opacity: 1; transform: none; }
 }
-/* narrow screens keep the rail — only the wordy labels drop out. the page
-   gains a small left inset so the rail never sits on top of the content */
+
 @media (max-width: 1240px) and (min-width: 901px) {
-  /* wider left inset so the chapter reads horizontally in the gutter, to the
-     LEFT of the rail — right-aligned against the line */
+  
   body { padding-left: 176px; }
   .spine { left: 148px; }
   .sec-seam { left: 148px; }
@@ -2975,12 +2695,7 @@ body { position: relative; }
 @media (max-width: 900px) { .spine { display: none; } }
 
 
-/* ============================================================
-   ON-RAIL GLYPHS (brain, eye)
-   Both figures straddle the narrative rail in the left gutter: the line
-   runs down BEHIND them, so the story visibly passes through each beat.
-   JS sets --spine-x per figure (rail x minus the figure's own centre).
-   ============================================================ */
+
 .brainwrap, .metafig {
   position: relative; z-index: 3;
   width: max-content; margin-left: 0; margin-right: 0;
@@ -3011,7 +2726,7 @@ body { position: relative; }
 }
 .metafig.lit path, .metafig.lit circle { stroke: var(--accent); }
 
-/* captions read to the right of the figure, clear of the rail */
+
 .brain-cap, .metafig .mf-cap {
   position: relative !important; top: auto; left: auto; right: auto;
   margin: 0; align-self: center; transform: none; z-index: 3;
@@ -3022,9 +2737,7 @@ body { position: relative; }
 }
 .brainwrap.lit .brain-cap, .metafig.lit .mf-cap { color: var(--accent); }
 
-/* ---------- hero input: lights on arrival, then hands off to the circuit ----------
-   The bar draws its own border in accent on load, so the eye starts at the
-   thing you type into; the circuit then leaves from the send button. */
+
 @media (prefers-reduced-motion: no-preference) {
   .hero .chat-input { position: relative; }
   .hero .chat-input::after {
@@ -3042,48 +2755,35 @@ body { position: relative; }
   .hero .chat-input.armed .send { box-shadow: 0 0 0 4px var(--accent-soft); }
 }
 
-/* the revenue line lights when the circuit reaches it */
+
 .gt-line.lit::before { background: repeating-linear-gradient(to bottom, var(--accent) 0 6px, transparent 6px 12px); }
 .gt-line.lit span { color: var(--accent); }
 .gt-line::before, .gt-line span { transition: background 500ms var(--ease), color 500ms var(--ease); }
 
-/* form fields light as the circuit runs down them — the last nudge to fill it in */
+
 .lf-field input, .lf-field textarea { transition: border-color 400ms var(--ease), box-shadow 400ms var(--ease); }
 .lf-field.lit input, .lf-field.lit textarea {
   border-color: var(--accent);
   box-shadow: 0 0 0 3px var(--accent-soft);
 }
 
-/* ---------- trust gate + section seams: light as the circuit passes ---------- */
+
 .tg-card { transition: border-color 500ms var(--ease), box-shadow 500ms var(--ease); }
 .tg-card.lit { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft), var(--shadow-card); }
 .tg-card.lit .rflag { border-color: color-mix(in srgb, var(--accent) 34%, var(--border)); }
 
-/* the Adgent column header lights when the circuit lands on it */
+
 .matrix .mx-us { transition: box-shadow 400ms var(--ease); }
 .matrix .mx-us.lit { box-shadow: inset 0 3px 0 var(--accent), 0 0 18px -4px rgba(255,90,44,0.6); }
 
 
-/* ---------- the circuit runs BEHIND content, above section backgrounds ----------
-   z-index 2 puts the trace over the band backgrounds (which is what made whole
-   sections look skipped). Cards then need to sit above it, or the line is drawn
-   across their faces — which reads as a mistake, not as routing. */
-/* Sections are z-index:1 and create their own stacking context, so a card
-   inside one can never rise above a z-index:2 sibling of the section no
-   matter how high its own z-index is. Lift the SECTIONS above the circuit,
-   then let the circuit show through their transparent backgrounds by giving
-   the bands no background of their own where it matters. */
 
 
-/* ---------- circuit stacking ----------
-   Sections paint an opaque background. At z-index:-1 the trace sat under all
-   of them and was invisible on every screen (measured: 0% visible). It has to
-   be above the section BACKGROUNDS but below their CONTENT — and sections must
-   not declare a z-index of their own, or they trap their children in a
-   stacking context where no card can ever rise above the svg. */
+
+
+
 section, .band, .moat, .hero { z-index: auto; }
-/* .wrap already carries z-index:1, which traps its children in a stacking
-   context level with the svg. Lift it so content sits above the trace. */
+
 .wrap { z-index: 2; }
 .cutout, .memcard, .build, .layer, .creative-card, .cr-demo, .s3-detail,
 .gt-lens, .why-card, .faq details, .faq-aside-card, .cta, .matrix-wrap,
@@ -3093,27 +2793,16 @@ section, .band, .moat, .hero { z-index: auto; }
   position: relative; z-index: 2;
 }
 
-/* the hero's floating chips sit on top of the cutout, so they need to clear
-   both the trace and the panel */
+
 .float-chip { position: absolute; z-index: 5; }
 
 
 
-/* ---------- memory section: the circuit sits this one out ----------
-   The dark band tells its own story; a trace running past it added nothing.
-   The section paints over the svg rather than the route being re-planned, so
-   the line still enters and leaves at the right heights on either side. */
+
 .moat { position: relative; z-index: 3; }
 
-/* ============================================================
-   METAPHOR FIGURES — the circuit wakes each one as it arrives
-   ------------------------------------------------------------
-   The brain (context) already worked as a beat in the story.
-   These give the other two claims a body: an eye that opens at
-   "awareness", a shield that seals at the trust gate. Each is
-   inert grey until the trace reaches it, then it animates once.
-   ============================================================ */
-/* eye: lids part, iris dilates, rays flick out */
+
+
 .metafig[data-fig="eye"] .mf-lid-t,
 .metafig[data-fig="eye"] .mf-lid-b { transform-origin: 48px 48px; }
 .metafig[data-fig="eye"]:not(.lit) .mf-lid-t { transform: translateY(20px) scaleY(0.12); }
@@ -3128,29 +2817,18 @@ section, .band, .moat, .hero { z-index: auto; }
 @media (prefers-reduced-motion: reduce) {
   .metafig path, .metafig circle { transform: none !important; opacity: 1 !important; stroke-dashoffset: 0 !important; }
 }
-/* when the gutter is too thin to hold a 92px glyph, the figures leave the rail
-   and return to the flow rather than hanging off the viewport edge */
+
 @media (max-width: 1240px) {
   .brainwrap, .metafig { transform: none; margin-left: auto; margin-right: auto; }
 }
 
-/* ============================================================
-   TOKEN GUARD
-   The shadcn base tokens in src/styles.css declare --accent and --border on
-   :root after this file is imported, which silently repainted every coral
-   accent and hairline. Re-assert the brand values with higher specificity so
-   the whole page stays on one palette.
-   ============================================================ */
+
 :root:root {
   --accent: #ff5a2c;
   --border: rgba(28, 25, 20, 0.085);
 }
 
-/* =====================================================================
-   SECTION-BY-SECTION LAYOUT PASS
-   One shared measure, gap and card behaviour for every band, so the page
-   reads as one document instead of ten independently-styled sections.
-   ===================================================================== */
+
 :root { --gap: clamp(16px, 1.6vw, 24px); }.layers, .steps, .gt-points, .stats, .split, .creative-grid {
   gap: var(--gap);
   align-items: stretch;
@@ -3173,23 +2851,19 @@ section, .band, .moat, .hero { z-index: auto; }
   .layer:hover, .step:hover, .feat:hover, .gt-point:hover, .stat:hover, .ptier:hover { transform: none; }
 }
 
-/* --- section heads: identical spacing ladder in every band */
+
 .sec-head .eyebrow { margin-bottom: 2px; }
 .sec-head + * { margin-top: clamp(17px, 2.1vh, 26px); }
 
-/* --- hero: tighter column balance, lede on the same measure as sec-sub */
+
 .hero { padding: clamp(44px, 5.4vh, 62px) 0 clamp(38px, 4.8vh, 56px); }
 .hero-lede { max-width: 52ch; }
-/* Two-column balance is a DESKTOP tweak — it must not leak below the 920px
-   breakpoint, where .hero-grid collapses to a single column. Written
-   unguarded it sat later in the cascade than that mobile rule and silently
-   re-imposed two columns on phones. */
+
 @media (min-width: 921px) {
   .hero-grid { grid-template-columns: 1.05fr 0.95fr; gap: clamp(36px, 4.5vw, 64px); }
 }
 
-/* --- Memory (moat): the dark block fades into the page top and bottom instead
-   of cutting it, so the parallax atmosphere carries through the seam */
+
 .moat { border-radius: 0; }
 .moat::after {
   content: ""; position: absolute; left: 0; right: 0; top: 0; height: 120px;
@@ -3197,38 +2871,31 @@ section, .band, .moat, .hero { z-index: auto; }
   background: linear-gradient(to bottom, color-mix(in srgb, var(--bg-app) 55%, transparent), transparent);
 }
 .moat .wrap { z-index: 1; }
-/* start-aligned left the learning card pinned to the top while the copy column
-   ran ~30px longer, so the section closed on a band of empty ground. Centre the
-   two columns against each other instead. */
+
 .moat-grid { gap: clamp(40px, 4.5vw, 68px); align-items: center; position: relative; }
 .moat-points { margin-top: clamp(22px, 2.6vh, 32px); }.layer h3, .step h3 { margin-top: 12px; }.layer p, .step p { max-width: 42ch; }
 .layer-ex { margin-top: 16px; }
 
-/* --- Trust gate / Creative / Ground truth: align tops, equal measure */
+
 .creative-split, .gt-trap, .integ, .math-wrap { gap: clamp(28px, 3.4vw, 48px); }
 .gt-points { margin-top: clamp(20px, 2.4vh, 28px); }
 
-/* --- closing CTA sits on its own gradient stage */
+
 .cta-grid { gap: clamp(32px, 4vw, 56px); }
 
-/* --- the rail must stay above every band (dark ones included) but under the nav */
+
 .spine { z-index: 40; }
-/* over the dark Memory band the unread rail needs more light to stay readable */
+
 .moat::after { height: 56px; opacity: 0.45; }
 
-/* =====================================================================
-   CONTRAST + GRADIENT + PERFORMANCE PASS
-   ===================================================================== */
 
-/* --- contrast: secondary/tertiary text and hairlines were too light on the
-   warm canvas; every level now clears AA for its size. */
-/* The one live definition of the text ramp. Measured against the WORST ground
-   these sit on (--bg-band #e8e5df), not white: a token tuned on white fails the
-   moment it lands in a tinted band, which is where most of them are used. */
+
+
+
 :root {
-  --text-2: #56524a;   /* 6.98:1 on band */
-  --text-3: #69655e;   /* 4.61:1 on band, 5.80:1 on white */
-  --text-4: #696760;   /* 4.50:1 on band, 5.66:1 on white */
+  --text-2: #56524a;   
+  --text-3: #69655e;   
+  --text-4: #696760;   
   --border: rgba(28, 25, 20, 0.115);
   --border-2: rgba(28, 25, 20, 0.19);
   --bg-band: #e8e5df;
@@ -3238,7 +2905,7 @@ section, .band, .moat, .hero { z-index: auto; }
 .sec-sub, .hero-lede { color: var(--text-2); }
 .eyebrow { color: var(--accent-text); letter-spacing: 0.14em; }.layer p, .step p, .gt-point p { color: var(--text-2); }
 
-/* Memory (moat) stays a dark stage — its own light-on-dark palette wins */
+
 .moat, .moat.band { background: #141210; color: #f4f2ee; }
 .moat .moat-sub { color: rgba(244, 242, 238, 0.66); }
 .moat .moat-eyebrow { color: var(--accent-text); letter-spacing: 0.14em; }
@@ -3248,14 +2915,9 @@ section, .band, .moat, .hero { z-index: auto; }
 .moat.band::before { background: none; }
 
 
-/* --- gradient stages: bands alternate between a flat canvas and a soft
-   vertical wash, so scrolling has a light/dark cadence instead of one tone. */
+
 .band { background: transparent; }
-/* :not(.moat) is load-bearing. This wash is ordered AFTER .moat.band::before,
-   so on any page where a dark band happens to land on an even index it won
-   the cascade and painted the band light — the section stayed #141210 in the
-   computed style while a near-opaque light gradient sat on top of it. Caught
-   on /why-adgent 2026-08-16 by sampling pixels, not by reading the CSS. */
+
 .band:nth-of-type(even):not(.moat)::before {
   content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
   background: linear-gradient(
@@ -3268,7 +2930,7 @@ section, .band, .moat, .hero { z-index: auto; }
 }
 .band > .wrap { position: relative; z-index: 1; }
 
-/* the one editorial word in each headline carries a coral gradient */
+
 .sec-title em, .hero h1 em, .moat h2 em {
   background: linear-gradient(96deg, var(--accent), color-mix(in oklab, var(--accent) 62%, #ffb27a));
   -webkit-background-clip: text; background-clip: text; color: transparent;
@@ -3278,15 +2940,13 @@ section, .band, .moat, .hero { z-index: auto; }
 }
 .moat .memcard { background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0)); }
 
-/* --- performance: the rail and its head are the only per-frame writers, so
-   promote them once and keep their paint isolated from the page. */
+
 .para { contain: layout style paint; }
 .spine { contain: layout style; }
 .spine-fill { will-change: height; }
 .spine-head { will-change: transform; }
 
-/* --- Creative: the head sits inside the split grid, so the shared head
-   spacing ladder was stacking on top of the grid gap and opening a well. */
+
 .creative-split { gap: var(--gap) clamp(28px, 3.4vw, 48px); }
 .creative-split .sec-head + * { margin-top: 0; }
 .creative-head { max-width: 58ch; margin-bottom: clamp(12px, 1.6vh, 22px); }
@@ -3319,21 +2979,14 @@ section, .band, .moat, .hero { z-index: auto; }
   box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--accent) 16%, transparent);
 }
 
-/* the split's own head must not carry the full band head spacing on top of the
-   grid gap — and the worked example lines up with the first capability card */
+
 .creative-split .sec-head.creative-head { margin-bottom: 4px; }
 .creative-split .cr-demo { margin-top: 0; align-self: start; }
 
-/* ============================================================
-   HOW WE'RE BUILT — the deck as one warm, lit object
-   The blue mid-tiers read as a different brand than the rest of
-   the page. One temperature ramp instead: cold stone at the
-   commodity base, warming through the ceiling, full accent on
-   the moat layers that we actually sell.
-   ============================================================ */
-/* palette lives in ONE place — see the ramp further down this file */
 
-/* deck sits on a warm pool of light instead of empty paper */
+
+
+
 .s3-scene::before {
   content: ""; position: absolute; left: 50%; top: 58%;
   width: min(78%, 620px); aspect-ratio: 1.7 / 1;
@@ -3344,7 +2997,7 @@ section, .band, .moat, .hero { z-index: auto; }
 }
 .s3-deck { z-index: 1; }
 
-/* face gets real material: warm rim light + top sheen + inner edge */
+
 .s3-face {
   border: 1px solid rgba(255,255,255,0.5);
   box-shadow:
@@ -3358,7 +3011,7 @@ section, .band, .moat, .hero { z-index: auto; }
     inset 0 1px 0 rgba(255,255,255,0.6),
     inset 0 -1px 0 rgba(0,0,0,0.12);
 }
-/* the active plate ignites rather than just lifting */
+
 .s3-plate.on .s3-face {
   box-shadow:
     0 34px 60px -24px color-mix(in oklab, var(--accent) 55%, rgba(28,25,20,0.55)),
@@ -3366,14 +3019,14 @@ section, .band, .moat, .hero { z-index: auto; }
     inset 0 1px 0 rgba(255,255,255,0.7);
 }
 .s3-deck.focused .s3-plate:not(.on) .s3-face { opacity: 0.5; }
-/* a thin travelling sheen across the active face */
+
 .s3-plate.on .s3-face::after {
   background:
     linear-gradient(115deg, rgba(255,255,255,0.62), rgba(255,255,255,0.06) 46%, transparent 62%);
 }
 .s3-edge { filter: brightness(0.6) saturate(1.1); }
 
-/* ceiling rule reads as a threshold, not a stray dash */
+
 .s3-ceiling {
   border-top: 1px dashed color-mix(in oklab, var(--accent) 34%, var(--border-2));
 }
@@ -3383,7 +3036,7 @@ section, .band, .moat, .hero { z-index: auto; }
   pointer-events: none;
 }
 
-/* the layer column: an instrument list, not plain text rows */
+
 @media (min-width: 981px) {
   .s3-list::before {
     content: ""; position: absolute; left: -25px; top: 4%; bottom: 4%;
@@ -3406,23 +3059,19 @@ section, .band, .moat, .hero { z-index: auto; }
 .s3-list li.on .s3-li-n { color: var(--accent-text); text-shadow: 0 0 14px color-mix(in oklab, var(--accent) 45%, transparent); }
 .s3-list li.on .s3-li-tag { background: var(--accent-soft); color: var(--accent-text); }
 
-/* detail panel gets an accent spine so it belongs to the active row */
+
 .s3-detail { min-height: 168px; }
 .s3-d { padding-right: 16px; }
 @media (min-width: 981px) {
   .s3-d { border-right: 1px solid color-mix(in oklab, var(--accent) 30%, transparent); }
 }
 
-/* the whole figure was floating in a tall empty box */
+
 .stack3d .s3-scene { min-height: 400px; }
 .stack3d { margin-top: 34px; }
 .stack-kicker { margin-top: 26px; }
 
-/* ============================================================
-   CREATIVE INTELLIGENCE — worked example stays with the reader
-   The demo used to end halfway down, leaving a dead column while
-   the capability cards ran on. It now pins while they pass.
-   ============================================================ */
+
 @media (min-width: 981px) {
   .creative-split .cr-demo { position: sticky; top: 96px; }
   .creative-grid { gap: 14px; }
@@ -3433,7 +3082,7 @@ section, .band, .moat, .hero { z-index: auto; }
   background:
     linear-gradient(180deg, color-mix(in oklab, var(--accent) 4%, var(--bg-card)), var(--bg-card) 46%);
 }
-/* left edge lights up with the card — the reading rail of this section */
+
 .creative-card::before {
   content: ""; position: absolute; left: 0; top: 14px; bottom: 14px; width: 2px;
   border-radius: 2px;
@@ -3449,7 +3098,7 @@ section, .band, .moat, .hero { z-index: auto; }
 .creative-ic { transition: box-shadow 240ms var(--ease), color 240ms var(--ease), transform 240ms var(--ease); }
 .creative-card:hover .creative-ic { transform: translateY(-1px) rotate(-3deg); }
 .creative-card h3 { margin-top: 14px; }
-/* faint index so the four capabilities read as a sequence */
+
 .creative-card { counter-increment: crcard; }
 .creative-grid { counter-reset: crcard; }
 .creative-card::after {
@@ -3466,10 +3115,10 @@ section, .band, .moat, .hero { z-index: auto; }
   .creative-card:hover .creative-ic { transform: none; }
 }
 
-/* --- stack figure: trim the dead air and the stray hairlines --- */
+
 @media (min-width: 981px) {
   .s3-list { min-height: 400px !important; }
-  /* the column trace should only span the labels it serves */
+  
   .s3-list::before {
     top: 6%; bottom: 44%;
     background: linear-gradient(to bottom,
@@ -3478,25 +3127,17 @@ section, .band, .moat, .hero { z-index: auto; }
       var(--border-2) 82%,
       transparent);
   }
-  /* spine on the reading edge of the detail panel, not through its middle */
+  
   .s3-d { border-right: 0; padding-right: 0; padding-left: 0; }
 }
 .s3-ceiling::after { height: 30px; opacity: 0.6; }
 
-/* the index chip inherits the old hairline's full-width box — reset it */
+
 .creative-card::after { left: auto; bottom: auto; height: auto; }
 
-/* ============================================================
-   HOW WE'RE BUILT — v3: blue mid-tiers back, deck lit like a
-   physical object, description panel parked in one place.
-   Each plate carries its own light colour (--lit) so glow,
-   contact shadow and rim all agree with the material.
-   ============================================================ */
+
 .s3-plate { --lit: var(--accent); }
-/* One temperature ramp: cold stone at the commodity base, warming through the
-   ceiling, full accent on the layers we actually sell. An earlier pass fixed
-   this and a later block reintroduced the blue — the blue is not in the
-   palette anywhere else and reads as a second brand next to the accent. */
+
 .s3-plate[data-tier="base"]    { --face2: #c9c4b9; --edge: #8b867b; --lit: #8b867b; }
 .s3-plate[data-i="1"]          { --face2: #d3cdc2; --edge: #948e83; --lit: #948e83; }
 .s3-plate[data-tier="ceiling"] { --face2: #e3d3bd; --edge: #b09274; --lit: #b09274; }
@@ -3505,7 +3146,7 @@ section, .band, .moat, .hero { z-index: auto; }
 .s3-plate[data-i="5"] { --face2: #ff8f5c; --edge: #e2531f; --lit: var(--accent); }
 .s3-plate[data-i="6"] { --face2: #ff7448; --edge: #e63f12; --lit: var(--accent); }
 
-/* pool of light under the deck: warm on top, cool where the blue sits */
+
 .s3-scene::before {
   background:
     radial-gradient(closest-side at 50% 38%, color-mix(in oklab, var(--accent) 22%, transparent), transparent 74%),
@@ -3513,7 +3154,7 @@ section, .band, .moat, .hero { z-index: auto; }
   opacity: 0.78;
 }
 
-/* material: rim light tinted by the plate itself */
+
 .s3-face {
   box-shadow:
     0 22px 40px -22px color-mix(in oklab, var(--lit) 34%, rgba(28,25,20,0.55)),
@@ -3538,7 +3179,7 @@ section, .band, .moat, .hero { z-index: auto; }
 }
 .s3-deck.focused .s3-plate:not(.on) .s3-face { opacity: 0.46; filter: saturate(0.72); }
 
-/* a slow sheen crawls across the lit face */
+
 .s3-plate.on .s3-face::after {
   background: linear-gradient(115deg,
     rgba(255,255,255,0.7), rgba(255,255,255,0.08) 44%, transparent 60%);
@@ -3550,7 +3191,7 @@ section, .band, .moat, .hero { z-index: auto; }
   100% { transform: translate3d(-14%, -10%, 0); opacity: 0.55; }
 }
 
-/* the whole deck breathes, so the object never looks like a static PNG */
+
 .s3-deck { animation: s3-float 11s ease-in-out infinite; }
 @keyframes s3-float {
   0%, 100% { transform: translate(-50%, -50%) rotateX(58deg) rotateZ(-42deg); }
@@ -3558,7 +3199,7 @@ section, .band, .moat, .hero { z-index: auto; }
 }
 .s3-scene:hover .s3-deck { animation-play-state: paused; }
 
-/* active plate rises a touch and grows a contact shadow on the plate below */
+
 .s3-plate.on { transform: translateZ(calc(var(--z) + var(--off))) scale(1.035); }
 .s3-plate.on .s3-edge { filter: brightness(0.72) saturate(1.25); }
 
@@ -3567,10 +3208,7 @@ section, .band, .moat, .hero { z-index: auto; }
   .s3-plate.on .s3-face::after { animation: none; }
 }
 
-/* ---------- the description panel: one fixed home ----------
-   It used to drift with the grid's vertical centring, so it moved
-   as rows opened. Now it's a real card, parked at the top of its
-   column and pinned while the figure passes. */
+
 @media (min-width: 981px) {
   .stack3d { align-items: start; }
   .s3-detail {
@@ -3599,22 +3237,16 @@ section, .band, .moat, .hero { z-index: auto; }
 }
 @media (prefers-reduced-motion: reduce) { .s3-d.on { animation: none; } }
 
-/* ---------- STACK: more air after the intro, panel no longer drifts ---------- */
+
 @media (min-width: 981px) {
   #stack .stack3d { margin-top: 64px; }
   #stack .s3-list { margin-top: 64px; }
-  /* The panel used to slide with the scroll, then sat pinned to the top of its
-     column — so whichever layer you picked, its text jumped to the very top,
-     far from the row you were pointing at. Centre it against the list instead:
-     the description now sits beside the stack it describes. */
+  
   .s3-detail { position: static; top: auto; align-self: center; }
 }
 
-/* ---------- STILL DECIDING? — the card simply sits sticky in its column ---------- */
-/* `top: auto` matters: the earlier `.faq-aside { position: sticky; top: 96px }`
-   is neutralised on narrow screens by `position: static`, but this rule made it
-   `relative` again at every width — so below 981px the leftover 96px offset
-   dropped the card into the next section (56px overlap with #lead). */
+
+
 .faq-aside { position: relative; top: auto; }
 @media (min-width: 981px) {
   .faq-aside { position: relative; top: auto; min-height: 560px; }
@@ -3625,7 +3257,7 @@ section, .band, .moat, .hero { z-index: auto; }
 }
 
 
-/* ---------- the question glyph on the rail, sibling to the eye and the brain ---------- */
+
 .metafig[data-fig="q"] .mf-q-ring {
   stroke-dasharray: 214; stroke-dashoffset: 214; opacity: 0.5;
   transition: stroke-dashoffset 1100ms var(--ease), stroke 600ms var(--ease), opacity 600ms var(--ease);
@@ -3639,9 +3271,9 @@ section, .band, .moat, .hero { z-index: auto; }
 .metafig[data-fig="q"] .mf-q-dot { opacity: 0; transition: opacity 400ms var(--ease) 900ms, fill 400ms var(--ease); }
 .metafig[data-fig="q"].lit .mf-q-dot { opacity: 1; fill: var(--accent); stroke: none; }
 
-/* ---------- the hand-over into the audit form: flat, then revenue climbing ---------- */
+
 #lead > .sec-seam { display: none; }
-/* ---------- STACK: remove the dead air under the deck ---------- */
+
 @media (min-width: 981px) {
   #stack .stack3d { margin-top: 48px; margin-bottom: 0; }
   #stack .s3-list { margin-top: 48px; }
@@ -3650,11 +3282,7 @@ section, .band, .moat, .hero { z-index: auto; }
 }
 .stack-kicker { margin-top: 14px; }
 
-/* ---------- STACK: the deck's art sits high inside its box ----------
-   The plates project upward out of the deck's own rect (rotateX), so a box
-   centred on the deck leaves a tall band of dead air underneath it. Push the
-   deck down by the projected height of the stack and let the box shrink to
-   what the art actually occupies. */
+
 @media (min-width: 981px) {
   .stack3d .s3-scene { min-height: 392px; }
   .s3-list { min-height: 392px !important; }
@@ -3666,20 +3294,9 @@ section, .band, .moat, .hero { z-index: auto; }
   #stack .stack-kicker { margin-top: 0; }
 }
 
-/* ---------- the rail passes BEHIND nothing: glyph cut-outs ----------
-   Where the eye / brain / question-mark glyphs sit on the rail, the line is
-   masked out inside the glyph so the mark reads as a solid object the line
-   enters rather than a shape with a stripe through it. (mask string built in
-   behaviour.ts alongside the silent-band gaps.) */
 
-/* ============================================================
-   GLYPH ARRIVAL BURST + NEW ON-RAIL FIGURES
-   Every figure standing on the narrative line detonates once as the
-   line reaches it: two expanding rings and a short flash, the same
-   beat the Memory brain owned — now shared by the bolt (it acts),
-   the layered stack (it stacks), the shield (it seals), the eye and
-   the question mark, so the whole rail speaks one language.
-   ============================================================ */
+
+
 .brainwrap, .metafig { isolation: isolate; }
 .brainwrap::before, .metafig::before,
 .brainwrap::after, .metafig::after {
@@ -3692,7 +3309,7 @@ section, .band, .moat, .hero { z-index: auto; }
 .brainwrap::before, .metafig::before {
   border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
 }
-/* second layer retired: one quiet ring is enough */
+
 .brainwrap::after, .metafig::after { display: none; }
 @media (prefers-reduced-motion: no-preference) {
   .brainwrap.pop::before, .metafig.pop::before { animation: mf-ring 620ms var(--ease) 1; }
@@ -3712,7 +3329,7 @@ section, .band, .moat, .hero { z-index: auto; }
   100% { opacity: 1; transform: none; letter-spacing: 0.12em; }
 }
 
-/* bolt (it acts): the ring closes, then the charge strikes through it */
+
 .metafig[data-fig="bolt"] .mf-b-ring {
   stroke-dasharray: 208; stroke-dashoffset: 208; opacity: 0.6;
   transition: stroke-dashoffset 900ms var(--ease), opacity 500ms var(--ease), stroke 600ms var(--ease);
@@ -3727,7 +3344,7 @@ section, .band, .moat, .hero { z-index: auto; }
   fill: color-mix(in srgb, var(--accent) 24%, transparent);
 }
 
-/* layers (it stacks): the three plates settle into place, bottom-up */
+
 .metafig[data-fig="layers"] .mf-ly {
   opacity: 0; transition: opacity 480ms var(--ease), transform 620ms var(--ease), stroke 600ms var(--ease);
 }
@@ -3737,7 +3354,7 @@ section, .band, .moat, .hero { z-index: auto; }
 .metafig[data-fig="layers"].lit .mf-ly { opacity: 1; transform: none; }
 .metafig[data-fig="layers"].lit .mf-ly-1 { fill: color-mix(in srgb, var(--accent) 14%, transparent); }
 
-/* shield (it seals): the outline draws, then the check locks it */
+
 .metafig[data-fig="shield"] .mf-sh {
   stroke-dasharray: 260; stroke-dashoffset: 260;
   transition: stroke-dashoffset 1000ms var(--ease), stroke 600ms var(--ease), fill 600ms var(--ease);
@@ -3751,14 +3368,13 @@ section, .band, .moat, .hero { z-index: auto; }
 }
 .metafig[data-fig="shield"].lit .mf-sh-tick { stroke-dashoffset: 0; }
 
-/* the new figures also live in the flow on narrow screens, where the rail
-   releases them — keep them from crowding the section above */
+
 .metafig[data-fig="bolt"], .metafig[data-fig="layers"], .metafig[data-fig="shield"] {
   margin-top: 22px; margin-bottom: 4px;
 }
 .metafig-sm::before, .metafig-sm::after { --mf-cx: 38px; }
 
-/* ---------- the "3A" glyph on the rail, sibling to the brain and the eye ---------- */
+
 .metafig[data-fig="threea"] .mf-a-ring {
   stroke-dasharray: 208; stroke-dashoffset: 208; opacity: .5;
   transition: stroke-dashoffset 1100ms var(--ease), stroke 600ms var(--ease), opacity 600ms var(--ease);
@@ -3771,7 +3387,7 @@ section, .band, .moat, .hero { z-index: auto; }
 }
 .metafig[data-fig="threea"].lit .mf-a-txt { opacity: 1; fill: var(--accent); }
 
-/* creative (it reads): the sun lifts over the peaks as the line arrives */
+
 .metafig[data-fig="creative"] .mf-cr-sun {
   opacity: 0; transform: translateY(12px); transform-origin: 48px 20px;
   transition: opacity 520ms var(--ease), transform 680ms var(--ease),
@@ -3800,11 +3416,7 @@ section, .band, .moat, .hero { z-index: auto; }
 .metafig[data-fig="creative"] { margin-top: 22px; margin-bottom: 4px; }
 .creative-split > .metafig[data-fig="creative"] { grid-column: 1 / -1; justify-self: start; }
 
-/* ============================================================
-   THE MARK ON THE RAIL — hero
-   The Adgent triangles sit on the line at the height of the audit button;
-   when the travelling point reaches them, they lift a hair.
-   ============================================================ */
+
 .hero-cta { position: relative; }
 .mf-hero {
   position: absolute; left: 0; top: 50%;
@@ -3830,7 +3442,7 @@ section, .band, .moat, .hero { z-index: auto; }
 }
 @media (max-width: 1240px) { .mf-hero { display: none; } }
 
-/* the same mark, oversized and silent, behind the hero conversation card */
+
 .hero-mark-ghost {
   position: absolute; right: -140px; top: -128px; width: 360px; z-index: 0;
   pointer-events: none;
@@ -3858,14 +3470,7 @@ section, .band, .moat, .hero { z-index: auto; }
 @media (prefers-reduced-motion: reduce) { .hero-mark-ghost svg { animation: none; } }
 @media (max-width: 900px) { .hero-mark-ghost { display: none; } }
 
-/* ══════════════════════════════════════════════════════════════════════════
-   MOBILE — decorative figures are desktop-only
-   ══════════════════════════════════════════════════════════════════════════
-   The ghost marks, brain glyph, metafigs and section ghosts are ambient
-   ornament: they're positioned absolutely against wide multi-column layouts
-   and read as clutter once the page collapses to one column. Hidden wholesale
-   below 900px rather than re-tuned per figure — none of them carry meaning
-   (every one is aria-hidden), so nothing is lost on small screens. */
+
 @media (max-width: 900px) {
   .metafig,
   .sec-ghost,
@@ -3878,23 +3483,9 @@ section, .band, .moat, .hero { z-index: auto; }
   }
 }
 
-/* ── Mobile touch + legibility pass (2026-08-07) ──────────────────────────────
-   Measured on a 390px viewport in a real browser, not eyeballed. Three findings,
-   all of which held across every page:
 
-     · .next-chip and the nav links sat at 34px / 26px tall. Apple and Google both
-       put the reliable tap target at 44px; below that a thumb misses and the user
-       reads it as "the site is broken", not "I missed".
-     · Blog post meta ran at 10.5px uppercase mono — the smallest running text on
-       the site, on the page whose whole job is to be read.
-     · The nav's own links were 18-29px tall, so the menu was the hardest thing on
-       the page to hit.
-
-   Deliberately NOT touched: the product mock-ups (.mkt-*, .mcp-*, .mag-*, .mpl-*).
-   Their small type is the point — they are pictures of a dense UI, and scaling
-   them up would make them stop looking like the product. */
 @media (max-width: 640px) {
-  /* Tap targets — height via padding so the label keeps its own size. */
+  
   .next-chip { height: auto; min-height: 44px; padding-top: 10px; padding-bottom: 10px; }
   .mobile-menu a,
   .mobile-menu .btn { min-height: 44px; display: flex; align-items: center; }
@@ -3902,43 +3493,31 @@ section, .band, .moat, .hero { z-index: auto; }
   .brand { min-height: 44px; }
   .topic { min-height: 40px; display: inline-flex; align-items: center; }
 
-  /* Footer links were the smallest targets left — 29px, and there are eleven of
-     them stacked, so a miss lands on a neighbour rather than empty space. */
+  
   .foot-col a, .foot-col button { padding: 13px 0; }
 
-  /* Legibility — the two places running text dropped below 12.5px. */
+  
   .post-meta { font-size: 12px; letter-spacing: 0.06em; }
   .lens-cap { font-size: 12px; }
   .lens-sub { font-size: 13px; }
   .co-kicker { font-size: 11.5px; }
 }
 
-/* inline source note — small, muted, sits after a stat in body copy */
-/* nowrap was fine for a short "[source, date]" at the end of a wide paragraph.
-   Inside a chat bubble or a half-width card it ran hundreds of pixels past its
-   container — measured at +631px on one page. Let it wrap. */
-/* A citation is one unbreakable token: splitting "[Cloudbeds, Mar 2026]" across
-   two lines reads as two separate fragments of debris. It only wraps when the
-   note alone is wider than the column. */
+
+
+
 .src-note {
   font-size: .68em; color: var(--text-3); font-style: normal; letter-spacing: .01em;
   white-space: nowrap; display: inline-block; max-width: 100%;
 }
 @media (max-width: 520px) { .src-note { white-space: normal; overflow-wrap: anywhere; } }
-/* nowrap is right for a short bracketed credit — "[Cloudbeds, Mar 2026]" reads as
-   two fragments of debris when split. It is wrong for the notes inside chat
-   bubbles and captions, which are whole sentences: those overflowed their bubble
-   by up to 620px. Anything that is not a bracketed credit wraps normally. */
+
 .cmsg-bot .src-note,
 .chatfig .src-note,
 .ct .src-note,
 .askout-note .src-note,
 .build-cap .src-note { white-space: normal; display: inline; overflow-wrap: break-word; }
-/* A cited sentence ends at its citation; the next sentence starts on its own
-   line instead of running on behind the brackets. The sentence-ending period
-   was moved inside the span so nothing is orphaned on the new line. Suppressed
-   inside one-line contexts (list items, table cells, chat bubbles) and where a
-   citation sits mid-sentence rather than at the end. */
+
 p > .src-note::after { content: ""; display: block; height: 0; }
 li .src-note::after,
 td .src-note::after,
@@ -3946,26 +3525,11 @@ td .src-note::after,
 .cmsg-bot .src-note::after,
 .src-note.inline::after { display: none; }
 
-/* the trust-gate finding carries weight without a fabricated money figure */
+
 .rflag-est-crit { color: var(--crit); font-weight: 600; }
 
 
-/* ============================================================
-   HOW WE'RE BUILT — the description panel, settled.
-   Appended at the end of the file on purpose: this rule had been written five
-   times higher up and lost each time to a later block. Nothing after it.
-   ------------------------------------------------------------
-   What kept going wrong, in order:
-   1. position:sticky — the panel slid with the scroll.
-   2. align-self:start — it sat at the top of its column, far from the row.
-   3. align-self:center — still detached; the list is 7 rows, the panel is 1 box.
-   4. .s3-d.on switching to position:relative — the ACTIVE pane rejoined the
-      flow, so the card's height became whatever that layer's text needed and
-      the box grew/shrank between L0 (short) and L5 (long). That was the jump.
-   5. min-height guessed at 250px against an assumed ~460px column. Measured:
-      the column is minmax(0,0.92fr) of (1200 - 64 padding - 52 gaps) ≈ 332px,
-      leaving ~284px of text, and L5 needs ~312px. Hence 360.
-   ============================================================ */
+
 @media (min-width: 981px) {
   .stack3d { align-items: center; }
   .s3-detail {
@@ -3973,45 +3537,22 @@ td .src-note::after,
     display: block; padding: 0;
     min-height: 360px;
   }
-  /* inset:0 made each pane fill the card's border box and ignore its padding,
-     so the copy started on the card's edge. Pad the panes, not the card. */
+  
   .s3-detail .s3-d { inset: 22px 24px; }
-  /* and the active pane must NOT rejoin the flow — that is failure #4 above.
-     All seven stay absolute; the card holds one height for all of them. */
+  
   .s3-detail .s3-d.on { position: absolute; }
 }
 
-/* Hero thread reveals its lines over ~1.3s. Without a floor the card grew and
-   shrank as each line landed. Reserve roughly the finished height so nothing
-   reflows; floor only, so longer copy still expands it. */
+
 .chat-thread[data-hero-chat] { min-height: 430px; }
 @media (max-width: 920px) { .chat-thread[data-hero-chat] { min-height: 390px; } }
 
-/* ---------- BUILT FROM A SENTENCE: one conversation, scrolled ----------
-   No window chrome, no tab bar — just the chat. Scroll advances it: a new
-   question gets asked, its answer builds underneath, and the turn before it
-   slides up and fades. The viewport is a fixed window onto a thread that
-   keeps going, which is what using the product actually looks like.
 
-   Turns are absolutely positioned in one box so nothing reflows as they
-   swap; the box carries the height, not the content. */
-/* Height is measured, not guessed: the tallest turn (the dashboard, with KPIs
-   + chart) renders at 376px. 400 clears it with air and keeps the whole
-   pinned block — eyebrow, title, sub, thread, dots — inside a 700px-ish
-   viewport, which is what a 13" laptop actually gives you. */
-/* A real chat, not a slideshow: the turns are one column that scrolls up
-   inside a fixed window. Earlier turns stay where you left them and recede;
-   the turn being read sits at the bottom, where a chat's newest message
-   always is. JS translates the column, so nothing reflows.
 
-   Height is measured: the tallest turn (the dashboard) renders at 376px, and
-   400 keeps the whole pinned block inside a 1280×800 laptop. */
-/* The four artefacts keep their own styling; the scroll-thread host that
-   used to wrap them is gone (see .bstage above). */
 
-/* media plan artefact — the split, with the gap named above it. The callout
-   comes first on purpose: the plan page's whole argument is that the first
-   thing back is usually the assumption you did not state, not the numbers. */
+
+
+
 .mini-mp { display: flex; flex-direction: column; gap: 9px; }
 .mmp-gap {
   margin-bottom: 5px; padding: 10px 12px;
@@ -4025,9 +3566,7 @@ td .src-note::after,
 .mmp-bar::after { content: ""; position: absolute; inset: 0 auto 0 0; width: var(--w); background: var(--accent); border-radius: 4px; }
 .mmp-v { font-size: 13px; font-weight: 700; color: var(--text); font-variant-numeric: tabular-nums; }
 
-/* monitoring agent artefact — the spec as it reads in the composer's
-   inspector. The old version showed only the backtest strip, which reduced a
-   trigger/condition/state-machine framework to "we counted past firings". */
+
 .mag-spec { display: flex; flex-direction: column; gap: 7px; }
 .mag-line { display: grid; grid-template-columns: 62px 1fr; gap: 10px; align-items: baseline; }
 .mag-k {
@@ -4058,8 +3597,7 @@ td .src-note::after,
 }
 .appwin-say { display: flex; align-items: center; gap: 7px; margin-top: 14px; font-family: var(--font-mono); font-size: 11px; letter-spacing: .02em; color: var(--text-3); }
 .appwin-say .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex: none; }
-/* the produced artefact is its own card — the chat has no frame, so this
-   needs one or it floats on the page background */
+
 .bstage .build-canvas {
   margin: 12px 0 0; padding: 18px;
   background: var(--bg-card); border: 1px solid var(--border);
@@ -4074,9 +3612,7 @@ td .src-note::after,
   .bpanel .build-canvas { padding: 14px; }
 }
 
-/* the copy column ran three bullets against a five-field form and closed on a
-   band of empty ground. It now carries the two refusals from the live account
-   — the strongest thing to put beside a form asking for account access. */
+
 .cta-proof { margin-top: 22px; padding: 16px 18px; border: 1px solid var(--border); border-radius: var(--r-lg); background: var(--bg-sub); }
 .cta-proof-k { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--text-4); margin-bottom: 9px; }
 .cta-proof p { font-size: 13px; line-height: 1.62; color: var(--text-2); margin: 0; text-wrap: pretty; }
@@ -4084,20 +3620,7 @@ td .src-note::after,
 .cta-proof b { color: var(--text); font-weight: 650; }
 
 
-/* ============================================================
-   HOW WE'RE BUILT — the three columns share one height.
-   At EOF on purpose: these values had been set in eight different places
-   (panel 92/150/168/236/360, deck 400/440/392, list 400/460/392) and whichever
-   block happened to come last decided the layout. The columns are centred
-   against each other, so three different heights meant three different centres
-   — which is what read as "the elements don't line up".
 
-   One number for all three. The panel needs the most (~312px of copy for L5
-   plus 44px of padding), so 380 covers every column with a little air. The
-   deck's plates project upward out of its own box via rotateX, so its art is
-   pushed back down by the same number — otherwise the box centres on geometry
-   the eye never sees.
-   ============================================================ */
 @media (min-width: 981px) {
   .stack3d { align-items: center; }
   .s3-detail { min-height: 380px; }
@@ -4107,20 +3630,18 @@ td .src-note::after,
   .s3-deck {
     transform: translate(-50%, calc(-50% + 380px * var(--s))) rotateX(58deg) rotateZ(-42deg);
   }
-  /* the three columns start on the same line too */
+  
   #stack .s3-list, #stack .stack3d { margin-top: 44px; }
 }
 
-/* ============================================================
-   Sub-page hero — pages that lead with an argument, not a demo.
-   ============================================================ */
+
 .hero-sub { padding: 76px 0 44px; }
 .hero-sub .hero-copy-wide { max-width: 760px; }
 .hero-sub .hero-copy-wide .hero-lede { max-width: 66ch; }
 .hero-sub h1 { max-width: 18ch; }
 @media (max-width: 720px) { .hero-sub { padding: 44px 0 30px; } }
 
-/* ---- how-were-built: why the layer order is load-bearing ---- */
+
 .hwb-chain { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 32px; }
 .hwb-link {
   padding: 22px; border-radius: var(--r-md);
@@ -4130,7 +3651,7 @@ td .src-note::after,
 .hwb-n { font-size: 14.5px; font-weight: 650; color: var(--text); letter-spacing: -0.01em; }
 .hwb-link p { margin: 10px 0 0; font-size: 14px; line-height: 1.62; color: var(--text-2); text-wrap: pretty; }
 
-/* ---- how-were-built: the three locks ---- */
+
 .hwb-locks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 32px; }
 .hwb-lock {
   padding: 24px; border-radius: var(--r-md);
@@ -4145,8 +3666,7 @@ td .src-note::after,
 .hwb-iso {
   margin-top: 20px; padding: 24px; border-radius: var(--r-md);
   border: 1px solid var(--border); background: var(--bg-2, var(--bg-hover));
-  /* the panel stretched to the full 1136px wrap while its text stopped at 74ch, so the
-     right ~330px sat empty at 1440 — cap the panel to the text it actually holds */
+  
   max-width: calc(74ch + 48px);
 }
 .hwb-iso-t { font-size: 15.5px; font-weight: 650; color: var(--text); }
@@ -4157,13 +3677,9 @@ td .src-note::after,
   .hwb-chain, .hwb-locks { grid-template-columns: 1fr; }
 }
 
-/* ---- why-adgent: the four categories, honestly stated ---- */
+
 .cmp-cats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 32px; align-items: stretch; }
-/* The grid already made the boxes equal height, but the content stopped where
-   it stopped: the shorter "Where it stops" paragraph left ~24px of dead ground
-   under the left card while the right one filled to the edge, so the dashed
-   "The tell" rules in one row sat at two different heights and read as a step.
-   Column + auto top margin pins that footer to the floor whatever the copy runs to. */
+
 .cmp-cat {
   display: flex; flex-direction: column;
   padding: 24px; border-radius: var(--r-md);
@@ -4182,7 +3698,7 @@ td .src-note::after,
   font-family: var(--font-mono); font-size: 12.5px; color: var(--text-3) !important;
 }
 
-/* ---- why-adgent: where we are the wrong tool ---- */
+
 .cmp-honest { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 32px; }
 .cmp-h-item {
   padding: 22px; border-radius: var(--r-md);
@@ -4192,7 +3708,7 @@ td .src-note::after,
 .cmp-h-t em { font-style: normal; color: var(--accent, var(--text)); }
 .cmp-h-item p { margin: 10px 0 0; font-size: 14px; line-height: 1.62; color: var(--text-2); text-wrap: pretty; }
 
-/* ---- why-adgent: objections ---- */
+
 .cmp-obj { display: grid; gap: 16px; margin-top: 30px; max-width: 860px; }
 .cmp-obj-i {
   padding: 24px; border-radius: var(--r-md);
@@ -4206,7 +3722,7 @@ td .src-note::after,
   .cmp-cats, .cmp-honest { grid-template-columns: 1fr; }
 }
 
-/* ---- features hub: one row per capability ---- */
+
 .feat-rows { display: grid; gap: 0; margin-top: 8px; }
 .feat-row {
   display: grid; grid-template-columns: 300px 1fr; gap: 40px;
@@ -4245,14 +3761,8 @@ td .src-note::after,
   .feat-row { grid-template-columns: 1fr; gap: 16px; padding: 28px 0; }
 }
 
-/* ============================================================
-   Skip link — the first tab stop on every page. Visually hidden
-   until focused, so keyboard users can jump past a nav that is now
-   fifteen-plus links deep because of the mega menu.
-   ============================================================ */
-/* Hidden until focused. translateY(-150%) left a white sliver visible at the
-   top of the page — clip it out of the flow entirely instead, and restore the
-   box only on focus. */
+
+
 .skip-link {
   position: absolute; left: 12px; top: 12px; z-index: 200;
   width: 1px; height: 1px; overflow: hidden;
@@ -4268,20 +3778,15 @@ td .src-note::after,
   box-shadow: 0 8px 24px rgba(0,0,0,0.12);
   outline: 2px solid var(--accent, currentColor); outline-offset: 2px;
 }
-/* the target must be programmatically focusable for the jump to move focus,
-   not just the scroll position */
+
 #main:focus { outline: none; }
 
-/* Smooth scrolling was set globally and never gated. Someone who asked their
-   OS for less motion still got a full-page glide on every in-page anchor —
-   including the skip link, which is the one jump that must be instant. */
+
 @media (prefers-reduced-motion: reduce) {
   html, .builds { scroll-behavior: auto; }
 }
 
-/* The seven-layer rows are <button>s so the widget is operable by keyboard —
-   it was mouse-only, and a keyboard user reached one of seven layers. Reset the
-   UA button styling so nothing moves visually. */
+
 .s3-li-h {
   appearance: none; -webkit-appearance: none;
   background: none; border: 0; margin: 0; padding: 0;
@@ -4293,11 +3798,7 @@ td .src-note::after,
   outline-offset: 3px; border-radius: var(--r-sm);
 }
 
-/* ============================================================
-   Sub-page hero: copy left, a scene of the mechanism right.
-   Every one of these pages was wall-to-wall prose; the scene
-   carries the argument the paragraph is making.
-   ============================================================ */
+
 .hero-sub { position: relative; overflow: hidden; }
 .hero-sub::before {
   content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
@@ -4315,7 +3816,7 @@ td .src-note::after,
   -webkit-mask-image: radial-gradient(78% 72% at 74% 22%, #000, transparent 74%);
 }
 .hero-sub > .wrap { position: relative; z-index: 1; }
-/* industry pages get a cooler tint so you can feel which shelf you're on */
+
 .hero-sub.hero-ind { --hero-tint: rgba(47,115,232,0.07); --hero-wash: rgba(47,115,232,0.035); }
 
 .hero-split { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; align-items: center; }
@@ -4337,7 +3838,7 @@ td .src-note::after,
   .hero-scene { order: 2; }
 }
 
-/* ---- inline figures between prose blocks ---- */
+
 .fig {
   margin: 30px 0 0; padding: 24px;
   border: 1px solid var(--border); border-radius: var(--r-md);
@@ -4351,27 +3852,24 @@ td .src-note::after,
 .fig-cap b { color: var(--text); }
 .fig-src { font-family: var(--font-mono); font-size: 11px; color: var(--text-3); }
 
-/* scene primitives — same vocabulary as the mega-menu art, one scale up */
+
 .sc-plate { fill: var(--bg-2, var(--bg-hover)); stroke: var(--border); stroke-width: 1; }
 .sc-card { fill: var(--bg-elevated); stroke: var(--border-2); stroke-width: 1.2; }
 .sc-card-acc { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 1.4; }
 .sc-hi { fill: var(--accent-soft); }
-/* These classes are used both on a <g> and directly on a shape, so match the
-   element itself as well as its children — a bare <rect class="sc-dim"> was
-   falling through to SVG's default black fill. */
+
 .sc-ink, .sc-ink rect { fill: var(--text-2); opacity: 0.42; }
 .sc-dim, .sc-dim rect, .sc-dim circle { fill: var(--border); opacity: 0.62; }
 .sc-was, .sc-was rect { fill: var(--text-3); opacity: 0.3; }
 .sc-acc, .sc-acc rect, .sc-acc circle { fill: var(--accent); }
-/* a path inside .sc-acc is a stroked glyph, never a filled shape */
+
 .sc-acc path, path.sc-acc { fill: none; stroke: var(--accent); stroke-width: 2;
   stroke-linecap: round; stroke-linejoin: round; }
 .sc-bars, .sc-axis { fill: none; stroke: var(--border-2); stroke-width: 1.2; }
 .sc-line-dim { fill: none; stroke: var(--text-3); stroke-width: 2.2; opacity: 0.5; }
 .sc-line-acc { fill: none; stroke: var(--accent); stroke-width: 2.8;
   stroke-linecap: round; stroke-linejoin: round; }
-/* Same trap as .sc-dim: these are put straight on a <rect>, so they need to
-   match the element, not only its children. Without it SVG paints black. */
+
 .sc-net { fill: var(--accent); }
 .sc-gross { fill: var(--border); opacity: 0.6; }
 .sc-hi { fill: var(--accent-soft); }
@@ -4382,9 +3880,7 @@ td .src-note::after,
 .sc-ghost { fill: none; stroke: var(--accent); stroke-width: 1.3; stroke-dasharray: 3 3; }
 .sc-strike { fill: none; stroke: var(--text-3); stroke-width: 2.4;
   stroke-linecap: round; opacity: 0.7; }
-/* the curves and the day-9 dashed line cross behind these labels and struck through
-   the glyphs ("frequency", "hold rate"); paint a ground-coloured halo under the text
-   so a label stays legible wherever a stroke lands */
+
 .sc-t { font-family: var(--font-mono); font-size: 12px; fill: var(--text-2);
   paint-order: stroke fill; stroke: var(--bg-elevated); stroke-width: 3.5px;
   stroke-linejoin: round; }
@@ -4393,11 +3889,7 @@ td .src-note::after,
 .sc-t-big { font-family: var(--font-sans); font-size: 20px; font-weight: 650; fill: var(--text); }
 .sc-t-big-acc { font-family: var(--font-sans); font-size: 20px; font-weight: 650; fill: var(--accent-text); }
 
-/* ============================================================
-   Chat figure — a worked exchange dropped into a prose page.
-   The feature pages were wall-to-wall paragraphs; this shows the
-   product doing the thing the paragraph describes.
-   ============================================================ */
+
 .chatfig {
   margin: 32px 0 0; padding: 20px;
   border: 1px solid var(--border); border-radius: var(--r-md);
@@ -4419,7 +3911,7 @@ td .src-note::after,
 .chatfig .cmsg-bot .ct .src-note { display: inline; }
 .chatfig .cmsg-user i { font-style: italic; opacity: 0.85; }
 
-/* section eyebrow icon — breaks up the run of identical headed blocks */
+
 .sec-ic {
   display: grid; place-items: center; width: 42px; height: 42px;
   margin-bottom: 16px; border-radius: 11px;
@@ -4428,7 +3920,7 @@ td .src-note::after,
 .sec-ic svg { width: 21px; height: 21px; fill: none; stroke: currentColor;
   stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
 
-/* icons on the three-up card rows */
+
 .hwb-lock-ic, .hwb-link-ic {
   display: grid; place-items: center; width: 34px; height: 34px;
   margin-bottom: 12px; border-radius: 9px;
@@ -4437,11 +3929,7 @@ td .src-note::after,
 .hwb-lock-ic svg, .hwb-link-ic svg { width: 17px; height: 17px; fill: none;
   stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
 
-/* ============================================================
-   Two-column comparison — "what it looks like" against "what it is".
-   Used on six pages; the class was written into the markup before the
-   styles existed, so it was rendering as two stacked bullet lists.
-   ============================================================ */
+
 .dv-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 30px; align-items: stretch; }
 .dv-side {
   display: flex; flex-direction: column;
@@ -4472,14 +3960,8 @@ td .src-note::after,
 }
 @media (max-width: 860px) { .dv-compare { grid-template-columns: 1fr; } }
 
-/* ============================================================
-   Chat → output pair. The chat is the ask; the panel beside it is
-   what came back. A connector makes that relationship explicit
-   instead of leaving two cards sitting next to each other.
-   ============================================================ */
-/* The pair had gap:0 with a 34px arrow column doing the separating, so the two
-   cards sat welded together and the section read as one dense block. Real gap,
-   no connector column: side-by-side already says "this produced that". */
+
+
 .askpair {
   display: grid; grid-template-columns: 1fr 1fr;
   gap: 28px; align-items: start; margin-top: 44px;
@@ -4511,12 +3993,7 @@ td .src-note::after,
   .askpair { grid-template-columns: 1fr; gap: 20px; }
 }
 
-/* ============================================================
-   UI figure — a drawing of an actual product screen, not a metaphor.
-   Structure mirrors the shipped creative detail view: KPI strip, then
-   a 280px rail (preview, Creative DNA, Dossier) beside the retention
-   × storyboard panel.
-   ============================================================ */
+
 .uifig {
   margin: 32px 0 0; border-radius: var(--r-md); overflow: hidden;
   border: 1px solid var(--border-2); background: var(--bg-elevated);
@@ -4603,15 +4080,8 @@ td .src-note::after,
   .uisplit { grid-template-columns: 1fr; }
 }
 
-/* ============================================================
-   Section motif — a small drawing beside a section head, filling the
-   right half that was reading as empty on the long prose pages.
-   Decorative: the argument is in the copy, this is the picture of it.
-   ============================================================ */
-/* The motif column was a fixed 0.85fr, so a short heading beside it left the
-   two halves floating apart with a lane of empty page between them. Cap the
-   motif and let the copy take the rest, so the pair reads as one row whatever
-   the heading length. */
+
+
 .sec-split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 420px);
   gap: clamp(32px, 4vw, 56px); align-items: center; }
 .sec-split > .sec-head { margin: 0; }
@@ -4629,8 +4099,7 @@ td .src-note::after,
 .mo-dash { fill: none; stroke: var(--text-3); stroke-width: 1.3; stroke-dasharray: 4 5; opacity: 0.6; }
 .mo-t { font-family: var(--font-mono); font-size: 11px; fill: var(--text-3); }
 .mo-t-acc { font-family: var(--font-mono); font-size: 11px; fill: var(--accent-text); }
-/* Creative DNA motif — the two backbones are structure, the rungs are the
-   strands the read pulls out, and only the four named ones are accented. */
+
 .mo-helix { fill: none; stroke: var(--text-3); stroke-width: 2; opacity: 0.45;
   stroke-linecap: round; }
 .mo-rung { fill: none; stroke: var(--border-2); stroke-width: 1.6; stroke-linecap: round; }
@@ -4640,47 +4109,28 @@ td .src-note::after,
   .sec-motif { max-width: 420px; }
 }
 
-/* ============================================================
-   Layout corrections after reviewing full-page screenshots.
-   The pairs were rendering lopsided: a tall narrow chat beside a
-   short wide panel, both with cramped type.
-   ============================================================ */
 
-/* Equal columns with real space between them.
-   MUST stay inside a min-width query: written unguarded it sits later in the
-   cascade than the 940px stacking rule above and silently re-imposes the
-   desktop grid on phones, pushing the output panel off-screen entirely. */
+
+
 @media (min-width: 941px) {
-  /* stretch, not start: the output panel is always shorter than the chat
-     beside it (40-140px on every page that uses this), and top-aligning them
-     left a ragged step down the right column on six pages at once. */
+  
   .askpair { grid-template-columns: 1fr 1fr; gap: 28px; align-items: stretch; }
-  /* Three identical chat-left/output-right pairs down one page stop being read
-     by the third. Flip the middle one — order only, DOM sequence unchanged so
-     the screen-reader path stays ask-then-answer. */
+  
   .askpair-flip > .chatfig { order: 2; }
   .askpair-flip > .askout { order: 1; }
 }
-/* grid items default to min-width:auto, which lets a long line blow the
-   column out rather than wrap */
+
 .askpair > .chatfig,
 .askpair > .askout { min-width: 0; }
-/* Previously both cards were stretched to the row height and the SVG was told
-   to flex:1 into whatever was left — which fought the viewBox and squeezed the
-   figure. Each card is now its own height; the shorter one just ends sooner. */
-/* The figure keeps its aspect ratio, so equal-height columns leave slack
-   underneath it. Centre the figure in that slack instead of letting it sit at
-   the top with 200px of dead panel below — stretching the SVG would distort it. */
+
+
 .askpair > .askout .askout-fig { margin: auto 0; }
 
-/* 2. Readable bubbles. 13px inside a half-width column was too small. */
+
 .chatfig { padding: 22px; }
-/* One spacing rule for the thread. Turn-taking margins are added on top of
-   this gap, so keep the base tight and let the transitions do the work. */
+
 .chatfig .chat-thread { gap: 10px; }
-/* The two speakers need visibly different widths or the thread reads as one
-   column of blocks rather than a conversation. The question is short and hugs
-   the right; the answer is long and hugs the left. */
+
 .chatfig .cmsg-user {
   font-size: 14px; line-height: 1.5; padding: 11px 15px;
   max-width: 76%; width: fit-content; margin-left: auto;
@@ -4691,41 +4141,32 @@ td .src-note::after,
   border-radius: 15px 15px 15px 5px;
 }
 .chatfig .cmsg-bot .ct { font-size: 14px; line-height: 1.62; }
-/* a second paragraph inside one answer should breathe, not double-space */
+
 .chatfig .cmsg-bot .ct br + br { line-height: 0.7; }
-/* Turn-taking needs real separation. A flat gap made the question and its
-   answer read as one block. The thread is a flex column with a gap, so these
-   margins ADD to it — measured 26/0/10 before, because two competing rules
-   were fighting; one rule per transition now. */
-/* A question and its answer belong together; the next question starts a new
-   exchange and needs a visible break. 10 + 2 = 12px within, 10 + 16 = 26px between. */
+
+
 .chatfig .cmsg-user + .cmsg-bot { margin-top: 2px; }
 .chatfig .cmsg-bot + .cmsg-user { margin-top: 16px; }
-/* and a touch more room inside a long answer's paragraph break */
+
 .chatfig .cmsg-bot .ct br + br { content: ""; display: block; height: 8px; }
 
-/* 3. The output panel gets the same breathing room. */
+
 .askout { padding: 22px; }
 .askout-note { font-size: 13px; }
 
-/* 4. Hero scenes were floating in a box much larger than the drawing. */
+
 .hero-scene { padding: 24px; display: flex; flex-direction: column; justify-content: center; }
 .hero-scene svg { margin: auto 0; }
 
-/* .askpair is a full-width chat→output pair (two panels plus a connector). As the
-   second child of .integ's 1.1fr/0.9fr grid it was squeezed into the 490px half
-   column, crushing each panel to ~225px and wrapping the reply 2-3 words per line.
-   It belongs on its own full-width row under the card. */
+
 .integ > .askpair { grid-column: 1 / -1; }
 
-/* The learning card came off the homepage, where it sat in a wider column.
-   In .integ's narrower right half its fixed inner widths overflowed. */
+
 .integ .memcard { max-width: 100%; overflow: hidden; }
 .integ .memcard .learn-said,
 .integ .memcard .learn-got { overflow-wrap: anywhere; }
 
-/* .memcard is built for the homepage's dark band (#141210). Dropped into a
-   light section its white type vanished. Repaint it for a light ground. */
+
 .band:not(.moat) .memcard { background: var(--bg-elevated); border: 1px solid var(--border); }
 .band:not(.moat) .memcard .memcard-h,
 .band:not(.moat) .memcard .learn-said { color: var(--text); }
@@ -4736,13 +4177,9 @@ td .src-note::after,
 .band:not(.moat) .memcard .learn-who { color: var(--text-3); }
 .band:not(.moat) .memcard .memcard-ic { background: var(--accent-soft); color: var(--accent-text); }
 
-/* ============================================================
-   Mobile fixes — found by testing at 390/414/768/1024.
-   ============================================================ */
 
-/* The drawer is position:fixed with no max-height while body is overflow:hidden.
-   Opening the Features group makes it 1122px tall, so on a 844px screen the last
-   nine links — Pricing, About, Blog and the CTA — simply cannot be reached. */
+
+
 .mobile-menu {
   max-height: calc(100dvh - 64px);
   overflow-y: auto;
@@ -4750,70 +4187,51 @@ td .src-note::after,
   overscroll-behavior: contain;
 }
 
-/* A <figure> carries a UA margin of 0 40px, which was eating 80px of an already
-   narrow column and shrinking the scene's 12px labels to under 6px effective. */
+
 .hero-scene { margin-left: 0; margin-right: 0; }
 
 @media (max-width: 940px) {
-  /* SVG text does not reflow — it scales. Compensate so labels stay legible. */
+  
   .hero-scene { padding: 14px; }
-  /* Do NOT raise the label font here: x-coordinates are hardcoded in the
-     drawing, so a bigger glyph runs straight out of its box. Scale the whole
-     figure instead — same legibility, geometry preserved. */
-  /* Scaling past 100% bled the drawing past the card edge — the box has no
-     clip. Trim the padding instead so the figure gets the width honestly. */
+  
+  
   .hero-scene { padding: 10px; overflow: hidden; }
   .hero-scene svg { width: 100%; margin-left: 0; }
   .askout { padding: 14px; overflow: hidden; }
   .askout svg { width: 100%; margin-left: 0; }
-  /* a citation that cannot wrap will overflow the viewport on its own */
+  
   .src-note { white-space: normal; }
-  /* iOS Safari auto-zooms any input under 16px on focus */
+  
   .lead-form input, .lead-form textarea, .lead-form select { font-size: 16px; }
-  /* 5 tiles never divide into 2 columns without an orphan */
+  
   .uikpis { grid-template-columns: repeat(2, 1fr); }
   .uikpis .uikpi:last-child { grid-column: 1 / -1; }
 }
 
-/* Touch targets: 42px inputs and 36px social icons are both under the 44px floor */
+
 @media (pointer: coarse) {
   .lead-form input, .lead-form select { min-height: 44px; }
   .footer .soc a { width: 44px; height: 44px; }
 }
 
-/* SVG <text> does not wrap, so a long label can poke past a scaled viewBox.
-   Letting the figure clip is correct here — the captions under each figure
-   carry the same information in real, reflowing text. */
+
 .hero-scene svg, .askout svg, .sec-motif svg { overflow: hidden; }
-/* the learning card keeps its own inner widths; clip rather than push the page */
+
 .memcard { max-width: 100%; overflow: hidden; }
 
-/* The connector column is gone (see .askpair above), which also retires the
-   350x30 stacked-overlap bug this block used to patch. Stacking now only needs
-   one column and a gap, set at the 940px rule further up. */
 
-/* Section motifs are decorative; a long label inside one must not push the
-   column. The argument is in the copy beside them, never in the drawing. */
+
+
 .sec-motif { min-width: 0; overflow: hidden; }
 
-/* The decorative ghost behind a section head is positioned off the right edge
-   by design; clip it at the section rather than let it widen the page. */
+
 .band { overflow-x: clip; }
 
-/* ⚠️ EXCEPTION — the pinned section must not clip on either axis.
-   `overflow-x: clip` with `overflow-y: visible` still makes the element a
-   scroll container on BOTH axes as far as position:sticky is concerned, so
-   the rule above silently killed the pin: the sticky child computed as
-   sticky, reported the right height, and never stuck. The ghost is dropped
-   here instead, which is what the clip was protecting the page from. */
+
 .builds-pin { overflow: visible; }
 .builds-pin .sec-ghost { display: none; }
 
-/* ============================================================
-   Connections strip — what is wired now, and what is next.
-   Marks are drawn from geometry rather than lifted brand files:
-   no trademark use, and they sit in the site's own visual language.
-   ============================================================ */
+
 .conns { margin-top: 30px; }
 .conns-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: stretch; }
 .conn {
@@ -4842,11 +4260,7 @@ td .src-note::after,
 @media (max-width: 620px) { .conn-t { white-space: normal; } }
 .conn-later { background: var(--bg-hover); color: var(--text-3); }
 
-/* ---- agency strip: the MD's motive, on a page written for the practitioner ----
-   The vertical pages all address the person who owns one P&L. Agencies are the
-   first door in the GTM, and none of these pages spoke to the person who owns a
-   book of them — margin, retention, capacity. One band before the CTA, in each
-   vertical's own vocabulary, linking to the page that carries the argument. */
+
 .agency-strip {
   max-width: 780px; margin: 0 auto; padding: 26px 28px;
   border: 1px solid var(--border); border-radius: var(--r-lg);
@@ -4868,13 +4282,8 @@ td .src-note::after,
 .agency-strip-a:hover svg { transform: translateX(3px); }
 @media (max-width: 620px) { .agency-strip { padding: 20px 18px; } .agency-strip p { font-size: 14.5px; } }
 
-/* ---- trust gate: the refusal card belongs beside the chat, not under it ----
-   The card sat alone in a full-width row with its right half empty, while the
-   chat below it repeated the same refusal into an output panel. One row now:
-   the conversation on the left, the two refusals it came from on the right. */
-/* Equal-height, not top-aligned: the two panels are one comparison, and a short
-   right column next to a tall left one reads as two unrelated blocks. Both
-   stretch; the figure inside the card takes the slack so the edges line up. */
+
+
 .tg-split { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; align-items: stretch; }
 .tg-split > * { min-width: 0; }
 .tg-split .chatfig { margin: 0; display: flex; flex-direction: column; }
@@ -4906,22 +4315,11 @@ td .src-note::after,
   .tg-split { grid-template-columns: 1fr; gap: 22px; }
 }
 
-/* ---- a closing paragraph is part of the block above it, not a stray centred
-   note. It was centred at 780px under a full-width three-column grid, so the
-   page had three different alignments stacked: grid edge, panel edge, and a
-   centred column narrower than both. Left-aligned, and held to the reading
-   measure the rest of the section uses. */
+
 .hwb-locks + .stack-kicker,
 .hwb-iso + .stack-kicker { text-align: left; margin-left: 0; max-width: 68ch; }
 
-/* ============================================================
-   MIRRORED DIAGRAM — the same morning, drawn twice
-   The strongest technique in the deck corpus (micro1, SquadTrip):
-   one identical graphic, broken on the left and working on the
-   right, makes the product claim without a feature list. This
-   replaced four 90-word prose cards that restated, in text, the
-   comparison the hero SVG was already drawing.
-   ============================================================ */
+
 .mirror {
   display: grid; grid-template-columns: 1fr 1fr; gap: 22px;
   align-items: stretch; margin-top: 34px;
@@ -4946,7 +4344,7 @@ td .src-note::after,
 }
 .mirror-note b { color: var(--text); font-weight: 650; }
 
-/* figure internals — neutral on the left, accent only where it earns it */
+
 .mr-tool rect { fill: var(--bg-2, var(--bg-hover)); stroke: var(--border-2); stroke-width: 1.1; }
 .mr-tool-in rect { fill: var(--bg-2, var(--bg-hover)); stroke: var(--border-2); stroke-width: 1.1; }
 .mr-t { font-family: var(--font-sans); font-size: 13px; font-weight: 650; fill: var(--text); }
@@ -4968,15 +4366,7 @@ td .src-note::after,
   .mirror { grid-template-columns: 1fr; gap: 18px; }
 }
 
-/* ============================================================
-   STORY SPINE — eight panels, dark band
-   Adams' Story Spine, applied to Adgent in
-   marketing/reference/storytelling-and-canon.md:521-528. That copy
-   had been written and validated and never used anywhere. Eight
-   sentences, one figure each: prose becomes a sequence, and the
-   dark band gives the page the tension/release oscillation Duarte
-   argues for (this page had none — nine light sections in a row).
-   ============================================================ */
+
 .arc-head { max-width: 62ch; }
 .arc-head h2 {
   font-size: clamp(26px, 3.2vw, 36px); font-weight: 800; letter-spacing: -0.032em;
@@ -4995,8 +4385,7 @@ td .src-note::after,
   border: 1px solid rgba(244,242,238,0.13);
   background: rgba(244,242,238,0.035);
 }
-/* the two hinges of the story get the accent — the inciting incident
-   and the resolution. Everything else stays quiet on purpose. */
+
 .arc-turn { border-color: color-mix(in srgb, var(--accent) 42%, transparent); }
 .arc-end  { border-color: color-mix(in srgb, var(--accent) 42%, transparent);
               background: color-mix(in srgb, var(--accent) 9%, transparent); }
@@ -5007,7 +4396,7 @@ td .src-note::after,
 .arc-i p { margin: 0; font-size: 13.5px; line-height: 1.5; color: rgba(244,242,238,0.86); }
 .arc-fig { width: 100%; height: auto; display: block; margin-top: auto; padding-top: 10px; }
 
-/* figure vocabulary, dark-band variant of the sc-* system */
+
 .sp-box rect { fill: rgba(244,242,238,0.07); stroke: rgba(244,242,238,0.22); stroke-width: 1; }
 .sp-dark rect { fill: rgba(20,18,16,0.75); stroke: rgba(244,242,238,0.16); stroke-width: 1; }
 .sp-hi rect { fill: color-mix(in srgb, var(--accent) 26%, transparent); stroke: var(--accent); stroke-width: 1.1; }
@@ -5028,12 +4417,7 @@ td .src-note::after,
 @media (max-width: 1080px) { .arc { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 560px)  { .arc { grid-template-columns: 1fr; } }
 
-/* ============================================================
-   DEPENDENCY CHAIN — the order, drawn
-   Three prose boxes argued a load-bearing chain in words while
-   the layer-stack graphic sat in the section directly above. One
-   left-to-right diagram with the failure mode hung off each link.
-   ============================================================ */
+
 .dep { margin-top: 30px; }
 .dep-fig { width: 100%; height: auto; display: block; overflow: visible; }
 .dep-b rect { fill: var(--bg-elevated); stroke: var(--border-2); stroke-width: 1.3; }
@@ -5049,12 +4433,7 @@ td .src-note::after,
 .dep-f { font-family: var(--font-mono); font-size: 10.5px; fill: var(--text-3); text-anchor: middle; }
 .dep-f-b { text-anchor: middle; }
 
-/* ============================================================
-   THREE GATES — the sequence, drawn
-   The trust story is a sequence, and a sequence drawn as three
-   numbered prose cards is a list. One rail, three gates, and the
-   two points where a change is stopped labelled underneath.
-   ============================================================ */
+
 .gates { margin-top: 30px; }
 .gates-fig { width: 100%; height: auto; display: block; overflow: visible; }
 .gt-node circle { fill: var(--text-3); }
@@ -5076,8 +4455,7 @@ td .src-note::after,
 .gt-drop path { fill: none; stroke: var(--text-3); stroke-width: 1.2; stroke-dasharray: 3 4; opacity: 0.7; }
 .gt-x { font-family: var(--font-mono); font-size: 10px; fill: var(--text-3); text-anchor: middle; }
 
-/* not-for-you — the disqualifying block, given the contrast it needs
-   to read as a deliberate statement rather than a caveat paragraph */
+
 .nfy { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 34px; }
 .nfy-i {
   padding: 20px; border-radius: var(--r-md, 12px);
@@ -5095,39 +4473,16 @@ td .src-note::after,
 .nfy-i p { margin: 10px 0 0; font-size: 13.5px; line-height: 1.55; color: rgba(244,242,238,0.72); }
 @media (max-width: 900px) { .nfy { grid-template-columns: 1fr; } }
 
-/* On one column the arc figures scale to full width and each panel becomes
-   half a screen tall — the sequence stops reading as a sequence. Cap them. */
+
 @media (max-width: 560px) {
   .arc-fig { max-width: 220px; margin-left: 0; }
   .arc-i { padding: 14px; }
 }
 
-/* The ghost mark is deliberately hung past the hero's right edge (right:-140px)
-   for the bleed, but nothing was clipping it, so it widened the document by 8px
-   and the whole homepage could be scrolled sideways. Clip at the hero — `clip`
-   rather than `hidden` so it does not create a scroll container. */
+
 .hero { overflow-x: clip; }
 
-/* ============================================================
-   FIGURE MOTION — one pass on entry, in the order the argument runs
-   ------------------------------------------------------------
-   The site's grammar is verdict-first, evidence-underneath. These
-   animations reproduce that order rather than decorating it: the
-   quantity accumulates, its connectors assert themselves, evidence
-   cards land, and only then does the accent verdict — and the one
-   point the figure is about — arrive.
 
-   Rules held here, deliberately:
-   - one pass, never a loop (the site already breathes elsewhere)
-   - compositor properties only: transform / opacity / dashoffset.
-     Bars scale rather than grow their height attribute, because
-     animating height re-lays-out the SVG on every frame.
-   - transform-box: fill-box, or scaleY would pivot on the viewBox
-     origin instead of the shape's own baseline
-   - text reaches full opacity inside 400ms: motion never delays reading
-   - reduced-motion lands on the FINAL frame, never a middle state
-   `data-fig` is stamped by build.py, so a new figure inherits this.
-   ============================================================ */
 @media (prefers-reduced-motion: no-preference) {
   html.js [data-anim] .sc-bars rect,
   html.js [data-anim] .sc-ghost rect,
@@ -5144,7 +4499,7 @@ td .src-note::after,
   html.js [data-anim].in .sc-acc > rect,
   html.js [data-anim].in .mp-bars rect { transform: scaleY(1); opacity: 1; }
 
-  /* a bar's own neighbours arrive left to right */
+  
   html.js [data-anim] .sc-bars rect:nth-child(2),
   html.js [data-anim] .mo-fill rect:nth-child(2) { transition-delay: 60ms; }
   html.js [data-anim] .sc-bars rect:nth-child(3),
@@ -5152,10 +4507,10 @@ td .src-note::after,
   html.js [data-anim] .sc-bars rect:nth-child(4),
   html.js [data-anim] .mo-fill rect:nth-child(4) { transition-delay: 180ms; }
   html.js [data-anim] .sc-bars rect:nth-child(n+5) { transition-delay: 240ms; }
-  /* the dashed "came back" caps follow the bar they sit on */
+  
   html.js [data-anim] .sc-ghost rect { transition-delay: 300ms; }
 
-  /* 2 · draw — a line traces its own path, which is time passing */
+  
   html.js [data-anim] .sc-line-acc,
   html.js [data-anim] .sc-line-dim,
   html.js [data-anim] .sc-axis,
@@ -5175,9 +4530,7 @@ td .src-note::after,
   html.js [data-anim].in .mo-helix path { stroke-dashoffset: 0; }
   html.js [data-anim] .sc-line-acc { transition-delay: 120ms; }
 
-  /* 3 · trace — dashed connectors extend: a dependency asserting itself.
-     These keep their dash pattern, so they fade and slide a little
-     instead of drawing (a drawn dash reads as a solid line mid-flight) */
+  
   html.js [data-anim] .sc-dash,
   html.js [data-anim] .sc-dash-acc,
   html.js [data-anim] .mo-dash,
@@ -5196,7 +4549,7 @@ td .src-note::after,
   html.js [data-anim].in .mp-dashed,
   html.js [data-anim].in .tgp-brace { opacity: 1; transform: none; }
 
-  /* 4 · settle — evidence cards land, staggered */
+  
   html.js [data-anim] .sc-card rect,
   html.js [data-anim] .sc-card-acc,
   html.js [data-anim] .sc-plate,
@@ -5229,7 +4582,7 @@ td .src-note::after,
   html.js [data-anim] .sc-card rect:nth-child(n+4),
   html.js [data-anim] .mr-tool rect:nth-child(n+4) { transition-delay: 240ms; }
 
-  /* 5 · land — the verdict arrives after what justifies it */
+  
   html.js [data-anim] text {
     opacity: 0;
     transition: opacity 340ms var(--ease) 200ms;
@@ -5243,7 +4596,7 @@ td .src-note::after,
   html.js [data-anim] .mr-out-t-acc,
   html.js [data-anim] .tgp-mult { transition-delay: 420ms; }
 
-  /* 6 · mark — the one point the figure is about, last */
+  
   html.js [data-anim] circle.sc-acc,
   html.js [data-anim] .sc-acc circle,
   html.js [data-anim] .sp-dot circle,
@@ -5263,7 +4616,7 @@ td .src-note::after,
   html.js [data-anim].in .mp-dot-acc,
   html.js [data-anim].in .mo-node circle { opacity: 1; transform: none; }
 
-  /* the strike-through that cancels a number draws itself, after the number */
+  
   html.js [data-anim] .sc-strike path,
   html.js [data-anim] .mp-strike {
     stroke-dasharray: 40; stroke-dashoffset: 40;
@@ -5273,7 +4626,7 @@ td .src-note::after,
   html.js [data-anim].in .mp-strike { stroke-dashoffset: 0; }
 }
 
-/* motion off: every figure sits at its finished frame, not a middle one */
+
 @media (prefers-reduced-motion: reduce) {
   [data-anim] *, [data-anim] {
     transform: none !important; opacity: 1 !important;
@@ -5281,24 +4634,11 @@ td .src-note::after,
   }
 }
 
-/* ============================================================
-   DARK BAND — the page's hardest sentence, on ink
-   ------------------------------------------------------------
-   The product pages ran five to ten white sections in a row, so the
-   argument had no crest: everything was equally lit and nothing was
-   emphasised. `.moat` already solved this on two pages — ink ground,
-   a low accent glow, the light-on-dark type scale. This generalises
-   that surface so any section can carry it.
 
-   Used sparingly and on purpose: ONE per page, on the sentence the
-   page would keep if it could keep only one. A second dark band on
-   the same page would make it wallpaper again.
-   ============================================================ */
 .band-ink {
   background: #141210; color: #f4f2ee;
   position: relative; overflow: hidden;
-  /* the light sections butt straight against it, so the edge itself
-     does the work — no border needed */
+  
   padding-block: clamp(56px, 7vw, 96px);
 }
 .band-ink::before {
@@ -5309,7 +4649,7 @@ td .src-note::after,
 }
 .band-ink > .wrap { position: relative; z-index: 1; }
 
-/* type on ink: the same scale the moat block already uses */
+
 .band-ink .eyebrow { color: rgba(244,242,238,0.62); }
 .band-ink .eyebrow .tick { background: var(--accent); }
 .band-ink .sec-title, .band-ink h2, .band-ink h3 { color: #f8f6f2; }
@@ -5320,7 +4660,7 @@ td .src-note::after,
 .band-ink a:not(.btn) { color: var(--accent); }
 .band-ink .src-note { color: rgba(244,242,238,0.42); }
 
-/* the one-line statement a dark band exists to carry */
+
 .ink-line {
   margin: 0; max-width: 30ch;
   font-size: clamp(26px, 3.4vw, 42px); font-weight: 700;
@@ -5339,8 +4679,7 @@ td .src-note::after,
 }
 @media (max-width: 900px) { .ink-split { grid-template-columns: 1fr; gap: 26px; } }
 
-/* a small evidence rail beside the statement, when the page has numbers
-   worth showing rather than asserting */
+
 .ink-facts { display: flex; flex-direction: column; gap: 14px; margin: 0; }
 .ink-fact {
   display: flex; gap: 14px; align-items: baseline;
@@ -5354,29 +4693,14 @@ td .src-note::after,
 }
 .ink-fact span { font-size: 13.5px; line-height: 1.5; color: rgba(244,242,238,0.78); }
 
-/* cards keep working on ink without each page restating them */
+
 .band-ink .sc-card rect, .band-ink .dv-side, .band-ink .pcard {
   background: rgba(244,242,238,0.05); border-color: rgba(244,242,238,0.14);
 }
 
-/* Cache note, 2026-08-17: the hashed URL is immutable by construction — one
-   build, one hash — so vercel.json now says so (max-age=1y, immutable). The
-   previous 4h max-age let an edge hold a body under a hash that had already
-   moved on, which shows up as new HTML asking for a stylesheet it does not get. */
 
-/* ============================================================
-   MEGA-MENU PANEL ART — the drawing assembles as you hover
-   ------------------------------------------------------------
-   Each panel drawing already tells a small story in the order its
-   parts are authored: the thing you said, the ties that carry it,
-   the rows it lands in, the ticks that confirm. It was appearing
-   all at once on a 220ms fade, so none of that order was legible.
 
-   The panel is a hover surface, so this is faster and lighter than
-   the in-page figures: ~460ms end to end, nothing springy. It
-   replays on every hover — unlike the page figures, which fire once
-   — because the panel is a thing you point at deliberately.
-   ============================================================ */
+
 @media (prefers-reduced-motion: no-preference) {
   html.js .mega-panel-art .mp-bubble,
   html.js .mega-panel-art .mp-card,
@@ -5388,14 +4712,14 @@ td .src-note::after,
   html.js .mega-panel-art.on .mp-card,
   html.js .mega-panel-art.on .mp-plate { opacity: 1; transform: none; }
 
-  /* the ties draw themselves, left to right, after the bubble lands */
+  
   html.js .mega-panel-art .mp-tie {
     stroke-dasharray: 90; stroke-dashoffset: 90;
     transition: stroke-dashoffset 340ms var(--ease) 120ms;
   }
   html.js .mega-panel-art.on .mp-tie { stroke-dashoffset: 0; }
 
-  /* rows and bars arrive in sequence — what the rule applied to */
+  
   html.js .mega-panel-art .mp-rows rect,
   html.js .mega-panel-art .mp-frames rect,
   html.js .mega-panel-art .mp-grid rect {
@@ -5419,7 +4743,7 @@ td .src-note::after,
   }
   html.js .mega-panel-art.on .mp-bars rect { transform: scaleY(1); opacity: 1; }
 
-  /* the confirmation is the last thing to arrive, as it should be */
+  
   html.js .mega-panel-art .mp-tick path {
     stroke-dasharray: 22; stroke-dashoffset: 22;
     transition: stroke-dashoffset 260ms var(--ease) 300ms;
@@ -5446,8 +4770,7 @@ td .src-note::after,
   html.js .mega-panel-art.on .mp-t,
   html.js .mega-panel-art.on .mp-d { opacity: 1; }
 
-  /* the nav icon nudges toward its label on hover — a small, cheap sign
-     that the row is live, on a surface where nothing else moves */
+  
   html.js .nav-mega a .mega-ic svg { transition: transform 240ms cubic-bezier(.16,1,.3,1); }
   html.js .nav-mega a:hover .mega-ic svg { transform: translateX(1.5px) scale(1.06); }
 }
@@ -5456,18 +4779,9 @@ td .src-note::after,
                       stroke-dashoffset: 0 !important; transition: none !important; }
 }
 
-/* ============================================================
-   SECTION TRANSITIONS — the page should breathe between arguments
-   ------------------------------------------------------------
-   Sections already blend through .band-sub's gradient. Two things
-   were missing: the ink bands cut in hard on both edges, and a
-   section's own head arrived at the same instant as its body, so a
-   long page read as one continuous slab rather than a sequence of
-   arguments.
-   ============================================================ */
 
-/* an ink band should arrive as a change of ground, not a cut: the light
-   section above it darkens into it, and lifts back out below */
+
+
 .band-ink::after {
   content: ""; position: absolute; left: 0; right: 0; top: 0; height: 90px;
   background: linear-gradient(to bottom, rgba(20,18,16,0), rgba(20,18,16,0) 44%, transparent);
@@ -5475,7 +4789,7 @@ td .src-note::after,
 }
 .band + .band-ink { position: relative; }
 .band + .band-ink::before {
-  /* keep the accent glow, and add the entry fade above it */
+  
   background:
     linear-gradient(to bottom, rgba(255,255,255,0.055), transparent 120px),
     radial-gradient(72% 62% at 82% -10%, rgba(255,90,44,0.18), transparent 58%),
@@ -5483,23 +4797,18 @@ td .src-note::after,
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  /* a section head leads its own body by a beat, so the eye is given the
-     claim before the evidence under it — the same order the figures use */
+  
   html.js .band .sec-head[data-reveal] { transition-delay: 0ms; }
   html.js .band .sec-head[data-reveal] + * { transition-delay: 110ms; }
 
-  /* The eyebrow's tick draws itself, so a section announces itself quietly.
-     Scoped to eyebrows that actually sit inside a reveal target: an eyebrow
-     outside one never receives .in, so a bare scaleX(0) would leave it
-     permanently zero-width — which is what the browser check caught on 34
-     pages. Animate only where something will definitely switch it back on. */
+  
   html.js [data-reveal] .eyebrow .tick {
     transform-origin: left center; transform: scaleX(0);
     transition: transform 420ms cubic-bezier(.16,1,.3,1) 80ms;
   }
   html.js [data-reveal].in .eyebrow .tick { transform: scaleX(1); }
 
-  /* the ink band's own contents lead with the statement, then the facts */
+  
   html.js .band-ink .ink-line { transition-delay: 0ms; }
   html.js .band-ink .ink-sub { transition-delay: 120ms; }
 }
@@ -5507,10 +4816,7 @@ td .src-note::after,
   .eyebrow .tick { transform: none !important; }
 }
 
-/* ---- reversal artefact (panel 05) ------------------------------------------
-   The only panel on this section carrying real account data, so it says so
-   plainly rather than dressing up as another mock. The three steps read down
-   as a chain; the last one turns back on itself, which is the whole point. */
+
 .mini-rb { display: flex; flex-direction: column; gap: 8px; }
 .mrb-note {
   margin-bottom: 4px; padding: 10px 12px;
@@ -5539,13 +4845,9 @@ td .src-note::after,
   .mrb-step { grid-template-columns: 1fr; gap: 3px; }
 }
 
-/* ============================================================
-   2026-09-02 — accessibility + density pass
-   ============================================================ */
 
-/* One focus ring for the whole site. Only the skip link, the tab strip and the
-   form fields had one; every nav, footer and card link fell back to Chrome's
-   default blue outline, which reads as unstyled. */
+
+
 a:focus-visible,
 button:focus-visible,
 summary:focus-visible,
@@ -5555,33 +4857,26 @@ summary:focus-visible,
   border-radius: 3px;
 }
 
-/* The hero offered one action and no lower-commitment path, so anyone not ready
-   to hand over an account had nowhere to go. Quiet second button. */
+
 .btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--border-2); }
 .btn-ghost:hover { background: var(--bg-sub); border-color: var(--text-4); }
 
-/* A 42ch measure is right beside two siblings and a hole once the grid is one
-   column and the card is 700px wide — which is what 641-920px gets. */
+
 @media (max-width: 920px) {
   .layer p, .step p, .gt-point p { max-width: none; }
 }
 
 @media (max-width: 980px) {
-  /* Stacked, the sticky FAQ aside repeats the audit ask that #lead makes
-     directly under it: the same CTA twice, 360px apart. Desktop keeps it,
-     where it is a sidebar rather than a duplicate. */
+  
   .faq-aside { display: none; }
 }
 
 @media (max-width: 640px) {
-  /* 22 destinations in a single column made the footer three phone screens
-     tall — longer than the section it follows. */
+  
   .foot-grid { grid-template-columns: 1fr 1fr; gap: 28px 20px; }
   .foot-brand { grid-column: 1 / -1; }
   .foot-bottom { margin-top: 32px; }
 }
 
-/* `.builds-pin { padding: 0 }` was written to hand spacing to .builds-sticky,
-   but `.band + .band` outranks a single class, so the section paid for both.
-   Match the specificity and the intent holds. */
+
 .band.builds-pin, .band + .band.builds-pin { padding-top: 0; padding-bottom: 0; }
