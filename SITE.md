@@ -167,23 +167,27 @@ split the outer link and emitted an empty, focusable, unnamed one — the Creati
 intelligence row was not a working link. Fixed by unwrapping the inner link. There are now
 **zero nested anchors sitewide**; keep it that way when adding inline links to `.feat-row`.
 
-### The brand colour is back on filled surfaces — decided 2026-09-03
+### Buttons: the logo colour, with white labels — decided 2026-09-03
 
 `2941227` (2026-09-02) fixed a real contrast failure the wrong way round. White on the
 logo coral `#ff5a2c` is **3.11:1** and fails AA under 24px, so it introduced
 `--accent-fill: #d1421d` and kept the label white. Contrast passed; **every button on the
 site became a colour the logo does not contain.**
 
-Inverted instead — the fill is the logo colour, the label is ink:
-
 | Pairing | Ratio | |
 |---|---|---|
-| `#1c1a17` on `#ff5a2c` | **5.58:1** | AA at any size — what we now ship |
-| `#ffffff` on `#ff5a2c` | 3.11:1 | fails; this is why the fill was darkened |
+| `#ffffff` on `#ff5a2c` | 3.11:1 | **what we ship** — owner decision, brand over score |
+| `#1c1a17` on `#ff5a2c` | 5.58:1 | passes AA at any size; rejected on brand |
 | `#ffffff` on `#d1421d` | 4.68:1 | passed, but off-brand |
 
-There is no third option: white text needs the background luminance below 0.183, and
-`#ff5a2c` is 0.288. Either the colour moves or the label does. The label moved.
+There is no third option at 14px: white text needs the background luminance below 0.183 and
+`#ff5a2c` is 0.288. Either the colour moves or the label does. **Neither moved, by
+decision** — the fill is the logo colour and the label is white, and the site scores
+**accessibility 97 instead of 100** because of it. Three spans, all the same 3.11:1 pairing.
+
+This is a trade that was made with the number in hand, not an oversight. Do not "fix" it
+back to ink without asking. The one route that recovers both: AA allows 3:1 for text at
+18.66px bold or 24px, and the button label is 14px/600 today.
 
 Done at token level (`tokens.css`), so buttons, table headers, chat bubbles, the cookie
 banner and the demo shell all follow one decision — `--accent-fill` is the logo colour and
@@ -248,16 +252,46 @@ Where it landed, Lighthouse mobile on production: **performance 78, TBT 0 ms, CL
 **FCP = LCP = 3.8 s**. TBT at zero says JavaScript is no longer blocking; the whole render is
 now gated on first paint.
 
-**The two remaining levers, measured, both deliberately not taken tonight:**
+### The stylesheets are served without their comments — 2026-09-03
 
-1. **`site.css` ships 74.9 KB and 57.7 KB of it (77%) is unused on the homepage.** Fixing that
-   is critical-CSS extraction, which risks FOUC across 52 pages and needs daylight.
-2. **28 KB of that is just missing minification** — the stylesheet ships with its comments.
-   Mechanically safe, but there is no CSS tooling in this repo and `build.py` has no
-   dependencies; adding a minifier is a pipeline decision, and a hand-rolled regex over a
-   289 KB stylesheet is exactly the kind of clever that breaks `content:` strings at 4am.
+`build.py` emits `site.min.css` and `tokens.min.css` and `stamp_assets` points the pages at
+them. The sources keep every comment; only the served copies lose them. Confirmed by
+Lighthouse against production: **`site.css` 74.9 KB → 42.2 KB**, and its own
+`unminified-css` opportunity fell from **28 KiB to 6 KiB**.
 
-Neither is a bug. Both are a decision about whether this repo grows a build dependency.
+No dependency was added. The strip refuses to run if any string or `url()` contains a
+comment marker, and asserts that every brace it removed sat inside a comment. Equivalence
+was checked in the browser rather than by eye: both files parse to an **identical CSSOM —
+1699 top-level and 2154 total rules either way**. Whitespace is deliberately untouched; it
+buys 1.2 KB more and is where a regex over a 288 KB file would actually get dangerous.
+
+⚠️ **Say the disappointing part plainly: Lighthouse's simulated FCP did not move.** 78
+before, 76/77/78 across three warm runs after. A first run scored 68 purely because the new
+filenames were cold at the edge — never report a number off a cold cache. The bytes are
+genuinely gone and slow connections genuinely benefit; the lab score does not show it,
+because something else dominates.
+
+### What actually gates first paint now — measured
+
+`render-blocking-insight`, estimated total saving **1,820 ms**:
+
+| Resource | Size | Cost |
+|---|---|---|
+| `fonts.googleapis.com/css2?…` | **1.7 KB** | **995 ms** |
+| `site.min.css` | 42.2 KB | 1,222 ms |
+| `tokens.min.css` | 1.5 KB | 215 ms |
+
+**A 1.7 KB file costing 995 ms is not a bandwidth problem, it is an origin problem** — DNS,
+TLS and connect to `fonts.googleapis.com`, and then the same again to `fonts.gstatic.com`
+before a single glyph arrives. Two extra origins in front of the first paint.
+
+**Self-hosting the three families removes both origins from the critical path** and is the
+largest remaining lever by a distance. It is a real piece of work — download the subsets,
+serve them from `/assets/fonts/`, write the `@font-face` rules with `font-display: swap`,
+drop the two `preconnect` hints — and it wants daylight, not a 4am guess.
+
+The other standing item is unchanged: **28 KiB of `site.min.css` is still unused on the
+homepage**, which is critical-CSS extraction and risks FOUC across 52 pages.
 
 ## Rules
 
