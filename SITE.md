@@ -224,8 +224,40 @@ Two real defects were removed:
 
 **What was not the cause:** the webfont change in `53f6803`. The request URL is byte-identical
 before and after that commit — same three families, same variants. It moved them out of a
-chained `@import` into a `<head>` link, which is strictly faster. The remaining cost is
-~480 ms of main-thread work in `site.js`; that needs a profile, not a guess.
+chained `@import` into a `<head>` link, which is strictly faster.
+
+### The profile, and what it found — 2026-09-03
+
+Traced production under Slow 4G and 4× CPU. LCP 1,321 ms, of which **1,100 ms was render
+delay** — the bottleneck was the main thread, not the network, and render-blocking requests
+already reported an estimated saving of **0 ms**. Two forced-reflow defects, same shape:
+
+| Frame | Before | After |
+|---|---|---|
+| on-load reveal pass | **136 ms** | one layout instead of 23 |
+| `placeGlyphs()` | 16 ms → **69 ms** once it was no longer hidden | **9 ms** |
+| `docTop()` | 52 ms | 11 ms |
+
+Both read `getBoundingClientRect()` and wrote a class or a style **inside the same loop**, so
+every write invalidated layout for the read after it. Split into read and write phases. The
+rule to keep: **measure the whole set, then mutate the whole set.** `upd()` and the chapter
+seam loop still interleave, at single-digit-to-50 ms; they are the same fix when someone is
+next in this file.
+
+Where it landed, Lighthouse mobile on production: **performance 78, TBT 0 ms, CLS 0**, but
+**FCP = LCP = 3.8 s**. TBT at zero says JavaScript is no longer blocking; the whole render is
+now gated on first paint.
+
+**The two remaining levers, measured, both deliberately not taken tonight:**
+
+1. **`site.css` ships 74.9 KB and 57.7 KB of it (77%) is unused on the homepage.** Fixing that
+   is critical-CSS extraction, which risks FOUC across 52 pages and needs daylight.
+2. **28 KB of that is just missing minification** — the stylesheet ships with its comments.
+   Mechanically safe, but there is no CSS tooling in this repo and `build.py` has no
+   dependencies; adding a minifier is a pipeline decision, and a hand-rolled regex over a
+   289 KB stylesheet is exactly the kind of clever that breaks `content:` strings at 4am.
+
+Neither is a bug. Both are a decision about whether this repo grows a build dependency.
 
 ## Rules
 
