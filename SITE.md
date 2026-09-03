@@ -71,6 +71,13 @@ python3 build.py           # regenerate every page + sitemap.xml + llms.txt + ll
 The two `llms*.txt` files are the AI-crawler surface and are covered by `--check` like everything
 else, so a new page that never gets a build run is missing from them silently.
 
+`--check` also enforces one cross-file contract: the `script.src` values in `site.js` must be
+first-party paths, and `vercel.json` must rewrite each of them — both the bare path and its
+`/:path*` companion — to a `*.fps.goog` tag gateway origin. Measurement has no visible symptom
+when it breaks: a renamed path, a dropped rewrite or a paste back to `googletagmanager.com`
+would keep serving the site perfectly while collecting nothing. This check is the only place
+that notices.
+
 **`_partials/` is the source of truth**, not any page:
 
 ```

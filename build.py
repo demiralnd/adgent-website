@@ -474,7 +474,8 @@ def llms_full(check_only=False):
 
 
 def audit():
-    """Head-level invariants the partials can't enforce.
+    """Invariants the partials can't enforce: per-page <head>, plus the one
+    cross-file contract (site.js ↔ vercel.json) that measurement depends on.
 
     render() owns the header/mobile/footer; <head> is per-page and therefore
     drifts. These all shipped to production at least once.
@@ -545,6 +546,29 @@ def audit():
             problems.append(f"{rel}: webfont loaded from a third-party origin")
         if "/tokens" not in head:
             problems.append(f"{rel}: tokens stylesheet not linked from <head>")
+
+    # 7. The measurement paths must stay wired end to end. site.js loads the tag
+    #    and the container from first-party paths; vercel.json rewrites those
+    #    paths to the Google tag gateway origins. If the two ever disagree —
+    #    a renamed path, a dropped rewrite, a copy-paste back to
+    #    googletagmanager.com — measurement 404s or quietly leaves our domain,
+    #    and no page shows a symptom. This is the only place that can notice.
+    site_js = read(os.path.join(ROOT, "site.js"))
+    rewrites = {r["source"]: r["destination"]
+                for r in json.loads(read(os.path.join(ROOT, "vercel.json")))
+                .get("rewrites", [])}
+    sources = re.findall(r"script\.src = '([^']+)'", site_js)
+    if not sources:
+        problems.append("site.js: no measurement script source at all")
+    for src in sources:
+        if not src.startswith("/"):
+            problems.append(f"site.js: {src} is not a first-party path")
+            continue
+        if not re.fullmatch(r"https://[a-z0-9-]+\.fps\.goog/[a-z]+/",
+                            rewrites.get(src, "")):
+            problems.append(f"vercel.json: {src} does not rewrite to a gateway origin")
+        if ".fps.goog" not in rewrites.get(f"{src}/:path*", ""):
+            problems.append(f"vercel.json: no {src}/:path* rule, so the hits 404")
     return problems
 
 
@@ -624,13 +648,13 @@ def main():
         llms_full()
     bad = audit()
     if bad:
-        print("HEAD PROBLEMS — %d:" % len(bad))
+        print("AUDIT PROBLEMS — %d:" % len(bad))
         for b in bad[:20]:
             print("   ", b)
         rc = 1
     elif check and rc == 0:
         print("OK — sitemap current.")
-        print("OK — heads consistent (lang, canonical, no stray hreflang).")
+        print("OK — heads consistent, measurement wired first-party.")
     return rc
 
 
