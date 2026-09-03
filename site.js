@@ -527,9 +527,17 @@
             /* The one number gtm/07 §7.8 asks for is the audit-request rate, and
                nothing was reporting it: GA4 saw form_start from enhanced
                measurement and no submission event at all, so 90 days of data had
-               no conversion in it. Fire it here, on the success branch only. */
-            dataLayer.push({
-              event: 'generate_lead',
+               no conversion in it. Fire it here, on the success branch only.
+
+               Sent with gtag, not dataLayer.push. GA4 is loaded directly by
+               loadGoogleAnalytics() above, and gtag only interprets its own
+               command arrays — a bare {event: ...} object is GTM's language, not
+               gtag's, so it would have sat in the queue unread. The container
+               holds one Clarity tag and no GA4 configuration, so routing through
+               it would mean standing up a second GA4 loading path for one event.
+               The gtag stub queues commands until gtag.js lands, so this is safe
+               before consent resolves. */
+            window.gtag('event', 'generate_lead', {
               form_id: id,
               page_path: location.pathname
             });
