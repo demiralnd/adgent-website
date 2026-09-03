@@ -19,7 +19,6 @@ confident it is and why, and leaves out anything that didn't change the answer.
 - [Adgent features — what an AI media buyer actually does](https://adgent.app/features): The daily verdict, ground truth against real margin, a Trust Gate that refuses unreachable targets, creative read scene by scene, and a full change ledger.
 - [Why Adgent — everything else makes you choose](https://adgent.app/why-adgent): Reporting tools go deep but never touch the account. Platform AIs act, but never on your side. See the capability matrix, category by category.
 - [Pricing — plans that scale with ad spend — Adgent](https://adgent.app/pricing): Adgent covers Meta and Google Ads on every plan, and reads GA4 and Search Console for context. Talk to sales for pricing.
-- [Adgent interactive demo — see the AI media buyer work](https://adgent.app/demo): Click through the Adgent workspace: the overnight verdict, an approval it asks for, and the change ledger it writes. Mock data, real mechanics.
 
 ## Capabilities
 

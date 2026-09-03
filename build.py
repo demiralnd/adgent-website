@@ -355,6 +355,12 @@ def llms(check_only=False):
     for heading, slugs in _LLMS_GROUPS:
         rows = []
         for slug in slugs:
+            # _LLMS_GROUPS is a hand-written list, so it bypassed the _noindex filter
+            # the loop below applies — the same hole EXTRA_SLUGS had in sitemap().
+            # A noindex page must not be advertised on the AI-crawler surface either.
+            p_ = _page_path(slug)
+            if not os.path.exists(p_) or _noindex(p_):
+                continue
             m = _page_meta(slug)
             if not m:
                 continue
@@ -426,8 +432,11 @@ def llms_full(check_only=False):
     order = [s for _, ss in _LLMS_GROUPS for s in ss]
     seen, slugs = set(), []
     for s_ in order:
-        if s_ not in seen:
-            seen.add(s_); slugs.append(s_)
+        # same hand-written list, same noindex hole as in llms() and sitemap()
+        p_ = _page_path(s_)
+        if s_ in seen or not os.path.exists(p_) or _noindex(p_):
+            continue
+        seen.add(s_); slugs.append(s_)
     for path_, slug in pages():
         if slug in SKIP or slug in seen or _noindex(path_):
             continue

@@ -581,45 +581,6 @@ We'll be in touch within a couple of working days to set up your accounts.
 
 ---
 
-# Adgent interactive demo — see the AI media buyer work
-URL: https://adgent.app/demo
-
-Adgent interactive demo — see the AI media buyer work
-Adgent — interactive product demo
-This walkthrough runs in the browser. With JavaScript off, here is what it shows:
-one morning on a live-looking ad account, from the overnight verdict to a change
-you approve and can undo. The data is sample data; the mechanics are the product's.
-What you can ask it
-What's the verdict this morning?
-Show me the account, not the story.
-Which campaign is dragging?
-Take me down to the ad that's fatiguing.
-Scale campaign 12? It's our best ROAS.
-Set a £250 target CPA on the sales campaign.
-Build me an agent that watches this.
-Fine — pause the fatigued creative.
-What it demonstrates
-Adgent reads the account overnight and opens with a position, not a dashboard:
-refresh the top creative rather than change the bid, because frequency crossed 3.4
-and hold rate fell with it — an auction shift would move CPM without touching
-how long people watch.
-It answers in the workspace: the brief, the account view, campaigns, ad sets and the
-individual ad. Ask it to scale a winner and it can refuse, with the reason. Every
-write it proposes waits for your approval, shows the state it would replace, and is
-logged in the change ledger where undoing it is one click.
-See the product &middot; Request demo
-A Adgent
-Interactive demo · sample data
-See the product
-Request demo
-Adgent read-only
-Morning. I read Northlight overnight — Meta and Google as one account.
-The brief is on the right. Pick a question and I will open what it refers to.
-Ask the next question
-PDF, Excel, CSV, Markdown &middot; max 20 MB Enter to send &middot; Shift+Enter for newline
-
----
-
 # The daily verdict on every ad account — Adgent
 URL: https://adgent.app/daily-verdict
 
