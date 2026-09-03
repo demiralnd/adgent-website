@@ -218,7 +218,11 @@ def render(html, slug):
 def pages():
     for p in sorted(glob.glob(os.path.join(ROOT, "*.html"))):
         name = os.path.basename(p)
-        if name.startswith("_"):        # scratch harness, not a page
+        # A leading underscore means "not a deployed page": the scratch harness
+        # here, and in the docs mirror the standalone HTML artifacts that live
+        # beside the site but are never served. Without it the mirror's own
+        # `--check` failed on three files live does not even have.
+        if name.startswith("_"):
             continue
         yield p, name[:-5]
 

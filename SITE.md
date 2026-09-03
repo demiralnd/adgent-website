@@ -23,9 +23,15 @@
 differed**, all 52 pages were stale against `_partials/`, `404.html` and `.lastmod.json` were
 missing entirely, and the mirror's own `build.py` was 492 lines against live's 568. Anyone
 reading the docs repo was reading a pre-SEO-pass site. Resynced live → mirror on 2026-09-03,
-preserving the mirror-only files (`TODO.md`, the three `adgent-*.html` doc artifacts, the
+preserving the mirror-only files (`TODO.md`, the three `_adgent-*.html` doc artifacts, the
 `assets/og/*.svg` sources). Sync direction is **always live → mirror**; live is authoritative
 because it is the deploy source and the only one with a remote.
+
+**Mirror-only HTML must start with `_`.** `build.py` skips underscore-prefixed files, so the
+doc artifacts stay out of the page walk, the sitemap and `llms.txt`. They were renamed on
+2026-09-03: before that, `build.py --check` exited **1** in the mirror — stale sitemap plus 12
+head problems — against **0** in live, for three files live does not contain. A pre-deploy gate
+that is red for a reason you have to remember is not a gate.
 
 ```bash
 rsync -a --exclude='.git/' --exclude='__pycache__/' --exclude='.fontcache/' \
