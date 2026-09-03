@@ -285,13 +285,36 @@ because something else dominates.
 TLS and connect to `fonts.googleapis.com`, and then the same again to `fonts.gstatic.com`
 before a single glyph arrives. Two extra origins in front of the first paint.
 
-**Self-hosting the three families removes both origins from the critical path** and is the
-largest remaining lever by a distance. It is a real piece of work — download the subsets,
-serve them from `/assets/fonts/`, write the `@font-face` rules with `font-display: swap`,
-drop the two `preconnect` hints — and it wants daylight, not a 4am guess.
+### The fonts are self-hosted now — done 2026-09-03, and it worked
 
-The other standing item is unchanged: **28 KiB of `site.min.css` is still unused on the
-homepage**, which is critical-CSS extraction and risks FOUC across 52 pages.
+| | Google-hosted | Self-hosted |
+|---|---|---|
+| Lighthouse performance | 76 / 77 / 78 | **87 / 85 / 83** |
+| FCP | 4.2 / 4.0 / 3.9 s | **2.0 / 3.0 / 3.3 s** |
+| Render-blocking estimate | 1,820 ms | **1,340 ms** |
+| Third-party origins before first paint | 2 | **0** |
+
+Ten woff2 files in `/assets/fonts/`, 419 KB on disk, **latin and latin-ext only** — the site
+is English and the cyrillic and vietnamese subsets never downloaded. The `@font-face` rules
+sit at the top of `tokens.css`.
+
+**They are Google's own output for the identical request with the URLs rewritten**, so the
+files are byte-identical to what the browser was already fetching and the rendering cannot
+shift. All three families are OFL, which permits self-hosting.
+
+Verified in the browser rather than by eye: zero requests to `googleapis` or `gstatic`,
+`document.fonts.check` passes for Jakarta regular and italic, Geist Mono and Fraunces
+italic, and `font-display` reports no failures across 52 pages.
+
+**To regenerate** (a family or weight changes): fetch the Google CSS for the new request
+with a browser user-agent, keep the `latin` and `latin-ext` blocks, download each unique
+`woff2`, rewrite the URLs to `/assets/fonts/`, and replace the block at the top of
+`tokens.css`. `build.py`'s audit now **fails** if a link to `fonts.googleapis.com`
+reappears, which is the guard against someone quietly undoing this.
+
+**What is left:** `site.min.css` is now the entire render-blocking path at 1,529 ms, and
+**28 KiB of it is unused on the homepage**. That is critical-CSS extraction, which risks
+FOUC across 52 pages — the last lever, and the one that genuinely wants daylight.
 
 ## Rules
 
