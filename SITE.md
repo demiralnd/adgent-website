@@ -336,6 +336,38 @@ reappears, which is the guard against someone quietly undoing this.
 **28 KiB of it is unused on the homepage**. That is critical-CSS extraction, which risks
 FOUC across 52 pages — the last lever, and the one that genuinely wants daylight.
 
+## The tool pages — the pattern, and the two traps in it
+
+`/tools`, `/break-even-roas-calculator` and `/conversion-signal-check` (added 2026-09-07) are the
+first pages with their own behaviour. They deliberately touch **neither `site.css` nor `site.js`**:
+the widget CSS is one `<style>` block in the page head (the same precedent the articles set) and
+the calculator is one IIFE in a `<script>` before `<!--#footer-->`. A tool that only two pages use
+does not belong in a 288 KB stylesheet every page downloads.
+
+What they must keep:
+
+1. **The default state is rendered in the HTML, and it matches what the JS computes.** A crawler and
+   an answer engine see `2.49×` and a filled results table, not zeros waiting for JavaScript — the
+   defect we logged against two competitors whose animated counters serve `0` to reader mode. If you
+   change a default input, recompute the printed outputs in the same edit.
+2. **`WebApplication` + `FAQPage` + `BreadcrumbList` JSON-LD**, with `isAccessibleForFree: true` and
+   an `Offer` at price 0. The head is scaffolded from a donor page (`newpage.py`), so the graph has
+   to be swapped deliberately — a tool page carrying `SoftwareApplication` for the product is wrong.
+3. **A method note with a named author, a `<time datetime>` and the source of every quoted figure.**
+   No competitor in the set does this; it is the whole reason these pages are citable.
+4. **`<noscript>`** naming what still works without JS (the formula and the reference table do).
+
+⚠️ **Trap 1 — `[hidden]` loses to a class.** `.tl-f { display: block }` overrides the UA
+`[hidden] { display: none }`, so `label.hidden = true` kept rendering the Google-only Bid strategy
+field on the Meta branch. `.tl-f[hidden] { display: none }` is why the conditional field works;
+don't delete it.
+
+⚠️ **Trap 2 — never author these files through an IPython cell.** A line of JavaScript that reads
+`x = !flag;` inside a Python string is rewritten by IPython's shell-escape transformer into
+`x = __omp_shell("flag;")`, which parses fine, ships silently, and throws `ReferenceError` in the
+browser on the first call. It happened on 2026-09-07 and the only symptom was a calculator whose
+numbers never moved. Grep new pages for `__omp_shell` before believing them.
+
 ## Rules
 
 1. **Never hand-edit the nav or footer in a single page.** Edit `_partials/`, then run the script.

@@ -659,7 +659,7 @@ html.embed .shell{height:100vh}
   <p>It answers in the workspace: the brief, the account view, campaigns, ad sets and the
      individual ad. Ask it to scale a winner and it can refuse, with the reason. Every
      write it proposes waits for your approval, shows the state it would replace, and is
-     logged in the change ledger where undoing it is one click.</p>
+     logged in the change ledger, where the revert is itself a proposal you approve.</p>
   <p><a href="/features">See the product</a> &middot; <a href="/#lead">Request demo</a></p>
 </div>
 </noscript>
@@ -1128,7 +1128,7 @@ creatives: `<div class="lane-wide">
 agents: `<div class="lane-wide">
   <div class="vhead vhead-row">
     <div><h2 class="etitle">Agents</h2>
-      <p class="vsub">A team of specialists watches your account around the clock — and you can add your own.</p></div>
+      <p class="vsub">A team of specialists reads your account every night — and you can add your own.</p></div>
     <button class="btn-new">${svg('M12 5v14M5 12h14','',14)}New agent</button>
   </div>
   <div class="kstrip agstrip">
@@ -1198,7 +1198,7 @@ ledger: `<div class="lane-wide">
       <div class="led-empty" id="led-empty">
         <div class="lem-ic">${svg('M3 12a9 9 0 1 0 3-6.7L3 8M3 3v5h5','',22)}</div>
         <div class="lem-t">No changes yet</div>
-        <div class="lem-d">Writes applied through Adgent — budget, status and bid changes — appear here, each with a one-click revert.</div>
+        <div class="lem-d">Writes applied through Adgent — budget, status and bid changes — appear here, each with a revert Adgent proposes and you approve.</div>
       </div>
     </div></div></div>`,
 
@@ -1206,7 +1206,7 @@ analysis_log: `<div class="lane-wide">
   <div class="vhead"><h2 class="etitle">Analysis Log</h2></div>
   <div class="panel">
     <div class="filt"><span class="f on">Last 7 days</span><span class="f">All triggers</span><span class="f">All statuses</span></div>
-    <div class="led-day">TODAY — August 18, 2026</div>
+    <div class="led-day">TODAY</div>
     <div class="runrow live">
       <div class="rr-h"><span class="rr-t">09:41</span><span class="tb info">Manual</span>
         <span class="rr-s">Tier 2 · cross-entity synthesis</span><span class="rr-el">running · 34s</span></div>
@@ -1218,7 +1218,7 @@ analysis_log: `<div class="lane-wide">
         <span class="rr-s">17 campaigns · 44 ad sets · 96 ads</span><span class="tb ok">Completed</span></div>
       <div class="rr-x">3 new findings · 4 resolved · 2m 18s</div>
     </div>
-    <div class="led-day">YESTERDAY — August 17, 2026</div>
+    <div class="led-day">YESTERDAY</div>
     <div class="runrow">
       <div class="rr-h"><span class="rr-t">04:09</span><span class="tb mut">Daily</span>
         <span class="rr-s">17 campaigns · 44 ad sets · 95 ads</span><span class="tb ok">Completed</span></div>
@@ -1431,7 +1431,7 @@ function addProposal(host,p){
       document.getElementById('led-empty')?.remove();
       document.getElementById('led').prepend(el(`
         <div class="led-group">
-        <div class="led-day">TODAY — August 18, 2026</div>
+        <div class="led-day">TODAY</div>
         <div class="led-row">
           <div class="led-h"><span class="led-time">09:41:07</span>
             <span class="tb mut">${svg('M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8z','',12)}Human</span>
@@ -1444,7 +1444,7 @@ function addProposal(host,p){
         </div></div>`));
       
       say(`<p>Done — <span class="num">ACTIVE → PAUSED</span>, logged as its own entry with the state it replaced.</p>
-           <p>Undoing it is one click. <b>Watch the next few days:</b> if the set's CPA does not recover, the fatigue was not the whole story.</p>`);
+           <p>Putting it back is a revert Adgent proposes and you approve. <b>Watch the next few days:</b> if the set's CPA does not recover, the fatigue was not the whole story.</p>`);
     } else say(`<p>Left alone. Nothing was written — the ad is still <span class="num">ACTIVE</span>.</p>`);
     down();
   };

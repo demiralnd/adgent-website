@@ -4750,6 +4750,39 @@ td .src-note::after,
   overscroll-behavior: contain;
 }
 
+/* The consent banner outranked the drawer — measured 2026-09-07 at 390x844.
+   CookieConsent renders #cc-main at z-index 2147483647 and the cloud sheet sits
+   on the bottom ~300px, so with the menu open `elementFromPoint` on "Request
+   demo" returned .cm__btns: the drawer scrolled fine (the fix above) and its
+   last four rows still could not be tapped until consent was answered. The
+   banner keeps gating measurement; it is only taken out of the paint while the
+   menu is open, and comes back the moment the menu closes.
+   `visibility: hidden` is not enough — `.cm` sets its own `visibility`, so the
+   sheet kept painting under a hidden wrapper (measured: computed hidden, still
+   on screen). `display` removes the subtree. */
+body.menu-open #cc-main { display: none; }
+
+/* The 44px touch-target rules live in a max-width:640px block, but the drawer is
+   the only nav all the way to 920px — measured at 768 the CTA was 36px tall.
+   Tie the targets to the burger breakpoint instead of a phone width. */
+@media (max-width: 920px) {
+  .mobile-menu a,
+  .mobile-menu .btn { min-height: 44px; display: flex; align-items: center; }
+  .nav-burger { min-width: 44px; min-height: 44px; }
+}
+
+/* Without a scrim the drawer reads as a floating card — at 768 the hero button
+   shows through under its bottom edge. 48 sits under the drawer (49) and the
+   nav (50). */
+body.menu-open::after {
+  content: ""; position: fixed; inset: 64px 0 0; z-index: 48;
+  background: rgba(28,25,20,0.38);
+}
+
+/* The summary rows carried 2px of inline padding against the links' 12px, so
+   "Product" and "Solutions" sat 10px left of every link above and below them. */
+.mm-group > summary { padding-inline: 12px; }
+
 /* A <figure> carries a UA margin of 0 40px, which was eating 80px of an already
    narrow column and shrinking the scene's 12px labels to under 6px effective. */
 .hero-scene { margin-left: 0; margin-right: 0; }

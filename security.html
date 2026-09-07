@@ -26,7 +26,7 @@
 <link rel="icon" type="image/svg+xml" href="/assets/logo-app.svg"/>
 <link rel="apple-touch-icon" href="/assets/logo-app.svg"/>
 <link rel="stylesheet" href="/tokens.min.css?v=c5856eac"/>
-<link rel="stylesheet" href="/site.min.css?v=e93ad748"/>
+<link rel="stylesheet" href="/site.min.css?v=1bd868bd"/>
 </head>
 <body>
 <!-- NAV -->
@@ -58,6 +58,7 @@
      <a href="/built-from-chat#plan" data-mega="planning"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/><path d="M6 13h7M6 17h4"/></svg></span><span class="mega-tx"><span class="nm-t">Media plan</span><span class="nm-d">Every number shows where it came from</span></span></a>
      <a href="/built-from-chat#dashboards" data-mega="dashboards"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/><path d="M13 13h4M13 17h4"/></svg></span><span class="mega-tx"><span class="nm-t">Live dashboards</span><span class="nm-d">Shareable, and still true on Thursday</span></span></a>
      <a href="/built-from-chat#agents" data-mega="builds"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 4v4M8 14h.01M16 14h.01"/><path d="M2 13v3M22 13v3"/></svg></span><span class="mega-tx"><span class="nm-t">Agents &amp; reports</span><span class="nm-d">Standing jobs that run without you</span></span></a>
+     <a href="/demo"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M10 9l4 2-4 2Z"/><path d="M8 21h8"/></svg></span><span class="mega-tx"><span class="nm-t">Interactive demo</span><span class="nm-d">Click through it yourself, on sample data</span></span></a>
      <p class="mega-note">Described in a sentence, built while you watch &mdash; and nothing reaches an account until you approve it.</p>
     </div>
     <div class="mega-panel" data-mega-panel aria-hidden="true">
@@ -114,7 +115,7 @@
  </nav>
  <div class="nav-right">
  <button class="nav-burger" aria-label="Menu" aria-expanded="false"><svg class="ic-open" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg><svg class="ic-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
- <a class="btn btn-primary btn-sm" href="/#lead">Request demo</a>
+ <a class="btn btn-primary btn-sm" href="/#lead">Get a free audit</a>
  </div>
  </div>
 </header><!--/#header-->
@@ -135,6 +136,7 @@
   <a href="/built-from-chat#plan" class="mm-sub">Media plan</a>
   <a href="/built-from-chat#dashboards" class="mm-sub">Live dashboards</a>
   <a href="/built-from-chat#agents" class="mm-sub">Agents &amp; reports</a>
+  <a href="/demo" class="mm-sub">Interactive demo</a>
  </details>
  <details class="mm-group">
   <summary>Solutions<svg class="caret" viewBox="0 0 12 8" fill="none" stroke="currentColor"><path d="M1 2l5 4 5-4"/></svg></summary>
@@ -152,14 +154,14 @@
  <a href="/pricing">Pricing</a>
  <a href="/about">About</a>
  <a href="/blog">Blog</a>
- <a class="btn btn-primary btn-sm mm-cta" href="/#lead">Request demo</a>
+ <a class="btn btn-primary btn-sm mm-cta" href="/#lead">Get a free audit</a>
 </div><!--/#mobile--><main id="main" tabindex="-1"><section class="band">
  <div class="wrap">
  <div class="legal">
  <header class="phead" style="padding-top:8px">
  <span class="eyebrow"><span class="tick"></span>Legal</span>
  <h1>Security</h1>
- <p class="legal-updated">Last updated 28 June 2026</p>
+ <p class="legal-updated">Last updated 7 September 2026</p>
  <p class="legal-intro">Adgent connects to your advertising and analytics accounts, so protecting that access is core to the product, not an afterthought. This page explains the measures <b>Adgent</b> takes to keep your data and your connected accounts safe. For how we collect and use data, see our <a href="/privacy">Privacy Policy</a>; for what data we access and why, see <a href="/data-use">Data Use</a>.</p>
  </header>
 
@@ -171,6 +173,7 @@
  <li><a href="#tokens">Access tokens &amp; secrets</a></li>
  <li><a href="#access">Access controls</a></li>
  <li><a href="#default">Read-only by default</a></li>
+ <li><a href="#ledger">Change Ledger &amp; revert</a></li>
  <li><a href="#infra">Infrastructure</a></li>
  <li><a href="#monitoring">Monitoring &amp; logging</a></li>
  <li><a href="#incident">Incident response</a></li>
@@ -186,7 +189,7 @@
 
  <section id="approach">
  <h2><span class="secnum">01</span>Our approach</h2>
- <p>We design Adgent around a few simple principles: collect only the access we need, protect it in transit and at rest, keep humans out of your data by default, and make every change to your accounts something you approve. Security is a continuous practice — the measures below describe our current safeguards, which we review and improve over time.</p>
+ <p>We design Adgent around a few simple principles: collect only the access we need, protect it in transit and at rest, keep humans out of your data by default, and make every change to your accounts something you approve. Security is a continuous practice — the measures below describe our current safeguards, which we review and improve over time. The model has seven layers: per-company file isolation, credential separation, the API and MCP boundary, prompt-injection mitigation, capability restriction, output validation with human approval, and audit logs.</p>
  </section>
 
  <section id="encryption">
@@ -218,40 +221,46 @@
  <p>Adgent operates in read-only mode unless you grant execution access. Even with execution access, <b>no change is applied to your accounts until you explicitly approve it</b>. This approval gate is a security control as much as a product choice — it keeps automated changes from ever reaching your spend without your say-so.</p>
  </section>
 
+ <section id="ledger">
+ <h2><span class="secnum">06</span>Change Ledger &amp; revert</h2>
+ <p>Every change is stored with the value it replaced, so putting it back is a restore, not a reconstruction. A ledger entry can be reverted from the ledger itself; the revert goes back through the same approval gate and lands as its own entry. Each action type carries an honest reversibility label — <b>reversible</b>, <b>best_effort</b> or <b>irreversible</b> — and anything not mapped defaults to <b>irreversible</b>.</p>
+ <p>The ledger covers the changes Adgent made. Changes made directly on the platform are recorded so we can explain what moved, but they cannot be undone from Adgent.</p>
+ </section>
+
  <section id="infra">
- <h2><span class="secnum">06</span>Infrastructure</h2>
- <p>Adgent runs on reputable cloud infrastructure providers that maintain industry-standard physical and network security and recognized certifications. Environments are isolated, and customer data is logically separated so that one customer cannot access another's data.</p>
+ <h2><span class="secnum">07</span>Infrastructure</h2>
+ <p>Adgent runs on reputable cloud infrastructure providers that maintain industry-standard physical and network security and recognized certifications. Environments are isolated, and <b>each company's analytics data is stored in its own separate database file</b>, which the agent mounts read-only for the length of a single company's session. The separation is physical, not a filter over a shared table, so one customer cannot reach another's data.</p>
  </section>
 
  <section id="monitoring">
- <h2><span class="secnum">07</span>Monitoring &amp; logging</h2>
+ <h2><span class="secnum">08</span>Monitoring &amp; logging</h2>
  <p>We log access to systems and key actions to support security, debugging, and abuse detection, and we monitor for anomalous activity. Logs are protected and retained for a limited period consistent with security and legal needs.</p>
  </section>
 
  <section id="incident">
- <h2><span class="secnum">08</span>Incident response</h2>
+ <h2><span class="secnum">09</span>Incident response</h2>
  <p>If we become aware of a security incident that compromises user data, we begin remediation immediately, investigate the cause, and notify affected users and the relevant platforms and authorities as required by applicable law and platform policies. We also report incidents to platforms where their terms require it.</p>
  </section>
 
  <section id="vendors">
- <h2><span class="secnum">09</span>Service providers</h2>
+ <h2><span class="secnum">10</span>Service providers</h2>
  <p>We use a small set of trusted service providers (sub-processors) to host, operate, secure, and support Adgent, including cloud infrastructure and the AI model provider that processes data to generate your results. We require them to protect data, to use it only to provide their service to us, and to delete it when it is no longer needed. We do not sell your data, and we do not transfer it for advertising.</p>
  </section>
 
  <section id="retention">
- <h2><span class="secnum">10</span>Retention &amp; deletion</h2>
+ <h2><span class="secnum">11</span>Retention &amp; deletion</h2>
  <p>We keep data only as long as needed to provide the service and for legitimate legal and security purposes. Disconnecting a platform stops new scheduled access but does not, by itself, delete data already stored by Adgent. A verified platform-data deletion request begins without undue delay. Deleting a company closes access immediately and schedules permanent deletion of its data from active systems within 30 days, subject to limited retention required by law. See <a href="/privacy#rights">Your rights &amp; data deletion</a>.</p>
  </section>
 
  <section id="disclosure">
- <h2><span class="secnum">11</span>Report a vulnerability</h2>
+ <h2><span class="secnum">12</span>Report a vulnerability</h2>
  <div class="legal-callout">
  <p>Found a security issue? We want to hear from you. Email <a href="mailto:osman@adgent.app?subject=Security%20report">osman@adgent.app</a> with the details and we will acknowledge your report and work to address it promptly. Please give us a reasonable chance to fix an issue before disclosing it publicly.</p>
  </div>
  </section>
 
  <section id="compliance">
- <h2><span class="secnum">12</span>Compliance</h2>
+ <h2><span class="secnum">13</span>Compliance</h2>
  <p>We build Adgent to align with applicable data-protection laws, including the GDPR and CCPA, and with the developer and data-protection requirements of the platforms we integrate with, including Meta and Google. As we grow, we continue to mature our security program and pursue recognized certifications and assessments.</p>
  </section>
 
@@ -287,6 +296,8 @@
  <a href="/change-ledger">Change Ledger</a>
  <a href="/account-memory">Account memory</a>
  <a href="/built-from-chat">Built from chat</a>
+ <a href="/tools">Free tools</a>
+ <a href="/demo">Interactive demo</a>
  </div>
  <div class="foot-col">
  <h2 class="foot-h">Who it is for</h2>
@@ -305,7 +316,7 @@
  <a href="/pricing">Pricing</a>
  <a href="/about">About</a>
  <a href="/blog">Blog</a>
- <a href="/#lead">Request demo</a>
+ <a href="/#lead">Get a free audit</a>
  </div>
  <div class="foot-col">
  <h2 class="foot-h">Legal</h2>

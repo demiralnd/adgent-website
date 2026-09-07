@@ -4188,6 +4188,25 @@ td .src-note::after,
 }
 
 
+body.menu-open #cc-main { display: none; }
+
+
+@media (max-width: 920px) {
+  .mobile-menu a,
+  .mobile-menu .btn { min-height: 44px; display: flex; align-items: center; }
+  .nav-burger { min-width: 44px; min-height: 44px; }
+}
+
+
+body.menu-open::after {
+  content: ""; position: fixed; inset: 64px 0 0; z-index: 48;
+  background: rgba(28,25,20,0.38);
+}
+
+
+.mm-group > summary { padding-inline: 12px; }
+
+
 .hero-scene { margin-left: 0; margin-right: 0; }
 
 @media (max-width: 940px) {

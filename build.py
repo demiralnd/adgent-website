@@ -229,6 +229,8 @@ def pages():
 
 _PRIO = {"": "1.0", "features": "0.9", "demo": "0.9", "pricing": "0.8", "blog": "0.8",
          "for-agencies": "0.8", "for-in-house": "0.8", "why-adgent": "0.8",
+         "tools": "0.8", "break-even-roas-calculator": "0.8",
+         "conversion-signal-check": "0.8",
          "about": "0.6", "security": "0.4",
          "data-use": "0.4", "privacy": "0.3", "terms": "0.3"}
 _PRIO.update({s: "0.9" for s in FEATURE_SLUGS})
@@ -329,6 +331,7 @@ _LLMS_GROUPS = [
     ("By industry", ["ecommerce", "lead-generation", "travel-hospitality",
                      "marketplaces", "local-multi-location", "mobile-apps"]),
     ("By team", ["for-agencies", "for-in-house"]),
+    ("Free tools", ["tools", "break-even-roas-calculator", "conversion-signal-check"]),
     ("Company", ["about", "blog", "security", "data-use", "privacy", "terms"]),
 ]
 
