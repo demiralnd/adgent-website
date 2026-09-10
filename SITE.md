@@ -579,6 +579,36 @@ With full consent, the third-party set is small and worth knowing before anyone 
 `www.google-analytics.com` + `analytics.google.com` (session pings), and an ads-audience pixel from
 a **country-dependent Google ccTLD** — observed `www.google.com.tr`.
 
+### Deployed 2026-09-11 — and it exposed two things nothing local could
+
+`b905e8a` shipped the pass above; `20722aa` fixed what shipping it revealed. Both are the same
+class of bug: **correct on disk, wrong at the edge.**
+
+**1. A cached 404 outlived the files that fixed it.** `/assets/:path*` is served
+`max-age=604800`, and Cloudflare caches the *response* — 404 included. The 27 new cards were
+probed on 2026-09-09 while they did not exist, so the edge held a 404 for each of them, and was
+still serving it minutes after the deploy that added them:
+
+| `https://adgent.app/assets/og/index.png` | with `?cb=<random>` |
+|---|---|
+| `404`, `age: 100274`, `cf-cache-status: HIT` | `200`, `image/png`, 280,643 bytes |
+
+A social crawler would have got a blank card for up to a week, and nothing on the site would have
+looked wrong. `og:image` and `twitter:image` now carry the card's own content hash (`stamp_og()`),
+so a stamped URL cannot inherit a stale answer — and the next time a card's art changes, the
+preview changes with it. **Never probe an asset URL on production before the deploy that creates
+it**; you are teaching the edge a 404 with a week-long TTL. Check 10 requires the stamp.
+
+**2. `/:path*` does not match the bare root.** The apex redirect shipped with one rule and half
+worked: `www.adgent.app/pricing` answered `308`, `www.adgent.app/` answered **`200` with the whole
+homepage** — `cf-cache-status: DYNAMIC`, so Vercel served it, not a cache. Fixed with an explicit
+`"source": "/"` rule; check 8 requires both. This is the same Vercel quirk as the slashless
+`/metrics` rewrite, one section up. Assume it every time, on every host-conditional rule.
+
+**Verified on production after `20722aa`:** `www.adgent.app/`, `/pricing` and `/blog` all `308` to
+the apex; every stamped card `200`; the four headers present; `/feed.xml` `200` with 25 items;
+zero `href="/demo"` on the homepage; `sitemap.xml` 54 URLs, no `demo`.
+
 ## OG cards — the 25 are drawn, the 27 are generated
 
 `assets/og/*.svg` are the **sources and they live in the mirror only** (`build.py` never reads
