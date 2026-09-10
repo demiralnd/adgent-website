@@ -95,6 +95,33 @@ def asset_stamp(name):
     return "?v=" + h
 
 
+def stamp_og(html):
+    """Stamp og:image / twitter:image with the card's own content hash.
+
+    Same reason as asset_stamp, one layer meaner. `/assets/:path*` is served
+    `max-age=604800`, and Cloudflare caches the **response**, including a 404.
+    The 27 new cards were probed on 2026-09-09 while they did not exist yet, so
+    the edge held a 404 for each of them — and it was still serving that 404
+    minutes after the deploy that added the files (`age: 100274`,
+    `cf-cache-status: HIT`, while the same URL with a query string answered 200
+    and 280 KB of PNG). A social crawler would have got a blank card for a week.
+
+    A stamped URL is a different cache key, so it cannot inherit a stale answer,
+    and the next time a card's art changes the preview changes with it instead of
+    a week later. There is no purge in this repo: we do not hold a Cloudflare
+    token, and the fix should not need one.
+    """
+    def stamp(m):
+        head, path = m.group(1), m.group(2)
+        if not os.path.exists(os.path.join(ROOT, path.lstrip("/"))):
+            return m.group(0)
+        return f'{head}https://adgent.app{path}{asset_stamp(path.lstrip("/"))}"'
+
+    return re.sub(
+        r'(<meta (?:property="og:image"|name="twitter:image") content=")'
+        r'https://adgent\.app(/assets/og/[^"?]+)"', stamp, html)
+
+
 def twitter_card(html):
     """Mirror og:title / og:description into twitter:* when they are missing.
 
@@ -232,7 +259,8 @@ def render(html, slug):
             m = re.search(LEGACY[block], html, re.S)
             if m:
                 html = html[:m.start()] + repl + html[m.end():]
-    return stamp_assets(feed_link(twitter_card(mark_figures(main_landmark(html)))))
+    html = twitter_card(mark_figures(main_landmark(html)))
+    return stamp_assets(stamp_og(feed_link(html)))
 
 
 def pages():
@@ -754,12 +782,21 @@ def audit():
     #    still split crawl budget and any inbound link that used the www form.
     #    Cheapest fix is a host-conditional redirect, and it has no symptom when
     #    it is deleted, so it needs a check.
+    #
+    #    ⚠️ **Two rules, and the second is not redundant.** Deployed 2026-09-11
+    #    with only `/:path*`: `www.adgent.app/pricing` answered 308 and
+    #    `www.adgent.app/` answered **200** with the whole homepage
+    #    (`cf-cache-status: DYNAMIC`, so it was Vercel, not a cached copy).
+    #    `:path*` does not match the bare root here. Same shape as the slashless
+    #    `/metrics` rewrite, same reason.
     redirects = json.loads(read(os.path.join(ROOT, "vercel.json"))).get("redirects", [])
-    if not any(r.get("destination", "").startswith("https://adgent.app/")
-               and any(h.get("type") == "host" and h.get("value") == "www.adgent.app"
-                       for h in r.get("has", []))
-               for r in redirects):
-        problems.append("vercel.json: no www.adgent.app -> apex redirect")
+    www = {r.get("source") for r in redirects
+           if r.get("destination", "").startswith("https://adgent.app/")
+           and any(h.get("type") == "host" and h.get("value") == "www.adgent.app"
+                   for h in r.get("has", []))}
+    for source in ("/", "/:path*"):
+        if source not in www:
+            problems.append(f"vercel.json: no www.adgent.app -> apex redirect for {source!r}")
 
     # 9. One brand entity, not thirty. Organization appeared as a top-level or
     #    nested node 103 times across 55 pages on 2026-09-09, and WebSite 20
@@ -816,7 +853,9 @@ def audit():
     #    looked identical in a feed, a DM and an LLM's link preview. Nothing on
     #    the page shows the defect, and the fix decays back the moment somebody
     #    scaffolds a new page from a donor head — which is exactly how it spread.
-    #    Also checks the file exists: an og:image 404 is a blank card.
+    #    Also checks the file exists, and that the URL is stamped: an og:image
+    #    404 is a blank card, and an unstamped one can inherit a cached 404 from
+    #    before the deploy that created it — see stamp_og().
     seen = {}
     for path, slug in pages():
         if slug in SKIP:
@@ -825,15 +864,19 @@ def audit():
         head = html.split("</head>", 1)[0]
         if "noindex" in head:
             continue
-        m = re.search(r'<meta property="og:image" content="https://adgent\.app(/[^"]+)"', head)
+        m = re.search(r'<meta property="og:image" content="https://adgent\.app(/[^"?]+)(\?v=[0-9a-f]+)?"',
+                      head)
         if not m:
             problems.append(f"{rel}: no og:image")
             continue
-        if not os.path.exists(os.path.join(ROOT, m.group(1).lstrip("/"))):
-            problems.append(f"{rel}: og:image {m.group(1)} does not exist")
-        if m.group(1) in seen:
-            problems.append(f"{rel}: og:image {m.group(1)} is already used by {seen[m.group(1)]}")
-        seen[m.group(1)] = rel
+        card = m.group(1)
+        if not os.path.exists(os.path.join(ROOT, card.lstrip("/"))):
+            problems.append(f"{rel}: og:image {card} does not exist")
+        elif not m.group(2):
+            problems.append(f"{rel}: og:image {card} is unstamped")
+        if card in seen:
+            problems.append(f"{rel}: og:image {card} is already used by {seen[card]}")
+        seen[card] = rel
 
     # 11. Response headers. The 2026-09-09 crawl found none of these on any of
     #     the 55 pages. They are the four with no behavioural cost on this site:

@@ -22,6 +22,12 @@
   ],
   "redirects": [
     {
+      "source": "/",
+      "has": [{ "type": "host", "value": "www.adgent.app" }],
+      "destination": "https://adgent.app/",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [{ "type": "host", "value": "www.adgent.app" }],
       "destination": "https://adgent.app/:path*",
