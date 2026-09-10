@@ -2358,7 +2358,7 @@ Name
 Work email
 Company
 What should we look at?
-Request demo
+Get a free audit
 We usually reply within a couple of working days.
 Thanks — we've got it.
 We'll be in touch within a couple of working days.
@@ -2552,7 +2552,7 @@ URL: https://adgent.app/data-use
 
 Legal
 Data Use
-Last updated 30 August 2026
+Last updated 9 September 2026
 This is the plain-language version of how Adgent handles the data in your connected accounts. It is a companion to our full Privacy Policy — where the two cover the same ground, the Privacy Policy governs. The short version: we read what you connect to do the analysis you asked for, we keep you in control of every change, and we never sell your data, use it for ads, or train AI models on it.
 Contents
 What we connect to
@@ -2585,8 +2585,8 @@ Adgent's use and transfer of information received from Google APIs to any other 
 06 Your control
 Read-only by default — Google Analytics and Search Console permissions are read-only, and Google Drive is limited to files you select. Google Ads and Merchant Center each come as one OAuth scope covering read and write, with no read-only alternative: Adgent gates every Ads write behind your approval and never writes to Merchant Center.
 You approve every change — nothing is applied to your accounts until you say go.
-Disconnect anytime — revoke access from Adgent or from the platform's settings, which stops new scheduled access immediately. Disconnecting does not delete data already stored by Adgent.
-Delete anytime — delete a company's data from Adgent Settings; access closes immediately and permanent deletion from active systems is scheduled within 30 days. To delete your Adgent login account or request deletion of data from one connected platform, follow our data-deletion instructions .
+Disconnect anytime — disconnect in Adgent to stop new scheduled access through that connection. To revoke the OAuth grant itself, remove Adgent from the platform's app or permission settings. Neither action deletes data already stored by Adgent.
+Delete anytime — the in-product company-deletion control closes access immediately and disconnects its platform connections. Until permanent deletion automation is complete, request removal of stored company data or your Adgent login account through our data-deletion instructions ; verified requests are processed without undue delay.
 07 Per-platform notes
 Google
 Adgent requests only these Google OAuth scopes:
@@ -2595,7 +2595,7 @@ Google Analytics — https://www.googleapis.com/auth/analytics.readonly for aggr
 Google Drive — https://www.googleapis.com/auth/drive.file for files you select or create for use with Adgent.
 Google Search Console — https://www.googleapis.com/auth/webmasters.readonly for authorized site-performance reporting.
 Google Merchant Center — https://www.googleapis.com/auth/content for your product catalogue, item issues, and Shopping performance. Google publishes no read-only variant of this scope; Adgent only ever reads.
-Sign-in — openid and https://www.googleapis.com/auth/userinfo.email , used only to identify which Google account granted a connection so it can be revoked cleanly. We do not store the email address they return.
+Sign-in — openid and https://www.googleapis.com/auth/userinfo.email , used only to identify which Google account granted a connection and associate it with the correct Adgent user. We do not store the email address they return.
 Our use of information from Google APIs adheres to the Google API Services User Data Policy, including the Limited Use requirements. We do not use Google user data for ads, do not sell it, and do not use it to train generalized AI/ML models.
 Meta
 Data accessed via Meta's APIs is processed only as described here and in our Privacy Policy, and in line with applicable Meta terms and developer policies. You can revoke access in Meta and follow our data-deletion instructions at any time.
@@ -2609,7 +2609,7 @@ URL: https://adgent.app/privacy
 
 Legal
 Privacy Policy
-Effective 30 August 2026 · Last updated 30 August 2026
+Effective 30 August 2026 · Last updated 9 September 2026
 This Privacy Policy explains how Adgent , a service operated by Osman Tıkna (a sole proprietorship established in Türkiye, the data controller) ("Adgent", "we", "us", or "our"), collects, uses, stores, shares, and protects information when you use our website and our marketing-intelligence service. A core part of Adgent is connecting, with your authorization, to your advertising and analytics platforms — including Meta , Google Ads , Google Analytics 4 , Google Merchant Center , Google Search Console , and the Google Drive and Google Sheets files you select — to read reporting data and, only on your explicit approval, carry out changes you ask us to make.
 Contents
 Who we are and scope
@@ -2680,9 +2680,9 @@ Business transfers — in connection with a merger, acquisition, financing, or s
 We keep information only as long as needed to provide the service and for legitimate legal, security, and operational purposes. Disconnecting or revoking a platform connection stops new access but does not, by itself, delete data already stored by Adgent. Connected Platform Data is deleted when it is no longer necessary to provide the service, when you submit a verified deletion request, or when permanent account deletion completes — subject to limited retention required by law. You can request deletion at any time as described below.
 09 Your rights & data deletion
 Depending on where you live, you may have rights to access, correct, delete, restrict, or object to the processing of your personal data, to data portability, and to withdraw consent. We give every user an easily accessible way to exercise these rights:
-Disconnect at any time — you can revoke Adgent's access to any connected platform at any time from your Adgent settings or from that platform's app/permission settings. Revoking access stops further data access immediately.
+Disconnect at any time — disconnecting a platform in Adgent stops further use of that connection and new scheduled collection. To revoke the OAuth grant itself, remove Adgent from the platform's app or permission settings.
 Request correction or deletion — follow our data-deletion instructions or email osman@adgent.app , and we will action your request without undue delay.
-Delete company data or your account — a company-deletion request closes access to that company immediately and marks its connections disconnected so Adgent does not start new scheduled collection. It then schedules permanent deletion of the company's Adgent records and Connected Platform Data from active systems within 30 days. To request deletion of your Adgent login account as well, follow our data-deletion instructions . Limited records may be retained where required by law.
+Delete company data or your account — the in-product company-deletion control closes access to that company immediately and marks its connections disconnected. Until permanent deletion automation is complete, request removal of stored company data or your Adgent login account through our data-deletion instructions ; verified requests are processed without undue delay. Limited records may be retained where required by law.
 We will not charge you to exercise these rights, and we will not discriminate against you for doing so. If you are in the EEA or UK and have an unresolved concern, you may contact your local data protection authority.
 10 Security
 We take reasonable and appropriate measures to protect data against unauthorized access, use, alteration, loss, or disclosure. These include encryption of data in transit and at rest, access controls and least-privilege practices, protection of access tokens and application secrets, and monitoring. We provide a clearly marked way to report security concerns, and we begin remediation and notify affected parties as required by law if an incident occurs. No method of transmission or storage is completely secure, but we work to protect your data and continually improve our safeguards.
@@ -2709,7 +2709,7 @@ URL: https://adgent.app/terms
 
 Legal
 Terms of Service
-Effective 30 August 2026 · Last updated 30 August 2026
+Effective 30 August 2026 · Last updated 9 September 2026
 These Terms of Service ("Terms") govern your access to and use of Adgent , a marketing-intelligence service operated by Osman Tıkna (a sole proprietorship established in Türkiye) ("Adgent", "we", "us", or "our"). By accessing or using Adgent — including by connecting any advertising or analytics platform — you agree to these Terms. If you are using Adgent on behalf of a company, you agree on its behalf and confirm you have authority to do so. If you do not agree, do not use Adgent.
 Contents
 The service
@@ -2737,7 +2737,7 @@ You must be at least 18 years old and able to form a binding contract to use Adg
 03 Accounts
 You are responsible for the information you provide, for the activity under your account, and for keeping your credentials secure. Notify us promptly of any unauthorized use. You must provide accurate information and keep it up to date.
 04 Connecting your platforms
-When you connect a platform, you authorize Adgent to access that account on your behalf through the platform's API in line with the permissions you grant and our Privacy Policy . You represent that you have all rights and permissions necessary to grant this access and to allow Adgent to process the resulting data. You may disconnect any platform at any time, which stops further access.
+When you connect a platform, you authorize Adgent to access that account on your behalf through the platform's API in line with the permissions you grant and our Privacy Policy . You represent that you have all rights and permissions necessary to grant this access and to allow Adgent to process the resulting data. Disconnecting a platform in Adgent stops further use of that connection; revoking the underlying authorization is available through the platform's app or permission settings.
 05 Approvals & execution
 Adgent operates in read-only mode by default . Where you grant execution access, Adgent may prepare recommended changes, but no change is made to your accounts until you explicitly approve it . You are responsible for reviewing and approving changes and for the outcomes of changes you approve. Adgent is a decision-support tool; final decisions and accountability for your advertising spend remain yours.
 06 Acceptable use
@@ -2847,7 +2847,7 @@ Playbook How to audit a Google Ads account
 Who wrote this
 Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyzes creative; it doesn't make it. It reads one client account at a time rather than a blended roll-up — what that looks like on an agency roster .
 All articles
-Request demo
+Get a free audit
 
 ---
 
@@ -2919,7 +2919,7 @@ Playbook How to audit a Google Ads account
 Who wrote this
 Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyzes creative; it doesn't make it. Where each category of tool stops, row by row, is set out in the capability matrix .
 All articles
-Request demo
+Get a free audit
 
 ---
 
@@ -2985,7 +2985,7 @@ Attribution Placement drift: the leak in your average
 Who wrote this
 Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyzes creative; it doesn't make it. It also refuses to grade a number that has not matured yet, and says so instead of guessing — the Trust Gate .
 All articles
-Request demo
+Get a free audit
 
 ---
 
@@ -3059,7 +3059,7 @@ Product Can AI run your ad account?
 Who wrote this
 Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyzes creative; it doesn't make it. The overnight read, ranked by what each finding costs, is the daily verdict .
 All articles
-Request demo
+Get a free audit
 
 ---
 
@@ -3143,7 +3143,7 @@ Product AI media buyer vs. Performance Max vs. dashboard
 Who wrote this
 Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyzes creative; it doesn't make it. Every change it applies is stored with the value it replaced, so undoing one is a restore rather than a reconstruction — the Change Ledger .
 All articles
-Request demo
+Get a free audit
 
 ---
 
@@ -3209,7 +3209,7 @@ Free tool Conversion signal check
 Who wrote this
 Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyzes creative; it doesn't make it. Which structure you chose, and the exception you made last quarter, is something you say once — account memory carries it into every verdict after.
 All articles
-Request demo
+Get a free audit
 
 ---
 
@@ -3290,7 +3290,7 @@ Scaling Scale a winner without breaking it
 Who wrote this
 Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyzes creative; it doesn't make it. Describe the structure you want and it drafts the campaign whole, paused until you approve it — what it builds .
 All articles
-Request demo
+Get a free audit
 
 ---
 
@@ -3355,7 +3355,7 @@ Scaling How to scale a winner without breaking it
 Who wrote this
 Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyzes creative; it doesn't make it. It reads the creative behind the curve scene by scene, including where viewers leave — creative intelligence .
 All articles
-Request demo
+Get a free audit
 
 ---
 
@@ -3422,7 +3422,7 @@ Free tool Break-even ROAS calculator
 Who wrote this
 Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyzes creative; it doesn't make it. Putting both platforms' numbers into one comparable shape, then checking them against your own revenue, is the ground-truth read .
 All articles
-Request demo
+Get a free audit
 
 ---
 
@@ -3431,7 +3431,7 @@ URL: https://adgent.app/data-deletion
 
 Legal
 Data Deletion
-Last updated 30 August 2026
+Last updated 9 September 2026
 You can disconnect a platform, delete a company and its connected-platform data, request deletion of your Adgent login account, or send us a platform-data deletion request at any time. These instructions apply to data accessed from Meta and Google as well as the account information you provide directly to Adgent.
 Contents
 Disconnect a platform
@@ -3441,12 +3441,12 @@ What deletion covers
 Verification and timing
 Contact us
 01 Disconnect a platform
-Open Settings → Connections in Adgent and disconnect the relevant platform. You can also revoke Adgent directly from that platform's app or permission settings. Revoking access stops Adgent from accessing new data through that connection.
+Open Settings → Connections in Adgent and disconnect the relevant platform. This immediately stops Adgent from using that connection or starting new scheduled collection. To revoke the underlying OAuth grant as well, remove Adgent from the platform's app or permission settings; for Google, use Google Account → Third-party connections .
 Disconnecting a platform does not delete data already stored by Adgent or your login account. To delete stored data, follow the company-data or email-request steps below.
 02 Delete company data or your account
 Sign in to Adgent and open Settings .
-Use the company deletion control to delete that company's Adgent records and Connected Platform Data, then confirm the request.
-To delete your Adgent login account as well, or if you cannot sign in or do not see the company deletion control, email osman@adgent.app from the address associated with your account. Include your account email and company or workspace name. Do not send platform passwords, access tokens, or other credentials.
+Use the company deletion control to close access to that company, disconnect its platform connections, and remove it from active use.
+To permanently delete stored company data or your Adgent login account, email osman@adgent.app from the address associated with your account. Include your account email and company or workspace name. Do not send platform passwords, access tokens, or other credentials.
 03 Meta data deletion
 To revoke Adgent's Meta access, open Facebook Settings & privacy → Settings → Apps and Websites , select Adgent, and choose Remove . Then delete the relevant company data as described above or email osman@adgent.app to request deletion of data previously accessed through Meta.
 For an email request, include the email address used with Adgent and the affected business or ad-account name. We will send status and completion confirmation to the verified email address.
@@ -3454,7 +3454,7 @@ For an email request, include the email address used with Adgent and the affecte
 Deletion covers the requested Adgent account or workspace, including stored profile information, authorization tokens, Connected Platform Data, and reports associated with it. It does not delete information held independently by Meta, Google, or another platform; use that platform's own deletion controls for its copy.
 Limited records may be retained where required by law, for security and fraud prevention, or in encrypted backups until those backups are overwritten. Any retained data remains protected and is not used for other purposes.
 05 Verification and timing
-We may ask for reasonable information to verify your identity and authority over the affected account. A verified request to delete data from a connected platform begins without undue delay. A company-deletion request closes access immediately and marks its connections disconnected so Adgent does not start new scheduled collection, then schedules permanent deletion from active systems within 30 days. Automated deletion requests receive a status URL; for verified email requests, we send confirmation when deletion from active systems is complete. We never ask for your Meta or Google password or OAuth token.
+We may ask for reasonable information to verify your identity and authority over the affected account. Disconnecting in Adgent closes access immediately and prevents new scheduled collection; revoking the platform grant separately invalidates the platform authorization. Until permanent deletion automation is complete, verified requests to remove stored data are processed without undue delay and receive confirmation when deletion from active systems is complete. Limited records may remain where required by law or in encrypted backups until overwrite. We never ask for your Meta or Google password or OAuth token.
 Contact us
 Send deletion requests or questions to osman@adgent.app . Adgent is operated by Osman Tıkna, a sole proprietorship established in Türkiye. See our Privacy Policy and Data Use summary.
 
@@ -3541,7 +3541,7 @@ Free tool Conversion signal check
 Who wrote this
 Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyzes creative; it doesn't make it. Structural leaks like these are what the overnight read looks for before you open the account — the daily verdict .
 All articles
-Request demo
+Get a free audit
 
 ---
 
@@ -3606,7 +3606,7 @@ Free tool Break-even ROAS calculator
 Who wrote this
 Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyzes creative; it doesn't make it. A target the account cannot reach gets refused before the budget moves, with the account's own numbers as the reason — the Trust Gate .
 All articles
-Request demo
+Get a free audit
 
 ---
 
@@ -3685,7 +3685,7 @@ Free tool Break-even ROAS calculator
 Who wrote this
 Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyzes creative; it doesn't make it. Waste only becomes visible once the platform's numbers meet what GA4 recorded — how ground truth works .
 All articles
-Request demo
+Get a free audit
 
 ---
 
@@ -3798,7 +3798,7 @@ Attribution Placement drift: the leak in your average
 Who wrote this
 Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyzes creative; it doesn't make it. The twelve checks above are the kind of work it does overnight, ranked by recoverable spend — the daily verdict .
 All articles
-Request demo
+Get a free audit
 
 ---
 
@@ -3876,7 +3876,7 @@ Product What is an AI media buyer?
 Who wrote this
 Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyzes creative; it doesn't make it. Brand spend and tracking quality are judged against what your analytics recorded, not against the campaign's own report — ground truth .
 All articles
-Request demo
+Get a free audit
 
 ---
 
@@ -3983,7 +3983,7 @@ Product What is an AI media buyer?
 Product AI media buyer vs. Performance Max vs. dashboard
 Who wrote this
 Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyzes creative; it doesn't make it. If you want the same four categories compared row by row, including where we are the wrong tool, that is Why Adgent .
-All articles Request demo
+All articles Get a free audit
 
 ---
 
@@ -4221,7 +4221,7 @@ We'll be in touch within a couple of working days to set up your accounts.
 
 ---
 
-# The Meta Ads account audit: the ten checks that recover spend — Adgent
+# The Meta Ads audit: ten checks that recover spend — Adgent
 URL: https://adgent.app/meta-ads-account-audit-checklist
 
 Playbook · 9 min read · 22 July 2026
@@ -4310,7 +4310,7 @@ Creative CPM is the early creative-fatigue signal
 Who wrote this
 Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyzes creative; it doesn't make it. The twenty checks above run overnight on every connected account, ordered by what they are worth — the daily verdict .
 All articles
-Request demo
+Get a free audit
 
 ---
 
@@ -4384,7 +4384,7 @@ Product What is an AI media buyer?
 Who wrote this
 Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyzes creative; it doesn't make it. Splitting a first budget across both, with every cost range showing the campaigns it came from, is the media plan it builds .
 All articles
-Request demo
+Get a free audit
 
 ---
 
@@ -4463,7 +4463,7 @@ Playbook How to audit a Google Ads account
 Who wrote this
 Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyzes creative; it doesn't make it. Branded demand you would have won for free is exactly the kind of credit that only shows up once platform figures are checked against your own revenue — ground truth .
 All articles
-Request demo
+Get a free audit
 
 ---
 
@@ -4533,7 +4533,7 @@ Playbook Performance Max brand cannibalization
 Who wrote this
 Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyzes creative; it doesn't make it. When a target is the constraint rather than the budget, it says so and refuses the ask instead of quietly under-delivering — the Trust Gate .
 All articles
-Request demo
+Get a free audit
 
 ---
 
@@ -4597,7 +4597,7 @@ Attribution Meta says 4.2×, Google says 3.1×
 Who wrote this
 Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyzes creative; it doesn't make it. A placement running at 1.1× inside a healthy average is the sort of finding the overnight read puts on top — the daily verdict .
 All articles
-Request demo
+Get a free audit
 
 ---
 
@@ -4661,7 +4661,7 @@ Free tool Conversion signal check
 Who wrote this
 Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyzes creative; it doesn't make it. Each step it proposes is logged with the budget it replaced, so a scale you regret is a restore rather than a reconstruction — the Change Ledger .
 All articles
-Request demo
+Get a free audit
 
 ---
 
@@ -4749,7 +4749,7 @@ Attribution Placement drift: the leak in your average
 Who wrote this
 Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyzes creative; it doesn't make it. The nine jobs it actually does, one by one, are on the features page .
 All articles
-Request demo
+Get a free audit
 
 ---
 
@@ -4816,7 +4816,7 @@ Attribution Placement drift: the leak in your average
 Who wrote this
 Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyzes creative; it doesn't make it. The brief that principle produces is the daily verdict .
 All articles
-Request demo
+Get a free audit
 
 ---
 
@@ -4895,7 +4895,7 @@ Free tool Conversion signal check
 Who wrote this
 Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyzes creative; it doesn't make it. The four checks above are what it runs before naming a cause, every morning, on every connected account — the daily verdict .
 All articles
-Request demo
+Get a free audit
 
 ---
 
@@ -4965,4 +4965,4 @@ Free tool Break-even ROAS calculator
 Who wrote this
 Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyzes creative; it doesn't make it. And when the drop is real rather than a signal problem, the test is your margin, not the platform's report — ground truth .
 All articles
-Request demo
+Get a free audit

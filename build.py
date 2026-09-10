@@ -21,13 +21,16 @@ hand-edit the nav or footer inside a page — edit _partials/ and rebuild.
 The site is English-only. The Turkish locale was removed on 2026-08-01; audit() still
 guards against a stray hreflang reappearing.
 """
-import re, sys, os, glob, io, json, hashlib, datetime
+import re, sys, os, glob, io, json, hashlib, datetime, html as H
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 PARTIALS = os.path.join(ROOT, "_partials")
 SKIP = {"blog-post"}
 # Pages that live in a subdirectory, so the root glob never sees them.
-EXTRA_SLUGS = ["demo"]
+# `demo` was pulled from the site on 2026-09-09 — the page still exists on disk
+# but nothing links it and it is out of the sitemap and llms.txt. Re-adding it
+# is this list, _PRIO, _LLMS_GROUPS and the three _partials entries.
+EXTRA_SLUGS = []
 # media-planning folded into built-from-chat on 2026-08-16 — the old URL 301s
 # in vercel.json, so it must not reappear here or the nav will link to a redirect.
 FEATURE_SLUGS = ["daily-verdict", "ground-truth", "trust-gate", "creative-intelligence",
@@ -126,6 +129,23 @@ def twitter_card(html):
     return html[:at] + "\n" + "\n".join(add) + html[at:]
 
 
+def feed_link(html):
+    """Advertise /feed.xml from every page's <head>.
+
+    Site-wide rather than blog-only on purpose: `rel="alternate"` is how a
+    reader, an aggregator or an answer engine discovers the feed from whatever
+    page it happens to land on, and putting it in one place makes it one more
+    head that drifts. Anchored after the canonical, which every page has and
+    `audit()` check 3 keeps self-referencing.
+    """
+    head_end = html.find("</head>")
+    if head_end == -1 or 'type="application/rss+xml"' in html[:head_end]:
+        return html
+    anchor = re.search(r'<link rel="canonical"[^>]*/?>', html[:head_end])
+    at = anchor.end() if anchor else head_end
+    return html[:at] + "\n" + FEED_LINK + html[at:]
+
+
 def stamp_assets(html):
     #  tokens.css is stamped too: site.css now reads variables that only exist
     #  in the newer tokens.css (--accent-fill), and an unstamped tokens.css can
@@ -212,7 +232,7 @@ def render(html, slug):
             m = re.search(LEGACY[block], html, re.S)
             if m:
                 html = html[:m.start()] + repl + html[m.end():]
-    return stamp_assets(twitter_card(mark_figures(main_landmark(html))))
+    return stamp_assets(feed_link(twitter_card(mark_figures(main_landmark(html)))))
 
 
 def pages():
@@ -227,7 +247,7 @@ def pages():
         yield p, name[:-5]
 
 
-_PRIO = {"": "1.0", "features": "0.9", "demo": "0.9", "pricing": "0.8", "blog": "0.8",
+_PRIO = {"": "1.0", "features": "0.9", "pricing": "0.8", "blog": "0.8",
          "for-agencies": "0.8", "for-in-house": "0.8", "why-adgent": "0.8",
          "tools": "0.8", "break-even-roas-calculator": "0.8",
          "conversion-signal-check": "0.8",
@@ -321,12 +341,100 @@ def sitemap(check_only=False):
     return 0
 
 
+# ---------------------------------------------------------------- feed.xml
+# A 25-article blog with no feed: `feedMissing` on all 55 pages in the
+# 2026-09-09 crawl. A feed is the only pull surface on the site — everything
+# else waits for a crawler to come back. Derived from the pages for the same
+# reason the sitemap is: a hand-maintained list of 25 posts goes stale on the
+# 26th.
+FEED_PATH = "feed.xml"
+FEED_LINK = ('<link rel="alternate" type="application/rss+xml" '
+             'title="Adgent — the blog" href="/feed.xml"/>')
+
+
+def _articles():
+    """(slug, title, description, date) for every BlogPosting, newest first.
+
+    Keyed on the JSON-LD `@type`, not on a slug list: the two tool pages carry a
+    `datePublished` as well and are not blog posts, and the next page that gets
+    one should not silently join the feed either.
+
+    ⚠️ **Top-level `@graph` nodes only** — deliberately not `_ld_nodes()`.
+    `blog.html` is a `Blog` whose `blogPost[]` nests a stub for each article, so
+    a recursive walk put the listing page in the feed under its own title. A
+    nested node describes something else; only the top-level one describes *this
+    page*.
+    """
+    out = []
+    for path, slug in pages():
+        if slug in SKIP:
+            continue
+        head = read(path).split("</head>", 1)[0]
+        if "noindex" in head:
+            continue
+        for block in re.findall(
+                r'<script type="application/ld\+json">(.*?)</script>', head, re.S):
+            for node in json.loads(block).get("@graph", []):
+                if node.get("@type") == "BlogPosting" and node.get("datePublished"):
+                    title, desc = _page_meta(slug)
+                    # the brand suffix is for a SERP, not for a reader's list
+                    out.append((slug, re.sub(r"\s*—\s*Adgent$", "", title),
+                                desc, node["datePublished"]))
+                    break
+    return sorted(out, key=lambda r: (r[3], r[0]), reverse=True)
+
+
+def feed(check_only=False):
+    base = "https://adgent.app"
+    items = _articles()
+    esc = lambda s: (s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;"))
+    rows = []
+    for slug, title, desc, date in items:
+        # RFC 822 date at noon UTC: the pages carry a day, not a time, and
+        # inventing 00:00 makes a post look a day older in some readers.
+        stamp = datetime.datetime.strptime(date, "%Y-%m-%d").strftime(
+            "%a, %d %b %Y 12:00:00 +0000")
+        rows.append(
+            f"    <item>\n"
+            f"      <title>{esc(title)}</title>\n"
+            f"      <link>{base}/{slug}</link>\n"
+            f"      <guid isPermaLink=\"true\">{base}/{slug}</guid>\n"
+            f"      <pubDate>{stamp}</pubDate>\n"
+            f"      <description>{esc(desc)}</description>\n"
+            f"    </item>")
+    newest = items[0][3] if items else datetime.date.today().isoformat()
+    built = datetime.datetime.strptime(newest, "%Y-%m-%d").strftime(
+        "%a, %d %b %Y 12:00:00 +0000")
+    xml = ('<?xml version="1.0" encoding="UTF-8"?>\n'
+           '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">\n'
+           '  <channel>\n'
+           '    <title>Adgent — the blog</title>\n'
+           f'    <link>{base}/blog</link>\n'
+           '    <description>Diagnostics, audits and honest reads on Meta and '
+           'Google Ads accounts.</description>\n'
+           '    <language>en-us</language>\n'
+           f'    <lastBuildDate>{built}</lastBuildDate>\n'
+           f'    <atom:link href="{base}/{FEED_PATH}" rel="self" '
+           'type="application/rss+xml"/>\n'
+           + "\n".join(rows) + "\n"
+           '  </channel>\n</rss>\n')
+    p = os.path.join(ROOT, FEED_PATH)
+    if check_only:
+        cur = read(p) if os.path.exists(p) else ""
+        if cur.strip() != xml.strip():
+            print("FEED STALE — regenerate with build.py (%d items)" % len(rows))
+            return 1
+        return 0
+    write(p, xml)
+    print("feed.xml: %d items" % len(rows))
+    return 0
+
 
 # ---------------------------------------------------------------- llms.txt
 # Hand-maintained, it went stale immediately: 20 real pages missing and a
 # platform list that contradicted the site. Derive it from the pages instead.
 _LLMS_GROUPS = [
-    ("Product", ["", "features", "why-adgent", "pricing", "demo"]),
+    ("Product", ["", "features", "why-adgent", "pricing"]),
     ("Capabilities", FEATURE_SLUGS),
     ("By industry", ["ecommerce", "lead-generation", "travel-hospitality",
                      "marketplaces", "local-multi-location", "mobile-apps"]),
@@ -476,6 +584,53 @@ def llms_full(check_only=False):
     return 0
 
 
+def _ld_nodes(value):
+    """Every dict in a JSON-LD document, nested ones included.
+
+    Nesting matters here: the homepage's Organization is reached through
+    SoftwareApplication.publisher, not from @graph, so a top-level-only walk
+    misses most of them.
+    """
+    if isinstance(value, list):
+        for item in value:
+            yield from _ld_nodes(item)
+    elif isinstance(value, dict):
+        yield value
+        for item in value.values():
+            yield from _ld_nodes(item)
+
+
+# Arial advance widths in 1/1000 em, grouped by width so the table stays readable.
+# Google renders SERP titles in ~20px Arial and descriptions in ~14px, and truncates
+# on width, not on character count. These are the real advances: verified against
+# Chrome's own `canvas.measureText` for all 105 characters the site uses, at both
+# sizes, with **zero** deviation over 0.6px — one table in font units reproduces
+# every size, which is why this is not a per-size lookup.
+_ARIAL = {
+    191: "'",           222: "ijl\u2019",  260: "|",
+    278: " !,./:;I[\\]ft",
+    333: "()-`r\u00b7\u2011\u201c\u201d",
+    334: "{}",           355: '"',          389: "*",   469: "^",
+    500: "Jcksvxyz",
+    556: "#$0123456789?L_abdeghnopqu\u2013\u20ba",
+    584: "+<=>~\u00d7",  611: "FTZ",
+    667: "&ABEKPSVXY",   722: "CDHNRUw",    778: "GOQ",
+    833: "Mm",           889: "%",          944: "W",
+    1000: "\u2014\u2026", 1015: "@",
+}
+_ADVANCE = {ch: units for units, chars in _ARIAL.items() for ch in chars}
+
+
+def serp_px(text, size):
+    """Rendered width of `text` in Arial at `size` px, rounded.
+
+    Unknown characters fall back to 556 (the lowercase average), which is the
+    honest default: a wrong guess on one glyph moves the total by single-digit
+    pixels, and the alternative is a table nobody maintains.
+    """
+    return round(sum(_ADVANCE.get(ch, 556) for ch in text) * size / 1000)
+
+
 def audit():
     """Invariants the partials can't enforce: per-page <head>, plus the one
     cross-file contract (site.js ↔ vercel.json) that measurement depends on.
@@ -539,6 +694,26 @@ def audit():
                 problems.append(f"{rel}: og:image without og:image:alt")
             if "og:locale" not in head:
                 problems.append(f"{rel}: no og:locale")
+            #    SERP caps, measured the way Google truncates: in pixels, not
+            #    characters. SITE.md claimed "every title ≤60ch and every
+            #    description ≤160ch" from 2026-09-03 and it was already false two
+            #    days later. Characters are the wrong ruler anyway — 160 characters
+            #    of "Illinois" and 160 of "MMMMMMMM" are 400 px apart — so this
+            #    measures the real thing. See serp_px().
+            t = re.search(r"<title>(.*?)</title>", head, re.S)
+            if t:
+                w = serp_px(H.unescape(t.group(1)), 20)
+                if w > 600:
+                    problems.append(f"{rel}: title is {w}px, over the 600px SERP cap")
+            d = re.search(r'<meta name="description" content="(.*?)"', head, re.S)
+            if d:
+                w = serp_px(H.unescape(d.group(1)), 14)
+                if w > 985:
+                    problems.append(f"{rel}: meta description is {w}px, over the 985px cap")
+            #    The feed is a pull surface: if no page advertises it, only
+            #    somebody who already guessed the URL will ever find it.
+            if 'href="/feed.xml"' not in head:
+                problems.append(f"{rel}: no rel=alternate link to /feed.xml")
         #    Fonts must be discovered in the head. They started as an @import
         #    inside tokens.css — two stylesheet round-trips deep — then moved to
         #    a <link> to fonts.googleapis.com, which was better but still put two
@@ -572,6 +747,117 @@ def audit():
             problems.append(f"vercel.json: {src} does not rewrite to a gateway origin")
         if ".fps.goog" not in rewrites.get(f"{src}/:path*", ""):
             problems.append(f"vercel.json: no {src}/:path* rule, so the hits 404")
+
+    # 8. One host, one set of URLs. www.adgent.app answered 200 with the whole
+    #    site on 2026-09-09 — same bytes, canonical pointing at the apex, no
+    #    redirect anywhere. The canonical tag is a hint; two hosts serving 200
+    #    still split crawl budget and any inbound link that used the www form.
+    #    Cheapest fix is a host-conditional redirect, and it has no symptom when
+    #    it is deleted, so it needs a check.
+    redirects = json.loads(read(os.path.join(ROOT, "vercel.json"))).get("redirects", [])
+    if not any(r.get("destination", "").startswith("https://adgent.app/")
+               and any(h.get("type") == "host" and h.get("value") == "www.adgent.app"
+                       for h in r.get("has", []))
+               for r in redirects):
+        problems.append("vercel.json: no www.adgent.app -> apex redirect")
+
+    # 9. One brand entity, not thirty. Organization appeared as a top-level or
+    #    nested node 103 times across 55 pages on 2026-09-09, and WebSite 20
+    #    times, every one of them anonymous — no @id. Anonymous nodes do not
+    #    merge: a search engine reading the site sees a hundred separate
+    #    companies that happen to share a name, which is the wrong answer to
+    #    give for a brand query. The shared @id is what makes them one node.
+    for path, slug in pages():
+        if slug in SKIP:
+            continue
+        rel, head = os.path.relpath(path, ROOT), read(path).split("</head>", 1)[0]
+        for block in re.findall(
+                r'<script type="application/ld\+json">(.*?)</script>', head, re.S):
+            for node in _ld_nodes(json.loads(block)):
+                t, want = node.get("@type"), None
+                if t == "Organization" and str(
+                        node.get("url", "https://adgent.app")).rstrip("/") == "https://adgent.app":
+                    want = "https://adgent.app/#organization"
+                elif t == "WebSite":
+                    want = "https://adgent.app/#website"
+                if want and node.get("@id") != want:
+                    problems.append(f"{rel}: {t} node without @id {want}")
+
+            #    …and declared exactly once per document. Two nodes carrying the
+            #    same @id and the same properties is legal JSON-LD — they merge —
+            #    but it is the shape that says "copy-pasted", and 28 pages had it
+            #    the moment the @ids went in: a full Organization at @graph level
+            #    *and* a full copy under publisher. One full declaration, every
+            #    other occurrence a bare {"@id": …}. The reverse failure matters
+            #    more: a bare ref whose target is declared nowhere in the document
+            #    resolves to nothing at all.
+            #    Scoped to the two site entities on purpose: a breadcrumb may
+            #    legitimately carry {"@id": "https://adgent.app/pricing"} for a
+            #    node it does not describe, and flagging that would be noise.
+            ENTITIES = ("https://adgent.app/#organization",
+                        "https://adgent.app/#website")
+            full, refs = {}, set()
+            for node in _ld_nodes(json.loads(block)):
+                nid = node.get("@id")
+                if nid not in ENTITIES:
+                    continue
+                if set(node) == {"@id"}:
+                    refs.add(nid)
+                else:
+                    full[nid] = full.get(nid, 0) + 1
+            for nid, count in sorted(full.items()):
+                if count > 1:
+                    problems.append(f"{rel}: {nid} declared {count}x — one, then bare refs")
+            for nid in sorted(refs - set(full)):
+                problems.append(f"{rel}: bare @id ref {nid} is declared nowhere on the page")
+
+    # 10. One social card per page. 27 indexable pages shared assets/og/site.png
+    #    until 2026-09-09, so every link to a solution, capability or legal page
+    #    looked identical in a feed, a DM and an LLM's link preview. Nothing on
+    #    the page shows the defect, and the fix decays back the moment somebody
+    #    scaffolds a new page from a donor head — which is exactly how it spread.
+    #    Also checks the file exists: an og:image 404 is a blank card.
+    seen = {}
+    for path, slug in pages():
+        if slug in SKIP:
+            continue
+        rel, html = os.path.relpath(path, ROOT), read(path)
+        head = html.split("</head>", 1)[0]
+        if "noindex" in head:
+            continue
+        m = re.search(r'<meta property="og:image" content="https://adgent\.app(/[^"]+)"', head)
+        if not m:
+            problems.append(f"{rel}: no og:image")
+            continue
+        if not os.path.exists(os.path.join(ROOT, m.group(1).lstrip("/"))):
+            problems.append(f"{rel}: og:image {m.group(1)} does not exist")
+        if m.group(1) in seen:
+            problems.append(f"{rel}: og:image {m.group(1)} is already used by {seen[m.group(1)]}")
+        seen[m.group(1)] = rel
+
+    # 11. Response headers. The 2026-09-09 crawl found none of these on any of
+    #     the 55 pages. They are the four with no behavioural cost on this site:
+    #     nothing embeds us in a frame except the noindex lab page (SAMEORIGIN
+    #     covers it), nothing reads a cross-origin referrer path, and nothing
+    #     asks for a camera. Deleting a header has no symptom, which is the
+    #     whole reason it is a check.
+    #
+    #     ⛔ No CSP, and that is a decision with a measurement behind it: with
+    #     full consent the site loads scripts from clarity.ms and
+    #     static.cloudflareinsights.com, an ads-audience pixel from a Google
+    #     ccTLD chosen by the visitor's country (observed: www.google.com.tr, so
+    #     img-src would need ~190 hosts or a bare `https:`), and 31 pages carry
+    #     an inline <style>. A policy with 'unsafe-inline' on script-src is not
+    #     an XSS control, and a wrong one kills measurement with no symptom —
+    #     the exact failure mode check 7 exists for. Do it properly or not at
+    #     all: build-step nonces plus a report-only rollout.
+    want_headers = {"X-Content-Type-Options", "X-Frame-Options",
+                    "Referrer-Policy", "Permissions-Policy"}
+    have = {h["key"] for rule in json.loads(read(os.path.join(ROOT, "vercel.json")))
+            .get("headers", []) if rule.get("source") == "/(.*)"
+            for h in rule.get("headers", [])}
+    for missing in sorted(want_headers - have):
+        problems.append(f"vercel.json: no site-wide {missing} header")
     return problems
 
 
@@ -642,11 +928,13 @@ def main():
         else:
             print("OK — every page matches _partials/.")
         rc |= sitemap(check_only=True)
+        rc |= feed(check_only=True)
         rc |= llms(check_only=True)
         rc |= llms_full(check_only=True)
     else:
         print("built %d page(s)" % wrote)
         sitemap()
+        feed()
         llms()
         llms_full()
     bad = audit()
@@ -656,7 +944,7 @@ def main():
             print("   ", b)
         rc = 1
     elif check and rc == 0:
-        print("OK — sitemap current.")
+        print("OK — sitemap and feed current.")
         print("OK — heads consistent, measurement wired first-party.")
     return rc
 

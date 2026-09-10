@@ -65,6 +65,8 @@ python3 build.py           # regenerate every page + sitemap.xml + llms.txt + ll
 |---|---|
 | the `<!--#header-->` / `#mobile` / `#footer` blocks in every page | `_partials/*.en.html` |
 | `sitemap.xml` | the files on disk, excluding any page carrying `noindex` |
+| `feed.xml` | every page whose top-level JSON-LD is a `BlogPosting`, newest first |
+| the `rel="alternate"` feed link in every `<head>` | `FEED_LINK`, inserted by `feed_link()` after the canonical |
 | `llms.txt` | the pages, preserving the hand-written preamble at the top |
 | `llms-full.txt` | the pages |
 
@@ -102,17 +104,49 @@ Pages carry markers instead of copies, so the block is regenerated rather than h
 `class="active"` on the current nav item is re-applied per page from its filename. Never hand-edit
 it. `sitemap.xml` is generated from the files on disk and **excludes any page carrying `noindex`**.
 
-⚠️ **This was false until 2026-09-03 and is now true.** `EXTRA_SLUGS` (subdirectory pages —
-today just `demo`) was appended to the sitemap **unconditionally**, after and outside the
+⚠️ **This was false until 2026-09-03 and is now true.** `EXTRA_SLUGS` (subdirectory pages)
+was appended to the sitemap **unconditionally**, after and outside the
 `_noindex` filter, so the guarantee never covered it. Caught by a full-site Lighthouse sweep:
 deployed `/demo` served `<meta name="robots" content="noindex, nofollow">` while sitting in
 `sitemap.xml` at priority 0.9 — the exact contradiction this paragraph claimed was impossible.
 Same code path had a second defect: `_lastmods()` globbed only root `*.html`, so every
 subdirectory page fell through to `dates.get(slug, today)` and was stamped **today on every
 build** — the permanent-freshness signal that function exists to prevent. Both fixed in
-`build.py`; `demo` now carries a real content hash in `.lastmod.json`.
+`build.py`. `EXTRA_SLUGS` is **empty** since 2026-09-09 (see below); the filter and the
+content-hash lastmod stay, because the next subdirectory page will need both.
 
 **Run it after** editing `_partials/`, or adding/removing a page. Then copy to the mirror.
+
+## /demo is off the site — 2026-09-09, owner decision
+
+The owner is not confident in the interactive demo's current state, so it comes off now and
+goes back later. What was removed is every **path to it**, not the page:
+
+| Removed | Where |
+|---|---|
+| the *Interactive demo* mega-menu entry | `_partials/header.en.html` |
+| the mobile drawer entry | `_partials/mobile.en.html` |
+| the footer Product entry | `_partials/footer.en.html` |
+| `demo` from the sitemap and `llms.txt` walk | `build.py` `EXTRA_SLUGS` |
+| `demo` from the sitemap priority map | `build.py` `_PRIO` |
+| `demo` from the llms.txt Product group | `build.py` `_LLMS_GROUPS` |
+
+`demo/index.html` **stays on disk** and still carries `noindex, nofollow`, so re-adding it is
+those six lines and nothing else. It is now reachable only from `index-demo-lab.html`, which is
+itself `noindex, nofollow` and out of the sitemap — an internal door, invisible to search.
+
+⚠️ **The URL still answers 200 until this deploys, and after it deploys.** Unlinked plus
+`noindex` removes it from the site and from search; it does not make `adgent.app/demo` stop
+serving. If the page must be unreachable by URL too, that is one host-level `redirects` entry in
+`vercel.json` — deliberately **not** added, because it would have to be removed again to put the
+demo back, and nothing links the URL to leak it.
+
+**Same pass, because the demo's removal made it wrong:** 26 pages still ended with a
+**"Request demo"** button — 25 article `.post-foot` CTAs plus the `about.html` form submit — and
+three hidden form `subject` values read *"New Adgent demo request"*. The 2026-09-07 pass (§7.5)
+recorded "One CTA offer everywhere" but only covered the partials; `.post-foot` sits outside the
+regenerated blocks, so it kept the old offer for two days. All 29 pages now say **"Get a free
+audit"**, which is the site's one offer.
 
 ## What this was fixing — measured 2026-08-01
 
@@ -143,7 +177,9 @@ Every one of the 52 sitemap URLs was audited with Lighthouse (headless Chrome, m
 Also verified in the same pass: **zero broken internal links** and zero dead `#anchors`
 across 55 routes; **no orphan pages** — every indexable page is reachable from the homepage
 in ≤2 clicks; no duplicate `<title>` or duplicate meta description; every title ≤60ch and
-every description ≤160ch; **all 52 production URLs return HTTP 200**; no page carries an
+every description ≤160ch (⚠️ **this was a prose claim, and it was false again by 2026-09-09** —
+a 70ch title and a 181ch description shipped with the tool-page pass. It is `build.py`
+check 6 now, so it can only be false with the build red); **all 52 production URLs return HTTP 200**; no page carries an
 `hreflang` (single-locale since 2026-08-01 — the earlier note claiming every page has one
 was stale). `404.html`, `blog-post.html` and `index-demo-lab.html` are the only routes not
 in the sitemap, all three correctly: an error page, a `noindex` redirect stub, and a
@@ -368,6 +404,209 @@ don't delete it.
 browser on the first call. It happened on 2026-09-07 and the only symptom was a calculator whose
 numbers never moved. Grep new pages for `__omp_shell` before believing them.
 
+## The crawler — FreeCrawl, and what it found on 2026-09-09
+
+The site's SEO work had no instrument. Lighthouse scores one URL at a time and reports nothing
+about the *set* — duplicate hosts, entity consolidation, pixel-width truncation, which page links
+the 404. [FreeCrawl](https://github.com/kemalai/FreeCrawl-SEO-Tool) (MIT, local, no telemetry, 167
+checks) is now that instrument, and it is wired into OMP so a session can read a crawl instead of
+re-deriving it with one-off Python.
+
+```bash
+# one-off headless crawl (~45 s for the whole site)
+cd ~/adgent/.seo
+node ~/tools/FreeCrawl-SEO-Tool/apps/cli/dist/index.js https://adgent.app/ \
+     --max 300 --concurrency 5 --rps 5 --db adgent.seoproject --out adgent-crawl.json --json
+```
+
+The crawl project is `~/adgent/.seo/adgent.seoproject` and the MCP server is registered in
+`adgent/.omp/mcp.json` as `freecrawl` — 101 tools over the same SQLite file, so `top_issues`,
+`query_urls`, `report_sitemap_orphans` and the rest answer without another crawl. `session_create`
+and `start_crawl` need the desktop app open; everything read-only does not.
+
+**Crawl it against production, not `serve.py`.** Half of what it checks is response headers,
+redirects and host behaviour, none of which `serve.py` reproduces. The consequence is that a crawl
+always describes the **last deploy** — the 2026-09-09 crawl saw `/demo` linked, because the removal
+above had not shipped yet.
+
+### What it found, and what was done — 2026-09-09
+
+**Fixed in this pass:**
+
+| Finding | Evidence | Fix |
+|---|---|---|
+| `www.adgent.app` served the whole site at **200**, no redirect | `curl -sI https://www.adgent.app/` → `HTTP/2 200`, canonical `https://adgent.app/` | host-conditional 308 in `vercel.json`, gated by `audit()` check 8 |
+| 103 anonymous `Organization` nodes + 20 anonymous `WebSite` nodes across 55 pages | every JSON-LD block, none with `@id` | shared `@id` `#organization` / `#website`, gated by check 9 |
+| 13 heads over a SERP cap | a 70ch title and a 181ch description first; then 10 descriptions over 985px once measured properly | all rewritten, gated by check 6 — in **pixels**, see the correction below |
+| 27 indexable pages shared one OG card | `assets/og/site.png` on every product, solution, tool and legal page | 27 generated per-page cards, gated by check 10 |
+| no feed on a 25-article blog | `feedMissing`, 55/55 | `/feed.xml` generated by `build.py`, linked from every head, gated by check 6 |
+| no security response headers | `xFrameOptionsMissing` / `xContentTypeOptionsMissing`, 55/55 | four headers in `vercel.json`, gated by check 11 |
+| one internal 404 target reached from 5 pages | `/cdn-cgi/l/email-protection` from the five legal pages | *not a defect* — see below |
+| a link pointing at the wrong page | `support.google.com/google-ads/answer/6259715`, linked from `cross-platform-comparability-meta-google` as "its own windows" | repointed to `…/answer/3123169` |
+
+⚠️ **Correction on that last row: the link was never broken.** The crawl reported it 404, and so
+did one `curl`, so the first version of this section called it a dead link. Re-probed with and
+without a browser user-agent, `6259715` answers **200** — Google Help rate-limits and returns 404
+to a crawler that asks too fast. What was actually wrong is better: `6259715` is
+**"About attribution models"**, and the sentence linking it is about *conversion windows*
+(*"Google Ads runs its own windows, commonly 30-day click"*). `3123169` is **"About conversion
+windows"**. The swap stands on relevance, not on a status code. **Verify a reported 404 by hand
+before calling a link dead** — a rate-limited host and a deleted page look identical in a crawl.
+
+**The anonymous-`@id` one is the interesting one.** A JSON-LD node with no `@id` cannot be
+referenced, so it does not merge: 55 pages each declaring `{"@type": "Organization", "name":
+"Adgent"}` describe 55 companies that happen to share a name, not one company described 55 times.
+That is the wrong shape to hand a search engine for a **brand** query, and it is nested as well as
+top-level — the homepage's Organization is reached through `SoftwareApplication.publisher`, which
+is why `audit()` walks the whole document (`_ld_nodes`) instead of just `@graph`.
+
+**And giving them `@id`s created the next defect, which is why check 9 has a second half.** With
+the same `@id` on both the `@graph` node and the nested `publisher` copy, **29 pages declared the
+same entity twice** — legal JSON-LD, since identical `@id`s merge, but the shape says
+copy-paste and FreeCrawl flags it as `schemaDuplicateId`. The rule now: **one full declaration
+per document, every other occurrence a bare `{"@id": …}`**. The reverse failure is the one that
+actually costs something, so it is checked too — a bare ref whose target is declared nowhere on
+the page resolves to nothing. Both are check 9; the ref check is scoped to the two site entities
+so a breadcrumb's `{"@id": "https://adgent.app/pricing"}` is not treated as a dangling node.
+
+Re-verify the graph, and the FAQ text match, after any JSON-LD edit:
+
+```bash
+python3 - <<'PY'
+import re, json, glob
+IDS = ("https://adgent.app/#organization", "https://adgent.app/#website")
+def nodes(v):
+    if isinstance(v, list):
+        for x in v: yield from nodes(x)
+    elif isinstance(v, dict):
+        yield v
+        for x in v.values(): yield from nodes(x)
+bad = dup = dangling = 0
+for f in sorted(glob.glob("*.html")) + ["demo/index.html"]:
+    head = open(f, encoding="utf-8").read().split("</head>")[0]
+    for m in re.findall(r'<script type="application/ld\+json">(.*?)</script>', head, re.S):
+        try: g = json.loads(m)
+        except Exception: bad += 1; continue
+        full, refs = {}, set()
+        for n in nodes(g):
+            if n.get("@id") not in IDS: continue
+            (refs.add(n["@id"]) if set(n) == {"@id"}
+             else full.__setitem__(n["@id"], full.get(n["@id"], 0) + 1))
+        dup += sum(1 for c in full.values() if c > 1)
+        dangling += len(refs - set(full))
+print("parse failures:", bad, "| duplicate declarations:", dup,
+      "| dangling refs:", dangling)                     # 0 | 0 | 0
+PY
+```
+
+The FAQ text match is a separate script, further up this file — run both after a JSON-LD edit;
+263 pairs, 0 mismatches is the current state.
+
+**⚠️ Correction to this section's first version — the pixel finding was wrong, and it was wrong
+in our favour to overstate it.** The first pass reported *"54 of 55 descriptions render
+1,146–1,528px against a ~985px cap"* straight from FreeCrawl's `metaPixelWidth`. FreeCrawl
+measures **both** title and description with one **Arial 18px** table
+(`packages/core/src/html-parser.ts:2202`), because 18px is the *title* font — so every
+description came back ~1.29× too wide. Measured properly, with `canvas.measureText` in Chrome at
+the sizes Google actually renders (**20px** titles, **14px** descriptions):
+
+| | Cap | Before | After |
+|---|---|---|---|
+| titles over cap | 600px | **0 of 54** (max 568px) | 0 |
+| descriptions over cap | 985px | **10 of 54** (max 1,020px) | **0** (max 984px) |
+
+Ten descriptions, each 1–35px over — a 3-to-7-character problem, not a 54-page rewrite. All ten
+were trimmed without losing a clause. **Read a third-party tool's threshold before quoting its
+number**; the tool was right about the ranking and wrong about the scale.
+
+`build.py` now measures the real thing. `serp_px()` carries Arial's advance widths in 1/1000 em —
+one table, verified against Chrome's own `canvas.measureText` for all 105 characters the site
+uses, at both sizes, with zero deviation over 0.6px — so titles are checked at 20px/600px and
+descriptions at 14px/985px. The 160-character rule is gone; it was never the ruler Google uses.
+
+**Also closed in the same pass:**
+
+- **27 per-page OG cards** replaced the one shared `assets/og/site.png`. Generated, not
+  hand-drawn: same chrome as the 25 hand-drawn article cards (gradient, grid, corner ticks,
+  brand lockup) with the page's own line as the graphic and one word in Fraunces italic. `site.png`
+  stays for `404.html` and `index-demo-lab.html`, both `noindex`. `audit()` check 10 now fails if
+  two indexable pages share a card or if the file is missing.
+- **`/feed.xml`** — RSS 2.0, 25 items, generated by `build.py feed()` from the pages' own
+  `BlogPosting` JSON-LD and covered by `--check` like the sitemap. `feed_link()` puts the
+  `rel="alternate"` in every head during render, and check 6 fails without it.
+- **Four response headers** in `vercel.json` on `/(.*)`: `X-Content-Type-Options`,
+  `X-Frame-Options: SAMEORIGIN`, `Referrer-Policy`, `Permissions-Policy`. Check 11 keeps them.
+  Deliberately **no CSP** — the reasoning is in `build.py` next to the check.
+
+**Still open, and both are owner actions outside the repo:**
+
+- **HSTS** is served by **Cloudflare**, not Vercel (`server: cloudflare`, and Vercel sets none),
+  so `includeSubDomains` / `preload` is a zone setting. `www` is the only subdomain that resolves,
+  so `includeSubDomains` is safe once the apex redirect ships; `preload` is effectively
+  irreversible and stays an owner decision.
+- **Cloudflare Email Obfuscation** hides the contact address from crawlers on the five legal
+  pages — see the false positive below. Scrape Shield → Email Obfuscation.
+
+**Three findings are false positives — do not "fix" them:**
+
+- `imageMissingAlt` on all 55 is `assets/icon-only.svg` with `alt=""` — the brand mark, sitting
+  next to the word "Adgent" in text. `alt=""` is the *correct* answer for a decorative mark; giving
+  it alt text makes a screen reader say the name twice.
+- `formInputUnlabeled` on 21 is implicit labelling: `<label class="lf-field"><span>Name</span>
+  <input …></label>`. The label wraps the input and carries visible text. FreeCrawl only credits
+  `for=`/`id`.
+- `/cdn-cgi/l/email-protection` returning 404 is **Cloudflare Email Obfuscation** rewriting the
+  `mailto:` on the five legal pages; the hash-less path is what a crawler sees and it legitimately
+  404s. Real visitors get the decoded address from Cloudflare's JS. The cost is real but different
+  from a broken link: **the contact address is invisible to crawlers and answer engines**, which is
+  an E-E-A-T signal on exactly the pages that need one.
+
+### One thing loads before consent, and it is not ours — measured 2026-09-09
+
+With cookies and cache cleared, one navigation to `https://adgent.app/` makes **15 requests, of
+which exactly one is third-party**: `static.cloudflareinsights.com/beacon.min.js`. Cloudflare Web
+Analytics injects it at the edge, outside `site.js`, so **the consent gate does not cover it** —
+which makes `TODO.md` §2's *"before consent, zero measurement requests"* false as written. That
+check was run against Google's endpoints and is still true of them: `gtag`, the container and both
+collect endpoints stay silent until the banner is answered.
+
+The beacon is cookieless and does not fingerprint, so this is defensible — but the site sells on
+the gate, so the claim has to be exact: **one cookieless edge beacon loads pre-consent; nothing
+else does.** Turning it off is a Cloudflare zone toggle (Web Analytics), i.e. an owner action.
+
+With full consent, the third-party set is small and worth knowing before anyone writes a CSP:
+`clarity.ms` (script), `static.cloudflareinsights.com` (script),
+`www.google-analytics.com` + `analytics.google.com` (session pings), and an ads-audience pixel from
+a **country-dependent Google ccTLD** — observed `www.google.com.tr`.
+
+## OG cards — the 25 are drawn, the 27 are generated
+
+`assets/og/*.svg` are the **sources and they live in the mirror only** (`build.py` never reads
+them; the deploy ships the `.png`). Two kinds, and they are not interchangeable:
+
+- **The 25 article cards are hand-drawn** — each has a bespoke illustration for its argument.
+  Leave them alone.
+- **The 27 page cards are generated** from `assets/og/_cards.json` (mirror only): one
+  `{eyebrow, title, em}` per slug, where `em` is the word set in Fraunces italic. Copy lives
+  there, not in the SVG.
+
+To add or change one, three steps — the second needs a browser because the line has to be broken
+with the **real** font metrics, and Plus Jakarta Sans is not a font Python can measure:
+
+1. Edit `assets/og/_cards.json`.
+2. In headless Chrome against `serve.py`, measure and wrap: try `76 → 50px`, take the first size
+   that fits **≤3 lines within 1056px**, then bump a 1-line result up to 104px and a 2-line result
+   to 88px. Write the SVG with the eyebrow at `72,98`, the title lines centred on `y=345` at
+   `1.14×` leading, and the brand lockup at `translate(1020,552)` — copy the chrome verbatim from
+   any existing card.
+3. Rasterize at **exactly 1200×630**: `page.setViewport({width:1200,height:630,deviceScaleFactor:1})`
+   then `page.screenshot({path, type:'png', clip:{x:0,y:0,width:1200,height:630}})`.
+
+⚠️ **Do not rasterize with the browser tool's `tab.screenshot()`.** It returns a **WebP**
+downscaled to 1024×538 for display. Written to a `.png` filename that is a file whose bytes say
+`RIFF…WEBP` while `og:image:width` claims 1200 — it happened on the first attempt here. Check the
+magic bytes and the IHDR before believing a card: `head -c8 x.png | xxd` must start `89504e47`.
+
 ## Rules
 
 1. **Never hand-edit the nav or footer in a single page.** Edit `_partials/`, then run the script.
@@ -393,6 +632,35 @@ convention and never needed a robots.txt pointer. Verified against `serve.py` lo
 `robots-txt` audit: **valid, 0 errors**. Do not re-add them as live lines. *(Separately: no AI
 system is known to consume `llms.txt` at all — `research-output/geo-measurement-stack-r11.md:193`.
 The files cost nothing to generate; do not treat them as a GEO lever.)*
+
+### Searching "adgent" returned `/about`, and clicking it landed near the page bottom
+
+Reported by the owner 2026-09-09. Two separate things, and only one of them is ours.
+
+**The landing position is Google's, not a site defect.** Google appends a scroll-to-text
+fragment (`#:~:text=…`) to a result when passage ranking picks a specific passage, and the
+browser then scrolls there on load. Nothing on the site scrolls: the only scroll handler in
+`site.js` is `nav.classList.toggle('scrolled', window.scrollY > 8)` at `site.js:407`, there is no
+`autofocus` anywhere, and `about.html` carries five `id`s — `main`, `lead`, `leadCard`,
+`leadForm`, `leadNote` — none of them linked from a SERP-visible URL. The fix for a text fragment
+is not a redirect; it is giving the query a better answer near the top of the right page.
+
+**`/about` outranking `/` for the brand name is ours, and it has three named causes:**
+
+1. **Two hosts served the site.** `www.adgent.app` answered 200 with identical bytes. Fixed above.
+2. **The brand entity was 55 anonymous `Organization` nodes.** Fixed above with a shared `@id`.
+   Note that `/about` was the more *specific* entity page — `AboutPage` + `Organization` — while
+   the homepage led with `SoftwareApplication`. With one merged entity, that asymmetry stops
+   mattering.
+3. **Coverage.** 46 of 52 pages were "URL is unknown to Google" on 2026-09-03 and the sitemap
+   Google held was 39 days stale (`TODO.md` §3). On a domain with almost no authority, a brand
+   query returns whichever page Google has actually crawled and understood. This is the one that
+   cannot be closed from the repo — the GSC credential is expired and needs an interactive
+   `gcloud auth login`.
+
+⚠️ **1 and 2 are on disk, not deployed.** Neither changes a SERP until the deploy ships and Google
+recrawls, which is weeks for a low-authority domain. Do not re-diagnose this next week and
+conclude the fixes did not work.
 
 ## The Turkish locale was removed — 2026-08-01
 

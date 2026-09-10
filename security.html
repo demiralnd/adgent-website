@@ -7,6 +7,7 @@
 <title>Security — how Adgent protects your ad data</title>
 <meta name="description" content="How Adgent protects the advertising and analytics data you connect — encryption, access controls, token handling, and incident response."/>
 <link rel="canonical" href="https://adgent.app/security"/>
+<link rel="alternate" type="application/rss+xml" title="Adgent — the blog" href="/feed.xml"/>
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="Adgent"/>
@@ -14,15 +15,15 @@
 <meta property="og:title" content="Security — how Adgent protects your ad data"/>
 <meta property="og:description" content="How Adgent protects the advertising and analytics data you connect — encryption, access controls, token handling, and incident response."/>
 <meta property="og:url" content="https://adgent.app/security"/>
-<meta property="og:image" content="https://adgent.app/assets/og/site.png"/>
+<meta property="og:image" content="https://adgent.app/assets/og/security.png"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
 <meta property="og:image:alt" content="Security — how Adgent protects your ad data"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Security — how Adgent protects your ad data"/>
 <meta name="twitter:description" content="How Adgent protects the advertising and analytics data you connect — encryption, access controls, token handling, and incident response."/>
-<meta name="twitter:image" content="https://adgent.app/assets/og/site.png"/>
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "name": "Security", "url": "https://adgent.app/security", "description": "How Adgent protects the advertising and analytics data you connect — encryption, access controls, token handling, and incident response.", "publisher": {"@type": "Organization", "name": "Adgent", "url": "https://adgent.app", "logo": {"@type": "ImageObject", "url": "https://adgent.app/assets/logo.svg"}, "sameAs": ["https://www.linkedin.com/company/adgentapp/", "https://www.instagram.com/adgentapp/"], "description": "Adgent is the AI analyst for performance marketers — an AI media buyer that reads Meta and Google Ads accounts, reasons about account structure, delivers a verdict-first daily brief, and executes fixes on the advertiser's approval. Read-only by default; never an autonomous spender.", "knowsAbout": ["AI media buying", "Google Ads account audit", "Meta Ads optimization", "performance marketing", "cross-platform attribution", "ad spend optimization"], "foundingDate": "2025", "areaServed": ["TR", "Worldwide"], "email": "osman@adgent.app"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://adgent.app"}, {"@type": "ListItem", "position": 2, "name": "Security", "item": "https://adgent.app/security"}]}, {"@type": "Organization", "name": "Adgent", "url": "https://adgent.app", "logo": {"@type": "ImageObject", "url": "https://adgent.app/assets/logo.svg"}, "sameAs": ["https://www.linkedin.com/company/adgentapp/", "https://www.instagram.com/adgentapp/"], "description": "Adgent is the AI analyst for performance marketers — an AI media buyer that reads Meta and Google Ads accounts, reasons about account structure, delivers a verdict-first daily brief, and executes fixes on the advertiser's approval. Read-only by default; never an autonomous spender.", "knowsAbout": ["AI media buying", "Google Ads account audit", "Meta Ads optimization", "performance marketing", "cross-platform attribution", "ad spend optimization"], "foundingDate": "2025", "areaServed": ["TR", "Worldwide"], "email": "osman@adgent.app"}]}</script>
+<meta name="twitter:image" content="https://adgent.app/assets/og/security.png"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "name": "Security", "url": "https://adgent.app/security", "description": "How Adgent protects the advertising and analytics data you connect — encryption, access controls, token handling, and incident response.", "publisher": {"@id": "https://adgent.app/#organization"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://adgent.app"}, {"@type": "ListItem", "position": 2, "name": "Security", "item": "https://adgent.app/security"}]}, {"@type": "Organization", "@id": "https://adgent.app/#organization", "name": "Adgent", "url": "https://adgent.app", "logo": {"@type": "ImageObject", "url": "https://adgent.app/assets/logo.svg"}, "sameAs": ["https://www.linkedin.com/company/adgentapp/", "https://www.instagram.com/adgentapp/"], "description": "Adgent is the AI analyst for performance marketers — an AI media buyer that reads Meta and Google Ads accounts, reasons about account structure, delivers a verdict-first daily brief, and executes fixes on the advertiser's approval. Read-only by default; never an autonomous spender.", "knowsAbout": ["AI media buying", "Google Ads account audit", "Meta Ads optimization", "performance marketing", "cross-platform attribution", "ad spend optimization"], "foundingDate": "2025", "areaServed": ["TR", "Worldwide"], "email": "osman@adgent.app"}]}</script>
 <link rel="icon" type="image/svg+xml" href="/assets/logo-app.svg"/>
 <link rel="apple-touch-icon" href="/assets/logo-app.svg"/>
 <link rel="stylesheet" href="/tokens.min.css?v=c5856eac"/>
@@ -58,7 +59,6 @@
      <a href="/built-from-chat#plan" data-mega="planning"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/><path d="M6 13h7M6 17h4"/></svg></span><span class="mega-tx"><span class="nm-t">Media plan</span><span class="nm-d">Every number shows where it came from</span></span></a>
      <a href="/built-from-chat#dashboards" data-mega="dashboards"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/><path d="M13 13h4M13 17h4"/></svg></span><span class="mega-tx"><span class="nm-t">Live dashboards</span><span class="nm-d">Shareable, and still true on Thursday</span></span></a>
      <a href="/built-from-chat#agents" data-mega="builds"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 4v4M8 14h.01M16 14h.01"/><path d="M2 13v3M22 13v3"/></svg></span><span class="mega-tx"><span class="nm-t">Agents &amp; reports</span><span class="nm-d">Standing jobs that run without you</span></span></a>
-     <a href="/demo"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M10 9l4 2-4 2Z"/><path d="M8 21h8"/></svg></span><span class="mega-tx"><span class="nm-t">Interactive demo</span><span class="nm-d">Click through it yourself, on sample data</span></span></a>
      <p class="mega-note">Described in a sentence, built while you watch &mdash; and nothing reaches an account until you approve it.</p>
     </div>
     <div class="mega-panel" data-mega-panel aria-hidden="true">
@@ -136,7 +136,6 @@
   <a href="/built-from-chat#plan" class="mm-sub">Media plan</a>
   <a href="/built-from-chat#dashboards" class="mm-sub">Live dashboards</a>
   <a href="/built-from-chat#agents" class="mm-sub">Agents &amp; reports</a>
-  <a href="/demo" class="mm-sub">Interactive demo</a>
  </details>
  <details class="mm-group">
   <summary>Solutions<svg class="caret" viewBox="0 0 12 8" fill="none" stroke="currentColor"><path d="M1 2l5 4 5-4"/></svg></summary>
@@ -297,7 +296,6 @@
  <a href="/account-memory">Account memory</a>
  <a href="/built-from-chat">Built from chat</a>
  <a href="/tools">Free tools</a>
- <a href="/demo">Interactive demo</a>
  </div>
  <div class="foot-col">
  <h2 class="foot-h">Who it is for</h2>

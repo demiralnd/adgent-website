@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Adgent — the blog</title>
+    <link>https://adgent.app/blog</link>
+    <description>Diagnostics, audits and honest reads on Meta and Google Ads accounts.</description>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 25 Jul 2026 12:00:00 +0000</lastBuildDate>
+    <atom:link href="https://adgent.app/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>How to choose an AI media buying tool</title>
+      <link>https://adgent.app/how-to-choose-an-ai-media-buying-tool</link>
+      <guid isPermaLink="true">https://adgent.app/how-to-choose-an-ai-media-buying-tool</guid>
+      <pubDate>Sat, 25 Jul 2026 12:00:00 +0000</pubDate>
+      <description>AI ad tools split into four categories: creative generation, bid automation, analysis and diagnostics, and DSPs. A neutral framework for picking one.</description>
+    </item>
+    <item>
+      <title>Can AI audit your ad accounts?</title>
+      <link>https://adgent.app/can-ai-audit-your-ad-accounts</link>
+      <guid isPermaLink="true">https://adgent.app/can-ai-audit-your-ad-accounts</guid>
+      <pubDate>Sat, 25 Jul 2026 12:00:00 +0000</pubDate>
+      <description>AI audits ad accounts well for wasted spend, cross-platform reads and tracking gaps, but hits a ceiling on strategy. An honest look at both sides.</description>
+    </item>
+    <item>
+      <title>Why Performance Max isn’t spending your full budget</title>
+      <link>https://adgent.app/performance-max-not-spending-budget</link>
+      <guid isPermaLink="true">https://adgent.app/performance-max-not-spending-budget</guid>
+      <pubDate>Thu, 23 Jul 2026 12:00:00 +0000</pubDate>
+      <description>Performance Max not spending your budget? It usually isn't a budget problem — bid targets and Quality Score are likelier. A diagnostic ranked by likelihood.</description>
+    </item>
+    <item>
+      <title>Google Ads CPA rise: Aug 2026 bidding change</title>
+      <link>https://adgent.app/google-ads-target-cpa-roas-change-2026</link>
+      <guid isPermaLink="true">https://adgent.app/google-ads-target-cpa-roas-change-2026</guid>
+      <pubDate>Thu, 23 Jul 2026 12:00:00 +0000</pubDate>
+      <description>On 17 August 2026 Google made budget-limited campaigns spend up to the Target CPA/ROAS. If you beat your target, your CPA rose. Here's the read.</description>
+    </item>
+    <item>
+      <title>Google Ads account structure in 2026</title>
+      <link>https://adgent.app/google-ads-account-structure-2026</link>
+      <guid isPermaLink="true">https://adgent.app/google-ads-account-structure-2026</guid>
+      <pubDate>Thu, 23 Jul 2026 12:00:00 +0000</pubDate>
+      <description>In 2026, Google Ads structure is about signal quality, not manual control: STAGs of 3-10 keywords, a Brand/Non-brand split, 30+ conversions per campaign.</description>
+    </item>
+    <item>
+      <title>Why is my Meta ROAS dropping? A diagnostic walkthrough</title>
+      <link>https://adgent.app/why-is-my-meta-roas-dropping</link>
+      <guid isPermaLink="true">https://adgent.app/why-is-my-meta-roas-dropping</guid>
+      <pubDate>Wed, 22 Jul 2026 12:00:00 +0000</pubDate>
+      <description>Meta ROAS dropping? Most drops are signal problems, not campaign problems. Check tracking, scaling, saturation, fatigue and attribution — in that order.</description>
+    </item>
+    <item>
+      <title>Why did my CPA suddenly jump? What to check first</title>
+      <link>https://adgent.app/why-did-my-cpa-jump</link>
+      <guid isPermaLink="true">https://adgent.app/why-did-my-cpa-jump</guid>
+      <pubDate>Wed, 22 Jul 2026 12:00:00 +0000</pubDate>
+      <description>A CPA spike is usually one of four things: a tracking break, a learning reset, auction/CPM pressure, or creative fatigue. The ranked checklist to find it fast.</description>
+    </item>
+    <item>
+      <title>Is Performance Max cannibalizing your branded search?</title>
+      <link>https://adgent.app/performance-max-brand-cannibalization</link>
+      <guid isPermaLink="true">https://adgent.app/performance-max-brand-cannibalization</guid>
+      <pubDate>Wed, 22 Jul 2026 12:00:00 +0000</pubDate>
+      <description>Performance Max often takes credit for branded demand you'd win for free — inflating its ROAS while adding nothing. Here's how to spot it and stop it.</description>
+    </item>
+    <item>
+      <title>Meta vs Google Ads: which for your first $10k?</title>
+      <link>https://adgent.app/meta-vs-google-ads-which-first</link>
+      <guid isPermaLink="true">https://adgent.app/meta-vs-google-ads-which-first</guid>
+      <pubDate>Wed, 22 Jul 2026 12:00:00 +0000</pubDate>
+      <description>Google Ads captures demand people have; Meta creates it. Which to start with depends on whether people search for what you sell. An honest side-by-side.</description>
+    </item>
+    <item>
+      <title>The Meta Ads audit: ten checks that recover spend</title>
+      <link>https://adgent.app/meta-ads-account-audit-checklist</link>
+      <guid isPermaLink="true">https://adgent.app/meta-ads-account-audit-checklist</guid>
+      <pubDate>Wed, 22 Jul 2026 12:00:00 +0000</pubDate>
+      <description>Audit a Meta Ads account in order of recoverable spend: verify pixel and CAPI signal first, then attribution, CBO leakage, placement drift and creative fatigue.</description>
+    </item>
+    <item>
+      <title>How to audit a Performance Max campaign</title>
+      <link>https://adgent.app/how-to-audit-performance-max</link>
+      <guid isPermaLink="true">https://adgent.app/how-to-audit-performance-max</guid>
+      <pubDate>Wed, 22 Jul 2026 12:00:00 +0000</pubDate>
+      <description>Performance Max hides where the money goes. The checks that pierce the black box, ranked by impact: brand-spend detection and tracking first.</description>
+    </item>
+    <item>
+      <title>How much ad budget is wasted?</title>
+      <link>https://adgent.app/how-much-ad-spend-is-wasted</link>
+      <guid isPermaLink="true">https://adgent.app/how-much-ad-spend-is-wasted</guid>
+      <pubDate>Wed, 22 Jul 2026 12:00:00 +0000</pubDate>
+      <description>WordStream's study of 15,666 accounts puts average wasted spend near a third of budget. A ranked playbook for finding each leak and pricing it.</description>
+    </item>
+    <item>
+      <title>CBO vs ABO vs Advantage+: which budget model in 2026?</title>
+      <link>https://adgent.app/cbo-vs-abo-vs-advantage-plus</link>
+      <guid isPermaLink="true">https://adgent.app/cbo-vs-abo-vs-advantage-plus</guid>
+      <pubDate>Wed, 22 Jul 2026 12:00:00 +0000</pubDate>
+      <description>Pick by what you're buying: ABO to test each option fairly, CBO to scale known winners, Advantage+ when you trust your signal and want Meta to run it.</description>
+    </item>
+    <item>
+      <title>Can AI run your ad account? What it can and can't do</title>
+      <link>https://adgent.app/can-ai-run-your-ad-account</link>
+      <guid isPermaLink="true">https://adgent.app/can-ai-run-your-ad-account</guid>
+      <pubDate>Wed, 22 Jul 2026 12:00:00 +0000</pubDate>
+      <description>AI can do the reads, diagnosis and drafting — but it shouldn't hold the last click on live spend. What AI does well in ad management, and what stays human.</description>
+    </item>
+    <item>
+      <title>AI media buyer for agencies, many accounts</title>
+      <link>https://adgent.app/ai-media-buyer-for-agencies</link>
+      <guid isPermaLink="true">https://adgent.app/ai-media-buyer-for-agencies</guid>
+      <pubDate>Wed, 22 Jul 2026 12:00:00 +0000</pubDate>
+      <description>An AI media buyer puts senior judgment on every client account: the same nightly read, verdict-first brief and approval-gated fixes, one account at a time.</description>
+    </item>
+    <item>
+      <title>What is an AI media buyer? A plain-language guide</title>
+      <link>https://adgent.app/what-is-an-ai-media-buyer</link>
+      <guid isPermaLink="true">https://adgent.app/what-is-an-ai-media-buyer</guid>
+      <pubDate>Tue, 21 Jul 2026 12:00:00 +0000</pubDate>
+      <description>An AI media buyer reads your ad accounts like a senior strategist, says what to do and why, and executes on your approval. How it differs from a dashboard.</description>
+    </item>
+    <item>
+      <title>How to audit a Google Ads account: 12-point checklist</title>
+      <link>https://adgent.app/how-to-audit-a-google-ads-account</link>
+      <guid isPermaLink="true">https://adgent.app/how-to-audit-a-google-ads-account</guid>
+      <pubDate>Tue, 21 Jul 2026 12:00:00 +0000</pubDate>
+      <description>A practical Google Ads audit checklist: conversion tracking, wasted search terms, placement leakage, bid strategy and pacing — ranked by recoverable spend.</description>
+    </item>
+    <item>
+      <title>AI media buyer vs PMax vs dashboard</title>
+      <link>https://adgent.app/ai-media-buyer-vs-performance-max-vs-dashboard</link>
+      <guid isPermaLink="true">https://adgent.app/ai-media-buyer-vs-performance-max-vs-dashboard</guid>
+      <pubDate>Tue, 21 Jul 2026 12:00:00 +0000</pubDate>
+      <description>Three tools, three jobs: a dashboard reports, Performance Max optimizes the auction, an AI media buyer reasons for you. Which one you need, honestly.</description>
+    </item>
+    <item>
+      <title>The 7-day window is lying to you before noon</title>
+      <link>https://adgent.app/attribution-window-day-one-data</link>
+      <guid isPermaLink="true">https://adgent.app/attribution-window-day-one-data</guid>
+      <pubDate>Tue, 14 Apr 2026 12:00:00 +0000</pubDate>
+      <description>Meta's 7-day click window keeps rewriting yesterday's ROAS. Why day-one data reads pessimistic by construction — and how to decide anyway.</description>
+    </item>
+    <item>
+      <title>How to scale a winner without breaking it</title>
+      <link>https://adgent.app/scale-a-winner-without-breaking-it</link>
+      <guid isPermaLink="true">https://adgent.app/scale-a-winner-without-breaking-it</guid>
+      <pubDate>Thu, 09 Apr 2026 12:00:00 +0000</pubDate>
+      <description>The 20% rule, learning-phase resets, and why the speed of a budget increase matters more than its size. How to scale Meta campaigns without a reset.</description>
+    </item>
+    <item>
+      <title>Frequency is a lagging indicator. Watch CPM.</title>
+      <link>https://adgent.app/cpm-is-the-early-creative-fatigue-signal</link>
+      <guid isPermaLink="true">https://adgent.app/cpm-is-the-early-creative-fatigue-signal</guid>
+      <pubDate>Thu, 02 Apr 2026 12:00:00 +0000</pubDate>
+      <description>By the time frequency says your audience is tired, your cost already moved. Why the CPM curve calls creative fatigue days earlier.</description>
+    </item>
+    <item>
+      <title>Why Adgent leads with the verdict</title>
+      <link>https://adgent.app/why-adgent-leads-with-the-verdict</link>
+      <guid isPermaLink="true">https://adgent.app/why-adgent-leads-with-the-verdict</guid>
+      <pubDate>Thu, 26 Mar 2026 12:00:00 +0000</pubDate>
+      <description>The design principle behind every Adgent brief: conclusion first, evidence underneath, nothing you didn't need. Why dashboards never hand you a decision.</description>
+    </item>
+    <item>
+      <title>Placement drift: the leak hiding in your average</title>
+      <link>https://adgent.app/placement-drift-the-leak-in-the-average</link>
+      <guid isPermaLink="true">https://adgent.app/placement-drift-the-leak-in-the-average</guid>
+      <pubDate>Thu, 19 Mar 2026 12:00:00 +0000</pubDate>
+      <description>A blended ROAS of 3.8x can hide a placement returning 1.1x. How Advantage+ placements drift, and how to find the leak inside a healthy number.</description>
+    </item>
+    <item>
+      <title>CBO vs ABO in 2026: when each still wins</title>
+      <link>https://adgent.app/cbo-vs-abo-2026</link>
+      <guid isPermaLink="true">https://adgent.app/cbo-vs-abo-2026</guid>
+      <pubDate>Thu, 12 Mar 2026 12:00:00 +0000</pubDate>
+      <description>Campaign budget optimization isn't always the answer. A decision tree for CBO vs ABO based on volume, audience symmetry, and what you're testing.</description>
+    </item>
+    <item>
+      <title>Meta says 4.2×, Google says 3.1×. Both are right.</title>
+      <link>https://adgent.app/cross-platform-comparability-meta-google</link>
+      <guid isPermaLink="true">https://adgent.app/cross-platform-comparability-meta-google</guid>
+      <pubDate>Thu, 26 Feb 2026 12:00:00 +0000</pubDate>
+      <description>Why Meta and Google ROAS can't be compared directly — different windows, models, and definitions — and how to build a comparability boundary.</description>
+    </item>
+  </channel>
+</rss>
