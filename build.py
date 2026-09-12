@@ -776,27 +776,36 @@ def audit():
         if ".fps.goog" not in rewrites.get(f"{src}/:path*", ""):
             problems.append(f"vercel.json: no {src}/:path* rule, so the hits 404")
 
-    # 8. One host, one set of URLs. www.adgent.app answered 200 with the whole
-    #    site on 2026-09-09 — same bytes, canonical pointing at the apex, no
-    #    redirect anywhere. The canonical tag is a hint; two hosts serving 200
-    #    still split crawl budget and any inbound link that used the www form.
-    #    Cheapest fix is a host-conditional redirect, and it has no symptom when
-    #    it is deleted, so it needs a check.
+    # 8. One host, one set of URLs. Two hosts have served the whole site at 200
+    #    with nothing but a canonical tag pointing home, and a canonical tag is
+    #    a hint:
     #
-    #    ⚠️ **Two rules, and the second is not redundant.** Deployed 2026-09-11
-    #    with only `/:path*`: `www.adgent.app/pricing` answered 308 and
-    #    `www.adgent.app/` answered **200** with the whole homepage
+    #      www.adgent.app            found 2026-09-09
+    #      adgent-website.vercel.app found 2026-09-12 — and it was *indexed*:
+    #        it came back rank 8 on a `site:`-free "adgent" query under the
+    #        stale title "Adgent — The senior analyst you can talk to", while
+    #        the real homepage was not in the top ten at all. Vercel sends
+    #        `X-Robots-Tag: noindex` on *preview* deployments and **not** on the
+    #        production `*.vercel.app` alias, so the alias is a crawlable
+    #        duplicate of production by default. The project-scoped aliases are
+    #        SSO-gated (302 to vercel.com/sso-api) and need no rule.
+    #
+    #    ⚠️ **Two rules per host, and the second is not redundant.** Deployed
+    #    2026-09-11 with only `/:path*`: `www.adgent.app/pricing` answered 308
+    #    and `www.adgent.app/` answered **200** with the whole homepage
     #    (`cf-cache-status: DYNAMIC`, so it was Vercel, not a cached copy).
     #    `:path*` does not match the bare root here. Same shape as the slashless
     #    `/metrics` rewrite, same reason.
     redirects = json.loads(read(os.path.join(ROOT, "vercel.json"))).get("redirects", [])
-    www = {r.get("source") for r in redirects
-           if r.get("destination", "").startswith("https://adgent.app/")
-           and any(h.get("type") == "host" and h.get("value") == "www.adgent.app"
-                   for h in r.get("has", []))}
-    for source in ("/", "/:path*"):
-        if source not in www:
-            problems.append(f"vercel.json: no www.adgent.app -> apex redirect for {source!r}")
+    for host in ("www.adgent.app", "adgent-website.vercel.app"):
+        covered = {r.get("source") for r in redirects
+                   if r.get("destination", "").startswith("https://adgent.app/")
+                   and any(h.get("type") == "host" and h.get("value") == host
+                           for h in r.get("has", []))}
+        for source in ("/", "/:path*"):
+            if source not in covered:
+                problems.append(
+                    f"vercel.json: no {host} -> apex redirect for {source!r}")
 
     # 9. One brand entity, not thirty. Organization appeared as a top-level or
     #    nested node 103 times across 55 pages on 2026-09-09, and WebSite 20

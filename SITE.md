@@ -148,6 +148,60 @@ recorded "One CTA offer everywhere" but only covered the partials; `.post-foot` 
 regenerated blocks, so it kept the old offer for two days. All 29 pages now say **"Get a free
 audit"**, which is the site's one offer.
 
+## /demo rebuilt — 2026-09-11
+
+The page above was taken off the site because the owner was not confident in it. It has been
+rebuilt from scratch. **It is still unlinked and still `noindex`** — putting it back is the
+owner's call and is still the six lines in the table above.
+
+**Why the old one could not be liked — four defects, all measured, not opinions:**
+
+1. **It loaded none of its own fonts.** The file declared `--font-ui:"Plus Jakarta Sans"` and
+   `--font-mono:"Geist Mono"` and shipped **zero `@font-face` rules** and no `<link>` to
+   `tokens.min.css`. `document.fonts.size` on the deployed page was **0**: every screen of it
+   rendered in `system-ui`. The brand typography was simply absent.
+2. **It demoed a screen the product had deleted.** Its centrepiece was the *Daily Brief*
+   newspaper sheet — removed from the product on 2026-08-26 (`adgent 148a83b`) — and an
+   *Action items* route that is now `/decisions` with ten specialists
+   (`product/deploy-test-status-2026-08-26.md` §2.3).
+3. **Three P0 copy claims the product cannot back** were live in it: *"around the clock"*
+   (`:1131`), *"undoing it is one click"* (`:662,:1201,:1447`), and a hard-coded
+   *"August 18, 2026"* (`:1209`).
+4. **No `<h1>`, eleven sub-44 px controls at 390 px**, and the cookie banner sat on top of the
+   workspace (`TODO.md` §7.1).
+
+**What replaced it.** One page, one account's first run, three visitor-chosen routes — no timer,
+no autoplay, no fake macOS window, no freeform prompt box that only accepts a script:
+
+| Route | Canvas | The claim it proves |
+|---|---|---|
+| 1 · The verdict | Decisions board | 53 decisions, 33 worth ₺43,450/mo and 13 worth ₺56,260/mo — the `sales-deck-agency.html:976` numbers, so the deck and the demo cannot drift |
+| 2 · The refusal | Coverage | the rank-wall refusal, and the one lever the run greyed out with its reason |
+| 3 · The undo | Change ledger | propose → approve → ledger row → **Revert with Agent** → the inverse arrives as *its own approval card* |
+
+**Every number on the page reconciles**, which is the point — the ten specialist totals sum to
+₺119,710/mo, less the ₺20,000 sitting on an experiment (which carries no saving) = ₺99,710 =
+43,450 + 56,260. Per-specialist open counts sum to 53, and their class splits sum to 33/13/7.
+Sources: `product/deploy-test-findings-2026-09-05.md` §B0 and the specialist sections under it.
+
+**Two deliberate decisions to review before re-linking:**
+
+- **No analytics, therefore no consent banner.** The page loads `tokens.min.css` and nothing
+  else — no `gtag`, no cookieconsent. That is what removed the banner that used to cover the
+  workspace and the CTA at 390 px. If `/demo` goes back on the nav, decide whether it needs the
+  measurement snippet, and re-check the 390 px overlap if it does.
+- **The account is anonymised, not invented.** Campaign and brand names are generic
+  (`Generic — Search`, `Hyperlocal`, `Prospecting · Lookalike`); the findings, counts and money
+  are the real first run. The page says *"Sample workspace · anonymised account"* in the header
+  and again in every source popover.
+
+**Techniques used** (all zero-dependency, all in current stable Chrome/Safari/Firefox):
+`document.startViewTransition()` for tab and route changes, `color-mix(in oklab, …)` and
+`rgb(from … / α)` so every tint derives from `#ff5a2c`, `@container` on the canvas column,
+`popover` + `position-area`/`position-try` for the source notes, `@starting-style` +
+`transition-behavior: allow-discrete` for their entrance, a `0fr → 1fr` grid accordion for the
+decision cards, and `animation-timeline: view()` behind `@supports` for the stage entrance.
+
 ## What this was fixing — measured 2026-08-01
 
 Before the script existed:
@@ -684,13 +738,96 @@ is not a redirect; it is giving the query a better answer near the top of the ri
    mattering.
 3. **Coverage.** 46 of 52 pages were "URL is unknown to Google" on 2026-09-03 and the sitemap
    Google held was 39 days stale (`TODO.md` §3). On a domain with almost no authority, a brand
-   query returns whichever page Google has actually crawled and understood. This is the one that
-   cannot be closed from the repo — the GSC credential is expired and needs an interactive
-   `gcloud auth login`.
+   query returns whichever page Google has actually crawled and understood. Measuring this needs
+   Search Console — see *The GSC server* below; it is built, and it wants one key.
 
-⚠️ **1 and 2 are on disk, not deployed.** Neither changes a SERP until the deploy ships and Google
-recrawls, which is weeks for a low-authority domain. Do not re-diagnose this next week and
-conclude the fixes did not work.
+⚠️ **1 and 2 shipped 2026-09-11.** Neither changes a SERP until Google recrawls, which is weeks
+for a low-authority domain. Do not re-diagnose this next week and conclude the fixes did not work.
+
+### Measured on an index we can actually read — 2026-09-12
+
+GSC stayed blocked, so the diagnosis above was reasoning. DuckDuckGo (Bing's index) is reachable
+and it corroborates the report, plus two things the reasoning missed.
+
+`site:adgent.app` returns **10 pages** — `/about`, `/built-from-chat`, `/ecommerce`, `/features`,
+`/for-agencies`, `/for-in-house`, `/mobile-apps`, `/tools`, `/travel-hospitality`, `/why-adgent`.
+**The homepage is not among them.** A different index, the same shape: `/about` is the strongest
+page and `/` is not competitive. That is corroboration, not proof about Google — but it kills the
+idea that the owner mis-read one SERP.
+
+A bare **"adgent"** query, top ten:
+
+| # | Result | |
+|---|---|---|
+| 1–4 | `adgent.ai`, `app.adgent.ai`, `preview.adgent.com`, `adg-ent.com` | four other companies |
+| **5** | **`adgent.app/about`** | our best-ranked page |
+| 6 | `adgent.org` — "Premium Smart TV Ad Network" | a fifth |
+| 7 | `adgent.app/ecommerce` | |
+| **8** | **`adgent-website.vercel.app`** — *"Adgent — The senior analyst you can talk to"* | **ours, and it should not be there** |
+| 9–10 | `linkedin.com/company/adgent-ltd`, `adgentapp.com` | a sixth and a seventh |
+
+**Two findings, and the second is a defect I had missed.**
+
+**4. The brand name is contested.** Seven other entities rank for "adgent" — `.ai`, `.com`,
+`.org`, `adg-ent.com`, `adgentapp.com`, a different *Adgent Ltd* on LinkedIn. So this was never
+purely a coverage problem: the homepage is competing in a crowded namespace against older
+domains, which is an argument for the entity `@id` work and against expecting a quick win.
+
+**5. `adgent-website.vercel.app` was serving the whole site at 200 and is indexed.** Vercel sends
+`X-Robots-Tag: noindex` on *preview* deployments and **not** on the production `*.vercel.app`
+alias, so the alias is a crawlable duplicate of production by default — `robots.txt` there allows
+everything, and the canonical to the apex is only a hint. The indexed title is *stale* ("The
+senior analyst you can talk to"), so it has been crawlable for a while. Same defect class as
+`www`, same fix: a host-conditional 308, both rules, now in check 8. The project-scoped aliases
+(`adgent-website-*-nurettin-demirals-projects.vercel.app`) are SSO-gated and need no rule;
+`adgent.vercel.app` belongs to somebody else entirely.
+
+### The GSC server — built 2026-09-12, and why it does not use `gcloud`
+
+`TODO.md` §3 has blocked on the same sentence three times: *"an owner-interactive
+`gcloud auth login` is the unblock."* It keeps recurring because it is not a bug — a Google
+Workspace reauth policy is a human-presence requirement, and both credentialed accounts prove it:
+
+| Credential | Result |
+|---|---|
+| `gcloud auth print-access-token` (`osman@adgent.app`) | `Reauthentication failed. cannot prompt during non-interactive execution` |
+| same, `--account=nurettin@vespersocial.com` | identical |
+| the ADC refresh token, exchanged directly | `invalid_grant`, `error_subtype: invalid_rapt` |
+| `~/.config/adgent/seo-reader.json` | **0 bytes** — created 2026-09-03 as a placeholder, never filled |
+
+Anything built on a user credential re-breaks on the reauth schedule. So `.omp/tools/gsc-mcp.py`
+prefers a **service-account key**, which has no reauth policy and no expiry, and falls back to
+gcloud impersonation only when no key is present. Six tools: `gsc_sites`, `gsc_inspect`,
+`gsc_coverage_sweep` (the §3 question — inspect every sitemap URL, return the verdict histogram),
+`gsc_query`, `gsc_sitemaps`, `gsc_sitemap_submit`. Registered in `adgent/.omp/mcp.json` as `gsc`;
+`python3 .omp/tools/gsc-mcp.py --selftest` reports the credential state without an MCP client.
+
+**Two owner steps, once, and then it works from a cold shell forever:**
+
+1. Cloud Console → IAM & Admin → Service Accounts → `adgent-seo-reader@adgent-503512…` → Keys →
+   Add key → JSON. Save it as `~/.config/adgent/seo-reader.json`, `chmod 600`. The path already
+   exists, empty.
+2. Search Console → Settings → Users and permissions → Add user →
+   `adgent-seo-reader@adgent-503512.iam.gserviceaccount.com`. **Restricted is enough** for
+   everything except `gsc_sitemap_submit`, which needs Full.
+
+Then `gsc_sites` is the one call that proves both steps landed.
+
+**What is already proven, so a failure after those steps is not this file's fault:**
+
+| Link | Evidence |
+|---|---|
+| RS256 signing (`openssl` CLI, no pip dependency) | a signature over a throwaway 2048-bit key verifies: `openssl dgst -verify` → `Verified OK` |
+| JWT assembly + the live JWT-bearer grant | Google answered `invalid_grant: Invalid grant: account not found` — it **parsed** the assertion and rejected only the nonexistent account |
+| MCP transport | `initialize` → `serverInfo {name: gsc}`, `tools/list` → 6, unknown tool → `-32601`, tool error → `isError: true` with the fix in the text |
+| the sitemap fetch the sweep depends on | 200, 8,251 bytes, 54 `<loc>` entries |
+
+⚠️ **Two traps this cost, both worth keeping.** The python.org 3.14 framework build ships
+`ssl.create_default_context()` with **zero** trust anchors — `cert_store_stats()` returned
+`{'x509_ca': 0}`, so every `urllib` HTTPS call died with `CERTIFICATE_VERIFY_FAILED` while `curl`
+beside it worked, because curl carries its own bundle. That reads exactly like a rejected
+credential. `_tls()` loads a real bundle (119 anchors) and never disables verification. And
+Cloudflare **403s** `Python-urllib/3.14`, so the sitemap fetch sends a browser-shaped UA.
 
 ## The Turkish locale was removed — 2026-08-01
 

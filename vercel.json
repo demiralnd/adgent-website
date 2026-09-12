@@ -34,6 +34,18 @@
       "permanent": true
     },
     {
+      "source": "/",
+      "has": [{ "type": "host", "value": "adgent-website.vercel.app" }],
+      "destination": "https://adgent.app/",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "adgent-website.vercel.app" }],
+      "destination": "https://adgent.app/:path*",
+      "permanent": true
+    },
+    {
       "source": "/media-planning",
       "destination": "/built-from-chat#plan",
       "permanent": true
