@@ -2552,7 +2552,7 @@ URL: https://adgent.app/data-use
 
 Legal
 Data Use
-Last updated 9 September 2026
+Last updated 14 September 2026
 This is the plain-language version of how Adgent handles the data in your connected accounts. It is a companion to our full Privacy Policy — where the two cover the same ground, the Privacy Policy governs. The short version: we read what you connect to do the analysis you asked for, we keep you in control of every change, and we never sell your data, use it for ads, or train AI models on it.
 Contents
 What we connect to
@@ -2571,13 +2571,14 @@ Google Search Console — search performance reporting such as queries, clicks, 
 Google Merchant Center — product catalogue, item issues, account status, and Shopping performance for the account you select, to diagnose Shopping campaigns against your feed. Read only; Adgent never changes anything in Merchant Center.
 Google Drive and Google Sheets — the content and metadata of files you select or create for use with Adgent, to import or export reports and provide business context. This permission does not let Adgent browse or access other files in your Drive.
 02 Why we access it
-Every connection exists to power a feature you can see. We use the data to build your daily brief and health score, detect anomalies, answer the questions you ask, generate the reports and audits you request, and prepare recommended changes. We do not request access to data we do not need, and we do not request access for features that do not yet exist.
+Every connection exists to power a feature you can see. We use the data to produce the decisions and health score you see in the product, detect anomalies, answer the questions you ask, generate the reports and audits you request, and prepare recommended changes. We do not request access to data we do not need, and we do not request access for features that do not yet exist.
 03 How we use it
-Your connected data is used solely to provide the service back to you. It is processed — including by the AI that powers Adgent's analysis — to generate your briefs, answers, and reports, and, on your approval, to carry out changes you ask for. We do not use one customer's data to benefit another. OAuth tokens authenticate requests to the platform you connected; they are never included in AI prompts or sent to AI model providers.
+Your connected data is used solely to provide the service back to you. It is processed — including by the AI that powers Adgent's analysis — to generate your briefs, answers, and reports, and, on your approval, to carry out changes you ask for. At the model provider that processing is transient and nothing is retained after the request; on our own infrastructure we keep a session record of the question, the answer, and the tool calls for up to 30 days to diagnose faults. We do not use one customer's data to benefit another. OAuth tokens authenticate requests to the platform you connected; they are never included in AI prompts or sent to AI model providers.
 04 What we never do
 We never sell your data or transfer it to data brokers or resellers.
 We never use your data for advertising , including retargeting or interest-based ads.
 We never use your data to train generalized or non-personalized AI/ML models .
+We never send your data to an AI endpoint that trains on it — we route only to inference endpoints that publish a no-training and zero-data-retention commitment, training-permitted endpoints are excluded at the account level, prompt logging is off on our account, and every request carries an explicit no-training flag.
 We never let humans read your data except with your consent, for security, to investigate abuse, where required by law, or in aggregated/de-identified form for internal operations.
 We never use your data to determine credit-worthiness or for lending.
 05 Google Limited Use
@@ -2586,7 +2587,7 @@ Adgent's use and transfer of information received from Google APIs to any other 
 Read-only by default — Google Analytics and Search Console permissions are read-only, and Google Drive is limited to files you select. Google Ads and Merchant Center each come as one OAuth scope covering read and write, with no read-only alternative: Adgent gates every Ads write behind your approval and never writes to Merchant Center.
 You approve every change — nothing is applied to your accounts until you say go.
 Disconnect anytime — disconnect in Adgent to stop new scheduled access through that connection. To revoke the OAuth grant itself, remove Adgent from the platform's app or permission settings. Neither action deletes data already stored by Adgent.
-Delete anytime — the in-product company-deletion control closes access immediately and disconnects its platform connections. Until permanent deletion automation is complete, request removal of stored company data or your Adgent login account through our data-deletion instructions ; verified requests are processed without undue delay.
+Delete anytime — the in-product company-deletion control closes access immediately and disconnects its platform connections. Deletion of the stored data is automated from there: verified deletion requests are picked up and processed every hour , with no manual step. You can also request removal of stored company data or your Adgent login account through our data-deletion instructions .
 07 Per-platform notes
 Google
 Adgent requests only these Google OAuth scopes:
@@ -2609,7 +2610,7 @@ URL: https://adgent.app/privacy
 
 Legal
 Privacy Policy
-Effective 30 August 2026 · Last updated 9 September 2026
+Effective 30 August 2026 · Last updated 14 September 2026
 This Privacy Policy explains how Adgent , a service operated by Osman Tıkna (a sole proprietorship established in Türkiye, the data controller) ("Adgent", "we", "us", or "our"), collects, uses, stores, shares, and protects information when you use our website and our marketing-intelligence service. A core part of Adgent is connecting, with your authorization, to your advertising and analytics platforms — including Meta , Google Ads , Google Analytics 4 , Google Merchant Center , Google Search Console , and the Google Drive and Google Sheets files you select — to read reporting data and, only on your explicit approval, carry out changes you ask us to make.
 Contents
 Who we are and scope
@@ -2665,7 +2666,8 @@ Use your data for serving advertising, including retargeting, personalized, or i
 Use your data to determine credit-worthiness or for lending purposes;
 Allow humans to read your data, except with your affirmative consent (for example, for support you request), where necessary for security or to investigate abuse, to comply with law, or where the data has been aggregated/de-identified and is used for internal operations;
 Use your Connected Platform Data to train generalized or non-personalized artificial-intelligence or machine-learning models.
-Adgent uses AI to analyze and reason over your data in order to deliver the service back to you . Data is processed transiently to generate your briefs, answers, and reports; it is not used to train foundation models or models for the benefit of any other customer.
+Adgent uses AI to analyze and reason over your data in order to deliver the service back to you . At the model provider, your data is processed transiently : it is used to generate your briefs, answers, and reports and is not retained once the request completes. On our own infrastructure we keep a session record — the question asked, the answer returned, and the tool calls behind it — for up to 30 days , so that we can diagnose faults and investigate abuse. That record is deleted on that schedule, or sooner if you submit a verified deletion request. Your data is not used to train foundation models or models for the benefit of any other customer.
+The AI provider that processes your data is configured not to train on it: we route only to inference endpoints that publish a no-training and zero-data-retention commitment, prompt logging is disabled on our account, training-permitted endpoints are excluded at the account level, and every request carries an explicit no-training flag. Your data is never used to create, train, or improve any generalized or foundational AI/ML model — by us or by our providers.
 OAuth access and refresh tokens are never included in AI prompts or sent to AI model providers. Each customer's Connected Platform Data is maintained separately and is not used to provide or improve the service for another customer or advertiser.
 Adgent's use and transfer of information received from Google APIs to any other app will adhere to the Google API Services User Data Policy , including the Limited Use requirements.
 06 Legal bases
@@ -2677,12 +2679,12 @@ The platforms you connect — when you approve a change, we send the correspondi
 Legal & safety — where required by law, regulation, legal process, or governmental request, or to protect the rights, property, or safety of Adgent, our users, or the public.
 Business transfers — in connection with a merger, acquisition, financing, or sale of assets, subject to the protections of this policy and with notice to affected users. Data received from Google APIs will not be transferred as part of a business transfer without your explicit prior consent.
 08 Data retention
-We keep information only as long as needed to provide the service and for legitimate legal, security, and operational purposes. Disconnecting or revoking a platform connection stops new access but does not, by itself, delete data already stored by Adgent. Connected Platform Data is deleted when it is no longer necessary to provide the service, when you submit a verified deletion request, or when permanent account deletion completes — subject to limited retention required by law. You can request deletion at any time as described below.
+We keep information only as long as needed to provide the service and for legitimate legal, security, and operational purposes. Disconnecting or revoking a platform connection stops new access but does not, by itself, delete data already stored by Adgent. Connected Platform Data is deleted when it is no longer necessary to provide the service, when you submit a verified deletion request, or when permanent account deletion completes — subject to limited retention required by law. AI session records kept for fault diagnosis and abuse investigation are deleted within 30 days . You can request deletion at any time as described below.
 09 Your rights & data deletion
 Depending on where you live, you may have rights to access, correct, delete, restrict, or object to the processing of your personal data, to data portability, and to withdraw consent. We give every user an easily accessible way to exercise these rights:
 Disconnect at any time — disconnecting a platform in Adgent stops further use of that connection and new scheduled collection. To revoke the OAuth grant itself, remove Adgent from the platform's app or permission settings.
 Request correction or deletion — follow our data-deletion instructions or email osman@adgent.app , and we will action your request without undue delay.
-Delete company data or your account — the in-product company-deletion control closes access to that company immediately and marks its connections disconnected. Until permanent deletion automation is complete, request removal of stored company data or your Adgent login account through our data-deletion instructions ; verified requests are processed without undue delay. Limited records may be retained where required by law.
+Delete company data or your account — the in-product company-deletion control closes access to that company immediately and marks its connections disconnected. Deletion of the stored data is then automated : a scheduled job picks up verified deletion requests every hour and removes them from our active systems, with no manual step. You can also request removal of stored company data or your Adgent login account through our data-deletion instructions . Limited records may be retained where required by law.
 We will not charge you to exercise these rights, and we will not discriminate against you for doing so. If you are in the EEA or UK and have an unresolved concern, you may contact your local data protection authority.
 10 Security
 We take reasonable and appropriate measures to protect data against unauthorized access, use, alteration, loss, or disclosure. These include encryption of data in transit and at rest, access controls and least-privilege practices, protection of access tokens and application secrets, and monitoring. We provide a clearly marked way to report security concerns, and we begin remediation and notify affected parties as required by law if an incident occurs. No method of transmission or storage is completely secure, but we work to protect your data and continually improve our safeguards.
@@ -3431,7 +3433,7 @@ URL: https://adgent.app/data-deletion
 
 Legal
 Data Deletion
-Last updated 9 September 2026
+Last updated 14 September 2026
 You can disconnect a platform, delete a company and its connected-platform data, request deletion of your Adgent login account, or send us a platform-data deletion request at any time. These instructions apply to data accessed from Meta and Google as well as the account information you provide directly to Adgent.
 Contents
 Disconnect a platform
@@ -3454,7 +3456,7 @@ For an email request, include the email address used with Adgent and the affecte
 Deletion covers the requested Adgent account or workspace, including stored profile information, authorization tokens, Connected Platform Data, and reports associated with it. It does not delete information held independently by Meta, Google, or another platform; use that platform's own deletion controls for its copy.
 Limited records may be retained where required by law, for security and fraud prevention, or in encrypted backups until those backups are overwritten. Any retained data remains protected and is not used for other purposes.
 05 Verification and timing
-We may ask for reasonable information to verify your identity and authority over the affected account. Disconnecting in Adgent closes access immediately and prevents new scheduled collection; revoking the platform grant separately invalidates the platform authorization. Until permanent deletion automation is complete, verified requests to remove stored data are processed without undue delay and receive confirmation when deletion from active systems is complete. Limited records may remain where required by law or in encrypted backups until overwrite. We never ask for your Meta or Google password or OAuth token.
+We may ask for reasonable information to verify your identity and authority over the affected account. Disconnecting in Adgent closes access immediately and prevents new scheduled collection; revoking the platform grant separately invalidates the platform authorization. Verified requests to remove stored data are processed automatically — a scheduled job picks them up every hour — and you receive confirmation when deletion from active systems is complete. Limited records may remain where required by law or in encrypted backups until overwrite. We never ask for your Meta or Google password or OAuth token.
 Contact us
 Send deletion requests or questions to osman@adgent.app . Adgent is operated by Osman Tıkna, a sole proprietorship established in Türkiye. See our Privacy Policy and Data Use summary.
 

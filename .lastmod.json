@@ -80,12 +80,12 @@
   "sha": "c06737112f4864427123c4c4ab722776ee765f52"
  },
  "data-deletion": {
-  "date": "2026-09-11",
-  "sha": "47ea5331c82749790be01c8bace6096c1b5db060"
+  "date": "2026-09-14",
+  "sha": "b14889e1dcae7f2b1db2ca6366347bc972b777f3"
  },
  "data-use": {
-  "date": "2026-09-11",
-  "sha": "afacea18fa3375fcd56a54f37b6ae699d0b49a0e"
+  "date": "2026-09-14",
+  "sha": "a0f17db986b5518654f8f84fa72d84948f7224ea"
  },
  "demo": {
   "date": "2026-09-07",
@@ -184,8 +184,8 @@
   "sha": "ac7a36f1a6eff73ccf2ff65b12da303db1cb853a"
  },
  "privacy": {
-  "date": "2026-09-11",
-  "sha": "e4e00767c379711ebb05dd2227ee84617c3cf01b"
+  "date": "2026-09-14",
+  "sha": "b69a12333668901ca1ec75697ee8a104212bf147"
  },
  "scale-a-winner-without-breaking-it": {
   "date": "2026-09-11",

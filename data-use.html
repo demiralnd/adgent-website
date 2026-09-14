@@ -160,7 +160,7 @@
  <header class="phead" style="padding-top:8px">
  <span class="eyebrow"><span class="tick"></span>Legal</span>
  <h1>Data Use</h1>
- <p class="legal-updated">Last updated 9 September 2026</p>
+ <p class="legal-updated">Last updated 14 September 2026</p>
  <p class="legal-intro">This is the plain-language version of how Adgent handles the data in your connected accounts. It is a companion to our full <a href="/privacy">Privacy Policy</a> — where the two cover the same ground, the Privacy Policy governs. The short version: <b>we read what you connect to do the analysis you asked for, we keep you in control of every change, and we never sell your data, use it for ads, or train AI models on it.</b></p>
  </header>
 
@@ -194,12 +194,12 @@
 
  <section id="why">
  <h2><span class="secnum">02</span>Why we access it</h2>
- <p>Every connection exists to power a feature you can see. We use the data to build your daily brief and health score, detect anomalies, answer the questions you ask, generate the reports and audits you request, and prepare recommended changes. We do not request access to data we do not need, and we do not request access for features that do not yet exist.</p>
+ <p>Every connection exists to power a feature you can see. We use the data to produce the decisions and health score you see in the product, detect anomalies, answer the questions you ask, generate the reports and audits you request, and prepare recommended changes. We do not request access to data we do not need, and we do not request access for features that do not yet exist.</p>
  </section>
 
  <section id="how">
  <h2><span class="secnum">03</span>How we use it</h2>
- <p>Your connected data is used solely to provide the service back to you. It is processed — including by the AI that powers Adgent's analysis — to generate your briefs, answers, and reports, and, on your approval, to carry out changes you ask for. We do not use one customer's data to benefit another. OAuth tokens authenticate requests to the platform you connected; they are never included in AI prompts or sent to AI model providers.</p>
+ <p>Your connected data is used solely to provide the service back to you. It is processed — including by the AI that powers Adgent's analysis — to generate your briefs, answers, and reports, and, on your approval, to carry out changes you ask for. At the model provider that processing is transient and nothing is retained after the request; on our own infrastructure we keep a session record of the question, the answer, and the tool calls for up to <b>30 days</b> to diagnose faults. We do not use one customer's data to benefit another. OAuth tokens authenticate requests to the platform you connected; they are never included in AI prompts or sent to AI model providers.</p>
  </section>
 
  <section id="never">
@@ -208,6 +208,7 @@
  <li>We never <b>sell</b> your data or transfer it to data brokers or resellers.</li>
  <li>We never use your data for <b>advertising</b>, including retargeting or interest-based ads.</li>
  <li>We never use your data to <b>train generalized or non-personalized AI/ML models</b>.</li>
+ <li>We never <b>send your data to an AI endpoint that trains on it</b> — we route only to inference endpoints that publish a no-training and zero-data-retention commitment, training-permitted endpoints are excluded at the account level, prompt logging is off on our account, and every request carries an explicit no-training flag.</li>
  <li>We never let <b>humans read your data</b> except with your consent, for security, to investigate abuse, where required by law, or in aggregated/de-identified form for internal operations.</li>
  <li>We never use your data to determine credit-worthiness or for lending.</li>
  </ul>
@@ -226,7 +227,7 @@
 <li><b>Read-only by default</b> — Google Analytics and Search Console permissions are read-only, and Google Drive is limited to files you select. Google Ads and Merchant Center each come as one OAuth scope covering read and write, with no read-only alternative: Adgent gates every Ads write behind your approval and never writes to Merchant Center.</li>
  <li><b>You approve every change</b> — nothing is applied to your accounts until you say go.</li>
  <li><b>Disconnect anytime</b> — disconnect in Adgent to stop new scheduled access through that connection. To revoke the OAuth grant itself, remove Adgent from the platform's app or permission settings. Neither action deletes data already stored by Adgent.</li>
- <li><b>Delete anytime</b> — the in-product company-deletion control closes access immediately and disconnects its platform connections. Until permanent deletion automation is complete, request removal of stored company data or your Adgent login account through our <a href="/data-deletion">data-deletion instructions</a>; verified requests are processed without undue delay.</li>
+ <li><b>Delete anytime</b> — the in-product company-deletion control closes access immediately and disconnects its platform connections. Deletion of the stored data is <b>automated</b> from there: verified deletion requests are picked up and processed <b>every hour</b>, with no manual step. You can also request removal of stored company data or your Adgent login account through our <a href="/data-deletion">data-deletion instructions</a>.</li>
  </ul>
  </section>
 
