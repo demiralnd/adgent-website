@@ -2139,7 +2139,7 @@ What do these tools not do?
 They do not read your ad accounts. Nothing here can tell you whether your conversion tracking is intact, which campaign is leaking budget, or what changed overnight. That needs read access to the accounts, which is what the free audit is for.
 What gets added next?
 Only checks we can compute honestly from numbers you already have. Anything that needs your account data belongs in the product behind an approval, not in a browser tool, and we would rather ship two calculators we can stand behind than a wall of generators.
-Written by Nurettin Demiral. Published 7 September 2026 . Each tool page carries its own method note, sources and date. Found an error in one of the formulas? Tell us and the correction gets dated on the page.
+Written by the Adgent team. Published 7 September 2026 . Each tool page carries its own method note, sources and date. Found an error in one of the formulas? Tell us and the correction gets dated on the page.
 Free account audit
 The tools give you the floor. The audit gives you your numbers.
 Send us the accounts and we will run the read Adgent would run — read-only, on your live Meta and Google data — and show you where the money is going that the dashboard is not flagging.
@@ -2217,7 +2217,7 @@ Is break-even ROAS the same as target ROAS?
 No. Break-even ROAS is where profit is zero. Target ROAS is the number you set in the platform to leave yourself a margin, so it is always higher. This calculator gives you both: the floor, and the target for the profit you want to keep per order.
 Why is my platform ROAS higher than the ROAS in here?
 Because they measure different things. The platform reports revenue at the moment its pixel fires, before refunds, discounts, marketplace commission or cost of goods. This calculator works on the money you keep. A marketplace passing gross transaction value at a 13% take rate reports 6x on revenue it banks 0.8x of.
-Method. The calculator applies the two formulas printed above and nothing else — no benchmark data, no model, no stored inputs. Every figure is computed in your browser; the page makes no network request while you use it, and we never see what you type. Source for the one figure this page cites: return rate from the NRF 2025 Retail Returns Landscape , published 15 October 2025. Written by Nurettin Demiral. Published 7 September 2026 . If a formula here is wrong, tell us and we will correct it on the page.
+Method. The calculator applies the two formulas printed above and nothing else — no benchmark data, no model, no stored inputs. Every figure is computed in your browser; the page makes no network request while you use it, and we never see what you type. Source for the one figure this page cites: return rate from the NRF 2025 Retail Returns Landscape , published 15 October 2025. Written by the Adgent team. Published 7 September 2026 . If a formula here is wrong, tell us and we will correct it on the page.
 Free account audit
 Now run it against the real account.
 The calculator works on the numbers you type. On your live accounts we read what Meta and Google report and what GA4 and Merchant Center recorded — read-only — and show you which winners depend on the gap between the two. Your cost of goods and return rate we cannot see: bring the break-even from this page and we will judge the account against it.
@@ -2294,7 +2294,7 @@ What should I do if the account is below the floor?
 Consolidate rather than split: three ad sets at 12 conversions a week each are all below the threshold, while one at 36 is closer to clearing it. The other two moves are optimizing toward an event higher in the funnel that does clear the floor, knowing it carries less value, and fixing whatever is dropping conversions before adding budget.
 Does clearing the floor mean the numbers can be trusted?
 No. Volume and correctness are different problems. An account can clear every published threshold and still report a ROAS that is wrong because the conversion value is set to gross revenue, the pixel is double-counting, or yesterday's figure has not finished maturing inside the attribution window. This check answers the volume question only.
-Method. The check divides the conversions you enter by the number of ad sets or campaigns sharing them and compares the result against the published figure for that platform and strategy — the table above is the whole model. No benchmark data, no estimate, nothing stored: it computes in your browser and the page makes no network request while you use it. Every threshold was re-read at source on 7 September 2026 and is quoted, not paraphrased. Written by Nurettin Demiral. If a platform changes a number, tell us and we will date the correction on this page.
+Method. The check divides the conversions you enter by the number of ad sets or campaigns sharing them and compares the result against the published figure for that platform and strategy — the table above is the whole model. No benchmark data, no estimate, nothing stored: it computes in your browser and the page makes no network request while you use it. Every threshold was re-read at source on 7 September 2026 and is quoted, not paraphrased. Written by the Adgent team. If a platform changes a number, tell us and we will date the correction on this page.
 Free account audit
 See which of your ad sets are actually under the floor.
 This page works on one number you type. We will run the check across every campaign and ad set on your live accounts — read-only — and show you the ones optimizing on too little to learn from.
@@ -2784,8 +2784,8 @@ URL: https://adgent.app/ai-media-buyer-for-agencies
 Product · 7 min read · 22 July 2026
 You can't put a senior on every account. You can put a senior read on every account.
 Twelve clients means twelve separate reads overnight, each one on its own data, ranked by what each account is costing you. Same standard on the twelfth as on the first — and every change still waits for your click.
-N
-Nurettin Demiral
+A
+Adgent
 Notes from building the analyst
 Short answer
 An AI media buyer lets an agency apply senior-level judgment to every client account it runs — the same nightly read, verdict-first brief and approval-gated fixes, computed separately for each account. Junior teams operate at senior output, seniors spend their time on strategy, and reporting becomes a byproduct instead of a weekly scramble. Read-only by default keeps it safe on money you don't own.
@@ -2859,8 +2859,8 @@ URL: https://adgent.app/ai-media-buyer-vs-performance-max-vs-dashboard
 Product · 8 min read · 21 July 2026
 AI media buyer vs Performance Max vs dashboard: which do you need?
 They get compared as if they're the same purchase — but they're not even the same category. One reports what happened, one optimizes the auction for you, one reasons about your account for you. Here's how to tell which one you actually need.
-N
-Nurettin Demiral
+A
+Adgent
 Notes from building the analyst
 Short answer
 Pick by the job. A dashboard if you just need to see the numbers and read them yourself. Performance Max if you want Google's AI to auto-optimize bids and placements inside its own auction. An AI media buyer if you want judgment on your side — reasoning across Meta and Google, cross-checked against GA4 and Merchant Center, executing only on your approval. Most serious advertisers run all three.
@@ -2931,8 +2931,8 @@ URL: https://adgent.app/attribution-window-day-one-data
 Attribution · 8 min read · 14 April 2026
 The 7-day window is lying to you before noon
 Meta's attribution window quietly rewrites yesterday's numbers for a week. Pausing a campaign on day-one data is the most expensive reflex in performance marketing — here's how to read a metric that isn't done yet.
-N
-Nurettin Demiral
+A
+Adgent
 Notes from building the analyst
 Short answer
 Meta ROAS looks worse in the morning because attribution isn't finished. Spend is already counted, but most of the conversions it earned haven't been credited yet — Meta's 7-day click window keeps attaching them for days. So you're dividing a complete cost by an incomplete revenue. The number reads pessimistic by construction, and almost always revises up.
@@ -2997,8 +2997,8 @@ URL: https://adgent.app/can-ai-audit-your-ad-accounts
 Product · 7 min read · 25 July 2026
 Can AI audit your ad accounts?
 Yes — and for the tedious, high-volume checks it's genuinely better than a human. But an audit is more than a checklist, and there's a ceiling where judgment takes over. Here's an honest split of what AI catches and what it still misses.
-N
-Nurettin Demiral
+A
+Adgent
 Notes from building the analyst
 Short answer
 Yes — there is AI that audits ad accounts. It reads Meta and Google through their APIs, runs the same checks a senior buyer would — wasted spend, placement leakage, tracking gaps, ROAS drift — and ranks findings by recoverable spend, in minutes instead of hours. It's strongest on the tedious, high-volume checks and on reading Meta and Google as one account. Where it hits a ceiling is judgment: the strategic call, the business context, deciding whether an ambiguous number is real. A good audit AI stays read-only and surfaces the finding; a human still owns the interpretation.
@@ -3071,8 +3071,8 @@ URL: https://adgent.app/can-ai-run-your-ad-account
 Product · 7 min read · 22 July 2026
 Can AI run your ad account?
 The honest answer to the "AI replaces your team" pitch. AI can do the reasoning and the busywork — but it should not hold the last click on live spend. The judgment automates; the accountability stays human.
-N
-Nurettin Demiral
+A
+Adgent
 Notes from building the analyst
 Short answer
 Mostly, yes — but not fully alone. AI can do the reasoning and the busywork: nightly reads, diagnosis, drafting fixes and whole campaigns. What it should not do is hold the last click on live spend. Advertising runs on numbers that lie — attribution windows, broken conversions — and the human is the one who catches them. The judgment automates. The accountability stays human.
@@ -3155,8 +3155,8 @@ URL: https://adgent.app/cbo-vs-abo-2026
 Scaling · 6 min read · 12 March 2026
 CBO vs ABO in 2026: when each still wins
 CBO won the argument years ago and mostly deserved to. But "mostly" is doing real work in that sentence — and the cases where ABO still wins are the cases where you're trying to learn something.
-N
-Nurettin Demiral
+A
+Adgent
 Notes from building the analyst
 Short answer
 Use CBO when you're scaling a known winner with healthy volume and comparable ad sets — let Meta allocate. Use ABO when you're testing audiences, creatives or offers, running under ~50 conversions a week, or mixing ad sets with different jobs, because it guarantees each one a fair sample. CBO buys efficiency; ABO buys answers.
@@ -3221,8 +3221,8 @@ URL: https://adgent.app/cbo-vs-abo-vs-advantage-plus
 Scaling · 8 min read · 22 July 2026
 CBO vs ABO vs Advantage+: which budget model in 2026?
 For years the argument was CBO vs ABO. Then Advantage+ made it a three-way question — because now you can hand Meta the budget, the split, and the whole structure. Here's how to pick, honestly, by what you're actually trying to buy.
-N
-Nurettin Demiral
+A
+Adgent
 Notes from building the analyst
 Short answer
 Pick by what you're buying . Use ABO when you need a fair test of each audience or creative — every option gets its own budget. Use CBO to scale known winners at volume, letting Meta push spend to whatever's performing. Use Advantage+ when you want Meta to run the entire structure and you trust your signal enough to hand it over.
@@ -3302,8 +3302,8 @@ URL: https://adgent.app/cpm-is-the-early-creative-fatigue-signal
 Creative fatigue · 5 min read · 2 April 2026
 Frequency is a lagging indicator. Watch CPM.
 Frequency tells you an audience has seen your ad too often. CPM tells you the auction already noticed. One of those is news; the other is a receipt.
-N
-Nurettin Demiral
+A
+Adgent
 Notes from building the analyst
 Short answer
 The earliest sign of creative fatigue is a rising CPM paired with a falling CTR — the auction repricing your ad within hours because engagement is decaying. It shows up days before a frequency average moves, because frequency is a slow, backward-looking summary and CPM is a live signal.
@@ -3367,8 +3367,8 @@ URL: https://adgent.app/cross-platform-comparability-meta-google
 Attribution · 7 min read · 26 February 2026
 Meta says 4.2×, Google says 3.1×. Both are right.
 Two platforms, two ROAS figures, one budget decision. The numbers aren't measuring the same thing — and moving money between them as if they were is the most common expensive mistake in multi-channel accounts.
-N
-Nurettin Demiral
+A
+Adgent
 Notes from building the analyst
 Short answer
 No — not directly. Meta and Google measure ROAS with different attribution windows, credit models and conversion definitions, so 4.2× and 3.1× aren't the same unit. To compare them, normalize the windows, anchor both to the revenue your analytics recorded, and read direction over level.
@@ -3468,8 +3468,8 @@ URL: https://adgent.app/google-ads-account-structure-2026
 Playbook · 9 min read · 23 July 2026
 Google Ads account structure in 2026 (and how to audit yours)
 The old rules of structure were about manual control. In 2026 they're about signal quality — building an account so Smart Bidding has enough clean conversion data to actually learn. Here's the modern default, and how to audit whether yours measures up.
-N
-Nurettin Demiral
+A
+Adgent
 Notes from building the analyst
 Short answer
 In 2026, Google Ads structure is about signal quality, not manual control — give Smart Bidding enough conversions per unit to learn. The modern default: Single Theme Ad Groups (STAGs) of 3-10 tight keywords, a Brand / Core Non-brand / (optional) Competitor campaign split, and 30+ conversions per month per campaign so bidding has signal. Structure to feed the algorithm, not to fight it.
@@ -3553,8 +3553,8 @@ URL: https://adgent.app/google-ads-target-cpa-roas-change-2026
 Attribution · 7 min read · 23 July 2026
 Why your Google Ads CPA rose: the Aug 2026 bidding change
 On 17 August, Google changed how target-based bidding works — and on a lot of accounts actual CPA climbed without anyone touching a campaign. Here's what changed, who it hit, and how to tell that rise from a real one.
-N
-Nurettin Demiral
+A
+Adgent
 Notes from building the analyst
 Update &#183; 17 August 2026
 The change went live on 17 August 2026 . The checklist below is no longer advance work — it is a catch-up audit, and the diagnostic section at the end is the part that matters most: a CPA that has settled closer to target since the 17th is the platform following instructions, not a campaign breaking.
@@ -3618,8 +3618,8 @@ URL: https://adgent.app/how-much-ad-spend-is-wasted
 Playbook · 8 min read · 22 July 2026
 How much of your ad budget is wasted (and how to find it)
 The best-documented study of this puts the average account near a third of budget wasted. The good news: most of that waste has a name and an address, and you can find it in an afternoon.
-N
-Nurettin Demiral
+A
+Adgent
 Notes from building the analyst
 Short answer
 WordStream’s 2026 study of 15,666 Google Ads accounts found the average account spending about $1,127 a month on clicks that didn’t convert — roughly a third of the median account’s $3,127 monthly spend. Most of it is findable in an afternoon: junk search terms, a location-targeting default, placement leakage, careless device bids, missing audience exclusions, and branded-search double-pay. Each leak has a rough recovery number you can attach to it.
@@ -3697,8 +3697,8 @@ URL: https://adgent.app/how-to-audit-a-google-ads-account
 Playbook · 9 min read · 21 July 2026
 How to audit a Google Ads account, properly
 Most account audits are a 40-point checklist that produces a 40-point to-do list. This one is shorter and ordered differently: the checks that move money first, ranked by recoverable spend — not by how thorough the report looks.
-N
-Nurettin Demiral
+A
+Adgent
 Notes from building the analyst
 Short answer
 To audit a Google Ads account, work in order of recoverable spend: first verify conversion tracking (a broken signal corrupts everything downstream), then check wasted search terms , placement leakage , bid-strategy fit and budget pacing . Attach a dollar estimate to each finding and fix the highest-value leak first — a useful audit ranks by impact, not by how many boxes it ticks.
@@ -3810,8 +3810,8 @@ URL: https://adgent.app/how-to-audit-performance-max
 Playbook · 9 min read · 22 July 2026
 How to audit a Performance Max campaign (the black box)
 Performance Max either becomes your best campaign or your biggest waste source — and Google won't tell you which. Here are the checks that pierce the black box, ranked by how much money they recover, in the order you should actually run them.
-N
-Nurettin Demiral
+A
+Adgent
 Notes from building the analyst
 Short answer
 Performance Max becomes your best campaign or your biggest waste source — and the difference is setup plus a few checks. Audit in this order: brand-spend detection first, then conversion-tracking quality, then the channel and placement breakdown, then asset-group signals, landing-page experience, and finally Search overlap. Fix the leaks Google hides, and PMax earns its budget.
@@ -3888,8 +3888,8 @@ URL: https://adgent.app/how-to-choose-an-ai-media-buying-tool
 Playbook · 7 min read · 25 July 2026
 How to choose an AI media buying tool
 "AI ad tool" describes four different products solving four different problems. This is a neutral map of the categories — creative generation, bid automation, analysis and diagnostics, and DSPs — and a framework for picking the one that fixes your actual bottleneck.
-N
-Nurettin Demiral
+A
+Adgent
 Notes from building the analyst
 Short answer
 There is no single "best" AI media buying tool, because AI ad tools split into four categories — creative generation, bid automation, analysis and diagnostics, and programmatic buying (DSPs). The right one is the one that matches your bottleneck: need more ads, pick generation ; can't tell why a metric moved, pick analysis and diagnostics ; buying display or CTV at scale, pick a DSP . And remember the bid AI is likely already running for free inside Meta and Google.
@@ -4229,8 +4229,8 @@ URL: https://adgent.app/meta-ads-account-audit-checklist
 Playbook · 9 min read · 22 July 2026
 The Meta Ads account audit: the ten checks that recover spend
 Most Meta audits are a screenshot tour of the dashboard. This one is ordered differently: the checks that recover spend first, ranked by impact — and the signal check that has to come before all of them, because a broken pixel makes every other number a guess.
-N
-Nurettin Demiral
+A
+Adgent
 Notes from building the analyst
 Short answer
 To audit a Meta Ads account , work in order of recoverable spend — and verify the signal first. Confirm pixel and Conversions API health before you judge a single campaign, because a broken signal corrupts everything downstream. Then check attribution, CBO leakage, Audience Network placement drift, frequency and creative fatigue. Attach a dollar figure to each finding and fix the biggest leak first.
@@ -4322,8 +4322,8 @@ URL: https://adgent.app/meta-vs-google-ads-which-first
 Attribution · 8 min read · 22 July 2026
 Meta vs Google Ads: which platform for your first $10k?
 It's not the fight you think. Google Ads captures demand that already exists; Meta creates demand that doesn't. Which you start with comes down to one question — do people already search for what you sell?
-N
-Nurettin Demiral
+A
+Adgent
 Notes from building the analyst
 Short answer
 It's demand-capture vs demand-generation . Google Ads captures intent people already have — they're searching for what you sell. Meta creates intent by interrupting people who weren't looking. Most brands eventually need both, but start with Google if there's real search volume for your product, and Meta if you're introducing something nobody knows to search for.
@@ -4396,8 +4396,8 @@ URL: https://adgent.app/performance-max-brand-cannibalization
 Playbook · 6 min read · 22 July 2026
 Is Performance Max cannibalizing your branded search?
 Performance Max loves a cheap conversion — and nothing is cheaper than someone typing your brand name. Left unchecked, it quietly absorbs demand you already own, takes the credit, and reports a ROAS you can't actually bank. Here's how to catch it and shut it down.
-N
-Nurettin Demiral
+A
+Adgent
 Notes from building the analyst
 Short answer
 Yes — often. Performance Max frequently serves on your own branded queries, taking credit for demand you'd have captured for free or near-free. That inflates its apparent ROAS while adding little incremental value. Spot it with impression-share and search-term reports, stop it with brand exclusions and negatives, then measure what PMax actually contributes on top.
@@ -4475,8 +4475,8 @@ URL: https://adgent.app/performance-max-not-spending-budget
 Playbook · 8 min read · 23 July 2026
 Why Performance Max isn’t spending your full budget
 You set the budget, the campaign is live, and it's spending a fraction of the cap. Before you touch the budget slider — it's probably not the budget. Here's how to diagnose the real constraint, ranked by how often it's the culprit.
-N
-Nurettin Demiral
+A
+Adgent
 Notes from building the analyst
 Short answer
 Most of the time it isn't a budget problem. Far more often, a bid target or Quality Score constraint is choking delivery — genuinely budget-limited cases are the minority . Check in order: bid targets too aggressive, learning phase, asset approvals, thin signals, shared-budget cannibalization, then broken conversion tracking. Loosen the target before you raise the budget.
@@ -4545,8 +4545,8 @@ URL: https://adgent.app/placement-drift-the-leak-in-the-average
 Attribution · 7 min read · 19 March 2026
 Placement drift: the leak hiding in your average
 Your account is at 3.8× and everything looks fine. Inside that number, one placement is returning 1.1× on a fifth of your budget — and the average is doing an excellent job of hiding it.
-N
-Nurettin Demiral
+A
+Adgent
 Notes from building the analyst
 Short answer
 A blended ROAS is a weighted average, so strong placements carry weak ones — a Feed at 4.4× on most of your budget hides an Audience Network at 1.1× on the rest, and the top-line 3.8× never moves. The waste is real; the arithmetic just averages it out of sight until you break the number down by placement.
@@ -4609,8 +4609,8 @@ URL: https://adgent.app/scale-a-winner-without-breaking-it
 Scaling · 6 min read · 9 April 2026
 How to scale a winner without breaking it
 You found a campaign that works. Now the hard part: adding budget without handing it back to the learning phase. The rule isn't about how much you add — it's about how fast.
-N
-Nurettin Demiral
+A
+Adgent
 Notes from building the analyst
 Short answer
 To scale a Meta campaign without a learning reset, raise the budget by no more than ~20% every 48–72 hours instead of one big jump. Meta re-enters the learning phase when a budget change is large enough to count as a material edit — so it's the size of the delta, not the final number, that triggers the reset. Scale in small steps and the ad set keeps everything it learned.
@@ -4673,8 +4673,8 @@ URL: https://adgent.app/what-is-an-ai-media-buyer
 Product · 7 min read · 21 July 2026
 What is an AI media buyer?
 The term is new, the job isn't. An AI media buyer reads your ad accounts like a senior strategist, tells you what to do and why, and makes the change on your approval — not a dashboard with a chatbot bolted on.
-N
-Nurettin Demiral
+A
+Adgent
 Notes from building the analyst
 Short answer
 An AI media buyer is software that reads your ad accounts like a senior strategist — reasoning about account structure, pacing, creative fatigue and attribution — then tells you what to do and why, and executes the change on your approval. Unlike a dashboard, it commits to a conclusion; unlike platform automation, it works for the advertiser, not the auction. The best ones stay read-only by default and are never autonomous spenders.
@@ -4761,8 +4761,8 @@ URL: https://adgent.app/why-adgent-leads-with-the-verdict
 Product · 4 min read · 26 March 2026
 Why Adgent leads with the verdict
 A dashboard is a filing cabinet that renders. It shows you everything and concludes nothing. Every Adgent brief inverts that: the verdict first, the evidence underneath, and nothing you didn't need.
-N
-Nurettin Demiral
+A
+Adgent
 Notes from building the analyst
 Short answer
 An analytics tool should lead with a conclusion because the marketer isn't short of data — they're short of the sentence that says what the data means. A verdict ranks issues by impact, discards noise, and commits to a view, turning a filing cabinet into a decision. The evidence still sits underneath.
@@ -4828,8 +4828,8 @@ URL: https://adgent.app/why-did-my-cpa-jump
 Attribution · 7 min read · 22 July 2026
 Why did my CPA suddenly jump? What to check first
 CPA doubled overnight and nothing you changed explains it. Before you panic-pause anything, run the checklist — a spike is almost always one of four things, and half the time it isn't a media problem at all.
-N
-Nurettin Demiral
+A
+Adgent
 Notes from building the analyst
 Short answer
 A sudden CPA jump is usually one of four things — check them in this order: a tracking break that's dropping conversions, a learning reset from a recent change, auction or CPM pressure raising the cost of every impression, or creative fatigue killing your click-through rate. The first two are false alarms you fix in minutes. Diagnose before you pause.
@@ -4907,8 +4907,8 @@ URL: https://adgent.app/why-is-my-meta-roas-dropping
 Attribution · 8 min read · 22 July 2026
 Why is my Meta ROAS dropping?
 A falling ROAS sends most buyers straight to the budget slider. That's usually the wrong first move. Here's the diagnostic a senior buyer actually runs — in order — and why the answer is almost always further up the list than you think.
-N
-Nurettin Demiral
+A
+Adgent
 Notes from building the analyst
 Short answer
 Most ROAS drops are signal problems, not campaign problems — so check tracking first . If Ads Manager and your backend revenue disagree by more than roughly 10–15% — the threshold we work to — suspect the number before the campaign. Only once the data is trustworthy do you work down the list: scaling too fast, audience saturation, creative fatigue, and the attribution window still settling.
