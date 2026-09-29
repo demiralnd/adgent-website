@@ -1,234 +1,238 @@
 {
  "404": {
-  "date": "2026-09-17",
-  "sha": "0ba261d88207485554159147b34556d0ce65f09a"
+  "date": "2026-09-29",
+  "sha": "cc60cca8a1d60dd216408f29142cbf8dc358e895"
  },
  "about": {
-  "date": "2026-09-17",
-  "sha": "afeba359f40c949bc755f105f1f44f387c36f7c8"
+  "date": "2026-09-29",
+  "sha": "c29b5024ab7b10399c2f403586721235299ee2a3"
  },
  "account-memory": {
-  "date": "2026-09-17",
-  "sha": "3a5ae14055c15d0c9c063f55da110d95ba1b6624"
+  "date": "2026-09-29",
+  "sha": "69bc50e2f40624c6391aaac42542a34491eaabb9"
  },
  "ai-media-buyer-for-agencies": {
-  "date": "2026-09-23",
-  "sha": "ecf882d5bf80144a314e6c72c1c18d3b602578b3"
+  "date": "2026-09-29",
+  "sha": "31bb41ff0dd16188c7e8215c4e4cb89ec49ba633"
  },
  "ai-media-buyer-vs-performance-max-vs-dashboard": {
-  "date": "2026-09-23",
-  "sha": "9614fabe49bb38e2912a337296e982d7e8a3c74c"
+  "date": "2026-09-29",
+  "sha": "20cb358fed593a8595f5729d5a9f8d82ae4b1c3e"
  },
  "attribution-window-day-one-data": {
-  "date": "2026-09-23",
-  "sha": "9214248a344b5ed83d3887c35bb9817b3f388299"
+  "date": "2026-09-29",
+  "sha": "1f14acf461f92b323465fadc28409d24a768f799"
  },
  "blog": {
-  "date": "2026-09-17",
-  "sha": "0b4eff7f15c5c61616bb82a8c12d227f9fdb71a5"
+  "date": "2026-09-29",
+  "sha": "ac713edd8bc8242e231c3a854c6d70a967f823d1"
  },
  "blog-post": {
   "date": "2026-09-09",
   "sha": "b3aec2ede172556eb2edd7d0c16829e1fb604477"
  },
  "break-even-roas-calculator": {
-  "date": "2026-09-23",
-  "sha": "335fa9cccb61d5147f5dc660d96b4bec708eca0d"
+  "date": "2026-09-29",
+  "sha": "e0d04304a4287f91d049f27fece5560669aa124f"
  },
  "built-from-chat": {
-  "date": "2026-09-17",
-  "sha": "58ee4677b04206df6f2af20de6749f4b87637cb0"
+  "date": "2026-09-29",
+  "sha": "f442d4e2092976ee8bcbe6b627b5806fc3e13461"
+ },
+ "business-information": {
+  "date": "2026-09-29",
+  "sha": "d4d05b4a005eebc4ede0373969601cc3daabcad6"
  },
  "can-ai-audit-your-ad-accounts": {
-  "date": "2026-09-23",
-  "sha": "2782c8fb51e4af3260cb869a90a5a7e6f3df7270"
+  "date": "2026-09-29",
+  "sha": "0159da9fc008796c86c74763be74d195584d7aad"
  },
  "can-ai-run-your-ad-account": {
-  "date": "2026-09-23",
-  "sha": "594573369c4c1e83d72f3911a3df4c93163f6e46"
+  "date": "2026-09-29",
+  "sha": "8ee4cc4cdc3865973e0c0fbac7dc2d1f33095558"
  },
  "cbo-vs-abo-2026": {
-  "date": "2026-09-23",
-  "sha": "048e133f3258a17b9c3369f56a736499a3f5eba6"
+  "date": "2026-09-29",
+  "sha": "02e18dd8dccaa186b0cec01f6377e8ecdcf029bc"
  },
  "cbo-vs-abo-vs-advantage-plus": {
-  "date": "2026-09-23",
-  "sha": "b9fa0f98c5c5d8a6d8e94974897fd3cd0d17a024"
+  "date": "2026-09-29",
+  "sha": "d72a208e26fe340f6cc03fc6fa3e6860b52192ab"
  },
  "change-ledger": {
-  "date": "2026-09-17",
-  "sha": "c359e77ae89d4611d5e1cd5ec527187b18e6954f"
+  "date": "2026-09-29",
+  "sha": "feaea7641b25c6216e6fd92155f73a3f903adfb0"
  },
  "conversion-signal-check": {
-  "date": "2026-09-23",
-  "sha": "a01ce54f25c8c5f856f42b5aaa13a6772d46b1ac"
+  "date": "2026-09-29",
+  "sha": "44e506aca8507fefe6b310c21a473928aee96bfa"
  },
  "cpm-is-the-early-creative-fatigue-signal": {
-  "date": "2026-09-23",
-  "sha": "1f122d82b0a63b72341bdbb60d2c01aad99bdfa2"
+  "date": "2026-09-29",
+  "sha": "71864fc5888afbe6b4da9ef2bc42d7c0608d50bb"
  },
  "creative-intelligence": {
-  "date": "2026-09-17",
-  "sha": "e27d58651793a631e89d134b0164c13c8bee5d8d"
+  "date": "2026-09-29",
+  "sha": "477c21030eed35d8472a048ffabdc943e581d559"
  },
  "cross-platform-comparability-meta-google": {
-  "date": "2026-09-23",
-  "sha": "a473c38180b754a21057d0d6094f6beb22ab68d9"
+  "date": "2026-09-29",
+  "sha": "faedd2c12c4ca2821b08bea5ceed31e564ce7aff"
  },
  "daily-verdict": {
-  "date": "2026-09-17",
-  "sha": "313e9768764ede1b8599294043fa4394d00fd96b"
+  "date": "2026-09-29",
+  "sha": "454e0e64248c2cb09ead61880d0a81958cc9a773"
  },
  "data-deletion": {
-  "date": "2026-09-17",
-  "sha": "674b633808e3713e4e13267f1bf9ff56ae09ad32"
+  "date": "2026-09-29",
+  "sha": "e3a7f498e1c1eebf3931d476c3da8a8502adcdec"
  },
  "data-use": {
-  "date": "2026-09-17",
-  "sha": "79100da3205f1f6a9fc4db4df6818fa962392c76"
+  "date": "2026-09-29",
+  "sha": "604680a203ea98e59cd3479c4bb55a73d51fab91"
  },
  "demo": {
   "date": "2026-09-07",
   "sha": "e406d28c43570003be798ed0eafb4cb4950ccf5b"
  },
  "ecommerce": {
-  "date": "2026-09-17",
-  "sha": "62c7b798ef1bd1a8711fc590d6faaceae6261dda"
+  "date": "2026-09-29",
+  "sha": "d577d136841a9ad78238f8f76bb9c9125109d27b"
  },
  "features": {
-  "date": "2026-09-28",
-  "sha": "6b7d61eb258db0a2d48a72a4b2c5307c10201f13"
+  "date": "2026-09-29",
+  "sha": "9119b641c51aa90bb51ca6b8d252536918cd1663"
  },
  "for-agencies": {
-  "date": "2026-09-17",
-  "sha": "96eaeb37a20a1771639669d9c68fe728ea76d92a"
+  "date": "2026-09-29",
+  "sha": "f645d9670191db3658ae165f0bb5131c91013fe6"
  },
  "for-in-house": {
-  "date": "2026-09-17",
-  "sha": "bbf2d90391a5696b69e812c2f04e5fcc1e9f2493"
+  "date": "2026-09-29",
+  "sha": "b2a024254fc7709d09bf794404d6d6ce4f879170"
  },
  "google-ads-account-structure-2026": {
-  "date": "2026-09-23",
-  "sha": "ef0c089c5c06f2bac05a1a9b7b589e80d3e1e52a"
+  "date": "2026-09-29",
+  "sha": "14409fda0d04d3f50591147623318c53f30ffc9a"
  },
  "google-ads-target-cpa-roas-change-2026": {
-  "date": "2026-09-23",
-  "sha": "db8d3fa4dda27229bec4f297713e342e6bfe59c2"
+  "date": "2026-09-29",
+  "sha": "98d33c5d655c7faea34e24ede4e8f63e4c82e30c"
  },
  "ground-truth": {
-  "date": "2026-09-28",
-  "sha": "5996926c1bf7daf69583413694ebdec96b3da3ef"
+  "date": "2026-09-29",
+  "sha": "d51bc7050266dd73861b3e2f2ffb851b7d1bbfa6"
  },
  "how-much-ad-spend-is-wasted": {
-  "date": "2026-09-23",
-  "sha": "1de83f2fda80b1e23f1b45c7c74b66faf4b88245"
+  "date": "2026-09-29",
+  "sha": "daa7823538811fa55b0354e1767d67ff113de59d"
  },
  "how-to-audit-a-google-ads-account": {
-  "date": "2026-09-23",
-  "sha": "ff0ee7a893e9cf0229e73488357e2132794c8014"
+  "date": "2026-09-29",
+  "sha": "82394816ba518224e2cf7960907e5b7412531f5c"
  },
  "how-to-audit-performance-max": {
-  "date": "2026-09-23",
-  "sha": "961f315f4626e448a5fa0430de4b918231e5c551"
+  "date": "2026-09-29",
+  "sha": "86b7d2d98f1cb4ce954a8ec06a732d136b38af26"
  },
  "how-to-choose-an-ai-media-buying-tool": {
-  "date": "2026-09-23",
-  "sha": "7a85d8c68137b56d16e534f01469406d93fb1646"
+  "date": "2026-09-29",
+  "sha": "b15cff8b9c435ec142421e94b4a135b35946fc65"
  },
  "index": {
-  "date": "2026-09-17",
-  "sha": "76dbde0c184455757ac3d16155cdc1ef18d7ff8d"
+  "date": "2026-09-29",
+  "sha": "43c7443d435a30cb8b4e4bfa602aaebe90306b66"
  },
  "index-demo-lab": {
-  "date": "2026-09-17",
-  "sha": "b17486f9c49d7008c8dba34170f0f8d51a89e687"
+  "date": "2026-09-29",
+  "sha": "e6e1a5111c2dc8a61e2a61c50f7577af41c9647a"
  },
  "lead-generation": {
-  "date": "2026-09-17",
-  "sha": "638e6c1bea68f6edf8faac00302f43c9bb385189"
+  "date": "2026-09-29",
+  "sha": "5cf5fe12492be22f75c4f581bf378751fa40d90f"
  },
  "local-multi-location": {
-  "date": "2026-09-17",
-  "sha": "feb45980871253abb0d9234d0772883e0cedb254"
+  "date": "2026-09-29",
+  "sha": "360418df814d4c014546e2b4d069d05d01be19c1"
  },
  "marketplaces": {
-  "date": "2026-09-17",
-  "sha": "86eda4a664fc55a794ab29251f40c10285308a6b"
+  "date": "2026-09-29",
+  "sha": "97a0ea8ac2b2696a0d970f9c9b61470aecd51399"
  },
  "meta-ads-account-audit-checklist": {
-  "date": "2026-09-23",
-  "sha": "e31b724486e6e1fba2b75aa97ea148c3294bfe36"
+  "date": "2026-09-29",
+  "sha": "bd8b2f9133fdb336d2af10e4cc54a941835db1b6"
  },
  "meta-vs-google-ads-which-first": {
-  "date": "2026-09-23",
-  "sha": "7ca9f566359398c7fa5fef8781c120d955f26a8f"
+  "date": "2026-09-29",
+  "sha": "e207f9c1578ce9f30ed5027f6801efb3073d58ba"
  },
  "mobile-apps": {
-  "date": "2026-09-17",
-  "sha": "fbfcdcde2f2875b1398590298205a3fe18da5792"
+  "date": "2026-09-29",
+  "sha": "4b7d49dc04e557fb7b09c851a3063385930fe6b4"
  },
  "performance-max-brand-cannibalization": {
-  "date": "2026-09-23",
-  "sha": "209ddb8a638542b56b7573897f1bd9fdcdfe045f"
+  "date": "2026-09-29",
+  "sha": "35228144d025ea893f11808b87414835224e5750"
  },
  "performance-max-not-spending-budget": {
-  "date": "2026-09-23",
-  "sha": "a3f38660f62fbccf7e0ce53f654f7e8987db6f18"
+  "date": "2026-09-29",
+  "sha": "f2ad6828b8599d0d63353d9997739a54b5210229"
  },
  "placement-drift-the-leak-in-the-average": {
-  "date": "2026-09-23",
-  "sha": "9aa9cb29ab5fd63f986f3dabb1ce5cafc93eb9b7"
+  "date": "2026-09-29",
+  "sha": "0c075d5b7018465cc910bf72f9e845ab5e10a1e4"
  },
  "pricing": {
-  "date": "2026-09-17",
-  "sha": "9a3bf5481effefc7960dad1f01b1d7c6a4a159b1"
+  "date": "2026-09-29",
+  "sha": "88d4068f633b2e4a7fa316539e965bec9bbbd5fd"
  },
  "privacy": {
-  "date": "2026-09-17",
-  "sha": "8e0997c28c37f3fde9c10d9910ad7c1f5d37f71e"
+  "date": "2026-09-29",
+  "sha": "0cf622c9a9a13afac1bcf245b21c7968cddab18b"
  },
  "scale-a-winner-without-breaking-it": {
-  "date": "2026-09-23",
-  "sha": "5714a5f7fd37e4db2ab0e22b2b9a8968f22f8e0f"
+  "date": "2026-09-29",
+  "sha": "0052d8c4c35941ab6a9102f8b4b469638acbf119"
  },
  "security": {
-  "date": "2026-09-17",
-  "sha": "b7bb406e24983e3ae1ac9dd8063d93024b3cb726"
+  "date": "2026-09-29",
+  "sha": "527fb6f6def6a000477661887cbfdddac7ea2b9a"
  },
  "terms": {
-  "date": "2026-09-17",
-  "sha": "bbf52b49c387749d4bc93c45a0a95d3695d5456b"
+  "date": "2026-09-29",
+  "sha": "3d7be79bf82facd7b08eeaec3ef34b3ae32b9a6f"
  },
  "tools": {
-  "date": "2026-09-23",
-  "sha": "f3b85b39fe17d79f5d95cc40edec2091f6c3eaf6"
+  "date": "2026-09-29",
+  "sha": "28e2f2e2b820d47109152865f5830bcc1cf6322c"
  },
  "travel-hospitality": {
-  "date": "2026-09-17",
-  "sha": "10e52aa700c1ab9e7bcad3f0350d87dac4119e91"
+  "date": "2026-09-29",
+  "sha": "84d67b0d57efc56b065235ba252f71681007a42e"
  },
  "trust-gate": {
-  "date": "2026-09-17",
-  "sha": "b46927b988a1e49ec424b64d051330312b4231a4"
+  "date": "2026-09-29",
+  "sha": "19e37324601f1aaefd9973d44a0964c8e30cbd85"
  },
  "what-is-an-ai-media-buyer": {
-  "date": "2026-09-23",
-  "sha": "dd9128c3a3afd6a1478afcf00621054cb9ca0369"
+  "date": "2026-09-29",
+  "sha": "a81cc925ad9da3a109b4fa8e770c20cf28a02d33"
  },
  "why-adgent": {
-  "date": "2026-09-17",
-  "sha": "95f92a303f2b34ddcc781e6ba3ee77806e58c9c0"
+  "date": "2026-09-29",
+  "sha": "b7c7ac2de0b90a58498a4c45729c41fee8bff734"
  },
  "why-adgent-leads-with-the-verdict": {
-  "date": "2026-09-23",
-  "sha": "8581e721e90ef55cd2a966cfb16a56d0420d24ca"
+  "date": "2026-09-29",
+  "sha": "581364a4c1964ed583f27633bf53fc4e039d117c"
  },
  "why-did-my-cpa-jump": {
-  "date": "2026-09-23",
-  "sha": "b47647d4d9f0b1a1d8ef7202fd2ec0a2c20f353d"
+  "date": "2026-09-29",
+  "sha": "680e327f61922d36623ef1040edf67ae897606da"
  },
  "why-is-my-meta-roas-dropping": {
-  "date": "2026-09-23",
-  "sha": "fc17de2b5c4e76aa89014903ffecc7daf4f959db"
+  "date": "2026-09-29",
+  "sha": "c180736872dad9cdc2acd8a5bb865af790fd5751"
  }
 }

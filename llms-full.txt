@@ -2991,6 +2991,46 @@ Get a free audit
 
 ---
 
+# Business information — the legal entity that operates Adgent
+URL: https://adgent.app/business-information
+
+Legal
+Business information
+Last updated 29 September 2026
+Adgent is the brand and service name. The business that operates it, contracts and invoices customers, holds the advertising-platform accounts, and acts as data controller is a sole proprietorship registered in Türkiye. This page states that identity in one place.
+Contents
+The registered business
+Brand, service and website
+Data controller and applicable law
+Legal documents
+Contact us
+01 The registered business
+Legal business name Osman Tıkna
+Entity type Sole proprietorship (&#351;ah&#305;s i&#351;letmesi)
+Country of registration T&#252;rkiye
+Business phone +90 530 918 95 44
+Business email osman@adgent.app
+A sole proprietorship in T&#252;rkiye is registered under the name of the person who owns it, so the legal business name and the owner&#39;s name are the same string. There is no separate company name, trade title or registration number behind the Adgent brand today.
+The registered address is not published on this page. A sole proprietorship registers at its owner&#39;s address, so it is a private address rather than an office; it is supplied in full inside platform verification flows and to counterparties on request at the email or phone number above.
+02 Brand, service and website
+Brand / service name Adgent
+Website https://adgent.app
+Operated by Osman T&#305;kna, sole proprietorship, T&#252;rkiye
+Adgent connects to advertising accounts the customer already owns on Meta and Google Ads, reads them, and proposes changes. It is read-only by default: nothing is written to an advertising account until a person approves that specific change, and every applied change is recorded with the value it replaced. The advertising-platform applications, API access and business accounts used to deliver the service are held by the business named above.
+03 Data controller and applicable law
+The data controller for the service is Osman T&#305;kna , the sole proprietorship named above, established in T&#252;rkiye. Turkish data-protection law (KVKK) applies, and the GDPR applies where its territorial scope is triggered.
+What we collect, why, how long we keep it and who processes it is described in the Privacy Policy and summarised in Data Use . Deletion routes are in Data Deletion .
+04 Legal documents
+Terms of Service — the agreement between the customer and this business
+Privacy Policy — controller identity, processing, retention
+Data Use — what platform data is used for, in plain terms
+Data Deletion — disconnecting, deleting and requesting deletion
+Security — isolation, access control and what is not claimed
+Contact us
+Write to osman@adgent.app or call +90 530 918 95 44 for anything concerning the business behind Adgent — contracts, invoicing, data protection or verification. Adgent is operated by Osman T&#305;kna, a sole proprietorship established in T&#252;rkiye.
+
+---
+
 # Can AI audit your ad accounts? — Adgent
 URL: https://adgent.app/can-ai-audit-your-ad-accounts
 
