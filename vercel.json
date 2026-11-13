@@ -46,8 +46,38 @@
       "permanent": true
     },
     {
+      "source": "/built-from-chat",
+      "destination": "/campaign-build",
+      "permanent": true
+    },
+    {
       "source": "/media-planning",
-      "destination": "/built-from-chat#plan",
+      "destination": "/planning",
+      "permanent": true
+    },
+    {
+      "source": "/blog-post",
+      "destination": "/attribution-window-day-one-data",
+      "permanent": true
+    },
+    {
+      "source": "/index-demo-lab",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/demo",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/demo/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/cbo-vs-abo-2026",
+      "destination": "/cbo-vs-abo-vs-advantage-plus",
       "permanent": true
     }
   ],
@@ -62,43 +92,35 @@
         {
           "key": "Permissions-Policy",
           "value": "camera=(), microphone=(), geolocation=(), payment=(), usb=(), midi=(), magnetometer=(), gyroscope=()"
+        },
+        {
+          "key": "Content-Security-Policy-Report-Only",
+          "value": "default-src 'self'; script-src 'self' https://static.cloudflareinsights.com https://www.googletagmanager.com https://*.clarity.ms; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com https://*.clarity.ms https://*.doubleclick.net https://*.google.com https://*.google.com.tr; font-src 'self'; media-src 'self'; connect-src 'self' https://api.web3forms.com https://cloudflareinsights.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.doubleclick.net https://*.clarity.ms https://*.google.com; frame-src https://www.youtube-nocookie.com; object-src 'none'; base-uri 'self'; form-action 'self' https://api.web3forms.com; frame-ancestors 'self'"
         }
       ]
     },
     {
-      "source": "/tokens.min.css",
+      "source": "/(tokens.css|app.css|app.js|site.js|consent.css)",
       "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
       ]
     },
     {
-      "source": "/site.min.css",
+      "source": "/(css|js)/:path*",
       "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "/site.js",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
       ]
     },
     {
       "source": "/assets/:path*",
       "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=604800, stale-while-revalidate=604800"
-        }
+        { "key": "Cache-Control", "value": "public, max-age=604800, stale-while-revalidate=604800" }
+      ]
+    },
+    {
+      "source": "/feed.xml",
+      "headers": [
+        { "key": "Content-Type", "value": "application/rss+xml; charset=utf-8" }
       ]
     }
   ]

@@ -1,10 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" preserveAspectRatio="xMidYMid slice"><defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" width="1200" height="630" preserveAspectRatio="xMidYMid slice"><style>@font-face{font-family:Switzer;font-weight:400;src:url(data:font/woff2;base64,d09GMgABAAAAAAJAAA4AAAAABCgAAAHuAAEzMwAAAAAAAAAAAAAAAAAAAAAAAAAAGhYbIBwwBmAATBEICoJUgjMBNgIkAxgLDgAEIAUGByAbBAMAjpTuKsfgiXcr3wysAXcXtUrUODXiLnXqlCltJVaKye/FQMWCk7d0s80+oolNdX/+PqYRhp1HmZVlEX1AGsjJRhJhjmAHCOABAIoghBAEcGhAI2Swn1dGFBvAGABAAIfWtMVirqsxed7E6TSaMXbBLBrxkG1b28geQqDbNABy8zkyio7SGicLh80u8wu5xThmWXETZpgV5zcgAFpdrwBNsAAFLKAGFgLUwKY74BBFUcYxkRnMMgYYx4R6gTltTpkj5vDd8yDGoACEAfCAKDAZ2AMA2ACAoiiCZHgZXo2wXd11Qi4pV4I1cecVw7fFWZNwpaTk2G1JKeUqF9d2JF7RMA7Uzo7HHRsT4CWmViuHbStLSybduba7NlHHktvqqeBOYLoWjJq2eN+6jYv3ThvdJWfXAT9r0rixOVMHD8maMm5M9hQ8F1F/BAyarMwl/6DKjRrDVowcuWDdvnWb1uyZO2f1ntW1tlhB0ZisxfVnHG66tvrhFtGsvAL8O8Ed/OpBVteymRUjxw4fHxT37TGkZ7+8kX16AoAA0qlT2Z59o0Zn9P4Wda2XAE8u3HwD8PzjrrO0Ml+1pt4BoigAAg+OtD+BaIURDogAYW6D8iNppb1LnuLnsY/op9VHAVBAEKA/AAAQxgIAc4KOOAAA) format('woff2')}@font-face{font-family:Switzer;font-weight:500;src:url(data:font/woff2;base64,d09GMgABAAAAAAPkAA4AAAAABtgAAAOTAAEzMwAAAAAAAAAAAAAAAAAAAAAAAAAAGhYbgiAcMAZgAHQRCAqFRIRaATYCJAMoCxYABCAFBgcgG2MFUVRMNgH8SLBtXawDWFysXIyyGajwP/gHx/F/7rZHZAgRQoLQElNg6M5Cxv+jgg42fwUaYWABxmlQRLmGsEN52UzPmdRQkgULKWmdPZA/8EUHvwM5cir3XCo+qpaoWrAnUjt/59K93EMyGvCAVl51mTa+jDfx2Qfy2U5IEsbY6V0z+hsIhAMAQySECITKUcU+Gtv7iX9vTC8S/x3fWiGeA/j/BPSZ3lghGAiIYwQzQvWTQw4EiJciS4l6VkDvBPZOcNdJcK8Y4tYXzppu4vqRCXw7+xtRZxmDHJhyIEAQkPt//VHzvyP8P/j3hicC/hv8XzwC/wVIAHG3nhpMJJgFIACGYyQgYVhOoD+S5imAErCEAM53Kz1fBMD8RgFt+j56UXL8gNgqtuXZ2MUZBa4t11yjF84PEMDcthckscAAEkI8Sxxn7BmjWU6BUlXGTZu1Yce1/4/IY+jfza62o61taVXLCyEgUP8ZZKiceBAJ7kF3QDpxELGMALq2rlNdTXHcDjOda4MbLsARRKCF5jBWIBCPdCJkMAwiHWTuYGwZJopIxwO6jH/ICpAhBcg4Y4CWsrcAfbusfIfSUgLGcoDmZScOaH9svctBDivviCRkrDZFXy9aQI5r4YK2mN3EeX4nSSlbpi8IGrbTsByi2W+zNskuhBzRqIvmIMBtc7Dbd3t6SIkkzq4yJCdLSKK0nCwuKy8iogYGB4DV4XK6sathol5f2WTcMpKaERVWu8uxxHqdOuBsdKdJYwMuH66raeyqKVUS7rW+YDl+b7yGaqwJLA5QlPRrK6r61GWKsoC6oHrp53vhX/wDn0SEJ4Wrhx5HvEvMjg4Py4lJEComPHQT7KpuwKnusruvb25V3yJsW9eZ/lH6h5Zq83PbezwJuzUQ7+2udIpy8fBNkcqSrRaDhkhgfchMyqhU3ZMrRyfHlz8bW07bjM4uziaTG2w0rG2nKWu0IDUtAwC96o5l9HjHkuqq0PSoBo/6webKiiG5vrShOT0kooeRhmfnSZJSlFIqTZ1ABcioVBVINm8oDJFXuf5VEq45mcXZruDSWbOOad2ZM1O6JisDbBs/NTw0NLxvCHSFHh4eOhWASbwMDA3Ft53Wqgzjvs5HAPsMeDg9+gV4/F68DZfFbLYUBDMAhHkJl5GBc1sIZIe6At6pWhJpCygCsqnMZfzKGaFmptyqmSEQKpcFYIAIVCMukKXlNyoB) format('woff2')}@font-face{font-family:Switzer;font-weight:600;src:url(data:font/woff2;base64,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) format('woff2')}</style><defs>
     <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
       <path d="M36 0 H0 V36" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
     </pattern>
     <radialGradient id="vign" cx="50%" cy="18%" r="90%">
-      <stop offset="0%" stop-color="#ff6a3d" stop-opacity="1"/>
-      <stop offset="100%" stop-color="#ec491d" stop-opacity="1"/>
+      <stop offset="0%" stop-color="#1A2C34" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#101C22" stop-opacity="1"/>
     </radialGradient>
   </defs>
   <rect width="1200" height="630" fill="url(#vign)"/>
@@ -12,30 +12,21 @@
   <!-- corner structure ticks -->
   <path d="M60 60 h24 M60 60 v24" stroke="rgba(255,255,255,0.22)" stroke-width="2" fill="none"/>
   <path d="M1140 570 h-24 M1140 570 v-24" stroke="rgba(255,255,255,0.22)" stroke-width="2" fill="none"/>
-  <text x="72" y="98" font-family="'Geist Mono',monospace" font-size="21" font-weight="600" letter-spacing="3.6" fill="#ffffff">ATTRIBUTION</text>
+  <text x="72" y="98" font-family="Switzer,sans-serif" font-size="21" font-weight="600" letter-spacing="3.6" fill="#ffffff">ATTRIBUTION</text>
   <rect x="72" y="114" width="58" height="3" rx="1.5" fill="#ffffff"/>
-  <text x="402" y="98" font-family="'Geist Mono',monospace" font-size="15" letter-spacing="1.5" fill="rgba(255,255,255,0.62)">7 min read</text><text x="72" y="204" font-family="'Plus Jakarta Sans',sans-serif" font-size="58" font-weight="700" letter-spacing="-2" fill="#ffffff"><tspan>The leak hiding</tspan></text>
-<text x="72" y="270" font-family="'Plus Jakarta Sans',sans-serif" font-size="58" font-weight="700" letter-spacing="-2" fill="#ffffff"><tspan>in your </tspan><tspan font-family="'Fraunces',serif" font-style="italic" font-weight="500" fill="#ffffff">average</tspan><tspan>.</tspan></text><g transform="translate(680,132)">
-    <text x="0" y="46" font-family="'Fraunces',serif" font-size="76" font-style="italic" font-weight="500" fill="#ffffff">3.8×</text>
-    <text x="176" y="46" font-family="'Geist Mono',monospace" font-size="17" fill="rgba(255,255,255,0.62)">blended</text>
+  <text x="72" y="204" font-family="Switzer,sans-serif" font-size="58" font-weight="600" letter-spacing="-2" fill="#ffffff"><tspan>The leak hiding</tspan></text>
+<text x="72" y="270" font-family="Switzer,sans-serif" font-size="58" font-weight="600" letter-spacing="-2" fill="#ffffff"><tspan>in your </tspan><tspan font-family="Switzer,sans-serif" font-style="normal" font-weight="500" fill="#63B5A7">average</tspan><tspan>.</tspan></text><g transform="translate(680,132)">
+    <text x="0" y="46" font-family="Switzer,sans-serif" font-size="76" font-style="normal" font-weight="500" fill="#63B5A7">3.8×</text>
+    <text x="176" y="46" font-family="Switzer,sans-serif" font-size="17" fill="rgba(255,255,255,0.62)">blended</text>
     <line x1="4" y1="74" x2="424" y2="74" stroke="rgba(255,255,255,0.22)" stroke-width="1.5"/>
     <g transform="translate(0,100)">
-      <rect x="0" y="0" width="270" height="50" rx="11" fill="#c8f7dd"/>
-      <text x="18" y="32" font-family="'Geist Mono',monospace" font-size="17" font-weight="600" fill="#0a6b3f">Feed · 4.2×</text>
-      <text x="232" y="33" font-family="'Plus Jakarta Sans',sans-serif" font-size="16" fill="#0a6b3f">▲</text>
+      <rect x="0" y="0" width="270" height="50" rx="11" fill="#D8EFEA"/>
+      <text x="18" y="32" font-family="Switzer,sans-serif" font-size="17" font-weight="600" fill="#101C22">Feed · 4.2×</text>
+      <text x="232" y="33" font-family="Switzer,sans-serif" font-size="16" fill="#101C22">▲</text>
       <rect x="0" y="64" width="112" height="50" rx="11" fill="rgba(255,255,255,0.22)"/>
-      <text x="18" y="96" font-family="'Geist Mono',monospace" font-size="17" font-weight="600" fill="#ffffff">AN · 1.1×</text>
+      <text x="18" y="96" font-family="Switzer,sans-serif" font-size="17" font-weight="600" fill="#ffffff">AN · 1.1×</text>
       <path d="M120 89 h84" stroke="#ffffff" stroke-width="2" stroke-dasharray="3 5" opacity="0.55"/>
-      <g transform="translate(210,66)"><rect width="164" height="50" rx="12" fill="#ffffff"/><text x="18" y="32" font-family="'Geist Mono',monospace" font-size="16" font-weight="600" fill="#ff5a2c">the leak</text></g>
+      <g transform="translate(210,66)"><rect width="164" height="50" rx="12" fill="#ffffff"/><text x="18" y="32" font-family="Switzer,sans-serif" font-size="16" font-weight="600" fill="#101C22">the leak</text></g>
     </g>
   </g>
-  <!-- brand lockup: white tile so the mark still reads on coral -->
-  <g transform="translate(1020,550)">
-    <rect width="38" height="38" rx="10" fill="#ffffff"/>
-    <g transform="translate(19,19.5) scale(0.175) translate(-85,-82)">
-      <path d="M14 140 L85 6 L156 140 L128 140 L85 58 L42 140 Z" fill="#ff5a2c"/>
-      <path d="M50 140 L85 72 L120 140 L96 140 L85 118 L74 140 Z" fill="#ff5a2c"/>
-      <path d="M18 153 L152 153" stroke="#ff5a2c" stroke-width="9" stroke-linecap="round" opacity="0.62"/>
-    </g>
-    <text x="50" y="25" font-family="'Plus Jakarta Sans',sans-serif" font-size="22" font-weight="800" letter-spacing="-0.6" fill="#ffffff">Adgent</text>
-  </g></svg>
+  <g transform="translate(958,551)"><g transform="scale(0.2235) translate(-13,-4)"><path d="M14 140 L85 6 L156 140 L128 140 L85 58 L42 140 Z" fill="#63B5A7"/><path d="M50 140 L85 72 L120 140 L96 140 L85 118 L74 140 Z" fill="#63B5A7"/><path d="M18 153 L152 153" stroke="#63B5A7" stroke-width="9" stroke-linecap="round"/></g><text x="44" y="27" font-family="Switzer,sans-serif" font-size="25" font-weight="600" letter-spacing="-0.5" fill="#F6F5F4">Adgent</text></g></svg>

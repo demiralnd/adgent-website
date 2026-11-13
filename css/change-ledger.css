@@ -1,0 +1,182 @@
+/* /change-ledger · page-only styles. Tokens only; shared classes come from app.css. */
+
+/* ------------------------------------------------------------------ hero -- */
+.cl-hero{padding:72px 0 104px}
+.cl-hero-h{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:56px;align-items:end;margin-bottom:44px}
+.cl-hero-h .display{max-width:15ch}
+.cl-hero-r .btns{margin-top:26px}
+.cl-hero-src{margin-top:16px}
+.cl-mk{width:14px;height:14px;flex:none;color:var(--primary)}
+
+/* the round trip stage */
+.cl-trip{position:relative;padding:24px 28px 28px;border-radius:var(--r-blk);background:var(--grey)}
+.cl-trip-h{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 16px}
+.cl-trip-tools{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:8px 10px}
+.cl-trip-h .tag{background:var(--white)}
+.cl-demo-toggle{height:32px;padding:0 12px;background:var(--white);font-size:12px}
+.cl-demo-toggle svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.cl-demo-toggle .cl-demo-stop{display:none}
+.cl-demo-toggle.is-running .cl-demo-play{display:none}
+.cl-demo-toggle.is-running .cl-demo-stop{display:block}
+.cl-trip.is-ready [data-cl="revert"]{animation:cl-cue 1.4s var(--ease-out) 2}
+.cl-trip.is-demo .cl-steps li{transition-duration:.18s}
+@keyframes cl-cue{0%,100%{box-shadow:inset 0 0 0 1px var(--line-2)}45%{box-shadow:inset 0 0 0 2px var(--accent),0 8px 22px color-mix(in srgb,var(--accent) 20%,transparent);transform:translateY(-2px)}}
+
+.cl-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin:18px 0 16px;padding:5px;border-radius:var(--r-pill);background:color-mix(in srgb,var(--ink) 5%,var(--grey))}
+.cl-steps li{display:flex;align-items:center;gap:10px;min-width:0;padding:7px 14px 7px 7px;border-radius:var(--r-pill);font-size:12.5px;line-height:1.3;color:var(--ink-2);transition:background-color .35s var(--ease),box-shadow .35s var(--ease)}
+.cl-steps i{flex:none;display:grid;place-items:center;width:26px;height:26px;border-radius:50%;font-style:normal;font-size:12px;font-weight:500;color:var(--ink-2);box-shadow:inset 0 0 0 1.5px var(--mute);transition:background-color .35s var(--ease),color .35s var(--ease),box-shadow .35s var(--ease)}
+.cl-steps span{min-width:0}
+.cl-steps b{display:block;font-size:13.5px;font-weight:500;color:var(--ink)}
+/* done: no state (no script), or the steps behind the current one */
+.cl-trip:not([data-state]) .cl-steps i,
+.cl-trip[data-state="2"] .cl-steps i,
+.cl-trip[data-state="0"] .cl-steps li:nth-child(1) i,
+.cl-trip[data-state="1"] .cl-steps li:nth-child(-n+2) i{background:var(--primary);color:var(--on-primary);box-shadow:none}
+/* current: the step waiting on the visitor */
+.cl-trip[data-state="0"] .cl-steps li:nth-child(2),
+.cl-trip[data-state="1"] .cl-steps li:nth-child(3){background:var(--white);box-shadow:0 1px 2px color-mix(in srgb,var(--ink) 8%,transparent)}
+.cl-trip[data-state="0"] .cl-steps li:nth-child(2) i,
+.cl-trip[data-state="1"] .cl-steps li:nth-child(3) i{background:var(--accent);color:var(--on-accent);box-shadow:0 0 0 4px var(--t1)}
+
+.cl-trip-b{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4.4fr);gap:var(--gap);align-items:stretch}
+.cl-day{padding:14px 0 4px;border-top:1px solid var(--line);font-size:12px;font-weight:500;color:var(--ink-3)}
+.cl-day+.lg-row,.cl-day+.cl-new>div>.lg-row{border-top:0}
+.cl-lg .lg-hd,.cl-lg .lg-row{grid-template-columns:68px minmax(0,.8fr) minmax(0,.95fr) minmax(0,1.6fr) 150px}
+.cl-lg .lg-x{justify-self:end}
+
+/* the put-back row grows into the ledger */
+.cl-new{display:grid;grid-template-rows:1fr;margin:0 -12px;transition:grid-template-rows .7s var(--ease-out)}
+.cl-new>div{min-height:0;overflow:hidden}
+.cl-new .lg-row{padding-left:12px;padding-right:12px;border-radius:var(--r-row);background:var(--t1)}
+.cl-new .lg-d s,.cl-new .lg-d b{background:var(--white)}
+.cl-new .lg-a small,.cl-new .lg-c small,.cl-new .lg-t{color:var(--ink-2)}
+.cl-new .tag{background:var(--primary);color:var(--on-primary)}
+.cl-new+.lg-row{border-top:0}
+.cl-trip[data-state="0"] .cl-new,.cl-trip[data-state="1"] .cl-new{grid-template-rows:0fr}
+.cl-orig{transition:background-color .35s var(--ease)}
+.cl-trip[data-state="1"] .cl-orig{margin:0 -12px;padding-left:12px;padding-right:12px;border-radius:var(--r-row);background:var(--paper);box-shadow:inset 0 0 0 1px var(--line-2)}
+
+/* the agent column: idle, the drafted card, done */
+.cl-agent{display:grid;min-width:0}
+.cl-agent>*{grid-area:1/1;min-width:0}
+.cl-idle{display:none;align-content:center;gap:16px;padding:28px 26px;border-radius:var(--r-card);border:1.5px dashed var(--line-2);color:var(--ink-2);font-size:14.5px;line-height:1.55}
+.cl-idle-mk{width:30px;height:30px;color:var(--mute)}
+.cl-idle b{color:var(--ink);font-weight:500}
+.cl-key{display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:var(--r-pill);box-shadow:inset 0 0 0 1px var(--line-2);background:var(--white);color:var(--ink);font-size:12.5px;font-weight:500;white-space:nowrap}
+.cl-card{align-self:start}
+.cl-card .dc-h .uc-t{font-size:12.5px;white-space:normal}
+.cl-done{align-content:center;padding:28px 26px;border-radius:var(--r-card);background:var(--white);box-shadow:var(--shadow-ui)}
+.cl-done-n{font-size:clamp(52px,5.4vw,72px)}
+.cl-done-t{margin-top:12px;font-size:14.5px;line-height:1.55;color:var(--ink-2);max-width:34ch}
+.cl-done .btn{margin-top:20px;justify-self:start}
+.cl-done{display:grid}
+/* no script: show the finished trip, card and outcome together */
+.cl-trip:not([data-state]) .cl-agent{grid-template-rows:auto auto;gap:var(--gap)}
+.cl-trip:not([data-state]) .cl-card{grid-area:1/1}
+.cl-trip:not([data-state]) .cl-done{grid-area:2/1}
+.cl-trip:not([data-state]) [data-cl]{display:none}
+.cl-trip[data-state] .cl-card,.cl-trip[data-state] .cl-done{display:none}
+.cl-trip[data-state="0"] .cl-idle{display:grid;animation:cl-in .5s var(--ease-out)}
+.cl-trip[data-state="1"] .cl-card{display:flex;animation:cl-in .55s var(--ease-out)}
+.cl-trip[data-state="2"] .cl-done{display:grid;animation:cl-in .55s var(--ease-out)}
+@keyframes cl-in{from{opacity:0;transform:translateY(14px) scale(.985)}to{opacity:1;transform:none}}
+
+/* -------------------------------------------------------- ops framing -- */
+.cl-ops-g{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:64px;align-items:center}
+.cl-ops-l h2{max-width:20ch}
+.cl-ops-l .sub{margin-top:18px}
+.cl-ops-l .go{margin-top:26px}
+.cl-ops-src{margin-top:40px}
+.cl-room{padding:22px 24px 30px;border-radius:var(--r-blk);background:var(--paper)}
+.cl-room-h{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px;font-size:12.5px;color:var(--ink-3)}
+.cl-v{max-width:78%;margin-top:8px;padding:11px 16px 12px;border-radius:18px 18px 18px 6px;background:var(--grey);font-size:15px;line-height:1.45}
+.cl-v span{display:block;margin-bottom:2px;font-size:12px;font-weight:500;color:var(--ink-2)}
+.cl-v.r{margin-left:auto;border-radius:18px 18px 6px 18px}
+.cl-answer{position:relative;margin:-18px 0 0 40px;box-shadow:var(--shadow)}
+.cl-answer .lg-row{grid-template-columns:64px minmax(0,1fr) auto}
+.cl-answer .lg-row:first-child{border-top:0}
+.cl-settle{display:flex;align-items:center;gap:10px;margin:20px 0 0 40px;font-size:19px;font-weight:500;letter-spacing:-.02em;line-height:1.3}
+.cl-settle::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:var(--accent)}
+
+/* ------------------------------------------------ mirror pair, lit half -- */
+.cl-mini{padding:16px 18px;border-radius:var(--r-card);background:var(--paper)}
+.cl-mini-t b{display:block;font-size:14.5px;font-weight:500}
+.cl-mini-t span{display:block;font-size:12.5px;color:var(--ink-2);margin:2px 0 12px}
+.cl-mini .dc-diff>div:first-child{background:var(--white)}
+.cl-mini-a{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-top:12px;font-size:12.5px;color:var(--ink-2)}
+.cl-mini-a .pill{height:28px;background:var(--white)}
+.cl-real{margin-top:22px;font-size:13.5px;font-weight:500;color:var(--ink)}
+.cl-chain{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:10px}
+.cl-chain li{min-width:0;padding:12px 14px;border-radius:var(--r-row);background:var(--paper)}
+.cl-chain li:last-child{background:var(--t1)}
+.cl-chain span{display:block;font-size:12px;font-weight:500;color:var(--ink-2)}
+.cl-chain b{display:block;margin-top:3px;font-size:14px;font-weight:500;line-height:1.3}
+.cl-chain small{display:block;margin-top:3px;font-size:12px;color:var(--ink-2)}
+
+/* ------------------------------------------------- urgency + boundary -- */
+.cl-edge-b{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px 64px;padding:56px;border-radius:var(--r-blk);background:var(--grey)}
+.cl-edge-l h2{max-width:17ch}
+.cl-edge-l p{margin-top:20px;font-size:16px;line-height:1.6;color:var(--ink-2);max-width:46ch}
+.cl-edge-r{align-self:center}
+.cl-edge-r li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 18px;padding:18px 0;border-top:1px solid var(--line-2)}
+.cl-edge-r li:first-child{border-top:0;padding-top:0}
+.cl-edge-r b{font-size:16px;font-weight:500;letter-spacing:-.015em}
+.cl-edge-r span{grid-column:1;font-size:14px;line-height:1.5;color:var(--ink-2)}
+.cl-edge-r em{grid-column:2;grid-row:1/3;align-self:center;font-style:normal;background:var(--white);color:var(--ink);box-shadow:inset 0 0 0 1px var(--line-2)}
+.cl-edge-r em.dark{background:var(--primary);color:var(--on-primary);box-shadow:none}
+.cl-edge-go{grid-column:1}
+
+
+/* the mirror pair's history card keeps its own height next to the taller lit card */
+@media (min-width:861px){
+  .ps-today{align-self:start}
+}
+
+/* ---------------------------------------------------------- responsive -- */
+@media (max-width:1100px){
+  .cl-hero-h{grid-template-columns:1fr;gap:22px}
+  .cl-trip-b{grid-template-columns:1fr}
+  .cl-lg .lg-row{grid-template-columns:68px minmax(0,1fr) auto}
+  .cl-answer .lg-row{grid-template-columns:64px minmax(0,1fr)}
+  .cl-answer .lg-c,.cl-answer .lg-d{grid-column:2}
+  .cl-ops-g{grid-template-columns:1fr;gap:44px}
+  .cl-edge-b{grid-template-columns:1fr;padding:44px 36px}
+}
+@media (max-width:860px){
+  .cl-hero{padding:44px 0 72px}
+  .cl-hero-h{margin-bottom:32px}
+  .cl-trip{padding:18px 14px 16px;border-radius:var(--r-card)}
+  .cl-steps{grid-template-columns:repeat(2,minmax(0,1fr));border-radius:var(--r-card)}
+  .cl-steps li{border-radius:12px;padding:7px 10px 7px 7px}
+  .cl-lg{padding:4px 14px}
+  .cl-ops-src{margin-top:28px}
+  .cl-answer,.cl-settle{margin-left:16px}
+  .cl-chain{grid-template-columns:1fr}
+  .cl-edge-b{padding:34px 22px}
+  .cl-edge-r li{grid-template-columns:1fr}
+  .cl-edge-r em{grid-column:1;grid-row:auto;justify-self:start;margin-top:8px}
+}
+@media (max-width:520px){
+  .cl-card .dc-act{flex-wrap:wrap;row-gap:10px}
+  .cl-card .dc-act>span:first-child{flex-basis:100%}
+  .cl-steps b{font-size:12.5px}
+  .cl-steps span{font-size:12px}
+  .cl-lg .lg-row{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"c t" "d d" "a x";gap:10px 12px}
+  .cl-lg .lg-t{grid-area:t;justify-self:end;align-self:start}
+  .cl-lg .lg-a{grid-area:a}
+  .cl-lg .lg-c{grid-area:c}
+  .cl-lg .lg-d{grid-area:d}
+  .cl-lg .lg-x{grid-area:x;justify-self:end}
+  .cl-new{margin:0 -8px}
+  .cl-new .lg-row,.cl-trip[data-state="1"] .cl-orig{padding-left:8px;padding-right:8px}
+  .cl-trip[data-state="1"] .cl-orig{margin:0 -8px}
+  .cl-answer .lg-row{grid-template-columns:minmax(0,1fr);gap:6px}
+  .cl-answer .lg-t,.cl-answer .lg-c,.cl-answer .lg-d{grid-column:1}
+  .cl-v{max-width:92%}
+  .cl-answer{margin:-14px 0 0 8px}
+  .cl-settle{margin-left:8px;font-size:17px}
+}
+@media (prefers-reduced-motion:reduce){
+  .cl-new,.cl-steps li,.cl-steps i,.cl-orig{transition:none}
+  .cl-trip.is-ready [data-cl="revert"]{animation:none}
+}

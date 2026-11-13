@@ -1,0 +1,444 @@
+{
+  "about": "Example ad creatives for the Creative analysis floating-creatives section. Brands are fictional; reads follow the product’s Creative DNA fields (hook, format, persona, angle, offer, visuals, audio) plus concept and dossier. Performance chips are illustrative, not measured.",
+  "read_fields": [
+    "hook",
+    "concept",
+    "angle",
+    "offer",
+    "format",
+    "persona",
+    "visuals",
+    "audio",
+    "dossier"
+  ],
+  "creatives": [
+    {
+      "file": "01-saltbay-resort.webp",
+      "width": 672,
+      "height": 840,
+      "ratio": "4:5",
+      "brand": "Saltbay Resort",
+      "brand_is_fictional": true,
+      "vertical": "Hotel & travel",
+      "platform": "Meta",
+      "format": "static",
+      "on_image_headline": "This summer, no clocks.",
+      "alt": "Example Meta ad for Saltbay Resort (hotel & travel): “This summer, no clocks.”",
+      "read": {
+        "hook": "Aspirational Escape",
+        "concept": "Sunset slow-living escape",
+        "angle": "Time Freedom",
+        "offer": "Early Booking 35% Off",
+        "format": "Static Image",
+        "persona": "Couples Planning Summer",
+        "visuals": "Cinematic Photograph + Text Overlay",
+        "audio": "None",
+        "dossier": "Golden-hour bay with a two-line italic serif promise; the 35% early-booking offer lives in a coral sticker, not in the headline."
+      },
+      "concept_trend": "Scaling",
+      "performance": {
+        "chip": "CTR 1.41% · +12% vs concept avg",
+        "illustrative": true,
+        "label": "Illustrative"
+      },
+      "image_source": {
+        "type": "photo",
+        "license": "CC0",
+        "provider": "StockSnap via Openverse",
+        "url": "https://stocksnap.io/photo/vacation-resort-7XEX5NOW5M"
+      }
+    },
+    {
+      "file": "02-dermaleaf-serum.webp",
+      "width": 720,
+      "height": 720,
+      "ratio": "1:1",
+      "brand": "Dermaleaf",
+      "brand_is_fictional": true,
+      "vertical": "Skincare",
+      "platform": "Meta",
+      "format": "static",
+      "on_image_headline": "A 7-day answer for dry skin.",
+      "alt": "Example Meta ad for Dermaleaf (skincare): “A 7-day answer for dry skin.”",
+      "read": {
+        "hook": "Problem / Solution",
+        "concept": "7-day hydration result",
+        "angle": "Fast Visible Result",
+        "offer": "Price Shown ($9)",
+        "format": "Static Image",
+        "persona": "Dry-Skin Shoppers",
+        "visuals": "Product Render on Warm Gradient",
+        "audio": "None",
+        "dossier": "Amber dropper bottle on a peach arch; the headline names the problem and a 7-day timeframe, with fragrance-free, vegan and dermatologist-tested checks beneath."
+      },
+      "concept_trend": "Gen exhaustion",
+      "performance": {
+        "chip": "CTR 0.92% · −18% vs concept avg",
+        "illustrative": true,
+        "label": "Illustrative"
+      },
+      "image_source": {
+        "type": "illustration",
+        "note": "Pure HTML/CSS render, no photography"
+      }
+    },
+    {
+      "file": "03-trailstep-sneakers.webp",
+      "width": 504,
+      "height": 896,
+      "ratio": "9:16",
+      "brand": "Trailstep Studio",
+      "brand_is_fictional": true,
+      "vertical": "Sneakers & apparel",
+      "platform": "Meta",
+      "format": "video-still",
+      "on_image_headline": "Every step, light.",
+      "alt": "Example Meta ad for Trailstep Studio (sneakers & apparel): “Every step, light.”",
+      "read": {
+        "hook": "Bold Text Hook",
+        "concept": "Lightweight everyday sneaker",
+        "angle": "Comfort",
+        "offer": "40% Off ($36, was $60)",
+        "format": "Vertical Video (Reels)",
+        "persona": "Urban Commuters",
+        "visuals": "POV Product Shot",
+        "audio": "Music Bed",
+        "dossier": "First-person shot of a white sneaker on asphalt; a short condensed headline in white and lime opens, the price card and CTA hold the bottom third."
+      },
+      "concept_trend": "Scaling",
+      "performance": {
+        "chip": "Hook rate 24% · +9% vs concept avg",
+        "illustrative": true,
+        "label": "Illustrative"
+      },
+      "image_source": {
+        "type": "photo",
+        "license": "CC0",
+        "provider": "StockSnap via Openverse",
+        "url": "https://stocksnap.io/photo/shoes-sneakers-DPNQ3PEKA0"
+      }
+    },
+    {
+      "file": "04-ember-roast-coffee.webp",
+      "width": 720,
+      "height": 720,
+      "ratio": "1:1",
+      "brand": "Ember Roast",
+      "brand_is_fictional": true,
+      "vertical": "Coffee",
+      "platform": "Meta",
+      "format": "carousel-card",
+      "on_image_headline": "Freshly roasted, at your door in 48 hours.",
+      "alt": "Example Meta ad for Ember Roast (coffee): “Freshly roasted, at your door in 48 hours.”",
+      "read": {
+        "hook": "Freshness Promise",
+        "concept": "Roasted-to-order delivery",
+        "angle": "Freshness",
+        "offer": "Second Bag 50% Off",
+        "format": "Carousel Card (1 of 4)",
+        "persona": "Home Brewers",
+        "visuals": "Macro Product Photograph",
+        "audio": "None",
+        "dossier": "Cup heaped with roasted beans under warm bokeh; the serif headline promises 48-hour delivery and a product card carries origin, weight and price."
+      },
+      "concept_trend": "Scaling",
+      "performance": {
+        "chip": "CTR 1.18% · +4% vs concept avg",
+        "illustrative": true,
+        "label": "Illustrative"
+      },
+      "image_source": {
+        "type": "photo",
+        "license": "CC0",
+        "provider": "StockSnap via Openverse",
+        "url": "https://stocksnap.io/photo/coffee-beans-LQ33FE82WJ"
+      }
+    },
+    {
+      "file": "05-roomly-home.webp",
+      "width": 672,
+      "height": 840,
+      "ratio": "4:5",
+      "brand": "Roomly Home",
+      "brand_is_fictional": true,
+      "vertical": "Furniture & home",
+      "platform": "Google",
+      "format": "static",
+      "on_image_headline": "Your reading corner, ready.",
+      "alt": "Example Google ad for Roomly Home (furniture & home): “Your reading corner, ready.”",
+      "read": {
+        "hook": "Ready-Made Room",
+        "concept": "Reading corner styling",
+        "angle": "Effortless Interior",
+        "offer": "$289, was $389 + 12 Instalments",
+        "format": "Static Image (Demand Gen)",
+        "persona": "New-Home Setters",
+        "visuals": "Product Photograph on Light Background",
+        "audio": "None",
+        "dossier": "Patterned mustard armchair on a near-white set; the strike-through price and instalment line sit in a dark tag beside the product, CTA in the footer bar."
+      },
+      "concept_trend": "Scaling",
+      "performance": {
+        "chip": "CTR 0.74% · +21% vs concept avg",
+        "illustrative": true,
+        "label": "Illustrative"
+      },
+      "image_source": {
+        "type": "photo",
+        "license": "CC0",
+        "provider": "StockSnap via Openverse",
+        "url": "https://stocksnap.io/photo/house-interior-XCOZ3XTV7M"
+      }
+    },
+    {
+      "file": "06-pocketly-app.webp",
+      "width": 504,
+      "height": 896,
+      "ratio": "9:16",
+      "brand": "Pocketly",
+      "brand_is_fictional": true,
+      "vertical": "Fintech app",
+      "platform": "Meta",
+      "format": "static",
+      "on_image_headline": "Don’t let your money sit idle.",
+      "alt": "Example Meta ad for Pocketly (fintech app): “Don’t let your money sit idle.”",
+      "read": {
+        "hook": "Loss Aversion",
+        "concept": "Round-up savings",
+        "angle": "Money Working for You",
+        "offer": "No Card Fee",
+        "format": "Static Image (Stories)",
+        "persona": "Young Salaried Savers",
+        "visuals": "App UI Mockup",
+        "audio": "None",
+        "dossier": "Tilted phone mockup with a 62% savings-goal ring on deep violet; lime accents tie the headline, the $0 card-fee pill and the install CTA together."
+      },
+      "concept_trend": "Scaling",
+      "performance": {
+        "chip": "CTR 0.63% · −9% vs concept avg",
+        "illustrative": true,
+        "label": "Illustrative"
+      },
+      "image_source": {
+        "type": "illustration",
+        "note": "Pure HTML/CSS render, no photography"
+      }
+    },
+    {
+      "file": "07-doorstep-eats.webp",
+      "width": 720,
+      "height": 720,
+      "ratio": "1:1",
+      "brand": "Doorstep Eats",
+      "brand_is_fictional": true,
+      "vertical": "Food delivery",
+      "platform": "Meta",
+      "format": "static",
+      "on_image_headline": "Hunger doesn’t wait.",
+      "alt": "Example Meta ad for Doorstep Eats (food delivery): “Hunger doesn’t wait.”",
+      "read": {
+        "hook": "Urgency / Hunger",
+        "concept": "Speed-first delivery",
+        "angle": "Speed",
+        "offer": "$5 First-Order Coupon",
+        "format": "Static Image",
+        "persona": "Late-Night Orderers",
+        "visuals": "Close-up Food Photograph + Colour Block",
+        "audio": "None",
+        "dossier": "Close-up burger against a slanted yellow block; a 28-minute delivery claim sits under the headline and a red ticket carries the first-order code."
+      },
+      "concept_trend": "Scaling",
+      "performance": {
+        "chip": "CTR 2.06% · +31% vs concept avg",
+        "illustrative": true,
+        "label": "Illustrative"
+      },
+      "image_source": {
+        "type": "photo",
+        "license": "CC0",
+        "provider": "StockSnap via Openverse",
+        "url": "https://stocksnap.io/photo/food-burger-WYL5KWIPUD"
+      }
+    },
+    {
+      "file": "08-mirel-atelier.webp",
+      "width": 672,
+      "height": 840,
+      "ratio": "4:5",
+      "brand": "Mirel Atelier",
+      "brand_is_fictional": true,
+      "vertical": "Jewelry",
+      "platform": "Google",
+      "format": "static",
+      "on_image_headline": "One lifetime, one ring.",
+      "alt": "Example Google ad for Mirel Atelier (jewelry): “One lifetime, one ring.”",
+      "read": {
+        "hook": "Emotional Milestone",
+        "concept": "Lifetime ring",
+        "angle": "Craft & Permanence",
+        "offer": "Free Engraving",
+        "format": "Static Image (Demand Gen)",
+        "persona": "Engagement Shoppers",
+        "visuals": "Dark Macro Product Photograph",
+        "audio": "None",
+        "dossier": "Two rings on navy velvet in low light; a centred italic serif headline, gold hairline and outline CTA keep the price small and the craft loud."
+      },
+      "concept_trend": "Scaling",
+      "performance": {
+        "chip": "CTR 0.58% · +6% vs concept avg",
+        "illustrative": true,
+        "label": "Illustrative"
+      },
+      "image_source": {
+        "type": "photo",
+        "license": "CC0",
+        "provider": "StockSnap via Openverse",
+        "url": "https://stocksnap.io/photo/wedding-rings-KH7YRRTVTS"
+      }
+    },
+    {
+      "file": "09-forge-club.webp",
+      "width": 504,
+      "height": 896,
+      "ratio": "9:16",
+      "brand": "Forge Club",
+      "brand_is_fictional": true,
+      "vertical": "Fitness",
+      "platform": "Meta",
+      "format": "video-still",
+      "on_image_headline": "First month: $0.",
+      "alt": "Example Meta ad for Forge Club (fitness): “First month: $0.”",
+      "read": {
+        "hook": "Free Price Shock",
+        "concept": "Zero-risk first month",
+        "angle": "No Commitment",
+        "offer": "First Month Free",
+        "format": "Vertical Video (Reels)",
+        "persona": "Lapsed Gym-Goers",
+        "visuals": "Moody Equipment Shot + Captions",
+        "audio": "Voiceover",
+        "dossier": "Desaturated barbell plate with an oversized lime “$0”; burned-in captions answer the commitment objection before the CTA."
+      },
+      "concept_trend": "Scaling",
+      "performance": {
+        "chip": "Hook rate 31% · +14% vs concept avg",
+        "illustrative": true,
+        "label": "Illustrative"
+      },
+      "image_source": {
+        "type": "photo",
+        "license": "CC0",
+        "provider": "StockSnap via Openverse",
+        "url": "https://stocksnap.io/photo/weights-fitness-3H89EH3WIJ"
+      }
+    },
+    {
+      "file": "10-headline-academy.webp",
+      "width": 720,
+      "height": 720,
+      "ratio": "1:1",
+      "brand": "Headline Academy",
+      "brand_is_fictional": true,
+      "vertical": "Education",
+      "platform": "Google",
+      "format": "static",
+      "on_image_headline": "Junior developer in 16 weeks.",
+      "alt": "Example Google ad for Headline Academy (education): “Junior developer in 16 weeks.”",
+      "read": {
+        "hook": "Career Outcome",
+        "concept": "16-week bootcamp",
+        "angle": "Career Change",
+        "offer": "Scholarship Seats (40)",
+        "format": "Static Image (Display)",
+        "persona": "Career Switchers",
+        "visuals": "Typography + Code Snippet + Desk Photograph",
+        "audio": "None",
+        "dossier": "Editorial serif headline on warm paper with a dark code card and a tilted desk photo; the scholarship badge is the only offer."
+      },
+      "concept_trend": "Gen exhaustion",
+      "performance": {
+        "chip": "CTR 0.49% · −12% vs concept avg",
+        "illustrative": true,
+        "label": "Illustrative"
+      },
+      "image_source": {
+        "type": "photo",
+        "license": "CC0",
+        "provider": "StockSnap via Openverse",
+        "url": "https://stocksnap.io/photo/macbook-laptop-F7OLW2SG0C"
+      }
+    },
+    {
+      "file": "11-skyward-balloons.webp",
+      "width": 504,
+      "height": 896,
+      "ratio": "9:16",
+      "brand": "Skyward Balloon Tours",
+      "brand_is_fictional": true,
+      "vertical": "Travel tours",
+      "platform": "Meta",
+      "format": "video-still",
+      "on_image_headline": "Cappadocia, two nights, with a balloon flight.",
+      "alt": "Example Meta ad for Skyward Balloon Tours (travel tours): “Cappadocia, two nights, with a balloon flight.”",
+      "read": {
+        "hook": "Bucket-List Moment",
+        "concept": "Weekend Cappadocia package",
+        "angle": "Experience",
+        "offer": "From $155 per Person",
+        "format": "Vertical Video (Reels)",
+        "persona": "Weekend Couples",
+        "visuals": "Sunrise Landscape Photograph",
+        "audio": "Music Bed",
+        "dossier": "Sunrise sky with drifting balloons; an italic serif destination line, the per-person price and three inclusion chips stack above the CTA."
+      },
+      "concept_trend": "Scaling",
+      "performance": {
+        "chip": "Hook rate 19% · −6% vs concept avg",
+        "illustrative": true,
+        "label": "Illustrative"
+      },
+      "image_source": {
+        "type": "photo",
+        "license": "CC0",
+        "provider": "StockSnap via Openverse",
+        "url": "https://stocksnap.io/photo/hotair-adventure-TBNDUDMYR3"
+      }
+    },
+    {
+      "file": "12-warmknit.webp",
+      "width": 672,
+      "height": 840,
+      "ratio": "4:5",
+      "brand": "Warmknit",
+      "brand_is_fictional": true,
+      "vertical": "Apparel",
+      "platform": "Meta",
+      "format": "carousel-card",
+      "on_image_headline": "The first layer of winter.",
+      "alt": "Example Meta ad for Warmknit (apparel): “The first layer of winter.”",
+      "read": {
+        "hook": "Seasonal Trigger",
+        "concept": "First layer of winter",
+        "angle": "Material Quality",
+        "offer": "20% Off Second Item",
+        "format": "Carousel Card (2 of 5)",
+        "persona": "Quality-First Shoppers",
+        "visuals": "Texture Close-up Photograph",
+        "audio": "None",
+        "dossier": "Stacked knit textures fill the frame; a heavy serif headline top-right and a cream product card with four colour swatches carry the sell."
+      },
+      "concept_trend": "Scaling",
+      "performance": {
+        "chip": "CTR 1.02% · +3% vs concept avg",
+        "illustrative": true,
+        "label": "Illustrative"
+      },
+      "image_source": {
+        "type": "photo",
+        "license": "CC0",
+        "provider": "StockSnap via Openverse",
+        "url": "https://stocksnap.io/photo/clothes-sweaters-OA0AFM3HYZ"
+      }
+    }
+  ]
+}

@@ -1,0 +1,307 @@
+/* ==========================================================================
+   /for-in-house · page layer. Tokens only; every class is prefixed .ih-.
+   Signature: the hero report, read a second time (margin notes draw in once). Then the AI
+   Visibility bridge (answer → reading → decision) and the live meeting window.
+   ========================================================================== */
+
+/* ---------------------------------------------------------------- hero -- */
+.ih-hero{padding:56px 0 24px}
+.ih-top{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:56px;align-items:end;margin-bottom:48px}
+.ih-top .display{max-width:12ch}
+.ih-intro .lede{margin-bottom:22px}
+
+/* the report: a white sheet on the left, Adgent's notes in the margin on the right */
+.ih-doc{margin:0}
+.ih-paper{--sheet:57%;position:relative;display:grid;grid-template-columns:var(--sheet) minmax(0,1fr)}
+.ih-paper::before{content:"";position:absolute;left:0;top:0;bottom:0;width:var(--sheet);border-radius:var(--r-blk);background:var(--white);box-shadow:var(--shadow)}
+.ih-sh,.ih-line,.ih-nh,.ih-note{position:relative;z-index:1;min-width:0}
+.ih-sh{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:26px 34px 18px}
+.ih-st{font-size:22px;letter-spacing:-.03em;line-height:1.2}
+.ih-sm{font-size:var(--fs-sm);color:var(--ink-3);margin-top:4px}
+.ih-nh{align-self:end;display:flex;align-items:center;gap:8px;padding:0 0 18px 56px;font-size:var(--fs-sm);color:var(--ink-2)}
+.ih-nh svg{width:15px;height:15px;color:var(--accent)}
+.ih-nh b{font-weight:500;color:var(--ink)}
+.ih-line{display:grid;grid-template-columns:96px minmax(0,1fr);gap:18px;align-items:baseline;padding:18px 34px;border-top:1px solid var(--line);font-size:16.5px;line-height:1.45;letter-spacing:-.01em;color:var(--ink-2)}
+.ih-line:nth-last-child(2){padding-bottom:26px}
+.ih-lk{font-size:var(--fs-xs);color:var(--ink-3);letter-spacing:0}
+.ih-hl{color:var(--ink);background:linear-gradient(var(--t2),var(--t2)) no-repeat 0 88%/100% 42%;padding:0 2px;margin:0 -2px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.ih-note{padding:14px 0 14px 56px;font-size:15px;line-height:1.5;color:var(--ink);max-width:44ch}
+.ih-note::before{content:"";position:absolute;left:0;top:26px;width:40px;height:1.5px;border-radius:2px;background:var(--accent);transform-origin:left center}
+.ih-note::after{content:"";position:absolute;left:-5px;top:22px;width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--white)}
+.ih-who{font-size:12.5px;font-weight:500;color:var(--ink-2);margin-bottom:3px}
+.ih-doc figcaption{margin-top:18px}
+
+/* armed by js/for-in-house.js; without JS or under reduced motion every note is simply there */
+.ih-doc.ih-arm .ih-note{opacity:0;transform:translateX(-10px)}
+.ih-doc.ih-arm .ih-note::before{transform:scaleX(0)}
+.ih-doc.ih-arm .ih-note::after{transform:scale(0)}
+.ih-doc.ih-arm .ih-hl{background-size:0% 42%}
+.ih-doc.ih-play .ih-hl{background-size:100% 42%;transition:background-size .55s var(--ease-out) calc(var(--i) * 650ms + 300ms)}
+.ih-doc.ih-play .ih-note::after{transform:none;transition:transform .35s var(--ease-out) calc(var(--i) * 650ms + 700ms)}
+.ih-doc.ih-play .ih-note::before{transform:none;transition:transform .45s var(--ease-out) calc(var(--i) * 650ms + 780ms)}
+.ih-doc.ih-play .ih-note{opacity:1;transform:none;transition:opacity .6s var(--ease-out) calc(var(--i) * 650ms + 980ms),transform .8s var(--ease-out) calc(var(--i) * 650ms + 980ms)}
+
+/* -------------------------------------------------- pair A: the pixel -- */
+.ih-pub{display:flex;justify-content:flex-end;margin-top:18px}
+.ih-pub span{display:inline-flex;align-items:center;height:36px;padding:0 18px;border-radius:var(--r-btn);background:var(--ink-2);color:var(--paper);font-size:13.5px;font-weight:500}
+.chat.ih-chat{padding:0;background:none;box-shadow:none}
+.ih-chat .bub{font-size:13.5px}
+.ih-bars{display:grid;gap:9px;margin-top:18px}
+.ih-bars-h{font-size:12.5px;color:var(--ink-2);margin-bottom:2px}
+.ih-bar{display:grid;grid-template-columns:118px minmax(0,1fr) 58px;align-items:center;gap:12px;font-size:13px;color:var(--ink-2)}
+.ih-bar i{display:block;height:10px;width:max(3px,calc(var(--v) * 1%));border-radius:5px;background:var(--line-2)}
+.ih-bar b{justify-self:end;font-weight:500;color:var(--ink)}
+.ih-bar.is-key span,.ih-bar.is-key b{color:var(--ink);font-weight:500}
+.ih-bar.is-key i{background:var(--accent);box-shadow:0 0 0 4px var(--t1)}
+.ih-srcin{margin-top:14px}
+
+/* ---------------------------------------- AI Visibility: answer → reading → decision -- */
+.ih-ai{padding-bottom:96px;margin-top:96px;border-radius:var(--r-pillr);background:var(--t1)}
+.ih-ai-hd{margin-bottom:40px}
+.ih-aiv{margin:0;border-radius:var(--r-blk);background:var(--white);box-shadow:var(--shadow);overflow:hidden}
+.ih-aiv-bar{display:flex;align-items:center;flex-wrap:wrap;gap:12px 18px;padding:20px 30px;border-bottom:1px solid var(--line)}
+.ih-aiv-q{font-size:19px;letter-spacing:-.02em;line-height:1.3;color:var(--ink)}
+.ih-aiv-m{margin-left:auto;font-size:var(--fs-xs);color:var(--ink-3);white-space:nowrap}
+.ih-aiv-tabs{display:none;align-items:center;gap:4px;padding:8px 12px;border-bottom:1px solid var(--line);background:var(--paper);overflow-x:auto;scrollbar-width:thin}
+.ih-tabs-ready .ih-aiv-tabs{display:flex}
+.ih-aiv-tabs button{flex:none;min-height:40px;padding:0 14px;border:0;border-radius:var(--r-btn);background:transparent;color:var(--ink-2);font:500 var(--fs-sm)/1 var(--sans);cursor:pointer;transition:background-color .18s var(--ease),color .18s var(--ease)}
+.ih-aiv-tabs button[aria-selected="true"]{background:var(--primary);color:var(--on-primary)}
+.ih-aiv-tabs button:hover{background:var(--grey);color:var(--ink)}
+.ih-aiv-tabs button[aria-selected="true"]:hover{background:var(--primary);color:var(--on-primary)}
+.ih-aiv-g{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,4fr) minmax(0,5fr)}
+.ih-tabs-ready .ih-aiv-ans:not(.is-active){display:none}
+.ih-aiv-answer{min-height:390px}
+.ih-aiv-ans{display:flex;flex-direction:column;gap:14px;height:100%}
+.ih-aiv-g>*{min-width:0;display:flex;flex-direction:column;gap:14px;padding:26px 30px 28px}
+.ih-aiv-k{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 10px;font-size:var(--fs-xs);color:var(--ink-3)}
+.ih-aiv-k b{font-size:14.5px;font-weight:500;letter-spacing:-.01em;color:var(--ink)}
+/* 1 · the answer, as the assistant gave it */
+.ih-aiv-txt{font-size:15.5px;line-height:1.6;color:var(--ink);text-wrap:pretty}
+mark.ih-b{padding:1px 3px;margin:0 -1px;border-radius:5px;background:var(--grey);color:var(--ink);font-weight:500;white-space:nowrap}
+mark.ih-b.you{background:var(--accent);color:var(--on-accent)}
+mark.ih-b.plat{background:transparent;box-shadow:inset 0 0 0 1px var(--line-2);font-weight:400}
+.ih-lvls{display:grid;gap:2px;margin-top:auto;padding-top:14px;border-top:1px solid var(--line)}
+.ih-lvls li{display:flex;align-items:center;gap:8px;min-height:30px;padding:4px 8px;margin:0 -8px;border-radius:9px;font-size:13px}
+.ih-lvls li.you{background:var(--t1)}
+.ih-lvls li b{font-weight:500;white-space:nowrap}
+.ih-lvls li span:last-child{margin-left:auto;text-align:right;color:var(--ink-2);font-size:12.5px;line-height:1.3}
+.ih-lv{flex:none;display:inline-flex;align-items:flex-end;gap:2px;width:16px;height:13px}
+.ih-lv i{width:4px;border-radius:1.5px;background:var(--line-2)}
+.ih-lv i:nth-child(1){height:5px}
+.ih-lv i:nth-child(2){height:9px}
+.ih-lv i:nth-child(3){height:13px}
+.ih-lv[data-l="1"] i:nth-child(1),.ih-lv[data-l="2"] i:nth-child(-n+2),.ih-lv[data-l="3"] i{background:var(--primary)}
+.ih-lv.plat{width:13px;height:13px;margin:0 3px 0 0;border-radius:50%;box-shadow:inset 0 0 0 1.5px var(--mute)}
+/* 2 · the reading, on the dark field */
+.ih-aiv-win{background:var(--primary);color:var(--on-primary);--focus:var(--on-primary)}
+.ih-aiv-win .ih-aiv-k{color:var(--on-primary-2)}
+.ih-aiv-win .ih-aiv-k b{color:var(--on-primary)}
+.ih-aiv-big{display:grid;gap:4px;margin-top:6px}
+.ih-aiv-big b{font-size:72px;font-weight:400;letter-spacing:-.05em;line-height:.9}
+.ih-aiv-big span{font-size:14px;line-height:1.4;color:var(--t1);max-width:22ch}
+.ih-aiv-dl{display:grid;gap:9px;margin:8px 0 0}
+.ih-aiv-dl div{display:grid;grid-template-columns:86px minmax(0,1fr);align-items:center;gap:12px;font-size:13px}
+.ih-aiv-dl dt{color:var(--on-primary-2);white-space:nowrap}
+.ih-aiv-dl dd{display:grid;grid-template-columns:minmax(0,1fr) 52px;align-items:center;gap:10px;margin:0}
+.ih-aiv-dl dd i{display:block;height:6px;border-radius:3px;background:var(--on-primary-3);background-image:linear-gradient(var(--accent),var(--accent));background-repeat:no-repeat;background-size:calc(var(--v) * 1%) 100%}
+.ih-aiv-dl dd b{font-weight:500;text-align:right;white-space:nowrap}
+.ih-aiv-wm{margin-top:auto;padding-top:14px;border-top:1px solid var(--on-primary-3);font-size:12.5px;line-height:1.5;color:var(--on-primary-2)}
+/* 3 · beside the ads: the chat moment, on the tint */
+.ih-aiv-dec{background:var(--t1)}
+.ih-aiv-dec .ih-aiv-k{color:var(--ink-2)}
+.chat.ih-aiv-chat{padding:0;background:none;box-shadow:none;gap:8px}
+.ih-aiv-chat .bub{max-width:100%;font-size:13.5px}
+.ih-aiv-chat .bub.me{max-width:88%}
+.chat.ih-aiv-chat .bub.ai{background:var(--white)}
+.ih-aiv-chat .sugg .pill{height:30px;padding:0 12px;font-weight:400;background:var(--white);box-shadow:inset 0 0 0 1px var(--line-2)}
+.ih-aiv-n{margin-top:auto;padding-top:14px;border-top:1px solid var(--t2);font-size:12.5px;line-height:1.5;color:var(--ink-2)}
+.ih-aiv-cap{margin:18px 30px 0}
+.ih-aiv .ih-aiv-cap{margin-bottom:24px}
+/* the bridge: five steps, each with where it stands */
+.ih-track{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:var(--gap);margin-top:40px}
+.ih-track li{position:relative;display:flex;flex-direction:column;gap:12px;padding:18px 0 0;border-top:1px solid var(--line-2)}
+.ih-track li::before{content:"";position:absolute;left:0;top:-1px;height:1px;width:0;background:var(--accent)}
+.ih-track li.now::before{width:100%}
+.ih-track li b{font-size:14.5px;font-weight:400;line-height:1.4;letter-spacing:-.01em;color:var(--ink-2);text-wrap:pretty}
+.ih-track li.now b{color:var(--ink)}
+.ih-track .tag{align-self:flex-start}
+.ih-ai-go{margin-top:36px}
+
+/* ------------------------------------------------------ two more reads -- */
+.ih-more{padding-top:0}
+.ih-more .sec-head{margin-bottom:36px}
+.ih-reads{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px}
+.ih-rd{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 28px;align-items:center;min-width:0}
+.ih-rd-t{display:flex;flex-direction:column;gap:10px}
+.ih-rd h3{font-size:21px;text-wrap:balance}
+.ih-rd-t>p{font-size:14.5px;line-height:1.55;color:var(--ink-2)}
+.ih-rd .go{margin-top:2px}
+.ih-vis{position:relative;height:320px;overflow:hidden;border-radius:var(--r-blk)}
+/* creative: the ad itself, with its read pinned on it */
+.ih-vis-cr{background:var(--grey)}
+.ih-vis-cr img{width:100%;height:100%;object-fit:cover;object-position:50% 0}
+.ih-chips{position:absolute;left:12px;bottom:12px;right:12px;display:flex;flex-wrap:wrap;gap:6px}
+.ih-chips li{display:inline-flex;align-items:center;gap:6px;min-height:28px;padding:5px 11px;border-radius:var(--r-pill);background:var(--white);font-size:12px;line-height:1.2;color:var(--ink);box-shadow:var(--shadow-ui)}
+.ih-chips span{color:var(--ink-2)}
+.ih-chip-v i{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+/* board: the ask, four tiles, the share link */
+.ih-vis-bd{display:flex;flex-direction:column;gap:10px;padding:18px;background:var(--t1)}
+.ih-ask{align-self:flex-end;margin:0;font-size:13px}
+.ih-tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.ih-tiles>div{padding:11px 13px;border-radius:var(--r-row);background:var(--white)}
+.ih-tiles span{display:block;font-size:12px;color:var(--ink-2)}
+.ih-tiles b{display:block;margin-top:4px;font-size:24px;font-weight:400;letter-spacing:-.04em;line-height:1}
+.ih-share{display:flex;align-items:center;gap:8px;margin-top:auto}
+.ih-link{flex:1;min-width:0;display:flex;align-items:center;height:30px;padding:0 12px;border-radius:var(--r-ctl);background:var(--white);font-size:12px;color:var(--ink-2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ih-reads-src{margin-top:22px}
+
+/* --------------------------------------------------- pair B: approval -- */
+/* the card and its ledger row sit straight on the lit panel: one surface, no box in a box */
+.ih-dc{background:var(--paper);box-shadow:none}
+.ih-dc .dc-diff>div{background:var(--card)}
+.ih-dc .dc-diff>div:last-child{background:var(--t1)}
+.ih-dc .dc-h .tag{height:22px;font-size:12px}
+.ih-lg{margin-top:6px;padding:0;border-radius:0;background:none;box-shadow:none}
+.ih-lg .lg-row{grid-template-columns:44px minmax(0,1fr) auto;row-gap:8px;padding:16px 0 14px;border-top:0}
+.ih-lg .lg-a{grid-column:2}
+.ih-lg .lg-c,.ih-lg .lg-d{grid-column:2/-1}
+.ih-lg .lg-x{grid-column:3;grid-row:1}
+.ih-nw{white-space:nowrap}
+
+/* AI answers and the meeting room are the page's two deliberate peaks:
+   one light field for the market read, one dark field for the team decision. */
+
+/* ---------------------------------------------------------- in your meetings -- */
+/* the meeting window follows the homepage hero's "In the meeting" view (css/home-hero.css .mw),
+   copied here under the page prefix: the call on the left, what Adgent brought into it on the right */
+.ih-mt{background:var(--primary);color:var(--on-primary)}
+.ih-mt-top{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:32px 56px;align-items:end;margin-bottom:40px}
+.ih-mt-h h2{max-width:14ch}
+.ih-mt-s{display:flex;flex-direction:column;gap:18px}
+.ih-mt-s .sub{max-width:none;color:var(--on-primary-2)}
+.ih-mt-s .go{align-self:flex-start;color:var(--on-primary);text-decoration-color:var(--accent)}
+.ih-mw-bar,.ih-mw-body{background:var(--card)}
+.ih-mw-bar{display:flex;align-items:center;gap:12px;height:44px;padding:0 18px;border-radius:var(--r-blk) var(--r-blk) 0 0;border-bottom:1px solid var(--line);font-size:12.5px;line-height:1.4;color:var(--ink)}
+.ih-mw-t{display:flex;align-items:center;gap:8px;font-weight:500;white-space:nowrap}
+.ih-mw-rec{width:8px;height:8px;border-radius:50%;background:var(--warn)}
+.ih-mw-c{color:var(--ink-3)}
+.ih-mw-bar .tag{margin-left:auto;height:22px}
+.ih-mw-body{display:grid;grid-template-columns:minmax(0,1fr) 320px;height:420px;border-radius:0 0 var(--r-blk) var(--r-blk);overflow:hidden;font-size:12.5px;line-height:1.45;color:var(--ink);--focus:var(--ink);box-shadow:var(--shadow)}
+.ih-mw-body>*{min-width:0;min-height:0}
+.ih-mw-body svg{fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.ih-mw-body b{font-weight:500}
+.ih-mw-stage{display:grid;grid-template-columns:minmax(0,2.2fr) minmax(0,1fr);grid-template-rows:repeat(3,minmax(0,1fr));gap:8px;padding:10px;background:var(--ink)}
+.ih-mw-tile{position:relative;margin:0;border-radius:12px;overflow:hidden;background:color-mix(in srgb,var(--paper) 10%,var(--ink))}
+.ih-mw-ai{grid-row:1/4;box-shadow:0 0 0 2px var(--accent)}
+.ih-mw-ai img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.ih-mw-ai figcaption{position:absolute;left:10px;top:10px;display:flex;align-items:center;gap:6px;padding:4px 10px;border-radius:var(--r-pill);background:color-mix(in srgb,var(--ink) 70%,transparent);color:var(--paper)}
+.ih-mw-k{padding:1px 6px;border-radius:5px;background:var(--accent);color:var(--on-accent);font-size:10px;font-weight:500}
+/* the speaking mark holds still: nothing on this page is running */
+.ih-mw-wave{display:inline-flex;align-items:center;gap:2px;height:12px;margin-left:2px}
+.ih-mw-wave i{width:2px;border-radius:1px;background:var(--accent)}
+.ih-mw-wave i:nth-child(1){height:40%}.ih-mw-wave i:nth-child(2){height:100%}.ih-mw-wave i:nth-child(3){height:60%}.ih-mw-wave i:nth-child(4){height:85%}.ih-mw-wave i:nth-child(5){height:35%}
+.ih-mw-cap{position:absolute;left:10px;right:10px;bottom:10px;padding:8px 12px;border-radius:10px;background:color-mix(in srgb,var(--ink) 78%,transparent);color:var(--paper);font-size:12.5px;line-height:1.4}
+.ih-mw-p{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--on-primary-2)}
+.ih-mw-p span{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:color-mix(in srgb,var(--paper) 18%,var(--ink));color:var(--paper);font-size:11px;font-weight:500}
+.ih-mw-p b{font-size:10.5px;font-weight:400}
+.ih-mw-side{display:flex;flex-direction:column;gap:8px;padding:12px;background:var(--paper);overflow:hidden}
+.ih-mw-said{padding:7px 10px;border-radius:10px;background:var(--card);color:var(--ink-2)}
+.ih-mw-said b{display:block;font-size:10.5px;color:var(--ink-3);margin-bottom:1px}
+.ih-mw-mem{display:flex;align-items:center;gap:6px;padding:5px 8px;border-radius:8px;background:var(--t1);font-size:11.5px}
+.ih-mw-mem svg{flex:none;width:12px;height:12px;color:var(--accent-ink)}
+.ih-mw-ev{display:grid;gap:5px;padding:9px 10px;border-radius:10px;background:var(--card)}
+.ih-mw-ek{font-size:10.5px;color:var(--ink-3)}
+.ih-mw-b{display:grid;grid-template-columns:104px minmax(0,1fr) 30px;align-items:center;gap:8px;white-space:nowrap}
+.ih-mw-b i{display:block;width:var(--w);height:5px;border-radius:3px;background:var(--primary)}
+.ih-mw-b.lo i{background:var(--accent)}
+.ih-mw-b b{text-align:right;font-variant-numeric:tabular-nums}
+.ih-mw-n{font-size:11px;color:var(--ink-2)}
+.ih-mw-card{display:grid;gap:6px;padding:10px 12px;border-radius:14px;background:var(--card);box-shadow:var(--shadow-ui)}
+.ih-mw-ck{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--ink-2)}
+.ih-mw-ck i{flex:none;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.ih-mw-ck span{margin-left:auto;color:var(--ink-3)}
+.ih-mw-cv{font-size:13px;font-weight:500}
+.ih-mw-ca{display:flex;align-items:center;gap:6px;padding-top:8px;border-top:1px solid var(--line);font-size:11px;color:var(--ink-2)}
+.ih-mw-ca span:first-child{margin-right:auto}
+.ih-mw-ca .pill{height:24px;padding:0 10px;font-size:11px}
+.ih-mw-after{display:flex;align-items:center;gap:6px;margin-top:auto;font-size:11px;color:var(--ink-2)}
+.ih-mw-after svg{flex:none;width:13px;height:13px;color:var(--accent-ink)}
+.ih-mw-src{margin-top:18px;color:var(--on-primary-2)}
+.ih-mt-lim{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap);margin-top:40px}
+.ih-mt-lim li{padding:18px 0 0;border-top:1px solid var(--on-primary-3);font-size:14.5px;line-height:1.55;color:var(--on-primary-2);text-wrap:pretty}
+.ih-mt-lim b{display:block;margin-bottom:4px;font-weight:500;color:var(--on-primary)}
+
+/* ----------------------------------------------------------- responsive -- */
+@media (max-width:1100px){
+  .ih-top{grid-template-columns:1fr;gap:24px}
+  .ih-top .display{max-width:16ch}
+  .ih-intro{max-width:620px}
+  .ih-paper{--sheet:60%}
+  .ih-line{grid-template-columns:1fr;gap:4px;padding:16px 26px}
+  .ih-sh{padding:22px 26px 16px}
+  .ih-note,.ih-nh{padding-left:44px}
+  .ih-note::before{width:30px}
+  .ih-reads{grid-template-columns:1fr;gap:36px}
+  .ih-aiv-g{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .ih-aiv-dec{grid-column:1/-1;border-top:1px solid var(--line)}
+  .ih-aiv-big b{font-size:60px}
+  .ih-track{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .ih-mt-top{grid-template-columns:1fr;gap:20px}
+  .ih-mt-h h2{max-width:18ch}
+  .ih-mw-body{grid-template-columns:minmax(0,1fr) 290px}
+}
+@media (max-width:860px){
+  .ih-hero{padding:36px 0 8px}
+  .ih-top{margin-bottom:32px}
+  /* the margin folds into the sheet: each note sits under its line */
+  .ih-paper{--sheet:100%;grid-template-columns:minmax(0,1fr)}
+  .ih-nh{display:none}
+  .ih-sh{padding:20px 20px 14px}
+  .ih-line{padding:14px 20px 10px;font-size:15.5px}
+  .ih-line:nth-last-child(2){padding-bottom:10px}
+  .ih-note{margin:0 14px 12px;padding:10px 14px 11px;border-radius:var(--r-row);background:var(--t1);font-size:14.5px;max-width:none}
+  .ih-note:last-child{margin-bottom:14px}
+  .ih-note::before{display:none}
+  .ih-note::after{left:14px;top:-5px;width:9px;height:9px;box-shadow:0 0 0 3px var(--white)}
+  .ih-who{color:var(--ink)}
+  .ih-doc.ih-arm .ih-note{transform:translateY(-6px)}
+  .ih-bar{grid-template-columns:96px minmax(0,1fr) 52px;gap:10px}
+  .ih-reads{gap:40px}
+  .ih-rd{grid-template-columns:1fr;gap:18px}
+  .ih-vis{height:280px}
+  .ih-aiv-bar{padding:18px 22px}
+  .ih-aiv-q{font-size:17px}
+  .ih-aiv-m{margin-left:0;white-space:normal}
+  .ih-aiv-tabs{padding-inline:10px}
+  .ih-aiv-g{grid-template-columns:1fr}
+  .ih-aiv-g>*{padding:22px 22px 24px}
+  .ih-aiv-answer{min-height:0}
+  .ih-aiv-dec{border-top:0}
+  .ih-aiv-win{padding-top:24px}
+  .ih-aiv-cap{margin:16px 22px 22px}
+  .ih-track{grid-template-columns:1fr 1fr;margin-top:32px}
+  .ih-track li{flex-direction:row;align-items:flex-start;gap:12px;padding-top:14px}
+  .ih-track .tag{flex:none}
+  .ih-mw-body{grid-template-columns:minmax(0,1fr);height:auto}
+  .ih-mw-stage{height:300px}
+  .ih-mw-c{display:none}
+  .ih-mt-lim{grid-template-columns:1fr;gap:18px;margin-top:32px}
+}
+@media (max-width:640px){
+  .ih-ai{margin-top:64px;border-radius:var(--r-blk)}
+  /* phones: one demo panel per idea (owner 2026-10-31; the page ran ~11,000px at 390).
+     The chat beside the reading, the status strip (also in the FAQ), the two read visuals
+     and the meeting summary list repeat what the text above them already says. */
+  .ih-aiv-dec,.ih-track,.ih-vis,.ih-mt-lim{display:none}
+  .ih-mw-stage{grid-template-columns:minmax(0,1fr);grid-template-rows:240px;height:auto}
+  .ih-mw-p{display:none}
+  .ih-mw-bar{flex-wrap:wrap;height:auto;padding:10px 14px;row-gap:6px}
+  .ih-mw-bar .tag{margin-left:0}
+}
+@media (prefers-reduced-motion:reduce){
+  .ih-doc .ih-note,.ih-doc .ih-note::before,.ih-doc .ih-note::after,.ih-doc .ih-hl{transition:none!important}
+}
+/* touch: full hit area, same font and padding (mirrors app.css) */
+@media (pointer:coarse){
+  .ih-aiv-tabs button{min-height:44px}
+}

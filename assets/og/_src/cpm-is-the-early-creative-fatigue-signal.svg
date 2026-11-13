@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" preserveAspectRatio="xMidYMid slice"><defs>
+    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M36 0 H0 V36" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="vign" cx="50%" cy="18%" r="90%">
+      <stop offset="0%" stop-color="#1A2C34" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#101C22" stop-opacity="1"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#vign)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <!-- corner structure ticks -->
+  <path d="M60 60 h24 M60 60 v24" stroke="rgba(255,255,255,0.22)" stroke-width="2" fill="none"/>
+  <path d="M1140 570 h-24 M1140 570 v-24" stroke="rgba(255,255,255,0.22)" stroke-width="2" fill="none"/>
+  <text x="72" y="98" font-family="Switzer,sans-serif" font-size="21" font-weight="600" letter-spacing="3.6" fill="#ffffff">CREATIVE FATIGUE</text>
+  <rect x="72" y="114" width="58" height="3" rx="1.5" fill="#ffffff"/>
+  <text x="402" y="98" font-family="Switzer,sans-serif" font-size="15" letter-spacing="1.5" fill="rgba(255,255,255,0.62)">5 min read</text><text x="72" y="204" font-family="Switzer,sans-serif" font-size="58" font-weight="600" letter-spacing="-2" fill="#ffffff"><tspan>Frequency lags.</tspan></text>
+<text x="72" y="270" font-family="Switzer,sans-serif" font-size="58" font-weight="600" letter-spacing="-2" fill="#ffffff"><tspan>Watch the </tspan><tspan font-family="Switzer,sans-serif" font-style="normal" font-weight="500" fill="#63B5A7">CPM</tspan><tspan>.</tspan></text><g transform="translate(668,134)">
+    <line x1="0" y1="40" x2="452" y2="40" stroke="rgba(255,255,255,0.07)" stroke-width="1.4"/><line x1="0" y1="110" x2="452" y2="110" stroke="rgba(255,255,255,0.07)" stroke-width="1.4"/><line x1="0" y1="180" x2="452" y2="180" stroke="rgba(255,255,255,0.07)" stroke-width="1.4"/><line x1="0" y1="250" x2="452" y2="250" stroke="rgba(255,255,255,0.07)" stroke-width="1.4"/>
+    <line x1="0" y1="0" x2="0" y2="262" stroke="rgba(255,255,255,0.22)" stroke-width="2"/>
+    <path d="M0 244 C90 236 150 150 232 118 S372 40 452 26" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="232" cy="118" r="10" fill="#ffffff"/><circle cx="232" cy="118" r="19" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.4"/>
+    <path d="M0 256 C150 256 258 250 330 224 S424 150 452 88" fill="none" stroke="rgba(255,255,255,0.30)" stroke-width="4" stroke-dasharray="3 9" stroke-linecap="round"/>
+    <g transform="translate(238,74)"><rect width="150" height="34" rx="9" fill="rgba(255,255,255,0.22)"/><text x="15" y="22" font-family="Switzer,sans-serif" font-size="15" font-weight="600" fill="#ffffff">CPM · early</text></g>
+    <text x="318" y="286" font-family="Switzer,sans-serif" font-size="14" fill="rgba(255,255,255,0.62)">frequency · lags</text>
+    <text x="8" y="286" font-family="Switzer,sans-serif" font-size="13" fill="rgba(255,255,255,0.62)">cost →</text>
+  </g>
+  <g transform="translate(958,551)"><g transform="scale(0.2235) translate(-13,-4)"><path d="M14 140 L85 6 L156 140 L128 140 L85 58 L42 140 Z" fill="#63B5A7"/><path d="M50 140 L85 72 L120 140 L96 140 L85 118 L74 140 Z" fill="#63B5A7"/><path d="M18 153 L152 153" stroke="#63B5A7" stroke-width="9" stroke-linecap="round"/></g><text x="44" y="27" font-family="Switzer,sans-serif" font-size="25" font-weight="600" letter-spacing="-0.5" fill="#F6F5F4">Adgent</text></g></svg>

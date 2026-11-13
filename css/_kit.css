@@ -1,0 +1,12 @@
+/* /_kit only: labels and swatches for the component gallery. Never used by a page. */
+.kit-l{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px;margin:56px 0 16px;padding-top:18px;border-top:1px solid var(--line);font-size:13px;color:var(--ink-2)}
+.kit-l:first-child{margin-top:0}
+.kit-l b{font-size:15px;font-weight:500;color:var(--ink)}
+.kit-l code{font-size:12px;padding:2px 7px;border-radius:6px;background:var(--grey);color:var(--ink)}
+.kit-sw{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.kit-sw div{height:92px;padding:12px 14px;border-radius:18px;display:flex;flex-direction:column;justify-content:flex-end;font-size:12.5px;box-shadow:inset 0 0 0 1px var(--line)}
+.kit-sw b{font-weight:500}
+.kit-type>*+*{margin-top:18px}
+.kit-row{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.kit-pad{padding:28px;border-radius:var(--r-blk)}
+.lede code,.sub code,.kit-l+* code{font-size:.85em;padding:1px 6px;border-radius:6px;background:var(--grey)}

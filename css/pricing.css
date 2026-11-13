@@ -1,0 +1,26 @@
+/* Talk to sales · workflow conversation. Tokens only; classes prefixed pr-. */
+
+.pr-hero{padding:56px 0 8px}
+.pr-hero-in{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:56px;align-items:center}
+.pr-hero .display{max-width:15ch}
+.pr-hero .lede{margin-top:22px;max-width:50ch}
+.pr-qf{margin-top:30px}
+
+/* A discussion sheet in the existing visual language. */
+.pr-sheet{position:relative;padding:22px 24px 24px;border-radius:var(--r-blk);background:var(--card);box-shadow:var(--shadow);transform:rotate(.6deg)}
+.pr-sheet-h{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--line);font-size:var(--fs-xs);color:var(--ink-3)}
+.pr-rows>div{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:14px}
+.pr-rows dt{color:var(--ink-2)}
+.pr-rows dd{margin:0;font-weight:500;text-align:right;text-wrap:balance}
+.pr-note{margin-top:18px;font-size:14px;line-height:1.5;color:var(--ink-2)}
+@media (max-width:1100px){
+  .pr-hero-in{grid-template-columns:1fr;gap:40px}
+  .pr-sheet{max-width:520px;transform:none}
+}
+@media (max-width:860px){
+  .pr-hero{padding:44px 0 8px}
+}
+@media (max-width:520px){
+  .pr-rows>div{flex-direction:column;gap:2px}
+  .pr-rows dd{text-align:left}
+}

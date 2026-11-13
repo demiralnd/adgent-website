@@ -1,8 +1,8 @@
-# Adgent — all crawlers welcome, including AI answer engines (GEO).
+# Adgent: all crawlers welcome, including AI answer engines (GEO).
 User-agent: *
 Allow: /
 
-# AI / answer-engine crawlers — explicitly allowed so Adgent can be cited.
+# AI / answer-engine crawlers: explicitly allowed so Adgent can be cited.
 User-agent: GPTBot
 Allow: /
 User-agent: OAI-SearchBot
@@ -35,8 +35,8 @@ User-agent: Meta-ExternalAgent
 Allow: /
 
 # LLM-friendly plain text for AI answer engines (GEO):
-#   https://adgent.app/llms.txt       — index
-#   https://adgent.app/llms-full.txt  — full content of every page
+#   https://adgent.app/llms.txt      : index
+#   https://adgent.app/llms-full.txt : full content of every page
 # Kept as a comment deliberately: LLM-Content / LLM-Full-Content are not robots.txt
 # directives (RFC 9309), no crawler reads them, and Search Console + Lighthouse both
 # report them as "Unknown directive". Serving the files at the site root is the

@@ -1,624 +1,856 @@
 #!/usr/bin/env python3
+"""Adgent v2 · the build step.
+
+Pages carry markers; the shared chrome is regenerated into them from
+`_partials/`, the derived part of every <head> is generated from the page's
+own hand-written head and body, and the crawler surfaces are generated from
+the pages. Nothing here talks to a network and nothing deploys.
+
+    python3 build.py            # regenerate every page + sitemap, feed, llms
+    python3 build.py --check    # exit 1 if anything is stale or audit() fails
+
+What a page owns, and what the build owns
+-----------------------------------------
+Hand-written in each page's <head> (edit it there):
+    <meta name="robots">, <title>, <meta name="description">, canonical,
+    og:type, og:site_name, og:title, og:description, stylesheets.
+Generated into `<!--#seo-->…<!--/#seo-->` (never edit inside the markers):
+    og:locale/url/image(+size, alt), article:* dates, twitter:*, the feed
+    link, JSON-LD (Organization + WebSite once each, the page node, the
+    breadcrumb, a FAQPage built from the page's own visible FAQ), and the
+    consent/measurement script `site.js`.
+Generated files: sitemap.xml, feed.xml, llms.txt (the preamble above the
+first "## " is hand-written and kept), llms-full.txt, .lastmod.json.
+
+Ported from the live site's build.py (adgent-website, 2026-10-03) on
+2026-10-11: the generators and the audit() gate keep live's numbered checks
+and add v2's own (13-17). Pages whose file name starts with `_` (the
+component kit) are never built; `serve.py` renders them in memory.
 """
-build.py — the site's build step.
-
-Static HTML, no framework. Without this, every page carries its own copy of the header,
-mobile menu and footer, and the copies drift: on 2026-08-01 the footer brand line existed in 18
-variants and 59 of 63 pages had dead social links.
-
-One source of truth per block, in _partials/:
-    header.en.html  mobile.en.html  footer.en.html
-
-Pages carry markers instead of copies:
-    <!--#header-->  (regenerated)  <!--/#header-->
-
-    python3 build.py --check   # fail if any page is stale — run before deploy
-    python3 build.py           # regenerate every page + sitemap.xml
-
-class="active" is re-applied per page from its filename. Never hand-edit it, and never
-hand-edit the nav or footer inside a page — edit _partials/ and rebuild.
-
-The site is English-only. The Turkish locale was removed on 2026-08-01; audit() still
-guards against a stray hreflang reappearing.
-"""
-import re, sys, os, glob, io, json, hashlib, datetime, html as H
+import datetime
+import glob
+import hashlib
+import html as H
+import io
+import json
+import os
+import re
+import struct
+import sys
+from html.parser import HTMLParser
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 PARTIALS = os.path.join(ROOT, "_partials")
-SKIP = {"blog-post"}
-# Pages that live in a subdirectory, so the root glob never sees them.
-# `demo` was pulled from the site on 2026-09-09 — the page still exists on disk
-# but nothing links it and it is out of the sitemap and llms.txt. Re-adding it
-# is this list, _PRIO, _LLMS_GROUPS and the three _partials entries.
-EXTRA_SLUGS = []
-# media-planning folded into built-from-chat on 2026-08-16 — the old URL 301s
-# in vercel.json, so it must not reappear here or the nav will link to a redirect.
-FEATURE_SLUGS = ["daily-verdict", "ground-truth", "trust-gate", "creative-intelligence",
-                 "change-ledger", "account-memory", "built-from-chat"]
-NAV_SLUGS = ({"", "features", "why-adgent", "security", "data-use", "data-deletion",
-              "for-agencies", "for-in-house", "pricing", "about", "blog"}
-             | set(FEATURE_SLUGS))
-BLOCKS = ["header", "mobile", "footer"]
-LEGACY = {"header": r"<header.*?</header>",
-          "mobile": r'<div class="mobile-menu">.*?</div>\s*(?=<!--|\s*<section|\s*<article|\s*<main)',
-          "footer": r'<footer class="footer">.*?</footer>'}
+BASE = "https://adgent.app"
+BLOCKS = ("header", "drawer", "footer")
+# active state is marked in these partials only (the footer stays neutral)
+NAV_BLOCKS = ("header", "drawer")
 
-read  = lambda p: io.open(p, encoding="utf-8").read()
+PRODUCT = (
+    "daily-verdict", "trust-gate", "change-ledger", "platform-change-log",
+    "account-memory", "ground-truth", "agents", "specialists", "campaign-build",
+    "planning", "dashboards", "meetings", "creative-intelligence", "ai-visibility", "features",
+)
+SOLUTIONS = (
+    "for-agencies", "for-in-house", "ecommerce", "lead-generation",
+    "travel-hospitality", "marketplaces", "local-multi-location", "mobile-apps",
+    "security",
+)
+TOP = ("pricing", "blog", "about")
+
+# slug -> (href to mark active, dropdown parent or None)
+NAV = {s: ("/" + s, "product") for s in PRODUCT}
+NAV.update({s: ("/" + s, "solutions") for s in SOLUTIONS})
+NAV.update({s: ("/" + s, None) for s in TOP})
+
+# The only page allowed to tell robots to stay away. Every other built page is
+# production and must be indexable (audit check 13).
+NOINDEX_OK = {"404"}
+
+read = lambda p: io.open(p, encoding="utf-8").read()
 write = lambda p, s: io.open(p, "w", encoding="utf-8").write(s)
-partial = lambda b: read(os.path.join(PARTIALS, f"{b}.en.html")).rstrip()
 
 
-def with_active(html, slug):
-    if slug in SKIP or (slug != "index" and slug not in NAV_SLUGS):
-        return html
-    href = "/" if slug == "index" else f"/{slug}"
-    return re.sub(r'(<a href="%s")(?![^>]*class=)' % re.escape(href),
-                  r'\1 class="active"', html, count=1)
+def partial(name):
+    return read(os.path.join(PARTIALS, name + ".html")).rstrip()
 
 
-def main_landmark(html):
-    """Wrap the page body in <main id="main">.
-
-    Everything between the mobile menu and the footer IS the page content, so
-    the wrapper can be derived rather than hand-maintained — which also means
-    new pages get it for free. Without it a screen-reader user has to walk the
-    whole nav on every page, and the skip link has nothing to skip to.
-    """
-    start = html.find("<!--/#mobile-->")
-    end = html.find("<!--#footer-->")
-    if start == -1 or end == -1 or end < start:
-        return html                      # unusual page shape — leave it alone
-    start += len("<!--/#mobile-->")
-    inner = html[start:end]
-    if "<main" in inner:                 # already wrapped: refresh nothing
-        return html
-    # tabindex="-1" so the skip link actually moves focus, not just the
-    # scroll position — without it the next Tab returns to the nav.
-    return (html[:start] + '<main id="main" tabindex="-1">' + inner.rstrip()
-            + "\n</main>\n" + html[end:])
+def is_article(html):
+    return re.search(r'<meta property="og:type" content="article"', html) is not None
 
 
-def asset_stamp(name):
-    """Content hash for /site.css and /site.js.
+def nav_for(slug, html):
+    """Blog articles light up Blog; everything else uses NAV."""
+    if slug in NAV:
+        return NAV[slug]
+    if is_article(html):
+        return ("/blog", None)
+    return None
 
-    Both are served with `max-age=14400`, so a visitor who loaded the site in
-    the last four hours keeps the old stylesheet after a deploy — which shows
-    up as a layout that is broken for them and fine for everyone else, and is
-    impossible to reproduce. Stamping the URL with the file's own hash means a
-    changed file is a changed URL, and the cached copy is never the wrong one.
-    """
-    path = os.path.join(ROOT, name)
+
+def mark_active(body, nav):
+    if not nav:
+        return body
+    href, parent = nav
+    body = re.sub(r'<a href="' + re.escape(href) + r'"(?=[ >])',
+                  '<a href="' + href + '" class="active" aria-current="page"', body)
+    if parent:
+        body = body.replace('class="drop-t" data-drop="' + parent + '"',
+                            'class="drop-t active" data-drop="' + parent + '"')
+    return body
+
+
+def digest(rel):
+    """First 8 hex of the file's sha256, or None when the file does not exist."""
+    path = os.path.join(ROOT, rel.lstrip("/"))
     if not os.path.exists(path):
-        return ""
-    import hashlib
-    h = hashlib.sha256(io.open(path, "rb").read()).hexdigest()[:8]
-    return "?v=" + h
+        return None
+    return hashlib.sha256(io.open(path, "rb").read()).hexdigest()[:8]
 
 
-def stamp_og(html):
-    """Stamp og:image / twitter:image with the card's own content hash.
-
-    Same reason as asset_stamp, one layer meaner. `/assets/:path*` is served
-    `max-age=604800`, and Cloudflare caches the **response**, including a 404.
-    The 27 new cards were probed on 2026-09-09 while they did not exist yet, so
-    the edge held a 404 for each of them — and it was still serving that 404
-    minutes after the deploy that added the files (`age: 100274`,
-    `cf-cache-status: HIT`, while the same URL with a query string answered 200
-    and 280 KB of PNG). A social crawler would have got a blank card for a week.
-
-    A stamped URL is a different cache key, so it cannot inherit a stale answer,
-    and the next time a card's art changes the preview changes with it instead of
-    a week later. There is no purge in this repo: we do not hold a Cloudflare
-    token, and the fix should not need one.
-    """
-    def stamp(m):
-        head, path = m.group(1), m.group(2)
-        if not os.path.exists(os.path.join(ROOT, path.lstrip("/"))):
-            return m.group(0)
-        return f'{head}https://adgent.app{path}{asset_stamp(path.lstrip("/"))}"'
-
-    return re.sub(
-        r'(<meta (?:property="og:image"|name="twitter:image") content=")'
-        r'https://adgent\.app(/assets/og/[^"?]+)"', stamp, html)
+ASSET = re.compile(r'((?:href|src|poster)=")(/[^"?#]+\.(?:css|js|png|jpe?g|webp|avif|svg|gif|mp4|webm|woff2?))(\?v=[0-9a-f]+)?(")')
+SRCSET = re.compile(r'(\bsrcset=")([^"]*)(")')
 
 
-def twitter_card(html):
-    """Mirror og:title / og:description into twitter:* when they are missing.
+def stamp(html):
+    """Content-stamp local code, media and responsive image candidates. Fonts
+    are the exception: tokens.css names them unstamped in @font-face url(), and
+    a preload only counts when its URL is byte-identical to the one the CSS
+    requests, so a stamped preload made every page fetch each face twice.
+    Faces are versioned by file name and sit under /assets (7d + SWR)."""
+    def repl(m):
+        h = None if m.group(2).endswith((".woff", ".woff2")) else digest(m.group(2))
+        if not h:
+            return m.group(1) + m.group(2) + m.group(4)
+        return m.group(1) + m.group(2) + "?v=" + h + m.group(4)
+    html = ASSET.sub(repl, html)
 
-    Twenty-five pages declared twitter:card and twitter:image but neither text
-    tag. X falls back to og:*, but Slack, LinkedIn and Discord are less reliable
-    about it — and on the pages where og:description is deliberately shorter
-    than the meta description, the fallback is not the copy anyone chose. The
-    articles already do this correctly; deriving it here closes the gap without
-    touching 25 heads by hand, and a new page inherits it.
-    """
-    head_end = html.find("</head>")
-    if head_end == -1 or "twitter:card" not in html[:head_end]:
-        return html
-    head = html[:head_end]
-    if "twitter:title" in head and "twitter:description" in head:
-        return html
-
-    def og(prop):
-        m = re.search(r'<meta property="og:%s" content="([^"]*)"' % prop, head)
-        return m.group(1) if m else None
-
-    add = []
-    if "twitter:title" not in head and og("title"):
-        add.append('<meta name="twitter:title" content="%s"/>' % og("title"))
-    if "twitter:description" not in head and og("description"):
-        add.append('<meta name="twitter:description" content="%s"/>' % og("description"))
-    if not add:
-        return html
-    # sit them beside the card/image tags they belong with
-    anchor = re.search(r'<meta name="twitter:card"[^>]*/?>', head)
-    at = anchor.end() if anchor else head_end
-    return html[:at] + "\n" + "\n".join(add) + html[at:]
+    def candidates(m):
+        items = []
+        for candidate in m.group(2).split(","):
+            parts = candidate.strip().split()
+            if parts and parts[0].startswith("/"):
+                path = re.sub(r"\?v=[0-9a-f]+$", "", parts[0])
+                h = digest(path)
+                parts[0] = path + ("?v=" + h if h else "")
+            items.append(" ".join(parts))
+        return m.group(1) + ", ".join(items) + m.group(3)
+    return SRCSET.sub(candidates, html)
 
 
-def feed_link(html):
-    """Advertise /feed.xml from every page's <head>.
+# ------------------------------------------------------------ the derived head
+# The live site's heads drifted because a <head> has no owner: on 2026-09-02
+# half of them lacked og:locale, a feed link or an @id'd Organization. Here the
+# hand-written part is the copy (title, description, og:title/description) and
+# everything derivable from it is generated, so a new page inherits it.
+SEO = re.compile(r"\n?<!--#seo-->.*?<!--/#seo-->", re.S)
+FEED_TITLE = "The Adgent blog"
+FEED_LINK = '<link rel="alternate" type="application/rss+xml" title="%s" href="/feed.xml"/>' % FEED_TITLE
+# llms.txt is otherwise unreferenced from HTML (robots.txt only mentions it in a comment).
+LLMS_LINK = '<link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt"/>'
+CARDS = os.path.join(ROOT, "assets", "og", "_cards.json")
 
-    Site-wide rather than blog-only on purpose: `rel="alternate"` is how a
-    reader, an aggregator or an answer engine discovers the feed from whatever
-    page it happens to land on, and putting it in one place makes it one more
-    head that drifts. Anchored after the canonical, which every page has and
-    `audit()` check 3 keeps self-referencing.
-    """
-    head_end = html.find("</head>")
-    if head_end == -1 or 'type="application/rss+xml"' in html[:head_end]:
-        return html
-    anchor = re.search(r'<link rel="canonical"[^>]*/?>', html[:head_end])
-    at = anchor.end() if anchor else head_end
-    return html[:at] + "\n" + FEED_LINK + html[at:]
+# The brand description is the owner's category decision (gtm/03 2026-10-14), cut to current scope.
+ORG_DESCRIPTION = ("Adgent is the AI employee for enterprise growth teams. It carries confirmed "
+                   "brand context, connected data, past decisions, reasoning and outcomes into each "
+                   "analysis, report, dashboard and account move.")
+ORGANIZATION = {
+    "@type": "Organization",
+    "@id": BASE + "/#organization",
+    "name": "Adgent",
+    "url": BASE,
+    "logo": {"@type": "ImageObject", "url": BASE + "/assets/logo.svg"},
+    "description": ORG_DESCRIPTION,
+    "knowsAbout": ["AI media buying", "Meta Ads", "Google Ads", "ad account audits",
+                   "performance marketing", "creative analysis", "AI search visibility"],
+    "sameAs": ["https://www.linkedin.com/company/adgentapp/",
+               "https://www.instagram.com/adgentapp/",
+               "https://x.com/adgentapp",
+               "https://www.youtube.com/@adgentapp"],
+    "areaServed": ["TR", "Worldwide"],
+    "email": "osman@adgent.app",
+    "address": {"@type": "PostalAddress", "addressCountry": "TR"},
+}
+# The operator's legal name and phone belong to the page that states them (as on live), not to
+# every page: they are the sole proprietor's own (the address stays unpublished by decision).
+ORGANIZATION_LEGAL = {"business-information": {"legalName": "Osman Tıkna",
+                                               "telephone": "+905309189544"}}
+WEBSITE = {
+    "@type": "WebSite",
+    "@id": BASE + "/#website",
+    "name": "Adgent",
+    "alternateName": ["adgent.app", "Adgent: the AI employee for enterprise growth teams"],
+    "url": BASE + "/",
+    "inLanguage": "en",
+    "publisher": {"@id": BASE + "/#organization"},
+}
+# One product entity, declared in full on the home, product and solution pages (live carried it on
+# 16 of them). Every feature named here has its own page on the site and is live.
+SOFTWARE = {
+    "@type": "SoftwareApplication",
+    "@id": BASE + "/#software",
+    "name": "Adgent",
+    "url": BASE + "/",
+    "applicationCategory": "BusinessApplication",
+    "applicationSubCategory": "Marketing",
+    "operatingSystem": "Web",
+    "description": ORG_DESCRIPTION,
+    "image": BASE + "/assets/og/index.png",
+    "featureList": [
+        "Decisions across Meta and Google Ads, ranked by what each is worth, with the evidence under it",
+        "Account moves prepared with supporting evidence and recorded in the Change Ledger",
+        "Change Ledger: every applied change with the value it replaced",
+        "Platform change log: edits made directly in Meta or Google Ads, recorded",
+        "Account memory: the brand's rules and exceptions, explained once",
+        "Read-only context from GA4, Search Console, Merchant Center and Google Drive",
+        "Agents described in a sentence, run on a condition, an event or a schedule",
+        "Ten built-in specialists, one lever each",
+        "Campaign builds, plans and dashboards drafted end to end from one sentence",
+        "Creative analysis: the hook, concept, format and angle of running ads",
+        "AI Visibility: whether ChatGPT, Gemini, Google AI Mode and AI Overviews name a brand",
+    ],
+    "publisher": {"@id": BASE + "/#organization"},
+}
+SOFTWARE_PAGES = {"index", "why-adgent"} | set(PRODUCT) | (set(SOLUTIONS) - {"security"})
+PAGE_TYPE = {
+    "about": "AboutPage", "blog": "Blog", "tools": "CollectionPage",
+    "break-even-roas-calculator": "WebApplication",
+    "conversion-signal-check": "WebApplication",
+}
+# BlogPosting keywords + about, carried over from the live articles' JSON-LD (2026-10-11).
+ARTICLE_TOPICS = {
+    "11-11-vs-black-friday-turkey": ("11.11 vs Black Friday in Turkey, Singles Day Türkiye, November ecommerce statistics, Google Trends product searches, marketplace transactions", "11.11 and Black Friday in Türkiye"),
+    "ai-media-buyer-for-agencies": ("ai tool for media buying agencies, ai media buyer agency, ai for ad agencies, agency reporting automation", "AI media buying for agencies"),
+    "ai-media-buyer-vs-performance-max-vs-dashboard": ("ai media buyer vs performance max, performance max vs dashboard, ai media buyer comparison, platform ai vs ai media buyer", "AI media buying"),
+    "attribution-window-day-one-data": ("meta ads attribution window, 7-day click attribution, day one ROAS, attribution lag, when to pause a campaign", "Ad platform attribution"),
+    "can-ai-audit-your-ad-accounts": ("is there an ai that audits ad accounts, ai ad account audit, ai audit google ads, ai audit meta ads", "AI ad account audit"),
+    "can-ai-run-your-ad-account": ("can ai manage google ads, can ai run ads, ai run ad account, ai manage meta ads", "AI ad account management"),
+    "cbo-vs-abo-vs-advantage-plus": ("cbo vs abo, campaign budget optimization, ad set budget optimization, advantage plus vs manual, meta budget optimization 2026", "Meta budget optimization"),
+    "cpm-is-the-early-creative-fatigue-signal": ("creative fatigue meta ads, ad frequency, CPM rising, when to refresh creative, ad fatigue signals", "Creative fatigue"),
+    "cross-platform-comparability-meta-google": ("meta vs google ROAS, comparing ad platforms, attribution model differences, budget allocation across channels", "Comparing Meta and Google Ads results"),
+    "google-ads-account-structure-2026": ("google ads account structure 2026, google ads campaign structure, single theme ad groups, how to structure google ads", "Google Ads account structure"),
+    "google-ads-target-cpa-roas-change-2026": ("google ads target cpa change 2026, target roas change 2026, google ads bidding change, cpa rising google ads", "Google Ads Target CPA bidding change"),
+    "how-much-ad-spend-is-wasted": ("wasted ad spend, reduce wasted ad spend, how much ad spend is wasted, recoverable ad spend, google ads waste", "Wasted ad spend"),
+    "how-to-audit-a-google-ads-account": ("google ads account audit, ad account audit, audit google ads account, ppc audit checklist", "Google Ads account audit"),
+    "how-to-audit-performance-max": ("performance max audit, pmax audit, performance max not converting, audit performance max campaign", "Performance Max audit"),
+    "how-to-choose-an-ai-media-buying-tool": ("best ai media buyer tool, ai tools for performance marketers, ai tool for a media buying agency, ai media buying software", "AI media buying tools"),
+    "meta-ads-account-audit-checklist": ("meta ads audit, facebook ads audit checklist, meta ads account audit, how to audit facebook ads", "Meta Ads account audit"),
+    "meta-vs-google-ads-which-first": ("meta vs google ads, facebook vs google ads, which is better meta or google, meta or google ads first", "Meta Ads vs Google Ads"),
+    "performance-max-brand-cannibalization": ("performance max brand cannibalization, pmax branded search, exclude brand performance max", "Performance Max brand cannibalization"),
+    "performance-max-not-spending-budget": ("performance max not spending budget, pmax not spending, performance max low traffic, pmax budget not spent", "Performance Max budget pacing"),
+    "placement-drift-the-leak-in-the-average": ("placement drift, advantage plus placements, blended ROAS, audience network performance, meta ads placement breakdown", "Meta Ads placements"),
+    "scale-a-winner-without-breaking-it": ("scaling meta ads, learning phase reset, budget increase meta ads, horizontal vs vertical scaling", "Scaling Meta Ads"),
+    "what-is-an-ai-media-buyer": ("ai media buyer, ai media buying, ai ad account audit, ai marketing agent for ad accounts", "AI media buying"),
+    "why-adgent-leads-with-the-verdict": ("conclusion first reporting, marketing dashboard problem, ad reporting design, decision-ready reporting", "Decision-first ad reporting"),
+    "why-did-my-cpa-jump": ("cpa suddenly increased, cpa spike, why did my cpa go up, cost per acquisition jumped", "Cost per acquisition"),
+    "why-is-my-meta-roas-dropping": ("why is my meta roas dropping, meta ads roas drop, roas dropping when scaling, meta roas diagnosis", "Meta ROAS diagnosis"),
+}
 
 
-def stamp_assets(html):
-    #  tokens.css is stamped too: site.css now reads variables that only exist
-    #  in the newer tokens.css (--accent-fill), and an unstamped tokens.css can
-    #  be served from cache next to a fresh site.css — which resolves those
-    #  vars to nothing and paints buttons transparent.
-    for name in ("tokens.css", "site.css", "site.js"):
-        # the stylesheets are served from their comment-stripped copies; the URL
-        # in the page never changes, only what it points at
-        served = name[:-4] + ".min.css" if name in SERVED_CSS and \
-            os.path.exists(os.path.join(ROOT, name[:-4] + ".min.css")) else name
-        v = asset_stamp(served)
-        if not v:
-            continue
-        # rewrite whether it is bare or already stamped, so re-running is safe
-        html = re.sub(r'(["\'])/(?:%s|%s)(\?v=[a-f0-9]+)?\1'
-                      % (re.escape(name), re.escape(served)),
-                      lambda m: m.group(1) + "/" + served + v + m.group(1), html)
-    return html
+def head_of(html):
+    return html.split("</head>", 1)[0]
 
 
-def gate_analytics(html):
-    """Remove legacy tags; site.js loads measurement only after consent."""
-    html = re.sub(
-        r'\s*<!-- Google tag \(gtag\.js\) -->.*?<!-- End Google Tag Manager -->\s*',
-        '\n', html, flags=re.S)
-    return re.sub(
-        r'\s*<!-- Google Tag Manager \(noscript\) -->.*?'
-        r'<!-- End Google Tag Manager \(noscript\) -->\s*',
-        '\n', html, flags=re.S)
+def head_meta(head, name):
+    """Text of a hand-written head field, unescaped. `name` is title|description|og:*."""
+    if name == "title":
+        m = re.search(r"<title>(.*?)</title>", head, re.S)
+    elif name.startswith("og:"):
+        m = re.search(r'<meta property="%s" content="([^"]*)"' % re.escape(name), head)
+    else:
+        m = re.search(r'<meta name="%s" content="([^"]*)"' % re.escape(name), head)
+    return H.unescape(re.sub(r"\s+", " ", m.group(1)).strip()) if m else ""
 
 
-def mark_figures(html):
-    """Stamp data-anim on every content figure, so it inherits entry motion.
+def esc(s):
+    """Attribute-safe: every value sits in double quotes, so apostrophes stay readable."""
+    return H.escape(s, quote=False).replace('"', "&quot;")
 
-    The animation lives entirely in site.css under `[data-anim] … [data-anim].in`,
-    keyed off the class the existing reveal observer already adds. Marking the
-    figures here rather than by hand means a new page — or a new chart on an old
-    page — animates for free, and nobody has to remember the attribute.
 
-    Deliberately skipped: the nav/footer blocks (regenerated above, and their
-    little glyphs are decoration, not argument) and pure icons, which have no
-    internal order worth revealing. A figure already carrying data-anim is left
-    as it is, so a hand-tuned exception survives a rebuild.
-    """
-    start = html.find('<!--/#mobile-->')
-    end = html.find('<!--#footer-->')
-    if start == -1 or end == -1 or end < start:
-        return html
-    head, body, tail = html[:start], html[start:end], html[end:]
+def canonical(slug):
+    return BASE + "/" if slug == "index" else BASE + "/" + slug
 
-    ICON_BOXES = ('0 0 24 24', '0 0 20 20', '0 0 16 16', '0 0 12 8')
 
-    def stamp(m):
-        tag = m.group(0)
-        if 'data-anim' in tag:
-            return tag
-        vb = re.search(r'viewBox="([^"]+)"', tag)
-        if not vb or vb.group(1).strip() in ICON_BOXES:
-            return tag
-        # an ornament (a caret, a tick, a 18x8 arrow) has no internal order to
-        # reveal; animating it just makes small marks flicker on scroll
+def cards():
+    try:
+        return json.loads(read(CARDS))
+    except (OSError, ValueError):
+        return {}
+
+
+def text_of(fragment):
+    t = re.sub(r"<[^>]+>", " ", fragment)
+    return re.sub(r"\s+", " ", H.unescape(t)).strip()
+
+
+def main_of(html):
+    m = re.search(r"<main\b[^>]*>(.*?)</main>", html, re.S)
+    return m.group(1) if m else ""
+
+
+class FAQParser(HTMLParser):
+    """Extract fields inside one details item in the site's .qa container."""
+    VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input",
+            "link", "meta", "param", "source", "track", "wbr"}
+
+    def __init__(self, source):
+        super().__init__(convert_charrefs=False)
+        self.source = source
+        self.offsets = [0]
+        for line in source.splitlines(keepends=True):
+            self.offsets.append(self.offsets[-1] + len(line))
+        self.stack = []
+        self.item = None
+        self.field = None
+        self.pairs = []
+        self.spans = []
+
+    def source_position(self):
+        line, column = self.getpos()
+        return self.offsets[line - 1] + column
+
+    def handle_starttag(self, tag, attrs):
+        attrs = dict(attrs)
+        if tag in self.VOID:
+            return
+        classes = set(attrs.get("class", "").split())
+        in_qa = any("qa" in entry[1] for entry in self.stack)
+        self.stack.append((tag, classes))
+        depth = len(self.stack)
+        if tag == "details" and in_qa and self.item is None:
+            self.item = {"depth": depth, "start": self.source_position(), "q": "", "a": ""}
+        elif self.item and depth == self.item["depth"] + 1:
+            field = "q" if tag == "summary" else "a" if "a" in classes else None
+            if field:
+                self.field = (field, depth, self.source_position() + len(self.get_starttag_text()))
+
+    def handle_startendtag(self, tag, attrs):
+        if tag not in self.VOID:
+            self.handle_starttag(tag, attrs)
+            self.handle_endtag(tag)
+
+    def handle_endtag(self, tag):
+        if not self.stack or tag != self.stack[-1][0]:
+            return
+        depth = len(self.stack)
+        if self.field and self.field[1] == depth:
+            key, _, start = self.field
+            self.item[key] = self.source[start:self.source_position()]
+            self.field = None
+        if self.item and self.item["depth"] == depth:
+            q, a = self.item["q"], self.item["a"]
+            if q and a:
+                self.pairs.append((q, a))
+                self.spans.append((self.item["start"], self.source_position() + len("</details>")))
+            self.item = None
+        self.stack.pop()
+
+
+# A link that is the whole last sentence of an answer ("... you approve first. Trust Gate") is a
+# signpost for the reader, not part of the answer; quoted verbatim by an answer engine it reads as
+# a stray label. The `.go` arrow links are signposts wherever they sit.
+GO_LINK = re.compile(r'<a\b[^>]*\bclass="[^"]*\bgo\b[^"]*"[^>]*>.*?</a>', re.S)
+TRAILING_LINK = re.compile(r'(?<=[.?!])\s*<a\b[^>]*>(?:(?!</a>).)*</a>\s*\.?\s*$', re.S)
+
+
+def faq(html):
+    """(question, answer) pairs from the page's own visible FAQ, so the
+    structured data can never claim an answer the page does not show."""
+    parser = FAQParser(main_of(html))
+    parser.feed(parser.source)
+    return [(text_of(q), text_of(TRAILING_LINK.sub("", GO_LINK.sub(" ", a)).strip()))
+            for q, a in parser.pairs]
+
+
+def _date(text):
+    for fmt in ("%d %B %Y", "%d %b %Y"):
         try:
-            _, _, vw, vh = [float(v) for v in vb.group(1).split()]
+            return datetime.datetime.strptime(text.strip(), fmt).date().isoformat()
         except ValueError:
-            return tag
-        if vw < 60 or vh < 40:
-            return tag
-        return tag[:-1].rstrip() + ' data-anim>'
-
-    # only the opening <svg …> tag of each figure
-    body = re.sub(r'<svg\b[^>]*>', stamp, body)
-    return head + body + tail
+            pass
+    return None
 
 
-def render(html, slug):
-    html = gate_analytics(html)
-    for block in BLOCKS:
-        body = with_active(partial(block), slug)
-        repl = f"<!--#{block}-->{body}<!--/#{block}-->"
-        marked = re.compile(r"<!--#%s-->.*?<!--/#%s-->" % (block, block), re.S)
-        if marked.search(html):
-            html = marked.sub(lambda _: repl, html, count=1)
+def article_meta(html):
+    """Published / Updated / Topic from the article's visible meta list."""
+    def dd(label):
+        m = re.search(r"<dt>%s</dt>\s*<dd>(.*?)</dd>" % label, html, re.S)
+        return text_of(m.group(1)) if m else ""
+    published = _date(dd("Published") or "")
+    updated = _date(dd("Updated") or "") or published
+    return published, updated, dd("Topic")
+
+
+def short_name(head):
+    """og:title without the brand, for breadcrumbs and JSON-LD names."""
+    t = head_meta(head, "og:title") or head_meta(head, "title")
+    return re.sub(r"^Adgent · |\s*· Adgent$", "", t)
+
+
+def card_url(slug):
+    rel = "/assets/og/%s.png" % slug
+    h = digest(rel)
+    return BASE + rel + ("?v=" + h if h else ""), h is not None
+
+
+def defined_term(html):
+    """The article's own visible definition box (<div class="ar-note"><b>Definition</b> An
+    <strong>term</strong> is ...</div>), as a DefinedTerm; None when the page has none."""
+    m = re.search(r'<div class="ar-note">\s*<b>Definition</b>(.*?)</div>', main_of(html), re.S)
+    if not m:
+        return None
+    term = re.search(r"<strong>(.*?)</strong>", m.group(1), re.S)
+    if not term:
+        return None
+    return text_of(term.group(1)), text_of(m.group(1))
+
+
+def structured_data(slug, html, head):
+    url = canonical(slug)
+    desc = head_meta(head, "description")
+    name = short_name(head)
+    image = card_url(slug)[0].split("?", 1)[0]
+    org, site = {"@id": BASE + "/#organization"}, {"@id": BASE + "/#website"}
+    software = {"@id": BASE + "/#software"}
+    graph = []
+    if slug in SOFTWARE_PAGES:
+        graph.append(SOFTWARE)
+    if slug == "index":
+        graph.append({"@type": "WebPage", "@id": url, "url": url,
+                      "name": head_meta(head, "title"), "description": desc,
+                      "isPartOf": site, "about": software, "inLanguage": "en"})
+    elif is_article(html):
+        published, updated, section = article_meta(html)
+        node = {"@type": "BlogPosting", "headline": name, "description": desc,
+                "image": [image], "url": url, "mainEntityOfPage": {"@type": "WebPage", "@id": url},
+                "author": org, "publisher": org, "isPartOf": site, "inLanguage": "en",
+                "wordCount": len(page_text(html).split())}
+        if published:
+            node["datePublished"] = published
+            node["dateModified"] = updated
+        if section:
+            node["articleSection"] = section
+        if slug in ARTICLE_TOPICS:
+            keywords, about = ARTICLE_TOPICS[slug]
+            node["keywords"] = keywords
+            node["about"] = {"@type": "Thing", "name": about}
+        graph.append(node)
+        term = defined_term(html)
+        if term:
+            graph.append({"@type": "DefinedTerm", "@id": url + "#definition", "name": term[0],
+                          "description": term[1], "url": url,
+                          "inDefinedTermSet": {"@type": "DefinedTermSet",
+                                               "name": "Performance marketing glossary"}})
+    else:
+        kind = PAGE_TYPE.get(slug, "WebPage")
+        node = {"@type": kind, "@id": url, "url": url, "name": name,
+                "description": desc, "isPartOf": site, "inLanguage": "en"}
+        if kind == "AboutPage":
+            node["about"] = org
+        elif kind == "WebApplication":
+            node.update({"applicationCategory": "BusinessApplication",
+                         "operatingSystem": "Web",
+                         "browserRequirements": "Requires JavaScript",
+                         "isAccessibleForFree": True,
+                         "publisher": org})
         else:
-            m = re.search(LEGACY[block], html, re.S)
-            if m:
-                html = html[:m.start()] + repl + html[m.end():]
-    html = twitter_card(mark_figures(main_landmark(html)))
-    return stamp_assets(stamp_og(feed_link(html)))
+            node["publisher"] = org
+            if slug in SOFTWARE_PAGES:
+                node["about"] = software
+        graph.append(node)
+    if slug != "index":
+        crumbs = [("Home", BASE + "/")]
+        if is_article(html):
+            crumbs.append(("Blog", BASE + "/blog"))
+        crumbs.append((name, url))
+        graph.append({"@type": "BreadcrumbList", "itemListElement": [
+            {"@type": "ListItem", "position": i + 1, "name": n, "item": u}
+            for i, (n, u) in enumerate(crumbs)]})
+    qa = faq(html)
+    if qa:
+        graph.append({"@type": "FAQPage", "@id": url + "#faq", "mainEntity": [
+            {"@type": "Question", "name": q,
+             "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in qa]})
+    graph += [dict(ORGANIZATION, **ORGANIZATION_LEGAL.get(slug, {})), WEBSITE]
+    doc = json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False)
+    # never let page text close the script element early
+    return doc.replace("</", "<\\/")
+
+
+THEME_COLOR = '<meta name="theme-color" content="#F6F5F4"/>'  # --paper, the top bar once scrolled
+# Raster fallbacks for the SVG favicon each page links by hand: Safari, iOS home screens and
+# most link unfurlers ignore SVG icons and probe /favicon.ico or /apple-touch-icon.png. Both
+# files are the brand tile (`assets/brand/favicon-*.png`, `apple-touch-icon-180.png`).
+ICON_LINKS = "\n".join([
+    '<link rel="icon" href="/favicon.ico" sizes="32x32"/>',
+    '<link rel="apple-touch-icon" href="/apple-touch-icon.png"/>',
+])
+# Articles set their body in Switzer 500 (headings) and 600 (<strong>) as well as 400: without
+# these the late swap reflows the column (CLS 0.087 measured on 2026-10-11, culprit div.ar-col).
+ARTICLE_FONTS = "\n".join(
+    '<link rel="preload" href="/assets/fonts/switzer-%s.woff2" as="font" type="font/woff2" crossorigin/>' % w
+    for w in ("500", "600"))
+
+
+def seo_block(slug, html):
+    head = head_of(html)
+    site_js = '<script src="/site.js" defer></script>'
+    if "noindex" in head:
+        return "<!--#seo-->\n" + THEME_COLOR + "\n" + ICON_LINKS + "\n" + site_js + "\n<!--/#seo-->"
+    og_title, og_desc = head_meta(head, "og:title"), head_meta(head, "og:description")
+    img, _ = card_url(slug)
+    alt = cards().get(slug, {}).get("alt") or og_title
+    rows = [
+        THEME_COLOR,
+        ICON_LINKS,
+        '<meta property="og:locale" content="en_US"/>',
+        '<meta property="og:url" content="%s"/>' % canonical(slug),
+        '<meta property="og:image" content="%s"/>' % img,
+        '<meta property="og:image:width" content="1200"/>',
+        '<meta property="og:image:height" content="630"/>',
+        '<meta property="og:image:alt" content="%s"/>' % esc(alt),
+    ]
+    if is_article(html):
+        published, updated, section = article_meta(html)
+        if published:
+            rows.append('<meta property="article:published_time" content="%s"/>' % published)
+            rows.append('<meta property="article:modified_time" content="%s"/>' % updated)
+        if section:
+            rows.append('<meta property="article:section" content="%s"/>' % esc(section))
+    rows += [
+        '<meta name="twitter:card" content="summary_large_image"/>',
+        '<meta name="twitter:title" content="%s"/>' % esc(og_title),
+        '<meta name="twitter:description" content="%s"/>' % esc(og_desc),
+        '<meta name="twitter:image" content="%s"/>' % img,
+        FEED_LINK,
+        LLMS_LINK,
+    ]
+    if is_article(html):
+        rows.append(ARTICLE_FONTS)
+    rows += [
+        '<script type="application/ld+json">%s</script>' % structured_data(slug, html, head),
+        site_js,
+    ]
+    return "<!--#seo-->\n" + "\n".join(rows) + "\n<!--/#seo-->"
+
+
+def with_seo(slug, html):
+    head_end = html.find("</head>")
+    if head_end == -1:
+        return html
+    html = SEO.sub("", html[:head_end]) + html[head_end:]
+    block = seo_block(slug, html)
+    head_end = html.find("</head>")
+    # beside the hand-written og:* it derives from; else at the end of the head
+    anchor = re.search(r'<meta property="og:description"[^>]*/?>', html[:head_end])
+    if anchor:
+        return html[:anchor.end()] + "\n" + block + html[anchor.end():]
+    return html[:head_end] + block + "\n" + html[head_end:]
+
+
+def render(path):
+    html = read(path)
+    slug = os.path.basename(path)[:-5]
+    # The preview server also routes the artwork template here. Never inject
+    # website consent/measurement into a screenshot source.
+    if os.path.abspath(path) == os.path.join(ROOT, "assets", "og", "_card.html"):
+        return stamp(html)
+    nav = nav_for(slug, html)
+    for b in BLOCKS:
+        body = partial(b)
+        if b in NAV_BLOCKS:
+            body = mark_active(body, nav)
+        pat = r"<!--#" + b + r"-->.*?<!--/#" + b + r"-->"
+        repl = "<!--#" + b + "-->" + body + "<!--/#" + b + "-->"
+        if re.search(pat, html, re.S):
+            html = re.sub(pat, lambda _m: repl, html, flags=re.S)
+    return stamp(with_seo(slug, with_forms(slug, html)))
+
+
+# ------------------------------------------------------------ lead forms: the no-JS path
+# Every lead form (form.qf, form.form) is a plain HTML POST to Web3Forms before app.js touches it:
+# if the script fails or has not run yet, the browser posts the lead instead of putting the email
+# into a GET URL. Web3Forms redirects back (same domain, allowed on the free plan) to #sent-N, and
+# app.css shows the form's own confirmation through :target. app.js enhances the same fields into
+# a fetch (FormData, no preflight) and drops `redirect`.
+W3F_POST = "https://api.web3forms.com/submit"
+W3F_KEY = "50ac3d40-6932-476d-9d23-b6ee1b94f91f"
+FORM_OPEN = re.compile(r'<form\b([^>]*)>(\s*<!--#w3f-->.*?<!--/#w3f-->)?', re.S)
+
+
+def audit_form(attrs):
+    m = re.search(r'\bclass="([^"]*)"', attrs)
+    kinds = set(m.group(1).split()) & {"qf", "form"} if m else set()
+    return sorted(kinds)[0] if kinds else None
+
+
+def with_forms(slug, html):
+    n = [0]
+    page = canonical(slug)
+
+    def repl(m):
+        kind = audit_form(m.group(1))
+        if not kind:
+            return m.group(0)
+        n[0] += 1
+        attrs = re.sub(r'\s(?:method|action)="[^"]*"', "", m.group(1))
+        talk = re.search(r'\bclass="[^"]*\btalk\b', attrs)
+        demo = re.search(r'\bclass="[^"]*\bdemo\b', attrs)
+        sales = re.search(r'\bclass="[^"]*\bsales\b', attrs)
+        subject = "Adgent sales request · " if sales else (
+            "Adgent conversation request · " if talk else (
+                "Adgent demo request · " if demo else "Adgent sales request · "))
+        hidden = [("access_key", W3F_KEY),
+                  ("subject", subject + ("home" if slug == "index" else slug)),
+                  ("from_name", "Adgent website"),
+                  ("page", page),
+                  ("form_location", "%s/%s-%d" % (slug, kind, n[0])),
+                  ("redirect", "%s#sent-%d" % (page, n[0]))]
+        block = ('<!--#w3f--><span class="w3f-sent" id="sent-%d"></span>' % n[0]
+                 + "".join('<input type="hidden" name="%s" value="%s"/>' % (k, esc(v)) for k, v in hidden)
+                 + '<span class="hp" aria-hidden="true"><input type="checkbox" name="botcheck" '
+                   'tabindex="-1" autocomplete="off"/></span><!--/#w3f-->')
+        return '<form%s method="post" action="%s">%s' % (attrs, W3F_POST, block)
+    return FORM_OPEN.sub(repl, html)
 
 
 def pages():
     for p in sorted(glob.glob(os.path.join(ROOT, "*.html"))):
-        name = os.path.basename(p)
-        # A leading underscore means "not a deployed page": the scratch harness
-        # here, and in the docs mirror the standalone HTML artifacts that live
-        # beside the site but are never served. Without it the mirror's own
-        # `--check` failed on three files live does not even have.
-        if name.startswith("_"):
-            continue
-        yield p, name[:-5]
+        if not os.path.basename(p).startswith("_"):
+            yield p
 
 
+def slug_of(path):
+    return os.path.basename(path)[:-5]
+
+
+# ------------------------------------------------------------ site.js -> consent.css
+SITE_JS = os.path.join(ROOT, "site.js")
+CONSENT_REF = re.compile(r"(['\"]/consent\.css)(\?v=[0-9a-f]+)?(['\"])")
+
+
+def stamp_site_js(check_only=False):
+    """site.js loads /consent.css itself; stamp that URL with the stylesheet's
+    hash so a changed theme is a changed URL (and therefore a changed site.js,
+    whose own stamp every page carries)."""
+    if not os.path.exists(SITE_JS):
+        return 0
+    src = read(SITE_JS)
+    h = digest("/consent.css")
+    out = CONSENT_REF.sub(lambda m: m.group(1) + ("?v=" + h if h else "") + m.group(3), src)
+    if out == src:
+        return 0
+    if check_only:
+        print("SITE.JS STALE: the /consent.css stamp is out of date")
+        return 1
+    write(SITE_JS, out)
+    return 0
+
+
+# ------------------------------------------------------------ sitemap.xml
 _PRIO = {"": "1.0", "features": "0.9", "pricing": "0.8", "blog": "0.8",
          "for-agencies": "0.8", "for-in-house": "0.8", "why-adgent": "0.8",
          "tools": "0.8", "break-even-roas-calculator": "0.8",
-         "conversion-signal-check": "0.8",
-         "about": "0.6", "security": "0.4",
-         "data-use": "0.4", "privacy": "0.3", "terms": "0.3"}
-_PRIO.update({s: "0.9" for s in FEATURE_SLUGS})
+         "conversion-signal-check": "0.8", "about": "0.6", "security": "0.4",
+         "data-use": "0.4", "data-deletion": "0.3", "business-information": "0.3",
+         "privacy": "0.3", "terms": "0.3"}
+_PRIO.update({s: "0.9" for s in PRODUCT if s != "features"})
 _freq = lambda s: "weekly" if s in ("", "blog") else \
-                  ("yearly" if s in ("privacy", "terms", "security", "data-use") else "monthly")
+    ("yearly" if s in ("privacy", "terms", "security", "data-use", "data-deletion",
+                       "business-information") else "monthly")
 
 
-def _noindex(path):
-    """A page that tells robots not to index it must not be in the sitemap."""
-    return "noindex" in read(path).lower()
+def indexable(html):
+    return "noindex" not in head_of(html).lower()
 
 
-def _lastmods(persist=True):
-    """Per-page lastmod that only moves when the page actually changes.
-
-    It used to stamp today's date on all 52 URLs on every build, so a CSS-only
-    change told Google the whole site was rewritten. A signal that is always
-    "today" is a signal Google learns to ignore.
-
-    The cache-bust query on the stylesheets changes in every page on every CSS
-    edit, so it is stripped before hashing — otherwise nothing would be stable.
-    """
+def _lastmods(rendered, persist=True):
+    """Per-page lastmod that only moves when the page's own content changes.
+    Only <main> is hashed, with asset stamps stripped: a CSS edit, a header or
+    footer change or a schema change is not a content change, and a blanket
+    bump teaches crawlers to ignore the signal. An article's lastmod is its own
+    visible Updated (else Published) date, the same one its dateModified carries.
+    State is .lastmod.json {slug: {"main": sha1, "date": iso}}. Entries from the
+    whole-document era carry "sha" instead of "main": their date is kept and the
+    hash is re-recorded, so the scope change itself bumps nothing."""
     state_path = os.path.join(ROOT, ".lastmod.json")
     try:
         state = json.loads(read(state_path))
-    except Exception:
+    except (OSError, ValueError):
         state = {}
     today = datetime.date.today().isoformat()
     out, dirty = {}, False
-    pages = [(os.path.basename(p)[:-5], p)
-             for p in sorted(glob.glob(os.path.join(ROOT, "*.html")))]
-    # Subdirectory pages (EXTRA_SLUGS) are invisible to the root glob, so their
-    # lastmod fell back to today() on every build — a permanent "just changed"
-    # signal, the exact failure this function exists to remove.
-    pages += [(s, _page_path(s)) for s in EXTRA_SLUGS]
-    for slug, path in pages:
-        if not os.path.exists(path):
+    for slug, html in rendered.items():
+        if is_article(html) and article_meta(html)[1]:
+            out[slug] = article_meta(html)[1]
             continue
-        body = re.sub(r'(site\.css|site\.js|tokens\.css)\?v=[0-9a-f]+', r"\1", read(path))
-        digest = hashlib.sha1(body.encode("utf-8")).hexdigest()
-        prev = state.get(slug)
-        if prev and prev.get("sha") == digest:
+        body = re.sub(r"\?v=[0-9a-f]+", "", main_of(html))
+        sha = hashlib.sha1(body.encode("utf-8")).hexdigest()
+        prev = state.get(slug) or {}
+        if prev.get("main") == sha:
             out[slug] = prev["date"]
-        else:
-            out[slug] = today
-            state[slug] = {"sha": digest, "date": today}
-            dirty = True
+            continue
+        out[slug] = prev["date"] if "sha" in prev and prev.get("date") else today
+        state[slug] = {"main": sha, "date": out[slug]}
+        dirty = True
     if dirty and persist:
         write(state_path, json.dumps(state, indent=1, sort_keys=True) + "\n")
     return out
 
 
-def sitemap(check_only=False):
-    base, today = "https://adgent.app", datetime.date.today().isoformat()
-    dates = _lastmods(persist=not check_only)
-    slugs = [os.path.basename(p)[:-5] for p in sorted(glob.glob(os.path.join(ROOT, "*.html")))
-             if not _noindex(p) and not os.path.basename(p).startswith("_")]
-    # EXTRA_SLUGS used to be appended unconditionally, bypassing the _noindex filter
-    # above — so a noindex subdirectory page sat in the sitemap while its own meta
-    # tag told Google not to index it. That is the contradiction this file claims to
-    # make impossible; it is now actually impossible.
-    slugs = [s for s in slugs if s not in SKIP] + [
-        s for s in EXTRA_SLUGS
-        if os.path.exists(_page_path(s)) and not _noindex(_page_path(s))]
+def public(rendered):
+    """Slugs that belong on the crawler surfaces: indexable, index first."""
+    slugs = [s for s, h in rendered.items() if indexable(h)]
+    return ["index"] + sorted(s for s in slugs if s != "index") if "index" in slugs else sorted(slugs)
+
+
+def sitemap_xml(rendered, persist):
+    dates = _lastmods(rendered, persist)
     rows = []
-    for slug in ["index"] + [s for s in slugs if s != "index"]:
+    for slug in public(rendered):
         path = "" if slug == "index" else slug
-        loc = f"{base}/{path}"
-        rows.append(f"  <url><loc>{loc}</loc><lastmod>{dates.get(slug, today)}</lastmod>"
-                    f"<changefreq>{_freq(path)}"
-                    f"</changefreq><priority>{_PRIO.get(path,'0.7')}</priority></url>")
-    xml = ('<?xml version="1.0" encoding="UTF-8"?>\n'
-           '<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>\n'
-           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-           + "\n".join(rows) + "\n</urlset>\n")
-    p = os.path.join(ROOT, "sitemap.xml")
-    if check_only:
-        cur = read(p) if os.path.exists(p) else ""
-        if cur.strip() != xml.strip():
-            if cur.count("<url>") != len(rows):
-                print("SITEMAP STALE — %d urls on disk, %d pages" % (cur.count("<url>"), len(rows)))
-            else:
-                print("SITEMAP STALE — a page changed since the last build (lastmod)")
-            return 1
-        return 0
-    write(p, xml)
-    print("sitemap: %d urls" % len(rows))
-    return 0
+        rows.append("  <url><loc>%s/%s</loc><lastmod>%s</lastmod><changefreq>%s</changefreq>"
+                    "<priority>%s</priority></url>"
+                    % (BASE, path, dates[slug], _freq(path), _PRIO.get(path, "0.7")))
+    return ('<?xml version="1.0" encoding="UTF-8"?>\n'
+            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+            + "\n".join(rows) + "\n</urlset>\n")
 
 
-# ---------------------------------------------------------------- feed.xml
-# A 25-article blog with no feed: `feedMissing` on all 55 pages in the
-# 2026-09-09 crawl. A feed is the only pull surface on the site — everything
-# else waits for a crawler to come back. Derived from the pages for the same
-# reason the sitemap is: a hand-maintained list of 25 posts goes stale on the
-# 26th.
-FEED_PATH = "feed.xml"
-FEED_LINK = ('<link rel="alternate" type="application/rss+xml" '
-             'title="Adgent — the blog" href="/feed.xml"/>')
-
-
-def _articles():
-    """(slug, title, description, date) for every BlogPosting, newest first.
-
-    Keyed on the JSON-LD `@type`, not on a slug list: the two tool pages carry a
-    `datePublished` as well and are not blog posts, and the next page that gets
-    one should not silently join the feed either.
-
-    ⚠️ **Top-level `@graph` nodes only** — deliberately not `_ld_nodes()`.
-    `blog.html` is a `Blog` whose `blogPost[]` nests a stub for each article, so
-    a recursive walk put the listing page in the feed under its own title. A
-    nested node describes something else; only the top-level one describes *this
-    page*.
-    """
+# ------------------------------------------------------------ feed.xml
+def ld_graph(html):
     out = []
-    for path, slug in pages():
-        if slug in SKIP:
+    for block in re.findall(r'<script type="application/ld\+json">(.*?)</script>',
+                            head_of(html), re.S):
+        doc = json.loads(block)
+        out += doc.get("@graph", [doc])
+    return out
+
+
+def articles(rendered):
+    """(slug, title, description, datePublished, dateModified) for every BlogPosting,
+    most recently modified first. Top-level @graph nodes only: a nested node
+    describes something else."""
+    out = []
+    for slug, html in rendered.items():
+        if not indexable(html):
             continue
-        head = read(path).split("</head>", 1)[0]
-        if "noindex" in head:
-            continue
-        for block in re.findall(
-                r'<script type="application/ld\+json">(.*?)</script>', head, re.S):
-            for node in json.loads(block).get("@graph", []):
-                if node.get("@type") == "BlogPosting" and node.get("datePublished"):
-                    title, desc = _page_meta(slug)
-                    # the brand suffix is for a SERP, not for a reader's list
-                    out.append((slug, re.sub(r"\s*—\s*Adgent$", "", title),
-                                desc, node["datePublished"]))
-                    break
-    return sorted(out, key=lambda r: (r[3], r[0]), reverse=True)
+        for node in ld_graph(html):
+            if node.get("@type") == "BlogPosting" and node.get("datePublished"):
+                out.append((slug, node["headline"], node["description"], node["datePublished"],
+                            node.get("dateModified") or node["datePublished"]))
+                break
+    return sorted(out, key=lambda r: (r[4], r[3], r[0]), reverse=True)
 
 
-def feed(check_only=False):
-    base = "https://adgent.app"
-    items = _articles()
-    esc = lambda s: (s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;"))
-    rows = []
-    for slug, title, desc, date in items:
-        # RFC 822 date at noon UTC: the pages carry a day, not a time, and
-        # inventing 00:00 makes a post look a day older in some readers.
-        stamp = datetime.datetime.strptime(date, "%Y-%m-%d").strftime(
-            "%a, %d %b %Y 12:00:00 +0000")
-        rows.append(
-            f"    <item>\n"
-            f"      <title>{esc(title)}</title>\n"
-            f"      <link>{base}/{slug}</link>\n"
-            f"      <guid isPermaLink=\"true\">{base}/{slug}</guid>\n"
-            f"      <pubDate>{stamp}</pubDate>\n"
-            f"      <description>{esc(desc)}</description>\n"
-            f"    </item>")
-    newest = items[0][3] if items else datetime.date.today().isoformat()
-    built = datetime.datetime.strptime(newest, "%Y-%m-%d").strftime(
-        "%a, %d %b %Y 12:00:00 +0000")
-    xml = ('<?xml version="1.0" encoding="UTF-8"?>\n'
-           '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">\n'
-           '  <channel>\n'
-           '    <title>Adgent — the blog</title>\n'
-           f'    <link>{base}/blog</link>\n'
-           '    <description>Diagnostics, audits and honest reads on Meta and '
-           'Google Ads accounts.</description>\n'
-           '    <language>en-us</language>\n'
-           f'    <lastBuildDate>{built}</lastBuildDate>\n'
-           f'    <atom:link href="{base}/{FEED_PATH}" rel="self" '
-           'type="application/rss+xml"/>\n'
-           + "\n".join(rows) + "\n"
-           '  </channel>\n</rss>\n')
-    p = os.path.join(ROOT, FEED_PATH)
-    if check_only:
-        cur = read(p) if os.path.exists(p) else ""
-        if cur.strip() != xml.strip():
-            print("FEED STALE — regenerate with build.py (%d items)" % len(rows))
-            return 1
-        return 0
-    write(p, xml)
-    print("feed.xml: %d items" % len(rows))
-    return 0
+def feed_xml(rendered):
+    x = lambda s: s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+    rfc = lambda d: datetime.datetime.strptime(d, "%Y-%m-%d").strftime("%a, %d %b %Y 12:00:00 +0000")
+    items = articles(rendered)
+    rows = ["    <item>\n"
+            "      <title>%s</title>\n"
+            "      <link>%s/%s</link>\n"
+            '      <guid isPermaLink="true">%s/%s</guid>\n'
+            "      <pubDate>%s</pubDate>\n"
+            "      <description>%s</description>\n"
+            "    </item>" % (x(t), BASE, s, BASE, s, rfc(d), x(desc))
+            for s, t, desc, d, _ in items]
+    newest = max(r[4] for r in items) if items else datetime.date.today().isoformat()
+    return ('<?xml version="1.0" encoding="UTF-8"?>\n'
+            '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">\n'
+            "  <channel>\n"
+            "    <title>%s</title>\n"
+            "    <link>%s/blog</link>\n"
+            "    <description>Field notes on Meta and Google Ads: diagnostics, audits and honest "
+            "reads on what the numbers mean.</description>\n"
+            "    <language>en-us</language>\n"
+            "    <lastBuildDate>%s</lastBuildDate>\n"
+            '    <atom:link href="%s/feed.xml" rel="self" type="application/rss+xml"/>\n'
+            "%s\n"
+            "  </channel>\n</rss>\n") % (FEED_TITLE, BASE, rfc(newest), BASE, "\n".join(rows))
 
 
-# ---------------------------------------------------------------- llms.txt
-# Hand-maintained, it went stale immediately: 20 real pages missing and a
-# platform list that contradicted the site. Derive it from the pages instead.
-_LLMS_GROUPS = [
-    ("Product", ["", "features", "why-adgent", "pricing"]),
-    ("Capabilities", FEATURE_SLUGS),
+# ------------------------------------------------------------ llms.txt / llms-full.txt
+LLMS_GROUPS = [
+    ("Product", ["index", "features", "why-adgent", "pricing"]),
+    ("Run the accounts", ["daily-verdict", "trust-gate", "change-ledger",
+                          "platform-change-log", "account-memory", "ground-truth"]),
+    ("Build and automate", ["agents", "specialists", "campaign-build", "planning",
+                            "dashboards", "meetings", "creative-intelligence", "ai-visibility"]),
+    ("By team", ["for-agencies", "for-in-house"]),
     ("By industry", ["ecommerce", "lead-generation", "travel-hospitality",
                      "marketplaces", "local-multi-location", "mobile-apps"]),
-    ("By team", ["for-agencies", "for-in-house"]),
     ("Free tools", ["tools", "break-even-roas-calculator", "conversion-signal-check"]),
-    ("Company", ["about", "blog", "security", "data-use", "privacy", "terms"]),
+    ("Company", ["about", "blog", "security", "data-use", "data-deletion",
+                 "business-information", "privacy", "terms"]),
 ]
 
 
-def _page_path(slug):
-    """Slug -> file. Subdirectory pages (demo) live at <slug>/index.html."""
-    path = os.path.join(ROOT, ("index" if slug == "" else slug) + ".html")
-    return path if os.path.exists(path) else os.path.join(ROOT, slug, "index.html")
-
-
-def _page_meta(slug):
-    """(title, description) straight from the page's own head."""
-    path = _page_path(slug)
-    if not os.path.exists(path):
-        return None
-    head = read(path).split("</head>", 1)[0]
-    t = re.search(r"<title>(.*?)</title>", head, re.S)
-    d = re.search(r'<meta name="description" content="(.*?)"', head, re.S)
-    if not (t and d):
-        return None
-    clean = lambda x: re.sub(r"\s+", " ", x).replace("&amp;", "&").replace("&#8217;", "'").strip()
-    return clean(t.group(1)), clean(d.group(1))
-
-
-def llms(check_only=False):
-    """Regenerate llms.txt from the pages, preserving the hand-written preamble."""
-    path = os.path.join(ROOT, "llms.txt")
-    cur = read(path) if os.path.exists(path) else ""
-    # keep everything the author wrote above the first "## " section
-    preamble = cur.split("\n## ", 1)[0].rstrip() if "\n## " in cur else cur.rstrip()
-    out = [preamble, ""]
-    listed = 0
-    for heading, slugs in _LLMS_GROUPS:
-        rows = []
-        for slug in slugs:
-            # _LLMS_GROUPS is a hand-written list, so it bypassed the _noindex filter
-            # the loop below applies — the same hole EXTRA_SLUGS had in sitemap().
-            # A noindex page must not be advertised on the AI-crawler surface either.
-            p_ = _page_path(slug)
-            if not os.path.exists(p_) or _noindex(p_):
-                continue
-            m = _page_meta(slug)
-            if not m:
-                continue
-            title, desc = m
-            rows.append("- [%s](https://adgent.app/%s): %s" % (title, slug, desc))
-            listed += 1
+def llms_order(rendered):
+    """Grouped slugs first, then every other public page under Articles."""
+    pub = public(rendered)
+    groups, seen = [], set()
+    for heading, slugs in LLMS_GROUPS:
+        rows = [s for s in slugs if s in pub]
+        seen.update(rows)
         if rows:
-            out += ["## " + heading, ""] + rows + [""]
-    # every remaining indexable page, so nothing is silently absent
-    grouped = {s for _, ss in _LLMS_GROUPS for s in ss}
-    rest = []
-    for path_, slug in pages():
-        if slug in SKIP or slug in grouped or slug == "index" or _noindex(path_):
-            continue
-        m = _page_meta(slug)
-        if m:
-            rest.append("- [%s](https://adgent.app/%s): %s" % (m[0], slug, m[1]))
-            listed += 1
+            groups.append((heading, rows))
+    rest = sorted(s for s in pub if s not in seen)
     if rest:
-        out += ["## Articles", ""] + sorted(rest) + [""]
-    text = "\n".join(out) + "\n"
-    if check_only:
-        if cur.strip() != text.strip():
-            print("LLMS.TXT STALE — regenerate with build.py")
-            return 1
-        return 0
-    write(path, text)
-    print("llms.txt: %d pages" % listed)
-    return 0
+        groups.append(("Articles", rest))
+    return groups
 
 
+def llms_txt(rendered):
+    path = os.path.join(ROOT, "llms.txt")
+    cur = read(path) if os.path.exists(path) else "# Adgent\n"
+    preamble = cur.split("\n## ", 1)[0].rstrip()
+    out = [preamble, ""]
+    for heading, slugs in llms_order(rendered):
+        out += ["## " + heading, ""]
+        for s in slugs:
+            head = head_of(rendered[s])
+            out.append("- [%s](%s): %s" % (head_meta(head, "title"), canonical(s),
+                                            head_meta(head, "description")))
+        out.append("")
+    return "\n".join(out).rstrip() + "\n"
 
-def _page_text(slug):
-    """Readable body text of a page, for the full-text LLM feed."""
-    path = _page_path(slug)
-    if not os.path.exists(path):
-        return None
-    html = read(path)
-    # Split past the WHOLE opening tag. Splitting on "<main" alone left the
-    # rest of it (`id="main" tabindex="-1">`) at the head of the text, and the
-    # tag-stripper below could not remove it because it no longer began with
-    # "<" — so every one of the 51 entries in llms-full.txt opened with markup,
-    # in the file robots.txt points AI crawlers at.
-    if "<main" in html:
-        after = html.split("<main", 1)[1]
-        body = after.split(">", 1)[1] if ">" in after else after
-        body = body.split("</main>", 1)[0]
-    else:
-        body = html
-    body = re.sub(r"<(script|style|svg)\b.*?</\1>", " ", body, flags=re.S | re.I)
-    # keep block boundaries so sentences do not run together
-    body = re.sub(r"</(p|li|h[1-6]|div|section|tr)>", "\n", body, flags=re.I)
-    body = re.sub(r"<[^>]+>", " ", body)
-    for a, b in [("&amp;", "&"), ("&mdash;", "—"), ("&#8212;", "—"), ("&#8217;", "'"),
-                 ("&#8216;", "'"), ("&#8220;", '"'), ("&#8221;", '"'), ("&nbsp;", " "),
-                 ("&times;", "×"), ("&#215;", "×"), ("&lt;", "<"), ("&gt;", ">"),
-                 ("&#8211;", "–"), ("&#8378;", "₺"), ("&euro;", "€"), ("&pound;", "£")]:
-        body = body.replace(a, b)
-    lines = [re.sub(r"[ \t]+", " ", l).strip() for l in body.split("\n")]
+
+def page_text(html):
+    body = main_of(html) or html
+    body = re.sub(r"<(script|style|svg|template)\b.*?</\1>", " ", body, flags=re.S | re.I)
+    # a visible FAQ reads as question and answer
+    parser = FAQParser(body)
+    parser.feed(body)
+    for (start, end), (q, a) in reversed(list(zip(parser.spans, parser.pairs))):
+        body = body[:start] + "<p>Q: %s</p><p>A: %s</p>" % (q, a) + body[end:]
+    # elements with no text (icons, drawn letters) vanish without leaving a space, as in the DOM's
+    # text: "a<span class=dd aria-hidden=true><span class=d></span></span>gent" reads "agent"
+    n = 1
+    while n:
+        body, n = re.subn(r"<(span|i|b|em|s|small|strong)\b[^>]*>\s*</\1>", "", body)
+    body = re.sub(r"<[^>]*\baria-hidden=\"true\"[^>]*>\s*</[a-z]+>", "", body)
+    body = re.sub(r"</(p|li|h[1-6]|div|section|tr|dd|dt|summary|figcaption|blockquote)>", "\n", body, flags=re.I)
+    body = re.sub(r"<br\s*/?>", "\n", body, flags=re.I)
+    body = H.unescape(re.sub(r"<[^>]+>", " ", body))
+    lines = [re.sub(r"[ \t\u00a0]+", " ", l).strip() for l in body.split("\n")]
     return "\n".join(l for l in lines if l)
 
 
-def llms_full(check_only=False):
-    """Full-text feed, regenerated from the pages.
-
-    Hand-maintained it drifted badly: 4,286 lines that predated thirteen pages
-    and still sold a platform the product does not connect to."""
-    path = os.path.join(ROOT, "llms-full.txt")
-    order = [s for _, ss in _LLMS_GROUPS for s in ss]
-    seen, slugs = set(), []
-    for s_ in order:
-        # same hand-written list, same noindex hole as in llms() and sitemap()
-        p_ = _page_path(s_)
-        if s_ in seen or not os.path.exists(p_) or _noindex(p_):
-            continue
-        seen.add(s_); slugs.append(s_)
-    for path_, slug in pages():
-        if slug in SKIP or slug in seen or _noindex(path_):
-            continue
-        seen.add(slug); slugs.append(slug)
-    out = ["# Adgent — full text", "",
-           "> Every page of adgent.app as plain text, generated at build time so it",
+def llms_full_txt(rendered):
+    out = ["# Adgent: full text", "",
+           "> Every public page of adgent.app as plain text, generated at build time so it",
            "> cannot drift from the site. Source of truth is the HTML.", ""]
-    for slug in slugs:
-        meta = _page_meta(slug)
-        text = _page_text(slug)
-        if not (meta and text):
-            continue
-        out += ["", "---", "",
-                "# %s" % meta[0],
-                "URL: https://adgent.app/%s" % slug, "", text]
-    body = "\n".join(out).rstrip() + "\n"
-    cur = read(path) if os.path.exists(path) else ""
-    if check_only:
-        if cur.strip() != body.strip():
-            print("LLMS-FULL.TXT STALE — regenerate with build.py")
-            return 1
-        return 0
-    write(path, body)
-    print("llms-full.txt: %d pages" % sum(1 for s_ in slugs if _page_meta(s_)))
-    return 0
+    for _, slugs in llms_order(rendered):
+        for s in slugs:
+            out += ["", "---", "", "# %s" % head_meta(head_of(rendered[s]), "title"),
+                    "URL: %s" % canonical(s), "", page_text(rendered[s])]
+    return "\n".join(out).rstrip() + "\n"
 
 
+# ------------------------------------------------------------ audit()
 def _ld_nodes(value):
-    """Every dict in a JSON-LD document, nested ones included.
-
-    Nesting matters here: the homepage's Organization is reached through
-    SoftwareApplication.publisher, not from @graph, so a top-level-only walk
-    misses most of them.
-    """
+    """Every dict in a JSON-LD document, nested ones included."""
     if isinstance(value, list):
         for item in value:
             yield from _ld_nodes(item)
@@ -628,12 +860,9 @@ def _ld_nodes(value):
             yield from _ld_nodes(item)
 
 
-# Arial advance widths in 1/1000 em, grouped by width so the table stays readable.
-# Google renders SERP titles in ~20px Arial and descriptions in ~14px, and truncates
-# on width, not on character count. These are the real advances: verified against
-# Chrome's own `canvas.measureText` for all 105 characters the site uses, at both
-# sizes, with **zero** deviation over 0.6px — one table in font units reproduces
-# every size, which is why this is not a per-size lookup.
+# Arial advance widths in 1/1000 em (live build.py, verified against Chrome's
+# canvas.measureText). Google truncates SERP titles (~20px Arial) and
+# descriptions (~14px) on width, not on character count.
 _ARIAL = {
     191: "'",           222: "ijl\u2019",  260: "|",
     278: " !,./:;I[\\]ft",
@@ -650,119 +879,204 @@ _ADVANCE = {ch: units for units, chars in _ARIAL.items() for ch in chars}
 
 
 def serp_px(text, size):
-    """Rendered width of `text` in Arial at `size` px, rounded.
-
-    Unknown characters fall back to 556 (the lowercase average), which is the
-    honest default: a wrong guess on one glyph moves the total by single-digit
-    pixels, and the alternative is a table nobody maintains.
-    """
     return round(sum(_ADVANCE.get(ch, 556) for ch in text) * size / 1000)
 
 
-def audit():
-    """Invariants the partials can't enforce: per-page <head>, plus the one
-    cross-file contract (site.js ↔ vercel.json) that measurement depends on.
+def png_size(path):
+    """(width, height) from a PNG's IHDR, or None when the bytes are not a PNG.
+    The browser tool's screenshot is a downscaled WebP; written to a .png name
+    it passes every check but this one (live SITE.md, OG cards)."""
+    with open(path, "rb") as f:
+        head = f.read(24)
+    if head[:8] != b"\x89PNG\r\n\x1a\n" or head[12:16] != b"IHDR":
+        return None
+    return struct.unpack(">II", head[16:24])
 
-    render() owns the header/mobile/footer; <head> is per-page and therefore
-    drifts. These all shipped to production at least once.
-    """
+
+# Every URL the live site (adgent.app, deployed from adgent-website @ ea1961a)
+# serves or has served as a page: its sitemap on 2026-10-03, plus the pages it
+# kept out of the sitemap and the redirect it already had. Each must answer on
+# v2 as a page or as a redirect to one (check 12). /tr/* is deliberately
+# absent: it has 404ed by decision since 2026-08-01 (live SITE.md).
+LIVE_URLS = (
+    "/", "/about", "/account-memory", "/ai-media-buyer-for-agencies",
+    "/ai-media-buyer-vs-performance-max-vs-dashboard", "/attribution-window-day-one-data",
+    "/blog", "/break-even-roas-calculator", "/built-from-chat", "/business-information",
+    "/can-ai-audit-your-ad-accounts", "/can-ai-run-your-ad-account", "/cbo-vs-abo-2026",
+    "/cbo-vs-abo-vs-advantage-plus", "/change-ledger", "/conversion-signal-check",
+    "/cpm-is-the-early-creative-fatigue-signal", "/creative-intelligence",
+    "/cross-platform-comparability-meta-google", "/daily-verdict", "/data-deletion",
+    "/data-use", "/ecommerce", "/features", "/for-agencies", "/for-in-house",
+    "/google-ads-account-structure-2026", "/google-ads-target-cpa-roas-change-2026",
+    "/ground-truth", "/how-much-ad-spend-is-wasted", "/how-to-audit-a-google-ads-account",
+    "/how-to-audit-performance-max", "/how-to-choose-an-ai-media-buying-tool",
+    "/lead-generation", "/local-multi-location", "/marketplaces",
+    "/meta-ads-account-audit-checklist", "/meta-vs-google-ads-which-first", "/mobile-apps",
+    "/performance-max-brand-cannibalization", "/performance-max-not-spending-budget",
+    "/placement-drift-the-leak-in-the-average", "/pricing", "/privacy",
+    "/scale-a-winner-without-breaking-it", "/security", "/terms", "/tools",
+    "/travel-hospitality", "/trust-gate", "/what-is-an-ai-media-buyer",
+    "/why-adgent-leads-with-the-verdict", "/why-adgent", "/why-did-my-cpa-jump",
+    "/why-is-my-meta-roas-dropping",
+    # live, outside the sitemap
+    "/blog-post", "/index-demo-lab", "/demo", "/media-planning",
+)
+
+
+def audit(rendered):
+    """Invariants the partials can't enforce, run on the rendered pages."""
     problems = []
-    for path, slug in pages():
-        if slug in SKIP:
-            continue
-        rel, html = os.path.relpath(path, ROOT), read(path)
-        head = html.split("</head>", 1)[0]
+    vercel = json.loads(read(os.path.join(ROOT, "vercel.json")))
+    site_js = read(SITE_JS) if os.path.exists(SITE_JS) else ""
+    titles, descs, seen_cards = {}, {}, {}
+    page_slugs = set(rendered)
+
+    for slug, html in rendered.items():
+        rel = slug + ".html"
+        head = head_of(html)
+        index_ok = indexable(html)
 
         # 1. single-locale site: nothing should advertise a translation
         if re.search(r'<link rel="alternate"[^>]*hreflang=', head):
             problems.append(f"{rel}: hreflang alternate on a single-locale site")
-        if "/tr/" in html:
+        if 'href="/tr/' in html or 'href="/tr"' in html:
             problems.append(f"{rel}: links to /tr/, which no longer exists")
 
         # 2. the page's language must be English
         m = re.search(r'<html lang="([a-z-]+)"', html)
-        if m and m.group(1) != "en":
-            problems.append(f'{rel}: <html lang="{m.group(1)}"> on an English page')
+        if not m or m.group(1) != "en":
+            problems.append(f"{rel}: <html lang> is not en")
 
-        # 3. canonical must be self-referencing, not another page
-        want = "https://adgent.app/" if slug == "index" else f"https://adgent.app/{slug}"
-        m = re.search(r'<link rel="canonical" href="([^"]+)"', html)
-        if m and m.group(1) != want:
-            problems.append(f"{rel}: canonical -> {m.group(1)}, expected {want}")
+        # 3. canonical must be self-referencing
+        m = re.search(r'<link rel="canonical" href="([^"]+)"', head)
+        if index_ok and (not m or m.group(1) != canonical(slug)):
+            problems.append(f"{rel}: canonical {m.group(1) if m else 'missing'}, expected {canonical(slug)}")
 
-        # 4. an internal link must point at a page that exists. Adding a nav
-        #    entry before its page is written ships a dead link to production —
-        #    it did, on the seven feature pages.
-        #    Extension-less paths only — anything with a dot is an asset, and
-        #    assets are not pages.
+        # 4. an internal link must point at a page that exists (extension-less paths only)
         for href in set(re.findall(r'href="(/[^"#?.]*)"', html)):
             target = "index" if href == "/" else href.strip("/")
-            page = os.path.join(ROOT, target + ".html")
-            directory_page = os.path.join(ROOT, target, "index.html")
-            if not os.path.exists(page) and not os.path.exists(directory_page):
+            if target not in page_slugs:
                 problems.append(f"{rel}: links to {href}, which has no page")
 
-        # 5. Measurement is owned by site.js and must never appear in page HTML:
-        #    page-level tags execute before the visitor can choose.
-        if "googletagmanager.com" in html or "gtag(" in html:
+        # 5. measurement is owned by site.js and must never appear in page HTML
+        if "googletagmanager.com" in html or "gtag(" in html or "google-analytics.com" in html:
             problems.append(f"{rel}: analytics bypasses the consent gate")
+        if not re.search(r'<script src="/site\.js\?v=[0-9a-f]+" defer></script>', head):
+            problems.append(f"{rel}: site.js (consent + measurement) not loaded from <head>")
 
-        # 6. SEO/GEO head invariants. Every one of these was missing on at
-        #    least half the site on 2026-09-02, and a <head> has no owner, so
-        #    nothing but this check keeps them from drifting back out.
-        indexable = "noindex" not in head
-        if indexable:
-            if not re.search(r'<meta name="description" content="\S', head):
+        # 6. SEO/GEO head invariants, measured the way Google truncates
+        if index_ok:
+            title, desc = head_meta(head, "title"), head_meta(head, "description")
+            if not desc:
                 problems.append(f"{rel}: no meta description")
-            #    Without max-snippet:-1 Google caps the text it may quote, which
-            #    also caps what an answer engine can lift from the page.
             if "max-snippet:-1" not in head:
                 problems.append(f"{rel}: robots meta without max-snippet:-1")
-            if "og:image" in head and "og:image:alt" not in head:
-                problems.append(f"{rel}: og:image without og:image:alt")
-            if "og:locale" not in head:
-                problems.append(f"{rel}: no og:locale")
-            #    SERP caps, measured the way Google truncates: in pixels, not
-            #    characters. SITE.md claimed "every title ≤60ch and every
-            #    description ≤160ch" from 2026-09-03 and it was already false two
-            #    days later. Characters are the wrong ruler anyway — 160 characters
-            #    of "Illinois" and 160 of "MMMMMMMM" are 400 px apart — so this
-            #    measures the real thing. See serp_px().
-            t = re.search(r"<title>(.*?)</title>", head, re.S)
-            if t:
-                w = serp_px(H.unescape(t.group(1)), 20)
-                if w > 600:
-                    problems.append(f"{rel}: title is {w}px, over the 600px SERP cap")
-            d = re.search(r'<meta name="description" content="(.*?)"', head, re.S)
-            if d:
-                w = serp_px(H.unescape(d.group(1)), 14)
-                if w > 985:
-                    problems.append(f"{rel}: meta description is {w}px, over the 985px cap")
-            #    The feed is a pull surface: if no page advertises it, only
-            #    somebody who already guessed the URL will ever find it.
+            for need in ("og:type", "og:title", "og:description"):
+                if not head_meta(head, need):
+                    problems.append(f"{rel}: no {need}")
+            if "og:image:alt" not in head or "og:locale" not in head or "twitter:card" not in head:
+                problems.append(f"{rel}: generated <!--#seo--> block missing")
+            w = serp_px(title, 20)
+            if w > 600:
+                problems.append(f"{rel}: title is {w}px, over the 600px SERP cap")
+            w = serp_px(desc, 14)
+            if w > 985:
+                problems.append(f"{rel}: meta description is {w}px, over the 985px cap")
             if 'href="/feed.xml"' not in head:
                 problems.append(f"{rel}: no rel=alternate link to /feed.xml")
-        #    Fonts must be discovered in the head. They started as an @import
-        #    inside tokens.css — two stylesheet round-trips deep — then moved to
-        #    a <link> to fonts.googleapis.com, which was better but still put two
-        #    third-party origins in front of first paint for a 1.7 KB file.
-        #    They are now @font-face rules at the top of tokens.css itself, served
-        #    from our own origin, so the check is that nothing has crept back.
+            # unique copy per page (v2)
+            if title in titles:
+                problems.append(f"{rel}: title duplicates {titles[title]}")
+            if desc in descs:
+                problems.append(f"{rel}: description duplicates {descs[desc]}")
+            titles.setdefault(title, rel)
+            descs.setdefault(desc, rel)
         if "fonts.googleapis.com" in head or "fonts.gstatic.com" in head:
             problems.append(f"{rel}: webfont loaded from a third-party origin")
-        if "/tokens" not in head:
+        if "/tokens.css" not in head:
             problems.append(f"{rel}: tokens stylesheet not linked from <head>")
+        # no em dash in anything the head says (owner ban, 2026-10)
+        if "\u2014" in H.unescape(SEO.sub("", head)) or "&mdash;" in head:
+            problems.append(f"{rel}: em dash in the <head>")
 
-    # 7. The measurement paths must stay wired end to end. site.js loads the tag
-    #    and the container from first-party paths; vercel.json rewrites those
-    #    paths to the Google tag gateway origins. If the two ever disagree —
-    #    a renamed path, a dropped rewrite, a copy-paste back to
-    #    googletagmanager.com — measurement 404s or quietly leaves our domain,
-    #    and no page shows a symptom. This is the only place that can notice.
-    site_js = read(os.path.join(ROOT, "site.js"))
-    rewrites = {r["source"]: r["destination"]
-                for r in json.loads(read(os.path.join(ROOT, "vercel.json")))
-                .get("rewrites", [])}
+        # 9. one brand entity: @id on Organization/WebSite, declared once per document
+        for block in re.findall(r'<script type="application/ld\+json">(.*?)</script>', head, re.S):
+            try:
+                doc = json.loads(block)
+            except ValueError as e:
+                problems.append(f"{rel}: JSON-LD does not parse ({e})")
+                continue
+            ents = (BASE + "/#organization", BASE + "/#website")
+            full, refs = {}, set()
+            for node in _ld_nodes(doc):
+                t = node.get("@type")
+                want = BASE + "/#organization" if t == "Organization" and str(
+                    node.get("url", BASE)).rstrip("/") == BASE else \
+                    BASE + "/#website" if t == "WebSite" else None
+                if want and node.get("@id") != want:
+                    problems.append(f"{rel}: {t} node without @id {want}")
+                nid = node.get("@id")
+                if nid in ents:
+                    if set(node) == {"@id"}:
+                        refs.add(nid)
+                    else:
+                        full[nid] = full.get(nid, 0) + 1
+            for nid, count in sorted(full.items()):
+                if count > 1:
+                    problems.append(f"{rel}: {nid} declared {count}x")
+            for nid in sorted(refs - set(full)):
+                problems.append(f"{rel}: bare @id ref {nid} is declared nowhere on the page")
+
+        # 10. one social card per page: exists, real 1200x630 PNG, stamped, unique
+        if index_ok:
+            m = re.search(r'<meta property="og:image" content="https://adgent\.app(/[^"?]+)(\?v=[0-9a-f]+)?"', head)
+            if not m:
+                problems.append(f"{rel}: no og:image")
+            else:
+                card, path = m.group(1), os.path.join(ROOT, m.group(1).lstrip("/"))
+                if not os.path.exists(path):
+                    problems.append(f"{rel}: og:image {card} does not exist")
+                else:
+                    if not m.group(2):
+                        problems.append(f"{rel}: og:image {card} is unstamped")
+                    if png_size(path) != (1200, 630):
+                        problems.append(f"{rel}: og:image {card} is not a 1200x630 PNG")
+                if card in seen_cards:
+                    problems.append(f"{rel}: og:image {card} is already used by {seen_cards[card]}")
+                seen_cards[card] = rel
+
+        # 13. production pages are indexable; only the 404 stays out
+        if index_ok and slug in NOINDEX_OK:
+            problems.append(f"{rel}: must be noindex")
+        if not index_ok and slug not in NOINDEX_OK:
+            problems.append(f"{rel}: noindex on a production page")
+
+        # 14. structured data matches the page: articles carry a dated
+        #     BlogPosting; a FAQPage exists exactly when the page shows a FAQ
+        if index_ok:
+            nodes = ld_graph(html)
+            if is_article(html) and not any(
+                    n.get("@type") == "BlogPosting" and n.get("datePublished") for n in nodes):
+                problems.append(f"{rel}: article without a dated BlogPosting (Published date not found)")
+            visible_faq = faq(html)
+            faq_nodes = [n for n in nodes if n.get("@type") == "FAQPage"]
+            schema_faq = [(q.get("name"), q.get("acceptedAnswer", {}).get("text"))
+                          for node in faq_nodes for q in node.get("mainEntity", [])]
+            if schema_faq != visible_faq or len(faq_nodes) != bool(visible_faq):
+                problems.append(f"{rel}: FAQPage question/answer pairs do not match the visible FAQ")
+
+        # 16. every lead form posts to Web3Forms without JS (never a GET with the email in the URL)
+        for attrs, block in FORM_OPEN.findall(html):
+            if audit_form(attrs) and ('method="post"' not in attrs or W3F_POST not in attrs
+                                      or 'name="access_key"' not in block):
+                problems.append(f"{rel}: lead form without the no-JS Web3Forms POST")
+
+    # the homepage carries Meta's domain verification in its static head
+    if 'name="facebook-domain-verification"' not in head_of(rendered.get("index", "")):
+        problems.append("index.html: facebook-domain-verification meta is missing")
+
+    # 7. measurement paths wired end to end: site.js <-> vercel.json rewrites
+    rewrites = {r["source"]: r["destination"] for r in vercel.get("rewrites", [])}
     sources = re.findall(r"script\.src = '([^']+)'", site_js)
     if not sources:
         problems.append("site.js: no measurement script source at all")
@@ -770,234 +1084,118 @@ def audit():
         if not src.startswith("/"):
             problems.append(f"site.js: {src} is not a first-party path")
             continue
-        if not re.fullmatch(r"https://[a-z0-9-]+\.fps\.goog/[a-z]+/",
-                            rewrites.get(src, "")):
+        if not re.fullmatch(r"https://[a-z0-9-]+\.fps\.goog/[a-z]+/", rewrites.get(src, "")):
             problems.append(f"vercel.json: {src} does not rewrite to a gateway origin")
         if ".fps.goog" not in rewrites.get(f"{src}/:path*", ""):
             problems.append(f"vercel.json: no {src}/:path* rule, so the hits 404")
 
-    # 8. One host, one set of URLs. Two hosts have served the whole site at 200
-    #    with nothing but a canonical tag pointing home, and a canonical tag is
-    #    a hint:
-    #
-    #      www.adgent.app            found 2026-09-09
-    #      adgent-website.vercel.app found 2026-09-12 — and it was *indexed*:
-    #        it came back rank 8 on a `site:`-free "adgent" query under the
-    #        stale title "Adgent — The senior analyst you can talk to", while
-    #        the real homepage was not in the top ten at all. Vercel sends
-    #        `X-Robots-Tag: noindex` on *preview* deployments and **not** on the
-    #        production `*.vercel.app` alias, so the alias is a crawlable
-    #        duplicate of production by default. The project-scoped aliases are
-    #        SSO-gated (302 to vercel.com/sso-api) and need no rule.
-    #
-    #    ⚠️ **Two rules per host, and the second is not redundant.** Deployed
-    #    2026-09-11 with only `/:path*`: `www.adgent.app/pricing` answered 308
-    #    and `www.adgent.app/` answered **200** with the whole homepage
-    #    (`cf-cache-status: DYNAMIC`, so it was Vercel, not a cached copy).
-    #    `:path*` does not match the bare root here. Same shape as the slashless
-    #    `/metrics` rewrite, same reason.
-    redirects = json.loads(read(os.path.join(ROOT, "vercel.json"))).get("redirects", [])
+    # 8. one host: www and the production *.vercel.app alias 308 to the apex,
+    #    with an explicit "/" rule because "/:path*" does not match the bare root
+    redirects = vercel.get("redirects", [])
     for host in ("www.adgent.app", "adgent-website.vercel.app"):
         covered = {r.get("source") for r in redirects
-                   if r.get("destination", "").startswith("https://adgent.app/")
+                   if r.get("destination", "").startswith(BASE + "/")
                    and any(h.get("type") == "host" and h.get("value") == host
                            for h in r.get("has", []))}
         for source in ("/", "/:path*"):
             if source not in covered:
-                problems.append(
-                    f"vercel.json: no {host} -> apex redirect for {source!r}")
+                problems.append(f"vercel.json: no {host} -> apex redirect for {source!r}")
 
-    # 9. One brand entity, not thirty. Organization appeared as a top-level or
-    #    nested node 103 times across 55 pages on 2026-09-09, and WebSite 20
-    #    times, every one of them anonymous — no @id. Anonymous nodes do not
-    #    merge: a search engine reading the site sees a hundred separate
-    #    companies that happen to share a name, which is the wrong answer to
-    #    give for a brand query. The shared @id is what makes them one node.
-    for path, slug in pages():
-        if slug in SKIP:
-            continue
-        rel, head = os.path.relpath(path, ROOT), read(path).split("</head>", 1)[0]
-        for block in re.findall(
-                r'<script type="application/ld\+json">(.*?)</script>', head, re.S):
-            for node in _ld_nodes(json.loads(block)):
-                t, want = node.get("@type"), None
-                if t == "Organization" and str(
-                        node.get("url", "https://adgent.app")).rstrip("/") == "https://adgent.app":
-                    want = "https://adgent.app/#organization"
-                elif t == "WebSite":
-                    want = "https://adgent.app/#website"
-                if want and node.get("@id") != want:
-                    problems.append(f"{rel}: {t} node without @id {want}")
-
-            #    …and declared exactly once per document. Two nodes carrying the
-            #    same @id and the same properties is legal JSON-LD — they merge —
-            #    but it is the shape that says "copy-pasted", and 28 pages had it
-            #    the moment the @ids went in: a full Organization at @graph level
-            #    *and* a full copy under publisher. One full declaration, every
-            #    other occurrence a bare {"@id": …}. The reverse failure matters
-            #    more: a bare ref whose target is declared nowhere in the document
-            #    resolves to nothing at all.
-            #    Scoped to the two site entities on purpose: a breadcrumb may
-            #    legitimately carry {"@id": "https://adgent.app/pricing"} for a
-            #    node it does not describe, and flagging that would be noise.
-            ENTITIES = ("https://adgent.app/#organization",
-                        "https://adgent.app/#website")
-            full, refs = {}, set()
-            for node in _ld_nodes(json.loads(block)):
-                nid = node.get("@id")
-                if nid not in ENTITIES:
-                    continue
-                if set(node) == {"@id"}:
-                    refs.add(nid)
-                else:
-                    full[nid] = full.get(nid, 0) + 1
-            for nid, count in sorted(full.items()):
-                if count > 1:
-                    problems.append(f"{rel}: {nid} declared {count}x — one, then bare refs")
-            for nid in sorted(refs - set(full)):
-                problems.append(f"{rel}: bare @id ref {nid} is declared nowhere on the page")
-
-    # 10. One social card per page. 27 indexable pages shared assets/og/site.png
-    #    until 2026-09-09, so every link to a solution, capability or legal page
-    #    looked identical in a feed, a DM and an LLM's link preview. Nothing on
-    #    the page shows the defect, and the fix decays back the moment somebody
-    #    scaffolds a new page from a donor head — which is exactly how it spread.
-    #    Also checks the file exists, and that the URL is stamped: an og:image
-    #    404 is a blank card, and an unstamped one can inherit a cached 404 from
-    #    before the deploy that created it — see stamp_og().
-    seen = {}
-    for path, slug in pages():
-        if slug in SKIP:
-            continue
-        rel, html = os.path.relpath(path, ROOT), read(path)
-        head = html.split("</head>", 1)[0]
-        if "noindex" in head:
-            continue
-        m = re.search(r'<meta property="og:image" content="https://adgent\.app(/[^"?]+)(\?v=[0-9a-f]+)?"',
-                      head)
-        if not m:
-            problems.append(f"{rel}: no og:image")
-            continue
-        card = m.group(1)
-        if not os.path.exists(os.path.join(ROOT, card.lstrip("/"))):
-            problems.append(f"{rel}: og:image {card} does not exist")
-        elif not m.group(2):
-            problems.append(f"{rel}: og:image {card} is unstamped")
-        if card in seen:
-            problems.append(f"{rel}: og:image {card} is already used by {seen[card]}")
-        seen[card] = rel
-
-    # 11. Response headers. The 2026-09-09 crawl found none of these on any of
-    #     the 55 pages. They are the four with no behavioural cost on this site:
-    #     nothing embeds us in a frame except the noindex lab page (SAMEORIGIN
-    #     covers it), nothing reads a cross-origin referrer path, and nothing
-    #     asks for a camera. Deleting a header has no symptom, which is the
-    #     whole reason it is a check.
-    #
-    #     ⛔ No CSP, and that is a decision with a measurement behind it: with
-    #     full consent the site loads scripts from clarity.ms and
-    #     static.cloudflareinsights.com, an ads-audience pixel from a Google
-    #     ccTLD chosen by the visitor's country (observed: www.google.com.tr, so
-    #     img-src would need ~190 hosts or a bare `https:`), and 31 pages carry
-    #     an inline <style>. A policy with 'unsafe-inline' on script-src is not
-    #     an XSS control, and a wrong one kills measurement with no symptom —
-    #     the exact failure mode check 7 exists for. Do it properly or not at
-    #     all: build-step nonces plus a report-only rollout.
-    want_headers = {"X-Content-Type-Options", "X-Frame-Options",
-                    "Referrer-Policy", "Permissions-Policy"}
-    have = {h["key"] for rule in json.loads(read(os.path.join(ROOT, "vercel.json")))
-            .get("headers", []) if rule.get("source") == "/(.*)"
+    # 11. response headers with no behavioural cost (no CSP: see live build.py)
+    want_headers = {"X-Content-Type-Options", "X-Frame-Options", "Referrer-Policy",
+                    "Permissions-Policy"}
+    have = {h["key"] for rule in vercel.get("headers", []) if rule.get("source") == "/(.*)"
             for h in rule.get("headers", [])}
     for missing in sorted(want_headers - have):
         problems.append(f"vercel.json: no site-wide {missing} header")
+
+    # 12. every live URL answers on v2: a page, or a permanent redirect to one;
+    #     no redirect shadows a page or lands on a missing one
+    plain = {r["source"]: r for r in redirects if not r.get("has")}
+    exists = lambda p: ("index" if p == "/" else p.strip("/")) in page_slugs
+    for src, r in plain.items():
+        dest = r.get("destination", "").split("#", 1)[0]
+        if not r.get("permanent"):
+            problems.append(f"vercel.json: redirect {src} is not permanent")
+        if not dest.startswith("/") or not exists(dest):
+            problems.append(f"vercel.json: redirect {src} -> {dest}, which has no page")
+        if ":" not in src and exists(src):
+            problems.append(f"vercel.json: redirect {src} shadows an existing page")
+    for url in LIVE_URLS:
+        if not exists(url) and url not in plain:
+            problems.append(f"live URL {url} has neither a v2 page nor a redirect")
+
+    # 15. the crawler gate is open in production, and points at the sitemap
+    robots = read(os.path.join(ROOT, "robots.txt")) if os.path.exists(os.path.join(ROOT, "robots.txt")) else ""
+    if re.search(r"^\s*Disallow:\s*/\s*$", robots, re.M) or "Sitemap: %s/sitemap.xml" % BASE not in robots:
+        problems.append("robots.txt: not the production version (Disallow: / or no Sitemap line)")
     return problems
 
 
-SERVED_CSS = ("tokens.css", "site.css")
+# ------------------------------------------------------------ main
+def generated(rendered, persist):
+    return {
+        "sitemap.xml": sitemap_xml(rendered, persist),
+        "feed.xml": feed_xml(rendered),
+        "llms.txt": llms_txt(rendered),
+        "llms-full.txt": llms_full_txt(rendered),
+    }
 
 
-def strip_css_comments(name, check_only=False):
-    """Serve the stylesheets without their comments.
-
-    The sources keep every comment — they are the only record of why half of
-    these rules exist — but the browser pays for them on the render-blocking
-    path, and site.css is the largest thing standing in front of first paint.
-    Measured on the real file: 71.3 KB -> 37.6 KB gzipped, a 47% cut. Collapsing
-    whitespace on top of that buys a further 1.2 KB, which is not worth touching
-    a single space of a 288 KB stylesheet for, so it is not done.
-
-    Stripping comments with a regex is only safe while no string or url() in the
-    file contains a comment marker. That is asserted, not assumed, and the build
-    refuses rather than shipping a mangled stylesheet.
-    """
-    src_path = os.path.join(ROOT, name)
-    out_path = os.path.join(ROOT, name[:-4] + ".min.css")
-    if not os.path.exists(src_path):
-        return 0
-    src = read(src_path)
-    for m in re.finditer(r'"[^"\n]*"|\'[^\'\n]*\'|url\([^)]*\)', src):
-        if "/*" in m.group(0) or "*/" in m.group(0):
-            print("CSS STRIP REFUSED — %s: comment marker inside %s"
-                  % (name, m.group(0)[:60]))
-            return 1
-    comments = re.findall(r"/\*.*?\*/", src, flags=re.S)
-    out = re.sub(r"/\*.*?\*/", "", src, flags=re.S)
-    # every brace that disappeared must be one that sat inside a comment
-    expected = src.count("{") - sum(c.count("{") for c in comments)
-    if out.count("{") != expected or out.count("{") != out.count("}"):
-        print("CSS STRIP REFUSED — %s: brace count moved unexpectedly" % name)
-        return 1
-    cur = read(out_path) if os.path.exists(out_path) else None
-    if cur == out:
-        return 0
-    if check_only:
-        print("CSS STALE — %s is not current" % os.path.basename(out_path))
-        return 1
-    write(out_path, out)
-    return 0
+def card_drift(rendered):
+    """Page cards whose headline no longer matches the page's H1. Not a failure
+    (the old card is still a valid image); a note that it should be re-rendered."""
+    out = []
+    for slug, c in cards().items():
+        if c.get("kind") != "page" or c.get("fixed") or slug not in rendered:
+            continue
+        m = re.search(r"<h1\b[^>]*>(.*?)</h1>", main_of(rendered[slug]), re.S)
+        if m and text_of(m.group(1)) != c.get("title"):
+            out.append(slug)
+    return out
 
 
 def main():
     check = "--check" in sys.argv
-    css_rc = 0
-    for _css in SERVED_CSS:
-        css_rc |= strip_css_comments(_css, check_only=check)
-    stale, wrote = [], 0
-    for path, slug in pages():
-        src = read(path)
-        out = render(src, slug)
-        if out != src:
-            stale.append(os.path.relpath(path, ROOT))
+    rc = stamp_site_js(check_only=check)
+    stale, built, rendered = [], 0, {}
+    for p in pages():
+        out = render(p)
+        rendered[slug_of(p)] = out
+        if out != read(p):
+            stale.append(os.path.relpath(p, ROOT))
             if not check:
-                write(path, out); wrote += 1
-    rc = css_rc
+                write(p, out)
+                built += 1
+    for name, text in generated(rendered, persist=not check).items():
+        path = os.path.join(ROOT, name)
+        cur = read(path) if os.path.exists(path) else ""
+        if cur != text:
+            if check:
+                print("STALE: %s (run python3 build.py)" % name)
+                rc = 1
+            else:
+                write(path, text)
     if check:
         if stale:
-            print("STALE — %d page(s) differ from _partials/:" % len(stale))
-            for f in stale[:20]:
-                print("   ", f)
+            print("STALE: " + ", ".join(stale))
             rc = 1
         else:
-            print("OK — every page matches _partials/.")
-        rc |= sitemap(check_only=True)
-        rc |= feed(check_only=True)
-        rc |= llms(check_only=True)
-        rc |= llms_full(check_only=True)
+            print("OK  pages in sync with _partials/ and their generated heads (%d)" % len(rendered))
     else:
-        print("built %d page(s)" % wrote)
-        sitemap()
-        feed()
-        llms()
-        llms_full()
-    bad = audit()
+        print("OK  rebuilt %d of %d pages; sitemap %d urls, feed %d items"
+              % (built, len(rendered), len(public(rendered)), len(articles(rendered))))
+    bad = audit(rendered)
     if bad:
-        print("AUDIT PROBLEMS — %d:" % len(bad))
-        for b in bad[:20]:
-            print("   ", b)
+        print("AUDIT PROBLEMS: %d" % len(bad))
+        for b in bad:
+            print("    " + b)
         rc = 1
-    elif check and rc == 0:
-        print("OK — sitemap and feed current.")
-        print("OK — heads consistent, measurement wired first-party.")
+    elif rc == 0:
+        print("OK  audit clean: heads, cards, structured data, redirects, measurement wiring")
+    drift = card_drift(rendered)
+    if drift:
+        print("NOTE  re-render the OG card (H1 changed): " + ", ".join(drift))
     return rc
 
 

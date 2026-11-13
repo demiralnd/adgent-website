@@ -1,0 +1,23 @@
+/* Original research: keep the shared article layout; scope chart and table additions. */
+.november-research .ar-t{max-width:23ch}
+.research-scope{font-size:15px;line-height:1.6;color:var(--ink-2)}
+.research-chart{margin:1.8em 0}
+.research-chart-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r-card);padding:20px 12px 0;background:var(--card)}
+.research-chart .plot{display:block;width:100%;min-width:620px;height:auto}
+.research-chart .plot text{font-family:var(--sans);font-size:24px;fill:var(--ink-2)}
+.research-chart .plot text.event-label{font-size:27px;fill:var(--ink);text-anchor:end;transform:translateX(-12px)}
+.research-chart .plot text.event-label~text.event-label{text-anchor:start;transform:translateX(12px)}
+.research-chart .plot [stroke="var(--primary)"]{stroke:var(--ink)}
+.research-chart .plot [fill="var(--primary)"]{fill:var(--ink)}
+.research-chart figcaption{margin-top:12px;font-size:13.5px;line-height:1.5;color:var(--ink-3)}
+.research-legend{display:flex;flex-wrap:wrap;gap:12px 24px;margin:12px 0;font-size:14px;line-height:1.4;color:var(--ink-2)}
+.research-legend span{display:flex;align-items:center;gap:8px}
+.research-legend i{display:inline-block;width:24px;border-top:2px solid var(--ink-3)}
+.research-legend span:nth-child(2) i{border-top:4px solid var(--ink)}
+.research-legend span:nth-child(3) i{height:14px;border:1px solid var(--line);background:var(--t1)}
+.research-table-caption{margin-bottom:12px;font-size:13.5px;line-height:1.5;color:var(--ink-3)}
+.november-research .ar-tbl .positive{background:var(--t1)}
+.november-research .ar-tbl .negative{background:var(--card)}
+.november-research .ar-tbl :is(th,td){padding-left:10px;padding-right:10px}
+.november-research .ar-tbl th:first-child{padding-left:0}
+@media(max-width:600px){.november-research .ar-tbl:has(td[data-label]) :is(th,td){padding-left:0;padding-right:0}.research-chart-scroll{padding:16px 0 0}.research-chart-scroll:focus-visible{outline:2px solid var(--ink);outline-offset:4px}}

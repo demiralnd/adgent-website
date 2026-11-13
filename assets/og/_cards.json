@@ -1,0 +1,332 @@
+{
+  "11-11-vs-black-friday-turkey": {
+    "kind": "article",
+    "alt": "When does November really peak? Adgent research compares 11.11 and Black Friday in Türkiye using product searches, marketplace transactions and advertiser activity."
+  },
+  "about": {
+    "kind": "page",
+    "eyebrow": "About",
+    "title": "Judgment at the moment of decision.",
+    "alt": "Adgent card. About: Judgment at the moment of decision.",
+    "fixed": true
+  },
+  "account-memory": {
+    "kind": "page",
+    "eyebrow": "Run the accounts · Account memory",
+    "title": "Say it once. It comes back in the next verdict.",
+    "alt": "Adgent card. Run the accounts, Account memory: Say it once. It comes back in the next verdict."
+  },
+  "agents": {
+    "kind": "page",
+    "eyebrow": "Build and automate · Agents & workflows",
+    "title": "Build agents that report back on their own.",
+    "alt": "Adgent card. Build and automate, Agents & workflows: Build agents that report back on their own."
+  },
+  "ai-media-buyer-for-agencies": {
+    "kind": "article",
+    "alt": "AI media buyer for agencies, many accounts"
+  },
+  "ai-media-buyer-vs-performance-max-vs-dashboard": {
+    "kind": "article",
+    "alt": "Three columns compared side by side, a reporting dashboard, Performance Max, and an AI media buyer, with the AI media buyer holding the decision."
+  },
+  "ai-visibility": {
+    "kind": "page",
+    "eyebrow": "Build and automate · AI Visibility",
+    "title": "Buyers ask AI what to buy. See who it recommends.",
+    "alt": "Adgent card. Build and automate, AI Visibility: Buyers ask AI what to buy. See who it recommends."
+  },
+  "attribution-window-day-one-data": {
+    "kind": "article",
+    "alt": "Bar chart of a ROAS figure rising across seven days as Meta's attribution window matures, labeled 'draft · revising'."
+  },
+  "blog": {
+    "kind": "page",
+    "eyebrow": "Blog",
+    "title": "Notes on reading signal from noise.",
+    "alt": "Adgent card. Blog: Notes on reading signal from noise."
+  },
+  "break-even-roas-calculator": {
+    "kind": "page",
+    "eyebrow": "Free tool · Break-even ROAS",
+    "title": "The ROAS you have to beat, after everything comes out.",
+    "alt": "Adgent card. Free tool, Break-even ROAS: The ROAS you have to beat, after everything comes out."
+  },
+  "business-information": {
+    "kind": "page",
+    "eyebrow": "Company · Business information",
+    "title": "The business behind the brand.",
+    "alt": "Adgent card. Company, Business information: The business behind the brand.",
+    "fixed": true
+  },
+  "campaign-build": {
+    "kind": "page",
+    "eyebrow": "Build and automate · Campaign build",
+    "title": "Describe the campaign. Inspect every field before it goes live.",
+    "alt": "Adgent card. Build and automate, Campaign build: Describe the campaign. Inspect every field before it goes live."
+  },
+  "can-ai-audit-your-ad-accounts": {
+    "kind": "article",
+    "alt": "A card reading AI audits each Meta and Google Ads account on its own, catches leaks and flags what it can't yet trust."
+  },
+  "can-ai-run-your-ad-account": {
+    "kind": "article",
+    "alt": "Can AI run your ad account? What it can and can't do"
+  },
+  "cbo-vs-abo-vs-advantage-plus": {
+    "kind": "article",
+    "alt": "CBO vs ABO vs Advantage+: which budget model in 2026?"
+  },
+  "change-ledger": {
+    "kind": "page",
+    "eyebrow": "Run the accounts · Change Ledger",
+    "title": "Every account move, its before-state and what happened next.",
+    "alt": "Adgent card. Run the accounts, Change Ledger: Every account move, its before-state and what happened next."
+  },
+  "conversion-signal-check": {
+    "kind": "page",
+    "eyebrow": "Free tool · Signal check",
+    "title": "Is there enough signal in the account to optimize on?",
+    "alt": "Adgent card. Free tool, Signal check: Is there enough signal in the account to optimize on?"
+  },
+  "cpm-is-the-early-creative-fatigue-signal": {
+    "kind": "article",
+    "alt": "A CPM curve rising early against a muted, dashed frequency curve that rises late."
+  },
+  "creative-intelligence": {
+    "kind": "page",
+    "eyebrow": "Build and automate · Creative analysis",
+    "title": "Behind every ad, a hook, a concept and an angle.",
+    "alt": "Adgent card. Build and automate, Creative analysis: Behind every ad, a hook, a concept and an angle."
+  },
+  "cross-platform-comparability-meta-google": {
+    "kind": "article",
+    "alt": "Meta 4.2x and Google 3.1x cards joined by a not-equals sign, with a note 'different windows · not comparable'."
+  },
+  "daily-verdict": {
+    "kind": "page",
+    "eyebrow": "Run the accounts · Decisions",
+    "title": "Every account read before you open your laptop.",
+    "alt": "Adgent card. Run the accounts, Decisions: Every account read before you open your laptop."
+  },
+  "dashboards": {
+    "kind": "page",
+    "eyebrow": "Build and automate · Dashboards & reports",
+    "title": "Type the report. Send the link.",
+    "alt": "Adgent card. Build and automate, Dashboards & reports: Type the report. Send the link."
+  },
+  "data-deletion": {
+    "kind": "page",
+    "eyebrow": "Legal · Data deletion",
+    "title": "How to delete what we hold.",
+    "alt": "Adgent card. Legal, Data deletion: How to delete what we hold.",
+    "fixed": true
+  },
+  "data-use": {
+    "kind": "page",
+    "eyebrow": "Legal · Data use",
+    "title": "What it reads, and what it never does.",
+    "alt": "Adgent card. Legal, Data use: What it reads, and what it never does.",
+    "fixed": true
+  },
+  "ecommerce": {
+    "kind": "page",
+    "eyebrow": "Ecommerce & DTC",
+    "title": "January's returns rewrite December's ROAS.",
+    "alt": "Adgent card. Ecommerce & DTC: January's returns rewrite December's ROAS."
+  },
+  "features": {
+    "kind": "page",
+    "eyebrow": "All capabilities",
+    "title": "Every capability, and where each one stands.",
+    "alt": "Adgent card. All capabilities: Every capability, and where each one stands."
+  },
+  "for-agencies": {
+    "kind": "page",
+    "eyebrow": "Performance agencies",
+    "title": "Every client keeps its context. Your senior team covers more accounts.",
+    "alt": "Adgent card. Performance agencies: Every client keeps its context. Your senior team covers more accounts."
+  },
+  "for-in-house": {
+    "kind": "page",
+    "eyebrow": "In-house teams",
+    "title": "A second opinion that remembers the first decision.",
+    "alt": "Adgent card. In-house teams: A second opinion that remembers the first decision."
+  },
+  "google-ads-account-structure-2026": {
+    "kind": "article",
+    "alt": "An account hierarchy tree, Account splitting into Brand and Non-brand, labeled STAGs, 30+ conv/mo, signal."
+  },
+  "google-ads-target-cpa-roas-change-2026": {
+    "kind": "article",
+    "alt": "A CPA line flat at $5 actual then rising toward a $10 target, labeled Aug 17 target-based bidding."
+  },
+  "ground-truth": {
+    "kind": "page",
+    "eyebrow": "Run the accounts · Ground truth",
+    "title": "More than the platform's word for it.",
+    "alt": "Adgent card. Run the accounts, Ground truth: More than the platform's word for it."
+  },
+  "how-much-ad-spend-is-wasted": {
+    "kind": "article",
+    "alt": "Budget bars with a highlighted chunk marking wasted spend."
+  },
+  "how-to-audit-a-google-ads-account": {
+    "kind": "article",
+    "alt": "How to audit a Google Ads account: 12-point checklist"
+  },
+  "how-to-audit-performance-max": {
+    "kind": "article",
+    "alt": "How to audit a Performance Max campaign"
+  },
+  "how-to-choose-an-ai-media-buying-tool": {
+    "kind": "article",
+    "alt": "Four columns, creative, bid automation, analysis, DSP, laid out as a buyer's framework for AI ad tools."
+  },
+  "index": {
+    "kind": "page",
+    "eyebrow": "Adgent · Agency and client teams",
+    "title": "The first multiplayer AI in the marketing vertical.",
+    "alt": "Adgent card: The first multiplayer AI in the marketing vertical."
+  },
+  "lead-generation": {
+    "kind": "page",
+    "eyebrow": "Lead generation",
+    "title": "The click identifier expires before the deal closes.",
+    "alt": "Adgent card. Lead generation: The click identifier expires before the deal closes."
+  },
+  "local-multi-location": {
+    "kind": "page",
+    "eyebrow": "Local & multi-location",
+    "title": "The conversion isn't on the internet.",
+    "alt": "Adgent card. Local & multi-location: The conversion isn't on the internet."
+  },
+  "marketplaces": {
+    "kind": "page",
+    "eyebrow": "Marketplaces",
+    "title": "It counts the transaction. You bank the take rate.",
+    "alt": "Adgent card. Marketplaces: It counts the transaction. You bank the take rate."
+  },
+  "meta-ads-account-audit-checklist": {
+    "kind": "article",
+    "alt": "A Meta audit checklist card with checks and flags."
+  },
+  "meta-vs-google-ads-which-first": {
+    "kind": "article",
+    "alt": "Meta vs Google Ads: which for your first $10k?"
+  },
+  "mobile-apps": {
+    "kind": "page",
+    "eyebrow": "Mobile apps & games",
+    "title": "A 6-bit integer, with noise added on purpose.",
+    "alt": "Adgent card. Mobile apps & games: A 6-bit integer, with noise added on purpose."
+  },
+  "performance-max-brand-cannibalization": {
+    "kind": "article",
+    "alt": "Is Performance Max cannibalizing your branded search?"
+  },
+  "performance-max-not-spending-budget": {
+    "kind": "article",
+    "alt": "A budget bar only partly filled and marked capped, with a note that bid and Quality Score constraints are the more common cause."
+  },
+  "placement-drift-the-leak-in-the-average": {
+    "kind": "article",
+    "alt": "A blended 3.8x ROAS split into a Feed 4.2x bar and an Audience Network 1.1x bar marked 'the leak'."
+  },
+  "planning": {
+    "kind": "page",
+    "eyebrow": "Build and automate · Planning",
+    "title": "Ask for a media plan. Get a document, not a paragraph.",
+    "alt": "Adgent card. Build and automate, Planning: Ask for a media plan. Get a document, not a paragraph."
+  },
+  "platform-change-log": {
+    "kind": "page",
+    "eyebrow": "Run the accounts · Platform change log",
+    "title": "Every change on the account, next to what it caused.",
+    "alt": "Adgent card. Run the accounts, Platform change log: Every change on the account, next to what it caused."
+  },
+  "pricing": {
+    "kind": "page",
+    "eyebrow": "Talk to sales",
+    "title": "Talk to sales.",
+    "alt": "Adgent. Talk to sales about your team's account workflow, client reviews and next steps."
+  },
+  "privacy": {
+    "kind": "page",
+    "eyebrow": "Legal · Privacy",
+    "title": "How Adgent handles your data.",
+    "alt": "Adgent card. Legal, Privacy: How Adgent handles your data.",
+    "fixed": true
+  },
+  "scale-a-winner-without-breaking-it": {
+    "kind": "article",
+    "alt": "Stacked +20% budget steps climbing along a dashed ramp with a 'learning intact' badge."
+  },
+  "security": {
+    "kind": "page",
+    "eyebrow": "Legal · Security",
+    "title": "How Adgent protects your ad data.",
+    "alt": "Adgent card. Legal, Security: How Adgent protects your ad data.",
+    "fixed": true
+  },
+  "specialists": {
+    "kind": "page",
+    "eyebrow": "Build and automate · Specialists",
+    "title": "Ten specialists, one lever each.",
+    "alt": "Adgent card. Build and automate, Specialists: Ten specialists, one lever each."
+  },
+  "terms": {
+    "kind": "page",
+    "eyebrow": "Legal · Terms",
+    "title": "The terms for using Adgent.",
+    "alt": "Adgent card. Legal, Terms: The terms for using Adgent.",
+    "fixed": true
+  },
+  "tools": {
+    "kind": "page",
+    "eyebrow": "Free tools",
+    "title": "Two numbers worth checking before you touch a budget.",
+    "alt": "Adgent card. Free tools: Two numbers worth checking before you touch a budget."
+  },
+  "travel-hospitality": {
+    "kind": "page",
+    "eyebrow": "Travel & hospitality",
+    "title": "The booking converts. The stay is what pays.",
+    "alt": "Adgent card. Travel & hospitality: The booking converts. The stay is what pays."
+  },
+  "trust-gate": {
+    "kind": "page",
+    "eyebrow": "Run the accounts · Trust Gate",
+    "title": "Know which numbers can carry a decision.",
+    "alt": "Adgent card. Run the accounts, Trust Gate: Know which numbers can carry a decision."
+  },
+  "what-is-an-ai-media-buyer": {
+    "kind": "article",
+    "alt": "A dashboard that hands you data next to an AI media buyer that hands you a decision, the verdict first."
+  },
+  "why-adgent": {
+    "kind": "page",
+    "eyebrow": "Why Adgent",
+    "title": "Your agency and brand can work on the same answer.",
+    "alt": "Adgent card. Why Adgent: Your agency and brand can work on the same answer."
+  },
+  "why-adgent-leads-with-the-verdict": {
+    "kind": "article",
+    "alt": "A verdict card reading 'Exclude Audience Net, the answer first' above muted lines labeled 'evidence · underneath'."
+  },
+  "why-did-my-cpa-jump": {
+    "kind": "article",
+    "alt": "A rising cost-per-acquisition curve ending in a spike marker."
+  },
+  "why-is-my-meta-roas-dropping": {
+    "kind": "article",
+    "alt": "Why is my Meta ROAS dropping? A diagnostic walkthrough"
+  },
+  "meetings": {
+    "kind": "page",
+    "eyebrow": "In your meetings",
+    "title": "Bring it into the meeting.",
+    "alt": "Adgent card. In your meetings: Bring it into the meeting.",
+    "fixed": true
+  }
+}

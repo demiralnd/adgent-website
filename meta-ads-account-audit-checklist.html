@@ -3,470 +3,488 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="theme-color" content="#ffffff"/>
-<title>The Meta Ads audit: ten checks that recover spend — Adgent</title>
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1"/>
+<title>The Meta Ads audit: ten checks that recover spend · Adgent</title>
 <meta name="description" content="Audit a Meta Ads account in order of recoverable spend: verify pixel and CAPI signal first, then attribution, CBO leakage, placement drift and creative fatigue."/>
 <link rel="canonical" href="https://adgent.app/meta-ads-account-audit-checklist"/>
-<link rel="alternate" type="application/rss+xml" title="Adgent — the blog" href="/feed.xml"/>
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1"/>
 <meta property="og:type" content="article"/>
 <meta property="og:site_name" content="Adgent"/>
-<meta property="og:locale" content="en_US"/>
 <meta property="og:title" content="The Meta Ads account audit: the ten checks that recover spend"/>
-<meta property="og:description" content="Audit a Meta Ads account in order of recoverable spend: verify pixel and CAPI signal first, then attribution, CBO leakage, placement drift and creative fatigue."/>
+<meta property="og:description" content="Ten checks ordered by the money they recover, the signal check that has to come before all of them, and the red flags you can spot in thirty seconds."/>
+<!--#seo-->
+<meta name="theme-color" content="#F6F5F4"/>
+<link rel="icon" href="/favicon.ico" sizes="32x32"/>
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=a93b54c2"/>
+<meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="https://adgent.app/meta-ads-account-audit-checklist"/>
-<meta property="og:image" content="https://adgent.app/assets/og/meta-ads-account-audit-checklist.png?v=6c7de505"/>
+<meta property="og:image" content="https://adgent.app/assets/og/meta-ads-account-audit-checklist.png?v=e8d3788f"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
-<meta property="og:image:alt" content="A Meta audit checklist card with green checks and red flags."/>
+<meta property="og:image:alt" content="A Meta audit checklist card with checks and flags."/>
 <meta property="article:published_time" content="2026-07-22"/>
-<meta property="article:section" content="Playbook"/>
+<meta property="article:modified_time" content="2026-07-22"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="The Meta Ads account audit: the ten checks that recover spend"/>
-<meta name="twitter:description" content="Audit a Meta Ads account in order of recoverable spend: verify pixel and CAPI signal first, then attribution, CBO leakage, placement drift and creative fatigue."/>
-<meta name="twitter:image" content="https://adgent.app/assets/og/meta-ads-account-audit-checklist.png?v=6c7de505"/>
-<link rel="icon" type="image/svg+xml" href="/assets/logo-app.svg"/>
-<link rel="apple-touch-icon" href="/assets/logo-app.svg"/>
-<link rel="stylesheet" href="/tokens.min.css?v=c5856eac"/>
-<link rel="stylesheet" href="/site.min.css?v=1bd868bd"/>
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "headline": "The Meta Ads account audit: the ten checks that recover spend", "image": ["https://adgent.app/assets/og/meta-ads-account-audit-checklist.png"], "description": "Audit a Meta Ads account in order of recoverable spend: verify pixel and CAPI signal first, then attribution, CBO leakage, placement drift and creative fatigue.", "datePublished": "2026-07-22", "dateModified": "2026-07-22", "author": {"@id": "https://adgent.app/#organization"}, "publisher": {"@type": "Organization", "@id": "https://adgent.app/#organization", "name": "Adgent", "url": "https://adgent.app", "logo": {"@type": "ImageObject", "url": "https://adgent.app/assets/logo.svg"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://adgent.app/meta-ads-account-audit-checklist"}, "isPartOf": {"@type": "Blog", "name": "Adgent Blog", "@id": "https://adgent.app/blog"}, "articleSection": "Playbook", "keywords": "meta ads audit, facebook ads audit checklist, meta ads account audit, how to audit facebook ads", "inLanguage": "en", "about": {"@type": "Thing", "name": "Meta Ads account audit"}, "wordCount": 2197, "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".answer-box", ".standfirst"]}, "url": "https://adgent.app/meta-ads-account-audit-checklist"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I audit a Meta/Facebook ads account?", "acceptedAnswer": {"@type": "Answer", "text": "Work in order of recoverable spend, not report length. First verify the signal — pixel and Conversions API health, deduplication and event match quality — because a broken signal corrupts every number downstream. Then check your attribution setting, CBO budget leakage, Audience Network placement drift, frequency and creative fatigue, audience overlap, retargeting exclusions, catalog health, learning-phase status and account structure. Attach a dollar estimate to each finding and fix the highest-value leak first."}}, {"@type": "Question", "name": "How often should I audit Meta ads?", "acceptedAnswer": {"@type": "Answer", "text": "Match cadence to how fast each check goes stale. Run the full ten-check audit quarterly, a light monthly review on pacing, frequency and the ad sets that shifted most, and monitor the high-drift checks — placement drift, frequency, audience overlap and CBO leakage — continuously, because those reopen within a week of any manual pass."}}, {"@type": "Question", "name": "What are the red flags in a Meta ads account?", "acceptedAnswer": {"@type": "Answer", "text": "Frequency above 5 on a prospecting audience, no retargeting exclusions (usually spend re-buying existing customers), a backend-vs-Ads-Manager revenue gap wider than 10–15%, Audience Network eating a large share of a placement-optimized budget, and ad sets stuck in the learning phase after five days. Any one of these is recoverable spend you can find before you do a single calculation."}}, {"@type": "Question", "name": "How do I check if my pixel is working?", "acceptedAnswer": {"@type": "Answer", "text": "Open Events Manager and confirm events fire once per action with a healthy event match quality score, that browser pixel and Conversions API events deduplicate on a shared event ID, and that your key conversion carries the right value. Use the Meta Pixel Helper on live pages and compare Ads Manager conversions against GA4 or Shopify — a gap wider than 10–15% means the signal, not your bids, is the first thing to fix."}}, {"@type": "Question", "name": "What attribution setting should I use?", "acceptedAnswer": {"@type": "Answer", "text": "For most direct-response accounts, 7-day click is the honest default — it captures the buying window without over-crediting view-through. The trap is judging performance on the default setting without knowing which window it uses, or comparing ad sets on different windows. Pick one attribution setting, apply it consistently, and remember recent numbers are still settling inside the window and read pessimistic."}}, {"@type": "Question", "name": "Can AI audit Meta ads?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, and it fits the high-drift checks better than a quarterly human pass. An AI media buyer reads the account through the API every morning, runs the same 20 checks, ranks findings by recoverable spend and flags what changed since yesterday — then prepares the fix for your approval. It complements a human, who still owns the strategy and judgment calls."}}, {"@type": "Question", "name": "How long does a Meta audit take?", "acceptedAnswer": {"@type": "Answer", "text": "A thorough manual audit of a single account takes a few hours to a full day, depending on how many campaigns and creatives it holds. A continuous, API-driven audit runs the same checks in minutes and re-runs on its own every morning — so the finding lands the day the leak opens, not 89 days later."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://adgent.app"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://adgent.app/blog"}, {"@type": "ListItem", "position": 3, "name": "The Meta Ads account audit: the ten checks that recover spend", "item": "https://adgent.app/meta-ads-account-audit-checklist"}]}]}</script>
-<style>
- .article { max-width: 720px; margin: 0 auto; }
- .article .post-meta { display: flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-tertiary); }
- .article .post-tag { color: var(--accent-text); }
- .article h1 { font-weight: 600; font-size: clamp(30px, 4.4vw, 46px); line-height: 1.06; letter-spacing: -0.035em; margin: 18px 0 0; text-wrap: balance; }
- .article .standfirst { font-size: 19px; line-height: 1.6; color: var(--text-secondary); margin: 22px 0 0; text-wrap: pretty; }
- .byline { display: flex; align-items: center; gap: 12px; margin: 26px 0 0; }
- .byline .av { width: 38px; height: 38px; border-radius: 50%; background: var(--accent); color: #fff; display: grid; place-items: center; font-weight: 700; font-size: 16px; }
- .byline .who { font-size: 14px; font-weight: 600; }
- .byline .role { font-size: 12.5px; color: var(--text-tertiary); }
- .post-hero-cover { margin: 30px 0 0; border: 1px solid var(--border-default); border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 1200 / 630; }
- .post-hero-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
- .answer-box { margin: 30px 0 0; background: var(--bg-sub); border: 1px solid var(--border-default); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-md) var(--radius-md) 0; padding: 20px 24px; }
- .answer-box .lbl { font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent-text); }
- .answer-box p { font-size: 17px; line-height: 1.6; color: var(--text); margin: 10px 0 0; text-wrap: pretty; }
- .prose { margin: 36px 0 0; }
- .prose p { font-size: 17px; line-height: 1.72; color: var(--text); margin: 20px 0 0; text-wrap: pretty; }
- .prose h2 { font-size: 25px; font-weight: 600; letter-spacing: -0.02em; margin: 40px 0 0; }
- .prose h3 { font-size: 19px; font-weight: 600; letter-spacing: -0.01em; margin: 30px 0 0; }
- .prose b { font-weight: 600; }
- .prose a { color: var(--accent-text); text-decoration: none; border-bottom: 1px solid rgba(255,90,44,0.35); }
- .prose a:hover { border-bottom-color: var(--accent-text); }
- .prose ol { margin: 18px 0 0; padding: 0 0 0 4px; list-style: none; counter-reset: chk; display: flex; flex-direction: column; gap: 16px; }
- .prose ol li { position: relative; padding-left: 44px; font-size: 16px; line-height: 1.6; color: var(--text); counter-increment: chk; }
- .prose ol li::before { content: counter(chk); position: absolute; left: 0; top: 0; width: 28px; height: 28px; border-radius: 8px; background: var(--accent-subtle); color: var(--accent); font-family: var(--font-mono); font-size: 13px; font-weight: 600; display: grid; place-items: center; }
- .prose ol li b { display: block; margin-bottom: 2px; }
- .prose ul { list-style: none; margin: 18px 0 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
- .prose ul li { position: relative; padding-left: 30px; font-size: 16px; line-height: 1.6; color: var(--text); }
- .prose ul li svg { position: absolute; left: 0; top: 3px; width: 18px; height: 18px; color: var(--accent); stroke-width: 2; }
- .prose blockquote { margin: 30px 0 0; padding: 18px 24px; border-left: 3px solid var(--accent); background: var(--bg-sub); border-radius: 0 var(--radius-md) var(--radius-md) 0; }
- .prose blockquote p { margin: 0; font-family: var(--font-editorial); font-style: italic; font-size: 20px; line-height: 1.5; color: var(--text); }
- .flag-list { list-style: none; margin: 20px 0 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
- .flag-list li { position: relative; padding: 14px 16px 14px 46px; font-size: 15.5px; line-height: 1.58; color: var(--text); background: var(--bg-sub); border: 1px solid var(--border-default); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-md) var(--radius-md) 0; }
- .flag-list li::before { content: "!"; position: absolute; left: 14px; top: 14px; width: 22px; height: 22px; border-radius: 6px; background: var(--accent-subtle); color: var(--accent); font-family: var(--font-mono); font-size: 14px; font-weight: 700; display: grid; place-items: center; }
- .flag-list li b { font-weight: 600; }
- .cmp-wrap { margin: 22px 0 0; overflow-x: auto; border: 1px solid var(--border-default); border-radius: var(--radius-md); }
- table.cmp { width: 100%; border-collapse: collapse; font-size: 14.5px; line-height: 1.5; min-width: 560px; }
- table.cmp th, table.cmp td { text-align: left; padding: 12px 16px; border-bottom: 1px solid var(--border-default); vertical-align: top; color: var(--text); }
- table.cmp thead th { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-tertiary); background: var(--bg-elevated); font-weight: 600; }
- table.cmp tbody th { font-weight: 600; color: var(--text); white-space: nowrap; }
- table.cmp tbody tr:last-child th, table.cmp tbody tr:last-child td { border-bottom: none; }
- table.cmp .col-hi { color: var(--accent); font-weight: 600; }
- .faq { max-width: 720px; margin: 44px auto 0; }
- .faq h2 { font-size: 25px; font-weight: 600; letter-spacing: -0.02em; }
- .faq details { border-top: 1px solid var(--border-default); padding: 18px 0; }
- .faq details:last-child { border-bottom: 1px solid var(--border-default); }
- .faq summary { list-style: none; cursor: pointer; font-size: 17px; font-weight: 600; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
- .faq summary::-webkit-details-marker { display: none; }
- .faq summary .chev { width: 18px; height: 18px; flex: none; stroke-width: 2; color: var(--text-tertiary); transition: transform 160ms; }
- .faq details[open] summary .chev { transform: rotate(180deg); }
- .faq .faq-a { font-size: 15.5px; line-height: 1.65; color: var(--text-secondary); margin: 12px 0 0; }
- .related { max-width: 720px; margin: 48px auto 0; }
- .related .eyebrow { font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-text); display: inline-flex; align-items: center; gap: 9px; }
- .related .eyebrow .tick { width: 16px; height: 1px; background: var(--accent); }
- .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 18px 0 0; }
- .rel-card { background: var(--bg-elevated); border: 1px solid var(--border-default); border-radius: var(--radius-lg); padding: 18px 20px; transition: border-color 140ms; }
- .rel-card:hover { border-color: var(--border-strong); }
- .rel-card .rc-tag { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent-text); }
- .rel-card .rc-h { font-size: 15px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.25; margin: 8px 0 0; text-wrap: balance; }
- .post-foot { max-width: 720px; margin: 48px auto 0; padding-top: 28px; border-top: 1px solid var(--border-default); display: flex; align-items: center; justify-content: space-between; gap: 16px; }
- .back-link { display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 600; color: var(--text-secondary); }
- .back-link svg { width: 15px; height: 15px; stroke-width: 2; }
- .back-link:hover { color: var(--text-primary); }
- @media (max-width: 560px){ .related-grid { grid-template-columns: 1fr; } }
-</style>
+<meta name="twitter:description" content="Ten checks ordered by the money they recover, the signal check that has to come before all of them, and the red flags you can spot in thirty seconds."/>
+<meta name="twitter:image" content="https://adgent.app/assets/og/meta-ads-account-audit-checklist.png?v=e8d3788f"/>
+<link rel="alternate" type="application/rss+xml" title="The Adgent blog" href="/feed.xml"/>
+<link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt"/>
+<link rel="preload" href="/assets/fonts/switzer-500.woff2" as="font" type="font/woff2" crossorigin/>
+<link rel="preload" href="/assets/fonts/switzer-600.woff2" as="font" type="font/woff2" crossorigin/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "headline": "The Meta Ads account audit: the ten checks that recover spend", "description": "Audit a Meta Ads account in order of recoverable spend: verify pixel and CAPI signal first, then attribution, CBO leakage, placement drift and creative fatigue.", "image": ["https://adgent.app/assets/og/meta-ads-account-audit-checklist.png"], "url": "https://adgent.app/meta-ads-account-audit-checklist", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://adgent.app/meta-ads-account-audit-checklist"}, "author": {"@id": "https://adgent.app/#organization"}, "publisher": {"@id": "https://adgent.app/#organization"}, "isPartOf": {"@id": "https://adgent.app/#website"}, "inLanguage": "en", "wordCount": 2192, "datePublished": "2026-07-22", "dateModified": "2026-07-22", "keywords": "meta ads audit, facebook ads audit checklist, meta ads account audit, how to audit facebook ads", "about": {"@type": "Thing", "name": "Meta Ads account audit"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://adgent.app/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://adgent.app/blog"}, {"@type": "ListItem", "position": 3, "name": "The Meta Ads account audit: the ten checks that recover spend", "item": "https://adgent.app/meta-ads-account-audit-checklist"}]}, {"@type": "FAQPage", "@id": "https://adgent.app/meta-ads-account-audit-checklist#faq", "mainEntity": [{"@type": "Question", "name": "How do I audit a Meta (Facebook) ads account?", "acceptedAnswer": {"@type": "Answer", "text": "Work in order of recoverable spend, not report length. First verify the signal (pixel and Conversions API health, deduplication and event match quality), because a broken signal corrupts every number downstream. Then check your attribution setting, CBO budget leakage, Audience Network placement drift, frequency and creative fatigue, audience overlap, retargeting exclusions, catalogue health, learning-phase status and account structure. Attach a dollar estimate to each finding and fix the highest-value leak first."}}, {"@type": "Question", "name": "How often should I audit Meta ads?", "acceptedAnswer": {"@type": "Answer", "text": "Match the cadence to how fast each check goes stale. Run the full ten-check audit quarterly, a light monthly review on pacing, frequency and the ad sets that shifted most, and monitor the high-drift checks (placement drift, frequency, audience overlap and CBO leakage) continuously, because those reopen within a week of any manual pass."}}, {"@type": "Question", "name": "What are the red flags in a Meta ads account?", "acceptedAnswer": {"@type": "Answer", "text": "Frequency above 5 on a prospecting audience, no retargeting exclusions, a backend versus Ads Manager revenue gap wider than roughly 15–20%, Audience Network eating a large share of a placement-optimised budget, and ad sets stuck in the learning phase after five days. Any one of these is recoverable spend you can find before you do a single calculation."}}, {"@type": "Question", "name": "How do I check if my pixel is working?", "acceptedAnswer": {"@type": "Answer", "text": "Open Events Manager and confirm events fire once per action with a healthy event match quality score, that browser pixel and Conversions API events deduplicate on a shared event ID, and that your key conversion carries the right value. Use the Meta Pixel Helper on live pages and compare Ads Manager conversions against GA4 or your store. A gap wider than roughly 15–20% means the signal, not your bids, is the first thing to fix. Then check volume: Meta's guidance is a minimum of 50 events over 7 days for an ad set to learn."}}, {"@type": "Question", "name": "What attribution setting should I use?", "acceptedAnswer": {"@type": "Answer", "text": "For most direct-response accounts, 7-day click is the sensible default: it captures the buying window without over-crediting view-through. The trap is judging performance on the default setting without knowing which window it uses, or comparing ad sets on different windows. Pick one attribution setting, apply it consistently, and remember recent numbers are still settling inside the window and read pessimistic."}}, {"@type": "Question", "name": "Can AI audit Meta ads?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, and it suits the high-drift checks better than a quarterly human pass. An AI media buyer reads the account through the API every day, ranks findings by what they cost and keeps the evidence and next move together. More in can AI audit your ad accounts ."}}, {"@type": "Question", "name": "How long does a Meta audit take?", "acceptedAnswer": {"@type": "Answer", "text": "A thorough manual audit of a single account takes a few hours to a full day, depending on how many campaigns and creatives it holds. A continuous, API-driven audit runs unattended and repeats every day, so a leak is read the day after it opens, not at the next quarterly review."}}]}, {"@type": "Organization", "@id": "https://adgent.app/#organization", "name": "Adgent", "url": "https://adgent.app", "logo": {"@type": "ImageObject", "url": "https://adgent.app/assets/logo.svg"}, "description": "Adgent is the AI employee for enterprise growth teams. It carries confirmed brand context, connected data, past decisions, reasoning and outcomes into each analysis, report, dashboard and account move.", "knowsAbout": ["AI media buying", "Meta Ads", "Google Ads", "ad account audits", "performance marketing", "creative analysis", "AI search visibility"], "sameAs": ["https://www.linkedin.com/company/adgentapp/", "https://www.instagram.com/adgentapp/", "https://x.com/adgentapp", "https://www.youtube.com/@adgentapp"], "areaServed": ["TR", "Worldwide"], "email": "osman@adgent.app", "address": {"@type": "PostalAddress", "addressCountry": "TR"}}, {"@type": "WebSite", "@id": "https://adgent.app/#website", "name": "Adgent", "alternateName": ["adgent.app", "Adgent: the AI employee for enterprise growth teams"], "url": "https://adgent.app/", "inLanguage": "en", "publisher": {"@id": "https://adgent.app/#organization"}}]}</script>
+<script src="/site.js?v=861946f0" defer></script>
+<!--/#seo-->
+<link rel="icon" type="image/svg+xml" href="/assets/logo-app.svg?v=cef40dcf"/>
+<link rel="preload" href="/assets/fonts/switzer-400.woff2" as="font" type="font/woff2" crossorigin/>
+<link rel="stylesheet" href="/tokens.css?v=3326b075"/>
+<link rel="stylesheet" href="/app.css?v=5543f4f9"/>
+<link rel="stylesheet" href="/css/article.css?v=12fe47b6"/>
 </head>
 <body>
-<!--#header--><a class="skip-link" href="#main">Skip to content</a>
-<header class="nav">
- <div class="wrap nav-in">
- <a class="brand" href="/" aria-label="Adgent — home">
- <img class="mark" src="/assets/icon-only.svg" alt=""/>
- <span class="name">Adgent</span>
- </a>
- <nav class="nav-links" aria-label="Main">
- <a href="/why-adgent">Why Adgent</a>
- <div class="nav-drop nav-drop-mega">
-  <a href="/features" class="nav-drop-t" aria-haspopup="true" aria-expanded="false">Product<svg class="caret" viewBox="0 0 12 8" fill="none" stroke="currentColor"><path d="M1 2l5 4 5-4"/></svg></a>
-  <div class="nav-menu nav-mega">
-   <div class="mega-cols">
-    <div class="mega-col">
-     <div class="mega-h">It reads</div>
-     <a href="/account-memory" data-mega="memory"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2a4 4 0 0 0-4 4v1a4 4 0 0 0-2 7 4 4 0 0 0 6 5 4 4 0 0 0 6-5 4 4 0 0 0-2-7V6a4 4 0 0 0-4-4Z"/><path d="M12 2v20"/></svg></span><span class="mega-tx"><span class="nm-t">Account memory</span><span class="nm-d">Say it once &mdash; it never asks again</span></span></a>
-     <a href="/daily-verdict" data-mega="verdict"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg></span><span class="mega-tx"><span class="nm-t">Daily verdict</span><span class="nm-d">Every account read before you wake up</span></span></a>
-     <a href="/ground-truth" data-mega="ground"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 15l4-5 3 3 5-7"/></svg></span><span class="mega-tx"><span class="nm-t">Ground truth</span><span class="nm-d">Judged on margin, not on the pixel</span></span></a>
-     <a href="/trust-gate" data-mega="trust"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6Z"/><path d="M9 12l2 2 4-4"/></svg></span><span class="mega-tx"><span class="nm-t">Trust Gate</span><span class="nm-d">It tells you no, before the money moves</span></span></a>
-     <a href="/creative-intelligence" data-mega="creative"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 15l5-4 3 2 4-5 6 6"/><circle cx="8.5" cy="8.5" r="1.5"/></svg></span><span class="mega-tx"><span class="nm-t">Creative intelligence</span><span class="nm-d">Scene by scene, and where viewers leave</span></span></a>
-     <a href="/change-ledger" data-mega="ledger"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg></span><span class="mega-tx"><span class="nm-t">Change Ledger</span><span class="nm-d">Every change logged — and reversible</span></span></a>
+<!--#header--><a class="skip" href="#main">Skip to content</a>
+<svg class="nav-sprite" aria-hidden="true" focusable="false">
+  <symbol id="nav-arrow" viewBox="0 0 24 24"><path d="M5 12h13M14 8l4 4-4 4"/></symbol>
+  <symbol id="nav-check" viewBox="0 0 24 24"><path d="M5 6h10M5 12h6M5 18h8"/><path d="m15 16 2 2 3-4"/></symbol>
+  <symbol id="nav-shield" viewBox="0 0 24 24"><path d="M12 3 19 6v5c0 5-3 8-7 10-4-2-7-5-7-10V6z"/><path d="m9 12 2 2 4-5"/></symbol>
+  <symbol id="nav-return" viewBox="0 0 24 24"><path d="M8 7H4V3"/><path d="M4 7c3-4 10-5 14-1 4 4 2 11-3 13-3 1-6 0-8-2"/></symbol>
+  <symbol id="nav-activity" viewBox="0 0 24 24"><path d="M4 18V9M10 18V5M16 18v-7M22 18V3"/></symbol>
+  <symbol id="nav-memory" viewBox="0 0 24 24"><path d="M7 4h10v17l-5-3-5 3z"/></symbol>
+  <symbol id="nav-source" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></symbol>
+  <symbol id="nav-agents" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="18" r="2.5"/><circle cx="19" cy="18" r="2.5"/><path d="M10.5 7 6.5 15M13.5 7l4 8M7.5 18h9"/></symbol>
+  <symbol id="nav-specialist" viewBox="0 0 24 24"><path d="m12 3 1.6 5.4L19 10l-5.4 1.6L12 17l-1.6-5.4L5 10l5.4-1.6z"/><path d="m19 16 .7 2.3L22 19l-2.3.7L19 22l-.7-2.3L16 19l2.3-.7z"/></symbol>
+  <symbol id="nav-build" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M12 8v8M8 12h8"/></symbol>
+  <symbol id="nav-plan" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="3"/><path d="M8 3v4M16 3v4M4 10h16M8 14h3M8 17h6"/></symbol>
+  <symbol id="nav-report" viewBox="0 0 24 24"><path d="M4 20h16M6 17v-5h3v5M11 17V7h3v10M16 17V4h3v13"/></symbol>
+  <symbol id="nav-meeting" viewBox="0 0 24 24"><rect x="3" y="5" width="13" height="14" rx="3"/><path d="m16 10 5-3v10l-5-3zM7 9h5M7 13h3"/></symbol>
+  <symbol id="nav-creative" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="9" cy="9" r="2"/><path d="m5 18 5-5 3 3 2-2 4 4"/></symbol>
+  <symbol id="nav-search" viewBox="0 0 24 24"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5M18 3v4M16 5h4"/></symbol>
+  <symbol id="nav-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></symbol>
+  <symbol id="nav-agency" viewBox="0 0 24 24"><path d="M3 21h18M5 21V7h6v14M13 21V3h6v18M7 10h2M7 14h2M15 7h2M15 11h2M15 15h2"/></symbol>
+  <symbol id="nav-brand" viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="13" rx="3"/><path d="M9 7V5c0-1 1-2 3-2s3 1 3 2v2M4 12h16M9 12v2M15 12v2"/></symbol>
+  <symbol id="nav-cart" viewBox="0 0 24 24"><path d="M3 4h2l2 11h10l3-7H7"/><circle cx="9" cy="19" r="1.5"/><circle cx="17" cy="19" r="1.5"/></symbol>
+  <symbol id="nav-funnel" viewBox="0 0 24 24"><path d="M4 4h16l-6 7v7l-4 2v-9z"/></symbol>
+  <symbol id="nav-travel" viewBox="0 0 24 24"><rect x="5" y="6" width="14" height="14" rx="3"/><path d="M9 6V4h6v2M9 10v6M15 10v6M5 13h14"/></symbol>
+  <symbol id="nav-market" viewBox="0 0 24 24"><path d="M4 9h16l-2-5H6zM5 9v11h14V9M9 20v-6h6v6"/><path d="M4 9c0 2 3 2 4 0 1 2 3 2 4 0 1 2 3 2 4 0 1 2 4 2 4 0"/></symbol>
+  <symbol id="nav-local" viewBox="0 0 24 24"><path d="M12 21s7-6 7-12a7 7 0 1 0-14 0c0 6 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></symbol>
+  <symbol id="nav-mobile" viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="3"/><path d="M10 5h4M11 18h2"/></symbol>
+</svg>
+<header class="topbar" id="top">
+  <div class="wrap nav">
+    <a class="brand" href="/" aria-label="Adgent: home">
+      <svg viewBox="0 0 170 170" fill="none" aria-hidden="true"><path d="M14 140 L85 6 L156 140 L128 140 L85 58 L42 140 Z" fill="currentColor"/><path d="M50 140 L85 72 L120 140 L96 140 L85 118 L74 140 Z" fill="currentColor"/><path d="M18 153 L152 153" stroke="currentColor" stroke-width="9" stroke-linecap="round"/></svg>
+      Adgent
+    </a>
+
+    <nav class="links" aria-label="Main">
+      <div class="drop">
+        <button type="button" class="drop-t" data-drop="product" aria-expanded="false" aria-controls="m-product">Product<svg viewBox="0 0 12 8" aria-hidden="true"><path d="M1 2l5 4 5-4"/></svg></button>
+        <div class="menu menu-product" id="m-product">
+          <div class="menu-group menu-product-core">
+            <p class="menu-h"><svg class="nav-ic" aria-hidden="true"><use href="#nav-check"/></svg>Run the accounts</p>
+            <div class="menu-flow">
+              <a href="/daily-verdict"><svg class="nav-ic" aria-hidden="true"><use href="#nav-check"/></svg><span class="menu-copy"><b>Decisions</b></span><svg class="nav-arr" aria-hidden="true"><use href="#nav-arrow"/></svg></a>
+              <a href="/trust-gate"><svg class="nav-ic" aria-hidden="true"><use href="#nav-shield"/></svg><span class="menu-copy"><b>Trust Gate</b></span><svg class="nav-arr" aria-hidden="true"><use href="#nav-arrow"/></svg></a>
+              <a href="/change-ledger"><svg class="nav-ic" aria-hidden="true"><use href="#nav-return"/></svg><span class="menu-copy"><b>Change Ledger</b></span><svg class="nav-arr" aria-hidden="true"><use href="#nav-arrow"/></svg></a>
+              <a href="/platform-change-log"><svg class="nav-ic" aria-hidden="true"><use href="#nav-activity"/></svg><span class="menu-copy"><b>Platform change log</b></span><svg class="nav-arr" aria-hidden="true"><use href="#nav-arrow"/></svg></a>
+            </div>
+            <p class="menu-h menu-h-sub"><svg class="nav-ic" aria-hidden="true"><use href="#nav-source"/></svg>Account context</p>
+            <a href="/account-memory"><svg class="nav-ic" aria-hidden="true"><use href="#nav-memory"/></svg><span class="menu-copy"><b>Account memory</b></span><svg class="nav-arr" aria-hidden="true"><use href="#nav-arrow"/></svg></a>
+            <a href="/ground-truth"><svg class="nav-ic" aria-hidden="true"><use href="#nav-source"/></svg><span class="menu-copy"><b>Ground truth</b></span><svg class="nav-arr" aria-hidden="true"><use href="#nav-arrow"/></svg></a>
+          </div>
+          <div class="menu-product-side">
+            <div class="menu-group menu-group-build">
+              <p class="menu-h"><svg class="nav-ic" aria-hidden="true"><use href="#nav-build"/></svg>Build and automate</p>
+              <div class="menu-subgrid">
+                <a href="/agents"><svg class="nav-ic" aria-hidden="true"><use href="#nav-agents"/></svg><span class="menu-copy"><b>Agents &amp; workflows</b></span><svg class="nav-arr" aria-hidden="true"><use href="#nav-arrow"/></svg></a>
+                <a href="/specialists"><svg class="nav-ic" aria-hidden="true"><use href="#nav-specialist"/></svg><span class="menu-copy"><b>Specialists</b></span><svg class="nav-arr" aria-hidden="true"><use href="#nav-arrow"/></svg></a>
+                <a href="/campaign-build"><svg class="nav-ic" aria-hidden="true"><use href="#nav-build"/></svg><span class="menu-copy"><b>Campaign build</b></span><svg class="nav-arr" aria-hidden="true"><use href="#nav-arrow"/></svg></a>
+                <a href="/planning"><svg class="nav-ic" aria-hidden="true"><use href="#nav-plan"/></svg><span class="menu-copy"><b>Planning</b></span><svg class="nav-arr" aria-hidden="true"><use href="#nav-arrow"/></svg></a>
+                <a href="/dashboards"><svg class="nav-ic" aria-hidden="true"><use href="#nav-report"/></svg><span class="menu-copy"><b>Dashboards &amp; reports</b></span><svg class="nav-arr" aria-hidden="true"><use href="#nav-arrow"/></svg></a>
+                <a href="/meetings"><svg class="nav-ic" aria-hidden="true"><use href="#nav-meeting"/></svg><span class="menu-copy"><b>In your meetings</b></span><svg class="nav-arr" aria-hidden="true"><use href="#nav-arrow"/></svg></a>
+              </div>
+            </div>
+            <div class="menu-group menu-group-answers">
+              <p class="menu-h"><svg class="nav-ic" aria-hidden="true"><use href="#nav-search"/></svg>Creative and AI answers</p>
+              <div class="menu-ai-grid">
+                <a class="menu-feature" href="/creative-intelligence"><svg class="nav-ic" aria-hidden="true"><use href="#nav-creative"/></svg><span class="menu-copy"><b>Creative analysis</b><span>Why a creative works, down to hook and concept</span></span><svg class="nav-arr" aria-hidden="true"><use href="#nav-arrow"/></svg></a>
+                <a class="menu-feature" href="/ai-visibility"><svg class="nav-ic" aria-hidden="true"><use href="#nav-search"/></svg><span class="menu-copy"><b>AI Visibility</b><span>What AI answers say about your brand, with dates</span></span><svg class="nav-arr" aria-hidden="true"><use href="#nav-arrow"/></svg></a>
+              </div>
+            </div>
+          </div>
+          <div class="menu-f">
+            <span>From account evidence and team decisions to the next piece of growth work.</span>
+            <a href="/features"><svg class="nav-ic" aria-hidden="true"><use href="#nav-grid"/></svg><span>All capabilities</span><svg class="nav-arr" aria-hidden="true"><use href="#nav-arrow"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="drop">
+        <button type="button" class="drop-t" data-drop="solutions" aria-expanded="false" aria-controls="m-solutions">Solutions<svg viewBox="0 0 12 8" aria-hidden="true"><path d="M1 2l5 4 5-4"/></svg></button>
+        <div class="menu menu-solutions" id="m-solutions">
+          <div class="menu-group menu-group-teams">
+            <p class="menu-h"><svg class="nav-ic" aria-hidden="true"><use href="#nav-agency"/></svg>By team</p>
+            <a href="/for-agencies"><svg class="nav-ic" aria-hidden="true"><use href="#nav-agency"/></svg><span class="menu-copy"><b>For agencies</b><span>Network and holding-group agencies, brand by brand</span></span><svg class="nav-arr" aria-hidden="true"><use href="#nav-arrow"/></svg></a>
+            <a href="/for-in-house"><svg class="nav-ic" aria-hidden="true"><use href="#nav-brand"/></svg><span class="menu-copy"><b>For brands</b><span>Large brands and the teams that run their spend</span></span><svg class="nav-arr" aria-hidden="true"><use href="#nav-arrow"/></svg></a>
+            <p class="menu-h menu-h-sub"><svg class="nav-ic" aria-hidden="true"><use href="#nav-shield"/></svg>Security</p>
+            <a href="/security"><svg class="nav-ic" aria-hidden="true"><use href="#nav-shield"/></svg><span class="menu-copy"><b>Security &amp; data</b><span>Connection scopes, storage and deletion</span></span><svg class="nav-arr" aria-hidden="true"><use href="#nav-arrow"/></svg></a>
+          </div>
+          <div class="menu-group menu-group-industries">
+            <p class="menu-h"><svg class="nav-ic" aria-hidden="true"><use href="#nav-market"/></svg>By industry</p>
+            <div class="menu-subgrid">
+              <a href="/ecommerce"><svg class="nav-ic" aria-hidden="true"><use href="#nav-cart"/></svg><span class="menu-copy"><b>Ecommerce &amp; DTC</b><span>Profit ROAS, with stock in view</span></span><svg class="nav-arr" aria-hidden="true"><use href="#nav-arrow"/></svg></a>
+              <a href="/lead-generation"><svg class="nav-ic" aria-hidden="true"><use href="#nav-funnel"/></svg><span class="menu-copy"><b>Lead generation</b><span>The identifier dies before the deal</span></span><svg class="nav-arr" aria-hidden="true"><use href="#nav-arrow"/></svg></a>
+              <a href="/travel-hospitality"><svg class="nav-ic" aria-hidden="true"><use href="#nav-travel"/></svg><span class="menu-copy"><b>Travel &amp; hospitality</b><span>The booking converts; the stay pays</span></span><svg class="nav-arr" aria-hidden="true"><use href="#nav-arrow"/></svg></a>
+              <a href="/marketplaces"><svg class="nav-ic" aria-hidden="true"><use href="#nav-market"/></svg><span class="menu-copy"><b>Marketplaces</b><span>It counts the sale; you bank the take rate</span></span><svg class="nav-arr" aria-hidden="true"><use href="#nav-arrow"/></svg></a>
+              <a href="/local-multi-location"><svg class="nav-ic" aria-hidden="true"><use href="#nav-local"/></svg><span class="menu-copy"><b>Local &amp; multi-location</b><span>The conversion isn't on the internet</span></span><svg class="nav-arr" aria-hidden="true"><use href="#nav-arrow"/></svg></a>
+              <a href="/mobile-apps"><svg class="nav-ic" aria-hidden="true"><use href="#nav-mobile"/></svg><span class="menu-copy"><b>Mobile apps &amp; games</b><span>A 6-bit integer with noise on purpose</span></span><svg class="nav-arr" aria-hidden="true"><use href="#nav-arrow"/></svg></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="/why-adgent">Why Adgent</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/blog" class="active" aria-current="page">Blog</a>
+      <a href="/about">About</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button type="button" class="burger" aria-label="Menu" aria-expanded="false" aria-controls="drawer">
+        <svg class="ic-m" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 7h16M3 15h16"/></svg>
+        <svg class="ic-x" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 5l12 12M17 5L5 17"/></svg>
+      </button>
     </div>
-    <div class="mega-col">
-     <div class="mega-h">It builds</div>
-     <a href="/built-from-chat#campaign" data-mega="campaign"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 11 21 3l-8 18-2-7-8-3Z"/><path d="M11 14l4-4"/></svg></span><span class="mega-tx"><span class="nm-t">Campaign build</span><span class="nm-d">Drafted whole, launched only on approval</span></span></a>
-     <a href="/built-from-chat#plan" data-mega="planning"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/><path d="M6 13h7M6 17h4"/></svg></span><span class="mega-tx"><span class="nm-t">Media plan</span><span class="nm-d">Every number shows where it came from</span></span></a>
-     <a href="/built-from-chat#dashboards" data-mega="dashboards"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/><path d="M13 13h4M13 17h4"/></svg></span><span class="mega-tx"><span class="nm-t">Live dashboards</span><span class="nm-d">Shareable, and still true on Thursday</span></span></a>
-     <a href="/built-from-chat#agents" data-mega="builds"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 4v4M8 14h.01M16 14h.01"/><path d="M2 13v3M22 13v3"/></svg></span><span class="mega-tx"><span class="nm-t">Agents &amp; reports</span><span class="nm-d">Standing jobs that run without you</span></span></a>
-     <p class="mega-note">Described in a sentence, built while you watch &mdash; and nothing reaches an account until you approve it.</p>
-    </div>
-    <div class="mega-panel" data-mega-panel aria-hidden="true">
-     <div class="mega-panel-art on" data-art="memory" data-t="Explain it once" data-d="Your rules, your exceptions, the calls you already made — carried into every verdict after, across platforms."><svg viewBox="0 0 300 196"> <rect class="mp-bubble" x="30" y="18" width="200" height="40" rx="10"/> <g class="mp-ink"><rect x="44" y="30" width="150" height="6" rx="3"/><rect x="44" y="43" width="96" height="6" rx="3"/></g> <text class="mp-lbl mp-lbl-dim" x="238" y="42">once</text> <path class="mp-tie" d="M60 58v18"/> <path class="mp-tie" d="M60 76h24"/> <path class="mp-tie" d="M60 76v38"/> <path class="mp-tie" d="M60 114h24"/> <path class="mp-tie" d="M60 76v76"/> <path class="mp-tie" d="M60 152h24"/> <g class="mp-rows"><rect x="90" y="64" width="180" height="24" rx="6"/><rect x="90" y="102" width="180" height="24" rx="6"/><rect x="90" y="140" width="180" height="24" rx="6"/></g> <g class="mp-ink"><rect x="104" y="73" width="76" height="6" rx="3"/><rect x="104" y="111" width="92" height="6" rx="3"/><rect x="104" y="149" width="68" height="6" rx="3"/></g> <g class="mp-tick"><path d="M236 74l5 5 9-9"/><path d="M236 112l5 5 9-9"/><path d="M236 150l5 5 9-9"/></g> <text class="mp-lbl" x="30" y="182">applied to every verdict after</text></svg></div>
-     <div class="mega-panel-art" data-art="verdict" data-t="The morning verdict" data-d="Every account read overnight, ranked by what it costs you — the position stated, the evidence under it."><svg viewBox="0 0 300 200"> <g class="mp-dim"><rect x="30" y="16" width="240" height="28" rx="7"/><rect x="30" y="90" width="240" height="26" rx="7"/><rect x="30" y="124" width="240" height="26" rx="7"/></g> <rect class="mp-hi" x="30" y="52" width="240" height="30" rx="7"/> <g class="mp-ink"> <rect x="42" y="26" width="8" height="8" rx="2"/><rect x="60" y="27" width="86" height="6" rx="3"/><rect x="212" y="27" width="46" height="6" rx="3"/> <rect x="42" y="99" width="8" height="8" rx="2"/><rect x="60" y="100" width="62" height="6" rx="3"/> <rect x="42" y="133" width="8" height="8" rx="2"/><rect x="60" y="134" width="74" height="6" rx="3"/> </g> <g class="mp-acc"><rect x="42" y="62" width="8" height="10" rx="2"/><rect x="60" y="63" width="104" height="7" rx="3.5"/><rect x="200" y="63" width="58" height="7" rx="3.5"/></g> <text class="mp-lbl mp-lbl-acc" x="30" y="172">this one needs you today</text> <text class="mp-lbl mp-lbl-dim" x="30" y="190">the rest say so in one line</text></svg></div>
-     <div class="mega-panel-art" data-art="ground" data-t="Judged on your margin" data-d="The platform optimizes toward what its pixel can see. Your cost of goods and second-order value are not in that set."><svg viewBox="0 0 300 190"> <path class="mp-axis" d="M34 150H272"/> <path class="mp-dim-l" d="M34 132 C90 118 150 96 272 44"/> <path class="mp-acc-l" d="M34 132 C90 130 150 138 272 152"/> <g class="mp-dot"><circle cx="272" cy="44" r="5"/></g> <g class="mp-dot mp-dot-acc"><circle cx="272" cy="152" r="5"/></g> <text class="mp-lbl mp-lbl-dim" x="150" y="72">platform ROAS</text> <text class="mp-lbl mp-lbl-acc" x="150" y="176">your margin</text> <path class="mp-gap" d="M262 52V144"/></svg></div>
-     <div class="mega-panel-art" data-art="trust" data-t="It says no" data-d="An unreachable target gets refused before the budget moves — with the account's own numbers as the reason."><svg viewBox="0 0 300 190"> <rect class="mp-card" x="30" y="20" width="240" height="56" rx="9"/> <g class="mp-ink"><rect x="46" y="34" width="112" height="7" rx="3.5"/><rect x="46" y="52" width="70" height="6" rx="3"/></g> <g class="mp-strike"><path d="M212 36l26 26M238 36l-26 26"/></g> <text class="mp-lbl mp-lbl-dim" x="30" y="94">what you asked for</text> <rect class="mp-card mp-card-acc" x="30" y="106" width="240" height="56" rx="9"/> <g class="mp-acc"><rect x="46" y="120" width="140" height="7" rx="3.5"/><rect x="46" y="138" width="100" height="6" rx="3"/></g> <text class="mp-lbl mp-lbl-acc" x="30" y="180">refused, with your own numbers</text></svg></div>
-     <div class="mega-panel-art" data-art="creative" data-t="Read scene by scene" data-d="Its DNA, the story beat by beat, and the exact second viewers leave. Analysis of what is already running."><svg viewBox="0 0 300 190"> <g class="mp-frames"><rect x="30" y="22" width="52" height="40" rx="6"/><rect x="92" y="22" width="52" height="40" rx="6"/><rect x="154" y="22" width="52" height="40" rx="6"/><rect x="216" y="22" width="52" height="40" rx="6"/></g> <path class="mp-axis" d="M30 148H270"/> <path class="mp-hold" d="M30 82 L92 90 L128 100 L154 138 L216 146 L270 150"/> <path class="mp-drop" d="M154 82V138"/> <circle class="mp-dot-acc" cx="154" cy="138" r="5"/> <text class="mp-lbl mp-lbl-acc" x="164" y="126">they leave here</text> <text class="mp-lbl" x="30" y="176">scene by scene, against retention</text></svg></div>
-     <div class="mega-panel-art" data-art="ledger" data-t="Undo, on your approval" data-d="Every change Adgent applies is logged with the state it replaced, and labeled reversible before you approve it."><svg viewBox="0 0 300 190"> <g class="mp-rows"><rect x="30" y="22" width="240" height="30" rx="7"/><rect x="30" y="60" width="240" height="30" rx="7"/><rect x="30" y="98" width="240" height="30" rx="7"/></g> <g class="mp-ink"><rect x="44" y="33" width="66" height="6" rx="3"/><rect x="44" y="71" width="88" height="6" rx="3"/><rect x="44" y="109" width="54" height="6" rx="3"/></g> <g class="mp-was"><rect x="146" y="33" width="40" height="6" rx="3"/><rect x="146" y="71" width="40" height="6" rx="3"/><rect x="146" y="109" width="40" height="6" rx="3"/></g> <g class="mp-acc"><path d="M226 32a9 9 0 1 0 3-6.6"/><path d="M226 24v8h8"/><path d="M226 70a9 9 0 1 0 3-6.6"/><path d="M226 62v8h8"/><path d="M226 108a9 9 0 1 0 3-6.6"/><path d="M226 100v8h8"/></g> <text class="mp-lbl" x="30" y="152">the state it replaced, kept</text> <text class="mp-lbl mp-lbl-acc" x="30" y="172">it offers to put it back</text></svg></div>
-     <div class="mega-panel-art" data-art="campaign" data-t="Built whole, held at the gate" data-d="Structure, budget, targeting and creative drafted complete from one description &mdash; then held, paused, until you approve it."><svg viewBox="0 0 300 196"> <rect class="mp-bubble" x="30" y="14" width="196" height="30" rx="9"/> <g class="mp-ink"><rect x="44" y="25" width="158" height="7" rx="3.5"/></g> <path class="mp-tie" d="M128 44v12"/> <g class="mp-rows"><rect x="30" y="60" width="240" height="26" rx="7"/><rect x="30" y="92" width="240" height="26" rx="7"/><rect x="30" y="124" width="240" height="26" rx="7"/></g> <g class="mp-ink"><rect x="44" y="69" width="88" height="6" rx="3"/><rect x="44" y="101" width="112" height="6" rx="3"/><rect x="44" y="133" width="72" height="6" rx="3"/></g> <g class="mp-acc"><rect x="196" y="69" width="60" height="7" rx="3.5"/><rect x="196" y="101" width="60" height="7" rx="3.5"/><rect x="196" y="133" width="60" height="7" rx="3.5"/></g> <text class="mp-lbl mp-lbl-dim" x="30" y="170">complete, and paused</text> <text class="mp-lbl mp-lbl-acc" x="30" y="188">it launches when you say so</text></svg></div>
-     <div class="mega-panel-art" data-art="planning" data-t="The plan, as data" data-d="Budget split, flights and line items — every cost range printed with the campaigns it came from, and nothing where there is no history."><svg viewBox="0 0 300 190"> <g class="mp-rows"><rect x="30" y="16" width="240" height="34" rx="7"/><rect x="30" y="58" width="240" height="34" rx="7"/></g> <g class="mp-ink"><rect x="44" y="26" width="72" height="6" rx="3"/><rect x="44" y="38" width="130" height="5" rx="2.5"/><rect x="44" y="68" width="60" height="6" rx="3"/><rect x="44" y="80" width="118" height="5" rx="2.5"/></g> <g class="mp-acc"><rect x="196" y="26" width="60" height="7" rx="3.5"/><rect x="196" y="68" width="60" height="7" rx="3.5"/></g> <g class="mp-null"><rect x="30" y="100" width="240" height="34" rx="7"/></g> <g class="mp-ink"><rect x="44" y="110" width="52" height="6" rx="3"/><rect x="44" y="122" width="96" height="5" rx="2.5"/></g> <g class="mp-strike"><path d="M212 108l18 18M230 108l-18 18"/></g> <text class="mp-lbl mp-lbl-acc" x="30" y="156">a range, with its basis named</text> <text class="mp-lbl mp-lbl-dim" x="30" y="176">no history, so no number given</text></svg></div>
-     <div class="mega-panel-art" data-art="dashboards" data-t="Live, not an export" data-d="The view you described stays wired to the data and keeps updating &mdash; shareable with a client without becoming a screenshot that is wrong by Thursday."><svg viewBox="0 0 300 190"> <rect class="mp-card" x="30" y="16" width="240" height="118" rx="9"/> <path class="mp-axis" d="M48 108H160"/> <g class="mp-bars"><rect x="56" y="72" width="18" height="36" rx="3"/><rect x="80" y="58" width="18" height="50" rx="3"/><rect x="104" y="84" width="18" height="24" rx="3"/></g> <g class="mp-acc"><rect x="128" y="46" width="18" height="62" rx="3"/></g> <g class="mp-ink"><rect x="180" y="40" width="70" height="6" rx="3"/><rect x="180" y="56" width="54" height="5" rx="2.5"/><rect x="180" y="70" width="62" height="5" rx="2.5"/></g> <g class="mp-acc"><rect x="180" y="90" width="44" height="6" rx="3"/><circle cx="186" cy="112" r="4"/></g> <text class="mp-lbl mp-lbl-acc" x="196" y="116">live</text> <text class="mp-lbl mp-lbl-dim" x="30" y="158">shared read-only with the client</text> <text class="mp-lbl" x="30" y="178">still current after you send it</text></svg></div>
-     <div class="mega-panel-art" data-art="builds" data-t="Standing jobs" data-d="A report that rebuilds itself on a schedule, or an agent that watches one thing and speaks up only when it changes."><svg viewBox="0 0 300 190"> <rect class="mp-bubble" x="30" y="18" width="184" height="34" rx="10"/> <g class="mp-ink"><rect x="44" y="31" width="150" height="7" rx="3.5"/></g> <path class="mp-tie" d="M122 52v14"/> <rect class="mp-card" x="30" y="70" width="240" height="90" rx="9"/> <g class="mp-bars"><rect x="50" y="112" width="22" height="32" rx="3"/><rect x="82" y="96" width="22" height="48" rx="3"/><rect x="114" y="120" width="22" height="24" rx="3"/></g> <g class="mp-acc"><rect x="146" y="86" width="22" height="58" rx="3"/></g> <g class="mp-ink"><rect x="186" y="90" width="64" height="6" rx="3"/><rect x="186" y="104" width="48" height="5" rx="2.5"/><rect x="186" y="116" width="56" height="5" rx="2.5"/></g> <text class="mp-lbl" x="30" y="180">described once, built while you watch</text></svg></div>
-     <div class="mega-panel-cap"><span class="mp-t">Say it once</span><span class="mp-d">Your rules, your exceptions, the calls you already made &mdash; carried into every verdict after, across platforms.</span></div>
-    </div>
-   </div>
   </div>
- </div>
- <div class="nav-drop nav-drop-mega">
-  <a href="/for-agencies" class="nav-drop-t" aria-haspopup="true" aria-expanded="false">Solutions<svg class="caret" viewBox="0 0 12 8" fill="none" stroke="currentColor"><path d="M1 2l5 4 5-4"/></svg></a>
-  <div class="nav-menu nav-mega nav-mega-sol">
-   <div class="mega-cols">
-    <div class="mega-col">
-     <div class="mega-h">By team</div>
-     <a href="/for-agencies" data-mega="agencies"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><span class="mega-tx"><span class="nm-t">For agencies</span><span class="nm-d">A senior buyer on every client account</span></span></a>
-     <a href="/for-in-house" data-mega="inhouse"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 21V8l9-5 9 5v13"/><path d="M9 21v-6h6v6"/></svg></span><span class="mega-tx"><span class="nm-t">For in-house</span><span class="nm-d">The second opinion you don't have</span></span></a>
-    </div>
-    <div class="mega-col">
-     <div class="mega-h">By industry</div>
-     <a href="/ecommerce" data-mega="ecommerce"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></span><span class="mega-tx"><span class="nm-t">Ecommerce &amp; DTC</span><span class="nm-d">January's returns rewrite December's numbers</span></span></a>
-     <a href="/lead-generation" data-mega="leadgen"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.5 5.5 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.5-6.5A2 2 0 0 0 16.8 4H7.2a2 2 0 0 0-1.7 1.5Z"/></svg></span><span class="mega-tx"><span class="nm-t">Lead generation</span><span class="nm-d">The identifier dies before the deal closes</span></span></a>
-     <a href="/travel-hospitality" data-mega="travel"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M2 22h20"/><path d="M4 22V6l8-4 8 4v16"/><path d="M9 22v-5h6v5"/><path d="M9 10h.01M15 10h.01"/></svg></span><span class="mega-tx"><span class="nm-t">Travel &amp; hospitality</span><span class="nm-d">The booking converts; the stay is what pays</span></span></a>
-     <a href="/marketplaces" data-mega="marketplace"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 9h18l-1.5 11a2 2 0 0 1-2 1.7H6.5a2 2 0 0 1-2-1.7Z"/><path d="M3 9 5 3h14l2 6"/><path d="M9 13h6"/></svg></span><span class="mega-tx"><span class="nm-t">Marketplaces</span><span class="nm-d">It counts the transaction; you bank the take rate</span></span></a>
-     <a href="/local-multi-location" data-mega="local"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 21s7-6.4 7-11a7 7 0 1 0-14 0c0 4.6 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span class="mega-tx"><span class="nm-t">Local &amp; multi-location</span><span class="nm-d">The conversion isn't on the internet</span></span></a>
-     <a href="/mobile-apps" data-mega="mobile"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg></span><span class="mega-tx"><span class="nm-t">Mobile apps &amp; games</span><span class="nm-d">A 6-bit integer with noise added on purpose</span></span></a>
-    </div>
-    <div class="mega-panel" data-mega-panel aria-hidden="true">
-     <div class="mega-panel-art on" data-art="agencies" data-t="For agencies" data-d="A senior read on every client account, every morning — including the ones nobody opened this week."><svg viewBox="0 0 300 190"> <g class="mp-grid"><rect x="30" y="20" width="70" height="46" rx="7"/><rect x="114" y="20" width="70" height="46" rx="7"/><rect x="198" y="20" width="70" height="46" rx="7"/><rect x="30" y="78" width="70" height="46" rx="7"/><rect x="198" y="78" width="70" height="46" rx="7"/></g> <rect class="mp-card mp-card-acc" x="114" y="78" width="70" height="46" rx="7"/> <g class="mp-ink"><rect x="42" y="34" width="34" height="5" rx="2.5"/><rect x="126" y="34" width="40" height="5" rx="2.5"/><rect x="210" y="34" width="30" height="5" rx="2.5"/><rect x="42" y="92" width="38" height="5" rx="2.5"/><rect x="210" y="92" width="34" height="5" rx="2.5"/></g> <g class="mp-acc"><rect x="126" y="92" width="46" height="6" rx="3"/><circle cx="132" cy="110" r="4"/></g> <text class="mp-lbl" x="30" y="152">every account read overnight</text> <text class="mp-lbl mp-lbl-acc" x="30" y="174">this one needs you today</text></svg></div>
-     <div class="mega-panel-art" data-art="inhouse" data-t="For in-house" data-d="The second opinion a one-person team never gets — and the agency's report, checked against your revenue."><svg viewBox="0 0 300 190"> <rect class="mp-card" x="30" y="20" width="240" height="46" rx="8"/> <g class="mp-ink"><rect x="46" y="32" width="96" height="7" rx="3.5"/><rect x="46" y="48" width="64" height="6" rx="3"/></g> <text class="mp-lbl mp-lbl-dim" x="186" y="47">their report</text> <path class="mp-tie" d="M150 66v14"/> <rect class="mp-card mp-card-acc" x="30" y="84" width="240" height="46" rx="8"/> <g class="mp-acc"><rect x="46" y="96" width="116" height="7" rx="3.5"/><rect x="46" y="112" width="82" height="6" rx="3"/></g> <text class="mp-lbl mp-lbl-acc" x="180" y="111">checked</text> <text class="mp-lbl" x="30" y="158">the second opinion</text> <text class="mp-lbl mp-lbl-dim" x="30" y="176">a lean team never gets</text></svg></div>
-     <div class="mega-panel-art" data-art="ecommerce" data-t="Ecommerce &amp; DTC" data-d="19.3% of online sales come back — after the quarter closes, retroactively rewriting numbers already reported."><svg viewBox="0 0 300 190"> <path class="mp-axis" d="M34 130H272"/> <g class="mp-bars"><rect x="48" y="72" width="26" height="58" rx="3"/><rect x="86" y="58" width="26" height="72" rx="3"/><rect x="124" y="40" width="26" height="90" rx="3"/><rect x="162" y="50" width="26" height="80" rx="3"/></g> <g class="mp-return"><rect x="124" y="40" width="26" height="22" rx="3"/><rect x="162" y="50" width="26" height="18" rx="3"/><rect x="86" y="58" width="26" height="14" rx="3"/></g> <path class="mp-back" d="M206 62c22 0 22 46 0 46"/><path class="mp-back" d="M212 100l-8 8 8 8"/> <text class="mp-lbl mp-lbl-dim" x="34" y="152">reported in December</text> <text class="mp-lbl mp-lbl-acc" x="34" y="174">restated in January</text></svg></div>
-     <div class="mega-panel-art" data-art="leadgen" data-t="Lead generation" data-d="A 90-day click identifier against a 16-month payback. The identifier is dead before the revenue exists."><svg viewBox="0 0 300 190"> <path class="mp-axis" d="M34 96H272"/> <g class="mp-tickmark"><path d="M60 90v12"/><path d="M126 90v12"/><path d="M246 90v12"/></g> <circle class="mp-dot-acc" cx="60" cy="96" r="6"/> <text class="mp-lbl mp-lbl-acc" x="42" y="80">click</text> <path class="mp-life" d="M60 96H126"/> <path class="mp-expire" d="M120 88l12 16M132 88l-12 16"/> <text class="mp-lbl mp-lbl-dim" x="98" y="126">identifier expires</text> <path class="mp-dashed" d="M132 96H246"/> <circle class="mp-dot" cx="246" cy="96" r="6"/> <text class="mp-lbl" x="200" y="80">deal closes</text> <text class="mp-lbl" x="34" y="168">90 days of memory, 16-month cycle</text></svg></div>
-     <div class="mega-panel-art" data-art="travel" data-t="Travel &amp; hospitality" data-d="The cancellation lands about 79 days after the click — outside every attribution window there is."><svg viewBox="0 0 300 190"> <path class="mp-axis" d="M34 100H272"/> <circle class="mp-dot-acc" cx="62" cy="100" r="6"/> <text class="mp-lbl mp-lbl-acc" x="40" y="84">booked</text> <path class="mp-life" d="M62 100H186"/> <circle class="mp-dot" cx="186" cy="100" r="6"/> <text class="mp-lbl mp-lbl-dim" x="150" y="84">canceled</text> <path class="mp-dashed" d="M186 100H262"/> <circle class="mp-dot" cx="262" cy="100" r="5"/> <text class="mp-lbl" x="228" y="84">stay</text> <rect class="mp-window" x="34" y="118" width="136" height="20" rx="5"/> <text class="mp-lbl mp-lbl-dim" x="42" y="132">attribution window</text> <text class="mp-lbl" x="34" y="168">the outcome lands outside it</text></svg></div>
-     <div class="mega-panel-art" data-art="marketplace" data-t="Marketplaces" data-d="At a 13% take rate, a campaign reporting 6× is running at 0.8× on the revenue you actually keep."><svg viewBox="0 0 300 190"> <rect class="mp-gross" x="30" y="22" width="240" height="32" rx="7"/> <text class="mp-lbl mp-lbl-dim" x="42" y="43">what the pixel counts</text> <path class="mp-gap" d="M30 62v10M270 62v10M30 67h240"/> <rect class="mp-net" x="30" y="88" width="34" height="32" rx="7"/> <path class="mp-gap" d="M30 128v8M64 128v8M30 132h34"/> <text class="mp-lbl mp-lbl-acc" x="30" y="154">what you actually bank</text> <text class="mp-lbl" x="30" y="176">a 13% take rate is a 7&#215; gap</text></svg></div>
-     <div class="mega-panel-art" data-art="local" data-t="Local &amp; multi-location" data-d="Store visits are modelled, not measured. And near full capacity, more budget buys no-shows."><svg viewBox="0 0 300 190"> <path class="mp-axis" d="M34 128H272"/> <g class="mp-bars"><rect x="48" y="88" width="30" height="40" rx="3"/><rect x="90" y="76" width="30" height="52" rx="3"/><rect x="132" y="64" width="30" height="64" rx="3"/></g> <g class="mp-over"><rect x="174" y="52" width="30" height="76" rx="3"/><rect x="216" y="46" width="30" height="82" rx="3"/></g> <path class="mp-cap" d="M34 62H272"/> <text class="mp-lbl mp-lbl-acc" x="200" y="40">capacity</text> <text class="mp-lbl" x="34" y="154">past the line, more budget</text> <text class="mp-lbl mp-lbl-dim" x="34" y="174">buys appointments nobody keeps</text></svg></div>
-     <div class="mega-panel-art" data-art="mobile" data-t="Mobile apps &amp; games" data-d="Creative lifespan has fallen to 5–14 days, and the cheapest window of the year lasts a fortnight."><svg viewBox="0 0 300 190"> <g class="mp-frames"><rect x="30" y="12" width="44" height="30" rx="5"/><rect x="84" y="12" width="44" height="30" rx="5"/><rect x="138" y="12" width="44" height="30" rx="5"/><rect x="192" y="12" width="44" height="30" rx="5"/><rect x="246" y="12" width="24" height="30" rx="5"/></g> <text class="mp-lbl mp-lbl-dim" x="30" y="60">27 new creatives a day</text> <path class="mp-axis" d="M30 132H270"/> <g class="mp-bars"><rect x="34" y="96" width="18" height="36" rx="2"/><rect x="58" y="86" width="18" height="46" rx="2"/><rect x="82" y="104" width="18" height="28" rx="2"/><rect x="106" y="112" width="18" height="20" rx="2"/></g> <g class="mp-null"><rect x="136" y="116" width="18" height="16" rx="2"/><rect x="160" y="116" width="18" height="16" rx="2"/><rect x="184" y="116" width="18" height="16" rx="2"/><rect x="208" y="116" width="18" height="16" rx="2"/></g> <text class="mp-lbl mp-lbl-dim" x="30" y="152">the blanks are nulls, not zeros</text> <text class="mp-lbl mp-lbl-acc" x="30" y="172">the read has to keep up</text></svg></div>
-     <div class="mega-panel-cap"><span class="mp-t">For agencies</span><span class="mp-d">A senior read on every client account, every morning &mdash; including the ones nobody opened this week.</span></div>
-    </div>
-   </div>
-  </div>
- </div>
- <a href="/pricing">Pricing</a>
- <a href="/about">About</a>
- <a href="/blog">Blog</a>
- </nav>
- <div class="nav-right">
- <button class="nav-burger" aria-label="Menu" aria-expanded="false"><svg class="ic-open" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg><svg class="ic-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
- <a class="btn btn-primary btn-sm" href="/#lead">Get a free audit</a>
- </div>
- </div>
 </header><!--/#header-->
-<!--#mobile--><div class="mobile-menu">
- <a href="/why-adgent">Why Adgent</a>
- <details class="mm-group">
-  <summary>Product<svg class="caret" viewBox="0 0 12 8" fill="none" stroke="currentColor"><path d="M1 2l5 4 5-4"/></svg></summary>
-  <a href="/features" class="mm-sub">All features</a>
-  <span class="mm-lbl">It reads</span>
-  <a href="/account-memory" class="mm-sub">Account memory</a>
-  <a href="/daily-verdict" class="mm-sub">Daily verdict</a>
-  <a href="/ground-truth" class="mm-sub">Ground truth</a>
-  <a href="/trust-gate" class="mm-sub">Trust Gate</a>
-  <a href="/creative-intelligence" class="mm-sub">Creative intelligence</a>
-  <a href="/change-ledger" class="mm-sub">Change Ledger</a>
-  <span class="mm-lbl">It builds</span>
-  <a href="/built-from-chat#campaign" class="mm-sub">Campaign build</a>
-  <a href="/built-from-chat#plan" class="mm-sub">Media plan</a>
-  <a href="/built-from-chat#dashboards" class="mm-sub">Live dashboards</a>
-  <a href="/built-from-chat#agents" class="mm-sub">Agents &amp; reports</a>
- </details>
- <details class="mm-group">
-  <summary>Solutions<svg class="caret" viewBox="0 0 12 8" fill="none" stroke="currentColor"><path d="M1 2l5 4 5-4"/></svg></summary>
-  <span class="mm-lbl">By team</span>
-  <a href="/for-agencies" class="mm-sub">For agencies</a>
-  <a href="/for-in-house" class="mm-sub">For in-house</a>
-  <span class="mm-lbl">By industry</span>
-  <a href="/ecommerce" class="mm-sub">Ecommerce &amp; DTC</a>
-  <a href="/lead-generation" class="mm-sub">Lead generation</a>
-  <a href="/travel-hospitality" class="mm-sub">Travel &amp; hospitality</a>
-  <a href="/marketplaces" class="mm-sub">Marketplaces</a>
-  <a href="/local-multi-location" class="mm-sub">Local &amp; multi-location</a>
-  <a href="/mobile-apps" class="mm-sub">Mobile apps &amp; games</a>
- </details>
- <a href="/pricing">Pricing</a>
- <a href="/about">About</a>
- <a href="/blog">Blog</a>
- <a class="btn btn-primary btn-sm mm-cta" href="/#lead">Get a free audit</a>
-</div><!--/#mobile--><main id="main" tabindex="-1"><article class="band">
- <div class="wrap">
- <div class="article">
- <div class="post-meta"><span class="post-tag">Playbook</span><span>·</span><span>9 min read</span><span>·</span><time datetime="2026-07-22">22 July 2026</time></div>
- <h1>The Meta Ads account audit: the ten checks that recover spend</h1>
- <p class="standfirst">Most Meta audits are a screenshot tour of the dashboard. This one is ordered differently: the checks that recover spend first, ranked by impact — and the signal check that has to come before all of them, because a broken pixel makes every other number a guess.</p>
+<!--#drawer--><div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+  <details>
+    <summary>Product</summary>
+    <div class="drawer-g">
+      <p class="menu-h"><svg class="nav-ic" aria-hidden="true"><use href="#nav-check"/></svg>Run the accounts</p>
+      <div class="drawer-grid">
+        <a href="/daily-verdict"><svg class="nav-ic" aria-hidden="true"><use href="#nav-check"/></svg><span>Decisions</span></a>
+        <a href="/trust-gate"><svg class="nav-ic" aria-hidden="true"><use href="#nav-shield"/></svg><span>Trust Gate</span></a>
+        <a href="/change-ledger"><svg class="nav-ic" aria-hidden="true"><use href="#nav-return"/></svg><span>Change Ledger</span></a>
+        <a href="/platform-change-log"><svg class="nav-ic" aria-hidden="true"><use href="#nav-activity"/></svg><span>Platform change log</span></a>
+        <a href="/account-memory"><svg class="nav-ic" aria-hidden="true"><use href="#nav-memory"/></svg><span>Account memory</span></a>
+        <a href="/ground-truth"><svg class="nav-ic" aria-hidden="true"><use href="#nav-source"/></svg><span>Ground truth</span></a>
+      </div>
+    </div>
+    <div class="drawer-g">
+      <p class="menu-h"><svg class="nav-ic" aria-hidden="true"><use href="#nav-build"/></svg>Build and automate</p>
+      <div class="drawer-grid">
+        <a href="/agents"><svg class="nav-ic" aria-hidden="true"><use href="#nav-agents"/></svg><span>Agents &amp; workflows</span></a>
+        <a href="/specialists"><svg class="nav-ic" aria-hidden="true"><use href="#nav-specialist"/></svg><span>Specialists</span></a>
+        <a href="/campaign-build"><svg class="nav-ic" aria-hidden="true"><use href="#nav-build"/></svg><span>Campaign build</span></a>
+        <a href="/planning"><svg class="nav-ic" aria-hidden="true"><use href="#nav-plan"/></svg><span>Planning</span></a>
+        <a href="/dashboards"><svg class="nav-ic" aria-hidden="true"><use href="#nav-report"/></svg><span>Dashboards &amp; reports</span></a>
+        <a href="/meetings"><svg class="nav-ic" aria-hidden="true"><use href="#nav-meeting"/></svg><span>In your meetings</span></a>
+      </div>
+    </div>
+    <div class="drawer-g drawer-g-dark">
+      <p class="menu-h"><svg class="nav-ic" aria-hidden="true"><use href="#nav-search"/></svg>Creative and AI answers</p>
+      <div class="drawer-grid">
+        <a href="/creative-intelligence"><svg class="nav-ic" aria-hidden="true"><use href="#nav-creative"/></svg><span>Creative analysis</span></a>
+        <a href="/ai-visibility"><svg class="nav-ic" aria-hidden="true"><use href="#nav-search"/></svg><span>AI Visibility</span></a>
+        <a class="drawer-full" href="/features"><svg class="nav-ic" aria-hidden="true"><use href="#nav-grid"/></svg><span>All capabilities</span></a>
+      </div>
+    </div>
+  </details>
+  <details>
+    <summary>Solutions</summary>
+    <div class="drawer-g">
+      <p class="menu-h"><svg class="nav-ic" aria-hidden="true"><use href="#nav-agency"/></svg>By team</p>
+      <div class="drawer-grid">
+        <a href="/for-agencies"><svg class="nav-ic" aria-hidden="true"><use href="#nav-agency"/></svg><span>For agencies</span></a>
+        <a href="/for-in-house"><svg class="nav-ic" aria-hidden="true"><use href="#nav-brand"/></svg><span>For brands</span></a>
+      </div>
+    </div>
+    <div class="drawer-g">
+      <p class="menu-h"><svg class="nav-ic" aria-hidden="true"><use href="#nav-market"/></svg>By industry</p>
+      <div class="drawer-grid">
+        <a href="/ecommerce"><svg class="nav-ic" aria-hidden="true"><use href="#nav-cart"/></svg><span>Ecommerce &amp; DTC</span></a>
+        <a href="/lead-generation"><svg class="nav-ic" aria-hidden="true"><use href="#nav-funnel"/></svg><span>Lead generation</span></a>
+        <a href="/travel-hospitality"><svg class="nav-ic" aria-hidden="true"><use href="#nav-travel"/></svg><span>Travel &amp; hospitality</span></a>
+        <a href="/marketplaces"><svg class="nav-ic" aria-hidden="true"><use href="#nav-market"/></svg><span>Marketplaces</span></a>
+        <a href="/local-multi-location"><svg class="nav-ic" aria-hidden="true"><use href="#nav-local"/></svg><span>Local &amp; multi-location</span></a>
+        <a href="/mobile-apps"><svg class="nav-ic" aria-hidden="true"><use href="#nav-mobile"/></svg><span>Mobile apps &amp; games</span></a>
+      </div>
+    </div>
+    <div class="drawer-g drawer-g-trust">
+      <p class="menu-h"><svg class="nav-ic" aria-hidden="true"><use href="#nav-shield"/></svg>Trust</p>
+      <div class="drawer-grid">
+        <a class="drawer-full" href="/security"><svg class="nav-ic" aria-hidden="true"><use href="#nav-shield"/></svg><span>Security &amp; data</span></a>
+      </div>
+    </div>
+  </details>
+  <a href="/why-adgent">Why Adgent</a>
+  <a href="/pricing">Pricing</a>
+  <a href="/blog" class="active" aria-current="page">Blog</a>
+  <a href="/tools">Free tools</a>
+  <a href="/about">About</a>
+</div><!--/#drawer-->
+<main id="main" tabindex="-1">
+<article>
 
- <div class="byline">
- <div class="av">A</div>
- <div>
- <div class="who">Adgent</div>
-          <div class="role">Notes from building the analyst</div>
- </div>
- </div>
+  <header class="ar-head">
+    <div class="wrap">
+      <nav class="ar-crumb" aria-label="Breadcrumb">
+        <a href="/blog">Blog</a><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M3.5 2l3 3-3 3"/></svg><span>How-to</span>
+      </nav>
+      <h1 class="ar-t">The Meta Ads account audit: the ten checks that recover spend</h1>
+      <p class="ar-dek">Most Meta audits are a screenshot tour of the dashboard. This one is ordered by impact:
+        the checks that recover spend first, and the signal check that has to come before all of them, because
+        a broken pixel makes every other number a guess.</p>
+      <p class="ar-by"><span class="ar-av"><svg viewBox="0 0 170 170" aria-hidden="true"><path d="M14 140 L85 6 L156 140 L128 140 L85 58 L42 140 Z" fill="currentColor"/><path d="M50 140 L85 72 L120 140 L96 140 L85 118 L74 140 Z" fill="currentColor"/></svg></span><span><b>Adgent</b> · Notes from building the analyst</span></p>
+      <dl class="ar-meta">
+        <div><dt>Type</dt><dd>How-to</dd></div>
+        <div><dt>Reading time</dt><dd>7 min</dd></div>
+        <div><dt>Published</dt><dd>22 July 2026</dd></div>
+      </dl>
+      <figure class="ar-cover"><img src="/assets/blog/meta-ads-account-audit-checklist.svg?v=0aec086b" width="1200" height="630" alt="Cover: a 10-check Meta audit card listing tracking, CBO leakage, Audience Network, frequency and attribution." fetchpriority="high"/></figure>
+    </div>
+  </header>
 
- <figure class="post-hero-cover"><img src="/assets/blog/meta-ads-account-audit-checklist.svg" width="1200" height="630" alt="A Meta audit checklist card with green checks and red flags." loading="eager"/></figure>
+  <div class="wrap ar-body">
+    <div class="ar-rail">
+      <nav class="ar-toc" aria-label="On this page">
+        <p>On this page</p>
+        <ol>
+          <li><a href="#signal-first">Start with the signal</a></li>
+          <li><a href="#ten-checks">The ten checks</a></li>
+          <li><a href="#rank">Rank, don't just list</a></li>
+          <li><a href="#red-flags">Red flags</a></li>
+          <li><a href="#manual-vs-continuous">Manual vs continuous</a></li>
+          <li><a href="#standing-audit">A standing audit</a></li>
+        </ol>
+      </nav>
+      <a class="go" href="/blog">All articles <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div>
 
- <div class="answer-box">
- <span class="lbl">Short answer</span>
- <p>To audit a <strong>Meta Ads account</strong>, work in order of recoverable spend — and verify the signal first. Confirm <strong>pixel and Conversions API health</strong> before you judge a single campaign, because a broken signal corrupts everything downstream. Then check attribution, CBO leakage, Audience Network placement drift, frequency and creative fatigue. Attach a dollar figure to each finding and fix the biggest leak first.</p>
- </div>
+    <div class="ar-col">
+      <p>A Meta Ads audit is supposed to answer one question: <strong>where is this account leaking money, and
+        what is the cheapest thing to fix first?</strong> Yet most audits bury that answer under a screenshot
+        tour of Ads Manager. This is the version that leads with impact: the checks that actually recover spend,
+        in the order a senior buyer runs them. It is the Meta twin of
+        <a href="/how-to-audit-a-google-ads-account">how to audit a Google Ads account</a>: same discipline,
+        different platform.</p>
 
- <div class="prose">
- <p>A Meta Ads audit is supposed to answer one question: <b>where is this account leaking money, and what's the cheapest thing to fix first?</b> Yet most audits bury that answer under a screenshot tour of Ads Manager. So here's the version that leads with impact — the checks that actually recover spend, in the order a senior buyer runs them. It's the Meta twin of <a href="/how-to-audit-a-google-ads-account">how to audit a Google Ads account</a>; same discipline, different platform.</p>
+      <div class="ar-note">
+        <b>Short answer</b>
+        To audit a <strong>Meta Ads account</strong>, work in order of recoverable spend, and verify the signal
+        first. Confirm <strong>pixel and Conversions API health</strong> before you judge a single campaign,
+        because a broken signal corrupts everything downstream. Then check attribution, CBO leakage, Audience
+        Network placement drift, frequency and creative fatigue. Attach a dollar figure to each finding and fix
+        the biggest leak first.
+      </div>
 
- <h2>Start with the signal you can't trust</h2>
+      <h2 id="signal-first">Start with the signal you can't trust</h2>
 
- <p>Before you judge a single ad set, judge the measurement. On Meta more than anywhere, the number you're optimizing toward is only as good as the pixel and Conversions API feeding it. A mis-configured event, a browser pixel firing without a CAPI match, a purchase event that double-counts — any of these makes ROAS and CPA read like fiction, and no amount of budget tuning fixes a broken signal.</p>
+      <p>Before you judge a single ad set, judge the measurement. On Meta more than anywhere, the number you
+        optimise toward is only as good as the pixel and Conversions API feeding it. A misconfigured event, a
+        browser pixel firing without a CAPI match, a purchase event that double-counts: any of these makes ROAS
+        and CPA read like fiction, and no amount of budget tuning fixes a broken signal.</p>
 
- <blockquote>
- <p>An audit that trusts a broken pixel just optimizes the account deeper into the wrong thing.</p>
- </blockquote>
+      <div class="ar-note">
+        <b>In one line</b>
+        An audit that trusts a broken pixel just optimises the account deeper into the wrong thing.
+      </div>
 
- <p>So the first check isn't performance — it's whether performance is even measurable. Open Events Manager, confirm events fire once per action, check event match quality, and make sure the browser pixel and CAPI events deduplicate on a shared event ID. This is the same discipline behind <a href="/why-adgent-leads-with-the-verdict">leading with the verdict</a>: say what you can stand behind, flag what you can't, and never manufacture confidence.</p>
+      <p>So the first check is not performance. It is whether performance is even measurable. Open Events
+        Manager, confirm events fire once per action, check event match quality, and make sure the browser pixel
+        and CAPI events deduplicate on a shared event ID. It is the same discipline behind
+        <a href="/why-adgent-leads-with-the-verdict">leading with the verdict</a>: say what you can stand behind,
+        flag what you can't, and never manufacture confidence.</p>
 
- <h2>The ten Meta audit checks, ranked by recoverable spend</h2>
+      <h2 id="ten-checks">The ten Meta audit checks, ranked by recoverable spend</h2>
 
- <p>Ten families of check, ordered so the money moves first and the hygiene comes last. Each is a place spend hides on Meta specifically:</p>
+      <p>Ten families of check, ordered so the money moves first and the hygiene comes last. Each is a place
+        spend hides on Meta specifically:</p>
 
- <ol>
- <li><b>Pixel &amp; Conversions API health.</b> Events firing once, with the right value, on the right action? Confirm browser and CAPI events deduplicate, and check event match quality against <a href="https://www.facebook.com/business/help/898185560232180" target="_blank" rel="noopener nofollow">Meta's Conversions API setup</a>. A broken signal corrupts every optimization downstream.</li>
- <li><b>Attribution setting.</b> Is the account on 7-day click, or the default 7-day click / 1-day view? Ad sets judged on different windows aren't comparable, and view-through credit inflates the wrong winners. And judge it on settled data — an ad set read on <a href="/attribution-window-day-one-data">day-one data</a> looks pessimistic and gets paused before it has reported.</li>
- <li><b>CBO budget leakage.</b> Under Campaign Budget Optimization, Meta pools the budget and often starves a proven ad set to feed a cheaper-but-worse one. Check where the money actually landed versus where the conversions did.</li>
- <li><b>Audience Network placement drift.</b> Spend quietly drifts to Audience Network and Reels at a fraction of feed performance — the Meta twin of <a href="/placement-drift-the-leak-in-the-average">the placement drift that hides inside a blended average</a>.</li>
- <li><b>Frequency &amp; creative fatigue.</b> Rising frequency with climbing CPM is the account telling you the creative is spent — <a href="/cpm-is-the-early-creative-fatigue-signal">CPM is the early creative-fatigue signal</a>, well before ROAS drops.</li>
- <li><b>Audience overlap.</b> Ad sets bidding against each other in the same auction drive up your own CPMs. Run the overlap tool on your prospecting sets.</li>
- <li><b>Retargeting exclusions.</b> Are purchasers and recent converters excluded from prospecting and retargeting? Missing exclusions mean you're paying full CPA to re-buy customers you already own.</li>
- <li><b>Catalog &amp; feed health.</b> For commerce accounts, a stale or partially rejected catalog silently caps Advantage+ Shopping reach. Check feed freshness, rejection rate and required fields.</li>
- <li><b>Learning-phase status.</b> Ad sets stuck in learning — or endlessly re-entering it after edits — never stabilize. Count how many are learning-limited and why.</li>
- <li><b>Ad-account structure.</b> Too many overlapping ad sets fragment the signal below the conversion volume Meta needs to learn. Consolidation is often free performance.</li>
- </ol>
+      <ol>
+        <li><strong>Pixel and Conversions API health.</strong> Events firing once, with the right value, on the
+          right action? Confirm browser and CAPI events deduplicate, and check event match quality against
+          <a href="https://www.facebook.com/business/help/898185560232180" rel="noopener nofollow">Meta's
+          Conversions API setup</a>. A broken signal corrupts every optimisation downstream.</li>
+        <li><strong>Attribution setting.</strong> Is the account on 7-day click, or the default 7-day click /
+          1-day view? Ad sets judged on different windows are not comparable, and view-through credit inflates
+          the wrong winners. Judge it on settled data, too: an ad set read on
+          <a href="/attribution-window-day-one-data">day-one data</a> looks pessimistic and gets paused before it
+          has finished reporting.</li>
+        <li><strong>CBO budget leakage.</strong> Under Campaign Budget Optimisation, Meta pools the budget and
+          often starves a proven ad set to feed a cheaper but worse one. Check where the money actually landed
+          against where the conversions did.</li>
+        <li><strong>Audience Network placement drift.</strong> Spend quietly drifts to Audience Network and Reels
+          at a fraction of feed performance: the Meta twin of
+          <a href="/placement-drift-the-leak-in-the-average">the placement drift that hides inside a blended
+          average</a>.</li>
+        <li><strong>Frequency and creative fatigue.</strong> Rising frequency with climbing CPM is the account
+          telling you the creative is spent.
+          <a href="/cpm-is-the-early-creative-fatigue-signal">CPM is the early creative-fatigue signal</a>, well
+          before ROAS drops.</li>
+        <li><strong>Audience overlap.</strong> Ad sets bidding against each other in the same auction drive up
+          your own CPMs. Run the overlap tool on your prospecting sets.</li>
+        <li><strong>Retargeting exclusions.</strong> Are purchasers and recent converters excluded from
+          prospecting and retargeting? Missing exclusions mean paying full CPA to re-buy customers you already
+          have.</li>
+        <li><strong>Catalogue and feed health.</strong> For commerce accounts, a stale or partly rejected
+          catalogue silently caps Advantage+ Shopping reach. Check feed freshness, rejection rate and required
+          fields.</li>
+        <li><strong>Learning-phase status.</strong> Ad sets stuck in learning, or endlessly re-entering it after
+          edits, never stabilise. Count how many are learning-limited and why.</li>
+        <li><strong>Ad-account structure.</strong> Too many overlapping ad sets fragment the signal below the
+          conversion volume Meta needs to learn. Consolidation is often free performance.</li>
+      </ol>
 
- <h2>Rank, don't just list</h2>
+      <h2 id="rank">Rank, don't just list</h2>
 
- <p>The difference between a useful audit and a report nobody acts on is ordering. Every finding should carry an estimate of recoverable spend so the account owner knows what to do Monday morning — not a flat list where a €10,000/month leak sits next to a cosmetic naming warning.</p>
+      <p>The difference between a useful audit and a report nobody acts on is ordering. Every finding should
+        carry an estimate of recoverable spend so the account owner knows what to do on Monday morning, not a
+        flat list where a $10,000-a-month leak sits next to a cosmetic naming warning.</p>
 
- <ul>
- <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg><b>Attach a number to each finding.</b> "Audience Network drift: ~€6,000/mo" beats "review placements."</li>
- <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg><b>Sequence the fixes.</b> Editing an ad set can reset the learning phase; order changes so you don't undo one fix with the next.</li>
- <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg><b>Make every figure verifiable.</b> Each number should link back to where to confirm it in Ads Manager. Trust is the whole point.</li>
- </ul>
+      <ul>
+        <li><strong>Attach a number to each finding.</strong> “Audience Network drift: about $6,000 a month”
+          (an example figure) beats “review placements”.</li>
+        <li><strong>Sequence the fixes.</strong> Editing an ad set can reset the learning phase; order changes so
+          you don't undo one fix with the next.</li>
+        <li><strong>Make every figure verifiable.</strong> Each number should point back to where to confirm it
+          in Ads Manager. Trust is the whole point.</li>
+      </ul>
 
- <h2>Red flags: what a broken account looks like</h2>
+      <h2 id="red-flags">Red flags: what a neglected account looks like</h2>
 
- <p>Some findings you have to calculate. Others you can spot in thirty seconds — the tells that an account has been left on autopilot. If you see any of these, you've found recoverable spend before you've done a single sum.</p>
+      <p>Some findings you have to calculate. Others you can spot in thirty seconds: the tells that an account
+        has been left to run itself. If you see any of these, you have found recoverable spend before you have
+        done a single sum.</p>
 
- <ul class="flag-list">
- <li><b>Frequency above 5 on a prospecting audience.</b> A cold audience seeing the same ad five-plus times in a week is fatigued and getting more expensive to reach. Rising frequency with climbing CPM is the clearest early fatigue tell there is — act before ROAS confirms it.</li>
- <li><b>No retargeting exclusions.</b> If purchasers and recent converters aren't excluded from prospecting, you're paying full CPA to re-serve ads to people who already bought. On accounts with a healthy return rate, that's spend re-buying customers you already own.</li>
- <li><b>A backend-vs-Ads-Manager revenue gap wider than roughly 15–20% — our working threshold for investigate-versus-ignore.</b> When Ads Manager claims €40,000 in sales and Shopify or GA4 sees €30,000, someone is optimizing on a number that isn't real. Inside that band, call it attribution noise; past it, your pixel and CAPI setup is the first thing to fix, not your bids.</li>
- <li><b>Audience Network eating a big share of a placement-optimized budget.</b> When automatic placements let Audience Network absorb a large slice of spend at a fraction of feed performance, the blended ROAS looks fine while the leak sits hidden inside the average.</li>
- <li><b>Ad sets still in the learning phase after five days.</b> Learning-limited ad sets never stabilize — usually because the conversion volume is too low or edits keep restarting the clock. If half the account is perpetually learning, the structure is fragmenting the signal.</li>
- <li><b>One giant CBO campaign with every audience inside it.</b> Pooling prospecting, retargeting and lookalikes under one budget lets Meta chase the cheapest conversions — usually warm retargeting — and take credit for demand you'd have captured anyway.</li>
- <li><b>Default attribution, and nobody knows which window.</b> An account reported on 7-day click / 1-day view while the team quotes numbers as if they were click-only is comparing ad sets that were never on the same footing.</li>
- </ul>
+      <ul>
+        <li><strong>Frequency above 5 on a prospecting audience.</strong> A cold audience seeing the same ad five
+          or more times in a week is fatigued and getting more expensive to reach. Rising frequency with climbing
+          CPM is the clearest early fatigue tell there is: act before ROAS confirms it.</li>
+        <li><strong>No retargeting exclusions.</strong> If purchasers and recent converters are not excluded
+          from prospecting, you are paying full CPA to re-serve ads to people who already bought.</li>
+        <li><strong>A backend versus Ads Manager revenue gap wider than roughly 15–20%.</strong> That is our
+          working threshold for investigate versus ignore. When Ads Manager claims, say, $40,000 in sales and
+          your store or GA4 sees $30,000, someone is optimising on a number that is not real. Inside that band,
+          call it attribution noise; past it, your pixel and CAPI setup is the first thing to fix, not your
+          bids.</li>
+        <li><strong>Audience Network eating a big share of a placement-optimised budget.</strong> When automatic
+          placements let Audience Network absorb a large slice of spend at a fraction of feed performance, the
+          blended ROAS looks fine while the leak sits hidden inside the average.</li>
+        <li><strong>Ad sets still in the learning phase after five days.</strong> Learning-limited ad sets never
+          stabilise, usually because conversion volume is too low or edits keep restarting the clock. If half
+          the account is perpetually learning, the structure is fragmenting the signal.</li>
+        <li><strong>One giant CBO campaign with every audience inside it.</strong> Pooling prospecting,
+          retargeting and lookalikes under one budget lets Meta chase the cheapest conversions, usually warm
+          retargeting, and take credit for demand you would have captured anyway.</li>
+        <li><strong>Default attribution, and nobody knows which window.</strong> An account reported on 7-day
+          click / 1-day view while the team quotes numbers as if they were click-only is comparing ad sets that
+          were never on the same footing.</li>
+      </ul>
 
- <h2>Manual audit vs. continuous audit</h2>
+      <h2 id="manual-vs-continuous">Manual audit vs continuous audit</h2>
 
- <p>The format of the audit decides what it can actually catch. A human running this checklist once a quarter and software reading the account through the API every morning are looking for the same leaks — but they see very different amounts of them.</p>
+      <p>The format of the audit decides what it can catch. A person running this checklist once a quarter and
+        software reading the account through the API every day are looking for the same leaks, but they see
+        very different amounts of them.</p>
 
- <div class="cmp-wrap">
- <table class="cmp">
- <thead>
- <tr>
- <th scope="col"></th>
- <th scope="col">Manual audit</th>
- <th scope="col">Automated / continuous audit</th>
- </tr>
- </thead>
- <tbody>
- <tr>
- <th scope="row">Time to run</th>
- <td>A few hours to a full day per account</td>
- <td class="col-hi">Minutes — and it re-runs on its own</td>
- </tr>
- <tr>
- <th scope="row">Frequency</th>
- <td>Quarterly, if you're disciplined</td>
- <td class="col-hi">Every morning</td>
- </tr>
- <tr>
- <th scope="row">Coverage</th>
- <td>What the auditor has time to sample</td>
- <td class="col-hi">Every ad set, placement and creative</td>
- </tr>
- <tr>
- <th scope="row">Catches drift</th>
- <td>No — it's a snapshot that ages fast</td>
- <td class="col-hi">Yes — flags what changed since yesterday</td>
- </tr>
- <tr>
- <th scope="row">Best at</th>
- <td>Judgment calls, strategy, creative direction</td>
- <td>High-drift leaks: placements, frequency, CBO pacing</td>
- </tr>
- <tr>
- <th scope="row">Cost</th>
- <td>typically low four figures for a one-off agency audit</td>
- <td class="col-hi">Software fee, then near-zero per re-run</td>
- </tr>
- </tbody>
- </table>
- </div>
+      <figure class="ar-fig">
+        <table class="ar-tbl">
+          <thead>
+            <tr><th scope="col"><span class="vh">Dimension</span></th><th scope="col">Manual audit</th><th scope="col">Continuous audit</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Time to run</th><td>A few hours to a full day per account</td><td>Runs unattended, then re-runs on its own</td></tr>
+            <tr><th scope="row">Frequency</th><td>Quarterly, if you are disciplined</td><td>Every day</td></tr>
+            <tr><th scope="row">Coverage</th><td>What the auditor has time to sample</td><td>Every campaign, ad set and ad it can read</td></tr>
+            <tr><th scope="row">Catches drift</th><td>No: a snapshot that ages fast</td><td>Yes: reads what changed since the last run</td></tr>
+            <tr><th scope="row">Best at</th><td>Judgment calls, strategy, creative direction</td><td>High-drift leaks: placements, frequency, CBO pacing</td></tr>
+            <tr><th scope="row">Cost</th><td>An agency fee or a day of senior time, each time</td><td>A subscription, nothing extra per re-run</td></tr>
+          </tbody>
+        </table>
+      </figure>
 
- <p>Neither wins outright. A manual audit brings judgment a script can't; a continuous one catches the leaks that reopen the week after a manual audit ships. The strongest setup is a standing analyst for the high-drift checks and a human for the strategy calls — which is exactly what <a href="/what-is-an-ai-media-buyer">an AI media buyer</a> is built to be.</p>
+      <p>Neither wins outright. A manual audit brings judgment a script can't; a continuous one catches the
+        leaks that reopen the week after a manual audit ships. The strongest setup is a standing analyst for the
+        high-drift checks and a person for the strategy calls, which is what
+        <a href="/what-is-an-ai-media-buyer">an AI media buyer</a> is built to be.</p>
 
- <h2>The real fix is a standing audit</h2>
+      <h2 id="standing-audit">The real fix is a standing audit</h2>
 
- <p>The catch with a one-off Meta audit is that accounts drift. Frequency climbs daily, placements re-leak, creative fatigues, CBO re-pools the budget overnight. A PDF from last quarter describes an account that no longer exists. The real fix isn't a better template — it's a standing analyst that re-audits continuously and flags what changed.</p>
+      <p>The catch with a one-off Meta audit is that accounts drift. Frequency climbs daily, placements leak
+        again, creative fatigues, CBO re-pools the budget overnight. A PDF from last quarter describes an account
+        that no longer exists. The real fix is not a better template. It is a standing analyst that re-reads the
+        account continuously and brings what changed.</p>
 
- <p>That's what Adgent does for Meta and Google as one account: it runs these checks every morning, ranks findings by recoverable spend, and prepares the fix for your approval — read-only until you say go. If you want to see it against a real account, <a href="/#lead">request a demo</a> — one real finding on your own account, before you change anything.</p>
- </div>
- </div>
+      <p>Adgent is a team of AI agents working toward your marketing goals, and its ten specialists each read
+        the account from their own angle. Several line up with this list: Measurement Integrity with the signal
+        check, the Budget Allocator with CBO leakage, the Placement &amp; Network Optimizer with placement drift,
+        the Creative-Fatigue Scout with fatigue, the Audience-Overlap Detector with overlap and exclusions, and
+        the Account Architect with structure. Every connected Meta and Google Ads account is read every day, and
+        every decision carries an estimated monthly amount, so the list arrives ranked with its evidence and
+        next move attached.</p>
+      <div class="ar-note ar-who" role="note" aria-label="Who wrote this"><b>Who wrote this</b><span>Written by the people building Adgent, the AI employee that carries brand context into every growth decision. Related product: <a href="/daily-verdict">the Decisions screen</a>.</span></div>
 
- <div class="faq">
- <h2>Frequently asked</h2>
- <details open>
- <summary>How do I audit a Meta/Facebook ads account? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary>
- <div class="faq-a">Work in order of recoverable spend, not report length. First verify the signal — pixel and Conversions API health, deduplication and event match quality — because a broken signal corrupts every number downstream. Then check your attribution setting, CBO budget leakage, Audience Network placement drift, frequency and creative fatigue, audience overlap, retargeting exclusions, catalog health, learning-phase status and account structure. Attach a dollar estimate to each finding and fix the highest-value leak first.</div>
- </details>
- <details>
- <summary>How often should I audit Meta ads? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary>
- <div class="faq-a">Match cadence to how fast each check goes stale. Run the full ten-check audit quarterly, a light monthly review on pacing, frequency and the ad sets that shifted most, and monitor the high-drift checks — placement drift, frequency, audience overlap and CBO leakage — continuously, because those reopen within a week of any manual pass.</div>
- </details>
- <details>
- <summary>What are the red flags in a Meta ads account? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary>
- <div class="faq-a">Frequency above 5 on a prospecting audience, no retargeting exclusions (usually spend re-buying existing customers), a backend-vs-Ads-Manager revenue gap wider than 10–15%, Audience Network eating a large share of a placement-optimized budget, and ad sets stuck in the learning phase after five days. Any one of these is recoverable spend you can find before you do a single calculation.</div>
- </details>
- <details>
- <summary>How do I check if my pixel is working? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary>
- <div class="faq-a">Open Events Manager and confirm events fire once per action with a healthy event match quality score, that browser pixel and Conversions API events deduplicate on a shared event ID, and that your key conversion carries the right value. Use the Meta Pixel Helper on live pages and compare Ads Manager conversions against GA4 or Shopify — a gap wider than 10–15% means the signal, not your bids, is the first thing to fix.</div>
- </details>
- <details>
- <summary>What attribution setting should I use? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary>
- <div class="faq-a">For most direct-response accounts, 7-day click is the honest default — it captures the buying window without over-crediting view-through. The trap is judging performance on the default setting without knowing which window it uses, or comparing ad sets on different windows. Pick one attribution setting, apply it consistently, and remember recent numbers are still settling inside the window and read pessimistic.</div>
- </details>
- <details>
- <summary>Can AI audit Meta ads? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary>
- <div class="faq-a">Yes, and it fits the high-drift checks better than a quarterly human pass. An AI media buyer reads the account through the API every morning, runs the same 20 checks, ranks findings by recoverable spend and flags what changed since yesterday — then prepares the fix for your approval. It complements a human, who still owns the strategy and judgment calls.</div>
- </details>
- <details>
- <summary>How long does a Meta audit take? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary>
- <div class="faq-a">A thorough manual audit of a single account takes a few hours to a full day, depending on how many campaigns and creatives it holds. A continuous, API-driven audit runs the same checks in minutes and re-runs on its own every morning — so the finding lands the day the leak opens, not 89 days later.</div>
- </details>
- </div>
 
- <div class="related">
- <span class="eyebrow"><span class="tick"></span>Keep reading</span>
- <div class="related-grid">
- <a class="rel-card" href="/how-to-audit-a-google-ads-account"><span class="rc-tag">Playbook</span><div class="rc-h">How to audit a Google Ads account, properly</div></a>
- <a class="rel-card" href="/cpm-is-the-early-creative-fatigue-signal"><span class="rc-tag">Creative</span><div class="rc-h">CPM is the early creative-fatigue signal</div></a>
- </div>
- </div>
-
- <div class="answer-box" style="margin-top:44px">
- <span class="lbl">Who wrote this</span>
- <p>Adgent reads Meta and Google accounts overnight and hands you one brief each morning — the diagnosis, the evidence from your own account, and a change you approve before anything writes. Read-only by default. It analyzes creative; it doesn't make it. The twenty checks above run overnight on every connected account, ordered by what they are worth &mdash; <a href="/daily-verdict">the daily verdict</a>.</p>
- </div>
-
- <div class="post-foot">
- <a class="back-link" href="/blog"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>All articles</a>
- <a class="btn btn-primary btn-sm" href="/#lead">Get a free audit</a>
- </div>
- </div>
+      <div class="inline-cta ar-end"><p>Bring the same question to your own account. Adgent returns its position, the evidence underneath and what the finding is worth a month.</p><a class="btn btn-ink" href="/pricing">Pricing</a></div>
+    </div>
+  </div>
 </article>
+
+  <section class="sec-sm" aria-labelledby="ar-faq-h">
+    <div class="wrap">
+      <div class="faq">
+        <div class="sec-head"><h2 id="ar-faq-h">Frequently asked.</h2></div>
+        <div class="qa">
+          <details open><summary>How do I audit a Meta (Facebook) ads account?<i aria-hidden="true"></i></summary><div class="a">Work in order of recoverable spend, not report length. First verify the signal (pixel and Conversions API health, deduplication and event match quality), because a broken signal corrupts every number downstream. Then check your attribution setting, CBO budget leakage, Audience Network placement drift, frequency and creative fatigue, audience overlap, retargeting exclusions, catalogue health, learning-phase status and account structure. Attach a dollar estimate to each finding and fix the highest-value leak first.</div></details>
+          <details><summary>How often should I audit Meta ads?<i aria-hidden="true"></i></summary><div class="a">Match the cadence to how fast each check goes stale. Run the full ten-check audit quarterly, a light monthly review on pacing, frequency and the ad sets that shifted most, and monitor the high-drift checks (placement drift, frequency, audience overlap and CBO leakage) continuously, because those reopen within a week of any manual pass.</div></details>
+          <details><summary>What are the red flags in a Meta ads account?<i aria-hidden="true"></i></summary><div class="a">Frequency above 5 on a prospecting audience, no retargeting exclusions, a backend versus Ads Manager revenue gap wider than roughly 15–20%, Audience Network eating a large share of a placement-optimised budget, and ad sets stuck in the learning phase after five days. Any one of these is recoverable spend you can find before you do a single calculation.</div></details>
+          <details><summary>How do I check if my pixel is working?<i aria-hidden="true"></i></summary><div class="a">Open Events Manager and confirm events fire once per action with a healthy event match quality score, that browser pixel and Conversions API events deduplicate on a shared event ID, and that your key conversion carries the right value. Use the Meta Pixel Helper on live pages and compare Ads Manager conversions against GA4 or your store. A gap wider than roughly 15–20% means the signal, not your bids, is the first thing to fix. Then check volume: Meta's guidance is a minimum of 50 events over 7 days for an ad set to learn.</div></details>
+          <details><summary>What attribution setting should I use?<i aria-hidden="true"></i></summary><div class="a">For most direct-response accounts, 7-day click is the sensible default: it captures the buying window without over-crediting view-through. The trap is judging performance on the default setting without knowing which window it uses, or comparing ad sets on different windows. Pick one attribution setting, apply it consistently, and remember recent numbers are still settling inside the window and read pessimistic.</div></details>
+          <details><summary>Can AI audit Meta ads?<i aria-hidden="true"></i></summary><div class="a">Yes, and it suits the high-drift checks better than a quarterly human pass. An AI media buyer reads the account through the API every day, ranks findings by what they cost and keeps the evidence and next move together. More in <a href="/can-ai-audit-your-ad-accounts">can AI audit your ad accounts</a>.</div></details>
+          <details><summary>How long does a Meta audit take?<i aria-hidden="true"></i></summary><div class="a">A thorough manual audit of a single account takes a few hours to a full day, depending on how many campaigns and creatives it holds. A continuous, API-driven audit runs unattended and repeats every day, so a leak is read the day after it opens, not at the next quarterly review.</div></details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec-sm white" aria-labelledby="ar-more-h">
+    <div class="wrap">
+      <div class="sec-head row"><h2 id="ar-more-h">Keep reading.</h2></div>
+      <div class="ar-more-g">
+        <a class="ar-card" href="/how-to-audit-a-google-ads-account"><small>How-to · 9 min</small><h3>How to audit a Google Ads account, properly</h3><p>The Google twin of this checklist, in order of what each check recovers.</p><span class="go">Read <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+        <a class="ar-card" href="/cpm-is-the-early-creative-fatigue-signal"><small>Field note · 5 min</small><h3>Frequency is a lagging indicator. Watch CPM.</h3><p>The early creative-fatigue signal, before ROAS confirms it.</p><span class="go">Read <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+        <a class="ar-card dark" href="/specialists"><small>Product</small><h3>Specialists</h3><p>Ten specialists, each reading the account from its own angle.</p><span class="go">Meet the specialists <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+      </div>
+    </div>
+  </section>
+
 </main>
 <!--#footer--><footer class="footer">
- <div class="wrap">
- <div class="foot-grid">
- <div class="foot-brand">
- <a class="brand" href="/">
- <img class="mark" src="/assets/icon-only.svg" alt=""/>
- <span class="name">Adgent</span>
- </a>
- <p>The AI media buyer for performance marketers. One brief each morning — the thinking already done.</p>
- </div>
- <div class="foot-col">
- <h2 class="foot-h">Product</h2>
- <a href="/features">Overview</a>
- <a href="/daily-verdict">Daily verdict</a>
- <a href="/ground-truth">Ground truth</a>
- <a href="/trust-gate">Trust Gate</a>
- <a href="/creative-intelligence">Creative intelligence</a>
- <a href="/change-ledger">Change Ledger</a>
- <a href="/account-memory">Account memory</a>
- <a href="/built-from-chat">Built from chat</a>
- <a href="/tools">Free tools</a>
- </div>
- <div class="foot-col">
- <h2 class="foot-h">Who it is for</h2>
- <a href="/for-agencies">Agencies</a>
- <a href="/for-in-house">In-house teams</a>
- <a href="/ecommerce">Ecommerce &amp; DTC</a>
- <a href="/marketplaces">Marketplaces</a>
- <a href="/lead-generation">Lead generation</a>
- <a href="/mobile-apps">Mobile apps &amp; games</a>
- <a href="/travel-hospitality">Travel &amp; hospitality</a>
- <a href="/local-multi-location">Local &amp; multi-location</a>
- </div>
- <div class="foot-col">
- <h2 class="foot-h">Company</h2>
- <a href="/why-adgent">Why Adgent</a>
- <a href="/pricing">Pricing</a>
- <a href="/about">About</a>
- <a href="/blog">Blog</a>
- <a href="/#lead">Get a free audit</a>
- </div>
- <div class="foot-col">
- <h2 class="foot-h">Legal</h2>
- <a href="/privacy">Privacy</a>
- <a href="/terms">Terms</a>
- <a href="/security">Security</a>
- <a href="/data-use">Data use</a>
- <a href="/data-deletion">Data deletion</a>
-<a href="/business-information">Business information</a>
- <button type="button" data-cookie-settings>Cookie settings</button>
- </div>
- </div>
- <div class="foot-bottom">
- <span>© 2026 Adgent. Operated by Osman Tıkna, a sole proprietorship established in Türkiye. All rights reserved.</span>
- <div class="foot-social">
- <a href="https://www.instagram.com/adgentapp/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37Z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
- <a href="https://www.linkedin.com/company/adgentapp/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6Z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a></div>
- </div>
- </div>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="brand" href="/" aria-label="Adgent: home"><svg viewBox="0 0 170 170" fill="none" aria-hidden="true"><path d="M14 140 L85 6 L156 140 L128 140 L85 58 L42 140 Z" fill="currentColor"/><path d="M50 140 L85 72 L120 140 L96 140 L85 118 L74 140 Z" fill="currentColor"/><path d="M18 153 L152 153" stroke="currentColor" stroke-width="9" stroke-linecap="round"/></svg>Adgent</a>
+        <p class="foot-about">The AI employee that carries your brand's context into every growth decision across Meta, Google Ads and AI answers.</p>
+      </div>
+      <div><h2>Run the accounts</h2><nav aria-label="Run the accounts"><a href="/daily-verdict">Decisions</a><a href="/trust-gate">Trust Gate</a><a href="/change-ledger">Change Ledger</a><a href="/platform-change-log">Platform change log</a><a href="/account-memory">Account memory</a><a href="/ground-truth">Ground truth</a></nav></div>
+      <div><h2>Build and automate</h2><nav aria-label="Build and automate"><a href="/agents">Agents &amp; workflows</a><a href="/specialists">Specialists</a><a href="/campaign-build">Campaign build</a><a href="/planning">Planning</a><a href="/dashboards">Dashboards &amp; reports</a><a href="/meetings">In your meetings</a><a href="/creative-intelligence">Creative analysis</a><a href="/ai-visibility">AI Visibility</a><a href="/features">All capabilities</a></nav></div>
+      <div><h2>Solutions</h2><nav aria-label="Solutions"><a href="/for-agencies">Agencies</a><a href="/for-in-house">Brands</a><a href="/ecommerce">Ecommerce &amp; DTC</a><a href="/lead-generation">Lead generation</a><a href="/travel-hospitality">Travel &amp; hospitality</a><a href="/marketplaces">Marketplaces</a><a href="/local-multi-location">Local &amp; multi-location</a><a href="/mobile-apps">Mobile apps &amp; games</a></nav></div>
+      <div><h2>Company</h2><nav aria-label="Company"><a href="/why-adgent">Why Adgent</a><a href="/pricing">Pricing</a><a href="/about">About</a><a href="/blog">Blog</a><a href="/tools">Free tools</a><a href="/security">Security &amp; data</a><a href="/#demo">Request a demo</a></nav></div>
+      <div><h2>Legal</h2><nav aria-label="Legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/data-use">Data use</a><a href="/data-deletion">Data deletion</a><a href="/business-information">Business information</a><button type="button" class="foot-link" data-cookie-settings>Cookie settings</button></nav></div>
+    </div>
+    <div class="foot-b">
+      <span>© <span data-year>2026</span> Adgent. Operated by Osman Tıkna, a sole proprietorship established in Türkiye. All rights reserved.</span>
+      <div class="foot-social">
+        <a href="https://www.linkedin.com/company/adgentapp" aria-label="Adgent on LinkedIn" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM2.5 9.5h5V21h-5V9.5ZM9.5 9.5h4.8v1.6a5.2 5.2 0 0 1 4.5-2.2c3.2 0 4.7 2 4.7 5.6V21h-5v-5.7c0-1.6-.6-2.6-2-2.6s-2.2 1-2.2 2.6V21h-4.8V9.5Z"/></svg></a>
+        <a href="https://www.instagram.com/adgentapp/" aria-label="Adgent on Instagram" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c2.7 0 3 0 4 .1 1 0 1.6.2 2 .4.5.2.9.5 1.3.9.4.4.7.8.9 1.3.2.4.3 1 .4 2 .1 1 .1 1.3.1 4s0 3-.1 4c0 1-.2 1.6-.4 2a3.6 3.6 0 0 1-.9 1.3c-.4.4-.8.7-1.3.9-.4.2-1 .3-2 .4-1 .1-1.3.1-4 .1s-3 0-4-.1c-1 0-1.6-.2-2-.4a3.6 3.6 0 0 1-1.3-.9 3.6 3.6 0 0 1-.9-1.3c-.2-.4-.3-1-.4-2-.1-1-.1-1.3-.1-4s0-3 .1-4c0-1 .2-1.6.4-2 .2-.5.5-.9.9-1.3.4-.4.8-.7 1.3-.9.4-.2 1-.3 2-.4 1-.1 1.3-.1 4-.1Zm0 3.3a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13Zm0 2.3a4.2 4.2 0 1 1 0 8.4 4.2 4.2 0 0 1 0-8.4Zm6.8-2.6a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"/></svg></a>
+        <a href="https://x.com/adgentapp" aria-label="Adgent on X" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 1.2h3.7l-8 9.2L24 22.8h-7.4l-5.8-7.6-6.6 7.6H.5l8.6-9.8L0 1.2h7.6l5.2 6.9 6.1-6.9Zm-1.3 19.4h2L6.5 3.2H4.3l13.3 17.4Z"/></svg></a>
+        <a href="https://www.youtube.com/@adgentapp" aria-label="Adgent on YouTube" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8ZM9.5 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg></a>
+      </div>
+    </div>
+  </div>
 </footer><!--/#footer-->
-
-<script src="/site.js?v=dfb318ff"></script>
+<script src="/app.js?v=84555c88" defer></script>
+<script src="/js/article.js?v=a28bb95f" defer></script>
 </body>
 </html>

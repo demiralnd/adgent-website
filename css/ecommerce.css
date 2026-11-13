@@ -1,0 +1,82 @@
+/* ==========================================================================
+   /ecommerce · page-only styles, prefixed .ec-. Tokens only, no raw colour.
+   First viewport: the store's revenue line beside what the platforms report.
+   Signature: the catalogue read in chat, the arithmetic beside it.
+   ========================================================================== */
+
+/* ---------------------------------------------------------------- hero ---- */
+.ec-hero-g{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:center}
+.ec-hero .display{max-width:16ch}
+.ec-rev{margin:0;min-width:0;padding:22px 26px 24px;border-radius:var(--r-blk);background:var(--white);box-shadow:var(--shadow),inset 0 0 0 1px var(--line)}
+.ec-rev-h{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:var(--fs-xs);color:var(--ink-3)}
+.ec-rev-h .uc-t svg{width:15px;height:15px;color:var(--primary)}
+.ec-keys{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:14px;font-size:12.5px;color:var(--ink-2)}
+.ec-keys span{display:inline-flex;align-items:center;gap:8px}
+.ec-keys span::before{content:"";width:18px;height:2.5px;border-radius:2px;background:var(--primary)}
+.ec-keys .k2::before{background:var(--accent)}
+.ec-chart{margin-top:10px;--chart-1:var(--primary);--chart-2:var(--accent);--chart-3:var(--t3);--chart-4:var(--t2);--ok:var(--accent-ink);--crit:var(--warn-ink)}
+.ec-chart .ac-card{background:transparent;border:0;box-shadow:none;padding:0}
+.ec-chart .ac-endpulse{display:none}
+.ec-chart .ac-area{opacity:.75}
+.ec-axis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:4px;padding:0 8px;font-size:12px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+/* the table underneath: the same data, kept when script is off, replaced by the drawing */
+.ec-fb{width:100%;border-collapse:collapse;font-size:13px;font-variant-numeric:tabular-nums}
+.ec-fb caption{caption-side:top;text-align:left;padding-bottom:8px;font-size:12px;color:var(--ink-3)}
+.ec-fb th,.ec-fb td{padding:6px 8px;border-top:1px solid var(--line);text-align:right}
+.ec-fb th:first-child{text-align:left;padding-left:0;font-weight:500}
+.ec-fb thead th{border-top:0;font-weight:500;color:var(--ink-2)}
+.ec-read{margin-top:14px;font-size:14.5px;line-height:1.5;color:var(--ink-2);text-wrap:pretty}
+.ec-read b{font-weight:500;color:var(--ink)}
+.ec-rev .src{margin-top:12px}
+
+/* ----------------------------------------------------- feed and arithmetic -- */
+.ec-gap .sec-head{margin-bottom:40px}
+.ec-gap-g{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--gap);align-items:start;margin-bottom:48px}
+.ec-chat{padding:24px 26px;box-shadow:var(--shadow-ui),inset 0 0 0 1px var(--line)}
+.ec-chat .bub.me{max-width:80%}
+.ec-chat .bub.ai{max-width:100%}
+.ec-feed{display:grid;gap:6px;margin-top:12px}
+.ec-item{display:grid;grid-template-columns:28px minmax(0,1fr) auto 52px;align-items:center;gap:12px;padding:9px 12px;border-radius:var(--r-row);background:var(--white);box-shadow:inset 0 0 0 1px var(--line);font-size:13.5px}
+.ec-sw{width:28px;height:28px;border-radius:8px;background:var(--grey);position:relative}
+.ec-sw::after{content:"";position:absolute;inset:7px;border-radius:4px;background:var(--line-2)}
+.ec-item.is-ok .ec-sw{background:var(--t1)}
+.ec-item.is-ok .ec-sw::after{background:var(--t3)}
+.ec-nm{font-weight:500;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ec-item>b{font-weight:500;text-align:right}
+.ec-feed-k{display:flex;justify-content:space-between;gap:12px;padding:2px 12px 0 52px;font-size:11.5px;color:var(--ink-3)}
+.ec-chat .src{margin-top:8px}
+.ec-math{padding:26px 28px 24px;border-radius:var(--r-blk);background:var(--primary);color:var(--on-primary)}
+.ec-math-t{font-size:15px;line-height:1.35;color:var(--on-primary-2);max-width:24ch}
+.ec-math ol{margin-top:18px}
+.ec-math li{display:grid;grid-template-columns:14px minmax(0,1fr) auto;align-items:baseline;gap:14px;padding:11px 0;border-top:1px solid var(--on-primary-3);font-size:14.5px;line-height:1.35}
+.ec-math li::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent);align-self:center}
+.ec-math li.off::before{background:transparent;box-shadow:inset 0 0 0 1.5px var(--on-primary-2)}
+.ec-math li>b{font-weight:500;white-space:nowrap}
+.ec-math li.off>b,.ec-math li.off>span{color:var(--on-primary-2)}
+.ec-math-e{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-top:6px;padding-top:16px;border-top:1px solid var(--on-primary-2)}
+.ec-math-e span{font-size:14.5px;line-height:1.35;max-width:18ch;padding-bottom:6px}
+.ec-math-e b{font-size:clamp(44px,4.4vw,60px);font-weight:400;letter-spacing:-.05em;line-height:.95;white-space:nowrap}
+.ec-math-k{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:16px;font-size:12px;color:var(--on-primary-2)}
+.ec-math-k span{display:inline-flex;align-items:center;gap:7px}
+.ec-math-k span::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent)}
+.ec-math-k span.off::before{background:transparent;box-shadow:inset 0 0 0 1.5px var(--on-primary-2)}
+
+/* ------------------------------------------------------- responsive ---- */
+@media (max-width:1100px){
+  .ec-hero-g{grid-template-columns:minmax(0,1fr)}
+  .ec-hero .display{max-width:16ch}
+  .ec-rev{max-width:720px}
+  .ec-gap-g{grid-template-columns:minmax(0,1fr)}
+  .ec-math{max-width:560px}
+}
+@media (max-width:520px){
+  .ec-rev{padding:18px 18px 20px}
+  .ec-chat{padding:18px 16px}
+  .ec-chat .bub.me{max-width:92%}
+  .ec-item{grid-template-columns:24px minmax(0,1fr) auto;gap:8px}
+  .ec-item>b{grid-column:2/-1;text-align:left;font-size:12.5px;color:var(--ink-2)}
+  .ec-item>b::before{content:"Spent yesterday: ";font-weight:400}
+  .ec-sw{width:24px;height:24px;align-self:start}
+  .ec-feed-k{display:none}
+  .ec-math{padding:22px 20px}
+}

@@ -1,0 +1,613 @@
+/* ===========================================================================
+   Adgent Charts — interactive SVG chart/graph library (styles)
+   Extends assets/adgent-ui.css. Do not use without it — this file has no
+   tokens of its own, only chart-specific structure + the Adgent motion
+   language (lifted from assets/adgent-ui-kit.html's #charts gallery).
+   See README.md in this folder for the full catalog + JS API.
+   =========================================================================== */
+
+.ac {
+    font-variant-numeric: tabular-nums;
+}
+
+/* ---------- card shell ---------- */
+.ac-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--r-card);
+    box-shadow: var(--shadow-ui);
+    padding: 16px 18px 14px;
+}
+.ac-head {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+.ac-title {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+}
+.ac-sub {
+    font-family: var(--sans);
+    font-size: 10px;
+    color: var(--ink-3);
+    letter-spacing: 0.02em;
+}
+.ac-delta {
+    margin-left: auto;
+    font-size: 11.5px;
+    font-weight: 600;
+    font-family: var(--sans);
+}
+.ac-delta.up {
+    color: var(--ok);
+}
+.ac-delta.down {
+    color: var(--crit);
+}
+.ac-delta.flat {
+    color: var(--ink-3);
+}
+
+/* ---------- plot area ---------- */
+.ac-wrap {
+    position: relative;
+}
+.ac-svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+.ac-svg .ax {
+    font-family: var(--sans);
+    font-size: 9px;
+    fill: var(--ink-3);
+}
+.ac-grid {
+    stroke: var(--line);
+    stroke-width: 1;
+    fill: none;
+}
+
+/* ---------- crosshair + tooltip ---------- */
+.ac-hit {
+    position: absolute;
+    inset: 0;
+    cursor: crosshair;
+}
+.ac-guide {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: var(--mute);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 120ms;
+}
+.ac-tip {
+    position: absolute;
+    transform: translate(-50%, -100%);
+    background: var(--ink);
+    color: var(--card);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 6px 10px;
+    border-radius: 8px;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 120ms;
+    z-index: 5;
+    box-shadow: 0 6px 16px rgba(20, 18, 15, 0.18);
+    line-height: 1.5;
+    font-family: var(--sans);
+}
+.ac-tip.on {
+    opacity: 1;
+}
+.ac-tip .tt-d {
+    display: block;
+    font-weight: 500;
+    opacity: 0.72;
+    font-family: var(--sans);
+    font-size: 9.5px;
+    margin-bottom: 2px;
+}
+.ac-tip .tt-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.ac-tip .tt-row + .tt-row {
+    margin-top: 2px;
+}
+.ac-tip .tt-row i {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    flex: none;
+}
+.ac-tip b {
+    font-family: var(--sans);
+}
+
+/* ---------- legend ---------- */
+.ac-legend {
+    display: flex;
+    gap: 14px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+}
+.ac-legend button {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--ink-2);
+    background: none;
+    border: 0;
+    cursor: pointer;
+    padding: 0;
+    transition:
+        opacity 140ms,
+        color 140ms;
+    font-family: var(--sans);
+}
+.ac-legend button i {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    flex: none;
+}
+.ac-legend button.off {
+    opacity: 0.38;
+    text-decoration: line-through;
+}
+.ac-legend button:hover {
+    color: var(--ink);
+}
+
+/* ---------- range tabs / controls slot ---------- */
+.ac-controls {
+    display: inline-flex;
+    gap: 2px;
+    padding: 3px;
+    border: 1px solid var(--line);
+    border-radius: var(--r-pill);
+    background: var(--card);
+    margin-left: auto;
+}
+.ac-controls button {
+    height: 25px;
+    padding: 0 12px;
+    border-radius: var(--r-pill);
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--ink-3);
+    background: none;
+    border: 0;
+    cursor: pointer;
+    transition:
+        background 130ms,
+        color 130ms;
+    font-family: var(--sans);
+}
+.ac-controls button.active {
+    background: var(--ink);
+    color: var(--card);
+}
+
+/* ===========================================================================
+   Motion — reveal-on-scroll + replay-on-click (Adgent UI Library convention)
+   =========================================================================== */
+html.ac-js .ac-draw {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+}
+html.ac-js .ac-area {
+    opacity: 0;
+}
+html.ac-js .ac-bar {
+    transform-box: fill-box;
+    transform-origin: bottom;
+    transform: scaleY(0);
+}
+html.ac-js .ac-hbar {
+    transform-box: fill-box;
+    transform-origin: left;
+    transform: scaleX(0);
+}
+html.ac-js .ac-dotmark {
+    transform-box: fill-box;
+    transform-origin: center;
+    transform: scale(0);
+    opacity: 0;
+}
+html.ac-js .ac-hm {
+    opacity: 0;
+}
+html.ac-js .ac-spin {
+    transform-box: fill-box;
+    transform-origin: center;
+    opacity: 0;
+}
+html.ac-js .ac-arc {
+    stroke-dashoffset: var(--len, 0);
+}
+html.ac-js .ac-seg {
+    transform: scaleX(0);
+}
+html.ac-js .ac-fade {
+    opacity: 0;
+}
+html.ac-js .ac-poly {
+    opacity: 0;
+    transform: scale(0.85);
+    transform-box: fill-box;
+    transform-origin: center;
+}
+html.ac-js .ac-enddot,
+html.ac-js .ac-endpulse {
+    opacity: 0;
+}
+
+.ac-chart.in .ac-draw,
+.ac-spk-row.in .ac-draw {
+    animation: acDraw 1.3s var(--ease) forwards;
+}
+.ac-chart.in .ac-draw.d2 {
+    animation-delay: 0.2s;
+}
+.ac-chart.in .ac-area {
+    animation: acFade 0.9s ease 0.25s forwards;
+}
+.ac-chart.in .ac-enddot,
+.ac-spk-row.in .ac-enddot {
+    animation: acFade 0.3s ease 1.15s forwards;
+}
+.ac-chart.in .ac-endpulse {
+    animation: acRipple 2.4s var(--ease) 1.2s infinite;
+}
+.ac-chart.in .ac-bar {
+    animation: acGrowY 0.75s var(--ease) forwards;
+    animation-delay: calc(var(--i, 0) * 60ms);
+}
+.ac-chart.in .ac-hbar {
+    animation: acGrowX 0.8s var(--ease) forwards;
+    animation-delay: calc(var(--i, 0) * 70ms);
+}
+.ac-chart.in .ac-dotmark {
+    animation: acPop 0.5s var(--ease) forwards;
+    animation-delay: calc(var(--i, 0) * 42ms);
+}
+.ac-chart.in .ac-hm {
+    animation: acFade 0.5s var(--ease) forwards;
+    animation-delay: calc(var(--i, 0) * 20ms);
+}
+.ac-chart.in .ac-spin {
+    animation: acSpinIn 1s var(--ease) forwards;
+}
+.ac-chart.in .ac-arc {
+    animation: acGaugeDraw 1.2s var(--ease) forwards;
+}
+.ac-chart.in .ac-seg {
+    animation: acGrowX 0.8s var(--ease) forwards;
+    animation-delay: calc(var(--i, 0) * 90ms);
+}
+.ac-chart.in .ac-fade {
+    animation: acFade 0.5s var(--ease) forwards;
+    animation-delay: calc(var(--i, 0) * 60ms);
+}
+.ac-chart.in .ac-poly {
+    animation: acPolyIn 0.7s var(--ease) forwards 0.1s;
+}
+
+@keyframes acDraw {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+@keyframes acFade {
+    to {
+        opacity: 1;
+    }
+}
+@keyframes acGrowY {
+    to {
+        transform: scaleY(1);
+    }
+}
+@keyframes acGrowX {
+    to {
+        transform: scaleX(1);
+    }
+}
+@keyframes acPop {
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+@keyframes acSpinIn {
+    to {
+        opacity: 1;
+    }
+}
+@keyframes acGaugeDraw {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+@keyframes acPolyIn {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes acRipple {
+    0% {
+        opacity: 0.55;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(2.6);
+    }
+}
+
+.ac-bar,
+.ac-hbar,
+.ac-dotmark,
+.ac-seg,
+.ac-hm,
+.donseg {
+    transition:
+        filter 120ms,
+        stroke-width 160ms var(--ease);
+}
+.ac-bar:hover,
+.ac-hbar:hover,
+.ac-dotmark:hover,
+.ac-seg:hover,
+.ac-hm:hover {
+    filter: brightness(1.08);
+    cursor: pointer;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html.ac-js .ac-draw {
+        stroke-dashoffset: 0;
+    }
+    html.ac-js .ac-area {
+        opacity: 1;
+    }
+    html.ac-js .ac-enddot {
+        opacity: 1;
+    }
+    html.ac-js .ac-endpulse {
+        opacity: 0;
+    }
+    html.ac-js .ac-bar {
+        transform: none;
+    }
+    html.ac-js .ac-hbar {
+        transform: none;
+    }
+    html.ac-js .ac-dotmark {
+        transform: none;
+        opacity: 1;
+    }
+    html.ac-js .ac-hm {
+        opacity: 1;
+    }
+    html.ac-js .ac-spin {
+        opacity: 1;
+    }
+    html.ac-js .ac-arc {
+        stroke-dashoffset: 0;
+    }
+    html.ac-js .ac-seg {
+        transform: none;
+    }
+    html.ac-js .ac-fade {
+        opacity: 1;
+    }
+    html.ac-js .ac-poly {
+        opacity: 1;
+        transform: none;
+    }
+    .ac-chart.in *,
+    .ac-spk-row.in * {
+        animation: none !important;
+    }
+}
+
+/* ===========================================================================
+   Per-chart layout
+   =========================================================================== */
+
+/* Sparkline row (compact, for tables / KPI lists) */
+.ac-spk-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--line);
+}
+.ac-spk-row:last-child {
+    border-bottom: 0;
+}
+.ac-spk-row .lab {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--ink-2);
+    width: 64px;
+    flex: none;
+}
+.ac-spk-row svg {
+    flex: 1 1 auto;
+    height: 26px;
+    min-width: 60px;
+    overflow: visible;
+}
+.ac-spk-row .v {
+    font-family: var(--sans);
+    font-size: 12.5px;
+    font-weight: 600;
+    width: 74px;
+    text-align: right;
+    flex: none;
+}
+.ac-spk-row .d {
+    font-size: 11px;
+    font-weight: 600;
+    width: 64px;
+    text-align: right;
+    flex: none;
+    font-family: var(--sans);
+}
+.ac-spk-row .d.up {
+    color: var(--ok);
+}
+.ac-spk-row .d.down {
+    color: var(--crit);
+}
+
+/* KPI tile (big number + inline trend) */
+.ac-kpi {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 140px;
+}
+.ac-kpi .kl {
+    font-size: 11.5px;
+    color: var(--ink-3);
+    font-weight: 600;
+}
+.ac-kpi .kv {
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    font-family: var(--sans);
+}
+.ac-kpi svg {
+    height: 34px;
+    margin-top: 2px;
+    overflow: visible;
+}
+
+/* Distribution (segmented % bar) */
+.ac-distbar {
+    display: flex;
+    height: 34px;
+    border-radius: var(--r-btn);
+    overflow: hidden;
+    background: var(--grey);
+}
+.ac-distbar .ac-seg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10.5px;
+    font-weight: 600;
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: pointer;
+    transform-origin: left;
+}
+
+/* Funnel */
+.ac-funnel {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.ac-funnel-step {
+    position: relative;
+    height: 38px;
+    border-radius: var(--r-btn);
+    display: flex;
+    align-items: center;
+    padding: 0 14px;
+    color: #fff;
+    font-size: 12.5px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.ac-funnel-drop {
+    font-size: 10.5px;
+    color: var(--ink-3);
+    font-weight: 600;
+    text-align: center;
+    font-family: var(--sans);
+}
+
+/* Bullet (target vs actual) */
+.ac-bullet-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.ac-bullet-wrap .bl {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--ink-2);
+    width: 96px;
+    flex: none;
+}
+.ac-bullet-wrap svg {
+    flex: 1 1 auto;
+    height: 30px;
+    overflow: visible;
+}
+
+/* Chart gallery grid (used by gallery.html and any dashboard layout) */
+.ac-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+.ac-gallery .ac-card.span {
+    grid-column: 1 / -1;
+}
+@media (max-width: 760px) {
+    .ac-gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Small note under geo maps / bubble maps (pan-zoom hint, etc.) */
+.ac-note {
+    font-size: 11px;
+    color: var(--ink-3);
+    margin-top: 6px;
+}
+
+/* Geo map — grab cursor affordance while idle, grabbing while panning is set inline via JS */
+.ac-geo-viewport path,
+.ac-geo-viewport circle {
+    transition:
+        fill-opacity 140ms,
+        stroke-width 140ms var(--ease);
+}
+.ac-geo-viewport path:hover {
+    fill-opacity: 1 !important;
+}
+
+/* Word cloud text */
+.ac-svg text {
+    -webkit-user-select: none;
+    user-select: none;
+}

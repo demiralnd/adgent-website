@@ -1,0 +1,88 @@
+/* blog index · the cards are the visual layer. Tokens only; classes prefixed bl-.
+   The header type comes from article.css (.ar-ix-head, .ar-t, .ar-dek). Every article
+   entry shows its 1200×630 card (assets/og/<slug>.png) with width/height set: no layout shift. */
+
+/* ------------------------------------------------------------ head ---- */
+.bl-head{padding-bottom:40px}
+.bl-head-m{display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px;margin-top:28px;font-size:13.5px;color:var(--ink-3)}
+.bl-head-m .go{font-size:13.5px}
+
+/* --------------------------------------------- lead + two picks ---- */
+.bl-top{padding-top:0}
+.bl-lead,.bl-pick{display:grid;color:inherit;background:var(--white);border-radius:var(--r-blk);box-shadow:inset 0 0 0 1px var(--line);transition:box-shadow .3s var(--ease),transform .3s var(--ease)}
+.bl-lead:hover,.bl-pick:hover{box-shadow:var(--shadow),inset 0 0 0 1px var(--line);transform:translateY(-2px)}
+.bl-lead:focus-visible,.bl-pick:focus-visible,.bl-it:has(a:focus-visible){outline:2px solid var(--focus,var(--ink));outline-offset:4px}
+.bl-lead{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:0 40px;padding:14px;align-items:center}
+.bl-lead img,.bl-pick img,.bl-it img{display:block;width:100%;height:auto;aspect-ratio:1200/630;border-radius:var(--r-card);background:var(--primary)}
+.bl-lead-b{display:flex;flex-direction:column;gap:14px;padding:18px 34px 18px 0}
+.bl-lead-b h3{font-size:clamp(28px,2.6vw,36px);line-height:1.1;letter-spacing:-.035em;text-wrap:balance}
+.bl-lead-b .bl-d{font-size:16px;max-width:44ch}
+.bl-lead-f{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:10px;padding-top:16px;border-top:1px solid var(--line);font-size:13px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.bl-picks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--gap);margin-top:var(--gap)}
+.bl-pick{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:0 26px;padding:14px;align-items:center}
+.bl-pick-b{display:flex;flex-direction:column;gap:8px;padding:10px 20px 10px 0}
+.bl-pick-b h3{font-size:22px;line-height:1.2;letter-spacing:-.025em;text-wrap:balance}
+.bl-pick-b .go{margin-top:6px}
+
+/* ---------------------------------------------------- the archive ---- */
+.bl-arc-h{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px 40px;margin-bottom:20px}
+.bl-arc-h .sub{margin-top:14px}
+.bl-jump{display:flex;flex-wrap:wrap;gap:8px}
+.bl-jump a{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 8px 0 16px;border-radius:var(--r-pill);box-shadow:inset 0 0 0 1px var(--line-2);font-size:14px;font-weight:500;transition:box-shadow .18s var(--ease),background-color .18s var(--ease)}
+.bl-jump a:hover{box-shadow:inset 0 0 0 1px var(--ink)}
+.bl-jump span,.bl-grp-h span{display:inline-grid;place-items:center;min-width:26px;height:26px;padding:0 7px;border-radius:var(--r-pill);background:var(--grey);font-size:12.5px;font-weight:500;color:var(--ink-2);font-variant-numeric:tabular-nums;letter-spacing:0}
+
+/* one group: a ruled head, then the pieces three across with their cards */
+.bl-grp{margin-top:72px;scroll-margin-top:calc(var(--navh,64px) + 16px)}
+.bl-arc-h+.bl-grp{margin-top:44px}
+.bl-grp-hd{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 40px;padding-top:18px;border-top:2px solid var(--ink)}
+.bl-grp-h{font-size:28px;line-height:1.2;letter-spacing:-.03em;text-wrap:balance}
+.bl-grp-h span{margin-left:10px;vertical-align:3px}
+.bl-grp-s{font-size:14.5px;line-height:1.5;color:var(--ink-2);max-width:48ch;text-wrap:pretty}
+
+.bl-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px var(--gap);margin-top:28px}
+.bl-it{position:relative;display:flex;flex-direction:column;gap:8px;border-radius:var(--r-card)}
+.bl-it img{margin-bottom:10px;transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
+.bl-it:hover img{transform:translateY(-2px);box-shadow:var(--shadow)}
+.bl-k{font-size:12.5px;color:var(--ink-3)}
+.bl-it h4{font-size:19px;font-weight:500;line-height:1.3;letter-spacing:-.02em;text-wrap:balance}
+.bl-it h4 a{text-decoration:underline;text-decoration-color:transparent;text-decoration-thickness:1px;text-underline-offset:4px;transition:text-decoration-color .2s var(--ease)}
+.bl-it h4 a::after{content:"";position:absolute;inset:0}
+.bl-it:hover h4 a{text-decoration-color:var(--ink)}
+.bl-it h4 a:focus-visible{outline:0}
+.bl-d{font-size:14.5px;line-height:1.55;color:var(--ink-2);max-width:56ch;text-wrap:pretty}
+.bl-it time{margin-top:2px;font-size:12.5px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+
+/* ------------------------------------------------- tools + offer ---- */
+.bl-tools .inline-cta{margin-top:40px}
+
+@media (max-width:1100px){
+  .bl-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:900px){
+  .bl-lead{grid-template-columns:1fr;gap:0}
+  .bl-lead-b{padding:22px 14px 12px}
+  .bl-picks{grid-template-columns:1fr}
+}
+@media (max-width:860px){
+  .bl-arc-h{margin-bottom:8px}
+  .bl-grp{margin-top:56px}
+  .bl-list{gap:36px var(--gap)}
+  .bl-it h4{font-size:18.5px}
+}
+@media (max-width:600px){
+  .bl-head{padding-bottom:32px}
+  .bl-pick{grid-template-columns:1fr;gap:0}
+  .bl-pick-b{padding:18px 12px 10px}
+  /* archive on phones: a thumbnail beside the title instead of a full-width cover per item
+     (24 identical navy covers stacked to ~14,500px); featured items above keep their covers */
+  .bl-list{grid-template-columns:1fr;gap:22px}
+  .bl-it{display:grid;grid-template-columns:96px minmax(0,1fr);column-gap:14px;row-gap:4px;align-items:start}
+  .bl-it img{grid-row:1/span 4;margin:2px 0 0;border-radius:10px}
+  .bl-it h4{font-size:16.5px}
+  .bl-it .bl-d{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:14px}
+}
+@media (prefers-reduced-motion:reduce){
+  .bl-lead,.bl-pick,.bl-it img,.bl-it h4 a,.bl-jump a{transition:none}
+  .bl-lead:hover,.bl-pick:hover,.bl-it:hover img{transform:none}
+}

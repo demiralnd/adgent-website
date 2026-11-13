@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+<title id="title">When does November really peak?</title>
+<desc id="desc">11.11 and Black Friday in Türkiye. Adgent research compares product searches, marketplace transactions and advertiser activity.</desc>
+<style>text{font-family:Switzer,Arial,Helvetica,sans-serif;fill:#F6F5F4}.muted{fill:#B6C6C5}.mint{fill:#63B5A7}</style>
+<rect width="1200" height="630" rx="0" fill="#101C22"/>
+<g transform="translate(64 48)" fill="#63B5A7"><path d="M0 33 17 0 34 33H27L17 13 7 33Z"/><path d="M10 33 17 19 24 33H18L17 30 16 33Z"/></g>
+<text x="114" y="76" font-size="27">Adgent Research</text>
+<text x="1136" y="75" text-anchor="end" font-size="20" class="muted">TÜRKİYE · NOVEMBER 2026</text>
+<text x="64" y="168" font-size="25" class="mint">11.11 &amp; Black Friday</text>
+<text x="59" y="257" font-size="76" letter-spacing="-3">When does November</text>
+<text x="59" y="341" font-size="76" letter-spacing="-3">really peak?</text>
+<path d="M64 426H1136" stroke="#63B5A7" stroke-opacity=".35"/>
+<text x="64" y="482" font-size="26">Product searches. Marketplace transactions.</text>
+<text x="64" y="522" font-size="26">Advertiser activity.</text>
+<text x="64" y="584" font-size="19" class="muted">Searches 2023–2025 · Transactions 2024–2025 · Meta panel 3–8 Nov 2026</text>
+</svg>

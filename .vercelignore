@@ -1,0 +1,19 @@
+# Not part of the served site: build tooling, docs, sources. Everything else ships.
+# The live repo (~/adgent-website) also carries files v2 does not have (BACKLOG.md,
+# SITE.md, newpage.py, svgcheck.py, test-circuit.cjs); keep tooling and caches private.
+README.md
+PATTERNS.md
+BACKLOG.md
+SITE.md
+build.py
+serve.py
+newpage.py
+svgcheck.py
+test-circuit.cjs
+.fontcache/
+__pycache__/
+_partials/
+_kit.html
+.lastmod.json
+assets/og/_*
+assets/ask-ai/SOURCES.md

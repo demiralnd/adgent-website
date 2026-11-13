@@ -1,0 +1,38 @@
+/* about · the idea, four beliefs, where we are. Tokens only; classes prefixed ab-. */
+
+.ab-hero{padding:56px 0 96px}
+.ab-head{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:56px;align-items:end}
+.ab-h{max-width:22ch;margin-bottom:32px}
+.ab-head .display{max-width:20ch}
+.ab-head .lede{max-width:46ch}
+/* rules */
+.ab-rules{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:32px;border-top:1px solid var(--line-2)}
+.ab-rule{padding:22px 0 0}
+.ab-rule h3{font-size:19px;letter-spacing:-.02em;max-width:18ch;text-wrap:balance;min-height:2lh}
+.ab-rule p{font-size:14px;line-height:1.55;color:var(--ink-2);margin-top:10px;max-width:34ch}
+.ab-rule p a{color:var(--ink);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--line-2)}
+.ab-rule p a:hover{text-decoration-color:var(--ink)}
+
+/* where we are */
+.ab-now{gap:56px;align-items:start}
+.ab-status{border-top:1px solid var(--line-2)}
+.ab-status>div{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:15px 2px;border-bottom:1px solid var(--line);font-size:15px}
+.ab-status dt{color:var(--ink-2)}
+.ab-status dd{margin:0;display:flex;align-items:center;gap:10px;text-align:right;font-weight:500}
+
+@media (max-width:1100px){
+  .ab-head{grid-template-columns:1fr;gap:24px}
+  .ab-rules{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:12px}
+}
+@media (max-width:860px){
+  .ab-hero{padding:44px 0 84px}
+  .ab-rules{grid-template-columns:1fr}
+  .ab-rule h3,.ab-rule p{max-width:none}
+  .ab-rule h3{min-height:0}
+  .ab-rule p{font-size:15px}
+  .ab-now{gap:28px}
+}
+@media (max-width:520px){
+  .ab-status>div{flex-direction:column;align-items:flex-start;gap:6px}
+  .ab-status dd{text-align:left;flex-wrap:wrap}
+}

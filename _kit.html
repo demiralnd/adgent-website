@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="robots" content="noindex, nofollow"/>
+<title>Component kit · Adgent v2</title>
+<meta name="description" content="Every shared component of the Adgent v2 site, rendered once with its class names. Local preview only."/>
+<link rel="icon" type="image/svg+xml" href="/assets/logo-app.svg"/>
+<link rel="preload" href="/assets/fonts/switzer-400.woff2" as="font" type="font/woff2" crossorigin/>
+<link rel="stylesheet" href="/tokens.css"/>
+<link rel="stylesheet" href="/app.css"/>
+<link rel="stylesheet" href="/css/_kit.css"/>
+</head>
+<body>
+<!--#header--><!--/#header-->
+<!--#drawer--><!--/#drawer-->
+<main id="main" tabindex="-1">
+
+<section class="sec-sm" style="padding-bottom:40px">
+  <div class="wrap">
+    <p class="kick">Local preview · never built or deployed</p>
+    <h1 class="display">The component kit.</h1>
+    <p class="lede" style="margin-top:18px">Every shared class in <code>app.css</code>, rendered once. Page builders compose from these; anything a page needs beyond them goes in <code>/css/&lt;slug&gt;.css</code>. Try <a class="go" href="/_kit?accent=06">?accent=06</a> to switch territory, <a class="go" href="/_kit?accent=off">?accent=off</a> to reset.</p>
+  </div>
+</section>
+
+<!-- ============================================================ collage -->
+<section class="sec-sm" style="padding-top:0">
+  <div class="wrap">
+    <p class="kit-l"><b>Collage of fluid blocks</b><code>.collage</code><code>.blk</code><code>.r28</code><code>.pillr</code><code>.bg-*</code><code>.blk-lead</code><code>.blk-t</code><code>.is-deco</code><span>place with <code>style="--c:4/10;--r:1/3"</code></span></p>
+    <div class="collage">
+      <div class="blk r28 bg-t1 rv" style="--c:1/4;--r:1"><div class="blk-t"><b>Judges creative.</b><span>Like a strategist, not a tagger.</span></div></div>
+      <div class="blk r28 bg-primary blk-lead rv" style="--c:4/10;--r:1/3;--d:1">
+        <p class="blk-big" style="max-width:20ch">The AI employee for enterprise growth teams.</p>
+        <div class="kit-row" style="justify-content:space-between"><span class="small">Context carried into every decision.</span><a class="btn btn-acc" href="/#demo">Request a demo</a></div>
+      </div>
+      <div class="blk r28 bg-line rv" style="--c:10/13;--r:1;--d:2"><div class="blk-t"><b>Builds dashboards.</b><span>Ask in chat, built from live data.</span></div></div>
+      <div class="blk r28 bg-line tnum rv" style="--c:1/4;--r:2;--d:3;justify-content:space-between;padding:14px 20px 12px">
+        <div class="blk-t"><b>Ready to apply.</b><span>Daily budget · Meta</span></div>
+        <div class="kit-row" style="gap:10px;font-weight:500"><s class="small">$39.77</s><span>$31.81</span><span class="pill acc" style="margin-left:auto;height:24px">Approve</span></div>
+      </div>
+      <div class="blk pillr bg-grey rv" style="--c:1/7;--r:3;flex-direction:row;align-items:center;gap:18px"><b class="num" style="font-size:46px;flex:1">Reads</b><span class="sub" style="text-align:right;max-width:15ch">your accounts, every night.</span></div>
+      <div class="blk r28 bg-ghost rv" style="--c:7/10;--r:3;--d:1"><div class="blk-t"><b>Leads with the verdict.</b><span>Ranked by money.</span></div></div>
+      <div class="blk r28 bg-t1 rv" style="--c:10/13;--r:2/4;--d:2;justify-content:flex-start"><p class="blk-big">Remembers<br/>your rules.</p><p class="small" style="margin-top:10px">Told once, held everywhere.</p></div>
+      <div class="blk bg-ghost pillr is-deco" style="--c:1/4;--r:4" aria-hidden="true"></div>
+      <div class="blk pillr bg-grey rv" style="--c:4/10;--r:4;--d:1"><div class="blk-t"><b>Puts it back.</b><span>The ledger keeps the before-state.</span></div></div>
+      <div class="blk r28 bg-line rv" style="--c:10/13;--r:4;--d:2"><div class="blk-t"><b>AI Visibility.</b><span>What the answers say about you, with dates.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ tokens -->
+<section class="sec-sm white">
+  <div class="wrap">
+    <p class="kit-l"><b>Colour tokens</b><span>only <code>tokens.css</code> holds hex; everything else is <code>var(--…)</code></span></p>
+    <div class="kit-sw tnum">
+      <div style="background:var(--paper)"><b>--paper</b>body canvas</div>
+      <div style="background:var(--white)"><b>--white / --card</b>cards</div>
+      <div style="background:var(--grey)"><b>--grey</b>grey block</div>
+      <div style="background:var(--t1)"><b>--t1</b>ink 13.9 · ink-2 5.35</div>
+      <div style="background:var(--t2)"><b>--t2</b>ink only</div>
+      <div style="background:var(--t3)"><b>--t3</b>ink only</div>
+      <div style="background:var(--accent);color:var(--on-accent)"><b>--accent</b>fills, never text</div>
+      <div style="background:var(--primary);color:var(--on-primary)"><b>--primary</b>dark field 11.3</div>
+      <div style="background:var(--ink);color:var(--paper)"><b>--ink</b>text 16.1</div>
+      <div style="background:var(--white);color:var(--ink-2)"><b>--ink-2</b>secondary 6.2</div>
+      <div style="background:var(--white);color:var(--ink-3)"><b>--ink-3</b>captions 4.7</div>
+      <div style="background:var(--warn-t);color:var(--warn-ink)"><b>--warn-ink</b>on --warn-t</div>
+    </div>
+
+    <p class="kit-l"><b>Type scale</b><code>.display</code><code>h1 .h1</code><code>h2 .h2</code><code>h3 .h3</code><code>.h4</code><code>.lede</code><code>.sub</code><code>.small</code><code>.src</code><code>.kick</code><code>.tnum</code><code>.num</code><code>.go</code></p>
+    <div class="kit-type">
+      <p class="display">The AI employee for enterprise growth teams.</p>
+      <p class="h1">Every change keeps what it replaced.</p>
+      <p class="h2">One describes yesterday. One ranks this morning by money.</p>
+      <p class="h3">The verdict first, the proof one tap underneath.</p>
+      <p class="h4">Budget is flowing to an inefficient ad set</p>
+      <p class="lede">It reads Google Ads and Meta overnight, leads with what to fix first and carries the result into the next decision.</p>
+      <p class="sub">Secondary copy under a heading. Plain buyer language, 52 characters a line at most.</p>
+      <p class="small">Small print inside cards and captions.</p>
+      <p class="src">Source line: one account's first run, 4 Sep 2026. TRY converted at the TCMB rate of 48.4069.</p>
+      <p class="kick">Eyebrow, used sparingly</p>
+      <p class="kit-row"><span class="num" style="font-size:52px">$1,162</span><span class="tnum">tabular 0123456789</span><a class="go" href="/change-ledger">Change Ledger<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ actions -->
+<section class="sec-sm">
+  <div class="wrap">
+    <p class="kit-l"><b>Buttons</b><code>.btn</code><code>.btn-ink</code><code>.btn-line</code><code>.btn-text</code><code>.btn-acc</code><code>.btn-sm</code><code>.btns</code></p>
+    <div class="btns">
+      <a class="btn btn-acc" href="/pricing">Pricing</a>
+      <a class="btn btn-ink" href="/features">See every capability</a>
+      <a class="btn btn-line" href="/security">Security and data</a>
+      <a class="btn btn-text" href="/pricing">Pricing</a>
+      <a class="btn btn-acc btn-sm" href="/pricing">Pricing</a>
+      <a class="btn btn-ink btn-sm" href="/blog">Read the notes</a>
+      <button class="btn btn-line btn-sm" type="button" disabled>Disabled</button>
+    </div>
+    <div class="kit-pad bg-primary" style="margin-top:14px">
+      <div class="btns"><a class="btn btn-acc" href="/pricing">Pricing</a><a class="btn btn-line" href="/security">Security and data</a></div>
+    </div>
+
+    <p class="kit-l"><b>Pills, tags, status</b><code>.pill</code><code>.pill.line</code><code>.pill.acc</code><code>.tag</code><code>.tag.grey/.line/.warn/.dark/.dot</code><code>.cls.fix/.opp/.exp/.watch/.meas</code><code>.live</code><span>.live is a static dot: sample views never pulse</span></p>
+    <div class="kit-row">
+      <button class="pill acc" type="button">Approve</button>
+      <button class="pill line" type="button">Skip</button>
+      <button class="pill" type="button">Open the ledger</button>
+      <span class="tag dot">Live</span><span class="tag pilot">Pilot</span><span class="tag grey">Coming</span><span class="tag line">Example</span><span class="tag warn dot">Being measured</span><span class="tag dark">With Adgent</span>
+    </div>
+    <div class="kit-row" style="margin-top:14px">
+      <span class="cls fix"><i></i>Fix now</span><span class="cls opp"><i></i>Opportunity</span><span class="cls exp"><i></i>Experiment</span><span class="cls watch"><i></i>Watching</span><span class="cls meas"><i></i>Being measured</span>
+      <span class="uc-t"><i class="live"></i>Overnight read</span>
+    </div>
+
+    <p class="kit-l"><b>Proof strip, logo-less</b><code>.trust</code><code>.trust.c</code><code>.trust.pills</code><code>.trust.band</code><code>.trust-t</code><span>inside <code>.bg-primary</code> it re-tints itself</span></p>
+    <ul class="trust">
+      <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>Account context carries forward</li>
+      <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>Findings ranked by money</li>
+      <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>Before-state kept for every change</li>
+      <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>Google and Meta through their own APIs</li>
+    </ul>
+    <ul class="trust pills c" style="margin-top:18px">
+      <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>Evidence under each decision</li>
+      <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>Owners and next steps attached</li>
+      <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>Results return to memory</li>
+    </ul>
+    <ul class="trust band" style="margin-top:18px">
+      <li class="trust-t"><div><b>The work keeps moving.</b><span>Evidence, decision, account move and measured result.</span></div></li>
+      <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>Account and brand context</li>
+      <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>Reports and dashboards</li>
+      <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>Change Ledger</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================ blocks -->
+<section class="sec-sm white">
+  <div class="wrap">
+    <p class="kit-l"><b>Section head</b><code>.sec-head</code><code>.sec-head.c</code><code>.sec-head.row</code><span>eyebrow optional: <code>.kick</code></span></p>
+    <div class="sec-head rv"><p class="kick">Who it's for</p><h2>Built for the account you can't afford to lose.</h2><p class="sub">The same read, for two kinds of team: the agency running many client accounts, and the in-house lead running one or two alone.</p></div>
+    <div class="sec-head row rv"><h2>Asked for a campaign, it checks it can learn.</h2><p class="sub">Variant <code>.row</code>: heading left, sub right, bottoms aligned.</p></div>
+
+    <p class="kit-l"><b>Blocks and tints</b><code>.blk</code><code>.bg-paper/.bg-white/.bg-line/.bg-ghost/.bg-grey/.bg-t1/.bg-t2/.bg-t3/.bg-primary</code><code>.lift</code><code>.cols .cols-2/3/4</code><code>.split-57/.split-75</code></p>
+    <div class="cols cols-3">
+      <div class="blk bg-t1"><div class="blk-t"><b>Agencies</b><span>A senior buyer's read on every client account you run.</span></div></div>
+      <div class="blk bg-line"><div class="blk-t"><b>In-house teams</b><span>The second opinion you don't have.</span></div></div>
+      <div class="blk bg-primary"><div class="blk-t"><b>Security</b><span>Access, data and deployment details.</span></div></div>
+      <div class="blk pillr bg-grey"><div class="blk-t"><b>Long pill</b><span><code>.pillr</code>, 60px radius.</span></div></div>
+      <div class="blk bg-t2"><div class="blk-t"><b>Tint 2</b><span style="color:var(--ink)">Ink only on t2 and t3.</span></div></div>
+      <div class="blk bg-paper lift"><div class="blk-t"><b>Lifted</b><span><code>.lift</code> adds the soft shadow.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ product UI -->
+<section class="sec-sm">
+  <div class="wrap">
+    <p class="kit-l"><b>Decision card</b><code>.dc</code><code>.dc-h</code><code>.dc-k</code><code>.dc-v</code><code>.dc-m</code><code>.dc-diff</code><code>.dc-why</code><code>.dc-act</code><code>[data-act=approve|skip]</code><span>plus the verdict head <code>.vtop</code> and rows <code>.uc .uc-h .uc-t .ui-row</code></span></p>
+    <div class="split-57">
+      <div class="stack">
+        <div class="vtop tnum"><span class="k"><i></i>Needs attention</span><b>33</b><span class="m">decisions · $898 / mo</span></div>
+        <div class="uc">
+          <div class="uc-h"><span class="uc-t"><i class="live"></i>Overnight read</span><span class="tnum">Sep 4 · one account</span></div>
+        </div>
+        <div class="ui-row tnum"><span class="cls fix"><i></i>Fix now</span><span class="t">Budget is flowing to an inefficient ad set; the winning set should scale</span><span class="e">$37 / mo</span></div>
+        <div class="ui-row tnum"><span class="cls opp"><i></i>Opportunity</span><span class="t">Move budget to the video campaign</span><span class="e">$165 / mo</span></div>
+      </div>
+      <div class="cols cols-2">
+        <article class="dc">
+          <div class="dc-h"><span class="cls fix"><i></i>Fix now</span><span class="dc-k">Meta · Placements</span></div>
+          <p class="dc-v">Reels placement waste is pushing the ad set's CPA up 23.5%</p>
+          <div class="dc-m"><b>$95</b><span>/ mo, priced impact</span></div>
+          <p class="dc-why">Reels is 43% cheaper, yet 74.5% of the budget sits in Feed.</p>
+          <div class="dc-act"><span>Ready to apply.</span><button class="pill line" type="button" data-act="skip">Skip</button><button class="pill acc" type="button" data-act="approve">Approve</button></div>
+        </article>
+        <article class="dc">
+          <div class="dc-h"><span class="cls opp"><i></i>Opportunity</span><span class="dc-k">Meta · Daily budget</span></div>
+          <p class="dc-v">Lower the daily budget on the ad set that stopped converting</p>
+          <div class="dc-diff"><div><span>Before</span><s>$39.77</s></div><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9h12M11 5l4 4-4 4"/></svg><div><span>After</span><b>$31.81</b></div></div>
+          <div class="dc-act"><span>Ready to apply.</span><button class="pill line" type="button" data-act="skip">Skip</button><button class="pill acc" type="button" data-act="approve">Approve</button></div>
+        </article>
+      </div>
+    </div>
+    <p class="src" style="margin-top:14px">Example values from one account's first run, 4 Sep 2026, and test rounds on 26 Aug 2026.</p>
+
+    <p class="kit-l"><b>Ledger rows</b><code>.lg</code><code>.lg-hd</code><code>.lg-row</code><code>.lg-row.ext</code><code>.lg-t .lg-a .lg-c .lg-d .lg-x</code><code>.lg-note</code></p>
+    <div class="lg">
+      <div class="lg-hd" aria-hidden="true"><span>Time</span><span>Who</span><span>Change</span><span>Before → after</span><span></span></div>
+      <div class="lg-row">
+        <time class="lg-t">09:14</time>
+        <span class="lg-a"><i><svg viewBox="0 0 170 170" aria-hidden="true"><path d="M14 140 L85 6 L156 140 L128 140 L85 58 L42 140 Z" fill="currentColor"/><path d="M50 140 L85 72 L120 140 L96 140 L85 118 L74 140 Z" fill="currentColor"/></svg></i><span><b>Adgent</b><small>approved by you</small></span></span>
+        <span class="lg-c"><b>Geo exclusion</b><small>Meta · prospecting ad set</small></span>
+        <span class="lg-d"><s>LT: not excluded</s><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg><b>LT: excluded</b></span>
+        <button class="pill line lg-x" type="button"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8a5 5 0 1 0 1.5-3.5L3 6"/><path d="M3 2.5V6h3.5"/></svg>Revert with agent</button>
+      </div>
+      <div class="lg-row">
+        <time class="lg-t">08:52</time>
+        <span class="lg-a"><i><svg viewBox="0 0 170 170" aria-hidden="true"><path d="M14 140 L85 6 L156 140 L128 140 L85 58 L42 140 Z" fill="currentColor"/><path d="M50 140 L85 72 L120 140 L96 140 L85 118 L74 140 Z" fill="currentColor"/></svg></i><span><b>Adgent</b><small>approved by you</small></span></span>
+        <span class="lg-c"><b>Daily budget</b><small>Meta · retargeting ad set</small></span>
+        <span class="lg-d"><s>$39.77</s><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg><b>$31.81</b></span>
+        <button class="pill line lg-x" type="button"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8a5 5 0 1 0 1.5-3.5L3 6"/><path d="M3 2.5V6h3.5"/></svg>Revert with agent</button>
+      </div>
+      <div class="lg-row ext">
+        <time class="lg-t">Yesterday</time>
+        <span class="lg-a"><i class="p"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="8" cy="5.5" r="2.5"/><path d="M3 14c.8-2.6 2.7-4 5-4s4.2 1.4 5 4"/></svg></i><span><b>Ads Manager</b><small>edited by hand</small></span></span>
+        <span class="lg-c"><b>Bid strategy</b><small>Google · search campaign</small></span>
+        <span class="lg-d"><s>Max conversions</s><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg><b>Target CPA</b></span>
+        <span class="tag grey lg-x">Recorded</span>
+      </div>
+      <p class="lg-note">The exact inverse starts from the recorded before-state. Platform-side edits are recorded, not undone.</p>
+    </div>
+
+    <p class="kit-l"><b>Chat thread, static</b><code>.chat</code><code>.chat.on-white</code><code>.bub.me</code><code>.bub.ai</code><code>.who-ai</code><code>.sugg</code><code>.chat-in</code><span>cards nest inside <code>.bub.ai</code></span></p>
+    <div class="split-75">
+      <div class="chat">
+        <div class="uc-h"><span class="uc-t"><i class="live"></i>Chat · one account</span><span>Example</span></div>
+        <p class="bub me">Why did CPA jump on the prospecting ad set this week?</p>
+        <div class="bub ai">
+          <p class="who-ai"><svg viewBox="0 0 170 170" aria-hidden="true"><path d="M14 140 L85 6 L156 140 L128 140 L85 58 L42 140 Z" fill="currentColor"/><path d="M50 140 L85 72 L120 140 L96 140 L85 118 L74 140 Z" fill="currentColor"/></svg>Adgent</p>
+          <p>Placement, not creative. <b>Reels is 43% cheaper</b>, yet 74.5% of the budget sits in Feed, so the ad set pays the Feed price. I've drafted the shift; it waits for you.</p>
+          <article class="dc">
+            <div class="dc-h"><span class="cls fix"><i></i>Fix now</span><span class="dc-k">Meta · Placements</span></div>
+            <p class="dc-v">Shift budget toward Reels on the prospecting ad set</p>
+            <div class="dc-m"><b>$95</b><span>/ mo, priced impact</span></div>
+            <div class="dc-act"><span>Ready to apply.</span><button class="pill line" type="button" data-act="skip">Skip</button><button class="pill acc" type="button" data-act="approve">Approve</button></div>
+          </article>
+        </div>
+        <div class="sugg"><button type="button">Show the proof</button><button type="button">What else is costing me?</button><button type="button">Draft it for Google too</button></div>
+        <div class="chat-in" aria-hidden="true"><span>Ask about any account, campaign or ad</span><i><svg viewBox="0 0 16 16"><path d="M8 13V3M4 7l4-4 4 4"/></svg></i></div>
+      </div>
+      <div class="chat on-white">
+        <p class="bub me">Can you raise the budget 40% tonight?</p>
+        <div class="bub ai"><p>Not in one step. A 40% jump is beyond the 20% band and can reset the ad set's learning phase. I can draft a smaller step for your approval.</p></div>
+        <div class="sugg"><button type="button">Draft the smaller step</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ split compare -->
+<section class="sec-sm white">
+  <div class="wrap">
+    <p class="kit-l"><b>Split compare</b><code>.cmp</code><code>.cmp-ly .cmp-today/.cmp-lit</code><code>.cmp-z / .cmp-z2</code><code>.cmp-h[role=slider]</code><code>.cmp-knob</code><code>.cmp-tog</code><code>.cmp-cap</code><span>helpers <code>.cmp-lh .cmp-tools .cmp-tl .cmp-q .cmp-ghost</code>. Drag, or focus the knob and use arrows, Home, End.</span></p>
+    <div class="cmp-tog" role="group" aria-label="Show the morning">
+      <button type="button" data-s="today" aria-pressed="true">Today</button>
+      <button type="button" data-s="lit" aria-pressed="false">With Adgent</button>
+    </div>
+    <div class="cmp" id="kit-cmp">
+      <div class="cmp-ly cmp-today" role="group" aria-label="08:40, today">
+        <div class="cmp-z">
+          <p class="cmp-lh"><span class="clock">08:40</span><span>today</span></p>
+          <ul class="cmp-tools">
+            <li class="cmp-tl"><svg viewBox="0 0 22 22" aria-hidden="true"><path d="M4 18V11M9 18V6M14 18v-5M19 18V9"/><path d="M3 20h17"/></svg><b>Reporting</b><span>describes yesterday</span></li>
+            <li class="cmp-tl"><svg viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="7.5"/><circle cx="11" cy="11" r="3.5"/></svg><b>The platform's AI</b><span>optimizes to its pixel</span></li>
+            <li class="cmp-tl"><svg viewBox="0 0 22 22" aria-hidden="true"><path d="M2 9h18" stroke-dasharray="2.5 2.5"/><path d="M2 17l5-3 3 1 3-10 3 7 4-2"/></svg><b>Automation rules</b><span>fire on a threshold</span></li>
+            <li class="cmp-tl"><svg viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M11 6v5l-3.5 2"/></svg><b>Your senior buyer</b><span>out of hours by 10am</span></li>
+          </ul>
+          <p class="cmp-q">Which account needs me today?<small>Four tools open. None of them answers it.</small></p>
+        </div>
+        <div class="cmp-z cmp-z2" aria-hidden="true">
+          <p class="cmp-lh"><span>where the answer would be</span></p>
+          <div class="cmp-ghost"><b>No verdict yet.</b><span>Nothing ranks the morning, so you start with whichever tab is open.</span></div>
+        </div>
+      </div>
+      <div class="cmp-ly cmp-lit" role="group" aria-label="08:40, with Adgent">
+        <div class="cmp-z cmp-z2">
+          <p class="cmp-lh"><span>the rest of the run, already sorted</span></p>
+          <div class="stack tnum">
+            <div class="ui-row" style="background:var(--t1);box-shadow:none"><span class="cls opp"><i></i>Opportunities</span><span class="t">13 decisions</span><span class="e">$1,162 / mo</span></div>
+            <div class="ui-row" style="background:var(--paper);box-shadow:none"><span class="cls exp"><i></i>Experiments</span><span class="t">7 decisions</span></div>
+            <div class="ui-row" style="background:var(--paper);box-shadow:none"><span class="cls watch"><i></i>Watching</span><span class="t">6, not ready to call yet</span></div>
+          </div>
+          <p class="small" style="margin-top:auto;padding-top:18px"><b style="color:var(--ink);font-weight:500">53 decisions</b> from one account's first run. You read the top one first.</p>
+        </div>
+        <div class="cmp-z">
+          <p class="cmp-lh"><span class="dot"></span><span class="clock">08:40</span><span>with Adgent</span><span class="meta tnum">Sep 4 · one account</span></p>
+          <div class="stack tnum">
+            <div class="vtop"><span class="k"><i></i>Needs attention</span><b>33</b><span class="m">decisions · $898 / mo</span></div>
+            <article class="dc" style="box-shadow:none;padding:12px 4px 0">
+              <div class="dc-h"><span class="cls fix"><i></i>Fix now</span><span class="dc-k">$95 / mo</span></div>
+              <p class="dc-v">Reels placement waste is pushing the ad set's CPA up 23.5%</p>
+              <div class="dc-act"><span>Ready to apply.</span><button class="pill line" type="button" data-act="skip">Not now</button><button class="pill acc" type="button" data-act="approve">Approve</button></div>
+            </article>
+          </div>
+        </div>
+      </div>
+      <div class="cmp-h" role="slider" tabindex="0" aria-label="Move the line between today and with Adgent" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-valuetext="Half today, half with Adgent" aria-orientation="horizontal" aria-controls="kit-cmp">
+        <span class="cmp-knob"><svg viewBox="0 0 20 12" aria-hidden="true"><path d="M6 1L1 6l5 5M14 1l5 5-5 5"/></svg></span>
+      </div>
+    </div>
+    <p class="cmp-cap"><span><b>Drag the line.</b> Same morning, same account, both ways.</span><span>One account's first run, 4 Sep 2026. Yours will differ.</span></p>
+  </div>
+</section>
+
+<!-- ============================================================ mirror pair -->
+<section class="ps" aria-labelledby="kit-ps">
+  <div class="wrap">
+    <p class="kit-l"><b>Mirror pair</b><code>.ps</code><code>.ps.end</code><code>.ps-h</code><code>.ps-tog</code><code>.ps-pair</code><code>.ps-today</code><code>.ps-lw</code><code>.ps-seam</code><code>.ps-lit</code><code>.ps-hd</code><code>.ps-rows</code><code>.ps-note</code><span>the lit half wipes in once on entry</span></p>
+    <div class="ps-h"><h2 id="kit-ps">One describes yesterday. One ranks this morning by money.</h2><p class="sub">The same findings from one account's first run, twice: once laid out as a report, once as the verdict Adgent leads with.</p></div>
+    <div class="ps-tog" role="group" aria-label="Show"><button type="button" data-s="today" aria-pressed="false">Today</button><button type="button" data-s="lit" aria-pressed="true">With Adgent</button></div>
+    <div class="ps-pair">
+      <div class="ps-today">
+        <p class="ps-hd"><b>Today</b><span>a report</span><span class="tag line">Same findings</span></p>
+        <div class="ps-rows tnum">
+          <div><span>Ad set CPA</span><b>up 23.5%</b></div>
+          <div><span>Share of budget in Feed</span><b>74.5%</b></div>
+          <div><span>Reels against Feed</span><b>43% cheaper</b></div>
+          <div><span>Campaigns in the account</span><b>10</b></div>
+        </div>
+        <p class="ps-note">Every number is there. What to fix first, and what it is worth a month, is left for whoever reads it.</p>
+      </div>
+      <div class="ps-lw">
+        <span class="ps-seam" aria-hidden="true"></span>
+        <div class="ps-lit">
+          <p class="ps-hd"><svg viewBox="0 0 170 170" aria-hidden="true"><path d="M14 140 L85 6 L156 140 L128 140 L85 58 L42 140 Z" fill="currentColor"/><path d="M50 140 L85 72 L120 140 L96 140 L85 118 L74 140 Z" fill="currentColor"/></svg><b>With Adgent</b><span>the verdict, ranked by money</span></p>
+          <div class="stack tnum" style="gap:6px">
+            <div class="ui-row" style="background:var(--t1);box-shadow:none"><span class="cls fix"><i></i>Fix now</span><span class="t">Reels placement waste is pushing the ad set's CPA up 23.5%</span><span class="e">$95 / mo</span></div>
+            <div class="ui-row" style="background:var(--paper);box-shadow:none"><span class="cls fix"><i></i>Fix now</span><span class="t">Budget is flowing to an inefficient ad set</span><span class="e">$37 / mo</span></div>
+            <div class="ui-row" style="background:var(--paper);box-shadow:none"><span class="cls opp"><i></i>Opportunity</span><span class="t">Move budget to the video campaign</span><span class="e">$165 / mo</span></div>
+          </div>
+          <p class="ps-note">Ranked by what each fix is worth a month. The top one is the one you read first.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ stats + faq -->
+<section class="sec">
+  <div class="wrap">
+    <p class="kit-l"><b>Stat row</b><code>.stats</code><code>.stat</code><code>[data-count]</code><span>always followed by a <code>.src</code> line</span></p>
+    <div class="stats rv">
+      <div class="stat"><b data-count="53">53</b><span>decisions in one account's first run</span></div>
+      <div class="stat"><b data-count="33">33</b><span>needed attention that morning</span></div>
+      <div class="stat"><b>$<span data-count="898">898</span></b><span>a month, the priced impact of those 33</span></div>
+      <div class="stat"><b>7<small>of 27</small></b><span>write action types run end to end on live accounts</span></div>
+    </div>
+    <p class="src">One account's first run, 4 Sep 2026; TRY converted at the TCMB rate of 48.4069. Yours will differ.</p>
+
+    <p class="kit-l"><b>FAQ accordion</b><code>.faq</code><code>.qa</code><code>details</code><code>summary &gt; i</code><code>.a</code></p>
+    <div class="faq">
+      <div class="sec-head"><h2>Good questions, answered plainly.</h2></div>
+      <div class="qa">
+        <details open><summary>What can I do from chat?<i aria-hidden="true"></i></summary><div class="a">Ask about any campaign, request a report or plan, set up a recurring agent and prepare an account move from the same working record.</div></details>
+        <details><summary>Which ad platforms does it cover?<i aria-hidden="true"></i></summary><div class="a">Meta and Google Ads, through their own APIs. GA4, Merchant Center and Search Console add business context.</div></details>
+        <details><summary>What happens after a change?<i aria-hidden="true"></i></summary><div class="a">The Change Ledger keeps the before-state, owner, time and measured result. <a href="/change-ledger">The Change Ledger</a></div></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ CTA -->
+<section class="cta" id="demo">
+  <div class="wrap">
+    <p class="kit-l"><b>Demo CTA band and form</b><code>.cta</code><code>.cta-b</code><code>.cta-mark</code><code>.steps</code><code>form.form.demo</code><code>.fld</code><code>.err</code><code>.done-msg</code><span>Use one end-of-page demo form. Test with the request intercepted, not by submitting.</span></p>
+    <div class="cta-b rv">
+      <svg class="cta-mark" viewBox="0 0 170 170" aria-hidden="true"><path d="M14 140 L85 6 L156 140 L128 140 L85 58 L42 140 Z" fill="currentColor"/><path d="M50 140 L85 72 L120 140 L96 140 L85 118 L74 140 Z" fill="currentColor"/></svg>
+      <div>
+        <p class="kick">Request a demo</p>
+        <h2>See how Adgent fits your team.</h2>
+        <p>Tell us about your workflow and the account you want to start with.</p>
+        <ol class="steps">
+          <li><span class="n">1</span><div><b>Connect Meta and Google Ads</b><span>Add GA4 or Search Console when useful.</span></div></li>
+          <li><span class="n">2</span><div><b>Adgent runs the overnight read</b><span>The same read it runs on every account, with GA4 and Search Console for context.</span></div></li>
+          <li><span class="n">3</span><div><b>You get the decisions</b><span>What it found and what each fix is worth, ranked by money.</span></div></li>
+        </ol>
+      </div>
+      <form class="form demo" aria-label="Request a demo">
+        <h3>Request a demo</h3>
+        <p>We reply within a couple of working days.</p>
+        <label class="fld"><span>Name</span><input name="name" autocomplete="name" required/></label>
+        <label class="fld"><span>Work email</span><input name="email" type="email" autocomplete="email" required/></label>
+        <p class="err" aria-live="polite"></p>
+        <button class="btn btn-acc" type="submit">Request a demo</button>
+        
+        <div class="done-msg" role="status"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><b>Thanks, we've got it.</b><span>We'll be in touch within a couple of working days.</span></div>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+</main>
+<!--#footer--><!--/#footer-->
+<script src="/app.js" defer></script>
+</body>
+</html>

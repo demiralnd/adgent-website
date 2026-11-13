@@ -3,427 +3,629 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="theme-color" content="#ffffff"/>
-<title>Adgent for in-house teams — the senior you don't have</title>
-<meta name="description" content="Running paid alone? Adgent reads Meta and Google overnight, checks platform numbers against your analytics, and prepares the fix for approval."/>
-<link rel="canonical" href="https://adgent.app/for-in-house"/>
-<link rel="alternate" type="application/rss+xml" title="Adgent — the blog" href="/feed.xml"/>
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1"/>
+<title>Adgent for in-house teams · A second opinion with memory</title>
+<meta name="description" content="Adgent is the AI employee for your growth team. It remembers your brand's goals, constraints and past decisions, then brings a second read to every account."/>
+<link rel="canonical" href="https://adgent.app/for-in-house"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="Adgent"/>
+<meta property="og:title" content="Adgent for in-house teams · A second opinion with memory"/>
+<meta property="og:description" content="A second opinion that remembers the first decision, the reason behind it and what happened next."/>
+<!--#seo-->
+<meta name="theme-color" content="#F6F5F4"/>
+<link rel="icon" href="/favicon.ico" sizes="32x32"/>
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=a93b54c2"/>
 <meta property="og:locale" content="en_US"/>
-<meta property="og:title" content="Adgent for in-house teams — the senior you don't have"/>
-<meta property="og:description" content="Running paid alone? Adgent reads Meta and Google overnight, checks platform numbers against your analytics, and prepares the fix for approval."/>
 <meta property="og:url" content="https://adgent.app/for-in-house"/>
-<meta property="og:image" content="https://adgent.app/assets/og/for-in-house.png?v=ab720847"/>
+<meta property="og:image" content="https://adgent.app/assets/og/for-in-house.png?v=7ff98eca"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
-<meta property="og:image:alt" content="Adgent for in-house teams — the senior you don't have"/>
+<meta property="og:image:alt" content="Adgent card. In-house teams: A second opinion that remembers the first decision."/>
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Adgent for in-house teams — the senior you don't have"/>
-<meta name="twitter:description" content="Running paid alone? Adgent reads Meta and Google overnight, checks platform numbers against your analytics, and prepares the fix for approval."/>
-<meta name="twitter:image" content="https://adgent.app/assets/og/for-in-house.png?v=ab720847"/>
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "SoftwareApplication", "name": "Adgent", "url": "https://adgent.app", "applicationCategory": "BusinessApplication", "applicationSubCategory": "Marketing Analytics", "operatingSystem": "Web", "description": "Adgent is the AI analyst for performance marketers. It connects to Meta and Google Ads, reasons about your account, and delivers one brief each morning — the verdict first, the evidence underneath. Read-only by default; every action waits for your approval.", "publisher": {"@id": "https://adgent.app/#organization"}, "featureList": ["Daily brief across Meta and Google Ads", "Anomaly detection", "Ask-anything chat about your account", "Trust Gate — flags metrics that can't be trusted yet", "Placement and demographic audits", "One-tap fixes applied on approval", "Cross-channel campaign builds", "GA4 and Search Console context"], "offers": {"@type": "Offer", "availability": "https://schema.org/InStock", "url": "https://adgent.app/pricing", "description": "Pricing depends on connected ad accounts and whether execution is included. Contact sales for a quote."}}, {"@type": "Organization", "@id": "https://adgent.app/#organization", "name": "Adgent", "url": "https://adgent.app", "logo": {"@type": "ImageObject", "url": "https://adgent.app/assets/logo.svg"}, "sameAs": ["https://www.linkedin.com/company/adgentapp/", "https://www.instagram.com/adgentapp/"], "description": "Adgent is the AI analyst for performance marketers — an AI media buyer that reads Meta and Google Ads accounts, reasons about account structure, delivers a verdict-first daily brief, and executes fixes on the advertiser's approval. Read-only by default; never an autonomous spender.", "knowsAbout": ["AI media buying", "Google Ads account audit", "Meta Ads optimization", "performance marketing", "cross-platform attribution", "ad spend optimization"], "foundingDate": "2025", "areaServed": ["TR", "Worldwide"], "email": "osman@adgent.app"}, {"@type": "WebSite", "@id": "https://adgent.app/#website", "name": "Adgent", "alternateName": "Adgent — AI media buyer", "inLanguage": "en", "url": "https://adgent.app", "publisher": {"@id": "https://adgent.app/#organization"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "The agency’s report says one thing and Adgent says another. Now what?", "acceptedAnswer": {"@type": "Answer", "text": "Then you finally have the thing you were missing: two independent reads of the same week. Adgent takes the platforms’ own numbers and puts them next to what your analytics recorded for the same window, and when the two disagree the disagreement is the finding — with the window and the source shown, so it is a question you can put to your agency rather than a feeling. You are not accusing anyone; you are asking which read they used."}}, {"@type": "Question", "name": "Is this here to replace me?", "acceptedAnswer": {"@type": "Answer", "text": "It cannot, and it is built so it cannot. Adgent does the reading — the overnight account read, the diagnostics, the check against your analytics — and stops at a proposal. It has no way to act on its own, so the call and the credit for the call both stay with you. What changes is that you walk into the review having already been argued with once, by something that has no reason to flatter the platform. It is the second opinion a one-person team never gets, not a stand-in for the person accountable."}}, {"@type": "Question", "name": "What does it need from my stack?", "acceptedAnswer": {"@type": "Answer", "text": "Meta and Google, plus GA4 if you want the second read — that is the useful minimum, and it is OAuth rather than an implementation project. Search Console, Merchant Center and Google Drive or Sheets come in read-only when you connect them, which is also how your own figures get in: an export in a sheet, offline conversions, whatever the platforms never see. Your store and your CRM are not connected today — direct store reading is the next thing we are building, not something we have."}}, {"@type": "Question", "name": "What will it refuse to answer?", "acceptedAnswer": {"@type": "Answer", "text": "More than you would expect, deliberately. It will not hand you a number the data cannot carry: too few conversions, or an attribution window still open, and the Trust Gate marks the metric untrustworthy and drops the recommendation that rested on it. It will not compare you to other advertisers — it reads your account against its own history, never a pooled benchmark. And it does not know your unit economics unless you tell it; left alone, it reasons about what the platforms and your analytics recorded, and says so."}}]}]}</script>
-<link rel="icon" type="image/svg+xml" href="/assets/logo-app.svg"/>
-<link rel="apple-touch-icon" href="/assets/logo-app.svg"/>
-<link rel="stylesheet" href="/tokens.min.css?v=c5856eac"/>
-<link rel="stylesheet" href="/site.min.css?v=1bd868bd"/>
+<meta name="twitter:title" content="Adgent for in-house teams · A second opinion with memory"/>
+<meta name="twitter:description" content="A second opinion that remembers the first decision, the reason behind it and what happened next."/>
+<meta name="twitter:image" content="https://adgent.app/assets/og/for-in-house.png?v=7ff98eca"/>
+<link rel="alternate" type="application/rss+xml" title="The Adgent blog" href="/feed.xml"/>
+<link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "SoftwareApplication", "@id": "https://adgent.app/#software", "name": "Adgent", "url": "https://adgent.app/", "applicationCategory": "BusinessApplication", "applicationSubCategory": "Marketing", "operatingSystem": "Web", "description": "Adgent is the AI employee for enterprise growth teams. It carries confirmed brand context, connected data, past decisions, reasoning and outcomes into each analysis, report, dashboard and account move.", "image": "https://adgent.app/assets/og/index.png", "featureList": ["Decisions across Meta and Google Ads, ranked by what each is worth, with the evidence under it", "Account moves prepared with supporting evidence and recorded in the Change Ledger", "Change Ledger: every applied change with the value it replaced", "Platform change log: edits made directly in Meta or Google Ads, recorded", "Account memory: the brand's rules and exceptions, explained once", "Read-only context from GA4, Search Console, Merchant Center and Google Drive", "Agents described in a sentence, run on a condition, an event or a schedule", "Ten built-in specialists, one lever each", "Campaign builds, plans and dashboards drafted end to end from one sentence", "Creative analysis: the hook, concept, format and angle of running ads", "AI Visibility: whether ChatGPT, Gemini, Google AI Mode and AI Overviews name a brand"], "publisher": {"@id": "https://adgent.app/#organization"}}, {"@type": "WebPage", "@id": "https://adgent.app/for-in-house", "url": "https://adgent.app/for-in-house", "name": "Adgent for in-house teams · A second opinion with memory", "description": "Adgent is the AI employee for your growth team. It remembers your brand's goals, constraints and past decisions, then brings a second read to every account.", "isPartOf": {"@id": "https://adgent.app/#website"}, "inLanguage": "en", "publisher": {"@id": "https://adgent.app/#organization"}, "about": {"@id": "https://adgent.app/#software"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://adgent.app/"}, {"@type": "ListItem", "position": 2, "name": "Adgent for in-house teams · A second opinion with memory", "item": "https://adgent.app/for-in-house"}]}, {"@type": "FAQPage", "@id": "https://adgent.app/for-in-house#faq", "mainEntity": [{"@type": "Question", "name": "We already have an agency. Why a second read?", "acceptedAnswer": {"@type": "Answer", "text": "Adgent gives your internal team an independent read of the same accounts, with the evidence and next move attached. Keep the agency; enter the review with your own position."}}, {"@type": "Question", "name": "Can it see our real revenue?", "acceptedAnswer": {"@type": "Answer", "text": "It reads GA4 beside the platforms and remembers the margin figures you confirm. You can also bring store revenue, refunds and offline conversions through a Drive file. Shopify is planned."}}, {"@type": "Question", "name": "What does it need from my stack?", "acceptedAnswer": {"@type": "Answer", "text": "Meta and Google Ads, connected by signing in rather than an implementation project. GA4, Search Console, Merchant Center and the Google Drive files you pick add business context. Your store and CRM are not connected; Shopify is the next store connection planned."}}, {"@type": "Question", "name": "What does my team get before the review?", "acceptedAnswer": {"@type": "Answer", "text": "A ranked account read, the evidence behind each finding and the next move already drafted. The same working record is ready when the discussion begins."}}, {"@type": "Question", "name": "How does it separate a signal from a bad data window?", "acceptedAnswer": {"@type": "Answer", "text": "Every metric window is labelled trusted, degraded or untrusted before it is scored. Recent days inside the attribution lag or a tracking change mid-window can raise a finding but not an account action."}}, {"@type": "Question", "name": "Which parts of AI Visibility are live?", "acceptedAnswer": {"@type": "Answer", "text": "Live: seeing where AI answers lose you, and weighing that against your ads and goals. Pilot: turning it into a paid plan with a message, creative or landing-page brief. Exploring and not scheduled: ads inside AI answers, ChatGPT first, and measuring them."}}, {"@type": "Question", "name": "Can it join our weekly review?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. It joins as Aida, with the account's data and the brand's memory, then carries the agreed work into the app and email."}}]}, {"@type": "Organization", "@id": "https://adgent.app/#organization", "name": "Adgent", "url": "https://adgent.app", "logo": {"@type": "ImageObject", "url": "https://adgent.app/assets/logo.svg"}, "description": "Adgent is the AI employee for enterprise growth teams. It carries confirmed brand context, connected data, past decisions, reasoning and outcomes into each analysis, report, dashboard and account move.", "knowsAbout": ["AI media buying", "Meta Ads", "Google Ads", "ad account audits", "performance marketing", "creative analysis", "AI search visibility"], "sameAs": ["https://www.linkedin.com/company/adgentapp/", "https://www.instagram.com/adgentapp/", "https://x.com/adgentapp", "https://www.youtube.com/@adgentapp"], "areaServed": ["TR", "Worldwide"], "email": "osman@adgent.app", "address": {"@type": "PostalAddress", "addressCountry": "TR"}}, {"@type": "WebSite", "@id": "https://adgent.app/#website", "name": "Adgent", "alternateName": ["adgent.app", "Adgent: the AI employee for enterprise growth teams"], "url": "https://adgent.app/", "inLanguage": "en", "publisher": {"@id": "https://adgent.app/#organization"}}]}</script>
+<script src="/site.js?v=861946f0" defer></script>
+<!--/#seo-->
+<link rel="icon" type="image/svg+xml" href="/assets/logo-app.svg?v=cef40dcf"/>
+<link rel="preload" href="/assets/fonts/switzer-400.woff2" as="font" type="font/woff2" crossorigin/>
+<link rel="stylesheet" href="/tokens.css?v=3326b075"/>
+<link rel="stylesheet" href="/app.css?v=5543f4f9"/>
+<link rel="stylesheet" href="/css/for-in-house.css?v=d96fdf6f"/>
 </head>
 <body>
-<!-- NAV -->
-<!--#header--><a class="skip-link" href="#main">Skip to content</a>
-<header class="nav">
- <div class="wrap nav-in">
- <a class="brand" href="/" aria-label="Adgent — home">
- <img class="mark" src="/assets/icon-only.svg" alt=""/>
- <span class="name">Adgent</span>
- </a>
- <nav class="nav-links" aria-label="Main">
- <a href="/why-adgent">Why Adgent</a>
- <div class="nav-drop nav-drop-mega">
-  <a href="/features" class="nav-drop-t" aria-haspopup="true" aria-expanded="false">Product<svg class="caret" viewBox="0 0 12 8" fill="none" stroke="currentColor"><path d="M1 2l5 4 5-4"/></svg></a>
-  <div class="nav-menu nav-mega">
-   <div class="mega-cols">
-    <div class="mega-col">
-     <div class="mega-h">It reads</div>
-     <a href="/account-memory" data-mega="memory"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2a4 4 0 0 0-4 4v1a4 4 0 0 0-2 7 4 4 0 0 0 6 5 4 4 0 0 0 6-5 4 4 0 0 0-2-7V6a4 4 0 0 0-4-4Z"/><path d="M12 2v20"/></svg></span><span class="mega-tx"><span class="nm-t">Account memory</span><span class="nm-d">Say it once &mdash; it never asks again</span></span></a>
-     <a href="/daily-verdict" data-mega="verdict"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg></span><span class="mega-tx"><span class="nm-t">Daily verdict</span><span class="nm-d">Every account read before you wake up</span></span></a>
-     <a href="/ground-truth" data-mega="ground"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 15l4-5 3 3 5-7"/></svg></span><span class="mega-tx"><span class="nm-t">Ground truth</span><span class="nm-d">Judged on margin, not on the pixel</span></span></a>
-     <a href="/trust-gate" data-mega="trust"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6Z"/><path d="M9 12l2 2 4-4"/></svg></span><span class="mega-tx"><span class="nm-t">Trust Gate</span><span class="nm-d">It tells you no, before the money moves</span></span></a>
-     <a href="/creative-intelligence" data-mega="creative"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 15l5-4 3 2 4-5 6 6"/><circle cx="8.5" cy="8.5" r="1.5"/></svg></span><span class="mega-tx"><span class="nm-t">Creative intelligence</span><span class="nm-d">Scene by scene, and where viewers leave</span></span></a>
-     <a href="/change-ledger" data-mega="ledger"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg></span><span class="mega-tx"><span class="nm-t">Change Ledger</span><span class="nm-d">Every change logged — and reversible</span></span></a>
+<!--#header--><a class="skip" href="#main">Skip to content</a>
+<svg class="nav-sprite" aria-hidden="true" focusable="false">
+  <symbol id="nav-arrow" viewBox="0 0 24 24"><path d="M5 12h13M14 8l4 4-4 4"/></symbol>
+  <symbol id="nav-check" viewBox="0 0 24 24"><path d="M5 6h10M5 12h6M5 18h8"/><path d="m15 16 2 2 3-4"/></symbol>
+  <symbol id="nav-shield" viewBox="0 0 24 24"><path d="M12 3 19 6v5c0 5-3 8-7 10-4-2-7-5-7-10V6z"/><path d="m9 12 2 2 4-5"/></symbol>
+  <symbol id="nav-return" viewBox="0 0 24 24"><path d="M8 7H4V3"/><path d="M4 7c3-4 10-5 14-1 4 4 2 11-3 13-3 1-6 0-8-2"/></symbol>
+  <symbol id="nav-activity" viewBox="0 0 24 24"><path d="M4 18V9M10 18V5M16 18v-7M22 18V3"/></symbol>
+  <symbol id="nav-memory" viewBox="0 0 24 24"><path d="M7 4h10v17l-5-3-5 3z"/></symbol>
+  <symbol id="nav-source" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></symbol>
+  <symbol id="nav-agents" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="18" r="2.5"/><circle cx="19" cy="18" r="2.5"/><path d="M10.5 7 6.5 15M13.5 7l4 8M7.5 18h9"/></symbol>
+  <symbol id="nav-specialist" viewBox="0 0 24 24"><path d="m12 3 1.6 5.4L19 10l-5.4 1.6L12 17l-1.6-5.4L5 10l5.4-1.6z"/><path d="m19 16 .7 2.3L22 19l-2.3.7L19 22l-.7-2.3L16 19l2.3-.7z"/></symbol>
+  <symbol id="nav-build" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M12 8v8M8 12h8"/></symbol>
+  <symbol id="nav-plan" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="3"/><path d="M8 3v4M16 3v4M4 10h16M8 14h3M8 17h6"/></symbol>
+  <symbol id="nav-report" viewBox="0 0 24 24"><path d="M4 20h16M6 17v-5h3v5M11 17V7h3v10M16 17V4h3v13"/></symbol>
+  <symbol id="nav-meeting" viewBox="0 0 24 24"><rect x="3" y="5" width="13" height="14" rx="3"/><path d="m16 10 5-3v10l-5-3zM7 9h5M7 13h3"/></symbol>
+  <symbol id="nav-creative" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="9" cy="9" r="2"/><path d="m5 18 5-5 3 3 2-2 4 4"/></symbol>
+  <symbol id="nav-search" viewBox="0 0 24 24"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5M18 3v4M16 5h4"/></symbol>
+  <symbol id="nav-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></symbol>
+  <symbol id="nav-agency" viewBox="0 0 24 24"><path d="M3 21h18M5 21V7h6v14M13 21V3h6v18M7 10h2M7 14h2M15 7h2M15 11h2M15 15h2"/></symbol>
+  <symbol id="nav-brand" viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="13" rx="3"/><path d="M9 7V5c0-1 1-2 3-2s3 1 3 2v2M4 12h16M9 12v2M15 12v2"/></symbol>
+  <symbol id="nav-cart" viewBox="0 0 24 24"><path d="M3 4h2l2 11h10l3-7H7"/><circle cx="9" cy="19" r="1.5"/><circle cx="17" cy="19" r="1.5"/></symbol>
+  <symbol id="nav-funnel" viewBox="0 0 24 24"><path d="M4 4h16l-6 7v7l-4 2v-9z"/></symbol>
+  <symbol id="nav-travel" viewBox="0 0 24 24"><rect x="5" y="6" width="14" height="14" rx="3"/><path d="M9 6V4h6v2M9 10v6M15 10v6M5 13h14"/></symbol>
+  <symbol id="nav-market" viewBox="0 0 24 24"><path d="M4 9h16l-2-5H6zM5 9v11h14V9M9 20v-6h6v6"/><path d="M4 9c0 2 3 2 4 0 1 2 3 2 4 0 1 2 3 2 4 0 1 2 4 2 4 0"/></symbol>
+  <symbol id="nav-local" viewBox="0 0 24 24"><path d="M12 21s7-6 7-12a7 7 0 1 0-14 0c0 6 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></symbol>
+  <symbol id="nav-mobile" viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="3"/><path d="M10 5h4M11 18h2"/></symbol>
+</svg>
+<header class="topbar" id="top">
+  <div class="wrap nav">
+    <a class="brand" href="/" aria-label="Adgent: home">
+      <svg viewBox="0 0 170 170" fill="none" aria-hidden="true"><path d="M14 140 L85 6 L156 140 L128 140 L85 58 L42 140 Z" fill="currentColor"/><path d="M50 140 L85 72 L120 140 L96 140 L85 118 L74 140 Z" fill="currentColor"/><path d="M18 153 L152 153" stroke="currentColor" stroke-width="9" stroke-linecap="round"/></svg>
+      Adgent
+    </a>
+
+    <nav class="links" aria-label="Main">
+      <div class="drop">
+        <button type="button" class="drop-t" data-drop="product" aria-expanded="false" aria-controls="m-product">Product<svg viewBox="0 0 12 8" aria-hidden="true"><path d="M1 2l5 4 5-4"/></svg></button>
+        <div class="menu menu-product" id="m-product">
+          <div class="menu-group menu-product-core">
+            <p class="menu-h"><svg class="nav-ic" aria-hidden="true"><use href="#nav-check"/></svg>Run the accounts</p>
+            <div class="menu-flow">
+              <a href="/daily-verdict"><svg class="nav-ic" aria-hidden="true"><use href="#nav-check"/></svg><span class="menu-copy"><b>Decisions</b></span><svg class="nav-arr" aria-hidden="true"><use href="#nav-arrow"/></svg></a>
+              <a href="/trust-gate"><svg class="nav-ic" aria-hidden="true"><use href="#nav-shield"/></svg><span class="menu-copy"><b>Trust Gate</b></span><svg class="nav-arr" aria-hidden="true"><use href="#nav-arrow"/></svg></a>
+              <a href="/change-ledger"><svg class="nav-ic" aria-hidden="true"><use href="#nav-return"/></svg><span class="menu-copy"><b>Change Ledger</b></span><svg class="nav-arr" aria-hidden="true"><use href="#nav-arrow"/></svg></a>
+              <a href="/platform-change-log"><svg class="nav-ic" aria-hidden="true"><use href="#nav-activity"/></svg><span class="menu-copy"><b>Platform change log</b></span><svg class="nav-arr" aria-hidden="true"><use href="#nav-arrow"/></svg></a>
+            </div>
+            <p class="menu-h menu-h-sub"><svg class="nav-ic" aria-hidden="true"><use href="#nav-source"/></svg>Account context</p>
+            <a href="/account-memory"><svg class="nav-ic" aria-hidden="true"><use href="#nav-memory"/></svg><span class="menu-copy"><b>Account memory</b></span><svg class="nav-arr" aria-hidden="true"><use href="#nav-arrow"/></svg></a>
+            <a href="/ground-truth"><svg class="nav-ic" aria-hidden="true"><use href="#nav-source"/></svg><span class="menu-copy"><b>Ground truth</b></span><svg class="nav-arr" aria-hidden="true"><use href="#nav-arrow"/></svg></a>
+          </div>
+          <div class="menu-product-side">
+            <div class="menu-group menu-group-build">
+              <p class="menu-h"><svg class="nav-ic" aria-hidden="true"><use href="#nav-build"/></svg>Build and automate</p>
+              <div class="menu-subgrid">
+                <a href="/agents"><svg class="nav-ic" aria-hidden="true"><use href="#nav-agents"/></svg><span class="menu-copy"><b>Agents &amp; workflows</b></span><svg class="nav-arr" aria-hidden="true"><use href="#nav-arrow"/></svg></a>
+                <a href="/specialists"><svg class="nav-ic" aria-hidden="true"><use href="#nav-specialist"/></svg><span class="menu-copy"><b>Specialists</b></span><svg class="nav-arr" aria-hidden="true"><use href="#nav-arrow"/></svg></a>
+                <a href="/campaign-build"><svg class="nav-ic" aria-hidden="true"><use href="#nav-build"/></svg><span class="menu-copy"><b>Campaign build</b></span><svg class="nav-arr" aria-hidden="true"><use href="#nav-arrow"/></svg></a>
+                <a href="/planning"><svg class="nav-ic" aria-hidden="true"><use href="#nav-plan"/></svg><span class="menu-copy"><b>Planning</b></span><svg class="nav-arr" aria-hidden="true"><use href="#nav-arrow"/></svg></a>
+                <a href="/dashboards"><svg class="nav-ic" aria-hidden="true"><use href="#nav-report"/></svg><span class="menu-copy"><b>Dashboards &amp; reports</b></span><svg class="nav-arr" aria-hidden="true"><use href="#nav-arrow"/></svg></a>
+                <a href="/meetings"><svg class="nav-ic" aria-hidden="true"><use href="#nav-meeting"/></svg><span class="menu-copy"><b>In your meetings</b></span><svg class="nav-arr" aria-hidden="true"><use href="#nav-arrow"/></svg></a>
+              </div>
+            </div>
+            <div class="menu-group menu-group-answers">
+              <p class="menu-h"><svg class="nav-ic" aria-hidden="true"><use href="#nav-search"/></svg>Creative and AI answers</p>
+              <div class="menu-ai-grid">
+                <a class="menu-feature" href="/creative-intelligence"><svg class="nav-ic" aria-hidden="true"><use href="#nav-creative"/></svg><span class="menu-copy"><b>Creative analysis</b><span>Why a creative works, down to hook and concept</span></span><svg class="nav-arr" aria-hidden="true"><use href="#nav-arrow"/></svg></a>
+                <a class="menu-feature" href="/ai-visibility"><svg class="nav-ic" aria-hidden="true"><use href="#nav-search"/></svg><span class="menu-copy"><b>AI Visibility</b><span>What AI answers say about your brand, with dates</span></span><svg class="nav-arr" aria-hidden="true"><use href="#nav-arrow"/></svg></a>
+              </div>
+            </div>
+          </div>
+          <div class="menu-f">
+            <span>From account evidence and team decisions to the next piece of growth work.</span>
+            <a href="/features"><svg class="nav-ic" aria-hidden="true"><use href="#nav-grid"/></svg><span>All capabilities</span><svg class="nav-arr" aria-hidden="true"><use href="#nav-arrow"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="drop">
+        <button type="button" class="drop-t active" data-drop="solutions" aria-expanded="false" aria-controls="m-solutions">Solutions<svg viewBox="0 0 12 8" aria-hidden="true"><path d="M1 2l5 4 5-4"/></svg></button>
+        <div class="menu menu-solutions" id="m-solutions">
+          <div class="menu-group menu-group-teams">
+            <p class="menu-h"><svg class="nav-ic" aria-hidden="true"><use href="#nav-agency"/></svg>By team</p>
+            <a href="/for-agencies"><svg class="nav-ic" aria-hidden="true"><use href="#nav-agency"/></svg><span class="menu-copy"><b>For agencies</b><span>Network and holding-group agencies, brand by brand</span></span><svg class="nav-arr" aria-hidden="true"><use href="#nav-arrow"/></svg></a>
+            <a href="/for-in-house" class="active" aria-current="page"><svg class="nav-ic" aria-hidden="true"><use href="#nav-brand"/></svg><span class="menu-copy"><b>For brands</b><span>Large brands and the teams that run their spend</span></span><svg class="nav-arr" aria-hidden="true"><use href="#nav-arrow"/></svg></a>
+            <p class="menu-h menu-h-sub"><svg class="nav-ic" aria-hidden="true"><use href="#nav-shield"/></svg>Security</p>
+            <a href="/security"><svg class="nav-ic" aria-hidden="true"><use href="#nav-shield"/></svg><span class="menu-copy"><b>Security &amp; data</b><span>Connection scopes, storage and deletion</span></span><svg class="nav-arr" aria-hidden="true"><use href="#nav-arrow"/></svg></a>
+          </div>
+          <div class="menu-group menu-group-industries">
+            <p class="menu-h"><svg class="nav-ic" aria-hidden="true"><use href="#nav-market"/></svg>By industry</p>
+            <div class="menu-subgrid">
+              <a href="/ecommerce"><svg class="nav-ic" aria-hidden="true"><use href="#nav-cart"/></svg><span class="menu-copy"><b>Ecommerce &amp; DTC</b><span>Profit ROAS, with stock in view</span></span><svg class="nav-arr" aria-hidden="true"><use href="#nav-arrow"/></svg></a>
+              <a href="/lead-generation"><svg class="nav-ic" aria-hidden="true"><use href="#nav-funnel"/></svg><span class="menu-copy"><b>Lead generation</b><span>The identifier dies before the deal</span></span><svg class="nav-arr" aria-hidden="true"><use href="#nav-arrow"/></svg></a>
+              <a href="/travel-hospitality"><svg class="nav-ic" aria-hidden="true"><use href="#nav-travel"/></svg><span class="menu-copy"><b>Travel &amp; hospitality</b><span>The booking converts; the stay pays</span></span><svg class="nav-arr" aria-hidden="true"><use href="#nav-arrow"/></svg></a>
+              <a href="/marketplaces"><svg class="nav-ic" aria-hidden="true"><use href="#nav-market"/></svg><span class="menu-copy"><b>Marketplaces</b><span>It counts the sale; you bank the take rate</span></span><svg class="nav-arr" aria-hidden="true"><use href="#nav-arrow"/></svg></a>
+              <a href="/local-multi-location"><svg class="nav-ic" aria-hidden="true"><use href="#nav-local"/></svg><span class="menu-copy"><b>Local &amp; multi-location</b><span>The conversion isn't on the internet</span></span><svg class="nav-arr" aria-hidden="true"><use href="#nav-arrow"/></svg></a>
+              <a href="/mobile-apps"><svg class="nav-ic" aria-hidden="true"><use href="#nav-mobile"/></svg><span class="menu-copy"><b>Mobile apps &amp; games</b><span>A 6-bit integer with noise on purpose</span></span><svg class="nav-arr" aria-hidden="true"><use href="#nav-arrow"/></svg></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="/why-adgent">Why Adgent</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/blog">Blog</a>
+      <a href="/about">About</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button type="button" class="burger" aria-label="Menu" aria-expanded="false" aria-controls="drawer">
+        <svg class="ic-m" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 7h16M3 15h16"/></svg>
+        <svg class="ic-x" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 5l12 12M17 5L5 17"/></svg>
+      </button>
     </div>
-    <div class="mega-col">
-     <div class="mega-h">It builds</div>
-     <a href="/built-from-chat#campaign" data-mega="campaign"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 11 21 3l-8 18-2-7-8-3Z"/><path d="M11 14l4-4"/></svg></span><span class="mega-tx"><span class="nm-t">Campaign build</span><span class="nm-d">Drafted whole, launched only on approval</span></span></a>
-     <a href="/built-from-chat#plan" data-mega="planning"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/><path d="M6 13h7M6 17h4"/></svg></span><span class="mega-tx"><span class="nm-t">Media plan</span><span class="nm-d">Every number shows where it came from</span></span></a>
-     <a href="/built-from-chat#dashboards" data-mega="dashboards"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/><path d="M13 13h4M13 17h4"/></svg></span><span class="mega-tx"><span class="nm-t">Live dashboards</span><span class="nm-d">Shareable, and still true on Thursday</span></span></a>
-     <a href="/built-from-chat#agents" data-mega="builds"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 4v4M8 14h.01M16 14h.01"/><path d="M2 13v3M22 13v3"/></svg></span><span class="mega-tx"><span class="nm-t">Agents &amp; reports</span><span class="nm-d">Standing jobs that run without you</span></span></a>
-     <p class="mega-note">Described in a sentence, built while you watch &mdash; and nothing reaches an account until you approve it.</p>
-    </div>
-    <div class="mega-panel" data-mega-panel aria-hidden="true">
-     <div class="mega-panel-art on" data-art="memory" data-t="Explain it once" data-d="Your rules, your exceptions, the calls you already made — carried into every verdict after, across platforms."><svg viewBox="0 0 300 196"> <rect class="mp-bubble" x="30" y="18" width="200" height="40" rx="10"/> <g class="mp-ink"><rect x="44" y="30" width="150" height="6" rx="3"/><rect x="44" y="43" width="96" height="6" rx="3"/></g> <text class="mp-lbl mp-lbl-dim" x="238" y="42">once</text> <path class="mp-tie" d="M60 58v18"/> <path class="mp-tie" d="M60 76h24"/> <path class="mp-tie" d="M60 76v38"/> <path class="mp-tie" d="M60 114h24"/> <path class="mp-tie" d="M60 76v76"/> <path class="mp-tie" d="M60 152h24"/> <g class="mp-rows"><rect x="90" y="64" width="180" height="24" rx="6"/><rect x="90" y="102" width="180" height="24" rx="6"/><rect x="90" y="140" width="180" height="24" rx="6"/></g> <g class="mp-ink"><rect x="104" y="73" width="76" height="6" rx="3"/><rect x="104" y="111" width="92" height="6" rx="3"/><rect x="104" y="149" width="68" height="6" rx="3"/></g> <g class="mp-tick"><path d="M236 74l5 5 9-9"/><path d="M236 112l5 5 9-9"/><path d="M236 150l5 5 9-9"/></g> <text class="mp-lbl" x="30" y="182">applied to every verdict after</text></svg></div>
-     <div class="mega-panel-art" data-art="verdict" data-t="The morning verdict" data-d="Every account read overnight, ranked by what it costs you — the position stated, the evidence under it."><svg viewBox="0 0 300 200"> <g class="mp-dim"><rect x="30" y="16" width="240" height="28" rx="7"/><rect x="30" y="90" width="240" height="26" rx="7"/><rect x="30" y="124" width="240" height="26" rx="7"/></g> <rect class="mp-hi" x="30" y="52" width="240" height="30" rx="7"/> <g class="mp-ink"> <rect x="42" y="26" width="8" height="8" rx="2"/><rect x="60" y="27" width="86" height="6" rx="3"/><rect x="212" y="27" width="46" height="6" rx="3"/> <rect x="42" y="99" width="8" height="8" rx="2"/><rect x="60" y="100" width="62" height="6" rx="3"/> <rect x="42" y="133" width="8" height="8" rx="2"/><rect x="60" y="134" width="74" height="6" rx="3"/> </g> <g class="mp-acc"><rect x="42" y="62" width="8" height="10" rx="2"/><rect x="60" y="63" width="104" height="7" rx="3.5"/><rect x="200" y="63" width="58" height="7" rx="3.5"/></g> <text class="mp-lbl mp-lbl-acc" x="30" y="172">this one needs you today</text> <text class="mp-lbl mp-lbl-dim" x="30" y="190">the rest say so in one line</text></svg></div>
-     <div class="mega-panel-art" data-art="ground" data-t="Judged on your margin" data-d="The platform optimizes toward what its pixel can see. Your cost of goods and second-order value are not in that set."><svg viewBox="0 0 300 190"> <path class="mp-axis" d="M34 150H272"/> <path class="mp-dim-l" d="M34 132 C90 118 150 96 272 44"/> <path class="mp-acc-l" d="M34 132 C90 130 150 138 272 152"/> <g class="mp-dot"><circle cx="272" cy="44" r="5"/></g> <g class="mp-dot mp-dot-acc"><circle cx="272" cy="152" r="5"/></g> <text class="mp-lbl mp-lbl-dim" x="150" y="72">platform ROAS</text> <text class="mp-lbl mp-lbl-acc" x="150" y="176">your margin</text> <path class="mp-gap" d="M262 52V144"/></svg></div>
-     <div class="mega-panel-art" data-art="trust" data-t="It says no" data-d="An unreachable target gets refused before the budget moves — with the account's own numbers as the reason."><svg viewBox="0 0 300 190"> <rect class="mp-card" x="30" y="20" width="240" height="56" rx="9"/> <g class="mp-ink"><rect x="46" y="34" width="112" height="7" rx="3.5"/><rect x="46" y="52" width="70" height="6" rx="3"/></g> <g class="mp-strike"><path d="M212 36l26 26M238 36l-26 26"/></g> <text class="mp-lbl mp-lbl-dim" x="30" y="94">what you asked for</text> <rect class="mp-card mp-card-acc" x="30" y="106" width="240" height="56" rx="9"/> <g class="mp-acc"><rect x="46" y="120" width="140" height="7" rx="3.5"/><rect x="46" y="138" width="100" height="6" rx="3"/></g> <text class="mp-lbl mp-lbl-acc" x="30" y="180">refused, with your own numbers</text></svg></div>
-     <div class="mega-panel-art" data-art="creative" data-t="Read scene by scene" data-d="Its DNA, the story beat by beat, and the exact second viewers leave. Analysis of what is already running."><svg viewBox="0 0 300 190"> <g class="mp-frames"><rect x="30" y="22" width="52" height="40" rx="6"/><rect x="92" y="22" width="52" height="40" rx="6"/><rect x="154" y="22" width="52" height="40" rx="6"/><rect x="216" y="22" width="52" height="40" rx="6"/></g> <path class="mp-axis" d="M30 148H270"/> <path class="mp-hold" d="M30 82 L92 90 L128 100 L154 138 L216 146 L270 150"/> <path class="mp-drop" d="M154 82V138"/> <circle class="mp-dot-acc" cx="154" cy="138" r="5"/> <text class="mp-lbl mp-lbl-acc" x="164" y="126">they leave here</text> <text class="mp-lbl" x="30" y="176">scene by scene, against retention</text></svg></div>
-     <div class="mega-panel-art" data-art="ledger" data-t="Undo, on your approval" data-d="Every change Adgent applies is logged with the state it replaced, and labeled reversible before you approve it."><svg viewBox="0 0 300 190"> <g class="mp-rows"><rect x="30" y="22" width="240" height="30" rx="7"/><rect x="30" y="60" width="240" height="30" rx="7"/><rect x="30" y="98" width="240" height="30" rx="7"/></g> <g class="mp-ink"><rect x="44" y="33" width="66" height="6" rx="3"/><rect x="44" y="71" width="88" height="6" rx="3"/><rect x="44" y="109" width="54" height="6" rx="3"/></g> <g class="mp-was"><rect x="146" y="33" width="40" height="6" rx="3"/><rect x="146" y="71" width="40" height="6" rx="3"/><rect x="146" y="109" width="40" height="6" rx="3"/></g> <g class="mp-acc"><path d="M226 32a9 9 0 1 0 3-6.6"/><path d="M226 24v8h8"/><path d="M226 70a9 9 0 1 0 3-6.6"/><path d="M226 62v8h8"/><path d="M226 108a9 9 0 1 0 3-6.6"/><path d="M226 100v8h8"/></g> <text class="mp-lbl" x="30" y="152">the state it replaced, kept</text> <text class="mp-lbl mp-lbl-acc" x="30" y="172">it offers to put it back</text></svg></div>
-     <div class="mega-panel-art" data-art="campaign" data-t="Built whole, held at the gate" data-d="Structure, budget, targeting and creative drafted complete from one description &mdash; then held, paused, until you approve it."><svg viewBox="0 0 300 196"> <rect class="mp-bubble" x="30" y="14" width="196" height="30" rx="9"/> <g class="mp-ink"><rect x="44" y="25" width="158" height="7" rx="3.5"/></g> <path class="mp-tie" d="M128 44v12"/> <g class="mp-rows"><rect x="30" y="60" width="240" height="26" rx="7"/><rect x="30" y="92" width="240" height="26" rx="7"/><rect x="30" y="124" width="240" height="26" rx="7"/></g> <g class="mp-ink"><rect x="44" y="69" width="88" height="6" rx="3"/><rect x="44" y="101" width="112" height="6" rx="3"/><rect x="44" y="133" width="72" height="6" rx="3"/></g> <g class="mp-acc"><rect x="196" y="69" width="60" height="7" rx="3.5"/><rect x="196" y="101" width="60" height="7" rx="3.5"/><rect x="196" y="133" width="60" height="7" rx="3.5"/></g> <text class="mp-lbl mp-lbl-dim" x="30" y="170">complete, and paused</text> <text class="mp-lbl mp-lbl-acc" x="30" y="188">it launches when you say so</text></svg></div>
-     <div class="mega-panel-art" data-art="planning" data-t="The plan, as data" data-d="Budget split, flights and line items — every cost range printed with the campaigns it came from, and nothing where there is no history."><svg viewBox="0 0 300 190"> <g class="mp-rows"><rect x="30" y="16" width="240" height="34" rx="7"/><rect x="30" y="58" width="240" height="34" rx="7"/></g> <g class="mp-ink"><rect x="44" y="26" width="72" height="6" rx="3"/><rect x="44" y="38" width="130" height="5" rx="2.5"/><rect x="44" y="68" width="60" height="6" rx="3"/><rect x="44" y="80" width="118" height="5" rx="2.5"/></g> <g class="mp-acc"><rect x="196" y="26" width="60" height="7" rx="3.5"/><rect x="196" y="68" width="60" height="7" rx="3.5"/></g> <g class="mp-null"><rect x="30" y="100" width="240" height="34" rx="7"/></g> <g class="mp-ink"><rect x="44" y="110" width="52" height="6" rx="3"/><rect x="44" y="122" width="96" height="5" rx="2.5"/></g> <g class="mp-strike"><path d="M212 108l18 18M230 108l-18 18"/></g> <text class="mp-lbl mp-lbl-acc" x="30" y="156">a range, with its basis named</text> <text class="mp-lbl mp-lbl-dim" x="30" y="176">no history, so no number given</text></svg></div>
-     <div class="mega-panel-art" data-art="dashboards" data-t="Live, not an export" data-d="The view you described stays wired to the data and keeps updating &mdash; shareable with a client without becoming a screenshot that is wrong by Thursday."><svg viewBox="0 0 300 190"> <rect class="mp-card" x="30" y="16" width="240" height="118" rx="9"/> <path class="mp-axis" d="M48 108H160"/> <g class="mp-bars"><rect x="56" y="72" width="18" height="36" rx="3"/><rect x="80" y="58" width="18" height="50" rx="3"/><rect x="104" y="84" width="18" height="24" rx="3"/></g> <g class="mp-acc"><rect x="128" y="46" width="18" height="62" rx="3"/></g> <g class="mp-ink"><rect x="180" y="40" width="70" height="6" rx="3"/><rect x="180" y="56" width="54" height="5" rx="2.5"/><rect x="180" y="70" width="62" height="5" rx="2.5"/></g> <g class="mp-acc"><rect x="180" y="90" width="44" height="6" rx="3"/><circle cx="186" cy="112" r="4"/></g> <text class="mp-lbl mp-lbl-acc" x="196" y="116">live</text> <text class="mp-lbl mp-lbl-dim" x="30" y="158">shared read-only with the client</text> <text class="mp-lbl" x="30" y="178">still current after you send it</text></svg></div>
-     <div class="mega-panel-art" data-art="builds" data-t="Standing jobs" data-d="A report that rebuilds itself on a schedule, or an agent that watches one thing and speaks up only when it changes."><svg viewBox="0 0 300 190"> <rect class="mp-bubble" x="30" y="18" width="184" height="34" rx="10"/> <g class="mp-ink"><rect x="44" y="31" width="150" height="7" rx="3.5"/></g> <path class="mp-tie" d="M122 52v14"/> <rect class="mp-card" x="30" y="70" width="240" height="90" rx="9"/> <g class="mp-bars"><rect x="50" y="112" width="22" height="32" rx="3"/><rect x="82" y="96" width="22" height="48" rx="3"/><rect x="114" y="120" width="22" height="24" rx="3"/></g> <g class="mp-acc"><rect x="146" y="86" width="22" height="58" rx="3"/></g> <g class="mp-ink"><rect x="186" y="90" width="64" height="6" rx="3"/><rect x="186" y="104" width="48" height="5" rx="2.5"/><rect x="186" y="116" width="56" height="5" rx="2.5"/></g> <text class="mp-lbl" x="30" y="180">described once, built while you watch</text></svg></div>
-     <div class="mega-panel-cap"><span class="mp-t">Say it once</span><span class="mp-d">Your rules, your exceptions, the calls you already made &mdash; carried into every verdict after, across platforms.</span></div>
-    </div>
-   </div>
   </div>
- </div>
- <div class="nav-drop nav-drop-mega">
-  <a href="/for-agencies" class="nav-drop-t" aria-haspopup="true" aria-expanded="false">Solutions<svg class="caret" viewBox="0 0 12 8" fill="none" stroke="currentColor"><path d="M1 2l5 4 5-4"/></svg></a>
-  <div class="nav-menu nav-mega nav-mega-sol">
-   <div class="mega-cols">
-    <div class="mega-col">
-     <div class="mega-h">By team</div>
-     <a href="/for-agencies" data-mega="agencies"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><span class="mega-tx"><span class="nm-t">For agencies</span><span class="nm-d">A senior buyer on every client account</span></span></a>
-     <a href="/for-in-house" class="active" data-mega="inhouse"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 21V8l9-5 9 5v13"/><path d="M9 21v-6h6v6"/></svg></span><span class="mega-tx"><span class="nm-t">For in-house</span><span class="nm-d">The second opinion you don't have</span></span></a>
-    </div>
-    <div class="mega-col">
-     <div class="mega-h">By industry</div>
-     <a href="/ecommerce" data-mega="ecommerce"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></span><span class="mega-tx"><span class="nm-t">Ecommerce &amp; DTC</span><span class="nm-d">January's returns rewrite December's numbers</span></span></a>
-     <a href="/lead-generation" data-mega="leadgen"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.5 5.5 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.5-6.5A2 2 0 0 0 16.8 4H7.2a2 2 0 0 0-1.7 1.5Z"/></svg></span><span class="mega-tx"><span class="nm-t">Lead generation</span><span class="nm-d">The identifier dies before the deal closes</span></span></a>
-     <a href="/travel-hospitality" data-mega="travel"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M2 22h20"/><path d="M4 22V6l8-4 8 4v16"/><path d="M9 22v-5h6v5"/><path d="M9 10h.01M15 10h.01"/></svg></span><span class="mega-tx"><span class="nm-t">Travel &amp; hospitality</span><span class="nm-d">The booking converts; the stay is what pays</span></span></a>
-     <a href="/marketplaces" data-mega="marketplace"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 9h18l-1.5 11a2 2 0 0 1-2 1.7H6.5a2 2 0 0 1-2-1.7Z"/><path d="M3 9 5 3h14l2 6"/><path d="M9 13h6"/></svg></span><span class="mega-tx"><span class="nm-t">Marketplaces</span><span class="nm-d">It counts the transaction; you bank the take rate</span></span></a>
-     <a href="/local-multi-location" data-mega="local"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 21s7-6.4 7-11a7 7 0 1 0-14 0c0 4.6 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span class="mega-tx"><span class="nm-t">Local &amp; multi-location</span><span class="nm-d">The conversion isn't on the internet</span></span></a>
-     <a href="/mobile-apps" data-mega="mobile"><span class="mega-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg></span><span class="mega-tx"><span class="nm-t">Mobile apps &amp; games</span><span class="nm-d">A 6-bit integer with noise added on purpose</span></span></a>
-    </div>
-    <div class="mega-panel" data-mega-panel aria-hidden="true">
-     <div class="mega-panel-art on" data-art="agencies" data-t="For agencies" data-d="A senior read on every client account, every morning — including the ones nobody opened this week."><svg viewBox="0 0 300 190"> <g class="mp-grid"><rect x="30" y="20" width="70" height="46" rx="7"/><rect x="114" y="20" width="70" height="46" rx="7"/><rect x="198" y="20" width="70" height="46" rx="7"/><rect x="30" y="78" width="70" height="46" rx="7"/><rect x="198" y="78" width="70" height="46" rx="7"/></g> <rect class="mp-card mp-card-acc" x="114" y="78" width="70" height="46" rx="7"/> <g class="mp-ink"><rect x="42" y="34" width="34" height="5" rx="2.5"/><rect x="126" y="34" width="40" height="5" rx="2.5"/><rect x="210" y="34" width="30" height="5" rx="2.5"/><rect x="42" y="92" width="38" height="5" rx="2.5"/><rect x="210" y="92" width="34" height="5" rx="2.5"/></g> <g class="mp-acc"><rect x="126" y="92" width="46" height="6" rx="3"/><circle cx="132" cy="110" r="4"/></g> <text class="mp-lbl" x="30" y="152">every account read overnight</text> <text class="mp-lbl mp-lbl-acc" x="30" y="174">this one needs you today</text></svg></div>
-     <div class="mega-panel-art" data-art="inhouse" data-t="For in-house" data-d="The second opinion a one-person team never gets — and the agency's report, checked against your revenue."><svg viewBox="0 0 300 190"> <rect class="mp-card" x="30" y="20" width="240" height="46" rx="8"/> <g class="mp-ink"><rect x="46" y="32" width="96" height="7" rx="3.5"/><rect x="46" y="48" width="64" height="6" rx="3"/></g> <text class="mp-lbl mp-lbl-dim" x="186" y="47">their report</text> <path class="mp-tie" d="M150 66v14"/> <rect class="mp-card mp-card-acc" x="30" y="84" width="240" height="46" rx="8"/> <g class="mp-acc"><rect x="46" y="96" width="116" height="7" rx="3.5"/><rect x="46" y="112" width="82" height="6" rx="3"/></g> <text class="mp-lbl mp-lbl-acc" x="180" y="111">checked</text> <text class="mp-lbl" x="30" y="158">the second opinion</text> <text class="mp-lbl mp-lbl-dim" x="30" y="176">a lean team never gets</text></svg></div>
-     <div class="mega-panel-art" data-art="ecommerce" data-t="Ecommerce &amp; DTC" data-d="19.3% of online sales come back — after the quarter closes, retroactively rewriting numbers already reported."><svg viewBox="0 0 300 190"> <path class="mp-axis" d="M34 130H272"/> <g class="mp-bars"><rect x="48" y="72" width="26" height="58" rx="3"/><rect x="86" y="58" width="26" height="72" rx="3"/><rect x="124" y="40" width="26" height="90" rx="3"/><rect x="162" y="50" width="26" height="80" rx="3"/></g> <g class="mp-return"><rect x="124" y="40" width="26" height="22" rx="3"/><rect x="162" y="50" width="26" height="18" rx="3"/><rect x="86" y="58" width="26" height="14" rx="3"/></g> <path class="mp-back" d="M206 62c22 0 22 46 0 46"/><path class="mp-back" d="M212 100l-8 8 8 8"/> <text class="mp-lbl mp-lbl-dim" x="34" y="152">reported in December</text> <text class="mp-lbl mp-lbl-acc" x="34" y="174">restated in January</text></svg></div>
-     <div class="mega-panel-art" data-art="leadgen" data-t="Lead generation" data-d="A 90-day click identifier against a 16-month payback. The identifier is dead before the revenue exists."><svg viewBox="0 0 300 190"> <path class="mp-axis" d="M34 96H272"/> <g class="mp-tickmark"><path d="M60 90v12"/><path d="M126 90v12"/><path d="M246 90v12"/></g> <circle class="mp-dot-acc" cx="60" cy="96" r="6"/> <text class="mp-lbl mp-lbl-acc" x="42" y="80">click</text> <path class="mp-life" d="M60 96H126"/> <path class="mp-expire" d="M120 88l12 16M132 88l-12 16"/> <text class="mp-lbl mp-lbl-dim" x="98" y="126">identifier expires</text> <path class="mp-dashed" d="M132 96H246"/> <circle class="mp-dot" cx="246" cy="96" r="6"/> <text class="mp-lbl" x="200" y="80">deal closes</text> <text class="mp-lbl" x="34" y="168">90 days of memory, 16-month cycle</text></svg></div>
-     <div class="mega-panel-art" data-art="travel" data-t="Travel &amp; hospitality" data-d="The cancellation lands about 79 days after the click — outside every attribution window there is."><svg viewBox="0 0 300 190"> <path class="mp-axis" d="M34 100H272"/> <circle class="mp-dot-acc" cx="62" cy="100" r="6"/> <text class="mp-lbl mp-lbl-acc" x="40" y="84">booked</text> <path class="mp-life" d="M62 100H186"/> <circle class="mp-dot" cx="186" cy="100" r="6"/> <text class="mp-lbl mp-lbl-dim" x="150" y="84">canceled</text> <path class="mp-dashed" d="M186 100H262"/> <circle class="mp-dot" cx="262" cy="100" r="5"/> <text class="mp-lbl" x="228" y="84">stay</text> <rect class="mp-window" x="34" y="118" width="136" height="20" rx="5"/> <text class="mp-lbl mp-lbl-dim" x="42" y="132">attribution window</text> <text class="mp-lbl" x="34" y="168">the outcome lands outside it</text></svg></div>
-     <div class="mega-panel-art" data-art="marketplace" data-t="Marketplaces" data-d="At a 13% take rate, a campaign reporting 6× is running at 0.8× on the revenue you actually keep."><svg viewBox="0 0 300 190"> <rect class="mp-gross" x="30" y="22" width="240" height="32" rx="7"/> <text class="mp-lbl mp-lbl-dim" x="42" y="43">what the pixel counts</text> <path class="mp-gap" d="M30 62v10M270 62v10M30 67h240"/> <rect class="mp-net" x="30" y="88" width="34" height="32" rx="7"/> <path class="mp-gap" d="M30 128v8M64 128v8M30 132h34"/> <text class="mp-lbl mp-lbl-acc" x="30" y="154">what you actually bank</text> <text class="mp-lbl" x="30" y="176">a 13% take rate is a 7&#215; gap</text></svg></div>
-     <div class="mega-panel-art" data-art="local" data-t="Local &amp; multi-location" data-d="Store visits are modelled, not measured. And near full capacity, more budget buys no-shows."><svg viewBox="0 0 300 190"> <path class="mp-axis" d="M34 128H272"/> <g class="mp-bars"><rect x="48" y="88" width="30" height="40" rx="3"/><rect x="90" y="76" width="30" height="52" rx="3"/><rect x="132" y="64" width="30" height="64" rx="3"/></g> <g class="mp-over"><rect x="174" y="52" width="30" height="76" rx="3"/><rect x="216" y="46" width="30" height="82" rx="3"/></g> <path class="mp-cap" d="M34 62H272"/> <text class="mp-lbl mp-lbl-acc" x="200" y="40">capacity</text> <text class="mp-lbl" x="34" y="154">past the line, more budget</text> <text class="mp-lbl mp-lbl-dim" x="34" y="174">buys appointments nobody keeps</text></svg></div>
-     <div class="mega-panel-art" data-art="mobile" data-t="Mobile apps &amp; games" data-d="Creative lifespan has fallen to 5–14 days, and the cheapest window of the year lasts a fortnight."><svg viewBox="0 0 300 190"> <g class="mp-frames"><rect x="30" y="12" width="44" height="30" rx="5"/><rect x="84" y="12" width="44" height="30" rx="5"/><rect x="138" y="12" width="44" height="30" rx="5"/><rect x="192" y="12" width="44" height="30" rx="5"/><rect x="246" y="12" width="24" height="30" rx="5"/></g> <text class="mp-lbl mp-lbl-dim" x="30" y="60">27 new creatives a day</text> <path class="mp-axis" d="M30 132H270"/> <g class="mp-bars"><rect x="34" y="96" width="18" height="36" rx="2"/><rect x="58" y="86" width="18" height="46" rx="2"/><rect x="82" y="104" width="18" height="28" rx="2"/><rect x="106" y="112" width="18" height="20" rx="2"/></g> <g class="mp-null"><rect x="136" y="116" width="18" height="16" rx="2"/><rect x="160" y="116" width="18" height="16" rx="2"/><rect x="184" y="116" width="18" height="16" rx="2"/><rect x="208" y="116" width="18" height="16" rx="2"/></g> <text class="mp-lbl mp-lbl-dim" x="30" y="152">the blanks are nulls, not zeros</text> <text class="mp-lbl mp-lbl-acc" x="30" y="172">the read has to keep up</text></svg></div>
-     <div class="mega-panel-cap"><span class="mp-t">For agencies</span><span class="mp-d">A senior read on every client account, every morning &mdash; including the ones nobody opened this week.</span></div>
-    </div>
-   </div>
-  </div>
- </div>
- <a href="/pricing">Pricing</a>
- <a href="/about">About</a>
- <a href="/blog">Blog</a>
- </nav>
- <div class="nav-right">
- <button class="nav-burger" aria-label="Menu" aria-expanded="false"><svg class="ic-open" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg><svg class="ic-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
- <a class="btn btn-primary btn-sm" href="/#lead">Get a free audit</a>
- </div>
- </div>
 </header><!--/#header-->
-<!--#mobile--><div class="mobile-menu">
- <a href="/why-adgent">Why Adgent</a>
- <details class="mm-group">
-  <summary>Product<svg class="caret" viewBox="0 0 12 8" fill="none" stroke="currentColor"><path d="M1 2l5 4 5-4"/></svg></summary>
-  <a href="/features" class="mm-sub">All features</a>
-  <span class="mm-lbl">It reads</span>
-  <a href="/account-memory" class="mm-sub">Account memory</a>
-  <a href="/daily-verdict" class="mm-sub">Daily verdict</a>
-  <a href="/ground-truth" class="mm-sub">Ground truth</a>
-  <a href="/trust-gate" class="mm-sub">Trust Gate</a>
-  <a href="/creative-intelligence" class="mm-sub">Creative intelligence</a>
-  <a href="/change-ledger" class="mm-sub">Change Ledger</a>
-  <span class="mm-lbl">It builds</span>
-  <a href="/built-from-chat#campaign" class="mm-sub">Campaign build</a>
-  <a href="/built-from-chat#plan" class="mm-sub">Media plan</a>
-  <a href="/built-from-chat#dashboards" class="mm-sub">Live dashboards</a>
-  <a href="/built-from-chat#agents" class="mm-sub">Agents &amp; reports</a>
- </details>
- <details class="mm-group">
-  <summary>Solutions<svg class="caret" viewBox="0 0 12 8" fill="none" stroke="currentColor"><path d="M1 2l5 4 5-4"/></svg></summary>
-  <span class="mm-lbl">By team</span>
-  <a href="/for-agencies" class="mm-sub">For agencies</a>
-  <a href="/for-in-house" class="mm-sub">For in-house</a>
-  <span class="mm-lbl">By industry</span>
-  <a href="/ecommerce" class="mm-sub">Ecommerce &amp; DTC</a>
-  <a href="/lead-generation" class="mm-sub">Lead generation</a>
-  <a href="/travel-hospitality" class="mm-sub">Travel &amp; hospitality</a>
-  <a href="/marketplaces" class="mm-sub">Marketplaces</a>
-  <a href="/local-multi-location" class="mm-sub">Local &amp; multi-location</a>
-  <a href="/mobile-apps" class="mm-sub">Mobile apps &amp; games</a>
- </details>
- <a href="/pricing">Pricing</a>
- <a href="/about">About</a>
- <a href="/blog">Blog</a>
- <a class="btn btn-primary btn-sm mm-cta" href="/#lead">Get a free audit</a>
-</div><!--/#mobile--><main id="main" tabindex="-1"><!-- HERO -->
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div class="hero-copy">
-      <p class="hero-tagline">For in-house growth teams</p>
-      <h1>The senior <em>nobody hired you</em>.</h1>
-      <p class="hero-lede"><strong>On your account, every morning.</strong> Adgent reads your Meta
-        and Google as one brain overnight, checks what the platforms claim against what your
-        analytics actually recorded, and prepares the fix for your approval.</p>
-      <p class="hero-note"><a href="/for-agencies">Running client accounts instead? See Adgent for agencies →</a></p>
+<!--#drawer--><div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+  <details>
+    <summary>Product</summary>
+    <div class="drawer-g">
+      <p class="menu-h"><svg class="nav-ic" aria-hidden="true"><use href="#nav-check"/></svg>Run the accounts</p>
+      <div class="drawer-grid">
+        <a href="/daily-verdict"><svg class="nav-ic" aria-hidden="true"><use href="#nav-check"/></svg><span>Decisions</span></a>
+        <a href="/trust-gate"><svg class="nav-ic" aria-hidden="true"><use href="#nav-shield"/></svg><span>Trust Gate</span></a>
+        <a href="/change-ledger"><svg class="nav-ic" aria-hidden="true"><use href="#nav-return"/></svg><span>Change Ledger</span></a>
+        <a href="/platform-change-log"><svg class="nav-ic" aria-hidden="true"><use href="#nav-activity"/></svg><span>Platform change log</span></a>
+        <a href="/account-memory"><svg class="nav-ic" aria-hidden="true"><use href="#nav-memory"/></svg><span>Account memory</span></a>
+        <a href="/ground-truth"><svg class="nav-ic" aria-hidden="true"><use href="#nav-source"/></svg><span>Ground truth</span></a>
+      </div>
     </div>
-<div class="hero-cutout">
- <div class="float-chip chip-a"><span class="fdot" style="background:var(--ok)"></span>ROAS <span>3.2×</span> <span class="up">▲</span></div>
- <div class="float-chip chip-b"><span class="lbl">Meta · Google · GA4</span> synced</div>
- <div class="float-chip chip-c">GA4 gap <span>−41%</span> <span class="down">▼</span></div>
- <div class="cutout">
- <div class="co-kicker">Adgent · your second opinion</div>
- <div class="chat-thread" data-hero-chat>
- <div class="cmsg-user chat-step" data-user>I want to scale the winner to $5k/day. Sanity-check me.</div>
- <div class="chat-step" data-typing style="align-self:flex-start"><div class="typing"><i></i><i></i><i></i></div></div>
- <div class="cmsg-bot chat-step" data-bot>
- <div class="ct">I'd push back. The platform books that campaign at <b class="num">3.2×</b>, but over the same seven days GA4 recorded <b class="num">41%</b> fewer purchases from it than the platform claimed. <span class="src-note">Platform API against GA4, read-only, same window.</span> You would be scaling on a number only the seller reports. The prospecting set at <b class="num">2.4×</b> holds up on both reads &mdash; that is the one to scale.</div>
- <div class="chat-fix">
- <span class="fixbtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>Scale the profitable one instead</span>
- <span class="fixnote"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Nothing changes until you approve</span>
- </div>
- <div class="chat-next">
- <button type="button" class="next-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>Run the same check on every campaign</button>
- <button type="button" class="next-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4M8 16h.01M16 16h.01"/></svg>Flag this before I scale anything</button>
- <button type="button" class="next-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="4"/></svg>Write my update for the CMO</button>
- </div>
- </div>
- <div class="chat-input chat-step" data-input>
- <span>Ask anything — or say “check this before I hit publish”</span>
- <span class="send"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
- </div>
- </div>
- </div>
- </div>
- </div>
+    <div class="drawer-g">
+      <p class="menu-h"><svg class="nav-ic" aria-hidden="true"><use href="#nav-build"/></svg>Build and automate</p>
+      <div class="drawer-grid">
+        <a href="/agents"><svg class="nav-ic" aria-hidden="true"><use href="#nav-agents"/></svg><span>Agents &amp; workflows</span></a>
+        <a href="/specialists"><svg class="nav-ic" aria-hidden="true"><use href="#nav-specialist"/></svg><span>Specialists</span></a>
+        <a href="/campaign-build"><svg class="nav-ic" aria-hidden="true"><use href="#nav-build"/></svg><span>Campaign build</span></a>
+        <a href="/planning"><svg class="nav-ic" aria-hidden="true"><use href="#nav-plan"/></svg><span>Planning</span></a>
+        <a href="/dashboards"><svg class="nav-ic" aria-hidden="true"><use href="#nav-report"/></svg><span>Dashboards &amp; reports</span></a>
+        <a href="/meetings"><svg class="nav-ic" aria-hidden="true"><use href="#nav-meeting"/></svg><span>In your meetings</span></a>
+      </div>
+    </div>
+    <div class="drawer-g drawer-g-dark">
+      <p class="menu-h"><svg class="nav-ic" aria-hidden="true"><use href="#nav-search"/></svg>Creative and AI answers</p>
+      <div class="drawer-grid">
+        <a href="/creative-intelligence"><svg class="nav-ic" aria-hidden="true"><use href="#nav-creative"/></svg><span>Creative analysis</span></a>
+        <a href="/ai-visibility"><svg class="nav-ic" aria-hidden="true"><use href="#nav-search"/></svg><span>AI Visibility</span></a>
+        <a class="drawer-full" href="/features"><svg class="nav-ic" aria-hidden="true"><use href="#nav-grid"/></svg><span>All capabilities</span></a>
+      </div>
+    </div>
+  </details>
+  <details>
+    <summary>Solutions</summary>
+    <div class="drawer-g">
+      <p class="menu-h"><svg class="nav-ic" aria-hidden="true"><use href="#nav-agency"/></svg>By team</p>
+      <div class="drawer-grid">
+        <a href="/for-agencies"><svg class="nav-ic" aria-hidden="true"><use href="#nav-agency"/></svg><span>For agencies</span></a>
+        <a href="/for-in-house" class="active" aria-current="page"><svg class="nav-ic" aria-hidden="true"><use href="#nav-brand"/></svg><span>For brands</span></a>
+      </div>
+    </div>
+    <div class="drawer-g">
+      <p class="menu-h"><svg class="nav-ic" aria-hidden="true"><use href="#nav-market"/></svg>By industry</p>
+      <div class="drawer-grid">
+        <a href="/ecommerce"><svg class="nav-ic" aria-hidden="true"><use href="#nav-cart"/></svg><span>Ecommerce &amp; DTC</span></a>
+        <a href="/lead-generation"><svg class="nav-ic" aria-hidden="true"><use href="#nav-funnel"/></svg><span>Lead generation</span></a>
+        <a href="/travel-hospitality"><svg class="nav-ic" aria-hidden="true"><use href="#nav-travel"/></svg><span>Travel &amp; hospitality</span></a>
+        <a href="/marketplaces"><svg class="nav-ic" aria-hidden="true"><use href="#nav-market"/></svg><span>Marketplaces</span></a>
+        <a href="/local-multi-location"><svg class="nav-ic" aria-hidden="true"><use href="#nav-local"/></svg><span>Local &amp; multi-location</span></a>
+        <a href="/mobile-apps"><svg class="nav-ic" aria-hidden="true"><use href="#nav-mobile"/></svg><span>Mobile apps &amp; games</span></a>
+      </div>
+    </div>
+    <div class="drawer-g drawer-g-trust">
+      <p class="menu-h"><svg class="nav-ic" aria-hidden="true"><use href="#nav-shield"/></svg>Trust</p>
+      <div class="drawer-grid">
+        <a class="drawer-full" href="/security"><svg class="nav-ic" aria-hidden="true"><use href="#nav-shield"/></svg><span>Security &amp; data</span></a>
+      </div>
+    </div>
+  </details>
+  <a href="/why-adgent">Why Adgent</a>
+  <a href="/pricing">Pricing</a>
+  <a href="/blog">Blog</a>
+  <a href="/tools">Free tools</a>
+  <a href="/about">About</a>
+</div><!--/#drawer-->
+<main id="main" tabindex="-1">
 
-</section>
-
-<section class="band">
+<!-- ============================================================ hero: the report, read twice -->
+<section class="ih-hero" aria-labelledby="ih-h1">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow"><span class="tick"></span>The real constraint</span>
-      <h2 class="sec-title">You're running the whole thing alone, and there's <em>nobody to check your work</em>.</h2>
-      <p class="sec-sub">Three platforms, a store, a marketplace and a reporting job that eats the week.
-        No senior bench to sanity-check a call before you make it — and no second pair of eyes on the
-        weeks you don't get to everything.</p>
+    <div class="ih-top">
+      <h1 class="display" id="ih-h1">A second opinion that remembers the first decision.</h1>
+      <div class="ih-intro">
+        <p class="lede">Adgent is the AI employee for your growth team. It carries confirmed goals, constraints, past decisions and their outcomes into each new read of Meta and Google.</p>
+        <form class="qf demo" aria-label="Request a demo" method="post" action="https://api.web3forms.com/submit"><!--#w3f--><span class="w3f-sent" id="sent-1"></span><input type="hidden" name="access_key" value="50ac3d40-6932-476d-9d23-b6ee1b94f91f"/><input type="hidden" name="subject" value="Adgent demo request · for-in-house"/><input type="hidden" name="from_name" value="Adgent website"/><input type="hidden" name="page" value="https://adgent.app/for-in-house"/><input type="hidden" name="form_location" value="for-in-house/qf-1"/><input type="hidden" name="redirect" value="https://adgent.app/for-in-house#sent-1"/><span class="hp" aria-hidden="true"><input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"/></span><!--/#w3f-->
+          <div class="qf-row">
+            <label class="vh" for="ih-qf">Work email</label>
+            <input id="ih-qf" name="email" type="email" autocomplete="email" placeholder="Work email" required aria-describedby="ih-qf-err"/>
+            <button class="btn btn-acc" type="submit">Request a demo</button>
+          </div>
+          <p class="err" id="ih-qf-err" aria-live="polite"></p>
+          <div class="ok-msg" role="status"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span>Thanks, we've got it. We'll be in touch within a couple of working days.</span></div>
+        </form>
+      </div>
     </div>
+
+    <figure class="ih-doc" id="ih-doc" aria-labelledby="ih-doc-cap">
+      <div class="ih-paper">
+        <div class="ih-sh">
+          <div>
+            <p class="ih-st">September performance report</p>
+            <p class="ih-sm">Meta and Google Ads · prepared by your agency</p>
+          </div>
+        </div>
+        <p class="ih-nh"><svg viewBox="0 0 170 170" aria-hidden="true"><path d="M14 140 L85 6 L156 140 L128 140 L85 58 L42 140 Z" fill="currentColor"/><path d="M50 140 L85 72 L120 140 L96 140 L85 118 L74 140 Z" fill="currentColor"/></svg><b>Read a second time</b><span>by Adgent</span></p>
+
+        <div class="ih-line" style="--i:0"><span class="ih-lk">ROAS</span><p><span class="ih-hl">4.1×, our best month this year.</span> Platform-reported.</p></div>
+        <div class="ih-note" style="--i:0"><p class="ih-who">Ground truth</p><p>The platform grading itself. Adgent reads GA4 beside it.</p></div>
+
+        <div class="ih-line" style="--i:1"><span class="ih-lk">Budget</span><p>Prospecting <span class="ih-hl">raised 35% in one step</span>.</p></div>
+        <div class="ih-note" style="--i:1"><p class="ih-who">Account move</p><p>Beyond the 20% band: it can reset learning. Flagged before execution.</p></div>
+
+        <div class="ih-line" style="--i:2"><span class="ih-lk">Creative</span><p>Kept scaling <span class="ih-hl">the "40% off" concept</span>.</p></div>
+        <div class="ih-note" style="--i:2"><p class="ih-who">Creative-Fatigue Scout</p><p>Wearing out. Needs a new angle, not a variant.</p></div>
+
+        <div class="ih-line" style="--i:3"><span class="ih-lk">Audiences</span><p>Two prospecting ad sets, <span class="ih-hl">both performing</span>.</p></div>
+        <div class="ih-note" style="--i:3"><p class="ih-who">Audience-Overlap Detector</p><p>Same people, so they bid against each other.</p></div>
+      </div>
+      <figcaption class="src" id="ih-doc-cap">The 20% band note paraphrases a live account move, 30 Sep 2026.</figcaption>
+    </figure>
   </div>
 </section>
 
-<section class="band band-sub">
+<!-- ============================================================ pair A: the pixel vs what you keep -->
+<section class="ps" id="ih-margin" aria-labelledby="ih-ps1">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow"><span class="tick"></span>The number you get asked about</span>
-      <h2 class="sec-title">Your dashboard says <em>3.2×</em>. Finance says the quarter got worse.</h2>
-      <p class="sec-sub">Both are telling the truth. The platform optimizes to the last thing it can
-        see — the purchase — and stops there. Finance is looking below that line, at the part the
-        business actually runs on. You're the one standing between the two numbers.</p>
-    </div>
-    <div class="two-lens">
-      <div class="lens">
-        <p class="lens-cap">What you'd report</p>
-        <p class="lens-num good">3.2×</p>
-        <p class="lens-sub">ROAS · conversions up</p>
-        <p class="lens-verdict">→ "Ads are working."</p>
-        <p class="lens-note">Defensible, sourced from the platform — and the number finance won't recognize.</p>
+    <div class="ps-h"><h2 id="ih-ps1">It checks the signal before it builds.</h2><p class="sub">GA4, Search Console, Merchant Center and the Drive files you choose can sit beside the ad platforms as context. Adgent does not reconcile them or invent a single source of truth.</p></div>
+    <div class="ps-tog" role="group" aria-label="Show"><button type="button" data-s="today" aria-pressed="false">Today</button><button type="button" data-s="lit" aria-pressed="true">With Adgent</button></div>
+    <div class="ps-pair">
+      <div class="ps-today">
+        <p class="ps-hd"><b>Today</b><span>the platform, as asked</span><span class="tag line">Walkthrough</span></p>
+        <div class="ps-rows">
+          <div><span>Objective</span><b>Sales</b></div>
+          <div><span>Optimise for</span><b>Purchase</b></div>
+          <div><span>Page and pixel</span><b>Connected</b></div>
+        </div>
+        <p class="ih-pub" aria-hidden="true"><span>Publish</span></p>
+        <p class="ps-note">Built as asked, whatever the pixel has seen.</p>
       </div>
-      <div class="lens lens-us">
-        <p class="lens-cap">What finance sees</p>
-        <p class="lens-num bad">−8%</p>
-        <p class="lens-sub">margin · repeat purchase falling</p>
-        <p class="lens-verdict">→ "Then why is contribution down?"</p>
-        <p class="lens-note">Discount-driven buyers, thin margin. The revenue is real. The profit isn't.</p>
+      <div class="ps-lw">
+        <span class="ps-seam" aria-hidden="true"></span>
+        <div class="ps-lit">
+          <p class="ps-hd"><svg viewBox="0 0 170 170" aria-hidden="true"><path d="M14 140 L85 6 L156 140 L128 140 L85 58 L42 140 Z" fill="currentColor"/><path d="M50 140 L85 72 L120 140 L96 140 L85 118 L74 140 Z" fill="currentColor"/></svg><b>With Adgent</b><span>reads the signal first</span></p>
+          <div class="chat on-white ih-chat">
+            <p class="bub me">Set up a Meta sales campaign.</p>
+            <p class="bub ai">Before I build it: <b>4 purchases in 30 days</b> is too few for a sales campaign to learn from.</p>
+          </div>
+          <div class="ih-bars tnum" role="list" aria-label="What the pixel recorded in the last 30 days">
+            <p class="ih-bars-h">Pixel, last 30 days</p>
+            <div class="ih-bar" role="listitem"><span>Custom events</span><i style="--v:100"></i><b>65,042</b></div>
+            <div class="ih-bar" role="listitem"><span>Initiate checkout</span><i style="--v:25.2"></i><b>16,404</b></div>
+            <div class="ih-bar" role="listitem"><span>Add to cart</span><i style="--v:.8"></i><b>515</b></div>
+            <div class="ih-bar is-key" role="listitem"><span>Purchase</span><i style="--v:0"></i><b>4</b></div>
+          </div>
+          <p class="src ih-srcin">One live account (hotel group), Aug 2026.</p>
+        </div>
       </div>
     </div>
-    <p class="lens-kicker">Adgent reads both, so you walk in already knowing which number will be
-      challenged — and <strong>why the two disagree</strong>. That's the difference between defending a
-      dashboard and explaining a business.</p>
   </div>
 </section>
 
-<section class="band">
+<!-- ============================================================ AI Visibility: from an AI answer to a paid decision -->
+<section class="sec ih-ai" id="ih-ai" aria-labelledby="ih-ai-h">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow"><span class="tick"></span>What you get back</span>
-      <h2 class="sec-title">The reading, done overnight. The <em>deciding</em>, still yours.</h2>
+    <div class="sec-head row ih-ai-hd">
+      <h2 id="ih-ai-h">Your buyers ask AI what to buy. Your team reads the answers.</h2>
+      <p class="sub">Your agents ask ChatGPT, Gemini, Google AI Mode and AI Overviews your buyers' questions, show who gets recommended with source and date, and carry what the answers reveal into your paid decisions.</p>
     </div>
-    <div class="grid g3">
-      <div class="pcard">
-        <h3>A brief instead of a morning</h3>
-        <p>You open one thing: what's broken, what it's costing you, what to do about it — ranked. Not
-          eleven tabs and a spreadsheet you rebuild every Monday.</p>
+
+    <figure class="ih-aiv" id="ih-aiv" aria-labelledby="ih-aiv-cap">
+      <div class="ih-aiv-bar">
+        <span class="tag dot">Live</span>
+        <p class="ih-aiv-q">“Can you recommend genuine leather men's sneakers under $60?”</p>
+        <p class="ih-aiv-m">Asked in Turkish, shown in English · one market today: Turkey</p>
       </div>
-      <div class="pcard">
-        <h3>Reconciled against your analytics</h3>
-        <p>Platform-reported numbers checked against what actually landed in GA4, so you can tell the difference
-          between revenue that grew and profit that didn't. Direct store reading is the next connection.</p>
+      <div class="ih-aiv-tabs" role="tablist" aria-label="Assistant answer">
+        <button type="button" role="tab" id="ih-aiv-t1" aria-controls="ih-aiv-p1" aria-selected="true">ChatGPT</button>
+        <button type="button" role="tab" id="ih-aiv-t2" aria-controls="ih-aiv-p2" aria-selected="false" tabindex="-1">Gemini</button>
+        <button type="button" role="tab" id="ih-aiv-t3" aria-controls="ih-aiv-p3" aria-selected="false" tabindex="-1">AI Mode</button>
+        <button type="button" role="tab" id="ih-aiv-t4" aria-controls="ih-aiv-p4" aria-selected="false" tabindex="-1">AI Overview</button>
       </div>
-      <div class="pcard">
-        <h3>It remembers your rules</h3>
-        <p>Say it once — the margin floor, the campaign you never touch, the product you're clearing.
-          It carries that into every judgment after, without a setup screen.</p>
+      <div class="ih-aiv-g">
+        <div class="ih-aiv-answer">
+          <article class="ih-aiv-ans is-active" id="ih-aiv-p1" role="tabpanel" aria-labelledby="ih-aiv-t1" tabindex="0">
+            <p class="ih-aiv-k"><b>The answer</b><span>ChatGPT · latest run · logged out</span></p>
+            <p class="ih-aiv-txt">I'd look at three. <mark class="ih-b">Northhide</mark> Urban is the best value. <mark class="ih-b you">Trailstep</mark> Road Classic is a solid alternative; <mark class="ih-b">Stridewell</mark> Basic is the lightest. Often cheaper on <mark class="ih-b plat">Marketrix</mark>.</p>
+            <ul class="ih-lvls" aria-label="How each brand showed up in this answer">
+              <li class="you"><span class="ih-lv" data-l="2" aria-hidden="true"><i></i><i></i><i></i></span><b>Trailstep</b><span>Listed</span></li>
+              <li><span class="ih-lv" data-l="3" aria-hidden="true"><i></i><i></i><i></i></span><b>Northhide</b><span>Explicitly recommended</span></li>
+              <li><span class="ih-lv" data-l="2" aria-hidden="true"><i></i><i></i><i></i></span><b>Stridewell</b><span>Listed</span></li>
+              <li class="plat"><span class="ih-lv plat" aria-hidden="true"></span><b>Marketrix</b><span>Marketplace</span></li>
+            </ul>
+          </article>
+          <article class="ih-aiv-ans" id="ih-aiv-p2" role="tabpanel" aria-labelledby="ih-aiv-t2" tabindex="0">
+            <p class="ih-aiv-k"><b>The answer</b><span>Gemini · latest run · logged out</span></p>
+            <p class="ih-aiv-txt"><mark class="ih-b">Stridewell</mark> and <mark class="ih-b">Northhide</mark> come up most in reviews. <mark class="ih-b you">Trailstep</mark>'s leather models are mostly above $60 now.</p>
+            <ul class="ih-lvls" aria-label="How each brand showed up in this answer">
+              <li class="you"><span class="ih-lv" data-l="1" aria-hidden="true"><i></i><i></i><i></i></span><b>Trailstep</b><span>Named only</span></li>
+              <li><span class="ih-lv" data-l="2" aria-hidden="true"><i></i><i></i><i></i></span><b>Stridewell</b><span>Listed</span></li>
+              <li><span class="ih-lv" data-l="2" aria-hidden="true"><i></i><i></i><i></i></span><b>Northhide</b><span>Listed</span></li>
+            </ul>
+          </article>
+          <article class="ih-aiv-ans" id="ih-aiv-p3" role="tabpanel" aria-labelledby="ih-aiv-t3" tabindex="0">
+            <p class="ih-aiv-k"><b>The answer</b><span>Google AI Mode · latest run · logged out</span></p>
+            <p class="ih-aiv-txt">One pick: <mark class="ih-b you">Trailstep</mark> Road Classic. Full-grain leather, $59. <mark class="ih-b">Northhide</mark> Urban if you prefer a slimmer fit.</p>
+            <ul class="ih-lvls" aria-label="How each brand showed up in this answer">
+              <li class="you"><span class="ih-lv" data-l="3" aria-hidden="true"><i></i><i></i><i></i></span><b>Trailstep</b><span>Explicitly recommended</span></li>
+              <li><span class="ih-lv" data-l="2" aria-hidden="true"><i></i><i></i><i></i></span><b>Northhide</b><span>Listed</span></li>
+            </ul>
+          </article>
+          <article class="ih-aiv-ans" id="ih-aiv-p4" role="tabpanel" aria-labelledby="ih-aiv-t4" tabindex="0">
+            <p class="ih-aiv-k"><b>The answer</b><span>Google AI Overview · latest run · logged out</span></p>
+            <p class="ih-aiv-txt">Popular options include <mark class="ih-b">Northhide</mark>, <mark class="ih-b">Stridewell</mark> and <mark class="ih-b">Stonehall</mark>, also sold on <mark class="ih-b plat">Marketrix</mark>.</p>
+            <ul class="ih-lvls" aria-label="How each brand showed up in this answer">
+              <li class="you"><span class="ih-lv" data-l="0" aria-hidden="true"><i></i><i></i><i></i></span><b>Trailstep</b><span>Absent</span></li>
+              <li><span class="ih-lv" data-l="2" aria-hidden="true"><i></i><i></i><i></i></span><b>Northhide</b><span>Listed</span></li>
+              <li><span class="ih-lv" data-l="2" aria-hidden="true"><i></i><i></i><i></i></span><b>Stridewell</b><span>Listed</span></li>
+              <li><span class="ih-lv" data-l="2" aria-hidden="true"><i></i><i></i><i></i></span><b>Stonehall</b><span>Listed</span></li>
+              <li class="plat"><span class="ih-lv plat" aria-hidden="true"></span><b>Marketrix</b><span>Marketplace</span></li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="ih-aiv-win tnum">
+          <p class="ih-aiv-k"><b>The reading</b><span>30 days · four assistants</span></p>
+          <p class="ih-aiv-big"><b>19</b><span>of 48 answers recommended Trailstep</span></p>
+          <dl class="ih-aiv-dl" aria-label="Recommended, by assistant">
+            <div><dt>ChatGPT</dt><dd><i style="--v:46"></i><b>6 of 13</b></dd></div>
+            <div><dt>Gemini</dt><dd><i style="--v:23"></i><b>3 of 13</b></dd></div>
+            <div><dt>AI Mode</dt><dd><i style="--v:58"></i><b>7 of 12</b></dd></div>
+            <div><dt>AI Overviews</dt><dd><i style="--v:30"></i><b>3 of 10</b></dd></div>
+          </dl>
+          <p class="ih-aiv-wm">40%, with a 95% range of 27% to 54%. The window matures at 30 or more answers across 3 or more collection days.</p>
+        </div>
+
+        <div class="ih-aiv-dec">
+          <p class="ih-aiv-k"><b>Beside your ads</b><span>before it becomes a plan</span></p>
+          <div class="chat on-white ih-aiv-chat">
+            <p class="bub me">Northhide keeps showing up instead of us on sneakers. What do we know?</p>
+            <div class="bub ai">
+              <p class="who-ai"><svg viewBox="0 0 170 170" aria-hidden="true"><path d="M14 140 L85 6 L156 140 L128 140 L85 58 L42 140 Z" fill="currentColor"/><path d="M50 140 L85 72 L120 140 L96 140 L85 118 L74 140 Z" fill="currentColor"/></svg>Adgent</p>
+              <p>Over the last 30 days, Trailstep lost <b>29 of 48</b> leather-sneaker answers; Northhide was recommended in 18 of them. That offer takes <b>34% of your ad spend</b>.</p>
+            </div>
+            <div class="sugg"><span class="pill line">Track that question</span><span class="pill line">Show the 18 answers</span></div>
+          </div>
+          <p class="ih-aiv-n">The answer gap now sits beside the offer's 34% share of ad spend, ready for the next paid decision.</p>
+        </div>
       </div>
-    </div>
+      <figcaption class="src ih-aiv-cap" id="ih-aiv-cap">AI Visibility · Turkey · 95% ranges · mature after 30+ answers across 3+ collection days.</figcaption>
+    </figure>
+
+    <ol class="ih-track" aria-label="From an AI answer to a paid decision, and where each step stands">
+      <li class="now"><span class="tag dot">Live</span><b>See where the answers lose you</b></li>
+      <li class="now"><span class="tag dot">Live</span><b>Weigh it against your ads and goals</b></li>
+      <li><span class="tag pilot">Pilot</span><b>Turn it into a paid plan: message and creative or landing-page brief</b></li>
+      <li><span class="tag grey">Exploring</span><b>Ads inside AI answers, ChatGPT first. Not scheduled.</b></li>
+      <li><span class="tag grey">Exploring</span><b>Measure those ads and keep the result in memory</b></li>
+    </ol>
+    <p class="ih-ai-go"><a class="go" href="/ai-visibility">AI Visibility, in full<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></p>
   </div>
 </section>
 
-<section class="band band-sub">
+<!-- ============================================================ two more reads -->
+<section class="sec-sm sec-flush ih-more" aria-labelledby="ih-reads-h">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow"><span class="tick"></span>Safe on the budget you sign for</span>
-      <h2 class="sec-title">Three locks &mdash; so one bad night can't cost you <em>the confidence you've built</em>.</h2>
-      <p class="sec-sub">Nobody reviews your work before it goes live and nobody catches it after. So the
-        locks are structural: it cannot write until you allow it, it cannot write without you, and it
-        tells you before you approve whether the change can be taken back.</p>
+    <div class="sec-head"><h2 id="ih-reads-h">It reads past the ad account, too.</h2></div>
+    <div class="ih-reads">
+
+      <article class="ih-rd">
+        <div class="ih-vis ih-vis-cr">
+          <img src="/assets/creatives/03-trailstep-sneakers.webp?v=642e2acd" width="504" height="896" loading="lazy" decoding="async" alt="Meta ad for Trailstep Studio: “Every step, light.”"/>
+          <ul class="ih-chips" aria-label="Creative read">
+            <li><span>Hook</span>Bold text</li>
+            <li><span>Angle</span>Comfort</li>
+            <li><span>Offer</span>40% off</li>
+            <li class="ih-chip-v"><i></i>Scaling</li>
+          </ul>
+        </div>
+        <div class="ih-rd-t">
+          <h3>Creative, read like a strategist.</h3>
+          <p>Hook, angle, offer and concept for every live ad. On one store, the best-returning video sat on 6% of spend.</p>
+          <a class="go" href="/creative-intelligence">Creative analysis<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        </div>
+      </article>
+
+      <article class="ih-rd">
+        <div class="ih-vis ih-vis-bd tnum">
+          <p class="bub me ih-ask">A Monday board for Meta.</p>
+          <div class="ih-tiles">
+            <div><span>Spend</span><b>$1,194</b></div>
+            <div><span>ROAS</span><b>4.49×</b></div>
+            <div><span>Purchases</span><b>108</b></div>
+            <div><span>CPA</span><b>$9.52</b></div>
+          </div>
+          <p class="ih-share"><span class="ih-link">adgent.app/share/…</span><span class="tag grey">Shared snapshot</span></p>
+        </div>
+        <div class="ih-rd-t">
+          <h3>The board your boss asked for.</h3>
+          <p>One sentence in, a no-login link out: a dated snapshot of a board that stays live in Adgent.</p>
+          <a class="go" href="/dashboards">Dashboards<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        </div>
+      </article>
+
     </div>
-    <div class="grid g3">
-      <div class="pcard">
-        <p class="pcard-n">LOCK 01</p>
-        <h3>Read-only by default</h3>
-        <p>Connecting your account changes nothing in it. Write access is a switch on the connection that
-          starts off, so the first week costs you a look and nothing else.</p>
-      </div>
-      <div class="pcard">
-        <p class="pcard-n">LOCK 02</p>
-        <h3>You approve, with the reasoning in front of you</h3>
-        <p>Each change arrives as a proposal you can argue with before it happens. Anything irreversible
-          stops there and says so &mdash; there is no silent edit for you to discover on Monday.</p>
-      </div>
-      <div class="pcard">
-        <p class="pcard-n">LOCK 03</p>
-        <h3>You know what can be undone</h3>
-        <p>The Change Ledger keeps every write Adgent made and the state it replaced, and a revert runs
-          the same way the change did: Adgent proposes the inverse, you approve, it executes. Edits made
-          directly in Meta or Google are recorded too &mdash; dated and attributed, so drift you did not
-          cause is at least explainable, even though Adgent cannot undo it for you.</p>
-      </div>
-    </div>
-    <p class="lens-kicker">And when the data can't carry a verdict yet — too few conversions, an
-      attribution window still open — <strong>the Trust Gate says so</strong>, which is the whole point of
-      a second opinion you did not have to hire.</p>
+    <p class="src ih-reads-src">Creative and board: one live e-commerce account, 30 Sep 2026, USD at 48.4069.</p>
   </div>
 </section>
 
-<section class="band band-sub">
- <div class="wrap">
- <div class="sec-head" data-reveal>
- <span class="eyebrow"><span class="tick"></span>Before you have to ask</span>
- <h2 class="sec-title">The questions you ask when there is <em>nobody</em> to ask.</h2>
- </div>
- <div class="faq" data-reveal>
- <details open>
- <summary>The agency&rsquo;s report says one thing and Adgent says another. Now what? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary>
- <div class="faq-a">Then you finally have the thing you were missing: two independent reads of the same week. Adgent takes the platforms&rsquo; own numbers and puts them next to what your analytics recorded for the same window, and when the two disagree the disagreement <em>is</em> the finding &mdash; with the window and the source shown, so it is a question you can put to your agency rather than a feeling. You are not accusing anyone; you are asking which read they used. <a href="/ground-truth">Ground truth &rarr;</a></div>
- </details>
- <details>
- <summary>Is this here to replace me? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary>
- <div class="faq-a">It cannot, and it is built so it cannot. Adgent does the reading &mdash; the overnight account read, the diagnostics, the check against your analytics &mdash; and stops at a proposal. It has no way to act on its own, so the call and the credit for the call both stay with you. What changes is that you walk into the review having already been argued with once, by something that has no reason to flatter the platform. It is the second opinion a one-person team never gets, not a stand-in for the person accountable.</div>
- </details>
- <details>
- <summary>What does it need from my stack? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary>
- <div class="faq-a">Meta and Google, plus GA4 if you want the second read &mdash; that is the useful minimum, and it is OAuth rather than an implementation project. Search Console, Merchant Center and Google Drive or Sheets come in read-only when you connect them, which is also how your own figures get in: an export in a sheet, offline conversions, whatever the platforms never see. Your store and your CRM are not connected today &mdash; direct store reading is the next thing we are building, not something we have.</div>
- </details>
- <details>
- <summary>What will it refuse to answer? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m6 9 6 6 6-6"/></svg></summary>
- <div class="faq-a">More than you would expect, deliberately. It will not hand you a number the data cannot carry: too few conversions, or an attribution window still open, and the Trust Gate marks the metric untrustworthy and drops the recommendation that rested on it. It will not compare you to other advertisers &mdash; it reads your account against its own history, never a pooled benchmark. And it does not know your unit economics unless you tell it; left alone, it reasons about what the platforms and your analytics recorded, and says so. <a href="/trust-gate">The Trust Gate &rarr;</a></div>
- </details>
- </div>
- </div>
-</section>
-
-<section class="band">
+<!-- ============================================================ pair B: approval and the way back -->
+<section class="ps" id="ih-approve" aria-labelledby="ih-ps2">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow"><span class="tick"></span>Next step</span>
-      <h2 class="sec-title">Pick the campaign you <em>can't explain to your boss</em>.</h2>
-      <p class="sec-sub">Connect your live account read-only — nothing can move — and we'll show you the
-        brief Adgent writes for that campaign overnight: what the platform is claiming, what your
-        analytics recorded over the same days, and which of the two it would act on.</p>
-      <p class="sec-sub"><strong>And where we'd tell you to wait:</strong> if most of your spend is on
-        TikTok, or the number you actually need is profit per order out of your store or your CRM, Adgent
-        cannot read those today — Meta, Google and GA4 are what it sees. Ask us for the date the store
-        connection lands before you buy, not after.</p>
+    <div class="ps-h"><h2 id="ih-ps2">A decision becomes a change. The result stays attached.</h2><p class="sub">A card first, a ledger row after. Both from live accounts.</p></div>
+    <div class="ps-tog" role="group" aria-label="Show"><button type="button" data-s="today" aria-pressed="false">Today</button><button type="button" data-s="lit" aria-pressed="true">With Adgent</button></div>
+    <div class="ps-pair">
+      <div class="ps-today">
+        <p class="ps-hd"><b>Today</b><span>changes you hear about later</span><span class="tag line">Walkthrough</span></p>
+        <div class="ps-rows">
+          <div><span>Auto-applied recommendation</span><b>budget raised</b></div>
+          <div><span>Agency, Tuesday</span><b>4 ad sets paused</b></div>
+          <div><span>You found out</span><b>in the monthly report</b></div>
+        </div>
+        <p class="ps-note">Putting one back is a fresh edit by hand.</p>
+      </div>
+      <div class="ps-lw">
+        <span class="ps-seam" aria-hidden="true"></span>
+        <div class="ps-lit">
+          <p class="ps-hd"><svg viewBox="0 0 170 170" aria-hidden="true"><path d="M14 140 L85 6 L156 140 L128 140 L85 58 L42 140 Z" fill="currentColor"/><path d="M50 140 L85 72 L120 140 L96 140 L85 118 L74 140 Z" fill="currentColor"/></svg><b>With Adgent</b><span>a card first, then a ledger row</span></p>
+          <article class="dc ih-dc">
+            <div class="dc-h"><span class="tag warn dot">Change card</span><span class="dc-k">Meta · campaign budget</span></div>
+            <div class="dc-diff"><div><span>Current</span><s>$6.20 / day</s></div><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9h12M11 5l4 4-4 4"/></svg><div><span>Proposed</span><b>$8.26 / day, +33.3%</b></div></div>
+            <p class="dc-why">Beyond the 20% band: a jump this size can reset the ad set's learning phase.</p>
+            <div class="dc-act"><span>Owner · Ece</span><button class="pill line" type="button" data-act="skip">Reject</button><button class="pill acc" type="button" data-act="approve">Approve</button></div>
+          </article>
+          <div class="lg ih-lg">
+            <div class="lg-row">
+              <time class="lg-t">22:33</time>
+              <span class="lg-a"><i><svg viewBox="0 0 170 170" aria-hidden="true"><path d="M14 140 L85 6 L156 140 L128 140 L85 58 L42 140 Z" fill="currentColor"/><path d="M50 140 L85 72 L120 140 L96 140 L85 118 L74 140 Z" fill="currentColor"/></svg></i><span><b>Adgent</b><small>approved by you</small></span></span>
+              <span class="lg-c"><b>Geo exclusion</b><small>Meta · one ad set</small></span>
+              <span class="lg-d"><s>LT: not excluded</s><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg><b>LT: excluded</b></span>
+              <a class="pill line lg-x" href="/change-ledger#cl-trip-t" aria-label="Try Revert with agent in the Change Ledger demo"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8a5 5 0 1 0 1.5-3.5L3 6"/><path d="M3 2.5V6h3.5"/></svg>Revert with agent</a>
+            </div>
+            <p class="lg-note">The inverse was applied 29 seconds later and recorded as a second row. Hand edits from Ads Manager appear in the platform log.</p>
+          </div>
+          <p class="src ih-srcin">Card: one live e-commerce account, 30 Sep 2026. Ledger: one live account, 26 Aug 2026.</p>
+        </div>
+      </div>
     </div>
-    <p><a class="btn btn-primary" href="/#lead">Request a demo</a></p>
   </div>
 </section>
 
-<section class="band band-ink">
- <div class="wrap">
-  <div class="ink-split" data-reveal>
-   <div>
-    <p class="ink-line">One person, two platforms, and <em>nobody</em> to check the call.</p>
-    <p class="ink-sub">The second opinion a one-person team never gets: the platform&rsquo;s number checked against what your analytics actually recorded, before you scale the winner.</p>
-   </div>
-   <ul class="ink-facts" data-stagger>
-    <li class="ink-fact"><b>3.2&times;</b><span>platform ROAS your own analytics doesn&rsquo;t back</span></li>
-    <li class="ink-fact"><b>2.4&times;</b><span>the set that holds up on both reads</span></li>
-    <li class="ink-fact"><b>0</b><span>changes applied without you</span></li>
-   </ul>
+<!-- ============================================================ in your meetings -->
+<section class="sec ih-mt" id="ih-meet" aria-labelledby="ih-mt-h">
+  <div class="wrap">
+    <div class="ih-mt-top">
+      <div class="ih-mt-h">
+        <h2 id="ih-mt-h">The same second opinion, in the room.</h2>
+      </div>
+      <div class="ih-mt-s">
+        <p class="sub">Adgent joins your team's weekly review with the account's data and what it remembers about the brand. It brings relevant evidence and specialist judgment to the discussion, then takes the agreed work away to finish.</p>
+        <a class="go" href="/meetings">In your meetings<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+
+    <figure class="ih-mw" aria-labelledby="ih-mw-cap">
+      <figcaption class="ih-mw-bar" id="ih-mw-cap">
+        <span class="ih-mw-t"><i class="ih-mw-rec" aria-hidden="true"></i>Weekly growth review · Roomly Home</span>
+        <span class="ih-mw-c">Account and brand context live</span>
+        <span class="tag dot">Live</span>
+      </figcaption>
+      <div class="ih-mw-body">
+        <div class="ih-mw-stage">
+          <figure class="ih-mw-tile ih-mw-ai">
+            <img src="/assets/persona/aidra.webp?v=59e86d2d" alt="Aida, Adgent's AI employee, speaking in the meeting" width="560" height="1006" loading="lazy" decoding="async"/>
+            <figcaption><b>Aida · Adgent</b><span class="ih-mw-k">AI</span><span class="ih-mw-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></figcaption>
+            <p class="ih-mw-cap">Before we call it creative: Audience Network took 38% of spend yesterday at 1.1×. Feed is still at 4.2×.</p>
+          </figure>
+          <div class="ih-mw-tile ih-mw-p"><span>EY</span><b>Ece · Brand lead</b></div>
+          <div class="ih-mw-tile ih-mw-p"><span>MK</span><b>Mert · Performance</b></div>
+          <div class="ih-mw-tile ih-mw-p"><span>DA</span><b>Deniz · Ecommerce</b></div>
+        </div>
+        <div class="ih-mw-side" role="group" aria-label="What Adgent brought into the meeting">
+          <p class="ih-mw-said"><b>Mert</b>ROAS fell yesterday. The new creative must be tired.</p>
+          <p class="ih-mw-mem"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4z"/></svg>From memory: keep feed ROAS above 3×</p>
+          <div class="ih-mw-ev">
+            <p class="ih-mw-ek">Checked in the account</p>
+            <p class="ih-mw-b"><span>Feed</span><i style="--w:100%"></i><b>4.2×</b></p>
+            <p class="ih-mw-b lo"><span>Audience Network</span><i style="--w:26%"></i><b>1.1×</b></p>
+            <p class="ih-mw-n">Its share of spend: 12% → 38%</p>
+          </div>
+          <article class="ih-mw-card">
+            <p class="ih-mw-ck"><i aria-hidden="true"></i>Fix now · CBO_CORE_US<span>≈ $640/mo</span></p>
+            <p class="ih-mw-cv">Exclude Audience Network</p>
+            <p class="ih-mw-ca"><span>Owner · Ece</span><span class="pill line">Not now</span><span class="pill acc">Approve</span></p>
+          </article>
+          <p class="ih-mw-after"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>After the call: placement report to the team</p>
+        </div>
+      </div>
+    </figure>
+
+    <ul class="ih-mt-lim" aria-label="What Adgent brings into the meeting">
+      <li><b>Before the call.</b> The account's current numbers and confirmed brand context are ready for the room.</li>
+      <li><b>In the room.</b> Adgent tests the team's first answer against the account while the decision can still change.</li>
+      <li><b>After the call.</b> The report, next action and reasoning continue in the app.</li>
+    </ul>
   </div>
- </div>
 </section>
+
+<!-- ============================================================ FAQ -->
+<section class="sec-sm" aria-labelledby="ih-faq-h">
+  <div class="wrap">
+    <div class="faq faq-ask">
+      <div class="sec-head"><h2 id="ih-faq-h">Questions an <span class="ih-nw">in-house</span> lead asks first.</h2></div>
+      <div class="qa">
+        <details open><summary>We already have an agency. Why a second read?<i aria-hidden="true"></i></summary><div class="a">Adgent gives your internal team an independent read of the same accounts, with the evidence and next move attached. Keep the agency; enter the review with your own position.</div></details>
+        <details><summary>Can it see our real revenue?<i aria-hidden="true"></i></summary><div class="a">It reads GA4 beside the platforms and remembers the margin figures you confirm. You can also bring store revenue, refunds and offline conversions through a Drive file. Shopify is planned. <a href="/ground-truth">Ground truth</a></div></details>
+        <details><summary>What does it need from my stack?<i aria-hidden="true"></i></summary><div class="a">Meta and Google Ads, connected by signing in rather than an implementation project. GA4, Search Console, Merchant Center and the Google Drive files you pick add business context. Your store and CRM are not connected; Shopify is the next store connection planned.</div></details>
+        <details><summary>What does my team get before the review?<i aria-hidden="true"></i></summary><div class="a">A ranked account read, the evidence behind each finding and the next move already drafted. The same working record is ready when the discussion begins.</div></details>
+        <details><summary>How does it separate a signal from a bad data window?<i aria-hidden="true"></i></summary><div class="a">Every metric window is labelled trusted, degraded or untrusted before it is scored. Recent days inside the attribution lag or a tracking change mid-window can raise a finding but not an account action. <a href="/trust-gate">Trust Gate</a></div></details>
+        <details><summary>Which parts of AI Visibility are live?<i aria-hidden="true"></i></summary><div class="a">Live: seeing where AI answers lose you, and weighing that against your ads and goals. Pilot: turning it into a paid plan with a message, creative or landing-page brief. Exploring and not scheduled: ads inside AI answers, ChatGPT first, and measuring them. <a href="/ai-visibility">AI Visibility</a></div></details>
+        <details><summary>Can it join our weekly review?<i aria-hidden="true"></i></summary><div class="a">Yes. It joins as Aida, with the account's data and the brand's memory, then carries the agreed work into the app and email. <a href="/meetings">In your meetings</a></div></details>
+      </div>
+      <div class="askai" data-askai="for-in-house"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ CTA -->
+<section class="cta" id="demo" aria-labelledby="ih-cta-h">
+  <div class="wrap">
+    <div class="cta-b">
+      <svg class="cta-mark" viewBox="0 0 170 170" aria-hidden="true"><path d="M14 140 L85 6 L156 140 L128 140 L85 58 L42 140 Z" fill="currentColor"/><path d="M50 140 L85 72 L120 140 L96 140 L85 118 L74 140 Z" fill="currentColor"/></svg>
+      <div>
+        <h2 id="ih-cta-h">Put a second team on your account this week.</h2>
+        <p>Adgent reads the account and sends what its specialists found, ranked by what each fix is worth.</p>
+        <ol class="steps">
+          <li><span class="n">1</span><div><b>Connect Meta and Google Ads</b><span>Add GA4 or Search Console when useful.</span></div></li>
+          <li><span class="n">2</span><div><b>Adgent reads the accounts</b></div></li>
+          <li><span class="n">3</span><div><b>You get the ranked verdict</b></div></li>
+        </ol>
+      </div>
+      <form class="form demo" aria-label="Request a demo (bottom)" method="post" action="https://api.web3forms.com/submit"><!--#w3f--><span class="w3f-sent" id="sent-2"></span><input type="hidden" name="access_key" value="50ac3d40-6932-476d-9d23-b6ee1b94f91f"/><input type="hidden" name="subject" value="Adgent demo request · for-in-house"/><input type="hidden" name="from_name" value="Adgent website"/><input type="hidden" name="page" value="https://adgent.app/for-in-house"/><input type="hidden" name="form_location" value="for-in-house/form-2"/><input type="hidden" name="redirect" value="https://adgent.app/for-in-house#sent-2"/><span class="hp" aria-hidden="true"><input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"/></span><!--/#w3f-->
+        <h3>Request a demo</h3>
+        <p>We reply within a couple of working days.</p>
+        <label class="fld"><span>Name</span><input name="name" autocomplete="name" required/></label>
+        <label class="fld"><span>Work email</span><input name="email" type="email" autocomplete="email" required/></label>
+        <p class="err" aria-live="polite"></p>
+        <button class="btn btn-acc" type="submit">Request a demo</button>
+        
+        <div class="done-msg" role="status"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><b>Thanks, we've got it.</b><span>We'll be in touch within a couple of working days.</span></div>
+      </form>
+    </div>
+  </div>
+</section>
+
 </main>
 <!--#footer--><footer class="footer">
- <div class="wrap">
- <div class="foot-grid">
- <div class="foot-brand">
- <a class="brand" href="/">
- <img class="mark" src="/assets/icon-only.svg" alt=""/>
- <span class="name">Adgent</span>
- </a>
- <p>The AI media buyer for performance marketers. One brief each morning — the thinking already done.</p>
- </div>
- <div class="foot-col">
- <h2 class="foot-h">Product</h2>
- <a href="/features">Overview</a>
- <a href="/daily-verdict">Daily verdict</a>
- <a href="/ground-truth">Ground truth</a>
- <a href="/trust-gate">Trust Gate</a>
- <a href="/creative-intelligence">Creative intelligence</a>
- <a href="/change-ledger">Change Ledger</a>
- <a href="/account-memory">Account memory</a>
- <a href="/built-from-chat">Built from chat</a>
- <a href="/tools">Free tools</a>
- </div>
- <div class="foot-col">
- <h2 class="foot-h">Who it is for</h2>
- <a href="/for-agencies">Agencies</a>
- <a href="/for-in-house" class="active">In-house teams</a>
- <a href="/ecommerce">Ecommerce &amp; DTC</a>
- <a href="/marketplaces">Marketplaces</a>
- <a href="/lead-generation">Lead generation</a>
- <a href="/mobile-apps">Mobile apps &amp; games</a>
- <a href="/travel-hospitality">Travel &amp; hospitality</a>
- <a href="/local-multi-location">Local &amp; multi-location</a>
- </div>
- <div class="foot-col">
- <h2 class="foot-h">Company</h2>
- <a href="/why-adgent">Why Adgent</a>
- <a href="/pricing">Pricing</a>
- <a href="/about">About</a>
- <a href="/blog">Blog</a>
- <a href="/#lead">Get a free audit</a>
- </div>
- <div class="foot-col">
- <h2 class="foot-h">Legal</h2>
- <a href="/privacy">Privacy</a>
- <a href="/terms">Terms</a>
- <a href="/security">Security</a>
- <a href="/data-use">Data use</a>
- <a href="/data-deletion">Data deletion</a>
-<a href="/business-information">Business information</a>
- <button type="button" data-cookie-settings>Cookie settings</button>
- </div>
- </div>
- <div class="foot-bottom">
- <span>© 2026 Adgent. Operated by Osman Tıkna, a sole proprietorship established in Türkiye. All rights reserved.</span>
- <div class="foot-social">
- <a href="https://www.instagram.com/adgentapp/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37Z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
- <a href="https://www.linkedin.com/company/adgentapp/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6Z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a></div>
- </div>
- </div>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="brand" href="/" aria-label="Adgent: home"><svg viewBox="0 0 170 170" fill="none" aria-hidden="true"><path d="M14 140 L85 6 L156 140 L128 140 L85 58 L42 140 Z" fill="currentColor"/><path d="M50 140 L85 72 L120 140 L96 140 L85 118 L74 140 Z" fill="currentColor"/><path d="M18 153 L152 153" stroke="currentColor" stroke-width="9" stroke-linecap="round"/></svg>Adgent</a>
+        <p class="foot-about">The AI employee that carries your brand's context into every growth decision across Meta, Google Ads and AI answers.</p>
+      </div>
+      <div><h2>Run the accounts</h2><nav aria-label="Run the accounts"><a href="/daily-verdict">Decisions</a><a href="/trust-gate">Trust Gate</a><a href="/change-ledger">Change Ledger</a><a href="/platform-change-log">Platform change log</a><a href="/account-memory">Account memory</a><a href="/ground-truth">Ground truth</a></nav></div>
+      <div><h2>Build and automate</h2><nav aria-label="Build and automate"><a href="/agents">Agents &amp; workflows</a><a href="/specialists">Specialists</a><a href="/campaign-build">Campaign build</a><a href="/planning">Planning</a><a href="/dashboards">Dashboards &amp; reports</a><a href="/meetings">In your meetings</a><a href="/creative-intelligence">Creative analysis</a><a href="/ai-visibility">AI Visibility</a><a href="/features">All capabilities</a></nav></div>
+      <div><h2>Solutions</h2><nav aria-label="Solutions"><a href="/for-agencies">Agencies</a><a href="/for-in-house">Brands</a><a href="/ecommerce">Ecommerce &amp; DTC</a><a href="/lead-generation">Lead generation</a><a href="/travel-hospitality">Travel &amp; hospitality</a><a href="/marketplaces">Marketplaces</a><a href="/local-multi-location">Local &amp; multi-location</a><a href="/mobile-apps">Mobile apps &amp; games</a></nav></div>
+      <div><h2>Company</h2><nav aria-label="Company"><a href="/why-adgent">Why Adgent</a><a href="/pricing">Pricing</a><a href="/about">About</a><a href="/blog">Blog</a><a href="/tools">Free tools</a><a href="/security">Security &amp; data</a><a href="/#demo">Request a demo</a></nav></div>
+      <div><h2>Legal</h2><nav aria-label="Legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/data-use">Data use</a><a href="/data-deletion">Data deletion</a><a href="/business-information">Business information</a><button type="button" class="foot-link" data-cookie-settings>Cookie settings</button></nav></div>
+    </div>
+    <div class="foot-b">
+      <span>© <span data-year>2026</span> Adgent. Operated by Osman Tıkna, a sole proprietorship established in Türkiye. All rights reserved.</span>
+      <div class="foot-social">
+        <a href="https://www.linkedin.com/company/adgentapp" aria-label="Adgent on LinkedIn" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM2.5 9.5h5V21h-5V9.5ZM9.5 9.5h4.8v1.6a5.2 5.2 0 0 1 4.5-2.2c3.2 0 4.7 2 4.7 5.6V21h-5v-5.7c0-1.6-.6-2.6-2-2.6s-2.2 1-2.2 2.6V21h-4.8V9.5Z"/></svg></a>
+        <a href="https://www.instagram.com/adgentapp/" aria-label="Adgent on Instagram" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c2.7 0 3 0 4 .1 1 0 1.6.2 2 .4.5.2.9.5 1.3.9.4.4.7.8.9 1.3.2.4.3 1 .4 2 .1 1 .1 1.3.1 4s0 3-.1 4c0 1-.2 1.6-.4 2a3.6 3.6 0 0 1-.9 1.3c-.4.4-.8.7-1.3.9-.4.2-1 .3-2 .4-1 .1-1.3.1-4 .1s-3 0-4-.1c-1 0-1.6-.2-2-.4a3.6 3.6 0 0 1-1.3-.9 3.6 3.6 0 0 1-.9-1.3c-.2-.4-.3-1-.4-2-.1-1-.1-1.3-.1-4s0-3 .1-4c0-1 .2-1.6.4-2 .2-.5.5-.9.9-1.3.4-.4.8-.7 1.3-.9.4-.2 1-.3 2-.4 1-.1 1.3-.1 4-.1Zm0 3.3a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13Zm0 2.3a4.2 4.2 0 1 1 0 8.4 4.2 4.2 0 0 1 0-8.4Zm6.8-2.6a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"/></svg></a>
+        <a href="https://x.com/adgentapp" aria-label="Adgent on X" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 1.2h3.7l-8 9.2L24 22.8h-7.4l-5.8-7.6-6.6 7.6H.5l8.6-9.8L0 1.2h7.6l5.2 6.9 6.1-6.9Zm-1.3 19.4h2L6.5 3.2H4.3l13.3 17.4Z"/></svg></a>
+        <a href="https://www.youtube.com/@adgentapp" aria-label="Adgent on YouTube" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8ZM9.5 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg></a>
+      </div>
+    </div>
+  </div>
 </footer><!--/#footer-->
-
-<script src="/site.js?v=dfb318ff"></script>
+<script src="/app.js?v=84555c88" defer></script>
+<script src="/js/hero-illustrations.js?v=b318d7d9" defer></script>
+<script src="/js/for-in-house.js?v=4f020ea5" defer></script>
+<script src="/js/ask-ai.js?v=5a88eb36" defer></script>
 </body>
 </html>
