@@ -3,8 +3,9 @@
 (function () {
   'use strict';
   var d = document;
-  var still = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var wide = matchMedia('(min-width:1101px)');
+  var motionPreference = matchMedia('(prefers-reduced-motion: reduce)');
+  var still = motionPreference.matches;
+  var wide = matchMedia('(min-width:68.8125em)');
   var $$ = function (s, c) { return Array.prototype.slice.call((c || d).querySelectorAll(s)); };
 
   /* ---------------------------------------------------- floating creatives */
@@ -108,8 +109,8 @@
         c.style.transform = 'translate3d(0,' + y.toFixed(1) + 'px,0)';
       });
     };
-    var queue = function () { if (onScreen && !raf) raf = requestAnimationFrame(drift); };
-    if (!still && 'IntersectionObserver' in window) {
+    var queue = function () { if (onScreen && !still && !raf) raf = requestAnimationFrame(drift); };
+    if ('IntersectionObserver' in window) {
       new IntersectionObserver(function (es) { onScreen = es[0].isIntersecting; queue(); }, { rootMargin: '200px 0px' }).observe(stage);
       addEventListener('scroll', queue, { passive: true });
       addEventListener('resize', queue);
@@ -186,4 +187,16 @@
     }
     sync();
   }
+  motionPreference.addEventListener('change', function () {
+    still = motionPreference.matches;
+    if (stage) {
+      if (raf) { cancelAnimationFrame(raf); raf = 0; }
+      drift();
+    }
+    if (still && v) {
+      userPaused = true;
+      v.pause();
+      sync();
+    }
+  });
 })();

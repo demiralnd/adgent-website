@@ -2,30 +2,30 @@
 
 .nf-hero{padding:72px 0 40px}
 .nf-in{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:56px;align-items:center}
-.nf-code{font-size:clamp(80px,10vw,144px);font-weight:400;letter-spacing:-.06em;line-height:.85;color:var(--ink-3);margin-bottom:14px}
+.nf-code{font-size:clamp(5rem,calc(10vw + 5rem - 80px),9rem);font-weight:400;letter-spacing:-.06em;line-height:.85;color:var(--ink-3);margin-bottom:14px}
 .nf-hero .lede{margin-top:18px}
 .nf-card{transform:rotate(-1deg);box-shadow:var(--shadow)}
 .nf-card .dc-act{flex-wrap:wrap}
-.nf-card .pill{height:40px}
+.nf-card .pill{min-height:2.5rem}
 
 .nf-cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px;padding-top:36px;border-top:1px solid var(--line)}
-.nf-cols h3{font-size:19px;font-weight:500;letter-spacing:-.02em;margin-bottom:10px}
-.nf-cols a{display:flex;align-items:baseline;gap:8px;padding:7px 0;font-size:15px;line-height:1.4;color:var(--ink-2);transition:color .15s var(--ease)}
+.nf-cols h3{font-size:1.1875rem;font-weight:500;letter-spacing:-.02em;margin-bottom:10px}
+.nf-cols a{display:flex;align-items:baseline;gap:8px;padding:7px 0;font-size:0.9375rem;line-height:1.4;color:var(--ink-2);transition:color .15s var(--ease)}
 .nf-cols a::after{content:"";flex:none;width:6px;height:6px;margin-left:2px;border-top:1.5px solid currentColor;border-right:1.5px solid currentColor;transform:translateY(-1px) rotate(45deg);opacity:0;transition:opacity .15s var(--ease),transform .2s var(--ease)}
 .nf-cols a:hover{color:var(--ink)}
 .nf-cols a:hover::after{opacity:1;transform:translate(2px,-1px) rotate(45deg)}
 .nf-cta{margin-top:56px}
 
-@media (max-width:1100px){
+@media (max-width:68.75em){
   .nf-cols{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
-@media (max-width:860px){
+@media (max-width:53.75em){
   .nf-hero{padding:44px 0 24px}
   .nf-in{grid-template-columns:1fr;gap:36px}
   .nf-card{transform:none;max-width:460px}
   .nf-cols a{padding:9px 0}
 }
-@media (max-width:520px){
+@media (max-width:32.5em){
   .nf-cols{grid-template-columns:1fr;gap:28px}
 }
 @media (prefers-reduced-motion:reduce){

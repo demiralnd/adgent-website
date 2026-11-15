@@ -51,7 +51,7 @@
 
   /* narrow screens: the label becomes a disclosure button and the list starts folded */
   if (!label || !list) return;
-  var narrow = matchMedia('(max-width:1100px)');
+  var narrow = matchMedia('(max-width:68.75em)');
   var btn = document.createElement('button');
   btn.type = 'button';
   btn.className = 'ar-toc-t';

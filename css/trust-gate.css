@@ -11,10 +11,10 @@
 .tg-board{padding:24px 28px 28px;border-radius:var(--r-blk);background:var(--grey);scroll-margin-top:calc(var(--navh,64px) + 16px)}
 .tg-board-h{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:18px 32px;margin-bottom:24px}
 .tg-board-t{display:grid;gap:10px;min-width:0}
-.tg-board-t h2{font-size:clamp(24px,2.3vw,30px);line-height:1.12;letter-spacing:-.035em;max-width:24ch;text-wrap:balance}
+.tg-board-t h2{font-size:clamp(1.5rem,calc(2.3vw + 1.5rem - 24px),1.875rem);line-height:1.12;letter-spacing:-.035em;max-width:24ch;text-wrap:balance}
 .tg-board-s{font-size:var(--fs-sm);line-height:1.5;color:var(--ink-2);max-width:52ch}
 .tg-sw{display:inline-grid;grid-auto-flow:column;gap:4px;padding:4px;border-radius:var(--r-pill);background:color-mix(in srgb,var(--ink) 5%,var(--grey))}
-.tg-sw button{height:40px;padding:0 18px;border:0;border-radius:var(--r-pill);background:none;font:500 13.5px var(--sans);color:var(--ink-2);cursor:pointer;transition:background-color .25s var(--ease),color .25s var(--ease)}
+.tg-sw button{min-height:2.5rem;padding:0 18px;border:0;border-radius:var(--r-pill);background:none;font:500 0.84375rem var(--sans);color:var(--ink-2);cursor:pointer;transition:background-color .25s var(--ease),color .25s var(--ease)}
 .tg-sw button:hover{color:var(--ink)}
 .tg-sw button[aria-pressed=true]{background:var(--white);color:var(--ink);box-shadow:0 1px 2px color-mix(in srgb,var(--ink) 10%,transparent)}
 .tg-sw button:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
@@ -27,10 +27,10 @@
 
 .tg-win{padding:18px 20px;border-radius:var(--r-card);background:var(--white);box-shadow:var(--shadow-ui)}
 .tg-win-h{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-size:var(--fs-xs);color:var(--ink-3)}
-.tg-win-h b{font-size:14px;font-weight:500;color:var(--ink)}
-.tg-big{font-size:52px;letter-spacing:-.05em;line-height:1;margin:14px 0 14px}
+.tg-win-h b{font-size:0.875rem;font-weight:500;color:var(--ink)}
+.tg-big{font-size:3.25rem;letter-spacing:-.05em;line-height:1;margin:14px 0 14px}
 .tg-win ul{border-top:1px solid var(--line)}
-.tg-win li{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid var(--line);font-size:13px;color:var(--ink-2)}
+.tg-win li{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid var(--line);font-size:0.8125rem;color:var(--ink-2)}
 .tg-win li b{font-weight:500;color:var(--ink)}
 .tg-gate[data-state=bad] .tg-win li:nth-child(-n+2) b{color:var(--warn-ink)}
 
@@ -41,7 +41,7 @@
 .tg-gate[data-state=bad] .tg-wire.r::after{background:var(--warn)}
 .tg-gate.is-on .tg-wire::after{transform:scaleX(1)}
 .tg-labels{display:grid;gap:8px;padding:10px;border-radius:24px;background:var(--white);box-shadow:inset 0 0 0 1px var(--line-2)}
-.tg-labels li{display:flex;align-items:center;gap:8px;height:40px;padding:0 16px;border-radius:var(--r-pill);font-size:13.5px;font-weight:500;color:var(--ink-2);white-space:nowrap;transition:background-color .35s var(--ease) .25s,color .35s var(--ease) .25s,transform .35s var(--ease-out) .25s}
+.tg-labels li{display:flex;align-items:center;gap:8px;min-height:2.5rem;padding:0 16px;border-radius:var(--r-pill);font-size:0.84375rem;font-weight:500;color:var(--ink-2);white-space:nowrap;transition:background-color .35s var(--ease) .25s,color .35s var(--ease) .25s,transform .35s var(--ease-out) .25s}
 .tg-labels i{width:8px;height:8px;border-radius:50%;box-shadow:inset 0 0 0 1.5px var(--mute)}
 .tg-gate[data-state=ok] [data-l=trusted]{background:var(--t1);color:var(--ink);transform:scale(1.04)}
 .tg-gate[data-state=ok] [data-l=trusted] i{background:var(--accent);box-shadow:none}
@@ -53,10 +53,10 @@
 .tg-find{padding:18px 20px;border-radius:var(--r-card);background:var(--white);box-shadow:var(--shadow-ui);animation:tg-in .5s var(--ease-out) .5s both}
 .tg-find-h{display:flex;align-items:center;gap:10px}
 .tg-cap2{font-size:var(--fs-xs);color:var(--ink-3)}
-.tg-find-v{margin-top:12px;font-size:16px;font-weight:500;line-height:1.38;letter-spacing:-.012em}
+.tg-find-v{margin-top:12px;font-size:1rem;font-weight:500;line-height:1.38;letter-spacing:-.012em}
 .tg-held{margin-top:14px;padding-top:12px;border-top:1px dashed var(--line-2)}
-.tg-held-h{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);margin-bottom:4px}
-.tg-held p:not(.tg-held-h){font-size:13.5px;padding:3px 0}
+.tg-held-h{font-size:0.6875rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);margin-bottom:4px}
+.tg-held p:not(.tg-held-h){font-size:0.84375rem;padding:3px 0}
 .tg-held s{text-decoration:line-through;text-decoration-color:var(--warn);color:var(--ink-2)}
 @keyframes tg-in{from{opacity:0;transform:translateX(14px)}to{opacity:1;transform:none}}
 .tg-src{margin-top:16px}
@@ -71,8 +71,8 @@
 .tg-trail{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
 .tg-trail li{min-width:0;padding:12px 14px;border-radius:var(--r-row);background:var(--paper)}
 .tg-trail li:last-child{background:var(--t1)}
-.tg-trail span{display:block;font-size:12px;font-weight:500;color:var(--ink-2)}
-.tg-trail b{display:block;margin-top:3px;font-size:14.5px;font-weight:500;line-height:1.3}
+.tg-trail span{display:block;font-size:0.75rem;font-weight:500;color:var(--ink-2)}
+.tg-trail b{display:block;margin-top:3px;font-size:0.90625rem;font-weight:500;line-height:1.3}
 .tg-card-src{margin-top:40px}
 
 /* ---- one judgment proof under the gates ---- */
@@ -81,26 +81,26 @@
 .tg-proof-n div{padding:2px 24px}
 .tg-proof-n div:first-child{padding-left:0}
 .tg-proof-n div+div{border-left:1px solid var(--line-2)}
-.tg-proof-n span{display:block;font-size:12px;color:var(--ink-2)}
-.tg-proof-n b{display:block;margin-top:2px;font-size:28px;font-weight:400;letter-spacing:-.04em;line-height:1.1}
-.tg-proof p{font-size:15px;line-height:1.5;color:var(--ink-2);max-width:62ch}
+.tg-proof-n span{display:block;font-size:0.75rem;color:var(--ink-2)}
+.tg-proof-n b{display:block;margin-top:2px;font-size:1.75rem;font-weight:400;letter-spacing:-.04em;line-height:1.1}
+.tg-proof p{font-size:0.9375rem;line-height:1.5;color:var(--ink-2);max-width:62ch}
 .tg-proof p b{color:var(--ink);font-weight:500}
 .tg-proof .src{color:var(--ink-2)}
 
 /* ---- three gates (the settled landing's #why row) ---- */
 .tg-gates{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
 .tg-g{position:relative;padding:24px 28px;border-radius:var(--r-blk);background:var(--white);box-shadow:inset 0 0 0 1px var(--line)}
-.tg-g b{display:block;font-size:17px;font-weight:500;letter-spacing:-.02em}
-.tg-g span{display:block;font-size:13.5px;line-height:1.45;color:var(--ink-2);margin-top:4px}
+.tg-g b{display:block;font-size:1.0625rem;font-weight:500;letter-spacing:-.02em}
+.tg-g span{display:block;font-size:0.84375rem;line-height:1.45;color:var(--ink-2);margin-top:4px}
 .tg-g.acc{background:var(--t1);box-shadow:none}
 .tg-g:not(:last-child)::after{content:"";position:absolute;z-index:2;top:50%;right:-11px;width:8px;height:8px;margin-top:-4px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--paper)}
 .tg-g a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--line-2);text-underline-offset:3px}
 .tg-real{padding:22px 24px 18px}
-.tg-warn{padding:10px 12px;border-radius:12px;background:var(--warn-t);font-size:13px;line-height:1.5}
+.tg-warn{padding:10px 12px;border-radius:12px;background:var(--warn-t);font-size:0.8125rem;line-height:1.5}
 .tg-real .dc-act>span:first-child{max-width:28ch}
 
 /* ---- responsive ---- */
-@media (max-width:1100px){
+@media (max-width:68.75em){
   .tg-hero-t{grid-template-columns:1fr;gap:24px}
   .tg-gate{grid-template-columns:1fr;gap:18px;min-height:0}
   .tg-mid{grid-template-columns:1fr;justify-items:center;padding-top:0}
@@ -108,31 +108,31 @@
   .tg-wire::after{transform:scaleY(0);transform-origin:top}
   .tg-gate.is-on .tg-wire::after{transform:scaleY(1)}
   .tg-labels{grid-auto-flow:column;gap:6px;padding:6px}
-  .tg-labels li{padding:0 12px;font-size:12.5px}
+  .tg-labels li{padding:0 12px;font-size:0.78125rem}
   .tg-card-g{grid-template-columns:1fr;gap:44px}
   .tg-card-r{max-width:560px}
 }
-@media (max-width:860px){
+@media (max-width:53.75em){
   .tg-hero{padding:48px 0 72px}
   .tg-hero-t{margin-bottom:32px}
   .tg-board{padding:18px 14px 16px;border-radius:var(--r-card)}
   .tg-board-h{margin-bottom:18px}
-  .tg-board-t h2{font-size:22px}
+  .tg-board-t h2{font-size:1.375rem}
   .tg-proof{grid-template-columns:1fr;padding:22px 20px}
   .tg-proof-n{grid-row:auto}
   .tg-gates{grid-template-columns:1fr}
   .tg-g::after{display:none}
   .tg-sw{display:grid;grid-auto-flow:row;grid-template-columns:1fr 1fr;width:100%;border-radius:18px}
-  .tg-sw button{padding:0 10px;font-size:12.5px;height:44px;white-space:normal;line-height:1.2;border-radius:14px}
-  .tg-big{font-size:42px}
+  .tg-sw button{padding:0 10px;font-size:0.78125rem;min-height:2.75rem;white-space:normal;line-height:1.2;border-radius:14px}
+  .tg-big{font-size:2.625rem}
   .tg-card-src{margin-top:28px}
 }
-@media (max-width:520px){
+@media (max-width:32.5em){
   .tg-labels{grid-auto-flow:row}
   .tg-real .dc-act{flex-wrap:wrap;justify-content:flex-end}
   .tg-real .dc-act>span:first-child{flex-basis:100%;max-width:none}
   .tg-sw{grid-template-columns:1fr}
-  .tg-sw button{height:40px}
+  .tg-sw button{min-height:2.5rem}
 }
 @media (prefers-reduced-motion:reduce){
   .tg-act,.tg-find{animation:none}

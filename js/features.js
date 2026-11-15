@@ -21,7 +21,7 @@
       if (entry === item) entry.link.setAttribute('aria-current', 'location');
       else entry.link.removeAttribute('aria-current');
     });
-    if (innerWidth <= 860) {
+    if (matchMedia('(max-width:53.75em)').matches) {
       /* Follow the active item inside the horizontal rail only. scrollIntoView
          also scrolls the document, including during the initial unstyled layout. */
       var strip = item.link.parentElement;

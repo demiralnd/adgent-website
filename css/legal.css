@@ -4,18 +4,18 @@
    This file only restyles it. Tokens only. */
 
 .lgl-hero{padding:64px 0 40px;border-bottom:1px solid var(--line)}
-.lgl-crumbs{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-3);margin-bottom:18px}
+.lgl-crumbs{display:flex;align-items:center;gap:8px;font-size:0.8125rem;color:var(--ink-3);margin-bottom:18px}
 .lgl-crumbs a{color:var(--ink-2)}
 .lgl-crumbs a:hover{color:var(--ink)}
-.lgl-date{font-size:14px;color:var(--ink-2);margin-top:14px;font-variant-numeric:tabular-nums;text-wrap:balance}
+.lgl-date{font-size:0.875rem;color:var(--ink-2);margin-top:14px;font-variant-numeric:tabular-nums;text-wrap:balance}
 
 .lgl-body{padding:56px 0 96px}
 .lgl-grid{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,9fr);gap:64px;align-items:start}
 
 /* contents rail */
 .lgl-aside{position:sticky;top:calc(var(--navh,64px) + 28px);display:grid;gap:28px;max-height:calc(100vh - var(--navh,64px) - 56px);overflow:auto;overscroll-behavior:contain;scrollbar-width:thin}
-.lgl-toc-h{font-size:12px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3);margin-bottom:8px}
-.lgl-toc a,.lgl-rel a{display:block;padding:6px 0 6px 12px;border-left:1px solid var(--line);font-size:13.5px;line-height:1.35;color:var(--ink-2);transition:color .15s var(--ease),border-color .15s var(--ease)}
+.lgl-toc-h{font-size:0.75rem;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3);margin-bottom:8px}
+.lgl-toc a,.lgl-rel a{display:block;padding:6px 0 6px 12px;border-left:1px solid var(--line);font-size:0.84375rem;line-height:1.35;color:var(--ink-2);transition:color .15s var(--ease),border-color .15s var(--ease)}
 .lgl-toc{counter-reset:toc}
 .lgl-toc a{counter-increment:toc}
 .lgl-toc a::before{content:counter(toc,decimal-leading-zero) " ";color:var(--ink-3);font-variant-numeric:tabular-nums}
@@ -28,30 +28,30 @@
 .lgl-prose{max-width:70ch}
 .lgl-prose b{font-weight:500}
 .lgl-prose code{word-break:break-all}
-.legal-intro{font-size:17px;line-height:1.66;color:var(--ink-2)}
+.legal-intro{font-size:1.0625rem;line-height:1.66;color:var(--ink-2)}
 .legal-intro b{color:var(--ink)}
 
 .legal-body section,.legal-body>[id]{margin-top:2.6em;scroll-margin-top:calc(var(--navh,64px) + 20px)}
 .legal-body>*+*{margin-top:2.6em}
 .legal-body section>*+*{margin-top:1em}
-.legal-body h2{display:flex;gap:12px;align-items:baseline;font-size:26px;letter-spacing:-.03em;margin-top:0;text-wrap:balance}
-.legal-body h2 .secnum{flex:none;font-size:14px;font-weight:500;letter-spacing:0;color:var(--accent-ink);font-variant-numeric:tabular-nums}
-.legal-body h3{font-size:19px;letter-spacing:-.02em;margin-top:1.5em}
+.legal-body h2{display:flex;gap:12px;align-items:baseline;font-size:1.625rem;letter-spacing:-.03em;margin-top:0;text-wrap:balance}
+.legal-body h2 .secnum{flex:none;font-size:0.875rem;font-weight:500;letter-spacing:0;color:var(--accent-ink);font-variant-numeric:tabular-nums}
+.legal-body h3{font-size:1.1875rem;letter-spacing:-.02em;margin-top:1.5em}
 .legal-body p,.legal-body li{color:var(--ink-2)}
 .legal-body p b,.legal-body li b{color:var(--ink)}
 
 .legal-callout{padding:16px 20px;border-radius:var(--r-card);background:var(--white);box-shadow:inset 0 0 0 1px var(--line),inset 3px 0 0 var(--accent)}
-.legal-callout p{font-size:15.5px;line-height:1.6;color:var(--ink)}
+.legal-callout p{font-size:0.96875rem;line-height:1.6;color:var(--ink)}
 .legal-callout p+p{margin-top:10px}
 
 .legal-contact{padding:22px 24px;border-radius:var(--r-card);background:var(--white);box-shadow:inset 0 0 0 1px var(--line)}
-.legal-contact h3{font-size:17px;margin:0 0 6px}
-.legal-contact p{font-size:15.5px;line-height:1.65}
+.legal-contact h3{font-size:1.0625rem;margin:0 0 6px}
+.legal-contact p{font-size:0.96875rem;line-height:1.65}
 
-.legal-table{width:100%;border-collapse:collapse;font-size:15px;line-height:1.5;border-radius:var(--r-card);background:var(--white);box-shadow:inset 0 0 0 1px var(--line);overflow:hidden}
+.legal-table{width:100%;border-collapse:collapse;font-size:0.9375rem;line-height:1.5;border-radius:var(--r-card);background:var(--white);box-shadow:inset 0 0 0 1px var(--line);overflow:hidden}
 .legal-table th,.legal-table td{padding:14px 20px;text-align:left;vertical-align:top;border-top:1px solid var(--line)}
 .legal-table tr:first-child th,.legal-table tr:first-child td{border-top:0}
-.legal-table th{width:38%;font-size:14px;font-weight:500;color:var(--ink-2)}
+.legal-table th{width:38%;font-size:0.875rem;font-weight:500;color:var(--ink-2)}
 .legal-table td{color:var(--ink)}
 
 /* a link on each section heading (added by js/legal.js) */
@@ -59,14 +59,14 @@
 .lgl-a svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 .legal-body :is(h2,h3):hover .lgl-a,.lgl-a:focus-visible,.lgl-a[data-copied]{opacity:1}
 .lgl-a:hover{color:var(--ink);background:var(--grey)}
-.lgl-a[data-copied]::after{content:"Link copied";position:absolute;left:calc(100% + 6px);top:50%;transform:translateY(-50%);padding:5px 9px;border-radius:var(--r-pill);background:var(--ink);color:var(--paper);font-size:12px;font-weight:500;letter-spacing:0;white-space:nowrap}
+.lgl-a[data-copied]::after{content:"Link copied";position:absolute;left:calc(100% + 6px);top:50%;transform:translateY(-50%);padding:5px 9px;border-radius:var(--r-pill);background:var(--ink);color:var(--paper);font-size:0.75rem;font-weight:500;letter-spacing:0;white-space:nowrap}
 .legal-body section:target h2{animation:lgl-hit 1.6s var(--ease-out,var(--ease))}
 @keyframes lgl-hit{from{color:var(--accent-ink)}to{color:inherit}}
 
-@media (max-width:1100px){
+@media (max-width:68.75em){
   .lgl-grid{grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:40px}
 }
-@media (max-width:860px){
+@media (max-width:53.75em){
   .lgl-hero{padding:44px 0 28px}
   .lgl-body{padding:32px 0 64px}
   .lgl-grid{grid-template-columns:1fr;gap:32px}
@@ -76,8 +76,8 @@
   .lgl-a{opacity:1}
   /* contents fold behind one button once js/legal.js has run */
   .lgl-toc.js .lgl-toc-h{display:none}
-  .lgl-toc.js .lgl-toc-b{display:flex;align-items:center;gap:10px;width:100%;min-height:44px;padding:0;border:0;background:none;color:var(--ink);font:500 15px/1.2 var(--sans);text-align:left;cursor:pointer}
-  .lgl-toc-b small{font-size:13px;font-weight:400;color:var(--ink-3)}
+  .lgl-toc.js .lgl-toc-b{display:flex;align-items:center;gap:10px;width:100%;min-height:44px;padding:0;border:0;background:none;color:var(--ink);font:500 0.9375rem/1.2 var(--sans);text-align:left;cursor:pointer}
+  .lgl-toc-b small{font-size:0.8125rem;font-weight:400;color:var(--ink-3)}
   .lgl-toc-b i{position:relative;flex:none;width:28px;height:28px;margin-left:auto;border-radius:50%;box-shadow:inset 0 0 0 1px var(--line-2)}
   .lgl-toc-b i::before,.lgl-toc-b i::after{content:"";position:absolute;left:50%;top:50%;width:10px;height:1.5px;margin:-.75px 0 0 -5px;background:var(--ink);transition:transform .3s var(--ease)}
   .lgl-toc-b i::after{transform:rotate(90deg)}
@@ -85,10 +85,10 @@
   .lgl-toc.js:not(.open) .lgl-toc-l{display:none}
   .lgl-toc.js .lgl-toc-l{margin-top:8px}
   .lgl-aside:has(.lgl-toc.js){padding:8px 18px}
-  .lgl-prose{font-size:16px}
-  .legal-body h2{font-size:22px}
+  .lgl-prose{font-size:1rem}
+  .legal-body h2{font-size:1.375rem}
 }
-@media (max-width:620px){
+@media (max-width:38.75em){
   .legal-table,.legal-table tbody,.legal-table tr,.legal-table th,.legal-table td{display:block;width:auto}
   .legal-table tr{padding:13px 18px;border-top:1px solid var(--line)}
   .legal-table tr:first-child{border-top:0}

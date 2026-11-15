@@ -45,15 +45,16 @@
   --warn-t:color-mix(in srgb,var(--warn) 16%,var(--white));          /* warn tint fill */
 
   /* ---- type ----------------------------------------------------------- */
+  /* Fluid offsets cancel at the 16px design baseline while retaining a rem response. */
   --sans:Switzer,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
-  --fs-display:clamp(38px,4.6vw,66px);
-  --fs-h1:clamp(34px,3.6vw,52px);
-  --fs-h2:clamp(30px,3vw,40px);
-  --fs-h3:clamp(21px,1.8vw,24px);
-  --fs-lede:clamp(16px,1.4vw,18px);
-  --fs-body:15px;
-  --fs-sm:13.5px;
-  --fs-xs:12.5px;
+  --fs-display:clamp(2.375rem,calc(4.6vw + 2.375rem - 38px),4.125rem);
+  --fs-h1:clamp(2.125rem,calc(3.6vw + 2.125rem - 34px),3.25rem);
+  --fs-h2:clamp(1.875rem,calc(3vw + 1.875rem - 30px),2.5rem);
+  --fs-h3:clamp(1.3125rem,calc(1.8vw + 1.3125rem - 21px),1.5rem);
+  --fs-lede:clamp(1rem,calc(1.4vw + 1rem - 16px),1.125rem);
+  --fs-body:0.9375rem;
+  --fs-sm:0.84375rem;
+  --fs-xs:0.78125rem;
 
   /* ---- shape ---------------------------------------------------------- */
   --r-blk:28px;       /* every block */
@@ -89,4 +90,4 @@
 [data-accent="09"]{--accent:#A35F70;--primary:#321F27;--on-accent:#FFFFFF}
 [data-accent="10"]{--accent:#72AFC0;--primary:#111518;--on-accent:#1A1A18}
 
-@media (max-width:860px){:root{--gutter:20px}}
+@media (max-width:53.75em){:root{--gutter:20px}}

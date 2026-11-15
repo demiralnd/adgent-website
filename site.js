@@ -78,7 +78,7 @@
   /* CookieConsent focuses its banner as soon as it opens. Wait for both stylesheets:
      without the vendor's fixed positioning, that focus scrolls to the end of the
      document. Keep loading non-blocking, but never mount an unstyled consent UI. */
-  var consentStyles = ['/assets/vendor/cookieconsent-3.1.0.css', '/consent.css?v=bfd309d7'].map(function (href) {
+  var consentStyles = ['/assets/vendor/cookieconsent-3.1.0.css', '/consent.css?v=33380b94'].map(function (href) {
     return new Promise(function (resolve, reject) {
       var link = d.createElement('link');
       link.rel = 'stylesheet';
@@ -181,25 +181,29 @@
       d.querySelectorAll('[data-cookie-settings]').forEach(function (button) {
         button.addEventListener('click', function () { cc.showPreferences(); });
       });
-      /* The inline banner is not a dialog: nothing behind it is blocked, so the
-         keyboard must not be either. The vendor traps Tab inside the banner from a
-         listener on <html> (no option disables it), which also pulled focus back
-         from the page. While only the banner is open, Tab is stopped before that
-         listener and the browser's own focus order runs; Escape means Reject
-         optional. The preferences modal is a real dialog and keeps its trap; with
-         the mobile drawer open, app.js owns the keyboard (the banner is inert). */
+      /* The inline banner is nonblocking. Stop Tab on its way UP to the vendor's
+         <html> listener, after component handlers, without cancelling native focus.
+         The drawer handles its own Tab propagation; preferences keep the vendor
+         trap. Native dialogs keep their browser-owned focus and Escape behavior.
+         Escape rejects optional cookies only when focus is inside the banner. */
       var drawer = d.getElementById('drawer');
-      addEventListener('keydown', function (e) {
+      d.body.addEventListener('keydown', function (e) {
         var cls = d.documentElement.classList;
+        if (d.querySelector('dialog:modal')) {
+          if (e.key === 'Tab') e.stopPropagation();
+          return;
+        }
         if (!cls.contains('show--consent') || cls.contains('show--preferences')) return;
         if (drawer && !drawer.hidden) return;
-        if (e.key === 'Tab') { e.stopImmediatePropagation(); return; }
-        if (e.key === 'Escape') {
-          e.stopImmediatePropagation();
+        if (e.key === 'Tab') { e.stopPropagation(); return; }
+        if (e.key !== 'Escape' || e.defaultPrevented) return;
+        var banner = d.querySelector('#cc-main .cm');
+        if (banner && banner.contains(e.target)) {
+          e.stopPropagation();
           cc.acceptCategory([]);
           cc.hide();
         }
-      }, true);
+      });
     });
   }).catch(function (error) {
     console.error('Cookie settings failed to load; optional measurement remains disabled.', error);

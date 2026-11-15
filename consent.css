@@ -46,22 +46,23 @@
   --cc-footer-color:var(--ink-2);
   --cc-footer-border-color:var(--line);
   font-family:var(--sans);
+  font-size:1rem;
   -webkit-font-smoothing:antialiased;
 }
 
 /* ---- the banner ---- */
-#cc-main .cm{max-width:372px;border:1px solid var(--line);box-shadow:var(--shadow-ui)}
+#cc-main .cm{max-width:min(23.25rem,calc(100vw - 2 * var(--cc-modal-margin)));border:1px solid var(--line);box-shadow:var(--shadow-ui)}
 #cc-main .cm__texts{padding:18px 20px 4px}
-#cc-main .cm__title{padding:0;font-size:14.5px;font-weight:600;line-height:1.3;letter-spacing:-.01em;color:var(--ink)}
+#cc-main .cm__title{padding:0;font-size:0.90625rem;font-weight:600;line-height:1.3;letter-spacing:-.01em;color:var(--ink)}
 #cc-main .cm__title+.cm__desc{margin-top:6px}
-#cc-main .cm__desc{padding:0;font-size:13.5px;line-height:1.5;color:var(--ink-2);max-height:none}
+#cc-main .cm__desc{padding:0;font-size:0.84375rem;line-height:1.5;color:var(--ink-2);max-height:none}
 #cc-main .cm__desc a{color:var(--ink);text-decoration:underline;text-underline-offset:2px;text-decoration-color:var(--line-2);background:none;font-weight:500}
 #cc-main .cm__desc a:hover{text-decoration-color:var(--ink)}
 #cc-main .cm__btns{padding:14px 20px 18px;border-top:0}
 #cc-main .cm__btn-group{gap:8px}
 #cc-main .cm--inline .cm__btn+.cm__btn,#cc-main .cm__btn-group+.cm__btn-group{margin:8px 0 0}
 #cc-main .cm--inline .cm__btn-group .cm__btn+.cm__btn{margin:0}
-#cc-main .cm__btn,#cc-main .pm__btn{min-height:40px;padding:0 14px;font-size:13.5px;font-weight:500;letter-spacing:-.005em;border-width:1px;transition:background-color .18s var(--ease),border-color .18s var(--ease),color .18s var(--ease)}
+#cc-main .cm__btn,#cc-main .pm__btn{min-height:2.5rem;height:auto;padding:0 14px;white-space:normal;overflow-wrap:anywhere;font-size:0.84375rem;font-weight:500;letter-spacing:-.005em;border-width:1px;transition:background-color .18s var(--ease),border-color .18s var(--ease),color .18s var(--ease)}
 /* "Choose" is the quiet third option: a text button, not a third slab */
 #cc-main .cm__btn[data-role=show]{background:none;border-color:transparent;color:var(--ink-2)}
 #cc-main .cm__btn[data-role=show]:hover{color:var(--ink);background:none;border-color:transparent;text-decoration:underline;text-underline-offset:3px}
@@ -69,10 +70,10 @@
 
 /* ---- cookie settings dialog ---- */
 #cc-main .pm{border:1px solid var(--line);box-shadow:var(--shadow)}
-#cc-main .pm--box{max-width:560px}
-#cc-main .pm__title{font-size:17px;letter-spacing:-.015em}
-#cc-main .pm__section-title{font-size:14.5px;font-weight:600}
-#cc-main .pm__section-desc{font-size:13.5px;line-height:1.55;color:var(--ink-2)}
+#cc-main .pm--box{max-width:min(35rem,calc(100vw - 2 * var(--cc-modal-margin)))}
+#cc-main .pm__title{font-size:1.0625rem;letter-spacing:-.015em}
+#cc-main .pm__section-title{font-size:0.90625rem;font-weight:600}
+#cc-main .pm__section-desc{font-size:0.84375rem;line-height:1.55;color:var(--ink-2)}
 #cc-main .pm__footer{gap:8px}
 
 /* ---- focus: same ring as the rest of the site ---- */
@@ -81,16 +82,16 @@
   outline:2px solid var(--focus,var(--ink));outline-offset:3px;box-shadow:none}
 
 /* ---- phone: one short card on the bottom edge, choices in one row ---- */
-@media screen and (max-width:640px){
+@media screen and (max-width:40em){
   #cc-main{--cc-modal-margin:8px}
   #cc-main .cm{border-radius:var(--r-row)}
   #cc-main .cm__texts{padding:12px 14px 0!important}
   #cc-main .cm__title{display:none}
-  #cc-main .cm__desc{padding:0!important;font-size:13px;line-height:1.45}
-  #cc-main .cm__btns{padding:10px 14px 12px!important;border-top:0!important;flex-direction:row!important}
-  #cc-main .cm__btn-group{display:grid!important;grid-auto-flow:column!important;grid-auto-columns:minmax(0,1fr);flex:1 1 auto;gap:6px}
-  #cc-main .cm__btn-group+.cm__btn-group{flex:0 0 auto;margin:0 0 0 6px!important}
-  #cc-main .cm__btn,#cc-main .cm__btn+.cm__btn{margin:0!important;min-height:44px;padding:0 8px;font-size:13px;white-space:nowrap}
+  #cc-main .cm__desc{padding:0!important;font-size:0.8125rem;line-height:1.45}
+  #cc-main .cm__btns{padding:10px 14px 12px!important;border-top:0!important;flex-direction:row!important;flex-wrap:wrap!important;row-gap:6px}
+  #cc-main .cm__btn-group{display:grid!important;grid-auto-flow:column!important;grid-auto-columns:minmax(0,1fr);min-width:0;flex:1 1 12rem;gap:6px}
+  #cc-main .cm__btn-group+.cm__btn-group{flex:1 1 4rem;margin:0 0 0 6px!important}
+  #cc-main .cm__btn,#cc-main .cm__btn+.cm__btn{margin:0!important;min-height:2.75rem;padding:0 8px;font-size:0.8125rem;white-space:normal}
   #cc-main .cm__btn[data-role=show]{padding:0 6px}
 }
 /* touch: the full 44px hit area wherever the pointer is coarse, not only on phones */

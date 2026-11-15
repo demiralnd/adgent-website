@@ -170,7 +170,7 @@
   }
 
 
-  var narrow = matchMedia('(max-width: 1100px)');
+  var narrow = matchMedia('(max-width: 68.75em)');
   var still = matchMedia('(prefers-reduced-motion: reduce)');
   board.addEventListener('click', function (e) {
     if (e.target.closest('[data-pcl-demo]')) {

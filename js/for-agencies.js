@@ -12,7 +12,7 @@
   var $ = function (s, c) { return (c || d).querySelector(s); };
   var $$ = function (s, c) { return Array.prototype.slice.call((c || d).querySelectorAll(s)); };
   var still = matchMedia('(prefers-reduced-motion: reduce)');
-  var tabsMQ = matchMedia('(max-width:960px)');
+  var tabsMQ = matchMedia('(max-width:60em)');
 
   var deck = $('.fa-deck', stage), end = $('.fa-end', deck), lg = $('.fa-lg', stage);
   var fxList = $('.fa-fx-list', stage), status = $('.fa-status', stage);

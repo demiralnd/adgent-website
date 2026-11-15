@@ -8,7 +8,7 @@
   var $ = function (s, c) { return (c || d).querySelector(s); };
   var $$ = function (s, c) { return Array.prototype.slice.call((c || d).querySelectorAll(s)); };
   var still = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var narrow = matchMedia('(max-width:860px)');
+  var narrow = matchMedia('(max-width:53.75em)');
 
   /* ---- dev accent switch: ?accent=NN (01-10) sets and remembers; ?accent=off clears.
      Local preview only: on adgent.app a shared ?accent= link would show visitors an
@@ -52,9 +52,9 @@
     addEventListener('scroll', onS, { passive: true });
   }
 
-  /* ---- dropdowns: hover (CSS), click/Enter/Space toggle, ArrowDown opens into the menu,
+  /* ---- dropdowns: one open state for hover, click/Enter/Space and ArrowDown.
          Esc closes and returns focus, focus leaving the menu closes it ---- */
-  var drops = $$('.topbar .drop');
+  var drops = $$('.topbar .drop'), hover = matchMedia('(hover: hover)'), previewDrop = null;
   function place(dr) {
     var m = $('.menu', dr); if (!m) return;
     var pad = 16;
@@ -65,25 +65,34 @@
     m.style.setProperty('--mx', Math.round(shift) + 'px');
   }
   function closeDrop(dr) {
+    if (previewDrop === dr) previewDrop = null;
     dr.classList.remove('open');
     var t = $('.drop-t', dr); if (t) t.setAttribute('aria-expanded', 'false');
   }
   function openDrop(dr) {
     drops.forEach(function (o) { if (o !== dr) closeDrop(o); });
-    dr.classList.remove('shut'); place(dr);
+    previewDrop = null; place(dr);
     dr.classList.add('open'); $('.drop-t', dr).setAttribute('aria-expanded', 'true');
   }
   drops.forEach(function (dr) {
     var t = $('.drop-t', dr);
-    dr.addEventListener('pointerenter', function () { dr.classList.remove('shut'); place(dr); });
-    dr.addEventListener('mouseleave', function () { dr.classList.remove('shut'); if (!dr.contains(d.activeElement)) closeDrop(dr); });
-    t.addEventListener('click', function () { dr.classList.contains('open') ? closeDrop(dr) : openDrop(dr); });
+    dr.addEventListener('pointerenter', function (e) {
+      if (!hover.matches || e.pointerType === 'touch' || dr.classList.contains('open')) return;
+      openDrop(dr); previewDrop = dr;
+    });
+    dr.addEventListener('pointerleave', function (e) {
+      if (e.pointerType !== 'touch' && !dr.contains(d.activeElement)) closeDrop(dr);
+    });
+    t.addEventListener('click', function () {
+      if (previewDrop === dr) { previewDrop = null; return; }
+      dr.classList.contains('open') ? closeDrop(dr) : openDrop(dr);
+    });
     t.addEventListener('keydown', function (e) {
       if (e.key === 'ArrowDown') { e.preventDefault(); openDrop(dr); var a = $('.menu a', dr); if (a) a.focus(); }
     });
     dr.addEventListener('keydown', function (e) {
-      if (e.key !== 'Escape') return;
-      closeDrop(dr); dr.classList.add('shut'); t.focus();
+      if (e.key !== 'Escape' || !dr.classList.contains('open')) return;
+      e.preventDefault(); e.stopPropagation(); closeDrop(dr); t.focus();
     });
     dr.addEventListener('focusout', function (e) { if (!dr.contains(e.relatedTarget)) closeDrop(dr); });
   });
@@ -139,10 +148,12 @@
       if (first) first.focus();
     });
     drawer.addEventListener('click', function (e) { if (e.target.closest('a')) shut(true); });
-    addEventListener('keydown', function (e) {
+    d.body.addEventListener('keydown', function (e) {
       if (drawer.hidden) return;
       if (e.key === 'Escape') { e.preventDefault(); shut(true); return; }
       if (e.key !== 'Tab') return;
+      /* Run before the vendor's <html> trap, without blocking drawer controls. */
+      e.stopPropagation();
       var items = drawerFocusables(), first = items[0], last = items[items.length - 1];
       if (e.shiftKey && (d.activeElement === first || items.indexOf(d.activeElement) < 0)) {
         e.preventDefault(); last.focus();
@@ -150,8 +161,8 @@
         e.preventDefault(); first.focus();
       }
     });
-    matchMedia('(min-width:1101px)').addEventListener('change', function (e) {
-      if (!e.matches || drawer.hidden) return;
+    matchMedia('(max-width:68.75em)').addEventListener('change', function (e) {
+      if (e.matches || drawer.hidden) return;
       var hadFocus = drawer.contains(d.activeElement) || d.activeElement === burger;
       shut(false);
       if (hadFocus && top) { var brand = $('.brand', top); if (brand) brand.focus(); }
@@ -315,7 +326,10 @@
     f.addEventListener('submit', function (e) {
       e.preventDefault();
       if (btn && btn.disabled) return;
-      var nameOk = !nm || nm.value.trim().length > 1, v = em ? em.value.trim() : '', mailOk = MAIL.test(v);
+      var nameOk = !nm || nm.value.trim().length > 1, v = em ? em.value.trim() : '';
+      if (em) em.value = v;
+      /* Native email syntax plus our existing dotted-domain policy. */
+      var mailOk = !!em && em.validity.valid && MAIL.test(v);
       if (nm) nm.setAttribute('aria-invalid', String(!nameOk));
       if (em) em.setAttribute('aria-invalid', String(!mailOk));
       err.textContent = !nameOk && !mailOk ? 'Add your name and a work email we can reply to.' : !nameOk ? 'Add your name so we know who to reply to.' : !mailOk ? (v ? "That doesn't look like an email address. Check it and try again." : 'Enter a work email we can reply to.') : '';

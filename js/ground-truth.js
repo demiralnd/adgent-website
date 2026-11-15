@@ -18,7 +18,7 @@
   var byKey = {};
   marks.forEach(function (n) { byKey[n.getAttribute('data-src')] = n; });
 
-  var compactTabs = matchMedia('(max-width: 1100px)');
+  var compactTabs = matchMedia('(max-width: 68.75em)');
   function updateOrientation() {
     tablist.setAttribute('aria-orientation', compactTabs.matches ? 'horizontal' : 'vertical');
   }

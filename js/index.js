@@ -34,10 +34,15 @@
     vb.setAttribute('aria-pressed', String(paused));
     vb.setAttribute('aria-label', paused ? 'Play the video' : 'Pause the video');
   }
+  function filmPoster() {
+    var poster = v.getAttribute('data-poster');
+    if (poster) { v.poster = poster; v.removeAttribute('data-poster'); }
+  }
   function film() {
     if (!v) return;
     var open = v.closest('[role=tabpanel]').classList.contains('on');
     if (open && seen && !held && !document.hidden) {
+      filmPoster();
       var result = v.play();
       if (result && result.catch) result.catch(syncBtn);
     } else v.pause();
@@ -51,10 +56,19 @@
     v.addEventListener('play', syncBtn);
     v.addEventListener('pause', syncBtn);
     if ('IntersectionObserver' in window) {
+      var posterObserver = new IntersectionObserver(function (entries) {
+        if (!entries[0].isIntersecting) return;
+        filmPoster();
+        posterObserver.disconnect();
+      }, { rootMargin: '400px 0px' });
+      posterObserver.observe(v);
       new IntersectionObserver(function (entries) {
         seen = entries[0].isIntersecting;
         film();
       }, { threshold: 0.25 }).observe(v);
+    } else {
+      filmPoster();
+      seen = true;
     }
     syncBtn();
   }

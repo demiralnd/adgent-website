@@ -14,6 +14,45 @@ python3 serve.py 8900     # http://127.0.0.1:8900 with clean URLs
 
 ## What changed, and why
 
+**2026-11-15, Modern Web Guidance review corrections (owner-authorized commit and push).**
+
+- Consent keyboard handling now runs after component handlers. Escape rejects optional
+  cookies only from inside the banner; open menus and native dialogs retain their own
+  Escape/focus behavior. The nonblocking banner no longer intercepts menu Tab handlers.
+- Desktop dropdown visibility, chevrons and `aria-expanded` share the `.open` state.
+  Hover previews can be pinned by a click; the next click closes them until re-entry.
+  Touch pointers do not trigger hover previews. Existing drawer focus/inert behavior stays.
+- Lead forms use native `ValidityState` alongside the existing dotted-domain policy.
+  Malformed addresses such as `review@-example.com` remain inline errors, not POSTs.
+  Trimmed input, first-invalid focus, error descriptions and failure/retry behavior remain.
+- Homepage creative-analysis media now uses `preload="none"`, native lazy loading and an
+  observer-deferred poster. Playback remains viewport-controlled. A noscript poster keeps
+  the static example visible without JavaScript; the custom inactive play control is hidden.
+- Creative Intelligence listens for reduced-motion changes: enabling reduction pauses the
+  film and clears parallax transforms. Disabling reduction does not force video playback;
+  explicit play remains available.
+- Reader typography and controls use relative font sizes without overriding the root.
+  Text-aware CSS and matching JavaScript breakpoints use em. Normal 16px-default heading
+  curves remain unchanged; enlarged text can grow controls and reflow layouts. SVG/chart
+  coordinate text and media geometry remain fixed. Grid minimums, wrapping, skip-link
+  positioning and the homepage navy background were corrected after enlarged-text checks.
+- Six creative cards now have responsive `srcset`/`sizes`, retaining their original high-DPR
+  sources. Sixteen WebP variants were resized from the existing originals with Pillow
+  LANCZOS, quality 85, method 6: widths 192/320 and, for originals wider than 600px, 480.
+  At 1440px/DPR 1, the browser selected 59,686 bytes of images instead of 282,098 bytes.
+  This measures those six images, not whole-page speed or field Core Web Vitals.
+- Local Chrome proof: all 62 sitemap routes returned 200 and stayed at scroll position zero
+  without document overflow at 390px with the browser default font set to 32px. Normal-size
+  route checks also passed. Home, pricing, Creative Intelligence and the November article
+  were visually reviewed at 390/768/1440 in light/dark preferences and default fonts 16/32
+  (48 states); targeted heading/form text-overlap checks passed in the same states.
+- Exercised menu hover/click/keyboard dismissal, drawer Escape/focus restoration, invalid
+  email rejection, intercepted failure/retry responses, dialog dismissal, deferred video
+  loading/play/pause, live reduced-motion changes, high-DPR image selection and no-JS poster.
+  No form was delivered. New fallback alt text passed humanizer/copy-lint review.
+  Physical Safari/iPhone and screen-reader speech were not tested; no SVG checker is
+  present in either current website worktree.
+
 **2026-11-13, homepage product video (owner-approved placement and release).**
 
 - Added **Watch Adgent in action · 1:50** below the email form, inside the navy circle.
